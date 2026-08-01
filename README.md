@@ -46,7 +46,10 @@ the chapter *Not yet*, *Shaky* or *Confident* yourself, and that mark, not the p
 what the whole progress figure is built from: **confident counts a whole lesson, shaky counts
 half, and a lesson you have only read counts nothing** until you have judged it. Marking a
 chapter also ticks it as read, so there is nothing left to press by hand. A chapter you aced but
-do not trust stays unmarked until you say otherwise.
+do not trust stays unmarked until you say otherwise. Because a good score that moved nothing
+reads like a bug, the summary says so outright: until one of the three is picked the box is
+highlighted and spells out what each mark is worth, and afterwards it reports the mark you gave
+and what it counted for.
 
 The summary also lists **every question you got wrong**: the prompt, what you answered, the
 answer, and why, in one place rather than one at a time behind a Next button. Next to *Take it

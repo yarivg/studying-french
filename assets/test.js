@@ -686,11 +686,14 @@ window.Test = (function () {
             }).join(', ') + '.</p>'
           : '<p>Nothing stood out as weak.</p>') +
         wrongHtml(s.answered) +
-        '<div class="mastery-box">' +
-          '<p><strong>Your call.</strong> The score is just evidence — mark this how you ' +
-          'actually feel about it.</p>' +
+        '<div class="mastery-box' + (level ? '' : ' is-todo') + '">' +
+          '<h3>' + (level ? 'Your mark' : 'One thing left: mark it yourself') + '</h3>' +
+          '<p class="mastery-say">' + masterySay(level, level > 0, pct) + '</p>' +
+          // -1, not 0: an unmarked chapter used to open with *Not yet* looking
+          // chosen, which read as an answer already given and was half the
+          // reason a good score seemed to have been ignored.
           '<div class="mastery-picker">' +
-            level3btn(0, 'Not yet', level) +
+            level3btn(0, 'Not yet', level || -1) +
             level3btn(1, 'Shaky', level) +
             level3btn(2, 'Confident', level) +
           '</div>' +
@@ -713,10 +716,15 @@ window.Test = (function () {
     s.host.querySelector('.mastery-picker').addEventListener('click', function (e) {
       var b = e.target.closest('[data-level]');
       if (!b) return;
-      Progress.setMastery(s.masteryKey, Number(b.dataset.level), pct);
+      var lv = Number(b.dataset.level);
+      Progress.setMastery(s.masteryKey, lv, pct);
       s.host.querySelectorAll('[data-level]').forEach(function (el) {
         el.classList.toggle('is-set', el === b);
       });
+      var box = s.host.querySelector('.mastery-box');
+      box.classList.remove('is-todo');
+      box.querySelector('h3').textContent = 'Your mark';
+      box.querySelector('.mastery-say').innerHTML = masterySay(lv, true, pct);
     });
 
     s.host.querySelector('[data-act="retry"]').addEventListener('click', function () {
@@ -756,6 +764,28 @@ window.Test = (function () {
           (q.why ? '<p class="tr-why">' + escapeHtml(q.why) + '</p>' : '') +
           '</li>';
       }).join('') + '</ol></div>';
+  }
+
+  // The score and the progress figure are two different things, and a good
+  // score that moved nothing reads like a bug. So say it plainly: nothing
+  // counts until one of the three is picked, and say what each one is worth.
+  function masterySay(level, picked, pct) {
+    if (!picked) {
+      return 'Your <strong>' + pct + '%</strong> is filed under Tests, but on its own it does not ' +
+        'move the sidebar or the course percentage: a score is evidence, not a verdict. ' +
+        'Pick one below: <strong>Not yet</strong> counts nothing, <strong>Shaky</strong> counts ' +
+        'half a chapter, <strong>Confident</strong> counts a whole one.';
+    }
+    if (level === 2) {
+      return 'Marked <strong>Confident</strong>: this chapter now counts in full, with a green ' +
+        'bar beside it in the sidebar. Change it whenever you like.';
+    }
+    if (level === 1) {
+      return 'Marked <strong>Shaky</strong>: counts as half a chapter, amber bar in the sidebar. ' +
+        'Come back and mark it confident once it sticks.';
+    }
+    return 'Left as <strong>Not yet</strong>: nothing counted towards your progress. ' +
+      'Reread it and take this again when you want the mark.';
   }
 
   function level3btn(n, label, current) {

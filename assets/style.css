@@ -1310,7 +1310,15 @@ textarea.test-input { font-size: .95rem; line-height: 1.6; resize: vertical; }
   padding: 1rem 1.2rem; margin: 1.2rem 0;
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md);
 }
-.mastery-box p { margin: 0 0 .8rem; font-size: .9rem; color: var(--muted); line-height: 1.6; }
+.mastery-box h3 {
+  margin: 0 0 .4rem; font-family: var(--serif); font-size: 1.05rem; font-weight: 600;
+  color: var(--ink);
+}
+.mastery-box p { margin: 0 0 .8rem; font-size: .9rem; color: var(--ink-soft); line-height: 1.6; }
+.mastery-box p strong { color: var(--ink); }
+/* Nothing picked yet, so the box asks for something rather than reporting. */
+.mastery-box.is-todo { border-color: var(--or); background: var(--or-soft); }
+.mastery-box.is-todo h3::before { content: '↓ '; color: var(--or); }
 .mastery-picker { display: flex; gap: .5rem; flex-wrap: wrap; }
 .mastery-btn.is-set { background: var(--bleu); border-color: var(--bleu); color: var(--on-accent); }
 
