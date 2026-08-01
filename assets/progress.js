@@ -193,14 +193,20 @@ window.Progress = (function () {
   }
 
   function cardStats(ids) {
-    var learned = 0, learning = 0, fresh = 0;
+    var learned = 0, learning = 0, fresh = 0, right = 0;
     ids.forEach(function (id) {
       var c = state.cards[id];
-      if (!c || !c.seen) fresh++;
-      else if (c.box >= 4) learned++;
+      if (!c || !c.seen) { fresh++; return; }
+      // Two different claims: `right` is "I have known this at least once",
+      // `learned` is "I still knew it days later". Both are worth seeing.
+      if (c.ok > 0) right++;
+      if (c.box >= 4) learned++;
       else learning++;
     });
-    return { learned: learned, learning: learning, fresh: fresh, total: ids.length };
+    return {
+      learned: learned, learning: learning, fresh: fresh, right: right,
+      total: ids.length
+    };
   }
 
   /* ---------------------------------------------------------- vocabulary */

@@ -1,0 +1,100 @@
+{
+  "id": "a1-01-le-matin",
+  "title": "Le matin de Julie",
+  "level": "A1",
+  "blurb": "A rushed morning, start to finish: present tense, reflexive verbs and the three families of article.",
+  "grammar": [
+    "present-tense",
+    "reflexive-verbs",
+    "articles"
+  ],
+  "text": "Julie se réveille à six heures et demie.\nElle se lève tout de suite, parce qu'elle déteste être en retard.\nDans la cuisine, elle prépare du café et deux tartines.\nSon chat Nino attend son petit déjeuner.\n\nJulie se lave, s'habille et cherche ses clés.\nElle ne trouve pas les clés.\nEnfin, elle voit les clés sous le journal, à côté du téléphone.\n\nElle sort et elle court vers l'arrêt de bus.\nLà, elle comprend.\nLa rue est vide.\nIl n'y a pas de voitures et il n'y a pas de bus.\nC'est dimanche.\nJulie rentre à la maison, elle enlève son manteau et elle retourne au lit.",
+  "gloss": {
+    "tartines": "slices of bread with butter or jam",
+    "l'arrêt de bus": "the bus stop",
+    "vide": "empty",
+    "enlève": "takes off"
+  },
+  "aloud": [
+    "Julie se réveille à six heures et demie.",
+    "Elle sort et elle court vers l'arrêt de bus."
+  ],
+  "questions": [
+    {
+      "id": "a1-01-01",
+      "type": "mcq",
+      "q": "À quelle heure Julie se réveille-t-elle ?",
+      "choices": [
+        "À six heures",
+        "À six heures et demie",
+        "À sept heures",
+        "À huit heures"
+      ],
+      "a": 1,
+      "why": "The text says « à six heures et demie ». *Et demie* adds the half hour, and it is feminine because it agrees with the unwritten *heure*."
+    },
+    {
+      "id": "a1-01-02",
+      "type": "mcq",
+      "q": "Pourquoi la rue est-elle vide ?",
+      "choices": [
+        "Il est trop tôt",
+        "C'est dimanche",
+        "Il pleut",
+        "Les bus sont en grève"
+      ],
+      "a": 1,
+      "why": "The whole point of the passage is the last-line turn: Julie has hurried through a workday routine on a Sunday."
+    },
+    {
+      "id": "a1-01-03",
+      "type": "fill",
+      "q": "Julie ___ lève tout de suite.",
+      "a": [
+        "se"
+      ],
+      "why": "*Se lever* is reflexive, and the pronoun matches the subject: *il / elle / on* takes **se**, sitting before the verb."
+    },
+    {
+      "id": "a1-01-04",
+      "type": "fill",
+      "q": "Dans la cuisine, elle prépare ___ café.",
+      "a": [
+        "du"
+      ],
+      "why": "Coffee here is an unmeasured amount, so it takes the partitive **du**. *Le café* would mean coffee as a category, *un café* a single cup."
+    },
+    {
+      "id": "a1-01-05",
+      "type": "mcq",
+      "q": "Which sentence is correct?",
+      "choices": [
+        "Nous nous levons tôt.",
+        "Nous se levons tôt.",
+        "Nous levons nous tôt.",
+        "Nous nous lève tôt."
+      ],
+      "a": 0,
+      "why": "The reflexive pronoun always matches the subject, so *nous* needs *nous*: the doubling looks like a typo and is not."
+    },
+    {
+      "id": "a1-01-06",
+      "type": "fill",
+      "q": "Il n'y a pas ___ voitures dans la rue.",
+      "a": [
+        "de",
+        "d'"
+      ],
+      "why": "After a negative, *un / une / du / de la / des* all collapse to bare **de** — *des voitures* becomes *de voitures*."
+    },
+    {
+      "id": "a1-01-07",
+      "type": "open",
+      "q": "Décrivez votre matin en quatre phrases, avec au moins deux verbes réfléchis.",
+      "a": [
+        "Je me réveille à sept heures. Je me lave et je m'habille. Je prépare du café dans la cuisine. Ensuite, je sors et je vais au travail."
+      ],
+      "why": "Reflexives carry almost the whole morning routine in French, so this is the fastest place to make them automatic."
+    }
+  ]
+}

@@ -91,15 +91,30 @@ window.Say = (function () {
   // should not be read out: glosses in brackets, phonetics, markers.
   function clean(text) {
     return String(text || '')
-      .replace(/\/[^/]*\//g, ' ')
+      // Drop IPA transcriptions, but only real ones: "précédent/e/s" also
+      // has something between two slashes, and it is not a transcription.
+      .replace(/\/[^/]*\//g, function (m) {
+        return /[ɑɛœøəɔɥʁʃʒɲŋɡʎæ̃ːˈ]/.test(m) ? ' ' : m;
+      })
       .replace(/\([^)]*\)/g, ' ')
       .replace(/\[[^\]]*\]/g, ' ')
       .replace(/[*_`«»"]/g, ' ')
+      // A slash between two forms is read out as "barre oblique" by every
+      // voice, which is not what "délicieux/délicieuse" means. Say it.
+      // A lookahead, not a second group: "précédent/e/s" has two slashes
+      // sharing a letter, and a consuming match would skip the second.
+      .replace(/([^\s/])\s*\/\s*(?=[^\s/])/g, '$1 ou ')
+      .replace(/\//g, ' ')
       .replace(/\s*[·—–]\s*/g, ', ')
       .replace(/…/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
   }
+
+  // Bumped by every speak() and every stop(), so an utterance that is
+  // cancelled can tell it was cancelled: browsers are inconsistent about
+  // whether cancel() arrives as `end` or as an `interrupted` error.
+  var epoch = 0;
 
   function speak(text, opts) {
     opts = opts || {};
@@ -108,6 +123,7 @@ window.Say = (function () {
     if (!say) return false;
 
     synth.cancel();
+    var mine = ++epoch;
     var u = new SpeechSynthesisUtterance(say);
     u.lang = current ? current.lang : 'fr-FR';
     if (current) u.voice = current;
@@ -118,16 +134,30 @@ window.Say = (function () {
     if (el) {
       speakingEl = el;
       el.classList.add('is-speaking');
-      u.onend = u.onerror = function () {
+    }
+
+    // `finished` is false when something cancelled us — a new utterance, a
+    // route change — which is how a caller reading a passage line by line
+    // knows to stop rather than plough on.
+    var settled = false;
+    function done(finished) {
+      if (settled) return;
+      settled = true;
+      if (el) {
         el.classList.remove('is-speaking');
         if (speakingEl === el) speakingEl = null;
-      };
+      }
+      if (opts.onEnd) opts.onEnd(finished && mine === epoch);
     }
+    u.onend = function () { done(true); };
+    u.onerror = function (e) { done(!e || e.error !== 'interrupted'); };
+
     synth.speak(u);
     return true;
   }
 
   function stop() {
+    epoch++;
     if (synth) synth.cancel();
     if (speakingEl) { speakingEl.classList.remove('is-speaking'); speakingEl = null; }
   }

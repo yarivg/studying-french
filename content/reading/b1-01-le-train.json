@@ -1,0 +1,86 @@
+{
+  "id": "b1-01-le-train",
+  "title": "Le dernier train",
+  "level": "B1",
+  "blurb": "A delayed night train, a father's old story, and a stranger who knew him. Imparfait against passé composé, and the four relative pronouns.",
+  "grammar": ["imparfait", "imparfait-vs-passe-compose", "relative-pronouns"],
+  "text": "Il était presque minuit et le train ne partait toujours pas.\nNous attendions depuis une heure sur le quai, sous une lampe qui clignotait.\nIl faisait froid.\nIl y avait une vieille dame qui lisait, un homme qui dormait debout, et moi, qui regardais le tableau des départs.\nLe train que j'attendais était le dernier de la nuit.\n\nQuand j'étais petit, mon père travaillait dans cette gare.\nIl rentrait tard, il sentait le café et le métal, et il me racontait toujours la même histoire : celle d'un train qui n'était jamais arrivé.\nJe ne l'ai jamais crue.\nC'était une histoire de gare, rien de plus.\n\nSoudain, une femme s'est approchée de moi.\nElle m'a demandé l'heure, puis elle a souri.\n« Vous êtes le fils de Marcel, non ? »\nJe ne la connaissais pas.\nMais elle, elle a connu mon père en 1990, l'année où il a commencé ici.\n\nElle m'a parlé d'une nuit de janvier où la neige a bloqué toutes les voies.\nLe train dont mon père parlait existait donc.\nIl n'est jamais arrivé parce qu'on l'a arrêté à trois kilomètres de la gare.\nLes gens qui étaient dedans ont attendu jusqu'au matin, et mon père les a attendus aussi, sur ce quai, toute la nuit.\n\nÀ une heure du matin, le haut-parleur a annoncé notre train.\nLa femme est montée dans une autre voiture.\nJe ne lui ai pas demandé son nom.\nC'est la seule chose que je regrette.",
+  "gloss": {
+    "minuit": "midnight",
+    "le quai": "the platform",
+    "une vieille dame": "an old lady",
+    "clignotait": "was flickering (clignoter, to flicker)",
+    "le tableau des départs": "the departures board",
+    "debout": "standing up",
+    "les voies": "the tracks",
+    "le haut-parleur": "the loudspeaker"
+  },
+  "aloud": [
+    "Elle m'a demandé l'heure, puis elle a souri.",
+    "Je ne la connaissais pas."
+  ],
+  "questions": [
+    {
+      "id": "train-01",
+      "type": "mcq",
+      "q": "Que faisait la vieille dame sur le quai ?",
+      "choices": ["Elle lisait", "Elle dormait debout", "Elle regardait le tableau des départs", "Elle parlait au narrateur"],
+      "a": 0,
+      "why": "Trois personnes sont décrites à l'imparfait : la dame lisait, l'homme dormait debout, le narrateur regardait le tableau. L'imparfait ici peint la scène, il ne raconte rien."
+    },
+    {
+      "id": "train-02",
+      "type": "mcq",
+      "q": "Pourquoi « Il faisait froid » et non « Il a fait froid » ?",
+      "choices": [
+        "Parce que faire est toujours à l'imparfait au passé",
+        "Parce que le froid est le décor de la scène, pas un événement",
+        "Parce que la phrase est courte",
+        "Parce qu'il n'y a pas de sujet précis"
+      ],
+      "a": 1,
+      "why": "La météo, l'heure, les états : tout ce qui pose le décor prend l'imparfait. « Il a fait froid » raconterait un épisode de froid borné dans le temps — hier, la semaine dernière."
+    },
+    {
+      "id": "train-03",
+      "type": "fill",
+      "q": "Le train ___ mon père parlait existait donc.",
+      "a": ["dont"],
+      "why": "On dit parler de quelque chose, donc le trou correspond à de + le train : c'est dont. Ni qui (pas de sujet manquant) ni que (pas d'objet direct manquant)."
+    },
+    {
+      "id": "train-04",
+      "type": "fill",
+      "q": "Je ne la connaissais pas, mais elle, elle ___ (connaître) mon père en 1990.",
+      "a": ["a connu"],
+      "why": "Connaître à l'imparfait décrit un état (je la connaissais = I knew her) ; au passé composé il marque le moment où l'état commence, c'est-à-dire la rencontre : elle a connu mon père = she met him."
+    },
+    {
+      "id": "train-05",
+      "type": "mcq",
+      "q": "Pourquoi le train de l'histoire n'est-il jamais arrivé ?",
+      "choices": [
+        "Il n'a jamais existé, c'était une invention du père",
+        "La neige a bloqué les voies et on l'a arrêté avant la gare",
+        "Il est arrivé le lendemain matin",
+        "Les voyageurs sont descendus en route"
+      ],
+      "a": 1,
+      "why": "La femme raconte la nuit de janvier : la neige a bloqué les voies, le train a été arrêté à trois kilomètres, et les voyageurs y ont passé la nuit. L'histoire du père était donc vraie."
+    },
+    {
+      "id": "train-06",
+      "type": "fill",
+      "q": "C'est la seule chose ___ je regrette.",
+      "a": ["que", "qu'"],
+      "why": "Un sujet (je) suit immédiatement le pronom, donc c'est que, l'objet direct de regrette. Le test est mécanique : verbe après → qui ; sujet après → que."
+    },
+    {
+      "id": "train-07",
+      "type": "open",
+      "q": "Le narrateur dit que ne pas avoir demandé son nom à la femme est « la seule chose » qu'il regrette. Pourquoi ce regret est-il plus grand qu'il n'en a l'air ?",
+      "a": ["Elle est la seule preuve vivante que l'histoire du père était vraie, et la seule personne qui pouvait lui parler de son père au travail. En la laissant monter dans une autre voiture, il perd une deuxième fois quelque chose de son père — après avoir passé son enfance à ne pas le croire."],
+      "why": "Le texte ne le dit jamais : c'est la dernière phrase, très courte, qui laisse le lecteur faire le lien avec « Je ne l'ai jamais crue » au deuxième paragraphe."
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": "a1-03-la-chambre",
+  "title": "La chambre de Théo",
+  "level": "A1",
+  "blurb": "One small room, described from the window to under the bed: il y a, place prepositions, adjective agreement and possessives.",
+  "grammar": ["il-y-a", "prepositions", "adjectives", "possessives"],
+  "text": "Voici la chambre de Théo.\nElle est petite mais très claire.\n\nSous la fenêtre, il y a un lit bleu.\nÀ côté du lit, il y a une table avec son ordinateur et une vieille lampe jaune.\nDerrière la porte, il y a une chaise avec tous ses vêtements.\nIl n'y a pas d'armoire.\n\nSa mère entre et regarde la chaise.\n« Ta chambre n'est pas propre, Théo. »\nThéo cherche une bonne réponse.\n« Mais maman, il n'y a rien par terre ! »\n\nSa mère ne dit rien.\nElle regarde sous le lit.\nSous le lit, il y a deux assiettes, un vieux pull noir et le chat de la famille.\nLe chat sort, regarde Théo, et retourne sous le lit.",
+  "gloss": {
+    "armoire": "wardrobe",
+    "par terre": "on the floor",
+    "assiettes": "plates",
+    "pull": "jumper, sweater",
+    "propre": "clean",
+    "claire": "bright, light"
+  },
+  "aloud": [
+    "Sous la fenêtre, il y a un lit bleu.",
+    "Mais maman, il n'y a rien par terre !"
+  ],
+  "questions": [
+    {
+      "id": "a1-03-01",
+      "type": "mcq",
+      "q": "Où est le lit de Théo ?",
+      "choices": ["Sous la fenêtre", "Derrière la porte", "À côté de la porte", "En face de la table"],
+      "a": 0,
+      "why": "*Sous la fenêtre, il y a un lit bleu.* Note that French happily puts the place phrase first and *il y a* second, which English rarely does."
+    },
+    {
+      "id": "a1-03-02",
+      "type": "mcq",
+      "q": "Qu'est-ce qu'il y a sous le lit ?",
+      "choices": ["Rien du tout", "Les vêtements de Théo", "Deux assiettes, un pull et le chat", "Une vieille lampe jaune"],
+      "a": 2,
+      "why": "The turn of the passage: Théo says there is nothing on the floor, and his mother simply looks somewhere he did not mention."
+    },
+    {
+      "id": "a1-03-03",
+      "type": "fill",
+      "q": "___ la porte, il y a une chaise.",
+      "a": ["Derrière", "derrière"],
+      "why": "*Derrière* = behind, the opposite of *devant*. The chair is out of sight from the doorway, which is exactly why the clothes on it go unmentioned."
+    },
+    {
+      "id": "a1-03-04",
+      "type": "fill",
+      "q": "Accordez l'adjectif : une ___ lampe jaune (vieux)",
+      "a": ["vieille"],
+      "why": "*Vieux* is one of the fully irregular feminines: *vieux → vieille*. It also belongs to the BAGS group, so it goes **before** the noun, while the colour *jaune* stays after it."
+    },
+    {
+      "id": "a1-03-05",
+      "type": "mcq",
+      "q": "Sa mère dit : « ___ chambre n'est pas propre. »",
+      "choices": ["Ton", "Ta", "Tes", "Toi"],
+      "a": 1,
+      "why": "The possessive agrees with the thing owned, not the owner: *chambre* is feminine singular, so **ta**. *Ton* would only come back if the noun began with a vowel."
+    },
+    {
+      "id": "a1-03-06",
+      "type": "fill",
+      "q": "Il y a une armoire. → Il n'y a pas ___ armoire.",
+      "a": ["d'"],
+      "why": "*Une* collapses to *de* after a negative, and *de* elides to **d'** before the vowel of *armoire*."
+    },
+    {
+      "id": "a1-03-07",
+      "type": "open",
+      "q": "Décrivez votre chambre en cinq phrases. Utilisez « il y a » et au moins trois prépositions de lieu.",
+      "a": ["Dans ma chambre, il y a un grand lit. À côté du lit, il y a une petite table. Sur la table, il y a mes livres et une lampe. Il n'y a pas de télévision. Derrière la porte, il y a mes vêtements."],
+      "why": "*Il y a* plus a place preposition is the whole engine of description in French, and it never agrees with what follows — *il y a un livre* and *il y a dix livres* are the same three words."
+    }
+  ]
+}

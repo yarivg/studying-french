@@ -1,0 +1,74 @@
+{
+ "passages": [
+  {
+   "id": "a1-01-le-matin",
+   "file": "a1-01-le-matin.json",
+   "title": "Le matin de Julie",
+   "level": "A1",
+   "blurb": "A rushed morning, start to finish: present tense, reflexive verbs and the three families of article."
+  },
+  {
+   "id": "a1-02-au-marche",
+   "file": "a1-02-au-marche.json",
+   "title": "Au marché",
+   "level": "A1",
+   "blurb": "A shopping list at the market: articles, quantities with de, and numbers up to a hundred."
+  },
+  {
+   "id": "a1-03-la-chambre",
+   "file": "a1-03-la-chambre.json",
+   "title": "La chambre de Théo",
+   "level": "A1",
+   "blurb": "One small room, described from the window to under the bed: il y a, place prepositions, adjective agreement and possessives."
+  },
+  {
+   "id": "a2-01-le-weekend",
+   "file": "a2-01-le-weekend.json",
+   "title": "Le week-end de Sarah",
+   "level": "A2",
+   "blurb": "A quiet Saturday that does not stay quiet: the passé composé with both auxiliaries, plus the connectors that order a story."
+  },
+  {
+   "id": "a2-02-le-message",
+   "file": "a2-02-le-message.json",
+   "title": "Le message",
+   "level": "A2",
+   "blurb": "A text from an unknown number: the futur simple, the three ways of asking a question, and the whole ne … family."
+  },
+  {
+   "id": "a2-03-chez-le-medecin",
+   "file": "a2-03-chez-le-medecin.json",
+   "title": "Chez le médecin",
+   "level": "A2",
+   "blurb": "A tired man, a waiting room and an awkward question: reflexive verbs, negation, object pronouns and il y a."
+  },
+  {
+   "id": "b1-01-le-train",
+   "file": "b1-01-le-train.json",
+   "title": "Le dernier train",
+   "level": "B1",
+   "blurb": "A delayed night train, a father's old story, and a stranger who knew him. Imparfait against passé composé, and the four relative pronouns."
+  },
+  {
+   "id": "b1-02-la-colocataire",
+   "file": "b1-02-la-colocataire.json",
+   "title": "La colocataire",
+   "level": "B1",
+   "blurb": "Two candidates for a spare room, one week of hesitation, and one phone call too late. Conditionnel, the three si-clauses, y and en, and comparatives."
+  },
+  {
+   "id": "b2-01-entretien",
+   "file": "b2-01-entretien.json",
+   "title": "L'entretien",
+   "level": "B2",
+   "blurb": "A job interview conducted in two languages at once: what is said aloud, and what is thought. Subjunctive triggers, verbs with à and de, on and the passive, and register from soutenu to familier."
+  },
+  {
+   "id": "b2-02-la-lettre",
+   "file": "b2-02-la-lettre.json",
+   "title": "La lettre de 1974",
+   "level": "B2",
+   "blurb": "An unsent letter in the bottom drawer, and a second handwriting at the foot of the last page. Plus-que-parfait, reported speech, participe présent, and lequel after prepositions."
+  }
+ ]
+}

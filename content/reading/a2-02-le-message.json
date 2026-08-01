@@ -1,0 +1,104 @@
+{
+  "id": "a2-02-le-message",
+  "title": "Le message",
+  "level": "A2",
+  "blurb": "A text from an unknown number: the futur simple, the three ways of asking a question, and the whole ne … family.",
+  "grammar": [
+    "futur-simple",
+    "questions",
+    "negation"
+  ],
+  "text": "Nadia regarde son téléphone.\nUn message arrive d'un numéro inconnu.\n\n« Bonjour ! Demain, nous serons à Paris vers dix heures.\nEst-ce que tu viendras à la gare ?\nNous n'aurons pas beaucoup de temps, mais nous mangerons ensemble.\nQui d'autre sera là ? »\n\nNadia ne connaît pas ce numéro et elle n'attend personne demain.\nElle répond : « Bonjour. Qui êtes-vous ? »\n\nLa réponse arrive tout de suite.\n« C'est moi, Papi ! J'ai un nouveau téléphone. »\n\nNadia sourit.\nSon grand-père n'écrit jamais de messages.\nIl ne sait pas envoyer une photo et il n'aime pas les ordinateurs.\nQuand il aura un problème, il téléphonera, comme toujours.\n\nMais demain, il sera à la gare à dix heures, et elle sera là aussi.\nQuand elle le verra, elle ne lui dira rien sur ce message.\nElle dira seulement : « Papi, tu écris très bien maintenant. »",
+  "gloss": {
+    "inconnu": "unknown",
+    "Papi": "Grandpa (affectionate)",
+    "sourit": "smiles",
+    "envoyer": "to send",
+    "numéro": "number"
+  },
+  "aloud": [
+    "Est-ce que tu viendras à la gare ?",
+    "Son grand-père n'écrit jamais de messages."
+  ],
+  "questions": [
+    {
+      "id": "a2-02-01",
+      "type": "mcq",
+      "q": "Qui a envoyé le message ?",
+      "choices": [
+        "Le frère de Nadia",
+        "Son grand-père",
+        "Une amie de Paris",
+        "Personne — c'est une erreur"
+      ],
+      "a": 1,
+      "why": "The signature *Papi* gives it away, and the explanation follows: *J'ai un nouveau téléphone* — which is why the number was unknown."
+    },
+    {
+      "id": "a2-02-02",
+      "type": "mcq",
+      "q": "Pourquoi Nadia ne reconnaît-elle pas le numéro ?",
+      "choices": [
+        "Son grand-père a changé de téléphone",
+        "Elle a perdu son téléphone",
+        "Le message vient d'une autre ville",
+        "Son grand-père n'a jamais son numéro"
+      ],
+      "a": 0,
+      "why": "The whole misunderstanding rests on one line of the reply. Everything else in the passage is Nadia guessing wrongly."
+    },
+    {
+      "id": "a2-02-03",
+      "type": "fill",
+      "q": "Demain, nous ___ à Paris vers dix heures. (être)",
+      "a": [
+        "serons"
+      ],
+      "why": "*Être* has the irregular future stem **ser-**, and then the endings are the usual *-ai, -as, -a, -ons, -ez, -ont*: *je serai, nous serons*."
+    },
+    {
+      "id": "a2-02-04",
+      "type": "fill",
+      "q": "Est-ce que tu ___ à la gare ? (venir)",
+      "a": [
+        "viendras"
+      ],
+      "why": "*Venir* takes the stem **viendr-**. Note that *est-ce que* leaves the word order completely alone, which is what makes it the safe question form."
+    },
+    {
+      "id": "a2-02-05",
+      "type": "mcq",
+      "q": "Complétez : « Son grand-père n'écrit ___ de messages. »",
+      "choices": [
+        "jamais",
+        "rien",
+        "personne",
+        "aucun"
+      ],
+      "a": 0,
+      "why": "*Ne … jamais* = never. *Rien* and *personne* are the object itself (nothing / nobody), so they could not sit here in front of *de messages*."
+    },
+    {
+      "id": "a2-02-06",
+      "type": "mcq",
+      "q": "Dans « Quand elle le verra, elle ne lui dira rien », pourquoi le verbe après « quand » est-il au futur ?",
+      "choices": [
+        "C'est une faute : il faut le présent",
+        "Parce que le français met le futur des deux côtés de « quand »",
+        "Parce que « quand » est ici une question",
+        "Parce que le verbe est irrégulier"
+      ],
+      "a": 1,
+      "why": "English says *when she sees him* with a present tense; French uses the future in both halves. The same holds after *lorsque*, *dès que* and *tant que*."
+    },
+    {
+      "id": "a2-02-07",
+      "type": "open",
+      "q": "Écrivez la réponse de Nadia à son grand-père : quatre phrases au futur, avec au moins une question.",
+      "a": [
+        "Papi, je serai à la gare à dix heures. Est-ce que tu auras une valise ? Nous mangerons ensemble près de la gare. Quand tu arriveras, je t'attendrai devant l'entrée."
+      ],
+      "why": "Arranging to meet is where the futur simple actually earns its keep, and it forces the *quand* + future rule to appear naturally."
+    }
+  ]
+}

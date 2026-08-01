@@ -1,0 +1,107 @@
+{
+  "id": "a2-03-chez-le-medecin",
+  "title": "Chez le médecin",
+  "level": "A2",
+  "blurb": "A tired man, a waiting room and an awkward question: reflexive verbs, negation, object pronouns and il y a.",
+  "grammar": [
+    "reflexive-verbs",
+    "negation",
+    "pronouns",
+    "il-y-a"
+  ],
+  "text": "Paul ne se sent pas bien depuis lundi.\nIl ne dort plus, il ne mange presque rien, et il se lève tous les matins très fatigué.\nAlors il va chez le médecin.\n\nDans la salle d'attente, il y a six personnes.\nPaul s'assoit et attend.\nIl n'y a rien à lire, seulement un vieux journal.\n\nEnfin, le médecin l'appelle.\n« Alors, qu'est-ce qui ne va pas ? »\nPaul lui explique tout : la fatigue, la tête, les nuits.\nLe médecin l'écoute et ne dit rien.\nPuis il lui pose une seule question.\n« Combien de cafés est-ce que vous buvez par jour ? »\n\nPaul réfléchit.\n« Six. Peut-être sept. »\n« Et le soir aussi ? »\n« Le soir aussi. »\n\nLe médecin ne lui donne pas de médicaments.\nIl lui donne une feuille avec trois mots : eau, marche, sommeil.\nPaul se lève et il ne dit rien.\nDans la rue, il passe devant un café et il ne s'arrête pas.",
+  "gloss": {
+    "la salle d'attente": "the waiting room",
+    "s'assoit": "sits down",
+    "réfléchit": "thinks it over",
+    "une feuille": "a sheet of paper",
+    "sommeil": "sleep",
+    "s'arrête": "stops",
+    "médicaments": "medicine, drugs"
+  },
+  "aloud": [
+    "Paul ne se sent pas bien depuis lundi.",
+    "Il n'y a rien à lire, seulement un vieux journal."
+  ],
+  "questions": [
+    {
+      "id": "a2-03-01",
+      "type": "mcq",
+      "q": "Combien de personnes y a-t-il dans la salle d'attente ?",
+      "choices": [
+        "Trois",
+        "Six",
+        "Sept",
+        "Le texte ne le dit pas"
+      ],
+      "a": 1,
+      "why": "*Il y a six personnes.* Careful: *six* and *sept* both come back later as the number of coffees, which is the trap here."
+    },
+    {
+      "id": "a2-03-02",
+      "type": "mcq",
+      "q": "Quel est le vrai problème de Paul ?",
+      "choices": [
+        "Il est malade",
+        "Il travaille trop",
+        "Il boit trop de café",
+        "Il ne mange pas assez"
+      ],
+      "a": 2,
+      "why": "The doctor asks one question and stops. The answer — six or seven coffees, evenings included — is the diagnosis, and the last line shows Paul has understood it."
+    },
+    {
+      "id": "a2-03-03",
+      "type": "fill",
+      "q": "Paul ne ___ sent pas bien.",
+      "a": [
+        "se"
+      ],
+      "why": "In a negative, *ne* wraps **both** the reflexive pronoun and the verb: *ne se sent pas*. The pronoun never escapes to the outside of *ne … pas*."
+    },
+    {
+      "id": "a2-03-04",
+      "type": "fill",
+      "q": "Paul explique tout au médecin. → Paul ___ explique tout.",
+      "a": [
+        "lui"
+      ],
+      "why": "*Expliquer* takes **à** before a person, so the pronoun is indirect: **lui**. Compare *le médecin l'écoute* — *écouter* takes no preposition in French, so it is direct."
+    },
+    {
+      "id": "a2-03-05",
+      "type": "mcq",
+      "q": "Complétez : « Il n'y a ___ à lire dans la salle d'attente. »",
+      "choices": [
+        "rien",
+        "pas",
+        "personne",
+        "jamais"
+      ],
+      "a": 0,
+      "why": "*Rien* = nothing, for a thing; *personne* = nobody, for a person. *Il n'y a pas* would need an object after it: *il n'y a pas de journal*."
+    },
+    {
+      "id": "a2-03-06",
+      "type": "mcq",
+      "q": "« Il ne dort plus » veut dire :",
+      "choices": [
+        "Il ne dort jamais",
+        "Il ne dort pas encore",
+        "Il dormait avant, mais maintenant non",
+        "Il dort beaucoup"
+      ],
+      "a": 2,
+      "why": "*Ne … plus* means *not any more*: it says something has stopped. *Ne … jamais* would say it never happened at all."
+    },
+    {
+      "id": "a2-03-07",
+      "type": "open",
+      "q": "Vous êtes le médecin. Écrivez quatre conseils pour Paul, chacun avec une négation.",
+      "a": [
+        "Ne buvez pas de café après midi. Ne travaillez plus le soir. Ne mangez rien avant de vous coucher. Ne vous levez pas trop tard le week-end."
+      ],
+      "why": "Advice is where negation and reflexives meet the imperative: with a negative command the pronoun goes back in front of the verb — *ne vous levez pas*, not *levez-vous pas*."
+    }
+  ]
+}

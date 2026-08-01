@@ -1,0 +1,103 @@
+{
+  "id": "a2-01-le-weekend",
+  "title": "Le week-end de Sarah",
+  "level": "A2",
+  "blurb": "A quiet Saturday that does not stay quiet: the passé composé with both auxiliaries, plus the connectors that order a story.",
+  "grammar": [
+    "passe-compose",
+    "adverbs-connectors"
+  ],
+  "text": "Samedi matin, Sarah s'est levée très tard.\nD'abord, elle a pris un café devant la fenêtre.\nEnsuite, elle a lu pendant deux heures.\nElle n'a rien fait d'autre, et elle a beaucoup aimé ça.\n\nVers midi, son téléphone a sonné.\n« Je suis à la gare », a dit son frère. « Tu viens me chercher ? »\nSarah n'a pas répondu tout de suite.\nPuis elle a mis son manteau et elle est sortie.\n\nIls ont marché jusqu'au parc.\nAprès, ils ont mangé une pizza et ils ont parlé pendant tout l'après-midi.\nLe soir, ils sont allés au cinéma.\nSarah est rentrée à onze heures et elle s'est couchée immédiatement.\n\nFinalement, elle n'a pas fini son livre.\nMais dimanche, elle a raconté ce samedi à tout le monde, deux fois.\nElle a déjà oublié le livre.",
+  "gloss": {
+    "a sonné": "rang",
+    "me chercher": "to pick me up",
+    "raconté": "told, recounted",
+    "jusqu'au": "as far as, up to"
+  },
+  "aloud": [
+    "D'abord, elle a pris un café devant la fenêtre.",
+    "Puis elle a mis son manteau et elle est sortie."
+  ],
+  "questions": [
+    {
+      "id": "a2-01-01",
+      "type": "mcq",
+      "q": "Qu'est-ce que Sarah a fait en premier, samedi matin ?",
+      "choices": [
+        "Elle a lu son livre",
+        "Elle a pris un café",
+        "Elle a téléphoné à son frère",
+        "Elle est allée à la gare"
+      ],
+      "a": 1,
+      "why": "The connector *d'abord* marks it: coffee first, reading second (*ensuite*). Sequence words are how a French narrative signposts order."
+    },
+    {
+      "id": "a2-01-02",
+      "type": "mcq",
+      "q": "Pourquoi Sarah est-elle sortie ?",
+      "choices": [
+        "Pour aller au cinéma",
+        "Pour acheter une pizza",
+        "Parce que son frère est arrivé à la gare",
+        "Parce qu'elle a fini son livre"
+      ],
+      "a": 2,
+      "why": "The phone call is the turn of the story. Everything after it happens because the brother arrived unannounced."
+    },
+    {
+      "id": "a2-01-03",
+      "type": "fill",
+      "q": "Sarah s'est ___ très tard. (se lever)",
+      "a": [
+        "levée"
+      ],
+      "why": "Reflexive verbs always take *être*, and the participle agrees with the subject when the reflexive pronoun is the direct object — Sarah is feminine, so **levée**."
+    },
+    {
+      "id": "a2-01-04",
+      "type": "mcq",
+      "q": "Quelle forme est correcte ?",
+      "choices": [
+        "Sarah est rentrée à onze heures.",
+        "Sarah a rentré à onze heures.",
+        "Sarah est rentré à onze heures.",
+        "Sarah a rentrée à onze heures."
+      ],
+      "a": 0,
+      "why": "*Rentrer* with no object is on the *être* list, and with *être* the participle agrees with the subject. Add an object and it flips: *elle a rentré la voiture*."
+    },
+    {
+      "id": "a2-01-05",
+      "type": "fill",
+      "q": "___, elle a pris un café. Ensuite, elle a lu.",
+      "a": [
+        "D'abord",
+        "d'abord"
+      ],
+      "why": "*D'abord … ensuite … puis … enfin* is the standard chain for ordering events. *Finalement* closes the story, as it does in the last paragraph here."
+    },
+    {
+      "id": "a2-01-06",
+      "type": "mcq",
+      "q": "Où va l'adverbe ? « Elle a oublié le livre. » (déjà)",
+      "choices": [
+        "Déjà elle a oublié le livre.",
+        "Elle déjà a oublié le livre.",
+        "Elle a déjà oublié le livre.",
+        "Elle a oublié déjà le livre."
+      ],
+      "a": 2,
+      "why": "Short adverbs — *déjà, bien, mal, encore, souvent, presque* — sit **between** the auxiliary and the participle. Long ones go after it: *elle a répondu immédiatement*."
+    },
+    {
+      "id": "a2-01-07",
+      "type": "open",
+      "q": "Racontez votre dernier week-end en cinq phrases au passé composé, avec au moins trois connecteurs.",
+      "a": [
+        "D'abord, je me suis levé tard. Ensuite, j'ai pris un café et j'ai lu le journal. Puis, je suis sorti avec un ami. Après, nous avons mangé au restaurant. Finalement, je suis rentré très tard."
+      ],
+      "why": "The two auxiliaries and the connectors have to be practised together: choosing *être* or *avoir* is only half the job, and without *d'abord / ensuite / puis* the result reads as a list rather than a story."
+    }
+  ]
+}

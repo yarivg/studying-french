@@ -1,0 +1,105 @@
+{
+  "id": "a1-02-au-marche",
+  "title": "Au marché",
+  "level": "A1",
+  "blurb": "A shopping list at the market: articles, quantities with de, and numbers up to a hundred.",
+  "grammar": [
+    "articles",
+    "quantity",
+    "numbers"
+  ],
+  "text": "Le samedi, Marc va au marché avec sa mère.\nElle a une liste : un kilo de pommes, six œufs, du pain et un peu de fromage.\nMarc porte le panier.\n\nDevant eux, il y a beaucoup de monde.\nLa marchande vend des tomates à trois euros le kilo.\n« Deux kilos de tomates, s'il vous plaît », dit la mère de Marc.\nLa marchande compte : « Vingt-deux euros cinquante. »\n\nDans la rue, Marc regarde le panier.\nIl compte : les pommes, les œufs, le pain, les tomates.\nIl n'y a pas de fromage.\n« Maman, nous n'avons pas de fromage ! »\n\nSa mère sourit.\nElle regarde la main droite de Marc.\nDans cette main, il y a un gros morceau de fromage.",
+  "gloss": {
+    "le panier": "the basket",
+    "La marchande": "the (woman) stallholder",
+    "œufs": "eggs",
+    "un kilo": "a kilo",
+    "morceau": "piece",
+    "sourit": "smiles"
+  },
+  "aloud": [
+    "Marc va au marché avec sa mère.",
+    "Deux kilos de tomates, s'il vous plaît"
+  ],
+  "questions": [
+    {
+      "id": "a1-02-01",
+      "type": "mcq",
+      "q": "Combien de tomates la mère de Marc achète-t-elle ?",
+      "choices": [
+        "Un kilo",
+        "Deux kilos",
+        "Trois kilos",
+        "Six kilos"
+      ],
+      "a": 1,
+      "why": "She asks for *deux kilos*. *Trois euros* is the price per kilo and *six* belongs to the eggs — the passage puts three numbers close together on purpose."
+    },
+    {
+      "id": "a1-02-02",
+      "type": "mcq",
+      "q": "Où est le fromage à la fin ?",
+      "choices": [
+        "Dans le panier",
+        "Chez la marchande",
+        "Dans la main de Marc",
+        "À la maison"
+      ],
+      "a": 2,
+      "why": "The turn: Marc has been holding it the whole time. *Dans cette main, il y a un gros morceau de fromage.*"
+    },
+    {
+      "id": "a1-02-03",
+      "type": "fill",
+      "q": "un kilo ___ pommes",
+      "a": [
+        "de",
+        "d'"
+      ],
+      "why": "Every expression of quantity — a container, a measure, *beaucoup*, *un peu* — is followed by bare **de**, never *des*, even before a plural noun."
+    },
+    {
+      "id": "a1-02-04",
+      "type": "mcq",
+      "q": "Complétez : « Devant eux, il y a beaucoup ___ monde. »",
+      "choices": [
+        "de",
+        "du",
+        "des",
+        "de la"
+      ],
+      "a": 0,
+      "why": "*Beaucoup de* takes bare **de**. *Beaucoup des* exists but means *many of the* — a specific set already known to both speakers."
+    },
+    {
+      "id": "a1-02-05",
+      "type": "fill",
+      "q": "Il y a du fromage. → Il n'y a pas ___ fromage.",
+      "a": [
+        "de",
+        "d'"
+      ],
+      "why": "The partitive **du** collapses to **de** after a negative. Only the definite article survives: *je n'aime pas **le** fromage*."
+    },
+    {
+      "id": "a1-02-06",
+      "type": "fill",
+      "q": "Écrivez le prix en lettres : 22 €",
+      "a": [
+        "vingt-deux euros",
+        "vingt deux euros",
+        "vingt-deux"
+      ],
+      "why": "Everything except 21, 31, 41, 51, 61 and 71 takes a hyphen and no *et*: *vingt-deux*, but *vingt et un*."
+    },
+    {
+      "id": "a1-02-07",
+      "type": "open",
+      "q": "Écrivez votre liste de courses : cinq choses, chacune avec un article ou une quantité.",
+      "a": [
+        "Un kilo de pommes, une bouteille d'eau, du pain, six œufs et un peu de fromage."
+      ],
+      "why": "A shopping list forces the choice between *du / de la / des* (an unmeasured amount) and *quantité + de* (a measured one) on every single item."
+    }
+  ]
+}

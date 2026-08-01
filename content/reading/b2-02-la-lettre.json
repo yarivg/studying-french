@@ -1,0 +1,94 @@
+{
+  "id": "b2-02-la-lettre",
+  "title": "La lettre de 1974",
+  "level": "B2",
+  "blurb": "An unsent letter in the bottom drawer, and a second handwriting at the foot of the last page. Plus-que-parfait, reported speech, participe présent, and lequel after prepositions.",
+  "grammar": ["plus-que-parfait", "discours-indirect", "participe-present", "relatifs-composes"],
+  "text": "Ma mère est morte en février, et c'est moi qui ai vidé l'appartement.\nDans le tiroir du bas, sous des papiers qu'elle n'avait jamais jetés, j'ai trouvé une enveloppe.\nL'enveloppe, sur laquelle il n'y avait aucun timbre, portait un prénom que je ne connaissais pas.\nElle avait écrit la lettre en 1974.\nElle ne l'avait jamais envoyée.\n\nLa lettre disait qu'elle partirait le mois suivant, qu'elle avait déjà acheté le billet et qu'elle ne reviendrait pas.\nElle demandait à cet homme s'il l'attendrait à Marseille.\nElle lui disait de ne rien dire à personne, et surtout pas à sa famille.\nTrois pages, écrites d'une main que je reconnaissais et d'une voix que je n'avais jamais entendue.\n\nNe sachant pas quoi faire, j'ai appelé ma tante.\nElle a mis longtemps à répondre.\nPuis, choisissant ses mots, elle m'a expliqué que ma mère avait vingt-trois ans cette année-là et qu'elle avait changé d'avis toute seule.\nJe lui ai demandé pourquoi.\nElle m'a répondu qu'elle ne le savait pas, et que personne ne le lui avait jamais demandé.\n\nLa maison dans laquelle j'ai grandi, celle où mon père réparait des vélos le dimanche, existe à cause d'une lettre restée dans un tiroir.\nOu plutôt à cause du jour au cours duquel ma mère a décidé de la garder.\nCe que je ne sais pas, c'est si elle l'a regretté.\nCe dont je suis sûr, c'est qu'elle l'a gardée cinquante ans.\n\nAyant relu les trois pages, je les ai remises dans le tiroir.\nPuis je les ai reprises.\nEn bas de la dernière page, il y avait une seconde écriture, plus petite, que je connaissais très bien.\nMon père avait écrit trois mots, à un moment dont personne ne m'avait jamais parlé.\n« Je sais. Reste. »",
+  "gloss": {
+    "vidé": "emptied out (vider, to empty)",
+    "tiroir": "drawer",
+    "jetés": "thrown away (jeter)",
+    "timbre": "stamp",
+    "prénom": "first name",
+    "j'ai grandi": "I grew up (grandir)",
+    "une main": "here: a hand, i.e. handwriting",
+    "a mis longtemps à": "took a long time to (mettre longtemps à)",
+    "changé d'avis": "changed her mind (changer d'avis)",
+    "au cours duquel": "in the course of which, during which",
+    "écriture": "handwriting"
+  },
+  "aloud": [
+    "Elle ne l'avait jamais envoyée.",
+    "Ne sachant pas quoi faire, j'ai appelé ma tante."
+  ],
+  "questions": [
+    {
+      "id": "lettre-01",
+      "type": "mcq",
+      "q": "Pourquoi n'y a-t-il aucun timbre sur l'enveloppe ?",
+      "choices": [
+        "La lettre a été rendue à sa mère",
+        "La lettre n'a jamais été envoyée",
+        "Le timbre est tombé avec le temps",
+        "Sa mère l'a remise en main propre"
+      ],
+      "a": 1,
+      "why": "Le texte le dit une ligne plus loin, au plus-que-parfait : « Elle ne l'avait jamais envoyée. » L'absence de timbre est l'indice, la phrase est la preuve."
+    },
+    {
+      "id": "lettre-02",
+      "type": "fill",
+      "q": "Discours direct : « Je partirai le mois prochain. » Rapporté : La lettre disait qu'elle ___ le mois suivant.",
+      "a": ["partirait"],
+      "why": "Quand le verbe introducteur est au passé, le futur simple devient conditionnel présent, et le mois prochain devient le mois suivant. Les deux décalages vont toujours ensemble."
+    },
+    {
+      "id": "lettre-03",
+      "type": "mcq",
+      "q": "« Ne sachant pas quoi faire, j'ai appelé ma tante. » Qu'est-ce que sachant ?",
+      "choices": [
+        "Un gérondif",
+        "Un adjectif verbal, qui devrait s'accorder",
+        "Un participe présent, équivalent à comme je ne savais pas",
+        "Un participe passé"
+      ],
+      "a": 2,
+      "why": "Pas de en devant : ce n'est pas un gérondif. Il ne décrit pas un nom : ce n'est pas un adjectif verbal. C'est un participe présent, qui remplace ici une subordonnée de cause, et il est invariable."
+    },
+    {
+      "id": "lettre-04",
+      "type": "fill",
+      "q": "L'enveloppe, ___ il n'y avait aucun timbre, portait un prénom inconnu.",
+      "a": ["sur laquelle"],
+      "why": "La préposition sur ne peut pas rester en fin de proposition comme en anglais ; elle passe devant et entraîne lequel, accordé au féminin singulier : sur laquelle."
+    },
+    {
+      "id": "lettre-05",
+      "type": "mcq",
+      "q": "Pourquoi « des papiers qu'elle n'avait jamais jetés » au plus-que-parfait, et non « qu'elle n'a jamais jetés » ?",
+      "choices": [
+        "Parce que la phrase est négative",
+        "Parce que le non-événement est antérieur au moment où le narrateur ouvre le tiroir",
+        "Parce que jeter est un verbe irrégulier",
+        "Parce qu'il s'agit d'une habitude"
+      ],
+      "a": 1,
+      "why": "Le plus-que-parfait est le passé derrière le passé : le récit se situe au moment où il vide l'appartement, et tout ce qui précède ce moment y descend d'un cran."
+    },
+    {
+      "id": "lettre-06",
+      "type": "fill",
+      "q": "___ je suis sûr, c'est qu'elle l'a gardée cinquante ans.",
+      "a": ["ce dont", "Ce dont"],
+      "why": "On dit être sûr de quelque chose, et il n'y a aucun nom auquel rattacher le pronom : de + une idée donne ce dont. Avec être sûr que, on aurait ce que — la préposition décide."
+    },
+    {
+      "id": "lettre-07",
+      "type": "open",
+      "q": "Les trois derniers mots sont de la main du père. Qu'est-ce qu'ils changent dans tout ce qui précède, et pourquoi le narrateur les découvre-t-il seulement à la deuxième lecture ?",
+      "a": ["Ils déplacent le mystère. Avant, l'histoire était celle d'une femme qui avait failli partir et s'était ravisée seule — la tante l'affirme, et personne ne l'avait jamais interrogée. Après, on apprend que le père avait lu la lettre, qu'il n'avait rien dit, et qu'il avait demandé, en trois mots, sans reproche. La mère n'a donc pas changé d'avis toute seule, et le silence de cinquante ans était partagé, pas subi. Le narrateur ne le voit qu'à la deuxième lecture parce qu'il cherchait un inconnu, pas son père : la seconde écriture est en bas de la dernière page, exactement là où l'on ne regarde plus."],
+      "why": "Le texte prépare la chute par le vocabulaire du silence : « ne rien dire à personne », « personne ne le lui avait jamais demandé », « un moment dont personne ne m'avait jamais parlé »."
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+ "id": "b2-01-entretien",
+ "title": "L'entretien",
+ "level": "B2",
+ "blurb": "A job interview conducted in two languages at once: what is said aloud, and what is thought. Subjunctive triggers, verbs with à and de, on and the passive, and register from soutenu to familier.",
+ "grammar": [
+  "subjonctif-uses",
+  "verb-prepositions",
+  "passive-on",
+  "register"
+ ],
+ "text": "La convocation était rédigée dans un français que personne ne parle à voix haute.\n« Nous vous prions de bien vouloir vous présenter le 14 mars à neuf heures. »\nOn m'a demandé d'apporter deux pièces d'identité et un justificatif de domicile.\nIl fallait donc que je sois devant l'immeuble à neuf heures moins le quart.\n\nIls étaient trois derrière la table.\n« Asseyez-vous, je vous en prie. Nous sommes ravis que vous soyez là. »\nLa directrice a commencé à lire mon dossier à voix haute, ligne par ligne.\nJ'avais envie de partir.\n\n« Il est important que vous compreniez notre méthode », a-t-elle dit.\n« Ici, on ne dit pas client. On dit partenaire. »\nDans ma tête, j'ai pensé : « Elle est relou, celle-là. »\nÀ voix haute, j'ai répondu : « Je comprends parfaitement. »\nDeux langues, deux personnes, la même seconde.\n\n« Bien que votre parcours soit solide, il manque quelque chose », a dit l'homme de gauche.\n« Je doute que vous sachiez travailler seul. »\nJ'ai arrêté de sourire.\n« Pardon, mais rien dans mon dossier ne permet de dire ça. »\n« Je ne pense pas que ce soit une question. C'est une accusation. »\n\nLe silence a duré trois secondes, ce qui est très long.\nLa directrice a souri pour la première fois de la matinée.\n« Il faut que je vous dise quelque chose. Cette question, on la pose à tout le monde. »\n« On cherche à savoir qui ose répondre. »\n\nLa lettre est arrivée le lendemain.\n« Nous avons le plaisir de vous informer que votre candidature a été retenue. »\nJ'ai appelé mon frère.\n« C'est bon, j'ai le boulot. »\nIl a ri.\n« Il fallait que quelqu'un leur tienne tête une fois. »\n",
+ "gloss": {
+  "la convocation": "the summons, the official letter asking you to attend",
+  "rédigé": "drafted, written up",
+  "pièces d'identité": "forms of ID",
+  "un justificatif de domicile": "proof of address",
+  "parcours": "background, career record",
+  "relou": "familier (verlan of lourd): annoying, heavy going",
+  "ose": "dares (oser, to dare)",
+  "retenue": "selected, accepted",
+  "le boulot": "familier: the job, work"
+ },
+ "aloud": [
+  "Ils étaient trois derrière la table.",
+  "J'ai arrêté de sourire."
+ ],
+ "questions": [
+  {
+   "id": "entretien-01",
+   "type": "mcq",
+   "q": "« Nous vous prions de bien vouloir vous présenter le 14 mars. » De quel registre relève cette phrase ?",
+   "choices": [
+    "Familier",
+    "Courant",
+    "Soutenu",
+    "Argot"
+   ],
+   "a": 2,
+   "why": "Nous plutôt que on, la formule figée prier de bien vouloir, aucune contraction : c'est le français administratif. En courant on écrirait « Merci de vous présenter le 14 mars »."
+  },
+  {
+   "id": "entretien-02",
+   "type": "fill",
+   "q": "Il est important que vous ___ (comprendre) notre méthode.",
+   "a": [
+    "compreniez"
+   ],
+   "why": "Il est important que commente quelque chose qui n'est pas encore acquis, donc subjonctif. Comparez avec il est certain que vous comprenez, qui affirme un fait et garde l'indicatif."
+  },
+  {
+   "id": "entretien-03",
+   "type": "mcq",
+   "q": "Pourquoi « Je doute que vous sachiez » et non « Je doute que vous savez » ?",
+   "choices": [
+    "Parce que savoir est irrégulier",
+    "Parce que douter que exprime l'incertitude et déclenche le subjonctif",
+    "Parce que le sujet change entre les deux moitiés",
+    "Parce que la phrase est négative"
+   ],
+   "a": 1,
+   "why": "Le subjonctif n'est pas choisi pour le sens, il est déclenché par le mot d'avant. Douter que, il est possible que, ne pas croire que : tout ce qui met le fait en doute prend le subjonctif."
+  },
+  {
+   "id": "entretien-04",
+   "type": "fill",
+   "q": "J'ai arrêté ___ sourire.",
+   "a": [
+    "de",
+    "d'"
+   ],
+   "why": "Arrêter de, comme essayer de, décider de, refuser de : les verbes d'arrêt et de décision prennent de. Commencer, lui, prend à — d'où « elle a commencé à lire » plus haut."
+  },
+  {
+   "id": "entretien-05",
+   "type": "mcq",
+   "q": "Pourquoi l'homme de gauche a-t-il dit qu'il doutait que le candidat sache travailler seul ?",
+   "choices": [
+    "Le dossier du candidat était faible",
+    "Il voulait éliminer le candidat",
+    "C'est une question posée à tous, pour voir qui ose répondre",
+    "La directrice le lui avait demandé"
+   ],
+   "a": 2,
+   "why": "La directrice l'explique après le silence : « Cette question, on la pose à tout le monde. On cherche à savoir qui ose répondre. » L'accusation était un test, pas un jugement."
+  },
+  {
+   "id": "entretien-06",
+   "type": "mcq",
+   "q": "La lettre dit « votre candidature a été retenue ». Pourquoi le passif ici, alors que le texte emploie on partout ailleurs ?",
+   "choices": [
+    "Parce qu'on ne peut pas dire on avec candidature",
+    "Parce que le passif appartient au registre écrit et formel, et on au registre parlé",
+    "Parce que l'agent est important et doit être nommé",
+    "Parce que le verbe retenir n'a pas de forme active"
+   ],
+   "a": 1,
+   "why": "Le français parlé évite le passif et dit « on a retenu votre candidature ». Le passif survit surtout à l'écrit officiel — c'est justement pour cela qu'il apparaît dans la lettre et nulle part dans la tête du narrateur."
+  },
+  {
+   "id": "entretien-07",
+   "type": "open",
+   "q": "« Deux langues, deux personnes, la même seconde. » Relevez dans le texte ce qui appartient à chacune des deux langues, et dites ce que le narrateur gagne à passer de l'une à l'autre.",
+   "a": [
+    "La langue de la salle : « Nous vous prions de bien vouloir », « Je vous en prie », « Nous sommes ravis que vous soyez là », « Je comprends parfaitement », « Nous avons le plaisir de vous informer ». La langue intérieure : « Elle est relou, celle-là », « C'est bon, j'ai le boulot ». Le narrateur survit à l'entretien parce qu'il tient les deux séparées ; le seul moment où il laisse passer sa vraie voix dans la salle — « C'est une accusation » — est celui qui lui obtient le poste."
+   ],
+   "why": "Le registre n'est pas un ornement : c'est le sujet du texte. Mélanger les deux niveaux dans la même phrase (« Veuillez me filer une clope ») est ce qui trahit un apprenant ; les tenir séparés est ce que fait un locuteur."
+  }
+ ]
+}

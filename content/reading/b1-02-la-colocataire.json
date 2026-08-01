@@ -1,0 +1,89 @@
+{
+  "id": "b1-02-la-colocataire",
+  "title": "La colocataire",
+  "level": "B1",
+  "blurb": "Two candidates for a spare room, one week of hesitation, and one phone call too late. Conditionnel, the three si-clauses, y and en, and comparatives.",
+  "grammar": ["conditionnel", "si-clauses", "y-en", "comparatives"],
+  "text": "Ma colocataire est partie en mars, et depuis, l'appartement est trop grand pour moi.\nSi je vivais seul, je paierais huit cents euros par mois.\nJe n'en ai pas les moyens.\nJ'ai donc mis une annonce : « Chambre à louer, quartier calme, personne calme. »\n\nLe premier candidat était plus jeune que moi et beaucoup plus sûr de lui.\n« Je ferais la cuisine tous les soirs, si vous vouliez », m'a-t-il dit.\nPuis il a parlé de son ancien appartement, qui avait une terrasse.\nIl en a parlé pendant vingt minutes.\n« Ici, il n'y en a pas », a-t-il ajouté, comme si c'était ma faute.\n\nLa deuxième candidate posait moins de questions, mais de meilleures questions.\n« Est-ce qu'il y a du bruit le matin ? »\n— Il y en a un peu, vers sept heures.\n« Ce n'est pas grave, je me lève plus tôt que ça. »\nElle est restée vingt minutes sans rien promettre.\n\nJ'ai hésité une semaine entière.\nLe premier serait plus drôle ; la deuxième serait plus facile à vivre.\nSi je prenais le premier, l'appartement ne serait jamais silencieux.\nMa sœur m'a donné le meilleur conseil : « À ta place, je choisirais celle qui pose des questions. »\n\nJ'ai appelé la deuxième le lundi suivant.\n« J'ai trouvé autre chose vendredi », m'a-t-elle répondu.\nJ'aurais dû appeler plus tôt.\nSi je l'avais appelée le mardi, elle serait là aujourd'hui.\nLe premier arrive samedi, avec sa machine à café.\nIl y en a déjà deux dans la cuisine.",
+  "gloss": {
+    "colocataire": "flatmate",
+    "une annonce": "an advert, a listing",
+    "à louer": "for rent",
+    "les moyens": "the means — avoir les moyens, to be able to afford it",
+    "sûr de lui": "sure of himself, self-assured",
+    "à ta place": "if I were you"
+  },
+  "aloud": [
+    "Je n'en ai pas les moyens.",
+    "Il y en a déjà deux dans la cuisine."
+  ],
+  "questions": [
+    {
+      "id": "coloc-01",
+      "type": "mcq",
+      "q": "Pourquoi le narrateur cherche-t-il quelqu'un ?",
+      "choices": [
+        "Il n'aime pas vivre seul",
+        "Il ne pourrait pas payer le loyer tout seul",
+        "Sa sœur le lui a demandé",
+        "Il veut quelqu'un qui fasse la cuisine"
+      ],
+      "a": 1,
+      "why": "« Si je vivais seul, je paierais huit cents euros par mois. Je n'en ai pas les moyens. » Le en remplace de cette somme : il n'a pas les moyens de la payer."
+    },
+    {
+      "id": "coloc-02",
+      "type": "fill",
+      "q": "Si je vivais seul, je ___ (payer) huit cents euros par mois.",
+      "a": ["paierais", "payerais"],
+      "why": "Type 2 : si + imparfait dans une moitié, conditionnel présent dans l'autre. Les deux orthographes du radical, paier- et payer-, sont admises."
+    },
+    {
+      "id": "coloc-03",
+      "type": "mcq",
+      "q": "Pourquoi « si je vivais seul » et jamais « si je vivrais seul » ?",
+      "choices": [
+        "Parce que vivre est un verbe irrégulier",
+        "Parce que la phrase parle du passé",
+        "Parce que le conditionnel ne se met jamais après si conditionnel",
+        "Parce que le sujet est je"
+      ],
+      "a": 2,
+      "why": "Après un si de condition, on n'écrit ni futur ni conditionnel : présent, imparfait ou plus-que-parfait seulement. Le conditionnel vit dans l'autre moitié de la phrase."
+    },
+    {
+      "id": "coloc-04",
+      "type": "fill",
+      "q": "— Est-ce qu'il y a du bruit le matin ? — Il y ___ a un peu.",
+      "a": ["en"],
+      "why": "Du bruit est une quantité indéterminée : elle se reprend par en, qui se place juste avant le verbe et juste après y. Il y en a est l'ordre à retenir."
+    },
+    {
+      "id": "coloc-05",
+      "type": "mcq",
+      "q": "Dans « de meilleures questions », pourquoi meilleures et non mieux ?",
+      "choices": [
+        "Parce que questions est au pluriel",
+        "Parce que meilleur est un adjectif et qualifie le nom questions",
+        "Parce que mieux ne s'emploie qu'au singulier",
+        "Parce que la phrase est déjà comparative avec moins de"
+      ],
+      "a": 1,
+      "why": "Meilleur est le comparatif de bon, donc un adjectif : il accompagne un nom et s'accorde. Mieux est le comparatif de bien, donc un adverbe : il accompagne un verbe (elle écoutait mieux)."
+    },
+    {
+      "id": "coloc-06",
+      "type": "fill",
+      "q": "Si je l'avais appelée le mardi, elle ___ (être) là aujourd'hui.",
+      "a": ["serait"],
+      "why": "Une condition passée avec un résultat présent : plus-que-parfait dans la moitié en si, conditionnel présent dans l'autre. Avec un conditionnel passé (elle aurait été là), on parlerait de mardi, pas d'aujourd'hui."
+    },
+    {
+      "id": "coloc-07",
+      "type": "open",
+      "q": "La dernière phrase est « Il y en a déjà deux dans la cuisine. » Qu'est-ce qu'elle dit du premier candidat, et de la semaine d'hésitation du narrateur ?",
+      "a": ["Le candidat arrive avec quelque chose dont personne n'a besoin, exactement comme il est arrivé à la visite avec vingt minutes de terrasse dont personne n'avait parlé : il n'écoute pas. Et le narrateur, qui a passé une semaine à comparer, se retrouve avec celui qu'il n'avait pas choisi. L'hésitation lui a coûté le choix lui-même."],
+      "why": "Le texte ne juge jamais le premier candidat directement ; il laisse deux détails concrets (la terrasse, la machine à café) faire le travail."
+    }
+  ]
+}

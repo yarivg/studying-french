@@ -389,11 +389,14 @@
 
       html += '<h2>Flashcards</h2>' +
         '<p>Each word is two cards, French to English and back, scheduled ' +
-        'separately. A card reaches box 4 after four correct answers on four ' +
-        'different days, so "learned" takes a week at the earliest.</p>' +
+        'separately. <strong>Got right</strong> counts every card you have ever ' +
+        'answered correctly. <strong>Stuck</strong> is the stricter claim: still ' +
+        'right after four reviews spread over at least a fortnight, which is what ' +
+        'the boxes are for. The first number moves today; the second is the one ' +
+        'that means you will still know the word next month.</p>' +
         '<div class="stat-grid">' +
-          stat(stats.learned, 'Learned (box 4+)', 'good') +
-          stat(stats.learning, 'Started, not there yet', stats.learning ? 'accent' : '') +
+          stat(stats.right, 'Got right at least once', stats.right ? 'accent' : '') +
+          stat(stats.learned, 'Stuck (box 4+)', 'good') +
           stat(stats.fresh, 'Never seen', '') +
           stat(Progress.reviewsToday(), 'Reviews today', 'accent') +
         '</div>' +
