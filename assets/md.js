@@ -35,6 +35,16 @@ window.MD = (function () {
 
   /* ---------------------------------------------------------- inline */
 
+  // A phonetic character: lower-case Latin plus the IPA symbols these
+  // lessons use, the nasal tilde and the liaison undertie.
+  var PH = 'a-zà-ÿɑɛœøəɔɥʁʃʒɲŋɡʎæ\\u0303\\u0329.ːˈ\\u203f\\-';
+  // Spaces are allowed inside a transcription but never at its edges, so
+  // "a / b / c" separators are not mistaken for one.
+  var IPA = new RegExp(
+    '(^|[\\s(\\[=,;·—–>*])' +
+    '\\/([' + PH + '](?:[' + PH + ' ]{0,38}[' + PH + '])?)\\/' +
+    '(?=$|[\\s.,;:!?)\\]<—–·|*])', 'g');
+
   function inline(src) {
     if (src == null) return '';
     var codes = [];
@@ -51,6 +61,12 @@ window.MD = (function () {
       var ext = /^https?:/.test(href) ? ' target="_blank" rel="noopener"' : '';
       return '<a href="' + href + '"' + ext + '>' + text + '</a>';
     });
+
+    // Phonetic transcriptions get their own span so audio.js can hang a
+    // play button off them. Deliberately narrow: only IPA-ish characters,
+    // and only when the slashes stand free of surrounding words, so paths
+    // and "and/or" are left alone.
+    s = s.replace(IPA, '$1<span class="ipa">/$2/</span>');
 
     s = s.replace(/\*\*\*([^*]+)\*\*\*/g, '<strong><em>$1</em></strong>');
     // Allow a single * (nested italics) inside bold, but never a ** pair,

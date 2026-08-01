@@ -4,6 +4,13 @@ French spelling is far more consistent than English spelling — it just uses di
 conventions. Almost every vowel combination has exactly one sound. Learn the twenty or so
 patterns below and you can pronounce a word you have never seen.
 
+::: sound You can hear all of this
+The phonetic symbols are a shorthand, not the point. Click any French example on the page and
+the browser reads it aloud; every transcription like /pwasɔ̃/ has a play button beside it that
+speaks the word it describes. Shift-click for a slow reading. The speaker in the header turns
+the sound off or changes voice.
+:::
+
 Two ideas matter more than any single rule:
 
 1. **Combinations beat letters.** `ai`, `ou`, `eau` are single vowels that happen to be

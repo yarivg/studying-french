@@ -1,7 +1,8 @@
 # Pronunciation cheat sheet
 
 Everything from the four pronunciation chapters, compressed onto one page. Print it, or keep it
-open while you read aloud.
+open while you read aloud. Every example is clickable: the browser reads it in French, and the
+play button next to a transcription speaks the word it stands for.
 
 ## Vowels
 

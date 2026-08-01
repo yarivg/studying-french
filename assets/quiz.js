@@ -116,6 +116,10 @@ window.Quiz = (function () {
           '</div>' +
           '<span class="flash-hint">click, or press space, to flip</span>' +
         '</div>' +
+        (card.fr && window.Say && Say.supported()
+          ? '<button class="btn flash-say" type="button" data-say="' + escapeAttr(card.fr) + '"' +
+            (card.frOnFront ? '' : ' hidden') + '>🔊 Hear it</button>'
+          : '') +
         '<div class="flash-actions" hidden>' +
           '<button class="btn btn-lg btn-again" data-grade="0">Again</button>' +
           '<button class="btn btn-lg btn-ok" data-grade="1">Got it</button>' +
@@ -130,11 +134,14 @@ window.Quiz = (function () {
     var actions = s.container.querySelector('.flash-actions');
     var hint = s.container.querySelector('.flash-hint');
 
+    var sayBtn = s.container.querySelector('.flash-say');
+
     function flip() {
       if (s.flipped) return;
       s.flipped = true;
       cardEl.querySelector('.flash-back').hidden = false;
       actions.hidden = false;
+      if (sayBtn) sayBtn.hidden = false;
       hint.textContent = 'press 1 to review again, 2 if you got it';
     }
 
@@ -179,6 +186,7 @@ window.Quiz = (function () {
   function handleKey(e) {
     if (!session) return;
     if (e.target.matches('input, textarea, select')) return;
+    if (e.target.closest && e.target.closest('.flash-say')) return;
     if (e.key === ' ' || e.key === 'Enter') {
       if (!session.flipped) { e.preventDefault(); session.flip(); }
     } else if (session.flipped && (e.key === '1' || e.key === '2')) {
@@ -205,6 +213,8 @@ window.Quiz = (function () {
   function escapeHtml(s) {
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
+
+  function escapeAttr(s) { return escapeHtml(s).replace(/"/g, '&quot;'); }
 
   return { bindExercises: bindExercises, startSession: startSession, endSession: endSession };
 })();

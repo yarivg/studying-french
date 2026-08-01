@@ -29,6 +29,7 @@
     setupTheme();
     setupNav();
     setupSearch();
+    Say.setup();
 
     fetch('content/manifest.json')
       .then(function (r) {
@@ -205,7 +206,8 @@
       view.innerHTML = head + MD.render(doc.body);
 
       Quiz.bindExercises(view, slug);
-      Vocab.hydrateEmbeds(view);
+      Say.hydrate(view);
+      Vocab.hydrateEmbeds(view).then(function () { Say.hydrate(view); });
       renderDoneBar(ch);
       renderPager(idx);
     }).catch(function (err) {
@@ -433,6 +435,7 @@
               'Showing the first ' + shown.length + ' of ' + words.length + ' — narrow the search to see the rest.</p>'
             : '');
         count.textContent = words.length + ' word' + (words.length === 1 ? '' : 's');
+        Say.hydrate(list);
       }
 
       [q, theme, pos, status].forEach(function (el) {

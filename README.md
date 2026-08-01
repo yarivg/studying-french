@@ -18,9 +18,16 @@ No build step, no dependencies, no tracking. Progress lives in your browser and 
 | **Part IV — Reference** | Irregular verb tables, a one-page sound cheat sheet, and a study plan. |
 | **Vocabulary** | 1,493 entries, searchable and filterable by theme, part of speech and gender. |
 | **Flashcards** | Leitner spaced repetition, sliced by theme or by word type. |
+| **Audio** | Click any French example to hear it spoken; every phonetic transcription has a play button. |
 
 Every chapter ends with exercises you reveal and grade yourself. The grades feed the same
 progress store as the flashcards.
+
+Audio uses the browser's own speech synthesis, so nothing is downloaded and it works offline —
+but it needs a French voice installed on the machine. macOS ships one; on Linux, install
+`espeak-ng` or a `speech-dispatcher` French voice. The speaker button in the header turns the
+audio off, slows it down, or picks between the French voices you have. Shift-click any example
+to hear it slowly.
 
 ## Running it locally
 
@@ -40,6 +47,7 @@ index.html              app shell
 assets/
   style.css             light/dark theme, print stylesheet
   md.js                 markdown renderer (tables, callouts, exercises)
+  audio.js              spoken French via the Web Speech API
   app.js                router, navigation, search
   progress.js           localStorage: read state, scores, Leitner boxes
   quiz.js               exercises and flashcard sessions

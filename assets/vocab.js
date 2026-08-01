@@ -128,6 +128,10 @@ window.Vocab = (function () {
           id: w.id + ':' + dir,
           front: dir === 'fr-en' ? w.fr : w.en,
           back: dir === 'fr-en' ? w.en : w.fr,
+          fr: w.fr,
+          // Reading the French aloud before an EN → FR card is flipped
+          // would hand over the answer, so the button waits for the flip.
+          frOnFront: dir === 'fr-en',
           tag: w.themes[0] === 'general' ? (POS_LABEL[w.pos] || '') : w.themes[0]
         };
       })

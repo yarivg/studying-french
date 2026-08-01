@@ -81,6 +81,10 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+/* A `display` declaration outranks the browser default for [hidden], which
+   is how the flashcard grading buttons used to show before the flip. */
+[hidden] { display: none !important; }
+
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -715,10 +719,72 @@ a.card:hover { border-color: var(--bleu); box-shadow: var(--shadow-md); transfor
   .brand-text { font-size: 1rem; }
 }
 
+/* ---------------------------------------------------------- audio */
+
+.audio-control { position: relative; }
+
+.audio-menu {
+  position: absolute; top: calc(100% + 8px); right: 0; z-index: 60;
+  width: 268px; padding: .8rem .85rem .9rem;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--r-md); box-shadow: var(--shadow-md);
+  font-size: .88rem; text-align: left;
+}
+.audio-menu-title {
+  font-size: .68rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: .5rem;
+}
+.audio-row {
+  display: flex; align-items: center; gap: .55rem;
+  padding: .28rem 0; cursor: pointer;
+}
+.audio-row input[type="checkbox"] { accent-color: var(--bleu); }
+.audio-voice { margin-top: .2rem; }
+.audio-voice select { flex: 1; min-width: 0; font-size: .85rem; }
+.audio-menu .btn { margin-top: .55rem; width: 100%; }
+.audio-note { color: var(--muted); font-size: .76rem; line-height: 1.45; margin: .6rem 0 0; }
+
+/* A French example you can click to hear. Kept quiet until hovered so the
+   typography of a page full of italics does not turn into a field of links. */
+em.say {
+  cursor: pointer;
+  border-bottom: 1px dotted transparent;
+  transition: border-color .13s, background .13s;
+}
+em.say:hover, em.say:focus-visible { border-bottom-color: currentColor; outline: none; }
+em.say.is-speaking { background: var(--or-soft); border-radius: 3px; box-shadow: 0 0 0 2px var(--or-soft); }
+
+.say-btn {
+  display: inline-grid; place-items: center;
+  width: 1.35em; height: 1.35em; padding: 0; margin-left: .3em;
+  vertical-align: -.2em;
+  border: 0; background: transparent; border-radius: 4px;
+  color: var(--muted); opacity: .5; cursor: pointer;
+  transition: opacity .13s, color .13s;
+}
+.say-btn svg {
+  width: 1em; height: 1em; fill: none; stroke: currentColor;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+.say-btn:hover, .say-btn:focus-visible { opacity: 1; color: var(--bleu); outline: none; }
+.say-btn.is-speaking { opacity: 1; color: var(--bleu); }
+tr:hover .say-btn, .vocab-row:hover .say-btn { opacity: .8; }
+
+.ipa { white-space: nowrap; }
+.prose .ipa { font-family: var(--mono); font-size: .86em; color: var(--rouge); }
+
+.flash-say { display: block; margin: .7rem auto 0; }
+
+/* Audio switched off: leave the prose exactly as it was before. */
+body.audio-off em.say { cursor: inherit; }
+body.audio-off em.say:hover { border-bottom-color: transparent; }
+body.audio-off .say-btn, body.audio-off .flash-say { display: none; }
+
 /* ---------------------------------------------------------- print */
 
 @media print {
-  .topbar, .sidebar, .pager, .scrim, .chapter-done, .exercise-actions, .vocab-toolbar { display: none !important; }
+  .topbar, .sidebar, .pager, .scrim, .chapter-done, .exercise-actions, .vocab-toolbar,
+  .say-btn, .flash-say { display: none !important; }
   body { background: #fff; color: #000; font-size: 11pt; }
   main { padding: 0; }
   .prose { max-width: none; }
