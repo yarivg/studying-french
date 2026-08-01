@@ -53,6 +53,7 @@ disagree with a call, edit `data/vocab-source.txt` or the `CORRECTIONS` table in
 | 891 | lourde — heavy | lourd/e — heavy | Citation form is the masculine lourd. |
 | 927 | attire — to attract | attirer — to attract | Infinitive, not the third-person 'attire'. |
 | 944 | surement — surely | sûrement — surely | Missing circumflex. |
+| 967 | la pâte — the pastry (2) | la pâte — dough / batter / pasta dough | La pâte is the raw dough, not the finished pastry — that is la pâtisserie, already at 966. |
 | 995 | naître — to born | naître — to be born | naître = to be born. |
 | 1005 | la grèce — greece | la Grèce — greece | Country names are capitalised. |
 | 1017 | le haut — a top shirt | le haut — the top (garment) | Clearer gloss. |
@@ -130,4 +131,4 @@ any extra meaning is folded into its gloss.
 | 1463 | grimper — to climb (2) | 132 |
 | 1516 | actuellement — currently (not actually!) | 625 |
 
-**Totals:** 1521 source entries, 84 corrections, 28 duplicates merged, 1493 unique words.
+**Totals:** 1521 source entries, 85 corrections, 28 duplicates merged, 1493 unique words.

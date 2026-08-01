@@ -11,6 +11,9 @@
      ex:    { "<slug>:<exId>:<i>": "ok" | "again" },
      cards: { "<cardId>": { box: 0-5, due: <epoch-day>, seen: n, ok: n } },
      known: { "<wordId>": true },
+     words: { "<u...>": { fr, en, pos, g, themes: [], at } },  // words you added
+     mastery: { "<slug|partN>": { level: 0-2, at, score } },   // self-marked
+     tests:   { "<testId>": { best, runs, at } },              // best auto score
      days:  { "<yyyy-mm-dd>": <reviews that day> },
      m:     { "<kind>:<key>": <epoch-ms> },   // when each entry last changed
      clearedAt: <epoch-ms>                    // last "reset everything"
@@ -32,10 +35,13 @@ window.Progress = (function () {
 
   var state = load();
 
-  var MAPS = ['read', 'ex', 'cards', 'known'];
+  var MAPS = ['read', 'ex', 'cards', 'known', 'words', 'mastery', 'tests'];
 
   function blank() {
-    return { v: 1, read: {}, ex: {}, cards: {}, known: {}, days: {}, m: {}, clearedAt: 0 };
+    return {
+      v: 1, read: {}, ex: {}, cards: {}, known: {}, words: {},
+      mastery: {}, tests: {}, days: {}, m: {}, clearedAt: 0
+    };
   }
 
   // Clock for the merge. Two writes in the same millisecond would look
@@ -211,6 +217,151 @@ window.Progress = (function () {
 
   function knownCount() { return Object.keys(state.known).length; }
 
+  /* ---------------------------------------------------------- my words */
+
+  // Words you add yourself live here rather than in data/vocab.json, so
+  // they sync with everything else and survive a rebuild of the curated
+  // list. Ids start with "u" so they can never collide with a "w<n>".
+  var WORD_MAX = 120;          // characters per field
+  var THEME_MAX = 4;           // themes per word
+
+  function words() {
+    var out = [];
+    for (var id in state.words) {
+      if (!has(state.words, id)) continue;
+      var w = state.words[id];
+      out.push({ id: id, fr: w.fr, en: w.en, pos: w.pos, g: w.g, themes: w.themes.slice(), at: w.at });
+    }
+    return out.sort(function (a, b) { return b.at - a.at; });
+  }
+
+  function wordCount() { return Object.keys(state.words).length; }
+
+  function getWord(id) { return has(state.words, id) ? state.words[id] : null; }
+
+  // A word already in the list, matched the way a person would match it:
+  // same French, ignoring case, accents and a leading article.
+  function findWord(fr) {
+    var k = wordKey(fr);
+    if (!k) return null;
+    for (var id in state.words) {
+      if (has(state.words, id) && wordKey(state.words[id].fr) === k) return id;
+    }
+    return null;
+  }
+
+  function wordKey(fr) {
+    return String(fr || '').toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/^(le|la|les|l'|un|une|des|du|de la)\s*/, '')
+      .replace(/[^a-z0-9' ]/g, '').trim();
+  }
+
+  function addWord(input) {
+    var w = cleanWord(input);
+    if (!w) throw new Error('A word needs both a French side and an English side.');
+    // Two devices adding in the same millisecond would otherwise collide.
+    var id = 'u' + stamp().toString(36) + Math.random().toString(36).slice(2, 6);
+    state.words[id] = w;
+    touch('words', id);
+    save();
+    return id;
+  }
+
+  function updateWord(id, input) {
+    if (!has(state.words, id)) return false;
+    var w = cleanWord(input);
+    if (!w) throw new Error('A word needs both a French side and an English side.');
+    w.at = state.words[id].at;
+    state.words[id] = w;
+    touch('words', id);
+    save();
+    return true;
+  }
+
+  function deleteWord(id) {
+    if (!has(state.words, id)) return false;
+    delete state.words[id];
+    // The tombstone is what stops the other device putting it back.
+    touch('words', id);
+    if (state.known[id]) { delete state.known[id]; touch('known', id); }
+    save();
+    return true;
+  }
+
+  function cleanWord(input) {
+    input = input || {};
+    var fr = trim(input.fr), en = trim(input.en);
+    if (!fr || !en) return null;
+    return {
+      fr: fr, en: en,
+      pos: POS.indexOf(input.pos) !== -1 ? input.pos : 'other',
+      g: GENDERS.indexOf(input.g) !== -1 ? input.g : '',
+      themes: cleanThemes(input.themes),
+      at: num(input.at) || stamp()
+    };
+  }
+
+  var POS = ['noun', 'verb', 'adj', 'phrase', 'connector', 'grammar', 'other'];
+  var GENDERS = ['m', 'f', 'pl', 'mf', ''];
+
+  function cleanThemes(list) {
+    if (!Array.isArray(list)) return [];
+    var out = [];
+    for (var i = 0; i < list.length && out.length < THEME_MAX; i++) {
+      var t = String(list[i] || '').toLowerCase().trim();
+      if (/^[a-z][a-z0-9-]{0,19}$/.test(t) && out.indexOf(t) === -1) out.push(t);
+    }
+    return out;
+  }
+
+  function trim(v) {
+    return typeof v === 'string' ? v.replace(/\s+/g, ' ').trim().slice(0, WORD_MAX) : '';
+  }
+
+  /* ---------------------------------------------------------- mastery */
+
+  // The auto-graded score is evidence; the level is your own call. A test
+  // you aced but do not trust stays at 0 until you say otherwise.
+  var LEVELS = ['none', 'shaky', 'solid'];
+
+  function mastery(key) {
+    var m = state.mastery[key];
+    return m ? { level: m.level, at: m.at, score: m.score } : { level: 0, at: 0, score: 0 };
+  }
+
+  function setMastery(key, level, score) {
+    level = clamp(num(level), 0, LEVELS.length - 1);
+    if (!level) delete state.mastery[key];
+    else state.mastery[key] = { level: level, at: stamp(), score: clamp(num(score), 0, 100) };
+    touch('mastery', key);
+    save();
+    return level;
+  }
+
+  function masteryCount(level) {
+    var n = 0;
+    for (var k in state.mastery) if (has(state.mastery, k) && state.mastery[k].level >= level) n++;
+    return n;
+  }
+
+  function testScore(id) {
+    var t = state.tests[id];
+    return t ? { best: t.best, runs: t.runs, at: t.at } : { best: 0, runs: 0, at: 0 };
+  }
+
+  function recordTest(id, pct) {
+    var t = state.tests[id] || { best: 0, runs: 0, at: 0 };
+    t.best = Math.max(t.best, clamp(num(pct), 0, 100));
+    t.runs++;
+    t.at = stamp();
+    state.tests[id] = t;
+    touch('tests', id);
+    bumpDay();
+    save();
+    return t;
+  }
+
   /* ---------------------------------------------------------- streak */
 
   function bumpDay() {
@@ -267,6 +418,25 @@ window.Progress = (function () {
         due: clamp(num(value.due), 0, 1e7),
         seen: clamp(num(value.seen), 0, 1e6),
         ok: clamp(num(value.ok), 0, 1e6)
+      };
+    });
+    each(input.words, function (key, value) {
+      if (key.charAt(0) !== 'u') return;   // ids the UI is willing to render
+      var w = cleanWord(value);
+      if (w) out.words[key] = w;
+    });
+    each(input.mastery, function (key, value) {
+      if (!value || typeof value !== 'object') return;
+      var level = clamp(num(value.level), 0, LEVELS.length - 1);
+      if (!level) return;
+      out.mastery[key] = { level: level, at: num(value.at), score: clamp(num(value.score), 0, 100) };
+    });
+    each(input.tests, function (key, value) {
+      if (!value || typeof value !== 'object') return;
+      out.tests[key] = {
+        best: clamp(num(value.best), 0, 100),
+        runs: clamp(num(value.runs), 0, 1e6),
+        at: num(value.at)
       };
     });
     each(input.days, function (key, value) {
@@ -327,6 +497,15 @@ window.Progress = (function () {
         var lHas = has(state[kind], key), rHas = has(remote[kind], key);
         if (kind === 'cards' && lHas && rHas) {
           out.cards[key] = mergeCard(state.cards[key], remote.cards[key], lt, rt);
+        } else if (kind === 'tests' && lHas && rHas) {
+          // A best score is a high-water mark on both sides, not a value
+          // the later write should be allowed to lower.
+          var a = state.tests[key], b = remote.tests[key];
+          out.tests[key] = {
+            best: Math.max(a.best, b.best),
+            runs: Math.max(a.runs, b.runs),
+            at: Math.max(a.at, b.at)
+          };
         } else {
           var mine = lt === rt ? lHas : lt > rt;
           if (mine && lHas) out[kind][key] = state[kind][key];
@@ -397,6 +576,10 @@ window.Progress = (function () {
     card: card, isDue: isDue, gradeCard: gradeCard, resetCard: resetCard,
     dueCount: dueCount, dueQueue: dueQueue, cardStats: cardStats,
     isKnown: isKnown, toggleKnown: toggleKnown, knownCount: knownCount,
+    words: words, wordCount: wordCount, getWord: getWord, findWord: findWord,
+    addWord: addWord, updateWord: updateWord, deleteWord: deleteWord,
+    mastery: mastery, setMastery: setMastery, masteryCount: masteryCount,
+    testScore: testScore, recordTest: recordTest, LEVELS: LEVELS,
     streak: streak, reviewsToday: reviewsToday,
     exportJSON: exportJSON, importJSON: importJSON, reset: reset,
     INTERVALS: INTERVALS, MAX_BOX: MAX_BOX

@@ -40,9 +40,47 @@ window.Vocab = (function () {
     return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   }
 
-  function all() { return data ? data.words : []; }
+  /* ---------------------------------------------------------- my words */
 
-  function themes() { return data ? Object.keys(data.themes) : []; }
+  // The curated list ships with the site and never changes at runtime;
+  // words you add live in the synced progress state. They are kept in two
+  // places and joined here, so a rebuild of vocab.json cannot lose yours.
+  var mineCache = null;
+  var joinedCache = null;
+
+  function invalidate() { mineCache = null; joinedCache = null; }
+  window.addEventListener('progress:change', invalidate);
+
+  function mine() {
+    if (mineCache) return mineCache;
+    mineCache = Progress.words().map(function (w) {
+      var out = {
+        n: 0, id: w.id, fr: w.fr, en: w.en, pos: w.pos || 'other', g: w.g || '',
+        base: w.fr, themes: w.themes.length ? w.themes : ['mine'], at: w.at, mine: true
+      };
+      out.search = (out.fr + ' ' + out.en + ' ' + out.themes.join(' ')).toLowerCase();
+      out.searchPlain = strip(out.search);
+      return out;
+    });
+    return mineCache;
+  }
+
+  function all() {
+    if (!data) return [];
+    if (!joinedCache) joinedCache = mine().concat(data.words);
+    return joinedCache;
+  }
+
+  function themeCounts() {
+    var counts = {};
+    if (data) for (var t in data.themes) counts[t] = data.themes[t];
+    mine().forEach(function (w) {
+      w.themes.forEach(function (t) { counts[t] = (counts[t] || 0) + 1; });
+    });
+    return counts;
+  }
+
+  function themes() { return Object.keys(themeCounts()); }
 
   function byTheme(list) {
     var wanted = String(list || '').split(/[,\s]+/).filter(Boolean);
@@ -63,6 +101,7 @@ window.Vocab = (function () {
     }
     if (opts.status === 'known') words = words.filter(function (w) { return Progress.isKnown(w.id); });
     if (opts.status === 'unknown') words = words.filter(function (w) { return !Progress.isKnown(w.id); });
+    if (opts.status === 'mine') words = words.filter(function (w) { return w.mine; });
 
     var q = strip(String(query || '').trim().toLowerCase());
     if (!q) return words;
@@ -74,12 +113,15 @@ window.Vocab = (function () {
 
   function rowHtml(w) {
     var known = Progress.isKnown(w.id);
-    var g = w.g ? '<span class="v-tag">' + GENDER_LABEL[w.g] + '</span>' : '';
-    return '<div class="vocab-row' + (known ? ' is-known' : '') + '" data-id="' + w.id + '">' +
+    return '<div class="vocab-row' + (known ? ' is-known' : '') + (w.mine ? ' is-mine' : '') +
+      '" data-id="' + w.id + '">' +
       '<button class="v-know" aria-label="Mark as known" aria-pressed="' + known + '">✓</button>' +
       '<span class="v-fr">' + escapeHtml(w.fr) + '</span>' +
       '<span class="v-en">' + escapeHtml(w.en) + '</span>' +
-      '<span class="v-tag">' + (POS_LABEL[w.pos] || w.pos) + (g ? ' · ' + GENDER_LABEL[w.g] : '') + '</span>' +
+      '<span class="v-tag">' + (POS_LABEL[w.pos] || w.pos) +
+        (w.g ? ' · ' + GENDER_LABEL[w.g] : '') +
+        (w.mine ? ' · <button class="v-edit" data-edit="' + w.id + '">edit</button>' : '') +
+      '</span>' +
       '</div>';
   }
 
@@ -93,6 +135,13 @@ window.Vocab = (function () {
   // One delegated handler covers every list on the page.
   function bindList(root) {
     root.addEventListener('click', function (e) {
+      var edit = e.target.closest('.v-edit');
+      if (edit) {
+        root.dispatchEvent(new CustomEvent('vocab:edit', {
+          bubbles: true, detail: { id: edit.dataset.edit }
+        }));
+        return;
+      }
       var btn = e.target.closest('.v-know');
       if (!btn) return;
       var row = btn.closest('.vocab-row');
@@ -100,6 +149,57 @@ window.Vocab = (function () {
       row.classList.toggle('is-known', on);
       btn.setAttribute('aria-pressed', String(on));
     });
+  }
+
+  /* ---------------------------------------------------------- adding words */
+
+  // Fills in what can be read off the French side, so adding a word from
+  // the phone is two fields and a tap rather than a form.
+  function guess(fr) {
+    var s = String(fr || '').trim().toLowerCase();
+    var out = { pos: 'other', g: '' };
+    var article = s.match(/^(le|la|les|un|une|l')\s*/);
+    if (article) {
+      out.pos = 'noun';
+      var a = article[1];
+      out.g = a === 'le' || a === 'un' ? 'm' : a === 'la' || a === 'une' ? 'f' : a === 'les' ? 'pl' : '';
+      return out;
+    }
+    if (/^(se |s')/.test(s) || /(er|ir|re|oir)$/.test(s)) {
+      // Only a guess: "la mer" is caught by the article branch above, but
+      // "cher" or "hier" would land here. Cheap to correct in the form.
+      if (s.split(/\s+/).length === 1) out.pos = 'verb';
+    }
+    if (s.split(/\s+/).length > 2) out.pos = 'phrase';
+    return out;
+  }
+
+  // Accepts the same "fr - en" shape as data/vocab-source.txt, with or
+  // without the leading number, so pasting from anywhere works.
+  function parseBulk(text) {
+    var rows = [];
+    String(text || '').split(/\r?\n/).forEach(function (line) {
+      line = line.trim();
+      if (!line || line.charAt(0) === '#') return;
+      line = line.replace(/^\d+[.)]\s*/, '');
+      var m = line.split(/\s+[-–—]\s+|\s*[=:]\s*|\t+/);
+      if (m.length < 2) return;
+      var fr = m[0].trim();
+      var en = m.slice(1).join(' - ').trim();
+      if (!fr || !en) return;
+      var g = guess(fr);
+      rows.push({ fr: fr, en: en, pos: g.pos, g: g.g, themes: [] });
+    });
+    return rows;
+  }
+
+  // The reverse: the exact line format vocab-source.txt expects, so a word
+  // can graduate from personal to curated by pasting and rebuilding.
+  function exportMine() {
+    var start = data ? data.source_count + 1 : 1;
+    return mine().slice().reverse().map(function (w, i) {
+      return (start + i) + '. ' + w.fr + ' - ' + w.en;
+    }).join('\n');
   }
 
   // Fill any ::: vocab blocks that the markdown renderer left behind.
@@ -140,6 +240,10 @@ window.Vocab = (function () {
 
   function decks() {
     var out = [];
+    if (mine().length) {
+      out.push(deck('mine-fr', 'My words (FR → EN)', mine(), 'fr-en'));
+      out.push(deck('mine-en', 'My words (EN → FR)', mine(), 'en-fr'));
+    }
     themes().forEach(function (t) {
       if (t === 'general') return;
       var words = byTheme(t);
@@ -169,9 +273,11 @@ window.Vocab = (function () {
   }
 
   return {
-    load: load, all: all, themes: themes, byTheme: byTheme, search: search,
+    load: load, all: all, mine: mine, themes: themes, themeCounts: themeCounts,
+    byTheme: byTheme, search: search,
     listHtml: listHtml, bindList: bindList, hydrateEmbeds: hydrateEmbeds,
     decks: decks, deckById: deckById,
+    guess: guess, parseBulk: parseBulk, exportMine: exportMine,
     POS_LABEL: POS_LABEL, GENDER_LABEL: GENDER_LABEL
   };
 })();

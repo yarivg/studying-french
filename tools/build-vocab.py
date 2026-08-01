@@ -67,6 +67,8 @@ CORRECTIONS = {
     891:  ("lourd/e", None, "Citation form is the masculine lourd."),
     927:  ("attirer", None, "Infinitive, not the third-person 'attire'."),
     944:  ("sûrement", None, "Missing circumflex."),
+    967:  (None, "dough / batter / pasta dough",
+           "La pâte is the raw dough, not the finished pastry — that is la pâtisserie, already at 966."),
     995:  (None, "to be born", "naître = to be born."),
     1005: ("la Grèce", None, "Country names are capitalised."),
     1017: (None, "the top (garment)", "Clearer gloss."),
