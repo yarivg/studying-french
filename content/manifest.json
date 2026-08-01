@@ -1,0 +1,84 @@
+{
+ "title": "Le Carnet",
+ "subtitle": "My French notebook, turned into a course: pronunciation and grammar from the first sound to B2, plus 1,493 words I have actually met.",
+ "parts": [
+  {
+   "numeral": "Part I",
+   "title": "Foundations",
+   "blurb": "Everything from my original notes, reorganised so each idea arrives when it is needed. Sound first, then the noun phrase, then the verb.",
+   "chapters": [
+    { "slug": "vowels", "file": "part1/01-vowels.md", "title": "Vowel sounds", "level": "A1", "summary": "Accents, nasals and the vowel combinations that do not say what they look like." },
+    { "slug": "consonants", "file": "part1/02-consonants.md", "title": "Consonant sounds", "level": "A1", "summary": "When c is k, when g is j, and the clusters that trip you up." },
+    { "slug": "silent-letters", "file": "part1/03-silent-letters.md", "title": "Silent letters and the final -e", "level": "A1", "summary": "What you do not pronounce, and how a final -e changes everything before it." },
+    { "slug": "liaisons", "file": "part1/04-liaisons.md", "title": "Liaisons", "level": "A1", "summary": "The consonant that wakes up when the next word starts with a vowel." },
+    { "slug": "nouns-gender", "file": "part1/05-nouns-gender.md", "title": "Nouns and gender", "level": "A1", "summary": "Endings that predict le or la, and how to form plurals." },
+    { "slug": "articles", "file": "part1/06-articles.md", "title": "Articles: le, un, du", "level": "A1", "summary": "Definite, indefinite and partitive — and why they all collapse to de after a negative." },
+    { "slug": "adjectives", "file": "part1/07-adjectives.md", "title": "Adjectives", "level": "A1", "summary": "Agreement, irregular feminines, and the handful that go before the noun." },
+    { "slug": "numbers", "file": "part1/08-numbers.md", "title": "Numbers", "level": "A1", "summary": "Zero to a million, including the famously strange seventies and eighties." },
+    { "slug": "possessives", "file": "part1/09-possessives.md", "title": "Possessives", "level": "A1", "summary": "Mon, ma, mes — agreeing with the thing owned, not the owner." },
+    { "slug": "demonstratives", "file": "part1/10-demonstratives.md", "title": "This and that", "level": "A1", "summary": "Ce, cet, cette, ces, and the -ci / -là pronouns." },
+    { "slug": "quantity", "file": "part1/11-quantity.md", "title": "Tout, and how much", "level": "A2", "summary": "Tout / tous / toute / toutes, plus every quantifier that takes de." },
+    { "slug": "pronouns", "file": "part1/12-pronouns.md", "title": "Pronouns", "level": "A2", "summary": "Subject, direct object, indirect object and stressed — four columns to keep straight." },
+    { "slug": "prepositions", "file": "part1/13-prepositions.md", "title": "Prepositions", "level": "A2", "summary": "à, de, en, chez and the rest, with the rules for cities and countries." },
+    { "slug": "present-tense", "file": "part1/14-present-tense.md", "title": "The present tense", "level": "A1", "summary": "-er, -ir and -re endings, then the irregulars you cannot avoid." },
+    { "slug": "reflexive-verbs", "file": "part1/15-reflexive-verbs.md", "title": "Reflexive verbs", "level": "A2", "summary": "Se lever, se laver, s'habiller — and where the pronoun goes." },
+    { "slug": "negation", "file": "part1/16-negation.md", "title": "Negation", "level": "A2", "summary": "ne … pas and its whole family, including where they sit in a compound tense." },
+    { "slug": "questions", "file": "part1/17-questions.md", "title": "Questions", "level": "A2", "summary": "Three ways to ask anything, every question word, and answering with oui or si." },
+    { "slug": "passe-compose", "file": "part1/18-passe-compose.md", "title": "Le passé composé", "level": "A2", "summary": "Avoir or être, past participles, and when the participle agrees." },
+    { "slug": "futur-simple", "file": "part1/19-futur-simple.md", "title": "Le futur simple", "level": "A2", "summary": "One set of endings for every verb, plus the irregular stems." },
+    { "slug": "imperatif-gerondif", "file": "part1/20-imperatif-gerondif.md", "title": "L'impératif and le gérondif", "level": "A2", "summary": "Giving orders, and saying two things happen at once." },
+    { "slug": "adverbs-connectors", "file": "part1/21-adverbs-connectors.md", "title": "Adverbs, frequency and connectors", "level": "A2", "summary": "How often, how well, and the words that glue sentences together." },
+    { "slug": "il-y-a", "file": "part1/22-il-y-a.md", "title": "Il y a", "level": "A1", "summary": "There is, there are, there was — and 'ago'." }
+   ]
+  },
+  {
+   "numeral": "Part II",
+   "title": "Building fluency",
+   "blurb": "The tenses and structures that take you past describing the present. This is where French starts to sound like French.",
+   "chapters": [
+    { "slug": "imparfait", "file": "part2/01-imparfait.md", "title": "L'imparfait", "level": "B1", "summary": "One stem rule, one set of endings, one genuine irregular." },
+    { "slug": "imparfait-vs-passe-compose", "file": "part2/02-imparfait-vs-passe-compose.md", "title": "Imparfait vs passé composé", "level": "B1", "summary": "The single hardest choice in French past tense, made mechanical." },
+    { "slug": "plus-que-parfait", "file": "part2/03-plus-que-parfait.md", "title": "Le plus-que-parfait", "level": "B1", "summary": "The past behind the past." },
+    { "slug": "futur-proche", "file": "part2/04-futur-proche.md", "title": "Near future and recent past", "level": "B1", "summary": "aller + infinitive, venir de + infinitive, être en train de." },
+    { "slug": "conditionnel", "file": "part2/05-conditionnel.md", "title": "Le conditionnel", "level": "B1", "summary": "Would, could and should — present and past." },
+    { "slug": "si-clauses", "file": "part2/06-si-clauses.md", "title": "Si-clauses", "level": "B1", "summary": "Three fixed patterns; get the pairing right and you cannot go wrong." },
+    { "slug": "subjonctif-forms", "file": "part2/07-subjonctif-forms.md", "title": "Le subjonctif: forms", "level": "B1", "summary": "Built from ils, with six irregulars worth memorising." },
+    { "slug": "subjonctif-uses", "file": "part2/08-subjonctif-uses.md", "title": "Le subjonctif: when to use it", "level": "B1", "summary": "The triggers, grouped so you can recognise them at speed." },
+    { "slug": "relative-pronouns", "file": "part2/09-relative-pronouns.md", "title": "Relative pronouns", "level": "B1", "summary": "qui, que, où and dont — which one depends on the gap in the sentence." },
+    { "slug": "y-en", "file": "part2/10-y-en.md", "title": "Y, en and pronoun order", "level": "B1", "summary": "Two small words that replace whole phrases, and the queue they stand in." },
+    { "slug": "comparatives", "file": "part2/11-comparatives.md", "title": "Comparatives and superlatives", "level": "B1", "summary": "plus, moins, aussi — and the irregulars meilleur, mieux, pire." },
+    { "slug": "adverbs-ment", "file": "part2/12-adverbs-ment.md", "title": "Making adverbs in -ment", "level": "B1", "summary": "From adjective to adverb, and where the adverb lands in the sentence." },
+    { "slug": "verb-prepositions", "file": "part2/13-verb-prepositions.md", "title": "Verbs + à / de + infinitive", "level": "B1", "summary": "Which preposition a verb takes, and the lists worth learning whole." },
+    { "slug": "time-expressions", "file": "part2/14-time-expressions.md", "title": "Depuis, pendant, il y a, pour", "level": "B1", "summary": "Four ways to talk about duration that English collapses into 'for'." },
+    { "slug": "passive-on", "file": "part2/15-passive-on.md", "title": "The passive, and on", "level": "B1", "summary": "Why French avoids the passive, and what it uses instead." },
+    { "slug": "dates-time", "file": "part2/16-dates-time.md", "title": "Dates, time and ordinals", "level": "B1", "summary": "Telling the time, writing the date, and premier vs deuxième." }
+   ]
+  },
+  {
+   "numeral": "Part III",
+   "title": "Refining",
+   "blurb": "The structures that separate 'correct' from 'fluent': sequence of tenses, reported speech, register, and the traps that survive everything else.",
+   "chapters": [
+    { "slug": "subjonctif-passe", "file": "part3/01-subjonctif-passe.md", "title": "Subjonctif passé and sequence of tenses", "level": "B2", "summary": "Which tense follows which, in both indicative and subjunctive." },
+    { "slug": "discours-indirect", "file": "part3/02-discours-indirect.md", "title": "Reported speech", "level": "B2", "summary": "Shifting tenses, pronouns and time words when you report what was said." },
+    { "slug": "participe-present", "file": "part3/03-participe-present.md", "title": "Participe présent, gérondif, adjectif verbal", "level": "B2", "summary": "Three things that end in -ant and behave completely differently." },
+    { "slug": "infinitif-passe", "file": "part3/04-infinitif-passe.md", "title": "Infinitif passé and faire causatif", "level": "B2", "summary": "après avoir mangé, and making someone else do something." },
+    { "slug": "relatifs-composes", "file": "part3/05-relatifs-composes.md", "title": "Compound relative pronouns", "level": "B2", "summary": "lequel after prepositions, and ce qui / ce que / ce dont." },
+    { "slug": "negation-advanced", "file": "part3/06-negation-advanced.md", "title": "Advanced negation and restriction", "level": "B2", "summary": "ne … que, the expletive ne, sans … ni, and dropping ne in speech." },
+    { "slug": "confusables", "file": "part3/07-confusables.md", "title": "Pairs that catch everyone", "level": "B2", "summary": "c'est vs il est, savoir vs connaître, an vs année, and friends." },
+    { "slug": "register", "file": "part3/08-register.md", "title": "Register: familier, courant, soutenu", "level": "B2", "summary": "The same sentence in three social keys — including the slang from my list." },
+    { "slug": "passe-simple", "file": "part3/09-passe-simple.md", "title": "Passé simple and literary tenses", "level": "B2", "summary": "You will never say these. You will read them constantly." }
+   ]
+  },
+  {
+   "numeral": "Part IV",
+   "title": "Reference",
+   "blurb": "Tables to come back to rather than read through.",
+   "chapters": [
+    { "slug": "verb-tables", "file": "part4/01-verb-tables.md", "title": "Irregular verb tables", "level": "ref", "summary": "The verbs you cannot avoid, in every tense this course covers." },
+    { "slug": "sound-cheatsheet", "file": "part4/02-sound-cheatsheet.md", "title": "Pronunciation cheat sheet", "level": "ref", "summary": "Every sound rule from Part I on a single page." },
+    { "slug": "study-plan", "file": "part4/03-study-plan.md", "title": "How to use this course", "level": "ref", "summary": "A route through the material, and what to do each week." }
+   ]
+  }
+ ]
+}

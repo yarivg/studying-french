@@ -1,0 +1,1524 @@
+# Vocabulary source list — exactly as written in the original study doc.
+# The build script (tools/build-vocab.py) parses this into data/vocab.json and
+# applies the corrections listed in CORRECTIONS.md. Edit this file, not the JSON.
+1. Ils sont - they are (masculine)
+2. Elles sont - they are (feminine)
+3. Voilà - here
+4. Déjà - already
+5. Très - very
+6. où - where
+7. l'élève - student
+8. La rivière - river
+9. Le frère - brother
+10. la soeur - sister
+11. La fête - party
+12. Le toit - roof
+13. La fenêtre - window
+14. Rêver - to dream
+15. Être - to be
+16. La tâche - task
+17. l'âme - soul
+18. le château - castle
+19. Gâcher - to waste
+20. Avoir hâte - can't wait / i'm excited
+21. l'île - island
+22. Le dîner - dinner
+23. Le boîte - box
+24. frais/fraîche - fresh
+25. Tôt - early
+26. Aussitôt - as soon as
+27. Drôle - funny
+28. Sur - on
+29. Maïs - corn
+30. Noël - christmas
+31. le reçu - receipt
+32. La bougie - candle
+33. La pharmacie - pharmacy
+34. La librairie - bookstore
+35. la bibliothèque - library
+36. La monnaie - the change (money)
+37. La plaie - the wound
+38. Bienvenue - welcome
+39. La rue - street
+40. La joie - the joy
+41. La roue - wheel
+42. La queue - tail
+43. Le tube - tube
+44. Le verbe - verb
+45. La chance - the chance
+46. La balade - the walk
+47. La semaine - week
+48. Le téléphone - phone
+49. La gare - train station
+50. La coiffure - haircut
+51. La chaise - chair
+52. La entreprise - company
+53. La valise - luggage
+54. La tête - head
+55. La carotte - carrot
+56. Le paiement - payment
+57. La remerciement - a thank you
+58. Le banc - bench
+59. Blanc - white
+60. L'outil - tool
+61. La fusil - gun
+62. Beaucoup - a lot
+63. Trop - too many / too much
+64. Le bras - arm
+65. Le choix - choice
+66. Le croix - a cross
+67. Deux - two
+68. Le nez - nose
+69. Chez - at
+70. Le riz - rice
+71. Le chien - dog
+72. La table - table
+73. Le gâteau - cake
+74. Le cheveux - hair
+75. L'arbre - tree
+76. Demain - tomorrow
+77. l'avis - opinion
+78. l'état - the state
+79. l'enfant - child
+80. l'ami - friend
+81. toujours - always
+82. quand - when
+83. l'école - school
+84. l'écran - screen
+85. l'escalier - stairs
+86. Assez - enough
+87. Le pied - a foot
+88. Le père - father
+89. La mère - mother
+90. la bière - beer
+91. la forêt - forest
+92. Le rêve - a dream
+93. la mer - sea
+94. Sec - dry
+95. Cet - this/that
+96. La terre - earth
+97. Jamais - never
+98. Le palais - palace
+99. le lait - milk
+100. le fait - fact
+101. le portrait - a picture
+102. la reine - queen
+103. le roi - king
+104. la neige - the snow
+105. le mois - month
+106. le silence - silence
+107. Clair - clear
+108. Faire - to do / to make
+109. Faible - weak
+110. fort/e - strong
+111. Vrai - true
+112. Faux / fausse - false
+113. Ces - these / those
+114. Dès - some
+115. le respect - the respect
+116. Hier - yesterday
+117. Le sang - blood
+118. Tant - so much
+119. Changer - to change
+120. un an - year (specific date)
+121. un ange - angle
+122. la chanson - song
+123. la champignon - mushroom
+124. le ventre - stomach
+125. le vent - wind
+126. le centre - center
+127. content - happy
+128. Novembre - november
+129. Décembre - december
+130. Embrasser - to kiss
+131. Ensemble - together
+132. Grimper - to climb
+133. Vilain - ugly
+134. Urbain - urban
+135. Un humain - human
+136. un copain - friend
+137. le train - train
+138. le sein - breast
+139. peindre - to paint
+140. plein - full
+141. la faim - hunger
+142. un examen - exam
+143. le parfum - perfume
+144. un bien - property
+145. rien - nothing
+146. bientôt - soon
+147. avoir - to have
+148. aller - to go
+149. par - by
+150. la tasse - cup
+151. le verre - glass
+152. que - that
+153. une chemise - shirt
+154. un livre - book
+155. la femme - woman
+156. l'homme - man
+157. Heure - hour
+158. Peur - fear
+159. Peu - little
+160. Eux - them
+161. Le coeur - heart/core
+162. Dieu - god
+163. œil - eye
+164. les yeux - eyes
+165. Joyeux - happy
+166. Le mot - word
+167. le dos - the back
+168. La pause - a pause
+169. La sauce - sauce
+170. Aucun/e - none
+171. Beau - beautiful
+172. l'eau - water
+173. oui - yes
+174. le jouet - toy
+175. la soupe - soup
+176. la lutte - fight
+177. Le guitare - guitar
+178. la nuit - night
+179. la famille - family
+180. mille - thousand
+181. la ville - city
+182. Tranquille - calm
+183. le soleil - sun
+184. la travail - the work
+185. l'ail - garlic
+186. la bataille - the battle
+187. travailler - to work
+188. la paille - straw
+189. pareil - same
+190. essayer - to try
+191. payer - to pay
+192. rayer - to scratch
+193. Ouvrir - to open
+194. Oublier - to forget
+195. Le portefeuille - wallet
+196. L'accueil - reception
+197. L'orgueil - pride
+198. Brun - brown
+199. Le toubib - doctor
+200. contre - against
+201. carré - square
+202. La culture - culture
+203. Le parc - park
+204. L'accent - accent
+205. Le succès - success
+206. Le ciel - sky
+207. Le citron - lemon
+208. Celle - this
+209. ça - that
+210. Le garçon - boy
+211. la fille - girl
+212. Le seconde - second
+213. chanter - to sing
+214. La chambre - room
+215. Pardon - forgiveness
+216. Grave - serious
+217. La bague - a ring
+218. La suggestion - suggestion
+219. Longtemps - long time
+220. long - long
+221. le doigt - finger
+222. le nuage - cloud
+223. le dimanche - Sunday
+224. le lundi - Monday
+225. le mardi - Tuesday
+226. le mercredi - Wednesday
+227. le jeudi - Thursday
+228. le vendredi - Friday
+229. le samedi - Saturday
+230. Le jour - a day
+231. Haut - high
+232. Dehors - outside
+233. Le véhicule - vehicle
+234. quoi - what?
+235. Le cirque - circus
+236. chaque - each/every
+237. chacun/e - each/every one
+238. Cinq - five
+239. lent/e - slow
+240. La lumière - a light
+241. manger - to eat
+242. Le miroir - a mirror
+243. la pomme - apple
+244. Noir/e/s - black
+245. La neige - snow
+246. L'année - year (as a period)
+247. Donner - to give
+248. L'avion - plane
+249. Pourquoi - why
+250. La piscine - pool
+251. La soupe - soup
+252. L'apport - input
+253. le drap - sheet
+254. Le camp - camp
+255. Compter - to count
+256. Crier - to scream
+257. Droit - right
+258. Prêt/e - ready
+259. Rond - a round
+260. Rater - to fail/miss
+261. Rester - to stay
+262. Refaire - to redo
+263. Rentrer - to return
+264. Le verre - glass
+265. Premier - first
+266. Le savon - soap
+267. Le sucre - sugar
+268. Le poisson - a fish
+269. La cuisson - the cooking
+270. cuisiner - to cook
+271. la cuisine - the kitchen
+272. Le sens - a sense
+273. Descendre - to go down
+274. L'ascenseur - elevator
+275. Le score - a score
+276. la maison - house
+277. Onze - eleven
+278. Treize - thirteen
+279. Quinze - fifteen
+280. Après - after
+281. Le bas - bottom
+282. Tout - every (from group)
+283. Tard - late
+284. Le thé - tea
+285. Battre - to beat
+286. Mettre - to put
+287. La sortie - the exit
+288. Le but - a goal
+289. Le bout - piece
+290. Le part - part
+291. l'attention - attention
+292. Venir - to come
+293. Vendre - to sell
+294. Vert/e/s - green
+295. Le souvenir - a memory
+296. se souvenir - to remember
+297. laver - to wash
+298. l'exemple - example
+299. Exister - to exist
+300. Exprimer - to express
+301. Le prix - price
+302. Dix - ten
+303. Six - six
+304. l'oignon - onion
+305. Evidemment - obviously
+306. Monsieur - sir
+307. Le fils - child
+308. Sept - seven
+309. l'automne - autumn
+310. aimer - to love/like
+311. Le pays - country
+312. L'os - bone
+313. l'oeuf - egg
+314. la voiture - car
+315. acheter - to buy
+316. Jouer - to play
+317. le fromage - the cheese
+318. le soir - the evening
+319. froide - cold
+320. Le stylo - pen
+321. Dans - in
+322. le jardin - garden
+323. la fleur - flower
+324. la saison - season
+325. Le printemps - spring
+326. L'hiver - winter
+327. l'eté - summer
+328. l'automne - the fall / autumn
+329. avant - before
+330. juste - just
+331. le journal - newspaper
+332. le chat - cat
+333. la robe - dress
+334. avec - with
+335. le problème - problem
+336. boire - to drink
+337. le matin - morning
+338. la photo - photo
+339. juin - june
+340. mars - march
+341. trente - thirty
+342. jaune - yellow
+343. commencer - to start
+344. finir - to end
+345. l'oiseau - bird
+346. ma - my
+347. sans - without
+348. dormir - to sleep
+349. coucher - to sleep
+350. la montagne - mountain
+351. la coucher de soleil - sunset
+352. le lever du soleil - sunrise
+353. partager - to share
+354. le repas - meal
+355. le feu - the fire/light
+356. le bois - wood
+357. la boisson - the drink
+358. autour - around
+359. la frontière - the border
+360. huit - eight
+361. situer - to place/to locate
+362. la question - a question
+363. demander - to ask
+364. la réponse - the answer
+365. répondre - to answer
+366. lire - to read
+367. choisir - to choose
+368. pouvoir - to be able to
+369. écrire - to write
+370. voir - to see
+371. savoir - to know (something)
+372. connaître - to know (someone/place)
+373. partir - to leave
+374. courir - to run
+375. rire - to laugh
+376. vite - fast
+377. entendre - to hear
+378. vouloir - to want
+379. lancer - to throw
+380. est-ce que… - do you (question)
+381. un peu - a little
+382. comprendre - to understand
+383. la gueule - face/mouth (vulgar)
+384. Écouter - to listen
+385. fou/folle - crazy
+386. et - and
+387. pour - for
+388. qui - who
+389. vivre - to live
+390. savoir - to know
+391. regarder - to watch
+392. le canapé - sofa
+393. la lettre - letter
+394. prendre - to take
+395. la musique - music
+396. la plage - beach
+397. le jeu - game
+398. revenir - to come back
+399. le musée - museum
+400. venir - to come
+401. étudier - to study
+402. apprendre - to learn
+403. voyager - to travel
+404. l'enseignant - teacher
+405. Le bateau - boat
+406. la barque - boat (small)
+407. Le fond - bottom
+408. Le bruit - noise
+409. Parce - because
+410. Même - even/ same
+411. danser - to dance
+412. la chaussure - shoe
+413. dîner - to dine
+414. le parent - parent
+415. le projet - project
+416. cacher - to hide
+417. le lit - bed
+418. garder - to keep/guard
+419. s'asseoir - to sit
+420. tenir - to hold
+421. se tenir - to stand
+422. la porte - door
+423. le cadeau - the gift
+424. vers - towards
+425. chercher - to look for
+426. envoyer - to send
+427. si - if/so
+428. le sourire - the smile
+429. heureux - happy
+430. vieux/vieille - old
+431. jolie - pretty
+432. petit - small
+433. nouveau/nouvelle - new
+434. l'éclair - lightning
+435. penser - to think
+436. la pluie - the rain
+437. puis - then
+438. fois - time (first time/second…)
+439. Ne...que - only
+440. le baiser - the kiss
+441. pourtant - still
+442. encore - again/yet
+443. devoir - must
+444. oublier - to forget
+445. la vie - the life
+446. la mort - the death
+447. le manteau - coat
+448. le ballon - ball
+449. le masque - mask
+450. plus - more
+451. moins - less
+452. on - we (as a sentence starts with "one…")
+453. derrière - behind
+454. entre - between
+455. préparer - to prepare
+456. mélanger - to mix
+457. L'acteur / L'actrice - actor
+458. Le chanteur / La chanteuse - singer
+459. l'histoire - story
+460. jusqu'à - until
+461. nu / nue - naked
+462. Ou - or
+463. Du/au moins - at least
+464. les lèvres - lips
+465. Autre - other
+466. chose - thing
+467. quelque chose - something
+468. là - there
+469. crier - to shout
+470. ici - here
+471. L'étude - the research
+472. Dernière - the last
+473. la clé - key
+474. la carrière - the career
+475. difficile - difficult
+476. dur/e - hard
+477. libre - free
+478. la peau - the skin
+479. le couteau - knife
+480. la fourchette - the fork
+481. la cuillère - spoon
+482. Tout à coup - suddenly
+483. le jambe - leg
+484. fragile - fragile
+485. devenir - to become
+486. la poitrine - chest
+487. rien - nothing
+488. gagner - to win/earn
+489. la personne - person
+490. les gens - people
+491. le mur - wall
+492. dire - to say/ tell
+493. alors - then/ so
+494. comment - how
+495. lever - to raise/get-up
+496. trouver - to find
+497. sembler - to seem
+498. douter - to doubt
+499. parfois - sometimes
+500. fréquemment - frequently
+501. tous les jours - every day
+502. __ fois par __ - X times per Y
+503. la bouche - mouth
+504. vraiment - actually
+505. aussi - also/too
+506. maintenant - now
+507. quelque - some
+508. y - there
+509. le besoin - the need
+510. croire - to believe
+511. aujourd'hui - today
+512. la voix - voice
+513. appartenir - to belong
+514. l'anniversaire - anniversary/birthday
+515. les écouteurs - ear phones
+516. là bas - over there
+517. rapide - rapid
+518. porter - to wear
+519. bleu - blue
+520. le secret - secret
+521. la classe - class
+522. la réunion - the meeting
+523. le vase - the vase
+524. la neige - the snow
+525. fin de semaine - weekend
+526. l'étoile - star
+527. appeler - to call
+528. Enchanté/Enchantée - nice to meet you
+529. tutoyer - to speak informal
+530. le but - the goal
+531. le vocabulaire - vocabulary
+532. petit/petite - small
+533. moyen/moyenne - medium size / average
+534. le milieu - center / middle
+535. grand/grande - large
+536. tout seul - by myself
+537. seul/e - alone
+538. prochain/e/s - next
+539. precedent/e/s - previous
+540. le vin - the wine
+541. rouge - red
+542. tout le monde - everyone
+543. gris/e/s - gray
+544. rose/s - pink
+545. le café - coffee
+546. le magasin - store
+547. fermer - to close
+548. Comment dit-on ___ en français ? - how to say in french
+549. habiter - to live in
+550. le bébé - baby
+551. la phrase - the sentence
+552. la langue - language/tongue
+553. langue maternelle - mothertongue
+554. le langage - language (as an ability)
+555. Hébreu - hebrew
+556. italienne - Italian language
+557. anglias - english
+558. la tomate - tomato
+559. la salade - salat
+560. le concombre - cucumber
+561. le frites - fries
+562. souvent - often
+563. presque - almost
+564. préférer - to prefer
+565. l'équipe - sport team
+566. le passe-temps - hobby
+567. Je suis désolé - I'm sorry
+568. été - summer
+569. Hiver - winter
+570. servir - to serve
+571. le plat - dish
+572. le mari - husband
+573. l'épouse - wife
+574. planifier - to plan
+575. prévoir - to expect
+576. la façon - the way
+577. le chemin - the way (2)
+578. la manière - the method
+579. régulier/e/s - regular
+580. la leçon - the lesson
+581. combien de temps - how long
+582. peut-être - maybe
+583. quel - which
+584. les pâtes - pasta
+585. petit à petit - slowly slowly
+586. combien - how much
+587. coûter - to cost
+588. le petit déjeuner - breakfast
+589. nager - to swim
+590. expliquer - to explain
+591. visiter - to visit
+592. l'heure - the hour
+593. la minute - minute
+594. aider - to help
+595. inquiéter - to worry
+596. partout - everywhere
+597. mal - badly
+598. prudent/e/s/es - careful
+599. courageux/se - brave
+600. clair/e/s - clear
+601. mentir - to lie
+602. la banque - the bank
+603. le bain - bath
+604. hors - out (of scope)
+605. dehors - out (physically)
+606. dedans - inside
+607. intérieur - inside
+608. loin - far
+609. continuer - to continue
+610. l'âge - age
+611. gentil/e/s - kind
+612. la main - hand
+613. l'oreille - ear
+614. le cul - ass
+615. le boulot - job
+616. amical/e/s - friendly
+617. plusieurs - several
+618. le quartier - neighborhood
+619. pendant - during
+620. le côté - the side
+621. la règle - the rule
+622. le tableau - table (gear-board in class / spreadsheet)
+623. désormais - from now on
+624. arrêter - to stop/arrest
+625. actuellement - currently/actually
+626. la sieste - a nap
+627. il faut - it must
+628. il faudra - it will be necessary
+629. mieux - better
+630. bien sûr - of course
+631. marron/s - brown
+632. la couleur - the color
+633. raisonnable - reasonable
+634. Le point de vue - point of view
+635. le point - the point
+636. La menace - the threat
+637. Le juif - jew
+638. Le judaïsme - Judaism
+639. le chrétien - Christian
+640. le musulman - Muslim
+641. Agir - to act
+642. Soyez - be (imperative)
+643. S'habituer - to get use
+644. Surtout - especially/mainly
+645. Le tour - turn (game)
+646. Tourner - to turn
+647. Droite - right (side)
+648. Gauche - left (side)
+649. voler - to fly/steal
+650. soigneux/se - careful
+651. attendre - to wait
+652. mauvais/e - bad (adj)
+653. bon/ne - good (adj)
+654. du coup - as a result (connection word like actually)
+655. plutôt - rather / instead
+656. pire - worse
+657. le nom - the name
+658. la partie - the part
+659. le lieu - the place
+660. l'endroit - the place (2)
+661. paresseux/se - lazy
+662. timide - shy
+663. nerveux/se - nervous
+664. la poche - the pocket
+665. riche - rich
+666. pauvre - poor
+667. gros/se - fat/large
+668. délicieux/délicieuse - delicious
+669. étrange - strange
+670. aléatoire - random
+671. étranger/e - foreign
+672. enrichir - to enrich
+673. la nourriture - food
+674. célèbre - famous
+675. connue - known
+676. seulement - only (2)
+677. de toute façon - anyway
+678. pour faire court - long story short
+679. bref - in short
+680. le sujet - the subject
+681. génial/e - awesome
+682. le niveau - the level
+683. la capacité - the ability
+684. recommander - to recommend
+685. conseiller - to advise
+686. lors - during
+687. réussir - to succeed
+688. cuire - to cook (2)
+689. jeune - young
+690. Sérieux/se - serious
+691. fier/e - proud
+692. formidable - wonderful
+693. inoubliable - unforgettable
+694. discuter - to discuss
+695. le corps - body
+696. sentir - to feel/smell
+697. la forme - the form/shape
+698. la santé - the health
+699. s'entraîner - to train
+700. le type - the type
+701. la viande - the meat
+702. Corriger - to correct
+703. vérifier - to verify/check
+704. participer - participate
+705. quotidienne - daily
+706. le passée - past
+707. le futur - future
+708. pratiquer - to practice
+709. près - near/close
+710. à proximité - nearby
+711. proche - nearby
+712. D'habitude - usually
+713. habituellement - usually (2)
+714. se relaxer - to relax
+715. l'exposition - the exhibition
+716. excellent/e - excellent
+717. ensuite - then
+718. plupart - mostly
+719. le texte - the text
+720. musclé/e - muscled
+721. sombre - dark
+722. foncé - dark (2)
+723. l'ombre - a shadow
+724. ç'est parti - let's go
+725. c'est ça - that's it
+726. c'est tout - that's all
+727. pain pita - pita
+728. le pain - bread
+729. le souci - concern/worry
+730. sympa - nice
+731. s'il vous plaît - please (formal)
+732. s'il te plaît - please (informal)
+733. l'après-midi - afternoon
+734. le midi - noon
+735. Allemagne - Germany
+736. Italie - Italy
+737. République tchèque - Czech Republic
+738. se joindre - to join
+739. se rejoindre - to meet
+740. le tricheur - cheater
+741. ça me va - that works
+742. ça sonne bien - sounds good
+743. sonner - to sound/ring
+744. Agréable - plesant
+745. se promener - to walk around
+746. le genre - the genre
+747. aucun - none
+748. la douleur - the pain
+749. la médecine - the medicine
+750. espérer - to hope
+751. la lampe - the lamp
+752. l'envie - the desire
+753. le légume - vegetable
+754. le poivre - pepper
+755. apporter - to bring
+756. toucher - to touch
+757. craindre - to fear
+758. l'assiette - the plate (material)
+759. souhaiter - to wish
+760. serveur/se - waiter/iss
+761. être + faim - be hungry
+762. le boeuf - beef
+763. l'épice - the spice
+764. le saumon - salmon
+765. le pomme de terre - potato
+766. tous les deux - both
+767. l'huile - oil
+768. la poêle - the pan
+769. le beurre - butter
+770. reconnaître - recognize
+771. l'alcool - alcohol
+772. le jus - juice
+773. commander - to order
+774. d'accord - agree
+775. l'argent - money
+776. l'étape - the step
+777. le bureau - office/desk
+778. les vacances - vacation
+779. malade - the sick
+780. la maladie - the disease
+781. l'hôpital - hospital
+782. l'aéroport - airport
+783. le film - movie
+784. recevoir - to receive
+785. emprunter - to borrow
+786. le sel - salt
+787. le sac - bag
+788. passer - to pass
+789. se passer - to happen
+790. le mot de passe - password
+791. l'adresse - address
+792. l'instant - the moment
+793. l'addition - the check/bill
+794. les lunettes - glasses
+795. les lunettes de soleil - sunglasses
+796. protéger - to protect
+797. la vague - a wave
+798. excuser - to apologize
+799. le son - the sound
+800. éviter - to avoid
+801. le loup - wolf
+802. deviner - to guess
+803. cher/e - dear/expensive
+804. l'embouteillage - traffic jam
+805. dangereux - dangerous
+806. la grève - the strike
+807. soit … soit - either … or
+808. ne … ni … ni - neither … nor
+809. Afin que - so that
+810. Grâce à - thanks to
+811. À cause de - as a result
+812. d'abord - first of all
+813. plus que - more than
+814. moins que - less than
+815. malgré - despite
+816. bien que - even though
+817. même si - even if
+818. finalement - finally
+819. enfin - finally (2)
+820. au cas où - in case
+821. c'est pourquoi - that's why
+822. donc - so
+823. car - because
+824. C'est-à-dire - that's to say
+825. Autrement dit - in other words
+826. par exemple - for example
+827. tel que - such as
+828. En fait - in fact
+829. Justement - exactly
+830. Du coup - so/thus
+831. Mais - but
+832. Devant - in front of
+833. sauf - unless/expect
+834. bref - in short
+835. Probablement - probably
+836. avant que - before
+837. depuis que - since
+838. comme - like/similar (3)
+839. Pendant que - when/while
+840. lorsque - when/while (2)
+841. Janvier - january
+842. Février - february
+843. Mars - march
+844. Avril - april
+845. Mai - may
+846. Juin - june
+847. Juillet - july
+848. Août - august
+849. Septembre - september
+850. Octobre - october
+851. Novembre - november
+852. Décembre - december
+853. le mal de tête - headache
+854. aller + mieux - to be better
+855. on est le <jour> <nombre> <mois> - today is <week-day> <number> <month>
+856. vas-y - go ahead
+857. le vol - the flight
+858. réserver - to reserve
+859. au même endroit - at the same place
+860. supposer - to assume / to suppose
+861. le parapluie - umbrella
+862. s'étirer - to stretch
+863. se diriger - to head/move
+864. s'habiller - to get dressed
+865. arriver - to happen/arrive
+866. entrer - to enter
+867. le collègue - collegue
+868. Se concentrer - to concentrate
+869. se dépêcher - to hurry
+870. le don - a gift (skill)
+871. échanger - to exchange
+872. le four - oven
+873. tout de suite - right away
+874. certain/e/s - some
+875. le poulet - chicken
+876. le mien / la mienne - mine
+877. le tien / la tienne - your
+878. le sien / la sienne - his/her
+879. la queue - the queue/line
+880. près d'ici - nearby (2)
+881. Bonne chance - good luck
+882. comparer - to compare
+883. suivant/e - next/following
+884. le conducteur - the driver
+885. la montre - the watch
+886. s'approcher - to approach/get close
+887. le portable - the phone
+888. la chaleur - the heat
+889. le mystère - the mystery
+890. selon - according to
+891. lourde - heavy
+892. le camion - truck
+893. le dessin - the design
+894. la société - company
+895. se taire - to shut up
+896. le transporteur - the carrier
+897. réfléchir - to wonder
+898. la moto - motorcycle
+899. la bicyclette - bicycle (old)
+900. le vélo - bike
+901. laisser - to leave (2)
+902. le chapitre - the chapter
+903. le résumé - the summary
+904. la confiance - the confidence
+905. le visage - the face
+906. la face - the face (2)
+907. cruel/s/le/s - cruel
+908. se rendre compte - to become aware / realize
+909. le deuxième - 2nd
+910. le troisième - 3rd
+911. le quatrième - 4th
+912. le sol - the floor/ground
+913. l'étage - the floor (floor number)
+914. Au début - in the beginning
+915. le destin - destiny
+916. le chargeur - the charger
+917. fêter - to celebrate
+918. consommer - to consume
+919. la taille - the size
+920. programmeur - programmer
+921. développer - to develop
+922. fascinant/e - fascinating
+923. casser - to break
+924. l'intérêt - the interest
+925. le moment - the moment (2)
+926. intéresser - to interest
+927. attire - to attract
+928. le cou - neck
+929. le chameau - camel
+930. attrayant/e/s - attractive
+931. l'option - the option
+932. découvrir - discover
+933. couvrir - cover
+934. la randonnée - hiking/trek
+935. piéton/ne - pedestrian
+936. respirer - to breath
+937. la bouteille - the bottle
+938. le vêtement - the cloth
+939. le lac - lake
+940. la région - region
+941. ivre/s - drunk
+942. marcher - to walk (2)
+943. Soudain - suddenly
+944. surement - surely
+945. plaisanter - to joke
+946. avoir + l'air - to seem (2)
+947. Allons-y - let's go
+948. la poussière - dust
+949. tant pis - nevermind/too-bad
+950. tellement - so much (2)
+951. l'ours - the bear
+952. laid/e/s - ugly (2)
+953. tomber - to fall
+954. la blague - a joke
+955. l'église - the church
+956. lequel/lesquels/laquelle/lesquelles - which
+957. allumer - to light/turn-on
+958. fondre - to melt
+959. pleurer - to cry
+960. la blessure - the injury
+961. sale - dirty
+962. le lien - the link/connection
+963. le voisin / la voisine - the neighbor
+964. parfait/e/s - perfect
+965. le groupe - group
+966. la pâtisserie - the pastry
+967. la pâte - the pastry (2)
+968. organiser - to organize
+969. l'étagère - shelf
+970. le caissier - the cashier
+971. le panneau - the sign
+972. les toilettes - toilet
+973. le papier toilette - toilet paper
+974. le papier - paper (material)
+975. le couple - the couple
+976. la salle de bain - bathroom
+977. le principal - the main
+978. la majorité - the majority
+979. au-dessus de - above
+980. les devoirs - homework
+981. le marché - market
+982. nord - north
+983. sud - south
+984. est - east
+985. Ouest - west
+986. conduire - to drive
+987. décrire - to describe
+988. chaud/e - hot
+989. froid/e - cold
+990. le restaurant - restaurant
+991. perdre - to lose
+992. directeur/directrice - director
+993. nettoyer - to clean
+994. guider - to guide
+995. naître - to born
+996. regretter - to regret
+997. le calendrier - calendar
+998. l'attraction - attraction
+999. pas trop - not too much
+1000. la flamme - the flame
+1001. produire - to produce
+1002. créer - to create
+1003. haut/e/s - high
+1004. bas/se - low
+1005. la grèce - greece
+1006. compliqué/e - complicated
+1007. la garde - the guard
+1008. ainsi que - as well as
+1009. privé/e - private
+1010. le saint - the holy/sacred
+1011. le cas - the case
+1012. la télé - the tv
+1013. l'or - gold
+1014. s'améliorer - to improve
+1015. l'ordinateur - laptop
+1016. le fichier - file
+1017. le haut - a top shirt
+1018. la manche - the sleeve
+1019. le pantalon - pants
+1020. la jupe - skirt
+1021. le short - short
+1022. le jean - jeans
+1023. la chaussette - the sock
+1024. pour le moment - for now / for this moment
+1025. assorti/e - matching
+1026. métier - job (title like prof.)
+1027. changer d'avis - change mind
+1028. brun/ne - brown (hair color)
+1029. blond/e - blond (hair color)
+1030. roux/sse - red (hair color)
+1031. l'expérience - the experience
+1032. avoir une expérience - to have experience
+1033. vivre une expérience - to enjoy an experience
+1034. l'objet - the object
+1035. sage - wise
+1036. le sondage - the poll
+1037. faire attention - to be careful / pay attention
+1038. volley - volleyball
+1039. hier soir - last night
+1040. le pote - buddy
+1041. la copine - the girlfriend
+1042. le copain - the boyfriend
+1043. le coloc/ataire - roommate
+1044. la cour - yard
+1045. ça veut dire - it means
+1046. le cheval - les chevaux - horse/s
+1047. le sable - sand
+1048. la serviette - the towel
+1049. le parasol - sun umbrella
+1050. le bijou - the jewel
+1051. la poubelle - the trash / bin
+1052. l'évier - the sink
+1053. á la fin - in the end
+1054. à l'arrière de - at the back of
+1055. tous - all
+1056. d'après - according to (2)
+1057. la piscine - the pool
+1058. le supermarché - supermarket
+1059. suivre - to follow
+1060. à travers - towards
+1061. parmi - among
+1062. égal/e - equal
+1063. rencontrer - to meet (2)
+1064. la rencontre - meeting (2)
+1065. par hasard - by chance/coincidence
+1066. la météo - the weather
+1067. l'humour - humor
+1068. l'humeur - mood
+1069. l'entretien - the interview
+1070. embaucher - to hire
+1071. Avoir beau + (infinitive-verb) - no matter how hard ___
+1072. reprendre - to resume/take-over
+1073. rentrer - to return
+1074. récemment - recently
+1075. l'approche - the approach
+1076. l'employé - the employee
+1077. l'événement - the event
+1078. cent - hundred
+1079. mille - thousand
+1080. entre-temps - in the meantime
+1081. la lessive - the laundry
+1082. bondé/s - crowded
+1083. le patron - the boss
+1084. profiter - to enjoy/benefit
+1085. la tente - tent
+1086. fâché/e/s - angry
+1087. monter - to climb/go-up
+1088. le moniteur - supervisor
+1089. le désert - the desert
+1090. coincer - to stuck
+1091. se déplacer - to move around
+1092. séjourner - to remain/stay (2)
+1093. d'un coup - at once
+1094. le coup - the kick
+1095. se baigner - to enter the water
+1096. se noyer - to drown
+1097. ce n'est pas peine - it doesn't worth
+1098. rappeler - to remind
+1099. se rappeler - to remember
+1100. chouette - nice (2)
+1101. s'éclater - to have fun
+1102. s'amuser - to have fun (2)
+1103. kiffer - to like (2)
+1104. Le plan - the plan
+1105. précis/e/s - precise/accurate
+1106. à l'avance - in advance
+1107. valoir - to worth
+1108. suffisant - enough (2)
+1109. le billet - ticket
+1110. la carte - the map
+1111. la glace - the ice
+1112. la côte - the coast
+1113. les noces - the wedding
+1114. avoir de la peine - to feel sad / to grieve
+1115. se détendre - to relax (2)
+1116. la vérité - the truth
+1117. détester - to hate
+1118. l'océan - ocean
+1119. profond/e - deep
+1120. le trou - the hole
+1121. l'immeuble - building
+1122. le sculpture - sculpture
+1123. le paysage - the landscape
+1124. plaire - to please / like (2)
+1125. il y avait - there was
+1126. il y a - there is / ago
+1127. confortable - comfortable
+1128. pousser - to push
+1129. tirer - to pull
+1130. le territoire - territory
+1131. le trottoir - the sidewalk
+1132. au lieu de - instead (2)
+1133. mec - man (2)
+1134. meuf - woman (2)
+1135. bosser - to work (2)
+1136. la clope - cigarette
+1137. truc - something
+1138. coucou - hello (3)
+1139. la bagnole - car (2)
+1140. quand même - anyway/still (2)
+1141. d'ailleurs - anyway (3)
+1142. manquer - to miss
+1143. se manque - to miss each other
+1144. commenter - to comment
+1145. l'oncle - uncle
+1146. la tante - aunt
+1147. se réveiller - to wake up
+1148. le nombre - the number
+1149. les transports en commun - public transport
+1150. louer - to rent
+1151. la puissance - the force
+1152. la vitesse - the speed
+1153. le critère - criterion
+1154. l'usager - the user
+1155. l'usage - the use
+1156. s'agit il - is it about
+1157. courant/e - common/current
+1158. utiliser - to use
+1159. outre - in addition
+1160. Goûter - to taste
+1161. Le miel - honey
+1162. l'épaule - shoulder
+1163. l'ongle - the nail
+1164. traverser - to cross
+1165. doux/ce - soft
+1166. couper - to cut
+1167. mignon/ne - cute
+1168. le gant - glove
+1169. flotter - to float
+1170. le soldat - soldier
+1171. l'épée - sword
+1172. pimenter - to spice
+1173. violet/e/es - purple
+1174. le chapeau - hat
+1175. debout - standing
+1176. interdit/e - forbidden
+1177. le coin - the corner
+1178. la gloire - the glory
+1179. diriger - to lead/direct
+1180. poursuivre - to pursue
+1181. entier - entire
+1182. le produit - product
+1183. responsable/s - responsible
+1184. fonctionner - to function/work
+1185. terminer - to complete/finish
+1186. se terminer - to be completed
+1187. amer - bitter
+1188. aigre - sour
+1189. épicé - hot/picante
+1190. salé - salty
+1191. sucré - sweet
+1192. similaire - similar
+1193. semblable - similar (2)
+1194. le roche - the rock
+1195. le fouet - the whip
+1196. le maître - teacher (primary school)/master
+1197. le crayon - pencil
+1198. la paille - straw
+1199. l'abeille - bee
+1200. l'écureuil - squirrel
+1201. le feuille - leaf/paper
+1202. le grenouille - frog
+1203. les paroles - the lyrics
+1204. la souris - mouse
+1205. la dent - teeth
+1206. autant que - as much as
+1207. cependant - however (2)
+1208. énerver - to annoy/irritate
+1209. bordel - mess (slang)
+1210. bazar - mess
+1211. boff - not bad (slang)
+1212. bouffer - to eat (slang)
+1213. le chaint - pain in the ass
+1214. au calme / oklm - chill/relax (slang)
+1215. bg (beau gosse) - handsome
+1216. chanmé - awesome (v slang)
+1217. chelou - weird (v slang)
+1218. cimer - thanks (v slang)
+1219. ouf - insane (v slang)
+1220. pécho - to make-out/buy-drags (v slang)
+1221. relou - annoying (v slang)
+1222. téma - check this out (v slang)
+1223. avoir le seum - deeply disappointed (slang)
+1224. laisser tomber - to give up (slang)
+1225. se casser - to get the hell out
+1226. le lapin - rabbit
+1227. le requin - the shark
+1228. prononcer - to pronounce
+1229. la fée - fairy
+1230. la scie - the saw
+1231. le raisin - grape
+1232. la durée - the duration
+1233. le mensonge - the lie
+1234. la colle - the glue
+1235. le panier - basket/box (2)
+1236. le médecin - doctor
+1237. muet/te - silent
+1238. la recette - recipe
+1239. à l'envers - upside down
+1240. l'opposé - the opposite
+1241. menteur/use - liar
+1242. péter - to fart
+1243. choper - to grab
+1244. le gosse - kid (slang)
+1245. tarpin - very (slang)
+1246. masculin - masculine
+1247. féminin - feminine
+1248. rigoler - to joke (2)
+1249. saignant - medium-rare
+1250. à point - medium
+1251. la ligne - the line/row
+1252. la scéne - the stage
+1253. le personnage - the character
+1254. curieux/se - curious
+1255. jaloux/se - jealous
+1256. montrer - to show
+1257. le spectacle - the show
+1258. majeur - major
+1259. mineure - minor
+1260. le théâtre - the theater
+1261. le pôle - the pole
+1262. vide - empty
+1263. surprendre - to surprise
+1264. surprenant - surprising (adj)
+1265. la note - the note/grade
+1266. diviser - to divide
+1267. l'arrondissement - districts in Paris
+1268. la confiture - the jam
+1269. la fraise - strawberry
+1270. le fruit - the fruit
+1271. à tout à l'heure - see you later
+1272. à plus tard - see you later (2)
+1273. prier - to pray
+1274. les courses - the shopping
+1275. aller simple - one way (ticket)
+1276. aller-retour - two way (round trip)
+1277. le demi - half (1/2)
+1278. le tiers - third (1/3)
+1279. le quart - quarter (1/4)
+1280. épeler - to spell
+1281. les viennoiseries - pastries
+1282. le sorte - sort/kind
+1283. identique - identique
+1284. offrir - to offer
+1285. la variété - the variety
+1286. se disputer - to argue/dispute
+1287. traduire - to translate
+1288. à quel point - how much/at-what-point
+1289. traîner - to hang-out/drag
+1290. avouer - to admit
+1291. sécher - to dry/skip
+1292. marquer - to mark/score
+1293. prouver - to prove
+1294. à peine - barely
+1295. à jamais - for ever
+1296. l'herbe - the grass
+1297. la guerre - the war
+1298. la goutte - the drop
+1299. ajouter - to add
+1300. livrer - to deliver
+1301. la paix - the peace
+1302. silencieux/se - quiet (adj)
+1303. pacifique - peaceful
+1304. a part ça - other than that
+1305. la cerise - cherry
+1306. malheureusement - unfortunately
+1307. sauter - to jump
+1308. l'oreiller - pillow
+1309. la couverture - blanket
+1310. gêner - to hinder/bother
+1311. la poignée - the handle
+1312. punir - to punish
+1313. abuser - to abuse
+1314. céder - to give/assign
+1315. quiconque - anyone
+1316. le sous-sol - basement
+1317. griller - to grill
+1318. livrer - to deliver
+1319. réparer - to fix
+1320. troquer - to barter
+1321. la compagne - periferia
+1322. désir - to desire
+1323. le défi - the challenge
+1324. loisir - leisure
+1325. dépenser - to spend
+1326. réduire - to reduce
+1327. le logique - the logic
+1328. L'alimentation - consuming of food
+1329. L'achat - the purchase
+1330. poli/e - polite
+1331. A tes/vos souhaits - bless you
+1332. négocier - to negotiate
+1333. le meuble - the furniture
+1334. le célibataire - single person
+1335. en couple - in couple
+1336. le francophone - french speaking
+1337. l'ouvrier - the worker
+1338. au départ - from the beginning
+1339. la mariée - the bride
+1340. marier - to marry
+1341. résoudre - to solve
+1342. le volet - window blinds
+1343. l'ambiance - the vibe/atmosphere
+1344. 24 heures sur 24 - 24/7
+1345. ennuyeux/se - boring
+1346. un impôt - the tax
+1347. soutenir - to support
+1348. les sans domicile fixes | SDF - homeless
+1349. remplir - to fill
+1350. se presse - to hurry (2)
+1351. éteindre - to turn off
+1352. le lycée - high school
+1353. déjeuner - to have lunch
+1354. fabriquer - to manufacture
+1355. bricoler - DIY
+1356. la tendance - the trend
+1357. une écharpe - scarf
+1358. en ligne - online
+1359. souligner - to highlight
+1360. insolite - unusual
+1361. la foule - the crowd
+1362. fuir - to escape
+1363. le climatiseur / la clim - air conditioner
+1364. le noix - the nut
+1365. se glisser - to slide
+1366. l'estime de soi - self esteem
+1367. décrocher - pick up the phone
+1368. juger - to judge
+1369. la courgette - zucchini
+1370. un invité - guest
+1371. en tant que - as, because (explain reason)
+1372. par conséquent - as a result
+1373. dans mon dos - behind my back
+1374. un esprit - a mind
+1375. abîmer - to damage/ruin
+1376. une armoire - a closet
+1377. un placard - a closet (2)
+1378. une échelle - ladder
+1379. le/la bénévole - the volunteer
+1380. une électricité - electricity
+1381. le fer - iron
+1382. le cuir - leather
+1383. le cadre - the framework
+1384. s'entraider - to help each other
+1385. ne pas pris pour acquis - not taken for granted
+1386. le bouchon - bottle cap
+1387. la dépendance - dependency
+1388. le blé - wheat
+1389. récupérer - to pick up
+1390. les renseignements - the information
+1391. songer - to consider/contemplate
+1392. quitter - to leave (2)
+1393. demeurer - to remain/stay (3)
+1394. un équipage - a crew
+1395. nier - to deny/negate
+1396. non plus - neither
+1397. attraper - to catch
+1398. ravi/e - delighted
+1399. nécessiter - to require/need
+1400. le format - the format
+1401. un épinard - spinach
+1402. aborder - to address/tackle
+1403. trahir - to betray/cheat
+1404. quand même assez - quite a bit
+1405. lâcher - to let-go/drop
+1406. lier - to bind/link
+1407. entourer - to surround
+1408. le soin - the care
+1409. prendre soin - to take care
+1410. soi-même - yourself, oneself
+1411. âgé/e - elder/senior
+1412. échecs - chess
+1413. briller - to shine/glow
+1414. le congé - the leave (work wise)
+1415. la tartine - open face sandwich
+1416. le mouton - the sheep
+1417. le chômage - unemployment
+1418. bouger - to move
+1419. Encore une fois - once again
+1420. une oeuvre - artwork
+1421. jongler - to juggle
+1422. brûler - to burn
+1423. déranger - to disturb
+1424. ça y est - that's it
+1425. un cahier - notebook
+1426. la facture - the bill, invoice
+1427. il maillot - swimsuit
+1428. remarquer - to notice
+1429. explorer - to explore
+1430. nul/le - sucks (Adj)
+1431. la traduction - translation
+1432. remplacer - to replace
+1433. se concentrer - to concentrate
+1434. environ - approximately
+1435. spontané - spontaneous
+1436. le titre - title
+1437. se sentir à l'aise - to be comfortable
+1438. brandir - to wave
+1439. il rendez-vous - the appointment
+1440. la cloche - a bell
+1441. la coupe des cheveux - haircut
+1442. la coupe - bowl, cup
+1443. raser - to shave
+1444. la barbe - beard
+1445. disponibilité - availability
+1446. le lendemain - the next day
+1447. disponible - available
+1448. annuler - to cancel
+1449. la poêle - a pan
+1450. la natation - swimming
+1451. pur/e - pure
+1452. chasser - to hunt
+1453. dédier - to dedicate, devote
+1454. empêcher - to prevent, stop
+1455. un foison - a wealth, bunch
+1456. Un écouteur - an earphone
+1457. la fureur - rage, furious
+1458. le sauveur - savior
+1459. survivre - to survive
+1460. le survie - the survival
+1461. marrant/e - funny
+1462. escalader - to climb
+1463. grimper - to climb (2)
+1464. la graisse - the fat
+1465. Le pont - bridge
+1466. improviser - to improvise
+1467. le métèque - the foreigner/nomad
+1468. Donner l'air de - make something look like
+1469. la pilule - the pill
+1470. enceinte - pregnant
+1471. ne … plus - don't … anymore
+1472. mordre - to bite
+1473. le morceau - a bit/piece
+1474. satisfaire - to satisfy
+1475. assouvir - to satisfy (strong desire)
+1476. sans jamais - without ever
+1477. souffrir - to suffer
+1478. faire d'histoires - to make a scene
+1479. sans pour cela … - without that this …
+1480. arrogant/e - arrogant
+1481. moindre - adj. the smallest (abstract)
+1482. Se marrer - to laugh
+1483. s'ennuyer - to get bored
+1484. se ressembler - to look alike
+1485. se réjouir - to make one happy
+1486. disparaître - to disappear
+1487. maîtriser - to control (abstract)
+1488. contrôler - to control
+1489. mettre un tunnel - to dig
+1490. avoir l'impression - to have a feeling
+1491. s'envoler - to fly away
+1492. accrocher - to hang/hook
+1493. s'accrocher - to hold on
+1494. de trop - redundant
+1495. l'enfance - childhood
+1496. coupe court - get to the point
+1497. briser - to shutter (poetic)
+1498. sensibiliser - to be aware/sensitive
+1499. la crème solaire - sunscreen
+1500. la nuque - the back of the neck
+1501. vomir - to vomit
+1502. le drapeau - the flag
+1503. le déchet - trash
+1504. frotter - to rub
+1505. enlever - to remove
+1506. brûlure - to burn
+1507. la piqûre - the sting
+1508. retrouver - to find again
+1509. la soif - thirst
+1510. l'enfer - the hell
+1511. exagérer - to exaggerate
+1512. la larme - the tear
+1513. débrouiller - to figure things out
+1514. le pouce - thumb
+1515. sur le pouce - on the go / rush
+1516. actuellement - currently (not actually!)
+1517. éventuellement - possibly/perhaps
+1518. radin/e - stingy
+1519. abandonner - to give-up/abandon
+1520. déclarer - to declare
+1521. annoncer - to announce
