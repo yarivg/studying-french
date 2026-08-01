@@ -129,8 +129,12 @@ window.Quiz = (function () {
             : '') +
         '</div>' +
         '<div class="flash-actions" hidden>' +
-          '<button class="btn btn-lg btn-again" data-grade="0">Again</button>' +
-          '<button class="btn btn-lg btn-ok" data-grade="1">Got it</button>' +
+          // The digits already worked; the chips say so, the way they do in a
+          // test. Hidden on a touch screen by the stylesheet.
+          '<button class="btn btn-lg btn-keyed btn-again" data-grade="0">' +
+            '<kbd class="test-key">1</kbd>Again</button>' +
+          '<button class="btn btn-lg btn-keyed btn-ok" data-grade="1">' +
+            '<kbd class="test-key">2</kbd>Got it</button>' +
         '</div>' +
         '<div class="flash-progress">' +
           '<span>' + (s.index + 1) + ' of ' + s.total + '</span>' +

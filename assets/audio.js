@@ -246,9 +246,31 @@ window.Say = (function () {
   // A phonetic transcription cannot be spoken as written, so its play
   // button reads the French it belongs to: the example in the same table
   // row, the question above the answer, or the nearest italic before it.
+  // The italic inside `scope` that this transcription belongs to: the last one
+  // before it, so a cell holding two pairs gives each its own word, falling
+  // back to the first when the transcription comes before every italic.
+  function nearestEm(scope, el) {
+    var best = '';
+    scope.querySelectorAll('em').forEach(function (candidate) {
+      if (el.compareDocumentPosition(candidate) & Node.DOCUMENT_POSITION_PRECEDING) {
+        best = clean(candidate.textContent);
+      }
+    });
+    if (best) return best;
+    var first = scope.querySelector('em');
+    return first ? clean(first.textContent) : '';
+  }
+
   function ipaSource(el) {
     var td = el.closest('td, th');
     if (td) {
+      // The word a transcription belongs to is nearly always beside it in the
+      // same cell: "*grand* /gʁɑ̃/". That has to win, or a row built as
+      // "*grand* /gʁɑ̃/ | *grande* /gʁɑ̃d/" makes the first button say
+      // "grande", which is the opposite of the point being made.
+      var own = nearestEm(td, el);
+      if (own) return own;
+
       var row = td.closest('tr');
       var cells = row ? [].slice.call(row.cells) : [];
       // Examples live in the last column, so search the row right to left:
@@ -276,17 +298,7 @@ window.Say = (function () {
     }
 
     var box = el.closest('li, p, .example, .callout, .exercise-item, td') || el.parentNode;
-    var best = '';
-    box.querySelectorAll('em').forEach(function (candidate) {
-      // Document order: keep the last italic that still precedes the IPA.
-      if (el.compareDocumentPosition(candidate) & Node.DOCUMENT_POSITION_PRECEDING) {
-        best = clean(candidate.textContent);
-      }
-    });
-    if (best) return best;
-
-    var first = box.querySelector('em');
-    return first ? clean(first.textContent) : '';
+    return nearestEm(box, el);
   }
 
   function markIpa(el) {
@@ -294,6 +306,13 @@ window.Say = (function () {
     el.dataset.wired = '1';
     var src = ipaSource(el);
     if (!src) return;
+    // One button per word per row. A note like "the s now sounds, as /z/"
+    // holds a single phoneme, so it resolves to the word already wired beside
+    // it, and two identical buttons in one row read as two different sounds.
+    var row = el.closest('tr');
+    if (row && [].some.call(row.querySelectorAll('.say-btn'), function (b) {
+      return b.dataset.say === src;
+    })) return;
     var btn = document.createElement('button');
     btn.className = 'say-btn';
     btn.type = 'button';

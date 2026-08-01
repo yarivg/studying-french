@@ -169,10 +169,16 @@ window.Test = (function () {
   // them finish by calling settle().
   var BODY = {};
 
+  // Every point in a test where you are picking from a short list is worked
+  // the same way: the button carries data-key, wears the digit that presses
+  // it, and onKey below finds it without knowing what it does. The chips are
+  // hidden on a touch screen by the stylesheet, where there is no keyboard.
+  function key(n) { return '<kbd class="test-key">' + n + '</kbd>'; }
+
   BODY.mcq = function (body, actions, q) {
     body.innerHTML = '<div class="test-choices">' + q.choices.map(function (c, i) {
-      return '<button class="test-choice" data-i="' + i + '">' +
-        '<kbd class="test-key">' + (i + 1) + '</kbd>' + escapeHtml(c) + '</button>';
+      return '<button class="test-choice" data-i="' + i + '" data-key="' + (i + 1) + '">' +
+        key(i + 1) + escapeHtml(c) + '</button>';
     }).join('') + '</div>' +
       '<p class="test-keyhint">Press 1-' + q.choices.length + ', or click.</p>';
 
@@ -187,7 +193,8 @@ window.Test = (function () {
         if (i === q.a) el.classList.add('is-right');
         else if (i === chosen) el.classList.add('is-wrong');
       });
-      settle(q, right);
+      // The choice itself, not its number: the summary shows what you picked.
+      settle(q, right, q.choices[chosen]);
     });
   };
 
@@ -372,8 +379,10 @@ window.Test = (function () {
   // Offered when the microphone route has failed us rather than the learner.
   function selfMarkHtml() {
     return '<div class="test-actions">' +
-      '<button class="btn btn-ok" data-self="ok">I said it right</button>' +
-      '<button class="btn btn-again" data-self="no">I did not</button>' +
+      '<button class="btn btn-keyed btn-ok" data-self="ok" data-key="1">' +
+        key(1) + 'I said it right</button>' +
+      '<button class="btn btn-keyed btn-again" data-self="no" data-key="2">' +
+        key(2) + 'I did not</button>' +
       '</div>';
   }
 
@@ -459,7 +468,8 @@ window.Test = (function () {
 
   // Types the machine cannot judge: reveal the model answer, you decide.
   function selfMark(body, actions, q) {
-    actions.innerHTML = '<button class="btn btn-lg" data-act="reveal">Show the answer</button>';
+    actions.innerHTML = '<button class="btn btn-lg btn-keyed" data-act="reveal" data-key="1">' +
+      key(1) + 'Show the answer</button>';
     actions.addEventListener('click', function (e) {
       var b = e.target.closest('[data-act]');
       if (!b) return;
@@ -467,8 +477,10 @@ window.Test = (function () {
         body.insertAdjacentHTML('beforeend',
           '<p class="test-model"><span>Model answer</span>' + escapeHtml(modelAnswer(q)) + '</p>');
         actions.innerHTML =
-          '<button class="btn btn-lg btn-ok" data-act="got">I had it</button>' +
-          '<button class="btn btn-lg btn-again" data-act="missed">Not quite</button>';
+          '<button class="btn btn-lg btn-keyed btn-ok" data-act="got" data-key="1">' +
+            key(1) + 'I had it</button>' +
+          '<button class="btn btn-lg btn-keyed btn-again" data-act="missed" data-key="2">' +
+            key(2) + 'Not quite</button>';
         return;
       }
       settle(q, b.dataset.act === 'got', null, null, true);
@@ -484,8 +496,11 @@ window.Test = (function () {
 
   /* ---------------------------------------------------------- keyboard */
 
-  // 1-4 answers a multiple choice, or picks the next word in an ordering
-  // question; Enter moves on once something has been graded.
+  // A digit presses whatever wears it: a multiple choice, the two self-marks,
+  // the three mastery levels, another go at a spoken answer. Anything without
+  // a digit of its own falls through to the ordering pool, where a digit picks
+  // the next word. Enter reveals a model answer, or moves on once something
+  // has been graded.
   function onKey(e) {
     if (!run) return;
     if (e.metaKey || e.ctrlKey || e.altKey) return;
@@ -494,20 +509,22 @@ window.Test = (function () {
 
     var next = run.host.querySelector('[data-act="next"]');
     if (e.key === 'Enter' || e.key === ' ') {
-      if (next) { e.preventDefault(); next.click(); }
+      var reveal = next ? null : run.host.querySelector('[data-act="reveal"]');
+      if (next || reveal) { e.preventDefault(); (next || reveal).click(); }
       return;
     }
 
-    if (!/^[1-9]$/.test(e.key) || next) return;
-    var n = Number(e.key) - 1;
+    if (!/^[1-9]$/.test(e.key)) return;
+    var n = Number(e.key);
 
-    var choices = run.host.querySelectorAll('.test-choice:not([disabled])');
-    if (choices.length) {
-      if (choices[n]) { e.preventDefault(); choices[n].click(); }
-      return;
-    }
+    // A button that has been graded is disabled, and one on a panel that is
+    // no longer showing has no layout box, so neither can be pressed.
+    var keyed = run.host.querySelector('[data-key="' + n + '"]:not([disabled])');
+    if (keyed && keyed.offsetParent !== null) { e.preventDefault(); keyed.click(); return; }
+
+    if (next) return;
     var chips = run.host.querySelectorAll('.test-pool [data-pick]');
-    if (chips[n]) { e.preventDefault(); chips[n].click(); }
+    if (chips[n - 1]) { e.preventDefault(); chips[n - 1].click(); }
   }
 
   document.addEventListener('keydown', onKey);
@@ -518,7 +535,11 @@ window.Test = (function () {
     var s = run;
     if (!s) return;
     if (right) s.right++;
-    s.answered.push({ id: q.id, ch: q.ch, right: !!right, given: given || '' });
+    // The question itself is kept, not just its id: the summary lists what you
+    // got wrong, and it needs the prompt and the model answer to do that.
+    s.answered.push({
+      id: q.id, ch: q.ch, right: !!right, given: given || '', q: q, selfMarked: !!selfMarked
+    });
 
     // Chapter exercises and tests share the same store, so a test answer
     // shows up in the chapter's accuracy too.
@@ -551,7 +572,9 @@ window.Test = (function () {
     // fault: a noisy room or a recogniser that guessed a real word. Offer the
     // question back rather than making you live with that.
     actions.innerHTML =
-      (q.type === 'say' ? '<button class="btn btn-lg" data-act="redo">🎤 Say it again</button>' : '') +
+      (q.type === 'say'
+        ? '<button class="btn btn-lg btn-keyed" data-act="redo" data-key="1">' +
+          key(1) + '🎤 Say it again</button>' : '') +
       '<button class="btn btn-primary btn-lg" data-act="next">' +
       (last ? 'See the score' : 'Next') + '</button>';
 
@@ -602,6 +625,7 @@ window.Test = (function () {
               return '<a href="#/' + c + '">' + escapeHtml(c.replace(/-/g, ' ')) + '</a>';
             }).join(', ') + '.</p>'
           : '<p>Nothing stood out as weak.</p>') +
+        wrongHtml(s.answered) +
         '<div class="mastery-box">' +
           '<p><strong>Your call.</strong> The score is just evidence — mark this how you ' +
           'actually feel about it.</p>' +
@@ -632,9 +656,41 @@ window.Test = (function () {
     if (s.onDone) s.onDone({ pct: pct, right: s.right, total: s.questions.length });
   }
 
+  // Every question you got wrong, in the order they came, with what you said
+  // next to what the answer was. A percentage tells you how much you missed;
+  // this tells you what. The explanation is repeated here because at the end
+  // of a test it is the first time you can read them side by side.
+  function wrongHtml(answered) {
+    var wrong = answered.filter(function (a) { return !a.right; });
+    if (!wrong.length) return '';
+    return '<div class="test-review">' +
+      '<h3>What you got wrong <span>' + wrong.length + ' of ' + answered.length + '</span></h3>' +
+      '<ol>' + wrong.map(function (a) {
+        var q = a.q || {};
+        var mine = String(a.given || '').trim();
+        var model = modelAnswer(q);
+        return '<li>' +
+          '<p class="tr-q">' + escapeHtml(q.q || '') + '</p>' +
+          // What the voice read out, unless that is the answer line as well.
+          (q.type === 'listen' && q.say && q.say !== model
+            ? '<p class="tr-said"><span>It said</span>' + escapeHtml(q.say) + '</p>' : '') +
+          (mine
+            ? '<p class="tr-mine"><span>' + (q.type === 'say' ? 'It heard' : 'You said') + '</span>' +
+              escapeHtml(mine) + '</p>'
+            : a.selfMarked
+              ? '<p class="tr-mine"><span>You said</span>you did not have it</p>'
+              // An empty box was still an answer, and saying so beats a gap
+              // that reads as though the question was never put to you.
+              : '<p class="tr-mine"><span>You said</span>nothing</p>') +
+          '<p class="tr-a"><span>Answer</span>' + escapeHtml(model) + '</p>' +
+          (q.why ? '<p class="tr-why">' + escapeHtml(q.why) + '</p>' : '') +
+          '</li>';
+      }).join('') + '</ol></div>';
+  }
+
   function level3btn(n, label, current) {
-    return '<button class="btn mastery-btn' + (current === n ? ' is-set' : '') +
-      '" data-level="' + n + '">' + label + '</button>';
+    return '<button class="btn btn-keyed mastery-btn' + (current === n ? ' is-set' : '') +
+      '" data-level="' + n + '" data-key="' + (n + 1) + '">' + key(n + 1) + label + '</button>';
   }
 
   /* ---------------------------------------------------------- helpers */

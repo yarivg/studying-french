@@ -144,7 +144,7 @@
 
   function markNavRead() {
     navEl.querySelectorAll('a[data-slug]').forEach(function (a) {
-      a.classList.toggle('is-read', Progress.isRead(a.dataset.slug));
+      a.classList.toggle('is-read', studied(a.dataset.slug));
       // Read and understood are different things, so they get different marks.
       var level = Progress.mastery(a.dataset.slug).level;
       a.classList.toggle('is-shaky', level === 1);
@@ -160,17 +160,48 @@
 
   var renderSidebarProgress = function () { markNavRead(); updateProgressCard(); };
 
+  // How much of a chapter counts as done. It comes from the mark you give
+  // yourself after the chapter's test: confident is a whole lesson, shaky is
+  // half, nothing is nothing. Mark as read used to be the only thing that
+  // counted, which is why a chapter tested and marked *Confident* still read
+  // as 0% progress. Reading a lesson still ticks it in the sidebar, but
+  // having read something is not the same as knowing it, so it is not
+  // progress on its own.
+  function credit(slug) {
+    var level = Progress.mastery(slug).level;
+    return level === 2 ? 1 : level === 1 ? 0.5 : 0;
+  }
+
+  // Ticked in the sidebar: read, or judged, since you cannot judge unread.
+  function studied(slug) {
+    return Progress.isRead(slug) || Progress.mastery(slug).level > 0;
+  }
+
+  function marked(list) {
+    return list.filter(function (c) { return Progress.mastery(c.slug).level > 0; }).length;
+  }
+
+  function creditOf(list) {
+    return list.reduce(function (sum, c) { return sum + credit(c.slug); }, 0);
+  }
+
+  function pctOf(list) {
+    return list.length ? Math.round((creditOf(list) / list.length) * 100) : 0;
+  }
+
   function updateProgressCard() {
     var total = chapters.length || 1;
-    var read = chapters.filter(function (c) { return Progress.isRead(c.slug); }).length;
-    var pct = Math.round((read / total) * 100);
+    var pct = pctOf(chapters);
     var ring = document.getElementById('progressRing');
     var circ = 2 * Math.PI * 19;
     ring.style.strokeDasharray = circ;
     ring.style.strokeDashoffset = circ * (1 - pct / 100);
     document.getElementById('progressPct').textContent = pct + '%';
     document.getElementById('progressText').textContent =
-      read + ' of ' + total + ' lessons read';
+      marked(chapters) + ' of ' + total + ' lessons marked';
+    document.querySelector('.progress-card').title =
+      'From the mark you give yourself after a chapter test: confident counts a ' +
+      'whole lesson, shaky counts half.';
   }
 
   /* ---------------------------------------------------------- routing */
@@ -289,8 +320,8 @@
   function renderHome() {
     setCurrentNav('');
     pager.innerHTML = '';
-    var read = chapters.filter(function (c) { return Progress.isRead(c.slug); }).length;
-    var nextCh = chapters.find(function (c) { return !Progress.isRead(c.slug); }) || chapters[0];
+    var read = chapters.filter(function (c) { return studied(c.slug); }).length;
+    var nextCh = chapters.find(function (c) { return !studied(c.slug); }) || chapters[0];
 
     var html =
       '<div class="eyebrow"><span>A course I built for myself</span></div>' +
@@ -350,7 +381,8 @@
           ? 'Kept in this browser and mirrored to your private gist.'
           : 'Everything here lives in this browser only. Nothing is uploaded.') + '</p>' +
         '<div class="stat-grid">' +
-          stat(read + '<span style="font-size:1rem;color:var(--muted)"> / ' + total + '</span>', 'Lessons read', 'accent') +
+          stat(pctOf(chapters) + '%', 'Course progress', 'accent') +
+          stat(read + '<span style="font-size:1rem;color:var(--muted)"> / ' + total + '</span>', 'Lessons read', '') +
           stat(Progress.knownCount(), 'Words marked known', 'good') +
           stat(due, 'Cards due now', due ? 'warn' : '') +
           stat(Progress.streak(), 'Day streak', '') +
@@ -358,17 +390,23 @@
 
       html += '<h2>By part</h2>';
       manifest.parts.forEach(function (part) {
-        var n = part.chapters.filter(function (c) { return Progress.isRead(c.slug); }).length;
-        var pct = Math.round((n / part.chapters.length) * 100);
+        var solid = part.chapters.filter(function (c) {
+          return Progress.mastery(c.slug).level === 2;
+        }).length;
+        var pct = pctOf(part.chapters);
         html += '<h3>' + escapeHtml(part.numeral) + ' — ' + escapeHtml(part.title) + '</h3>' +
           '<p style="margin-bottom:.3rem;color:var(--muted);font-size:.88rem">' +
-          n + ' of ' + part.chapters.length + ' lessons · ' + pct + '%</p>' +
+          marked(part.chapters) + ' of ' + part.chapters.length + ' marked, ' + solid +
+          ' confident · ' + pct + '%</p>' +
           '<div class="bar"><span style="width:' + pct + '%"></span></div>';
       });
 
       html += '<h2>What you have understood</h2>' +
-        '<p>Reading a lesson and understanding it are tracked separately. ' +
-        'These are the marks you gave yourself after a test.</p>' +
+        '<p>Progress comes from these marks, not from how many lessons you have opened. ' +
+        'You give them yourself at the end of a chapter test: <strong>confident</strong> ' +
+        'counts a whole lesson, <strong>shaky</strong> counts half, and a lesson you have ' +
+        'only read counts nothing until you have judged it. Reading one still ticks it in ' +
+        'the sidebar.</p>' +
         '<div class="stat-grid">' +
           stat(Progress.masteryCount(2), 'Marked confident', 'good') +
           stat(Progress.masteryCount(1) - Progress.masteryCount(2), 'Marked shaky', 'warn') +

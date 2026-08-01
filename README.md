@@ -41,9 +41,14 @@ sampling two from every chapter in it. Six question types:
 | `open` | free answer against a model answer, marked by you |
 
 The score is automatic, but **the score is not the verdict.** At the end of every test you mark
-the chapter *Not yet*, *Shaky* or *Confident* yourself, and that mark — not the percentage — is
-what colours the sidebar and the Progress page. A chapter you aced but do not trust stays unmarked
-until you say otherwise.
+the chapter *Not yet*, *Shaky* or *Confident* yourself, and that mark, not the percentage, is
+what the whole progress figure is built from: **confident counts a whole lesson, shaky counts
+half, and a lesson you have only read counts nothing** until you have judged it. Reading one
+still ticks it in the sidebar. A chapter you aced but do not trust stays unmarked until you say
+otherwise.
+
+The summary also lists **every question you got wrong**: the prompt, what you answered, the
+answer, and why, in one place rather than one at a time behind a Next button.
 
 `say` and the read-aloud practice use the browser's speech recogniser (`fr-FR`). It works in
 Chrome on desktop and Android and in Safari on iOS; Firefox has no recogniser, so those items
@@ -52,9 +57,12 @@ to Google's or Apple's service, and it measures **intelligibility, not accent** 
 model will forgive a sloppy vowel in a word it can guess. That is why targets are capped at six
 words, and why the result shows you which word failed rather than one flattering number.
 
-Keyboard: `1`-`4` answers a multiple choice, a digit picks the next word in an
-ordering question, `Enter` moves on. On a flashcard, `H` speaks the French. Anywhere, `/` is the
-search box and `n` opens the quick add.
+Keyboard: a digit presses whatever wears it. `1`-`4` answers a multiple choice, `1`/`2` are
+*I had it* and *Not quite* on a self-marked answer, `1`-`3` are the three mastery marks on the
+summary, `1` asks for another go at a spoken answer, and in an ordering question a digit picks
+the next word. `Enter` reveals a model answer, then moves on. On a flashcard, `1` and `2` grade
+it and `H` speaks the French. Anywhere, `/` is the search box and `n` opens the quick add. The
+digit chips are hidden on a touch screen, where there is no keyboard to press.
 
 Two rules the validator enforces, both because the course is written for someone
 without a French keyboard: a typed answer may not be a word already in the prompt
