@@ -780,6 +780,31 @@ body.audio-off em.say { cursor: inherit; }
 body.audio-off em.say:hover { border-bottom-color: transparent; }
 body.audio-off .say-btn, body.audio-off .flash-say { display: none; }
 
+/* ---------------------------------------------------------- sync */
+
+.sync-steps { margin: .8rem 0; padding-left: 1.3rem; }
+.sync-steps li { margin: .3rem 0; }
+
+.sync-form { display: flex; gap: .6rem; flex-wrap: wrap; margin: 1rem 0 .4rem; }
+.sync-form input {
+  flex: 1; min-width: 15rem;
+  padding: .55rem .7rem;
+  font-family: var(--mono); font-size: .85rem;
+  color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line); border-radius: var(--r-sm);
+}
+.sync-form input:focus { outline: 2px solid var(--bleu); outline-offset: 1px; }
+
+.sync-note { color: var(--muted); font-size: .84rem; line-height: 1.5; }
+
+.sync-state { display: flex; align-items: center; gap: .5rem; font-weight: 600; }
+.sync-dot { width: .6rem; height: .6rem; border-radius: 50%; background: var(--muted); }
+.sync-ok      .sync-dot { background: var(--vert); }
+.sync-idle    .sync-dot { background: var(--bleu); }
+.sync-syncing .sync-dot { background: var(--or); }
+.sync-error   { color: var(--rouge); }
+.sync-error   .sync-dot { background: var(--rouge); }
+
 /* ---------------------------------------------------------- print */
 
 @media print {

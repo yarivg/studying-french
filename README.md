@@ -19,6 +19,7 @@ No build step, no dependencies, no tracking. Progress lives in your browser and 
 | **Vocabulary** | 1,493 entries, searchable and filterable by theme, part of speech and gender. |
 | **Flashcards** | Leitner spaced repetition, sliced by theme or by word type. |
 | **Audio** | Click any French example to hear it spoken; every phonetic transcription has a play button. |
+| **Sync** | Optional: mirror your progress to a private GitHub gist so the phone and the laptop stay in step. |
 
 Every chapter ends with exercises you reveal and grade yourself. The grades feed the same
 progress store as the flashcards.
@@ -28,6 +29,31 @@ but it needs a French voice installed on the machine. macOS ships one; on Linux,
 `espeak-ng` or a `speech-dispatcher` French voice. The speaker button in the header turns the
 audio off, slows it down, or picks between the French voices you have. Shift-click any example
 to hear it slowly.
+
+## Syncing between devices
+
+Progress lives in `localStorage`, which is per-origin and per-device — `localhost:8000` and
+the published site are two separate stores, and so is your phone. To join them up, open
+**Progress → Sync across devices** and paste a GitHub token with the `gist` scope (and only
+that scope). The first device creates a private gist; the others find it by filename. After
+that each device pulls, merges and pushes on load and a few seconds after anything changes.
+
+Merging is per entry, not per file: whichever device touched an entry last wins, deletions are
+recorded so they are not undone by the other device still having the entry, and flashcard
+counters take the higher of the two. So a session on the phone and a session on the laptop on
+the same day both survive.
+
+Security, briefly:
+
+- The gist is private. Nobody can read or change your progress without the token.
+- The token is kept in `localStorage` on that device and sent only to `api.github.com`. It is
+  never rendered on screen, never logged, never put in a URL.
+- `index.html` ships a Content-Security-Policy that allows scripts from this origin only and
+  network requests to GitHub only, so no third-party code can run and reach the token.
+- Anything read back from the gist is rebuilt field by field against a strict schema before it
+  touches the state, with per-map size caps and `__proto__` keys dropped.
+- A `gist`-scoped token can read and write *all* your gists. Give it an expiry, and revoke it
+  on GitHub if a device is lost. "Disconnect this device" forgets the token locally.
 
 ## Running it locally
 
@@ -48,6 +74,7 @@ assets/
   style.css             light/dark theme, print stylesheet
   md.js                 markdown renderer (tables, callouts, exercises)
   audio.js              spoken French via the Web Speech API
+  sync.js               optional progress sync through a private gist
   app.js                router, navigation, search
   progress.js           localStorage: read state, scores, Leitner boxes
   quiz.js               exercises and flashcard sessions

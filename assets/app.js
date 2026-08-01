@@ -52,7 +52,15 @@
           updateProgressCard();
           markNavRead();
         });
+        // A sync can change everything the dashboard is showing.
+        window.addEventListener('sync:status', function () {
+          if (location.hash.replace(/^#\/?/, '') === 'dashboard') renderSyncCard();
+        });
+        window.addEventListener('sync:done', function () {
+          if (location.hash.replace(/^#\/?/, '') === 'dashboard') renderDashboard();
+        });
         route();
+        Sync.setup();
       })
       .catch(function (err) {
         view.innerHTML =
@@ -307,7 +315,9 @@
 
       var html =
         '<h1>Progress</h1>' +
-        '<p class="lead">Everything here lives in this browser only. Nothing is uploaded.</p>' +
+        '<p class="lead">' + (Sync.connected()
+          ? 'Kept in this browser and mirrored to your private gist.'
+          : 'Everything here lives in this browser only. Nothing is uploaded.') + '</p>' +
         '<div class="stat-grid">' +
           stat(read + '<span style="font-size:1rem;color:var(--muted)"> / ' + total + '</span>', 'Lessons read', 'accent') +
           stat(Progress.knownCount(), 'Words marked known', 'good') +
@@ -339,6 +349,8 @@
         '<div class="bar"><span style="width:' +
         Math.round((Progress.knownCount() / words.length) * 100) + '%"></span></div>';
 
+      html += '<h2>Sync across devices</h2><div id="syncCard"></div>';
+
       html += '<h2>Your data</h2>' +
         '<p>Progress is stored under the key <code>lecarnet.v1</code> in this browser. ' +
         'Export it if you want to move to another machine.</p>' +
@@ -348,6 +360,7 @@
         '<input type="file" id="importFile" accept="application/json" hidden>';
 
       view.innerHTML = html;
+      renderSyncCard();
 
       document.getElementById('exportBtn').addEventListener('click', function () {
         var blob = new Blob([Progress.exportJSON()], { type: 'application/json' });
@@ -374,6 +387,82 @@
         }
       });
     });
+  }
+
+  /* ---------------------------------------------------------- sync card */
+
+  var TOKEN_URL = 'https://github.com/settings/tokens/new?scopes=gist&description=Le%20Carnet';
+
+  function renderSyncCard() {
+    var host = document.getElementById('syncCard');
+    if (!host) return;
+    var s = Sync.info();
+
+    if (!s.connected) {
+      host.innerHTML =
+        '<p>The course keeps your progress in the browser, which is why the phone and the ' +
+        'laptop each start from zero. Point both at one private GitHub gist and they stay in ' +
+        'step: whichever device studied last wins, entry by entry, so neither session is lost.</p>' +
+        '<ol class="sync-steps">' +
+          '<li><a href="' + TOKEN_URL + '" target="_blank" rel="noopener">Create a token</a> with the ' +
+            '<strong>gist</strong> scope ticked and nothing else.</li>' +
+          '<li>Paste it here. It is stored in this browser and sent only to api.github.com.</li>' +
+          '<li>Repeat on your other device — the same gist is found automatically.</li>' +
+        '</ol>' +
+        '<p class="sync-note">The gist is private, so the progress can only be read or ' +
+        'changed by something holding this token. Note that a <code>gist</code>-scoped token ' +
+        'covers <em>all</em> your gists, not just this one: keep the expiry short-ish, and ' +
+        'revoke it on GitHub if a device goes missing.</p>' +
+        '<div class="sync-form">' +
+          '<input type="password" id="syncToken" placeholder="ghp_… or github_pat_…" autocomplete="off" spellcheck="false">' +
+          '<button class="btn btn-primary" id="syncConnect">Connect</button>' +
+        '</div>' +
+        '<p class="sync-note" id="syncMsg"></p>';
+
+      var input = document.getElementById('syncToken');
+      var msg = document.getElementById('syncMsg');
+      var go = function () {
+        var token = input.value;
+        input.value = '';
+        msg.textContent = 'Connecting…';
+        Sync.connect(token)
+          .then(function () { renderDashboard(); })
+          .catch(function (err) { msg.textContent = err.message; });
+      };
+      document.getElementById('syncConnect').addEventListener('click', go);
+      input.addEventListener('keydown', function (e) { if (e.key === 'Enter') go(); });
+      return;
+    }
+
+    var label = { ok: 'In sync', idle: 'Connected', syncing: 'Syncing…', error: 'Sync failed', off: 'Off' };
+    host.innerHTML =
+      '<p class="sync-state sync-' + s.status.state + '">' +
+        '<span class="sync-dot"></span>' + (label[s.status.state] || 'Connected') +
+        (s.lastSync ? ' · last synced ' + timeAgo(s.lastSync) : '') +
+      '</p>' +
+      (s.status.state === 'error' ? '<p class="sync-note">' + escapeHtml(s.status.message) + '</p>' : '') +
+      '<p>Progress is mirrored to the private gist ' +
+        '<a href="https://gist.github.com/' + escapeHtml(s.gistId) + '" target="_blank" rel="noopener">' +
+        escapeHtml(s.gistId.slice(0, 8)) + '…</a>, on load and a few seconds after anything changes.</p>' +
+      '<p><button class="btn" id="syncNow">Sync now</button> ' +
+      '<button class="btn" id="syncOff">Disconnect this device</button></p>' +
+      '<p class="sync-note">Disconnecting forgets the token here. The gist and your progress stay.</p>';
+
+    document.getElementById('syncNow').addEventListener('click', function () {
+      Sync.syncNow().then(function () { renderDashboard(); });
+    });
+    document.getElementById('syncOff').addEventListener('click', function () {
+      Sync.disconnect();
+      renderDashboard();
+    });
+  }
+
+  function timeAgo(ts) {
+    var s = Math.round((Date.now() - ts) / 1000);
+    if (s < 60) return 'just now';
+    if (s < 3600) return Math.round(s / 60) + ' min ago';
+    if (s < 86400) return Math.round(s / 3600) + ' h ago';
+    return Math.round(s / 86400) + ' days ago';
   }
 
   function stat(num, label, kind) {
