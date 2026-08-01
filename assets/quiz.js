@@ -114,7 +114,8 @@ window.Quiz = (function () {
             '<div class="flash-front">' + escapeHtml(card.front) + '</div>' +
             '<div class="flash-back" hidden>' + escapeHtml(card.back) + '</div>' +
           '</div>' +
-          '<span class="flash-hint">click, or press space, to flip</span>' +
+          '<span class="flash-hint">click, or press space, to flip' +
+            (card.fr && window.Say && Say.supported() ? ' · H to hear it' : '') + '</span>' +
         '</div>' +
         (card.fr && window.Say && Say.supported()
           ? '<button class="btn flash-say" type="button" data-say="' + escapeAttr(card.fr) + '"' +
@@ -142,7 +143,8 @@ window.Quiz = (function () {
       cardEl.querySelector('.flash-back').hidden = false;
       actions.hidden = false;
       if (sayBtn) sayBtn.hidden = false;
-      hint.textContent = 'press 1 to review again, 2 if you got it';
+      hint.textContent = 'press 1 to review again, 2 if you got it' +
+        (sayBtn ? ', H to hear it' : '');
     }
 
     cardEl.addEventListener('click', flip);
@@ -185,8 +187,17 @@ window.Quiz = (function () {
 
   function handleKey(e) {
     if (!session) return;
-    if (e.target.matches('input, textarea, select')) return;
+    // The target is not always an element — a key pressed with nothing
+    // focused arrives on the document itself.
+    if (e.target && e.target.matches && e.target.matches('input, textarea, select')) return;
     if (e.target.closest && e.target.closest('.flash-say')) return;
+    if (e.key === 'h' || e.key === 'H') {
+      // Hear the French. Before the flip that only makes sense on a
+      // FR → EN card, where the French is already the side you can see.
+      var say = session.container.querySelector('.flash-say');
+      if (say && !say.hidden) { e.preventDefault(); Say.speak(say.dataset.say, { slow: e.shiftKey }); }
+      return;
+    }
     if (e.key === ' ' || e.key === 'Enter') {
       if (!session.flipped) { e.preventDefault(); session.flip(); }
     } else if (session.flipped && (e.key === '1' || e.key === '2')) {

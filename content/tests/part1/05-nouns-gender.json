@@ -1,0 +1,118 @@
+{
+  "ch": "nouns-gender",
+  "title": "Nouns and gender",
+  "questions": [
+    {
+      "id": "nouns-gender-01",
+      "type": "mcq",
+      "q": "Which ending reliably tells you a noun is feminine?",
+      "choices": ["-tion", "-ment", "-eau", "-oir"],
+      "a": 0,
+      "why": "-tion and -sion are feminine without exception you will meet: la nation, l'attention, la question. -ment, -eau and -oir all point the other way: le vêtement, le château, le miroir."
+    },
+    {
+      "id": "nouns-gender-02",
+      "type": "mcq",
+      "q": "-age nouns are normally masculine. Which of these is the exception?",
+      "choices": ["la plage", "le nuage", "le fromage", "le voyage"],
+      "a": 0,
+      "why": "A small feminine group breaks the -age rule: la page, la plage, la cage, l'image, la nage. The -eau rule has its own pair of exceptions too: l'eau and la peau are feminine."
+    },
+    {
+      "id": "nouns-gender-03",
+      "type": "mcq",
+      "q": "Which of these -eur nouns is masculine?",
+      "choices": ["le conducteur", "la peur", "la chaleur", "la couleur"],
+      "a": 0,
+      "why": "-eur splits in two: abstract nouns are feminine (la peur, la douleur, la couleur), while nouns naming a person or a machine are masculine (le professeur, l'ordinateur, le chargeur). Le bonheur, le malheur and l'honneur are masculine exceptions to the abstract half."
+    },
+    {
+      "id": "nouns-gender-04",
+      "type": "mcq",
+      "q": "« Ça coûte une livre. » What does livre mean here?",
+      "choices": ["a pound", "a book", "a delivery", "a tower"],
+      "a": 0,
+      "why": "A handful of nouns change meaning with gender: le livre is the book, la livre is the pound. Same trap in le tour (the turn) and la tour (the tower), le poste (the job) and la poste (the post office)."
+    },
+    {
+      "id": "nouns-gender-05",
+      "type": "mcq",
+      "q": "How do nouns ending in -al form their plural?",
+      "choices": ["-aux: le journal becomes les journaux", "-als: le journal becomes les journals", "no change: le journal stays les journal", "-aus: le journal becomes les journaus"],
+      "a": 0,
+      "why": "-al becomes -aux: les journaux, les animaux, les chevaux. Some -ail nouns do the same: le travail becomes les travaux."
+    },
+    {
+      "id": "nouns-gender-06",
+      "type": "fill",
+      "q": "Write the definite article: ___ château.",
+      "a": ["le"],
+      "why": "-eau is a masculine ending: le château, le gâteau, le bateau, le couteau. Only l'eau and la peau escape it."
+    },
+    {
+      "id": "nouns-gender-07",
+      "type": "fill",
+      "q": "Write the definite article: ___ voiture.",
+      "a": ["la"],
+      "why": "-ure is feminine: la voiture, la culture, la nourriture, la coiffure."
+    },
+    {
+      "id": "nouns-gender-08",
+      "type": "fill",
+      "q": "Write the definite article: ___ eau.",
+      "a": ["l'"],
+      "why": "Before a vowel both le and la become l', so the article stops telling you the gender. This one is feminine despite the -eau ending: on dit l'eau froide."
+    },
+    {
+      "id": "nouns-gender-09",
+      "type": "fill",
+      "q": "Make it plural: le cheval becomes ___",
+      "a": ["les chevaux"],
+      "why": "-al becomes -aux, and the article changes to les. None of this is audible on the article alone, which is why les does the work."
+    },
+    {
+      "id": "nouns-gender-10",
+      "type": "fill",
+      "q": "Make it plural: l'œil becomes ___",
+      "a": ["les yeux"],
+      "why": "One of only three genuinely irregular plurals, with le ciel becoming les cieux and monsieur becoming messieurs."
+    },
+    {
+      "id": "nouns-gender-11",
+      "type": "fill",
+      "q": "Make it feminine: l'acteur becomes ___",
+      "a": ["l'actrice", "actrice"],
+      "why": "-teur becomes -trice (le directeur, la directrice), while plain -eur becomes -euse (le chanteur, la chanteuse). Both start from the same-looking ending, so the t matters."
+    },
+    {
+      "id": "nouns-gender-12",
+      "type": "order",
+      "q": "Build the phrase from the chapter that forces the gender of école to show: an old school.",
+      "words": ["une", "vieille", "école"],
+      "a": ["une", "vieille", "école"],
+      "why": "When l' hides the gender, add an adjective or swap in un / une and see which sounds right: une vieille école is feminine, un vieil arbre is masculine."
+    },
+    {
+      "id": "nouns-gender-13",
+      "type": "listen",
+      "say": "les journaux",
+      "q": "Type what you hear.",
+      "a": ["les journaux"],
+      "why": "The plural x is silent, so the article carries the number. Hear les, write the -aux plural."
+    },
+    {
+      "id": "nouns-gender-14",
+      "type": "say",
+      "q": "Say this out loud. It is a noun built straight from a verb, so it is masculine.",
+      "target": "le sourire",
+      "why": "Nouns formed from a verb stem are masculine: le regard, le cri, le déjeuner, le travail. So is any infinitive used as a noun: le savoir, le pouvoir, le devoir."
+    },
+    {
+      "id": "nouns-gender-15",
+      "type": "open",
+      "q": "Name three endings that reliably mean feminine and three that reliably mean masculine, with an example each.",
+      "a": ["Feminine: -tion (la nation), -té (la liberté), -ure (la voiture) — also -ette, -ance/-ence, -ie, -esse, -ée. Masculine: -eau (le château), -ment (le moment), -age (le fromage) — also -oir, -o, -ier, -in, -ail, -isme."],
+      "why": "Endings are the only systematic handle on gender; everything else is memory, which is why you learn the article with the noun rather than the noun alone."
+    }
+  ]
+}

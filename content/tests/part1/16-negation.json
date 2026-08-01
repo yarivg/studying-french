@@ -1,0 +1,178 @@
+{
+  "ch": "negation",
+  "title": "Negation",
+  "questions": [
+    {
+      "id": "negation-01",
+      "type": "fill",
+      "q": "Make it negative: « Il fume encore. » → Il ne fume ___ .",
+      "a": [
+        "plus"
+      ],
+      "why": "Ne … plus is the negative of encore: not any more. Ne … jamais is the negative of toujours."
+    },
+    {
+      "id": "negation-02",
+      "type": "fill",
+      "q": "Make it negative: « Je vois quelqu'un. » → Je ne vois ___ .",
+      "a": [
+        "personne"
+      ],
+      "why": "Personne is the negative counterpart of quelqu'un, as rien is of quelque chose: je ne sais rien."
+    },
+    {
+      "id": "negation-03",
+      "type": "fill",
+      "q": "Make it negative: « J'ai un livre. » → Je n'ai pas ___ livre.",
+      "a": [
+        "de"
+      ],
+      "why": "After a negative, un / une / du / de la / des all collapse to de. It elides before a vowel: je n'ai pas d'idée."
+    },
+    {
+      "id": "negation-04",
+      "type": "mcq",
+      "q": "Which negation of « C'est un problème » is correct?",
+      "choices": [
+        "Ce n'est pas de problème.",
+        "Ce n'est pas un problème.",
+        "Ce n'est pas problème."
+      ],
+      "a": 1,
+      "why": "The article survives after être. The other survivor is the definite article: je n'aime pas le café, never pas de café there."
+    },
+    {
+      "id": "negation-05",
+      "type": "order",
+      "q": "Build the sentence: I haven't eaten.",
+      "words": [
+        "Je",
+        "n'ai",
+        "pas",
+        "mangé"
+      ],
+      "a": [
+        "Je",
+        "n'ai",
+        "pas",
+        "mangé"
+      ],
+      "why": "In a compound tense the light words pas, plus, jamais and rien sit between the auxiliary and the participle."
+    },
+    {
+      "id": "negation-06",
+      "type": "order",
+      "q": "Build the sentence: I saw nobody.",
+      "words": [
+        "Je",
+        "n'ai",
+        "vu",
+        "personne"
+      ],
+      "a": [
+        "Je",
+        "n'ai",
+        "vu",
+        "personne"
+      ],
+      "why": "The heavier words personne, aucun, que, ni … ni and nulle part come after the participle, because they attach to what follows: je n'ai vu personne, but je n'ai rien vu."
+    },
+    {
+      "id": "negation-07",
+      "type": "mcq",
+      "q": "Where does the negation go with an infinitive: « I'd rather not go » ?",
+      "choices": [
+        "Je préfère n'aller pas y.",
+        "Je préfère ne pas y aller.",
+        "Je ne préfère pas y aller.",
+        "Je préfère ne y aller pas."
+      ],
+      "a": 1,
+      "why": "Before an infinitive both halves stay together in front: ne pas y aller, ne rien dire, ne jamais oublier. Ne pas splits only around a conjugated verb."
+    },
+    {
+      "id": "negation-08",
+      "type": "fill",
+      "q": "Complete: « ___ ne sait. » (Nobody knows.)",
+      "a": [
+        "Personne"
+      ],
+      "why": "Personne and rien can be the subject, and ne still appears before the verb: Personne ne sait, Rien n'est facile."
+    },
+    {
+      "id": "negation-09",
+      "type": "mcq",
+      "q": "Why is « Il ne mange que des légumes » not « que de légumes » ?",
+      "choices": [
+        "Because légumes is plural",
+        "Because ne … que is a restriction, not a negation, so the article survives",
+        "Because manger never takes de",
+        "Because que already contains de"
+      ],
+      "a": 1,
+      "why": "Ne … que means only. The sentence stays positive, so des is untouched. Compare the real negative: il ne mange pas de légumes."
+    },
+    {
+      "id": "negation-10",
+      "type": "mcq",
+      "q": "What is the difference between « Je ne bois que du thé le matin » and « Je ne bois du thé que le matin » ?",
+      "choices": [
+        "No difference, just style",
+        "The first restricts the drink, the second restricts the time",
+        "The first restricts the time, the second restricts the drink",
+        "The second is ungrammatical"
+      ],
+      "a": 1,
+      "why": "Que goes immediately before the thing being restricted, so moving it moves the meaning: tea and nothing else, versus the morning and no other time."
+    },
+    {
+      "id": "negation-11",
+      "type": "fill",
+      "q": "Answer: « Tu ne viens pas ? » — ___, je viens !",
+      "a": [
+        "Si"
+      ],
+      "why": "Si is the yes that contradicts a negative question. Answering oui there is wrong; English has to fall back on stress instead."
+    },
+    {
+      "id": "negation-12",
+      "type": "mcq",
+      "q": "« Je n'aime pas le café. » — you don't either. What do you say?",
+      "choices": [
+        "Moi aussi.",
+        "Moi non plus.",
+        "Moi si.",
+        "Pas moi."
+      ],
+      "a": 1,
+      "why": "Aussi agrees with a positive, non plus with a negative. Moi si would mean you do like it, and moi non would answer a positive statement."
+    },
+    {
+      "id": "negation-13",
+      "type": "listen",
+      "say": "Je n'ai rien vu.",
+      "q": "Type what you hear, in correct written French.",
+      "a": [
+        "Je n'ai rien vu.",
+        "Je n'ai rien vu"
+      ],
+      "why": "Rien is a light word, so it lands before the participle. In speech you would hear j'ai rien vu, with ne dropped, but the written form keeps it."
+    },
+    {
+      "id": "negation-14",
+      "type": "open",
+      "q": "Which negative words go before the past participle and which go after? Give the two lists and one example each.",
+      "a": [
+        "Before the participle: pas, plus, jamais, rien — Je n'ai pas mangé, Je n'ai rien vu. After the participle: personne, aucun, que, ni … ni, nulle part — Je n'ai vu personne, Il n'est allé nulle part."
+      ],
+      "why": "The short light words hug the auxiliary; the heavier ones that behave like nouns or determiners follow the participle, because they attach to what comes next."
+    },
+    {
+      "id": "negation-15",
+      "type": "say",
+      "q": "Say this out loud, in full written form: I don't know.",
+      "target": "je ne sais pas",
+      "why": "In conversation this collapses to j'sais pas, with ne gone entirely. Understand the dropped form, but produce the full one in writing and in any formal register."
+    }
+  ]
+}

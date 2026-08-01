@@ -1,0 +1,186 @@
+{
+  "ch": "imparfait-vs-passe-compose",
+  "title": "Imparfait vs passé composé",
+  "questions": [
+    {
+      "id": "imparfait-vs-passe-compose-01",
+      "type": "mcq",
+      "q": "What is the one question that decides between the two tenses?",
+      "choices": [
+        "Is the verb regular or irregular?",
+        "Does it move the story forward, or set the scene?",
+        "Did it happen more than once?",
+        "Is there a time expression in the sentence?"
+      ],
+      "a": 1,
+      "why": "Moves it forward → passé composé. Sets the scene → imparfait. Everything else in the chapter is a refinement of that single test."
+    },
+    {
+      "id": "imparfait-vs-passe-compose-02",
+      "type": "fill",
+      "q": "« Hier, je ___ (manger) une pizza. »",
+      "a": [
+        "ai mangé",
+        "j'ai mangé"
+      ],
+      "why": "One occasion, bounded and finished: an event, so passé composé. Hier points at a single point in time."
+    },
+    {
+      "id": "imparfait-vs-passe-compose-03",
+      "type": "fill",
+      "q": "« Quand j'étais petit, je ___ (manger) des pizzas. »",
+      "a": [
+        "mangeais",
+        "je mangeais"
+      ],
+      "why": "The same verb, but now a habit with no single occasion behind it, so the imperfect. Note the e kept before a: mangeais."
+    },
+    {
+      "id": "imparfait-vs-passe-compose-04",
+      "type": "fill",
+      "q": "« Il ___ (pleuvoir) quand je suis sorti. »",
+      "a": [
+        "pleuvait",
+        "il pleuvait"
+      ],
+      "why": "The rain is the background; going out is the event that happens against it. The imperfect paints, the passé composé acts."
+    },
+    {
+      "id": "imparfait-vs-passe-compose-05",
+      "type": "fill",
+      "q": "« Il ___ (pleuvoir) toute la journée hier. »",
+      "a": [
+        "a plu",
+        "il a plu"
+      ],
+      "why": "Same verb again, but toute la journée hier draws a boundary around it: a finished block of time, so passé composé. Weather is not automatically imperfect."
+    },
+    {
+      "id": "imparfait-vs-passe-compose-06",
+      "type": "mcq",
+      "q": "Why is « Je suis allé en France trois fois » passé composé, when it happened repeatedly?",
+      "choices": [
+        "Because aller always takes the passé composé",
+        "Because three is more than one",
+        "Because the repetition is counted, so it is bounded and finished",
+        "Because en France requires a completed action"
+      ],
+      "a": 2,
+      "why": "Repeated does not mean imperfect; unbounded does. Compare j'allais en France tous les ans, a habit with no count attached."
+    },
+    {
+      "id": "imparfait-vs-passe-compose-07",
+      "type": "mcq",
+      "q": "Which pair of signal words both point to the imparfait?",
+      "choices": [
+        "soudain, tout à coup",
+        "d'habitude, tous les jours",
+        "un jour, deux fois",
+        "hier, ce matin-là"
+      ],
+      "a": 1,
+      "why": "D'habitude and tous les jours describe unbounded routine. Soudain, un jour and hier all frame a single bounded event, which is passé composé territory."
+    },
+    {
+      "id": "imparfait-vs-passe-compose-08",
+      "type": "mcq",
+      "q": "« Quand je suis arrivé, il s'est levé. » What does this describe?",
+      "choices": [
+        "Two events in sequence: I arrived, then he got up",
+        "He was already standing when I arrived",
+        "He used to get up whenever I arrived",
+        "It is ungrammatical — one half must be imperfect"
+      ],
+      "a": 0,
+      "why": "Quand tells you nothing on its own. Two passé composés means two events in order; compare quand je suis arrivé, il dormait, where the sleeping was already going on."
+    },
+    {
+      "id": "imparfait-vs-passe-compose-09",
+      "type": "mcq",
+      "q": "« J'ai su qu'il venait » means:",
+      "choices": [
+        "I knew he was coming",
+        "I found out he was coming",
+        "I should have known he was coming",
+        "I was told he was coming, but doubted it"
+      ],
+      "a": 1,
+      "why": "Savoir in the imperfect is the state of knowing; in the passé composé it is the moment the knowing started. Je savais = I knew, j'ai su = I found out."
+    },
+    {
+      "id": "imparfait-vs-passe-compose-10",
+      "type": "mcq",
+      "q": "Which translation of « J'ai pu le faire » is right?",
+      "choices": [
+        "I was able to do it, in principle",
+        "I managed to do it",
+        "I could have done it",
+        "I had to do it"
+      ],
+      "a": 1,
+      "why": "Je pouvais is the capacity; j'ai pu is the capacity cashed in — I managed it, and I did it. The negative works the same way: je n'ai pas pu means I failed to."
+    },
+    {
+      "id": "imparfait-vs-passe-compose-11",
+      "type": "fill",
+      "q": "« Je ___ (connaître) Marie depuis dix ans. » (I had known Marie for ten years)",
+      "a": [
+        "connaissais",
+        "je connaissais"
+      ],
+      "why": "Depuis forces the imperfect in the past, exactly as it forces the present when talking about now. And connaître in the imperfect is the state of knowing someone, not meeting them."
+    },
+    {
+      "id": "imparfait-vs-passe-compose-12",
+      "type": "say",
+      "q": "Say this out loud: I used to go to France every year.",
+      "target": "j'allais en France tous les ans",
+      "why": "Habitual and uncounted, so the imperfect. Its opposite is je suis allé en France trois fois, where the count makes it a bounded event."
+    },
+    {
+      "id": "imparfait-vs-passe-compose-13",
+      "type": "order",
+      "q": "Build the sentence: I was reading when the phone rang.",
+      "words": [
+        "Je",
+        "lisais",
+        "quand",
+        "le",
+        "téléphone",
+        "a",
+        "sonné"
+      ],
+      "a": [
+        "Je",
+        "lisais",
+        "quand",
+        "le",
+        "téléphone",
+        "a",
+        "sonné"
+      ],
+      "why": "The classic pattern: imperfect for what was going on, passé composé for what broke in. Ask which action lasted and which one happened."
+    },
+    {
+      "id": "imparfait-vs-passe-compose-14",
+      "type": "listen",
+      "say": "Soudain, une voiture s'est arrêtée.",
+      "q": "Type what you hear.",
+      "a": [
+        "Soudain, une voiture s'est arrêtée",
+        "Soudain une voiture s'est arrêtée",
+        "Soudain, une voiture s'est arrêtée."
+      ],
+      "why": "Soudain announces an event, so passé composé. S'arrêter is reflexive, so être, and the participle agrees with the feminine subject: arrêtée."
+    },
+    {
+      "id": "imparfait-vs-passe-compose-15",
+      "type": "open",
+      "q": "Put this into the past: « Il est huit heures. Il pleut. J'attends le bus. Une voiture s'arrête. Un homme descend. »",
+      "a": [
+        "Il était huit heures. Il pleuvait. J'attendais le bus. Une voiture s'est arrêtée. Un homme est descendu."
+      ],
+      "why": "Time, weather and waiting are circumstances, so imperfect; the car stopping and the man getting out are the events, so passé composé. Both take être here, and arrêtée agrees."
+    }
+  ]
+}

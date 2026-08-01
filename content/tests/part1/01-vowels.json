@@ -1,0 +1,119 @@
+{
+  "ch": "vowels",
+  "title": "Vowel sounds",
+  "questions": [
+    {
+      "id": "vowels-01",
+      "type": "mcq",
+      "q": "In « le roi », what sound do the letters oi make?",
+      "choices": ["\"wah\"", "\"oy\", as in English \"boy\"", "\"oh\", as in English \"go\"", "two syllables: o-i"],
+      "a": 0,
+      "why": "oi is always one sound, \"wah\": le roi, la joie, le mois, le doigt. It is never sounded out letter by letter."
+    },
+    {
+      "id": "vowels-02",
+      "type": "mcq",
+      "q": "« le gâteau », « l'eau », « aussitôt » — what do eau, au and ô have in common?",
+      "choices": ["They are all a closed, rounded \"oh\"", "They are all the \"oo\" of \"food\"", "They are all nasal", "They are all silent"],
+      "a": 0,
+      "why": "au, eau and ô all spell the same closed /o/. Different spellings, one sound — which is why combinations beat letters in French."
+    },
+    {
+      "id": "vowels-03",
+      "type": "mcq",
+      "q": "How many syllables does « maïs » (corn) have?",
+      "choices": ["Two: ma-ees", "One, the same as « mais »", "Three", "Two, but the second is silent"],
+      "a": 0,
+      "why": "The tréma means \"pronounce this vowel separately\", so it breaks ai apart. « mais » (but) is one syllable; « maïs » is two, and the tréma is the only thing separating them."
+    },
+    {
+      "id": "vowels-04",
+      "type": "mcq",
+      "q": "Is the vowel of « bonne » nasal?",
+      "choices": ["No — the doubled n cancels the nasal and is pronounced", "Yes — same as « bon »", "Yes, but shorter than in « bon »", "No, and the n is silent too"],
+      "a": 0,
+      "why": "A vowel is nasal only when a single m/n closes the syllable. Double the consonant, or put a vowel after it, and the nasal switches off: bon becomes bonne, fin becomes fine, l'an becomes l'année."
+    },
+    {
+      "id": "vowels-05",
+      "type": "mcq",
+      "q": "In which of these do the letters ill NOT make a y-sound?",
+      "choices": ["la ville", "la famille", "la fille", "la bataille"],
+      "a": 0,
+      "why": "Four common words keep ill as a plain \"eel\": mille, la ville, tranquille, le village. Everywhere else ill is a y-sound, so la fille and la ville do not rhyme."
+    },
+    {
+      "id": "vowels-06",
+      "type": "mcq",
+      "q": "How is the ending of the adverb « évidemment » pronounced?",
+      "choices": ["like -amment", "like -emment, with an \"eh\"", "like -ément", "the ending is silent"],
+      "a": 0,
+      "why": "-emment is always said -amment. It matters because every adjective in -ent builds its adverb this way: fréquemment, récemment, évidemment."
+    },
+    {
+      "id": "vowels-07",
+      "type": "fill",
+      "q": "Add the missing accent: « la fete » (the party, the celebration).",
+      "a": ["la fête", "fête"],
+      "why": "The circumflex here marks an s that fell out of the word centuries ago (compare English \"feast\"). It sounds like è, the open vowel of English \"fair\"."
+    },
+    {
+      "id": "vowels-08",
+      "type": "fill",
+      "q": "« mais » means \"but\". Rewrite it so it becomes the two-syllable word for corn.",
+      "a": ["maïs"],
+      "why": "Only the tréma changes: it splits ai into two separate vowels, ma-ees."
+    },
+    {
+      "id": "vowels-09",
+      "type": "fill",
+      "q": "« bon » has a nasal vowel. Write the form ending in -ne, where the n is actually heard.",
+      "a": ["bonne"],
+      "why": "Doubling the n restores the ordinary vowel and makes the consonant audible. Same pattern: fin becomes fine, un an becomes une année."
+    },
+    {
+      "id": "vowels-10",
+      "type": "fill",
+      "q": "« le frein » (the brake) has a nasal vowel. Write the -er verb built on it, meaning \"to brake\".",
+      "a": ["freiner"],
+      "why": "A vowel now follows the n, so the nasal disappears: frein is nasal, freiner is not. Spelling barely changes; the sound changes completely."
+    },
+    {
+      "id": "vowels-11",
+      "type": "listen",
+      "say": "le poisson",
+      "q": "Type what you hear.",
+      "a": ["le poisson"],
+      "why": "Two traps in one short word: oi is \"wah\", and on is a nasal whose n you never actually pronounce."
+    },
+    {
+      "id": "vowels-12",
+      "type": "listen",
+      "say": "la bouteille",
+      "q": "Type what you hear.",
+      "a": ["la bouteille"],
+      "why": "ou is the \"oo\" of \"food\", and -eille is a y-sound: boo-tay-y. Nothing here is sounded letter by letter."
+    },
+    {
+      "id": "vowels-13",
+      "type": "say",
+      "q": "Say this out loud. Round your lips hard: this is not \"roo\".",
+      "target": "la rue",
+      "why": "u is the sound English does not have: say \"ee\", keep your tongue exactly there, then round your lips. « la roue » (the wheel) is the back-of-the-mouth \"oo\"; « la rue » (the street) is not."
+    },
+    {
+      "id": "vowels-14",
+      "type": "say",
+      "q": "Say this out loud — the ending is a single y-sound, and the u in the middle is the tight French u.",
+      "target": "l'écureuil",
+      "why": "-euil is one rounded y-sound, and the u before it is the front-rounded u of « la rue ». Squirrel is a good stress test for the whole chapter."
+    },
+    {
+      "id": "vowels-15",
+      "type": "open",
+      "q": "Name the four common words in which the letters ill do NOT make a y-sound, and say what they sound like instead.",
+      "a": ["mille, la ville, tranquille, le village — in these, ill is a plain \"eel\" sound, so la ville does not rhyme with la fille. There is no rule behind it; the words are simply old."],
+      "why": "The -ille rule is otherwise very reliable, so the exceptions are worth holding as a closed list of four rather than guessing each time."
+    }
+  ]
+}

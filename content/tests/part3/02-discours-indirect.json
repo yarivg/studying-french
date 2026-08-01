@@ -1,0 +1,170 @@
+{
+  "ch": "discours-indirect",
+  "title": "Reported speech",
+  "questions": [
+    {
+      "id": "discours-indirect-01",
+      "type": "mcq",
+      "q": "« Je suis fatigué. » → Il dit qu'il ___ fatigué. Which form?",
+      "choices": [
+        "est",
+        "était",
+        "soit",
+        "serait"
+      ],
+      "a": 0,
+      "why": "When the introducing verb is in the present, nothing shifts. Only the pronoun changes, from je to il."
+    },
+    {
+      "id": "discours-indirect-02",
+      "type": "fill",
+      "q": "« Je suis fatigué. » → Il a dit qu'il ___ fatigué.",
+      "a": [
+        "était"
+      ],
+      "why": "A past introducing verb pulls the present back to the imperfect. Note the pronoun shift too: je becomes il."
+    },
+    {
+      "id": "discours-indirect-03",
+      "type": "fill",
+      "q": "« J'ai mangé. » → Il a dit qu'il ___ (manger).",
+      "a": [
+        "avait mangé"
+      ],
+      "why": "Passé composé becomes plus-que-parfait once the introducing verb is in the past."
+    },
+    {
+      "id": "discours-indirect-04",
+      "type": "mcq",
+      "q": "Which of these tenses does NOT change in reported speech after a past introducing verb?",
+      "choices": [
+        "the présent",
+        "the passé composé",
+        "the imparfait",
+        "the futur simple"
+      ],
+      "a": 2,
+      "why": "The imperfect, the pluperfect and the conditional are already as far back as French goes, so they stay put. Only the present, the passé composé and the future move."
+    },
+    {
+      "id": "discours-indirect-05",
+      "type": "fill",
+      "q": "« Je pars demain. » → Il a dit qu'il partait ___ .",
+      "a": [
+        "le lendemain"
+      ],
+      "why": "Demain shifts to le lendemain, because the moment of speaking is no longer now. The tense shifts as well: pars becomes partait."
+    },
+    {
+      "id": "discours-indirect-06",
+      "type": "fill",
+      "q": "« Je l'ai vu hier. » → Il a dit qu'il l'avait vu ___ .",
+      "a": [
+        "la veille"
+      ],
+      "why": "Hier becomes la veille, aujourd'hui becomes ce jour-là, maintenant becomes à ce moment-là. The time words move along with the tenses."
+    },
+    {
+      "id": "discours-indirect-07",
+      "type": "fill",
+      "q": "« Tu viens ? » → Il m'a demandé ___ je venais.",
+      "a": [
+        "si"
+      ],
+      "why": "A yes/no question is reported with si, meaning whether. There is no est-ce que and no inversion left."
+    },
+    {
+      "id": "discours-indirect-08",
+      "type": "order",
+      "q": "Report it: « Où vas-tu ? » (he asked me)",
+      "words": [
+        "Il",
+        "m'a",
+        "demandé",
+        "où",
+        "j'allais"
+      ],
+      "a": [
+        "Il",
+        "m'a",
+        "demandé",
+        "où",
+        "j'allais"
+      ],
+      "why": "The question word stays, but the inversion goes: the clause takes ordinary statement order, and the present shifts to the imperfect."
+    },
+    {
+      "id": "discours-indirect-09",
+      "type": "mcq",
+      "q": "« Qu'est-ce que tu fais ? » reported in the past is:",
+      "choices": [
+        "Il a demandé qu'est-ce que je faisais.",
+        "Il a demandé ce que je faisais.",
+        "Il a demandé ce qui je faisais.",
+        "Il a demandé que je faisais."
+      ],
+      "a": 1,
+      "why": "Qu'est-ce que becomes ce que in a reported question. Leaving est-ce que in place is the single most common error here."
+    },
+    {
+      "id": "discours-indirect-10",
+      "type": "fill",
+      "q": "« Qu'est-ce qui se passe ? » → Il a demandé ___ se passait.",
+      "a": [
+        "ce qui"
+      ],
+      "why": "Qu'est-ce qui is the subject form, so it becomes ce qui; qu'est-ce que is the object form and becomes ce que."
+    },
+    {
+      "id": "discours-indirect-11",
+      "type": "fill",
+      "q": "« Ne fais pas ça. » → Il m'a dit de ___ faire ça.",
+      "a": [
+        "ne pas"
+      ],
+      "why": "An imperative becomes de plus infinitive, and both halves of the negation stay together in front of the infinitive. Not de ne faire pas."
+    },
+    {
+      "id": "discours-indirect-12",
+      "type": "fill",
+      "q": "« Aide-moi. » → Il m'a demandé de ___ (aider).",
+      "a": [
+        "l'aider"
+      ],
+      "why": "The imperative becomes de plus infinitive, and moi, the speaker, becomes le once someone else is reporting: de l'aider."
+    },
+    {
+      "id": "discours-indirect-13",
+      "type": "listen",
+      "say": "Il a dit qu'il viendrait.",
+      "q": "Type what you hear, in correct written French.",
+      "a": [
+        "Il a dit qu'il viendrait.",
+        "Il a dit qu'il viendrait"
+      ],
+      "why": "The original was « Je viendrai », a future. After a past introducing verb the future becomes the conditional."
+    },
+    {
+      "id": "discours-indirect-14",
+      "type": "mcq",
+      "q": "Which sentence is correctly reported?",
+      "choices": [
+        "Il a dit qu'il était fatigué et il partirait le lendemain.",
+        "Il a dit qu'il était fatigué et qu'il partirait le lendemain.",
+        "Il a dit qu'il est fatigué et qu'il partira demain.",
+        "Il a dit qu'il était fatigué et qu'il partirait demain."
+      ],
+      "a": 1,
+      "why": "Every clause needs its own que, unlike English which can drop that. And demain has to become le lendemain once the report is anchored in the past."
+    },
+    {
+      "id": "discours-indirect-15",
+      "type": "open",
+      "q": "Report this whole utterance in the past: « Je suis fatigué, j'ai mal dormi hier et je partirai demain. » Then name the three things you had to change.",
+      "a": [
+        "Il a dit qu'il était fatigué, qu'il avait mal dormi la veille et qu'il partirait le lendemain. The three changes are the tenses (présent to imparfait, passé composé to plus-que-parfait, futur to conditionnel), the pronouns (je to il), and the time words (hier to la veille, demain to le lendemain) — plus a que in front of every clause."
+      ],
+      "why": "Reported speech is never only a tense shift; the pronouns and the time anchors move at the same time, and French repeats que."
+    }
+  ]
+}

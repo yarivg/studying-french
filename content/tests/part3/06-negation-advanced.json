@@ -1,0 +1,193 @@
+{
+  "ch": "negation-advanced",
+  "title": "Advanced negation and restriction",
+  "questions": [
+    {
+      "id": "negation-advanced-01",
+      "type": "mcq",
+      "q": "« Je ne dis jamais rien à personne. » What does it mean?",
+      "choices": [
+        "I never say anything to anyone",
+        "I sometimes say something to someone",
+        "I always tell everyone everything",
+        "I don't say nothing to nobody, so I do talk"
+      ],
+      "a": 0,
+      "why": "French stacks negative words freely and they do not cancel out. There is only ever one ne, and the fixed order is plus, jamais, then rien or personne."
+    },
+    {
+      "id": "negation-advanced-02",
+      "type": "mcq",
+      "q": "Which one is wrong?",
+      "choices": [
+        "Je n'ai rien.",
+        "Je n'ai pas rien.",
+        "Je n'ai plus rien.",
+        "Je n'ai pas encore mangé."
+      ],
+      "a": 1,
+      "why": "Pas cannot combine with rien, personne, jamais, plus or aucun. The single exception is pas encore, which behaves as one unit."
+    },
+    {
+      "id": "negation-advanced-03",
+      "type": "order",
+      "q": "Build the sentence: There's never anyone here any more.",
+      "words": [
+        "Il",
+        "n'y",
+        "a",
+        "plus",
+        "jamais",
+        "personne",
+        "ici"
+      ],
+      "a": [
+        "Il",
+        "n'y",
+        "a",
+        "plus",
+        "jamais",
+        "personne",
+        "ici"
+      ],
+      "why": "The order of the negative elements is fixed: plus, then jamais, then rien or personne."
+    },
+    {
+      "id": "negation-advanced-04",
+      "type": "mcq",
+      "q": "Which is correct for « He only eats vegetables » ?",
+      "choices": [
+        "Il ne mange que de légumes.",
+        "Il ne mange que des légumes.",
+        "Il ne mange pas que des légumes.",
+        "Il ne mange rien que des légumes."
+      ],
+      "a": 1,
+      "why": "Ne … que looks negative but is not, so the article survives: que des légumes. A real negation would collapse des to de."
+    },
+    {
+      "id": "negation-advanced-05",
+      "type": "fill",
+      "q": "He doesn't only eat vegetables: « Il ne mange ___ que des légumes. »",
+      "a": [
+        "pas"
+      ],
+      "why": "Pas que is the one place pas teams up with que, and together they mean not only."
+    },
+    {
+      "id": "negation-advanced-06",
+      "type": "mcq",
+      "q": "What is the difference between « Je ne bois que du thé le matin » and « Je ne bois du thé que le matin » ?",
+      "choices": [
+        "There is none, que can move freely",
+        "The first says tea is all I drink in the morning; the second says morning is the only time I drink tea",
+        "The first says morning is the only time I drink tea; the second says tea is all I drink",
+        "The second is ungrammatical"
+      ],
+      "a": 1,
+      "why": "Que restricts whatever immediately follows it, so moving it moves the meaning."
+    },
+    {
+      "id": "negation-advanced-07",
+      "type": "fill",
+      "q": "Say « Je n'ai que dix euros » with an ordinary adverb instead: « J'ai ___ dix euros. »",
+      "a": [
+        "seulement"
+      ],
+      "why": "Seulement carries the same meaning with no ne at all. The other alternative is ne faire que: il ne fait que se plaindre."
+    },
+    {
+      "id": "negation-advanced-08",
+      "type": "mcq",
+      "q": "What does « J'ai peur qu'il ne vienne » mean?",
+      "choices": [
+        "I'm afraid he won't come",
+        "I'm afraid he will come",
+        "I'm not afraid he'll come",
+        "I'm afraid he might not have come"
+      ],
+      "a": 1,
+      "why": "This is the ne explétif: it carries no negative meaning after avoir peur que, avant que, à moins que or a comparative. Only adding pas would negate it."
+    },
+    {
+      "id": "negation-advanced-09",
+      "type": "fill",
+      "q": "Il est parti sans ___ dire. (without saying anything)",
+      "a": [
+        "rien"
+      ],
+      "why": "Sans is already negative, so it takes no ne and no pas, and the words that follow it are rien and personne, never quelque chose or quelqu'un."
+    },
+    {
+      "id": "negation-advanced-10",
+      "type": "mcq",
+      "q": "Which is correct for « I drink neither tea nor coffee » ?",
+      "choices": [
+        "Je ne bois ni du thé ni du café.",
+        "Je ne bois ni thé ni café.",
+        "Je bois ni thé ni café.",
+        "Je ne bois pas ni thé ni café."
+      ],
+      "a": 1,
+      "why": "Ni … ni deletes indefinite and partitive articles entirely. The definite article does survive when the noun is specific: je n'aime ni le thé ni le café."
+    },
+    {
+      "id": "negation-advanced-11",
+      "type": "fill",
+      "q": "Ni lui ni moi ___ savons.",
+      "a": [
+        "ne"
+      ],
+      "why": "Even when ni … ni is the subject, ne still stands in front of the verb, and the verb is usually plural."
+    },
+    {
+      "id": "negation-advanced-12",
+      "type": "listen",
+      "say": "Ce n'est pas grave.",
+      "q": "Type what you hear, in full written French.",
+      "a": [
+        "Ce n'est pas grave.",
+        "Ce n'est pas grave"
+      ],
+      "why": "In speech this comes out as c'est pas grave. The negation survives because pas survives: in fast French, pas is the syllable to listen for."
+    },
+    {
+      "id": "negation-advanced-13",
+      "type": "order",
+      "q": "Build the sentence: I'd rather not go (there).",
+      "words": [
+        "Je",
+        "préfère",
+        "ne",
+        "pas",
+        "y",
+        "aller"
+      ],
+      "a": [
+        "Je",
+        "préfère",
+        "ne",
+        "pas",
+        "y",
+        "aller"
+      ],
+      "why": "When you negate an infinitive, both halves stay together in front of it, along with any pronoun. Compare the sign: Ne pas fumer."
+    },
+    {
+      "id": "negation-advanced-14",
+      "type": "say",
+      "q": "Say this out loud: without ever complaining.",
+      "target": "sans jamais se plaindre",
+      "why": "Sans supplies the negation on its own, so jamais joins it directly with no ne and no pas."
+    },
+    {
+      "id": "negation-advanced-15",
+      "type": "open",
+      "q": "Explain what the ne explétif is, name three triggers, and say how you tell it apart from a real negation.",
+      "a": [
+        "It is a ne that carries no negative meaning, used in formal French after avoir peur que / craindre que, avant que, à moins que, de peur que, empêcher que, and after a comparative. You tell it apart by looking for pas: only pas makes the clause negative. J'ai peur qu'il ne vienne means I'm afraid he will come; j'ai peur qu'il ne vienne pas means I'm afraid he won't. It is optional and increasingly rare — recognise it, you never need to write it."
+      ],
+      "why": "Misreading an expletive ne reverses the meaning of the whole sentence, which is why it is worth recognising on sight."
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "ch": "time-expressions",
+  "title": "Depuis, pendant, il y a, pour",
+  "questions": [
+    {
+      "id": "time-expressions-01",
+      "type": "mcq",
+      "q": "« J'habite ici ___ trois ans. » (and I still do)",
+      "choices": ["depuis", "pendant", "il y a", "pour"],
+      "a": 0,
+      "why": "Depuis is the one that means the action is still going on. Pendant would say it is over, and il y a would make it a point in the past."
+    },
+    {
+      "id": "time-expressions-02",
+      "type": "mcq",
+      "q": "Which tense goes with « depuis » for something still true?",
+      "choices": ["the present", "the passé composé", "the future", "the imperfect"],
+      "a": 0,
+      "why": "English says I have lived here for three years; French says j'habite ici depuis trois ans. You still live there, so the action is present."
+    },
+    {
+      "id": "time-expressions-03",
+      "type": "fill",
+      "q": "Complete: « J'ai vécu à Paris ___ trois ans. » (and I don't now)",
+      "a": ["pendant"],
+      "why": "Pendant is a completed span with a beginning and an end. French can even drop it before a bare duration: j'ai vécu à Paris trois ans."
+    },
+    {
+      "id": "time-expressions-04",
+      "type": "mcq",
+      "q": "« Je suis parti ___ trois ans. » (three years ago)",
+      "choices": ["il y a", "depuis", "pendant", "pour"],
+      "a": 0,
+      "why": "Il y a plus a duration means ago and needs a past tense. Depuis trois ans with the present would mean for three years, still true."
+    },
+    {
+      "id": "time-expressions-05",
+      "type": "fill",
+      "q": "Complete: « Je pars ___ trois jours. » (that's the plan)",
+      "a": ["pour"],
+      "why": "Pour is an intended duration, with verbs of going and coming. It cannot be used for time actually spent: j'ai vécu là pour trois ans is wrong."
+    },
+    {
+      "id": "time-expressions-06",
+      "type": "mcq",
+      "q": "« Je ___ depuis trois ans. » (I haven't seen him for three years)",
+      "choices": ["ne l'ai pas vu", "ne le vois pas", "ne le voyais pas", "ne le verrai pas"],
+      "a": 0,
+      "why": "Depuis normally takes the present, but a negative takes the passé composé, because the thing has not happened at all."
+    },
+    {
+      "id": "time-expressions-07",
+      "type": "fill",
+      "q": "Complete: « J'___ depuis vingt minutes. » (I had been waiting for twenty minutes) — verb attendre",
+      "a": ["attendais"],
+      "why": "Shift depuis into the past by putting the verb in the imperfect. The whole frame moves back: I had been waiting, and still was."
+    },
+    {
+      "id": "time-expressions-08",
+      "type": "mcq",
+      "q": "« Je pars ___ une heure » means « I'm leaving in an hour ». Which word?",
+      "choices": ["dans", "en", "pendant", "depuis"],
+      "a": 0,
+      "why": "Dans is that much time from now; en is how long something takes. J'ai fait ça en une heure means it took me an hour."
+    },
+    {
+      "id": "time-expressions-09",
+      "type": "fill",
+      "q": "Complete: « J'ai fini le travail ___ dix minutes. » (it took me ten minutes)",
+      "a": ["en"],
+      "why": "En measures the time an action consumed. Dans dix minutes would mean the work starts ten minutes from now."
+    },
+    {
+      "id": "time-expressions-10",
+      "type": "listen",
+      "say": "Je t'attends depuis une heure.",
+      "q": "Type what you hear.",
+      "a": ["je t'attends depuis une heure"],
+      "why": "The present tense with depuis is the whole point: I have been waiting for an hour and still am."
+    },
+    {
+      "id": "time-expressions-11",
+      "type": "order",
+      "q": "Build the sentence: I've lived here for three years. (using ça fait)",
+      "words": ["ça", "fait", "trois", "ans", "que", "j'habite", "ici"],
+      "a": ["ça", "fait", "trois", "ans", "que", "j'habite", "ici"],
+      "why": "Ça fait … que, il y a … que and voilà … que are all equivalent to depuis, and all keep the present tense. Ça fait is the commonest in speech."
+    },
+    {
+      "id": "time-expressions-12",
+      "type": "mcq",
+      "q": "Which is the odd one out — not equivalent to the other three?",
+      "choices": ["Il y a trois ans, j'ai déménagé.", "J'habite ici depuis trois ans.", "Ça fait trois ans que j'habite ici.", "Voilà trois ans que j'habite ici."],
+      "a": 0,
+      "why": "The first is il y a as ago: one finished event, past tense. The other three are the depuis pattern: still true, present tense."
+    },
+    {
+      "id": "time-expressions-13",
+      "type": "fill",
+      "q": "Complete: « ___ lundi au jeudi. » (Monday to Thursday)",
+      "a": ["du"],
+      "why": "Du … au marks a stretch from one day to another. Related markers: à partir de lundi (from Monday onwards), jusqu'à demain (until tomorrow), dès demain (as early as tomorrow)."
+    },
+    {
+      "id": "time-expressions-14",
+      "type": "say",
+      "q": "Say this out loud.",
+      "target": "je pars dans dix minutes",
+      "why": "Dans is time counted forward from now. Swap it for en and the sentence would claim the departure itself took ten minutes."
+    },
+    {
+      "id": "time-expressions-15",
+      "type": "open",
+      "q": "English uses « for » for all four of depuis, pendant, il y a and pour. State what each one actually means and the tense it takes.",
+      "a": ["depuis — since / for, still going on; takes the present (or the imperfect for a past frame, or the passé composé when negative): j'habite ici depuis trois ans. pendant — for / during, a completed span; usually a past tense, and it can be dropped: j'ai vécu là pendant trois ans. il y a — ago, a point in the past; requires a past tense: je suis parti il y a trois ans. pour — an intended or planned span, with verbs of going and coming: je pars pour trois jours. Two questions sort them: is it still going on, and is it a span or a point?"],
+      "why": "The tense is the giveaway. Depuis with a past tense, or il y a with a present, is almost always a mistake."
+    }
+  ]
+}

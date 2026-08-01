@@ -1,0 +1,120 @@
+{
+  "ch": "verb-prepositions",
+  "title": "Verbs + à / de + infinitive",
+  "questions": [
+    {
+      "id": "verb-prepositions-01",
+      "type": "mcq",
+      "q": "« J'apprends ___ conduire. »",
+      "choices": ["à", "de", "nothing", "pour"],
+      "a": 0,
+      "why": "Apprendre à is in the group about starting, learning and succeeding — a sense of movement towards. Commencer à and réussir à behave the same."
+    },
+    {
+      "id": "verb-prepositions-02",
+      "type": "mcq",
+      "q": "« J'essaie ___ comprendre. »",
+      "choices": ["de", "à", "nothing", "pour"],
+      "a": 0,
+      "why": "Essayer de belongs to the largest group: stopping, trying, deciding, asking. Compare arrêter de, décider de, refuser de."
+    },
+    {
+      "id": "verb-prepositions-03",
+      "type": "mcq",
+      "q": "« Je veux ___ partir. »",
+      "choices": ["nothing", "à", "de", "pour"],
+      "a": 0,
+      "why": "Vouloir, pouvoir, devoir, savoir, aller, aimer, espérer and préférer take a bare infinitive with no preposition at all."
+    },
+    {
+      "id": "verb-prepositions-04",
+      "type": "fill",
+      "q": "Complete: « Il commence ___ pleuvoir. »",
+      "a": ["à"],
+      "why": "Commencer à faire is to start doing. Commencer par faire is to start by doing: commençons par le début."
+    },
+    {
+      "id": "verb-prepositions-05",
+      "type": "fill",
+      "q": "Complete: « J'ai besoin ___ dormir. »",
+      "a": ["de"],
+      "why": "Every avoir + noun expression takes de: avoir besoin de, avoir envie de, avoir peur de, avoir le temps de. Être + adjective too: être content de, être obligé de."
+    },
+    {
+      "id": "verb-prepositions-06",
+      "type": "fill",
+      "q": "Complete: « Je n'arrive pas ___ comprendre. » (I can't manage to understand)",
+      "a": ["à"],
+      "why": "Arriver à means to manage to, and nothing about arriver as to arrive predicts it. It is one of the most useful phrases in spoken French."
+    },
+    {
+      "id": "verb-prepositions-07",
+      "type": "mcq",
+      "q": "Which pair is correct?",
+      "choices": ["Il m'aide à porter ça / Elle a accepté de m'aider", "Il m'aide de porter ça / Elle a accepté à m'aider", "Il m'aide à porter ça / Elle a accepté à m'aider", "Il m'aide de porter ça / Elle a accepté de m'aider"],
+      "a": 0,
+      "why": "Aider à, but accepter de. There is no logic linking them: the preposition is a property of each verb and has to be learned with it."
+    },
+    {
+      "id": "verb-prepositions-08",
+      "type": "mcq",
+      "q": "« Je viens de manger » means:",
+      "choices": ["I've just eaten", "I'm coming to eat", "I come from eating", "I'm about to eat"],
+      "a": 0,
+      "why": "Venir de faire is the recent past. Without de it is literal: je viens manger, I'm coming to eat."
+    },
+    {
+      "id": "verb-prepositions-09",
+      "type": "mcq",
+      "q": "« Je pense partir demain » means:",
+      "choices": ["I'm thinking of leaving tomorrow", "I'm remembering to leave tomorrow", "I'm thinking about the trip", "I have to leave tomorrow"],
+      "a": 0,
+      "why": "Penser + bare infinitive is to intend. Penser à + infinitive is to remember to: pense à fermer la porte."
+    },
+    {
+      "id": "verb-prepositions-10",
+      "type": "fill",
+      "q": "Replace the person: « J'ai dit à Paul de partir. » → « Je ___ ai dit de partir. »",
+      "a": ["lui"],
+      "why": "The structure is dire à quelqu'un de faire, so the person is indirect: lui, leur. English I told him makes it look direct, and that is the trap."
+    },
+    {
+      "id": "verb-prepositions-11",
+      "type": "order",
+      "q": "Build the sentence: I advised them to stay.",
+      "words": ["je", "leur", "ai", "conseillé", "de", "rester"],
+      "a": ["je", "leur", "ai", "conseillé", "de", "rester"],
+      "why": "Conseiller à quelqu'un de faire: the person is indirect (leur), the action takes de. Demander and permettre follow the same double pattern."
+    },
+    {
+      "id": "verb-prepositions-12",
+      "type": "mcq",
+      "q": "How do you say « I'm waiting for the bus » ?",
+      "choices": ["J'attends le bus.", "J'attends pour le bus.", "J'attends au bus.", "J'attends du bus."],
+      "a": 0,
+      "why": "Attendre takes a direct object. So do chercher, écouter, regarder, demander and payer, where English inserts for, to or at."
+    },
+    {
+      "id": "verb-prepositions-13",
+      "type": "listen",
+      "say": "Je joue du piano.",
+      "q": "Type what you hear.",
+      "a": ["je joue du piano"],
+      "why": "Jouer de goes with instruments, jouer à with games: je joue au tennis. The preposition a verb takes before a noun is a separate fact from the one it takes before an infinitive."
+    },
+    {
+      "id": "verb-prepositions-14",
+      "type": "say",
+      "q": "Say this out loud.",
+      "target": "je lui ai dit de partir",
+      "why": "I told him to leave. Two things at once: the indirect pronoun for the person, and de before the infinitive."
+    },
+    {
+      "id": "verb-prepositions-15",
+      "type": "open",
+      "q": "Name three verbs from each group: bare infinitive, à + infinitive, de + infinitive. Then give the two-object pattern with an example.",
+      "a": ["Bare infinitive: vouloir, pouvoir, devoir, savoir, aller, aimer, espérer, préférer, falloir (je veux partir). À + infinitive: apprendre à, commencer à, réussir à, aider à, hésiter à, arriver à, s'habituer à (j'apprends à conduire). De + infinitive: essayer de, décider de, arrêter de, oublier de, refuser de, éviter de, avoir besoin de, être content de (j'essaie de comprendre). Two-object pattern: verb + à quelqu'un + de faire — dire, demander, conseiller, permettre, interdire, promettre, proposer. Je lui ai demandé de venir, with lui because the person goes through à."],
+      "why": "There is no rule behind the groups, so they are learned in chunks. The one reliable generalisation is that avoir + noun and être + adjective always take de."
+    }
+  ]
+}

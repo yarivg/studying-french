@@ -1,0 +1,118 @@
+{
+  "ch": "il-y-a",
+  "title": "Il y a",
+  "questions": [
+    {
+      "id": "il-y-a-01",
+      "type": "mcq",
+      "q": "How do you say « there are ten books » ?",
+      "choices": ["Ils y ont dix livres", "Il y a dix livres", "Ils y a dix livres", "Il y ont dix livres"],
+      "a": 1,
+      "why": "Il y a is frozen: the il is not a real subject and nothing agrees with what follows. Singular or plural, the form is identical."
+    },
+    {
+      "id": "il-y-a-02",
+      "type": "fill",
+      "q": "Imperfect: ___ beaucoup de monde. (there were a lot of people)",
+      "a": ["Il y avait", "il y avait"],
+      "why": "Only the avoir part changes across the tenses. The imperfect describes a scene or an ongoing state."
+    },
+    {
+      "id": "il-y-a-03",
+      "type": "fill",
+      "q": "Future: ___ du monde demain.",
+      "a": ["Il y aura", "il y aura"],
+      "why": "Avoir's future stem is aur-, so il y a becomes il y aura. The conditional, il y aurait, follows the same stem."
+    },
+    {
+      "id": "il-y-a-04",
+      "type": "mcq",
+      "q": "« ___ un accident. » Which form fits a single event that happened?",
+      "choices": ["Il y avait", "Il y a eu", "Il y aura", "Il y aurait"],
+      "a": 1,
+      "why": "Il y a eu is the passé composé, for one completed event. Il y avait would describe an ongoing scene instead."
+    },
+    {
+      "id": "il-y-a-05",
+      "type": "fill",
+      "q": "Make it negative: « Il y a un problème. » → ___",
+      "a": ["Il n'y a pas de problème", "Il n'y a pas de problème.", "il n'y a pas de problème"],
+      "why": "Ne wraps the a, y stays put, and the indefinite un collapses to de after the negative."
+    },
+    {
+      "id": "il-y-a-06",
+      "type": "fill",
+      "q": "Make it negative: « Il y a quelqu'un. » → ___ (There's nobody.)",
+      "a": ["Il n'y a personne", "Il n'y a personne.", "il n'y a personne"],
+      "why": "Personne and rien replace pas outright — never « ne … pas personne ». The parallel is « Il n'y a rien » for quelque chose."
+    },
+    {
+      "id": "il-y-a-07",
+      "type": "order",
+      "q": "Build the formal question: Is there a problem?",
+      "words": ["Y", "a-t-il", "un", "problème"],
+      "a": ["Y", "a-t-il", "un", "problème"],
+      "why": "Inversion gives « Y a-t-il un problème ? » with the -t- inserted for sound. Neutral is « Est-ce qu'il y a… » and spoken is just « Il y a un problème ? »"
+    },
+    {
+      "id": "il-y-a-08",
+      "type": "mcq",
+      "q": "In conversation, « Il y a » is normally reduced to what?",
+      "choices": ["il a", "y a", "il y", "ya-t-il"],
+      "a": 1,
+      "why": "Speech drops the il: « Y a un problème ? », « Y a personne », « Y a pas de quoi. » Understand it, but write the full form."
+    },
+    {
+      "id": "il-y-a-09",
+      "type": "fill",
+      "q": "il y a or depuis? J'habite ici ___ deux ans. (and I still do)",
+      "a": ["depuis"],
+      "why": "Depuis + present means the situation is still true. Il y a + a duration means ago, and takes a past tense."
+    },
+    {
+      "id": "il-y-a-10",
+      "type": "fill",
+      "q": "il y a or depuis? Je l'ai vu ___ une heure. (an hour ago)",
+      "a": ["il y a"],
+      "why": "Followed by a duration, il y a means ago and points at a finished moment. The past tense of the verb is the giveaway."
+    },
+    {
+      "id": "il-y-a-11",
+      "type": "mcq",
+      "q": "Which sentence does NOT mean « I've lived here for two years » ?",
+      "choices": ["J'habite ici depuis deux ans", "Il y a deux ans que j'habite ici", "Ça fait deux ans que j'habite ici", "Il y a deux ans, j'ai habité ici"],
+      "a": 3,
+      "why": "Il y a … que behaves like depuis and keeps the present tense. Without que, il y a plus a past tense means ago: two years ago I lived here."
+    },
+    {
+      "id": "il-y-a-12",
+      "type": "say",
+      "q": "Say this out loud, in the full written form.",
+      "target": "Il n'y a rien",
+      "why": "Rien replaces pas in the negative. In speech the whole thing collapses towards « y a rien », but the written form keeps il and ne."
+    },
+    {
+      "id": "il-y-a-13",
+      "type": "open",
+      "q": "Explain the difference between « il y a », « voilà » and « c'est », with an example of each.",
+      "a": ["Il y a states that something exists, introducing something new: Il y a un restaurant dans la rue. Voilà points at something: Voilà le restaurant ! C'est identifies something already in view: — Il y a quelqu'un ? — Oui, c'est moi."],
+      "why": "The three are not interchangeable: existence, pointing, identifying. A natural exchange uses il y a to introduce and c'est to identify."
+    },
+    {
+      "id": "il-y-a-14",
+      "type": "mcq",
+      "q": "« Il ne faut pas fumer ici » means:",
+      "choices": ["You don't have to smoke here", "You mustn't smoke here", "There's no smoking area here", "You may smoke here"],
+      "a": 1,
+      "why": "Il ne faut pas is a prohibition, not an absence of obligation. For « you don't have to », say tu n'es pas obligé de or ce n'est pas nécessaire de."
+    },
+    {
+      "id": "il-y-a-15",
+      "type": "listen",
+      "say": "Il reste du pain",
+      "q": "Type what you hear.",
+      "a": ["Il reste du pain", "Il reste du pain."],
+      "why": "Il reste means there is … left, one of the impersonal expressions built like il y a, alongside il manque and il faut."
+    }
+  ]
+}

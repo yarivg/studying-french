@@ -1,0 +1,119 @@
+{
+  "ch": "consonants",
+  "title": "Consonant sounds",
+  "questions": [
+    {
+      "id": "consonants-01",
+      "type": "mcq",
+      "q": "Why does « le garçon » need the cedilla?",
+      "choices": ["Without it, the c before o would be a k sound", "It marks where the stress falls", "It makes the o longer", "It shows the n is silent"],
+      "a": 0,
+      "why": "c is hard before a, o, u and soft before e, i, y. The cedilla forces the soft s sound where the spelling would otherwise give k: ça, la leçon, le reçu."
+    },
+    {
+      "id": "consonants-02",
+      "type": "mcq",
+      "q": "Is the u pronounced in « la guitare » ?",
+      "choices": ["No — it is only there to keep the g hard", "Yes — \"gwee-tar\"", "Yes, as a separate syllable", "No, and the g is soft anyway"],
+      "a": 0,
+      "why": "gu- and qu- are spelling devices: the u is silent. La guitare is \"gee-tar\", qui is \"kee\", not \"kwee\". Rare technical words like linguistique are the exceptions."
+    },
+    {
+      "id": "consonants-03",
+      "type": "mcq",
+      "q": "Which of these has a z sound in the middle?",
+      "choices": ["le poison", "le poisson", "le dessert", "la tasse"],
+      "a": 0,
+      "why": "A single s between two vowels is z; a double ss stays s. So le poison (poison) has z, le poisson (fish) has s. Same contrast as le désert and le dessert."
+    },
+    {
+      "id": "consonants-04",
+      "type": "mcq",
+      "q": "How is the x pronounced in « l'exemple » ?",
+      "choices": ["gz, like the x of English \"exam\"", "ks, like the x of English \"text\"", "z", "It is silent"],
+      "a": 0,
+      "why": "ex- before a vowel is gz (exister, exact, l'examen); ex- before a consonant is ks (le texte, expliquer). At the end of a word, x is usually silent: le prix, la voix."
+    },
+    {
+      "id": "consonants-05",
+      "type": "mcq",
+      "q": "Which letter is silent in « l'automne » ?",
+      "choices": ["the m", "the t", "the n", "the first o"],
+      "a": 0,
+      "why": "The cluster mn simplifies to n, so l'automne ends like \"tonn\" and condamner loses its m too. French drops letters inside several fixed clusters."
+    },
+    {
+      "id": "consonants-06",
+      "type": "mcq",
+      "q": "Which letter disappears in « compter » ?",
+      "choices": ["the p", "the m", "the t", "the final r only"],
+      "a": 0,
+      "why": "-mpt- is said mt: compter, le comptable. Related fixed clusters: le doigt loses both g and t, and le cerf keeps only the r."
+    },
+    {
+      "id": "consonants-07",
+      "type": "mcq",
+      "q": "Which of these words has an h aspiré, so it takes « le » and blocks liaison?",
+      "choices": ["le héros", "l'homme", "l'hôpital", "l'hiver"],
+      "a": 0,
+      "why": "h is never pronounced, but h aspiré behaves as if a consonant were there: no elision, no linking. There is no way to tell by looking — h aspiré words are mostly Germanic or English borrowings, and dictionaries mark them."
+    },
+    {
+      "id": "consonants-08",
+      "type": "fill",
+      "q": "Add the cedilla where it is needed: « le garcon ».",
+      "a": ["le garçon", "garçon"],
+      "why": "Without the cedilla the c sits before o and would be read as k."
+    },
+    {
+      "id": "consonants-09",
+      "type": "fill",
+      "q": "« manger » keeps its soft g in the nous form by adding a letter. Complete: nous ___",
+      "a": ["mangeons"],
+      "why": "The e is inserted purely for pronunciation: g stays soft before e. Without it, mangons would have a hard g."
+    },
+    {
+      "id": "consonants-10",
+      "type": "fill",
+      "q": "Written « bage », the g would be soft. Add the one letter that makes it hard, giving the word for a ring: la ___",
+      "a": ["bague"],
+      "why": "gu- before e or i forces the hard g: la bague, le guide, longue. The u itself is never heard."
+    },
+    {
+      "id": "consonants-11",
+      "type": "fill",
+      "q": "Write « le » + « homme » as French actually writes it.",
+      "a": ["l'homme"],
+      "why": "The h of homme is mute, so the word behaves like a vowel and the article elides. Compare le hobby and le haut, where h aspiré blocks exactly this."
+    },
+    {
+      "id": "consonants-12",
+      "type": "listen",
+      "say": "la maison",
+      "q": "Type what you hear.",
+      "a": ["la maison"],
+      "why": "The single s sits between two vowels, so it is a z sound; the -on at the end is nasal. Written with s, heard as z."
+    },
+    {
+      "id": "consonants-13",
+      "type": "say",
+      "q": "Say this out loud — two tricky consonants and two nasal vowels.",
+      "target": "le champignon",
+      "why": "ch is the English sh, and gn is the ni of \"onion\". Both nasals are full nasals: neither n is pronounced as a separate consonant."
+    },
+    {
+      "id": "consonants-14",
+      "type": "say",
+      "q": "Say this out loud. Only two sounds survive out of five letters.",
+      "target": "le doigt",
+      "why": "-gt collapses: both the g and the t are silent, leaving \"dwa\". oi supplies the \"wah\"."
+    },
+    {
+      "id": "consonants-15",
+      "type": "open",
+      "q": "State the rule for when c and g are hard and when they are soft, and name the three spelling tricks French uses to override it.",
+      "a": ["c and g are hard before a, o, u and soft before e, i, y. Overrides: ç forces the soft c before a/o/u (le garçon); an inserted e keeps g soft before a/o (nous mangeons); gu- forces hard g before e/i (la guitare), and qu- spells the k sound before e/i (qui, quand)."],
+      "why": "This one rule plus its three workarounds explains a large share of French spelling, including why verb stems change shape between forms."
+    }
+  ]
+}

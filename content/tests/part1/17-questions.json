@@ -1,0 +1,175 @@
+{
+  "ch": "questions",
+  "title": "Questions",
+  "questions": [
+    {
+      "id": "questions-01",
+      "type": "mcq",
+      "q": "What mainly separates the three ways of asking a yes/no question in French?",
+      "choices": [
+        "Meaning",
+        "Register",
+        "Tense",
+        "Politeness towards the listener only"
+      ],
+      "a": 1,
+      "why": "Intonation, est-ce que and inversion mean the same thing. Choosing between them is a social decision: spoken, neutral, formal."
+    },
+    {
+      "id": "questions-02",
+      "type": "fill",
+      "q": "Turn « Tu aimes la musique. » into a question with est-ce que.",
+      "a": [
+        "Est-ce que tu aimes la musique ?",
+        "Est-ce que tu aimes la musique?",
+        "Est-ce que tu aimes la musique"
+      ],
+      "why": "Est-ce que bolts onto the front and changes nothing else, which is why it is the safest choice while learning. Que elides before a vowel: est-ce qu'il vient demain ?"
+    },
+    {
+      "id": "questions-03",
+      "type": "fill",
+      "q": "Invert: « Vous parlez français. » → ___ français ?",
+      "a": [
+        "Parlez-vous"
+      ],
+      "why": "Inversion swaps the verb and the subject pronoun and joins them with a hyphen: parlez-vous, viens-tu, sont-ils."
+    },
+    {
+      "id": "questions-04",
+      "type": "mcq",
+      "q": "Which one needs an inserted -t- ?",
+      "choices": [
+        "Que dit ___ il ?",
+        "Prend ___ il le train ?",
+        "Où va ___ il ?",
+        "Comment vient ___ elle ?"
+      ],
+      "a": 2,
+      "why": "The -t- appears only when the verb ends in a vowel and the pronoun starts with one: va-t-il, arrive-t-elle. A final d or t already supplies it: dit-il, prend-il."
+    },
+    {
+      "id": "questions-05",
+      "type": "mcq",
+      "q": "Which is wrong?",
+      "choices": [
+        "Parle-je français ?",
+        "Parlez-vous français ?",
+        "Est-ce que je parle français ?",
+        "Je parle français ?"
+      ],
+      "a": 0,
+      "why": "You never invert with je. Use est-ce que or intonation; the only survivors are fixed forms like puis-je, suis-je, ai-je, dois-je."
+    },
+    {
+      "id": "questions-06",
+      "type": "order",
+      "q": "Build the careful-style question: Where is Paul going?",
+      "words": [
+        "Où",
+        "Paul",
+        "va-t-il"
+      ],
+      "a": [
+        "Où",
+        "Paul",
+        "va-t-il"
+      ],
+      "why": "A noun subject cannot be inverted. It stays in place and a matching pronoun is added after the verb: Où Paul va-t-il ? Marie est-elle irlandaise ?"
+    },
+    {
+      "id": "questions-07",
+      "type": "mcq",
+      "q": "« Vous allez où ? » is:",
+      "choices": [
+        "Formal and written",
+        "Neutral",
+        "Casual spoken French",
+        "Ungrammatical in every register"
+      ],
+      "a": 2,
+      "why": "Moving the question word to the end makes it casual: tu vas où, tu pars quand, ça coûte combien. Extremely common in speech, wrong in writing."
+    },
+    {
+      "id": "questions-08",
+      "type": "fill",
+      "q": "Complete: « À ___ penses-tu ? » (about a thing)",
+      "a": [
+        "quoi"
+      ],
+      "why": "Que becomes quoi in two places: after a preposition (à quoi, de quoi) and at the end of a sentence (tu fais quoi ?). At the front it is always que."
+    },
+    {
+      "id": "questions-09",
+      "type": "fill",
+      "q": "Complete: « ___ se passe ? » (What's happening?)",
+      "a": [
+        "Qu'est-ce qui"
+      ],
+      "why": "Qu'est-ce qui = thing + subject. The first half says what you ask about (que = thing), the last half says its role (qui = subject)."
+    },
+    {
+      "id": "questions-10",
+      "type": "mcq",
+      "q": "Which form asks « Who did you see? »",
+      "choices": [
+        "Qu'est-ce que tu as vu ?",
+        "Qui est-ce qui t'a vu ?",
+        "Qui est-ce que tu as vu ?",
+        "Qu'est-ce qui t'a vu ?"
+      ],
+      "a": 2,
+      "why": "Qui = person, and the final que = object: person + object. Qui est-ce qui would make the person the subject: who called?"
+    },
+    {
+      "id": "questions-11",
+      "type": "fill",
+      "q": "Complete with the right form of quel: « ___ villes as-tu visitées ? »",
+      "a": [
+        "Quelles"
+      ],
+      "why": "Quel is an adjective and agrees with its noun: quel, quelle, quels, quelles. Villes is feminine plural."
+    },
+    {
+      "id": "questions-12",
+      "type": "mcq",
+      "q": "Why is it « Quelle est ton adresse ? » and not « Qu'est-ce que ton adresse ? »",
+      "choices": [
+        "Adresse is feminine",
+        "Quel is used when a noun is involved; qu'est-ce que when there is none",
+        "Qu'est-ce que cannot start a sentence",
+        "Both are equally correct"
+      ],
+      "a": 1,
+      "why": "Quel goes with a noun, even when être stands between them: quelle heure, quel âge, quel est le problème. Qu'est-ce que is for nounless questions: qu'est-ce que tu fais."
+    },
+    {
+      "id": "questions-13",
+      "type": "listen",
+      "say": "Quel âge as-tu ?",
+      "q": "Type what you hear.",
+      "a": [
+        "Quel âge as-tu ?",
+        "Quel âge as-tu?",
+        "Quel âge as-tu"
+      ],
+      "why": "Age is masculine, so quel with no -e, and inversion with tu is normal in this set phrase."
+    },
+    {
+      "id": "questions-14",
+      "type": "say",
+      "q": "Say this out loud: Why is the sky blue?",
+      "target": "Pourquoi le ciel est-il bleu",
+      "why": "With pourquoi and a noun subject, the noun stays and a pronoun echoes it after the verb. In speech you could simply say Pourquoi le ciel est bleu ?"
+    },
+    {
+      "id": "questions-15",
+      "type": "open",
+      "q": "Explain the four long forms: qu'est-ce qui, qu'est-ce que, qui est-ce qui, qui est-ce que. Give an example of each.",
+      "a": [
+        "The first half says what you are asking about (qui = person, que = thing), the last half says its grammatical role (qui = subject, que = object). Qu'est-ce qui se passe ? (thing, subject) · Qu'est-ce que tu fais ? (thing, object) · Qui est-ce qui a téléphoné ? (person, subject) · Qui est-ce que tu as vu ? (person, object)."
+      ],
+      "why": "Once you read them as two halves they decode themselves, which beats memorising four separate strings."
+    }
+  ]
+}

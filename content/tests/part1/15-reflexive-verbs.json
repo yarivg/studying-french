@@ -1,0 +1,182 @@
+{
+  "ch": "reflexive-verbs",
+  "title": "Reflexive verbs",
+  "questions": [
+    {
+      "id": "reflexive-verbs-01",
+      "type": "fill",
+      "q": "Conjugate: je (se lever) ___ tôt.",
+      "a": [
+        "me lève"
+      ],
+      "why": "The reflexive pronoun sits before the verb and matches the subject; the verb itself conjugates normally, so lever keeps its è in the silent-ending forms."
+    },
+    {
+      "id": "reflexive-verbs-02",
+      "type": "fill",
+      "q": "Conjugate: nous (se laver) ___",
+      "a": [
+        "nous lavons"
+      ],
+      "why": "Nous nous lavons is not a typo: the first nous is the subject, the second is the reflexive pronoun."
+    },
+    {
+      "id": "reflexive-verbs-03",
+      "type": "fill",
+      "q": "Conjugate: tu (s'appeler) ___",
+      "a": [
+        "t'appelles"
+      ],
+      "why": "Te elides to t' before a vowel, and appeler doubles its l where the ending is silent: je m'appelle, tu t'appelles."
+    },
+    {
+      "id": "reflexive-verbs-04",
+      "type": "mcq",
+      "q": "Which is correct?",
+      "choices": [
+        "Nous allons se lever tôt.",
+        "Nous allons nous lever tôt.",
+        "Nous allons me lever tôt.",
+        "Nous nous allons lever tôt."
+      ],
+      "a": 1,
+      "why": "Before an infinitive the reflexive pronoun still matches the subject; it is not frozen as se. Je vais me lever, tu vas te lever, nous allons nous lever."
+    },
+    {
+      "id": "reflexive-verbs-05",
+      "type": "order",
+      "q": "Build the sentence: I don't get up early.",
+      "words": [
+        "Je",
+        "ne",
+        "me",
+        "lève",
+        "pas",
+        "tôt"
+      ],
+      "a": [
+        "Je",
+        "ne",
+        "me",
+        "lève",
+        "pas",
+        "tôt"
+      ],
+      "why": "Ne wraps the pronoun and the verb together: ne me lève pas. The reflexive pronoun never escapes outside the ne … pas sandwich."
+    },
+    {
+      "id": "reflexive-verbs-06",
+      "type": "mcq",
+      "q": "How do you tell someone (tu) to get up?",
+      "choices": [
+        "Te lève !",
+        "Lève-te !",
+        "Lève-toi !",
+        "Toi lève !"
+      ],
+      "a": 2,
+      "why": "In a positive command the pronoun moves after the verb and te becomes toi. The negative command puts it back in front: Ne te lève pas !"
+    },
+    {
+      "id": "reflexive-verbs-07",
+      "type": "fill",
+      "q": "Negative command (tu, se lever): Ne ___ pas !",
+      "a": [
+        "te lève"
+      ],
+      "why": "Only the positive command moves the pronoun behind the verb. A negative command restores the normal order, and toi reverts to te."
+    },
+    {
+      "id": "reflexive-verbs-08",
+      "type": "mcq",
+      "q": "« Qu'est-ce qui se passe ? » means:",
+      "choices": [
+        "What is passing by?",
+        "What's happening?",
+        "Who is passing?",
+        "What did I miss?"
+      ],
+      "a": 1,
+      "why": "Se passer is idiomatic: passer means to pass, se passer means to happen. In this group the pronoun no longer means self at all."
+    },
+    {
+      "id": "reflexive-verbs-09",
+      "type": "listen",
+      "say": "Je me demande pourquoi.",
+      "q": "Type what you hear.",
+      "a": [
+        "Je me demande pourquoi.",
+        "Je me demande pourquoi"
+      ],
+      "why": "Se demander is idiomatic: demander is to ask, se demander is to wonder. The pronoun no longer means self."
+    },
+    {
+      "id": "reflexive-verbs-10",
+      "type": "mcq",
+      "q": "Which is correct?",
+      "choices": [
+        "Je me rappelle de cette journée.",
+        "Je me souviens cette journée.",
+        "Je me souviens de cette journée."
+      ],
+      "a": 2,
+      "why": "Se souvenir takes de; se rappeler takes a direct object with no preposition. Je me rappelle de is common in speech and still wrong in writing."
+    },
+    {
+      "id": "reflexive-verbs-11",
+      "type": "fill",
+      "q": "Passé composé: Elle (se laver) ___ .",
+      "a": [
+        "s'est lavée"
+      ],
+      "why": "All reflexives take être, and here se is the direct object, so the participle agrees with the subject: lavée."
+    },
+    {
+      "id": "reflexive-verbs-12",
+      "type": "fill",
+      "q": "Passé composé: Elle (se laver) ___ les mains.",
+      "a": [
+        "s'est lavé"
+      ],
+      "why": "Les mains is the direct object, which makes se merely indirect, so nothing agrees. Same for elle s'est cassé la jambe."
+    },
+    {
+      "id": "reflexive-verbs-13",
+      "type": "order",
+      "q": "Build the sentence: We didn't wash.",
+      "words": [
+        "Nous",
+        "ne",
+        "nous",
+        "sommes",
+        "pas",
+        "lavés"
+      ],
+      "a": [
+        "Nous",
+        "ne",
+        "nous",
+        "sommes",
+        "pas",
+        "lavés"
+      ],
+      "why": "In a compound tense ne … pas wraps the auxiliary, with the reflexive pronoun tucked in before it: ne nous sommes pas lavés."
+    },
+    {
+      "id": "reflexive-verbs-14",
+      "type": "say",
+      "q": "Say this out loud: we get up early.",
+      "target": "nous nous levons tôt",
+      "why": "Both nous really are said. The doubled pronoun is the shape learners most often clip, and dropping one makes the sentence ungrammatical."
+    },
+    {
+      "id": "reflexive-verbs-15",
+      "type": "open",
+      "q": "Name the four jobs a reflexive verb can do, with an example of each.",
+      "a": [
+        "1. Genuinely reflexive: Je me lave. 2. Reciprocal, to each other: Ils se parlent. 3. Idiomatic, the meaning shifts: Qu'est-ce qui se passe ? 4. Instead of a passive: Le vin blanc se boit frais."
+      ],
+      "why": "Only the first job matches the English idea of self; the idiomatic group is the biggest, and the passive-replacement use is the one English speakers never predict."
+    }
+  ]
+}

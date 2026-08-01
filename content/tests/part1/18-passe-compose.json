@@ -1,0 +1,184 @@
+{
+  "ch": "passe-compose",
+  "title": "Le passé composé",
+  "questions": [
+    {
+      "id": "passe-compose-01",
+      "type": "mcq",
+      "q": "What are the two pieces of a passé composé?",
+      "choices": [
+        "An auxiliary in the present plus a past participle",
+        "An infinitive plus an ending",
+        "Two participles",
+        "Être plus an infinitive"
+      ],
+      "a": 0,
+      "why": "Avoir or être in the present tense, then the past participle. Everything hard about the tense is choosing the auxiliary and deciding on agreement."
+    },
+    {
+      "id": "passe-compose-02",
+      "type": "fill",
+      "q": "Past participle of « vendre » : ___",
+      "a": [
+        "vendu"
+      ],
+      "why": "The regular system is -er → -é, -ir → -i, -re → -u. So parlé, fini, vendu."
+    },
+    {
+      "id": "passe-compose-03",
+      "type": "mcq",
+      "q": "Which participle is wrong?",
+      "choices": [
+        "être → été",
+        "avoir → eu",
+        "voir → vu",
+        "écrire → écris"
+      ],
+      "a": 3,
+      "why": "Écrire gives écrit, in the -it / -ert pile with dit, fait, ouvert and offert. Écris is the present tense of je or tu."
+    },
+    {
+      "id": "passe-compose-04",
+      "type": "listen",
+      "say": "Je n'ai pas mangé.",
+      "q": "Type what you hear, in correct written French.",
+      "a": [
+        "Je n'ai pas mangé.",
+        "Je n'ai pas mangé"
+      ],
+      "why": "Pas sits between the auxiliary and the participle. Note n' before the vowel of ai."
+    },
+    {
+      "id": "passe-compose-05",
+      "type": "mcq",
+      "q": "Which group always takes être?",
+      "choices": [
+        "Verbs of speech",
+        "Reflexive verbs, all of them",
+        "-re verbs",
+        "Verbs with a direct object"
+      ],
+      "a": 1,
+      "why": "Every reflexive takes être without exception, plus the DR & MRS VANDERTRAMP list of intransitive movement and change-of-state verbs."
+    },
+    {
+      "id": "passe-compose-06",
+      "type": "fill",
+      "q": "Auxiliary: « Il ___ monté les valises. »",
+      "a": [
+        "a"
+      ],
+      "why": "Monter, descendre, sortir, rentrer, retourner and passer switch to avoir when a direct object follows, and the meaning shifts too: he took the suitcases up, not he went up."
+    },
+    {
+      "id": "passe-compose-07",
+      "type": "fill",
+      "q": "Put it in the past: « Elle va au marché. » → Elle ___ au marché.",
+      "a": [
+        "est allée"
+      ],
+      "why": "Aller takes être, so the participle agrees with the feminine singular subject: allée."
+    },
+    {
+      "id": "passe-compose-08",
+      "type": "mcq",
+      "q": "Which is correct?",
+      "choices": [
+        "Elle a mangée les pommes.",
+        "Elle a mangé les pommes.",
+        "Elle est mangée les pommes."
+      ],
+      "a": 1,
+      "why": "With avoir the default is no agreement at all. The object les pommes comes after the verb, so nothing changes."
+    },
+    {
+      "id": "passe-compose-09",
+      "type": "fill",
+      "q": "Agreement: « Les pommes ? Je les ai (manger) ___ . »",
+      "a": [
+        "mangées"
+      ],
+      "why": "A direct object placed before the verb triggers agreement with avoir. Here the pronoun les stands for les pommes: feminine plural, so mangées."
+    },
+    {
+      "id": "passe-compose-10",
+      "type": "mcq",
+      "q": "Why is « Je leur ai parlé » not « parlés » ?",
+      "choices": [
+        "Leur is singular",
+        "Parler has no feminine form",
+        "Leur is an indirect object, and an indirect object never triggers agreement",
+        "The subject je is masculine"
+      ],
+      "a": 2,
+      "why": "Only a preceding direct object triggers agreement. Parler à takes an indirect object, so the participle stays flat."
+    },
+    {
+      "id": "passe-compose-11",
+      "type": "order",
+      "q": "Build the sentence: I didn't see it. (it = le film)",
+      "words": [
+        "Je",
+        "ne",
+        "l'ai",
+        "pas",
+        "vu"
+      ],
+      "a": [
+        "Je",
+        "ne",
+        "l'ai",
+        "pas",
+        "vu"
+      ],
+      "why": "The object pronoun goes before the auxiliary, inside the ne … pas sandwich. Le film is masculine singular, so no agreement is visible on vu."
+    },
+    {
+      "id": "passe-compose-12",
+      "type": "order",
+      "q": "Build the sentence: We didn't wash. (nous, se laver)",
+      "words": [
+        "Nous",
+        "ne",
+        "nous",
+        "sommes",
+        "pas",
+        "lavés"
+      ],
+      "a": [
+        "Nous",
+        "ne",
+        "nous",
+        "sommes",
+        "pas",
+        "lavés"
+      ],
+      "why": "Reflexive, so être; ne … pas wraps the auxiliary with the reflexive pronoun tucked in before it; se is the direct object, so the participle agrees: lavés."
+    },
+    {
+      "id": "passe-compose-13",
+      "type": "fill",
+      "q": "Agreement: « Elle s'est (laver) ___ les mains. »",
+      "a": [
+        "lavé"
+      ],
+      "why": "Les mains is the direct object and comes after the verb, so se is only indirect and nothing agrees. Compare elle s'est lavée, with no object."
+    },
+    {
+      "id": "passe-compose-14",
+      "type": "open",
+      "q": "State the agreement rule for avoir, for être, and for reflexives, in one sentence each.",
+      "a": [
+        "Avoir: no agreement, unless a direct object comes before the verb (je les ai mangées). Être: the participle agrees with the subject (elles sont allées). Reflexives: they use être but follow the avoir rule, agreeing only when the reflexive pronoun is itself the direct object (elle s'est lavée, but elle s'est lavé les mains)."
+      ],
+      "why": "The three rules collapse into one question worth asking every time: is there a direct object, and does it come before the verb?"
+    },
+    {
+      "id": "passe-compose-15",
+      "type": "say",
+      "q": "Say this out loud: she went to the market.",
+      "target": "elle est allée au marché",
+      "why": "Aller takes être and the participle agrees with the subject, though the extra -e of allée changes nothing you can hear."
+    }
+  ]
+}

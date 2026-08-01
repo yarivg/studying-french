@@ -1,0 +1,119 @@
+{
+  "ch": "liaisons",
+  "title": "Liaisons",
+  "questions": [
+    {
+      "id": "liaisons-01",
+      "type": "mcq",
+      "q": "What do you hear between the two words of « les amis » ?",
+      "choices": ["a z sound", "an s sound", "nothing — a clean break", "a t sound"],
+      "a": 0,
+      "why": "The silent final s wakes up before a vowel and links as z. Article plus noun is one of the obligatory cases, and it is what keeps un ami and des amis apart."
+    },
+    {
+      "id": "liaisons-02",
+      "type": "mcq",
+      "q": "Is there a liaison in « un grand homme », and what does it sound like?",
+      "choices": ["Yes — the d links as a t sound", "Yes — the d links as a d sound", "No — the h blocks it", "No — a noun never links to the word before it"],
+      "a": 0,
+      "why": "The h of homme is mute, so the link happens, and a liaison d always surfaces as t. Same for petit insecte and quand il."
+    },
+    {
+      "id": "liaisons-03",
+      "type": "mcq",
+      "q": "Do you link in « Paul et Anne » ?",
+      "choices": ["No — et never links", "Yes — the t links onto Anne", "Yes, but only in careful speech", "Only if you pause first"],
+      "a": 0,
+      "why": "et ends in t, so learners naturally want to link it, but French never does. It is a fixed rule with no exceptions, and the mistake is unusually noticeable."
+    },
+    {
+      "id": "liaisons-04",
+      "type": "mcq",
+      "q": "What happens to the f of « neuf » in « neuf heures » ?",
+      "choices": ["It links as a v sound", "It links as an f sound", "It stays silent", "It links as a z sound"],
+      "a": 0,
+      "why": "f becomes v in liaison, but in practice only in two expressions: neuf ans and neuf heures. Before a consonant, neuf keeps its f."
+    },
+    {
+      "id": "liaisons-05",
+      "type": "mcq",
+      "q": "In which of these is there NO liaison?",
+      "choices": ["les héros", "les enfants", "les arbres", "les amis"],
+      "a": 0,
+      "why": "héros has an h aspiré, which behaves like a consonant and blocks the link. onze and oui block it the same way: les onze joueurs."
+    },
+    {
+      "id": "liaisons-06",
+      "type": "mcq",
+      "q": "« il arrive » is said as one smooth run. Is that a liaison?",
+      "choices": ["No — it is enchaînement: the l was already pronounced", "Yes — the l is a silent consonant waking up", "No — nothing links here", "Yes, but only an optional one"],
+      "a": 0,
+      "why": "Liaison wakes a silent consonant; enchaînement just carries an already-audible one onto the next word. Enchaînement happens constantly and needs no decision from you."
+    },
+    {
+      "id": "liaisons-07",
+      "type": "fill",
+      "q": "Elide: je + ai = ___",
+      "a": ["j'ai"],
+      "why": "je, ne, de, que, se, ce, me and te all drop their vowel before another vowel and take an apostrophe. This one is written, not just spoken."
+    },
+    {
+      "id": "liaisons-08",
+      "type": "fill",
+      "q": "Elide if French would: si + il = ___",
+      "a": ["s'il"],
+      "why": "si elides before il and ils only: s'il vous plaît, s'ils viennent."
+    },
+    {
+      "id": "liaisons-09",
+      "type": "fill",
+      "q": "Elide if French would: si + elle = ___",
+      "a": ["si elle"],
+      "why": "There is no elision here. si only ever elides before il and ils, so si elle vient and si on part keep the full si."
+    },
+    {
+      "id": "liaisons-10",
+      "type": "fill",
+      "q": "Complete with the right form of de: beaucoup ___ eau.",
+      "a": ["d'"],
+      "why": "de elides to d' before a vowel, exactly as in d'accord. The apostrophe is compulsory in writing, not a shortcut."
+    },
+    {
+      "id": "liaisons-11",
+      "type": "order",
+      "q": "Build the polite phrase meaning \"please\" (literally: if it pleases you).",
+      "words": ["s'il", "vous", "plaît"],
+      "a": ["s'il", "vous", "plaît"],
+      "why": "Written as three words with si already elided into s'il, and said as one run: the l carries straight onto vous."
+    },
+    {
+      "id": "liaisons-12",
+      "type": "listen",
+      "say": "nous allons",
+      "q": "Type what you hear.",
+      "a": ["nous allons"],
+      "why": "Pronoun plus verb is an obligatory liaison, so the s links as z and the two words sound like one. The z is your only clue that the first word ends in s."
+    },
+    {
+      "id": "liaisons-13",
+      "type": "say",
+      "q": "Say this out loud, with the liaison.",
+      "target": "les enfants",
+      "why": "The s of les links onto enfants as z. Drop it and the phrase stops sounding plural."
+    },
+    {
+      "id": "liaisons-14",
+      "type": "say",
+      "q": "Say this out loud. The final consonant of the number is heard here.",
+      "target": "cinq ans",
+      "why": "Number plus noun is obligatory, and q links as k. Compare deux ans, where the x links as z, and neuf ans, where the f becomes v."
+    },
+    {
+      "id": "liaisons-15",
+      "type": "open",
+      "q": "Name three situations where liaison is obligatory and three where it is forbidden, with an example each.",
+      "a": ["Obligatory: article + noun (les amis), number + noun (deux ans), adjective + noun (un grand arbre), pronoun + verb (nous allons), short adverb or preposition + word (très important, chez elle). Forbidden: after et (un homme et une femme), before an h aspiré (les héros, en haut), after a singular noun (un enfant intelligent), before onze and oui, and across a comma or pause."],
+      "why": "The obligatory list is short and worth automating; everything in between is optional and signals register, so under-liaising is safer than over-liaising."
+    }
+  ]
+}

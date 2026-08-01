@@ -1,0 +1,183 @@
+{
+  "ch": "subjonctif-uses",
+  "title": "Le subjonctif: when to use it",
+  "questions": [
+    {
+      "id": "subjonctif-uses-01",
+      "type": "mcq",
+      "q": "What makes a subjunctive appear?",
+      "choices": [
+        "The meaning you intend",
+        "A trigger word, followed by que",
+        "Any subordinate clause",
+        "The tense of the main verb"
+      ],
+      "a": 1,
+      "why": "The shape is always trigger + que + subjunctive. You recognise the triggers rather than reasoning about mood: no que, no subjunctive."
+    },
+    {
+      "id": "subjonctif-uses-02",
+      "type": "fill",
+      "q": "« Il faut que tu ___ (partir). »",
+      "a": [
+        "partes"
+      ],
+      "why": "Il faut que is the commonest trigger of all, in the group of will, wish and order. Compare il faut partir, with no named subject and so an infinitive."
+    },
+    {
+      "id": "subjonctif-uses-03",
+      "type": "fill",
+      "q": "« J'espère qu'il ___ (venir) demain. »",
+      "a": [
+        "vient",
+        "viendra"
+      ],
+      "why": "Espérer looks like it belongs with vouloir and souhaiter, and does not: hope is treated as an expectation, so it takes the indicative."
+    },
+    {
+      "id": "subjonctif-uses-04",
+      "type": "fill",
+      "q": "« Je pense qu'il ___ (être) là. »",
+      "a": [
+        "est"
+      ],
+      "why": "Affirmative penser, croire, trouver and être sûr express confidence, so they take the indicative."
+    },
+    {
+      "id": "subjonctif-uses-05",
+      "type": "fill",
+      "q": "« Je ne pense pas qu'il ___ (être) là. »",
+      "a": [
+        "soit"
+      ],
+      "why": "Negate the same verb and the confidence disappears, so the mood flips to the subjunctive. A question does the same: penses-tu qu'il vienne ?"
+    },
+    {
+      "id": "subjonctif-uses-06",
+      "type": "mcq",
+      "q": "Which pair is correct?",
+      "choices": [
+        "Il est probable qu'il vienne / il est possible qu'il vient",
+        "Il est probable qu'il vient / il est possible qu'il vienne",
+        "Both take the subjunctive",
+        "Both take the indicative"
+      ],
+      "a": 1,
+      "why": "Probable is expected enough to count as asserted, so indicative. Merely possible is not established, so subjunctive. French draws a line here that English does not."
+    },
+    {
+      "id": "subjonctif-uses-07",
+      "type": "mcq",
+      "q": "Which impersonal expression takes the indicative?",
+      "choices": [
+        "il est important que",
+        "il est étrange que",
+        "il est évident que",
+        "il est temps que"
+      ],
+      "a": 2,
+      "why": "If the expression asserts that something is the case — true, certain, obvious — the indicative follows. If it comments on something not yet established — necessary, important, strange, time — the subjunctive does."
+    },
+    {
+      "id": "subjonctif-uses-08",
+      "type": "fill",
+      "q": "« Bien qu'il ___ (faire) froid, on sort. »",
+      "a": [
+        "fasse"
+      ],
+      "why": "Bien que and quoique always take the subjunctive, with no exceptions to weigh up. Faire is one of the six irregulars: fasse."
+    },
+    {
+      "id": "subjonctif-uses-09",
+      "type": "listen",
+      "say": "Attends jusqu'à ce que je revienne.",
+      "q": "Type what you hear.",
+      "a": [
+        "Attends jusqu'à ce que je revienne",
+        "Attends jusqu'à ce que je revienne."
+      ],
+      "why": "Jusqu'à ce que is in the group of conjunctions that take the subjunctive unconditionally. Revenir follows venir: ils reviennent gives revienn-."
+    },
+    {
+      "id": "subjonctif-uses-10",
+      "type": "mcq",
+      "q": "« Avant qu'il parte » is subjunctive. What about « après que » ?",
+      "choices": [
+        "Subjunctive too — the pair behaves alike",
+        "Indicative: après qu'il est parti",
+        "Conditional",
+        "It takes an infinitive only"
+      ],
+      "a": 1,
+      "why": "What came after has actually happened, so it is asserted: après qu'il est parti. Many native speakers use the subjunctive there anyway, and it is still marked as an error in careful writing."
+    },
+    {
+      "id": "subjonctif-uses-11",
+      "type": "mcq",
+      "q": "Why is it « Je veux partir » but « Je veux que tu partes » ?",
+      "choices": [
+        "Vouloir only takes the subjunctive in the tu form",
+        "The subjunctive needs different subjects on either side of que; with the same subject French uses an infinitive",
+        "Partir is irregular",
+        "The first is spoken French, the second written"
+      ],
+      "a": 1,
+      "why": "Same rule for il faut partir versus il faut que je parte, and for je suis content d'être là versus je suis content que tu sois là."
+    },
+    {
+      "id": "subjonctif-uses-12",
+      "type": "say",
+      "q": "Say this out loud, same subject in both halves: I leave before arriving.",
+      "target": "je pars avant d'arriver",
+      "why": "Almost every subjunctive conjunction has an infinitive twin for when the subject does not change: pour que → pour, avant que → avant de, sans que → sans, afin que → afin de. Contrast je pars avant qu'il arrive."
+    },
+    {
+      "id": "subjonctif-uses-13",
+      "type": "order",
+      "q": "Build the sentence: I'm telling you so that you know.",
+      "words": [
+        "Je",
+        "te",
+        "le",
+        "dis",
+        "pour",
+        "que",
+        "tu",
+        "saches"
+      ],
+      "a": [
+        "Je",
+        "te",
+        "le",
+        "dis",
+        "pour",
+        "que",
+        "tu",
+        "saches"
+      ],
+      "why": "Pour que always takes the subjunctive, and savoir is irregular: sach-. The two pronouns stack te le before the verb."
+    },
+    {
+      "id": "subjonctif-uses-14",
+      "type": "mcq",
+      "q": "What does « J'ai peur qu'il ne vienne » mean?",
+      "choices": [
+        "I'm afraid he won't come",
+        "I'm afraid he will come",
+        "I'm not afraid he'll come",
+        "I was afraid he came"
+      ],
+      "a": 1,
+      "why": "This is the ne explétif: a ne that does not negate, appearing after avoir peur que, craindre que, avant que and à moins que. The real negative needs pas: j'ai peur qu'il ne vienne pas."
+    },
+    {
+      "id": "subjonctif-uses-15",
+      "type": "open",
+      "q": "Rewrite these three to avoid the subjunctive: « Il faut que tu partes. » « Bien qu'il soit fatigué, il travaille. » « Avant qu'il parte. »",
+      "a": [
+        "Tu dois partir. Même s'il est fatigué, il travaille (or: Malgré sa fatigue, il travaille). Avant son départ (or, with the same subject, avant de partir)."
+      ],
+      "why": "Native speakers restructure constantly: a modal verb, même si plus the indicative, or a noun instead of a clause. Knowing the escape routes is as useful as knowing the forms."
+    }
+  ]
+}

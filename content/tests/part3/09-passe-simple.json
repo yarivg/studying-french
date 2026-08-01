@@ -1,0 +1,176 @@
+{
+  "ch": "passe-simple",
+  "title": "Passé simple and literary tenses",
+  "questions": [
+    {
+      "id": "passe-simple-01",
+      "type": "mcq",
+      "q": "In a novel you read « Il entra dans la pièce ». Which modern tense does entra correspond to?",
+      "choices": [
+        "the imparfait",
+        "the passé composé",
+        "the plus-que-parfait",
+        "the conditionnel"
+      ],
+      "a": 1,
+      "why": "The passé simple is the literary equivalent of the passé composé: a completed event that moves the story forward. Il entra reads as il est entré."
+    },
+    {
+      "id": "passe-simple-02",
+      "type": "mcq",
+      "q": "« Il mangeait » and « il mangea » — which is which?",
+      "choices": [
+        "mangeait is passé simple, mangea is imparfait",
+        "mangeait is imparfait, mangea is passé simple",
+        "both are passé simple",
+        "both are imparfait"
+      ],
+      "a": 1,
+      "why": "The -a ending is the passé simple of an -er verb: a narrative event. The -ait ending is the imparfait: description or habit. In a literary paragraph they alternate constantly."
+    },
+    {
+      "id": "passe-simple-03",
+      "type": "fill",
+      "q": "Which verb is « il vit » in a passé simple narrative? Give the infinitive.",
+      "a": [
+        "voir"
+      ],
+      "why": "Vu gives vit, in the i family. Out of narrative context, il vit is also the present of vivre — only the surrounding tenses decide."
+    },
+    {
+      "id": "passe-simple-04",
+      "type": "fill",
+      "q": "Which verb is « il naquit » ? Give the infinitive.",
+      "a": [
+        "naître",
+        "naitre"
+      ],
+      "why": "Naître gives naquit, one of the genuinely irregular stems along with venir → vint, tenir → tint, être → fut and faire → fit."
+    },
+    {
+      "id": "passe-simple-05",
+      "type": "mcq",
+      "q": "Match them: « il fit », « il fut », « il vint ».",
+      "choices": [
+        "faire, être, venir",
+        "être, faire, venir",
+        "faire, venir, être",
+        "finir, être, voir"
+      ],
+      "a": 0,
+      "why": "Fit is faire, fut is être, vint is venir. One letter separates fit from fut, and both are extremely common in narrative."
+    },
+    {
+      "id": "passe-simple-06",
+      "type": "fill",
+      "q": "Which verb is « il sut » ? Give the infinitive.",
+      "a": [
+        "savoir"
+      ],
+      "why": "For most verbs the passé simple stem is the past participle minus its ending: su gives sut, bu gives but, voulu gives voulut, pris gives prit."
+    },
+    {
+      "id": "passe-simple-07",
+      "type": "mcq",
+      "q": "« Nous vîmes la mer. » Who is doing what?",
+      "choices": [
+        "we saw the sea",
+        "we lived by the sea",
+        "we came to the sea",
+        "we were seeing the sea"
+      ],
+      "a": 0,
+      "why": "Vîmes is the nous form of voir in the passé simple. The circumflex marks the nous and vous forms across all three families: parlâmes, finîmes, eûmes."
+    },
+    {
+      "id": "passe-simple-08",
+      "type": "mcq",
+      "q": "« Je parlai » and « je parlais » differ by one letter. What is the difference in meaning?",
+      "choices": [
+        "None, they are spelling variants",
+        "Passé simple, a single narrative event, versus imparfait, description or habit",
+        "Imparfait versus conditional",
+        "Present versus future"
+      ],
+      "a": 1,
+      "why": "In practice context decides: a run of narrative events is passé simple, a background description is imparfait."
+    },
+    {
+      "id": "passe-simple-09",
+      "type": "fill",
+      "q": "Convert to modern French: « Ils eurent peur. » → Ils ___ peur.",
+      "a": [
+        "ont eu"
+      ],
+      "why": "Eurent is the ils form of avoir in the passé simple, so the modern equivalent is the passé composé: ils ont eu."
+    },
+    {
+      "id": "passe-simple-10",
+      "type": "fill",
+      "q": "Convert to modern French: « Elle partit sans un mot. » → Elle ___ sans un mot.",
+      "a": [
+        "est partie"
+      ],
+      "why": "Partit is the passé simple of partir, so the passé composé with être, and the participle agrees with the feminine subject."
+    },
+    {
+      "id": "passe-simple-11",
+      "type": "mcq",
+      "q": "« Quand il eut fini, il partit. » What is eut fini?",
+      "choices": [
+        "passé simple of finir",
+        "passé antérieur — the literary counterpart of the plus-que-parfait",
+        "imperfect subjunctive",
+        "past conditional"
+      ],
+      "a": 1,
+      "why": "Avoir or être in the passé simple plus a participle gives the passé antérieur, used after quand, dès que and après que. Modern French says quand il a eu fini or quand il avait fini."
+    },
+    {
+      "id": "passe-simple-12",
+      "type": "mcq",
+      "q": "« Bien qu'il fût tard, elle continua. » What is fût?",
+      "choices": [
+        "passé simple of être",
+        "imperfect subjunctive of être, where modern French would say soit",
+        "past participle of être",
+        "conditional of être"
+      ],
+      "a": 1,
+      "why": "The circumflex on a third person singular is the marker: fût, eût, vînt, parlât are imperfect subjunctives. Compare il fut, no circumflex, which is the passé simple."
+    },
+    {
+      "id": "passe-simple-13",
+      "type": "mcq",
+      "q": "« Il eût été plus simple de partir. » How should you read eût été here?",
+      "choices": [
+        "as a past subjunctive: qu'il ait été",
+        "as a past conditional: il aurait été",
+        "as a passé antérieur: il eut été",
+        "as a plus-que-parfait: il avait été"
+      ],
+      "a": 1,
+      "why": "The plus-que-parfait du subjonctif doubles as a literary past conditional, sometimes called the deuxième forme du conditionnel passé. The sentence is hypothetical, so read it as aurait été."
+    },
+    {
+      "id": "passe-simple-14",
+      "type": "listen",
+      "say": "Il ouvrit la porte.",
+      "q": "Type what you hear, as it would be written in a novel.",
+      "a": [
+        "Il ouvrit la porte.",
+        "Il ouvrit la porte"
+      ],
+      "why": "Ouvrir belongs to the i family: ouvert gives ouvrit. Modern French would say il a ouvert la porte."
+    },
+    {
+      "id": "passe-simple-15",
+      "type": "open",
+      "q": "You meet an unfamiliar verb form in a nineteenth-century novel. What three questions do you ask, and what does each answer tell you?",
+      "a": [
+        "1. Does it end in -a, -it, -ut, -irent or -urent? Then it is a passé simple — read it as a passé composé. 2. Does it carry a circumflex in the third person singular (fût, eût, vînt, parlât)? Then it is an imperfect subjunctive — read it as a present subjunctive. 3. Is it eût or fût plus a participle in a hypothetical sentence? Then read it as a past conditional. That covers essentially all of it."
+      ],
+      "why": "The point of the chapter is recognition, not production: three questions turn every literary form back into a tense you already use."
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "ch": "register",
+  "title": "Register: familier, courant, soutenu",
+  "questions": [
+    {
+      "id": "register-01",
+      "type": "mcq",
+      "q": "Which register is the default for news, work email and conversation with strangers?",
+      "choices": [
+        "soutenu",
+        "courant",
+        "familier",
+        "argot"
+      ],
+      "a": 1,
+      "why": "Courant is the middle layer and the one textbooks teach. Soutenu belongs to literature and formal writing, familier to friends and family."
+    },
+    {
+      "id": "register-02",
+      "type": "mcq",
+      "q": "You are writing to a client you have never met. Which sentence fits?",
+      "choices": [
+        "J'ai un boulot de dingue en ce moment.",
+        "Je suis actuellement très occupé.",
+        "Chuis grave crevé là.",
+        "Ça craint, j'ai trop de trucs à faire."
+      ],
+      "a": 1,
+      "why": "Courant with vous is the safe default: never wrong, only slightly formal. The others are familier and would read as over-familiar to a stranger."
+    },
+    {
+      "id": "register-03",
+      "type": "mcq",
+      "q": "Order these from soutenu to familier: une bagnole, une automobile, une voiture.",
+      "choices": [
+        "une automobile, une voiture, une bagnole",
+        "une voiture, une automobile, une bagnole",
+        "une bagnole, une voiture, une automobile",
+        "une automobile, une bagnole, une voiture"
+      ],
+      "a": 0,
+      "why": "Automobile is soutenu, voiture is the plain courant word, bagnole is familier. Un travail / un boulot and un homme / un mec work the same way."
+    },
+    {
+      "id": "register-04",
+      "type": "fill",
+      "q": "Put « Il n'y a personne. » into familier spoken French, spelled as it sounds.",
+      "a": [
+        "Y'a personne.",
+        "Y'a personne",
+        "Ya personne"
+      ],
+      "why": "Two things happen at once: ne disappears, and il y a collapses to y'a. The negation still lands, because personne survives."
+    },
+    {
+      "id": "register-05",
+      "type": "mcq",
+      "q": "Which is the familier version of « Où allez-vous ? » ?",
+      "choices": [
+        "Où est-ce que vous allez ?",
+        "Tu vas où ?",
+        "Où vas-tu ?",
+        "Où allez-vous donc ?"
+      ],
+      "a": 1,
+      "why": "Familier questions lose both inversion and est-ce que, and the question word drifts to the end: tu vas où, tu fais quoi, ça coûte combien."
+    },
+    {
+      "id": "register-06",
+      "type": "fill",
+      "q": "Move it to courant: « J'ai un boulot de dingue. » → J'ai beaucoup de ___ .",
+      "a": [
+        "travail"
+      ],
+      "why": "Boulot is the familier word for travail, and bosser for travailler. Neither belongs in professional writing."
+    },
+    {
+      "id": "register-07",
+      "type": "mcq",
+      "q": "Are sympa, télé, resto and prof slang?",
+      "choices": [
+        "Yes, avoid them with anyone you don't know",
+        "No — the shortening is completely standard, and the full forms sound stiff",
+        "Only in writing",
+        "Only télé and resto; the others are slang"
+      ],
+      "a": 1,
+      "why": "This clipping is normal French, not argot. It sits apart from genuinely familier vocabulary like bagnole or meuf."
+    },
+    {
+      "id": "register-08",
+      "type": "mcq",
+      "q": "« Ce mec est vraiment chelou. » What does chelou mean, and where does it come from?",
+      "choices": [
+        "annoying, from lourd",
+        "shady or weird, from louche",
+        "awesome, from méchant",
+        "insane, from fou"
+      ],
+      "a": 1,
+      "why": "Verlan reverses the syllables: louche gives chelou, lourd gives relou, méchant gives chanmé, fou gives ouf."
+    },
+    {
+      "id": "register-09",
+      "type": "mcq",
+      "q": "You are in a work meeting and something goes wrong. Which reaction is a problem?",
+      "choices": [
+        "C'est embêtant.",
+        "Putain !",
+        "Ce n'est pas idéal.",
+        "C'est dommage."
+      ],
+      "a": 1,
+      "why": "Putain is so frequent in casual French that it can seem harmless. It is vulgar, and in a professional or unfamiliar setting it lands as such."
+    },
+    {
+      "id": "register-10",
+      "type": "fill",
+      "q": "« Ta gueule ! » is aggressive slang. What is the neutral form?",
+      "a": [
+        "Tais-toi",
+        "Tais-toi.",
+        "Taisez-vous",
+        "Taisez-vous."
+      ],
+      "why": "La gueule belongs to the vulgar pile. Tais-toi, or taisez-vous with someone you address as vous, is the ordinary way to say it."
+    },
+    {
+      "id": "register-11",
+      "type": "mcq",
+      "q": "Which feature marks a text as soutenu?",
+      "choices": [
+        "on instead of nous",
+        "the passé simple and the imperfect subjunctive",
+        "dropping ne",
+        "question words at the end of the sentence"
+      ],
+      "a": 1,
+      "why": "Soutenu shows up as passé simple, imperfect subjunctive, inversion in questions, the ne explétif, nous rather than on, and veuillez plus infinitive."
+    },
+    {
+      "id": "register-12",
+      "type": "mcq",
+      "q": "What is wrong with « Veuillez me filer une clope » ?",
+      "choices": [
+        "Nothing, it is simply polite",
+        "It mixes the most formal imperative in French with slang",
+        "Veuillez cannot take an infinitive",
+        "Clope is not a French word"
+      ],
+      "a": 1,
+      "why": "Mixing registers is the giveaway. Pick a level and stay on it: veuillez me donner une cigarette, or file-moi une clope."
+    },
+    {
+      "id": "register-13",
+      "type": "listen",
+      "say": "On va au ciné.",
+      "q": "Type what you hear.",
+      "a": [
+        "On va au ciné.",
+        "On va au ciné"
+      ],
+      "why": "Two familier moves in four words: on replaces nous, and cinéma is clipped to ciné. The courant version is nous allons au cinéma."
+    },
+    {
+      "id": "register-14",
+      "type": "say",
+      "q": "Say the standard closing of a formal French letter.",
+      "target": "Veuillez agréer mes salutations distinguées",
+      "why": "Veuillez plus infinitive is the soutenu imperative, and this formula is fixed. You will write it far less often than you read it."
+    },
+    {
+      "id": "register-15",
+      "type": "open",
+      "q": "Three phrasings: « Cela ne me convient point », « Ça ne me va pas », « Ça m'va pas ». Say which register each belongs to and name a situation for each.",
+      "a": [
+        "Cela ne me convient point is soutenu: a formal letter, an official complaint, or literature. Ça ne me va pas is courant: the default for work, for a shop, for anyone you address as vous. Ça m'va pas is familier: friends, family, texting. While learning, the safe choice is always the middle one, with vous — French speakers will invite you downwards with on peut se tutoyer."
+      ],
+      "why": "Register is chosen by who you are talking to, not by what you are talking about."
+    }
+  ]
+}

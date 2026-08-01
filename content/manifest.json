@@ -74,6 +74,7 @@
    "numeral": "Part IV",
    "title": "Reference",
    "blurb": "Tables to come back to rather than read through.",
+   "reference": true,
    "chapters": [
     { "slug": "verb-tables", "file": "part4/01-verb-tables.md", "title": "Irregular verb tables", "level": "ref", "summary": "The verbs you cannot avoid, in every tense this course covers." },
     { "slug": "sound-cheatsheet", "file": "part4/02-sound-cheatsheet.md", "title": "Pronunciation cheat sheet", "level": "ref", "summary": "Every sound rule from Part I on a single page." },

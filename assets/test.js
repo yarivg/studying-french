@@ -1,0 +1,467 @@
+/* ============================================================
+   test.js — the tests that sit behind each chapter and each part.
+
+   A bank is one JSON file per chapter (see content/tests/SCHEMA.md).
+   A chapter test runs its own bank; a part test samples across every
+   chapter in that part.
+
+   Grading is automatic for five of the six question types, but the
+   score is only evidence. Whether a chapter counts as learned is your
+   call, made with the buttons at the end and stored as `mastery`.
+   ============================================================ */
+
+window.Test = (function () {
+  'use strict';
+
+  var cache = {};
+
+  /* ---------------------------------------------------------- loading */
+
+  // content/part1/04-liaisons.md -> content/tests/part1/04-liaisons.json
+  function pathFor(ch) { return 'content/tests/' + ch.file.replace(/\.md$/, '.json'); }
+
+  function loadChapter(ch) {
+    var path = pathFor(ch);
+    if (cache[path]) return Promise.resolve(cache[path]);
+    return fetch(path)
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (bank) {
+        if (bank && Array.isArray(bank.questions)) {
+          bank.questions.forEach(function (q) { q.ch = bank.ch; q.chTitle = bank.title; });
+          cache[path] = bank;
+          return bank;
+        }
+        return null;
+      })
+      .catch(function () { return null; });   // a chapter with no bank yet
+  }
+
+  function loadPart(part) {
+    return Promise.all(part.chapters.map(loadChapter))
+      .then(function (banks) { return banks.filter(Boolean); });
+  }
+
+  function hasBank(ch) {
+    return fetch(pathFor(ch), { method: 'HEAD' })
+      .then(function (r) { return r.ok; })
+      .catch(function () { return false; });
+  }
+
+  /* ---------------------------------------------------------- picking */
+
+  function shuffle(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  // A part exam takes a few from every chapter rather than a flat random
+  // sample, so one long chapter cannot crowd the others out.
+  function sample(banks, perChapter) {
+    var out = [];
+    banks.forEach(function (b) {
+      out = out.concat(shuffle(b.questions).slice(0, perChapter));
+    });
+    return shuffle(out);
+  }
+
+  /* ---------------------------------------------------------- grading */
+
+  function norm(s, loose) {
+    var out = String(s == null ? '' : s).toLowerCase()
+      .replace(/[’]/g, "'")
+      .replace(/\s+/g, ' ')
+      .replace(/^[\s.,;:!?«»"]+|[\s.,;:!?«»"]+$/g, '')
+      .trim();
+    // Accents are part of the answer unless the question says otherwise.
+    if (loose) out = out.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    return out;
+  }
+
+  function gradeText(q, given) {
+    var answers = Array.isArray(q.a) ? q.a : [q.a];
+    var mine = norm(given, q.loose);
+    if (!mine) return false;
+    return answers.some(function (a) { return norm(a, q.loose) === mine; });
+  }
+
+  function gradeOrder(q, given) {
+    var ok = [q.a].concat(q.also || []);
+    return ok.some(function (order) {
+      return order.length === given.length && order.every(function (w, i) { return w === given[i]; });
+    });
+  }
+
+  function modelAnswer(q) {
+    if (q.type === 'mcq') return q.choices[q.a];
+    if (q.type === 'order') return q.a.join(' ');
+    if (q.type === 'say') return q.target;
+    return Array.isArray(q.a) ? q.a[0] : String(q.a == null ? '' : q.a);
+  }
+
+  /* ---------------------------------------------------------- running */
+
+  var run = null;
+
+  function start(container, opts) {
+    run = {
+      host: container,
+      id: opts.id,
+      title: opts.title,
+      subtitle: opts.subtitle || '',
+      questions: opts.questions,
+      masteryKey: opts.masteryKey || opts.id,
+      onDone: opts.onDone,
+      i: 0,
+      right: 0,
+      answered: []
+    };
+    render();
+  }
+
+  function stop() {
+    if (window.Speech) Speech.stop();
+    run = null;
+  }
+
+  function render() {
+    var s = run;
+    if (!s) return;
+    if (s.i >= s.questions.length) return renderSummary();
+
+    var q = s.questions[s.i];
+    var pct = Math.round((s.i / s.questions.length) * 100);
+
+    s.host.innerHTML =
+      '<div class="test-head">' +
+        '<div class="test-bar"><span style="width:' + pct + '%"></span></div>' +
+        '<div class="test-meta">' +
+          '<span>Question ' + (s.i + 1) + ' of ' + s.questions.length + '</span>' +
+          '<span>' + s.right + ' right</span>' +
+        '</div>' +
+      '</div>' +
+      '<div class="test-card">' +
+        (q.chTitle && s.subtitle === 'part'
+          ? '<span class="pill test-ch">' + escapeHtml(q.chTitle) + '</span>' : '') +
+        '<p class="test-q">' + escapeHtml(q.q) + '</p>' +
+        '<div class="test-body" id="testBody"></div>' +
+        '<div class="test-verdict" id="testVerdict" hidden></div>' +
+      '</div>' +
+      '<div class="test-actions" id="testActions"></div>';
+
+    var body = s.host.querySelector('#testBody');
+    var actions = s.host.querySelector('#testActions');
+    BODY[q.type](body, actions, q);
+  }
+
+  // Each type fills the body and decides what the action row does. All of
+  // them finish by calling settle().
+  var BODY = {};
+
+  BODY.mcq = function (body, actions, q) {
+    body.innerHTML = '<div class="test-choices">' + q.choices.map(function (c, i) {
+      return '<button class="test-choice" data-i="' + i + '">' + escapeHtml(c) + '</button>';
+    }).join('') + '</div>';
+
+    body.addEventListener('click', function (e) {
+      var b = e.target.closest('.test-choice');
+      if (!b || body.classList.contains('is-done')) return;
+      body.classList.add('is-done');
+      var chosen = Number(b.dataset.i);
+      var right = chosen === q.a;
+      body.querySelectorAll('.test-choice').forEach(function (el, i) {
+        el.disabled = true;
+        if (i === q.a) el.classList.add('is-right');
+        else if (i === chosen) el.classList.add('is-wrong');
+      });
+      settle(q, right);
+    });
+  };
+
+  BODY.fill = function (body, actions, q) {
+    body.innerHTML =
+      '<input class="test-input" id="testIn" autocomplete="off" autocapitalize="off" ' +
+      'spellcheck="false" placeholder="Type your answer">';
+    var input = body.querySelector('#testIn');
+    actions.innerHTML = '<button class="btn btn-primary btn-lg" data-act="check">Check</button>';
+    actions.addEventListener('click', function (e) {
+      if (!e.target.closest('[data-act="check"]')) return;
+      input.disabled = true;
+      settle(q, gradeText(q, input.value), input.value);
+    });
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') actions.querySelector('[data-act="check"]').click();
+    });
+    input.focus();
+  };
+
+  BODY.listen = function (body, actions, q) {
+    if (!window.Say || !Say.supported()) {
+      // No voices: show the sentence and fall back to self-marking.
+      body.innerHTML = '<p class="test-note">No speech voice in this browser, so here it is written: ' +
+        '<strong>' + escapeHtml(q.say) + '</strong></p>';
+      return selfMark(body, actions, q);
+    }
+    body.innerHTML =
+      '<div class="test-listen">' +
+        '<button class="btn btn-primary btn-lg" data-act="play">🔊 Play it</button>' +
+        '<button class="btn" data-act="slow">Slower</button>' +
+      '</div>' +
+      '<input class="test-input" id="testIn" autocomplete="off" autocapitalize="off" ' +
+      'spellcheck="false" placeholder="Type what you hear">';
+    var input = body.querySelector('#testIn');
+    body.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-act]');
+      if (!b) return;
+      Say.speak(q.say, { slow: b.dataset.act === 'slow' });
+    });
+    // Deliberately not played on render. The hash survives a reload, so
+    // autoplay meant reopening the site spoke a sentence at you unasked.
+    actions.innerHTML = '<button class="btn btn-primary btn-lg" data-act="check">Check</button>';
+    actions.addEventListener('click', function (e) {
+      if (!e.target.closest('[data-act="check"]')) return;
+      input.disabled = true;
+      settle(q, gradeText(q, input.value), input.value);
+    });
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') actions.querySelector('[data-act="check"]').click();
+    });
+  };
+
+  BODY.order = function (body, actions, q) {
+    var picked = [];
+    var pool = shuffle(q.words);
+
+    function paint() {
+      body.innerHTML =
+        '<div class="test-slot" id="slot">' + (picked.length
+          ? picked.map(function (w, i) {
+              return '<button class="chip chip-set" data-drop="' + i + '">' + escapeHtml(w) + '</button>';
+            }).join('')
+          : '<span class="test-slot-empty">Tap the words in order</span>') +
+        '</div>' +
+        '<div class="test-pool">' + pool.map(function (w, i) {
+          return picked.indexOf(i) === -1
+            ? '<button class="chip" data-pick="' + i + '">' + escapeHtml(w) + '</button>' : '';
+        }).join('') + '</div>';
+    }
+
+    // `picked` holds pool indexes, not words, so repeated words behave.
+    function words() { return picked.map(function (i) { return pool[i]; }); }
+
+    body.addEventListener('click', function (e) {
+      if (body.classList.contains('is-done')) return;
+      var pick = e.target.closest('[data-pick]');
+      var drop = e.target.closest('[data-drop]');
+      if (pick) picked.push(Number(pick.dataset.pick));
+      else if (drop) picked.splice(Number(drop.dataset.drop), 1);
+      else return;
+      paint();
+    });
+
+    actions.innerHTML = '<button class="btn btn-primary btn-lg" data-act="check">Check</button>';
+    actions.addEventListener('click', function (e) {
+      if (!e.target.closest('[data-act="check"]')) return;
+      body.classList.add('is-done');
+      settle(q, gradeOrder(q, words()), words().join(' '));
+    });
+    paint();
+  };
+
+  BODY.say = function (body, actions, q) {
+    var canHear = window.Say && Say.supported();
+    body.innerHTML =
+      '<p class="test-target">' + escapeHtml(q.target) + '</p>' +
+      (canHear ? '<button class="btn" data-act="model">🔊 Hear it first</button>' : '');
+
+    if (canHear) {
+      body.addEventListener('click', function (e) {
+        if (e.target.closest('[data-act="model"]')) Say.speak(q.target, {});
+      });
+    }
+
+    if (!window.Speech || !Speech.supported()) {
+      var note = document.createElement('p');
+      note.className = 'test-note';
+      note.textContent = 'This browser cannot listen, so mark yourself: say it out loud, ' +
+        'then compare with the model.';
+      body.appendChild(note);
+      return selfMark(body, actions, q);
+    }
+
+    actions.innerHTML = '<button class="btn btn-primary btn-lg" data-act="rec">🎤 Say it</button>' +
+      '<button class="btn" data-act="skip">Skip</button>';
+
+    actions.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-act]');
+      if (!b) return;
+      if (b.dataset.act === 'skip') return settle(q, false, '(skipped)');
+      if (b.disabled) return;
+
+      b.disabled = true;
+      b.textContent = '🎤 Listening…';
+      Say.stop();   // the model voice must not be recorded as your answer
+
+      Speech.check(q.target, {
+        onPartial: function (text) { b.textContent = '🎤 ' + text; }
+      }).then(function (r) {
+        body.insertAdjacentHTML('beforeend', heardHtml(r));
+        settle(q, r.pass, r.heard, r);
+      }).catch(function (err) {
+        b.disabled = false;
+        b.textContent = '🎤 Try again';
+        body.insertAdjacentHTML('beforeend',
+          '<p class="test-note is-bad">' + escapeHtml(err.message) + '</p>');
+      });
+    });
+  };
+
+  BODY.open = function (body, actions, q) {
+    body.innerHTML = '<textarea class="test-input" id="testIn" rows="3" ' +
+      'placeholder="Answer in your own words, then reveal the model answer."></textarea>';
+    selfMark(body, actions, q);
+  };
+
+  // Types the machine cannot judge: reveal the model answer, you decide.
+  function selfMark(body, actions, q) {
+    actions.innerHTML = '<button class="btn btn-lg" data-act="reveal">Show the answer</button>';
+    actions.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-act]');
+      if (!b) return;
+      if (b.dataset.act === 'reveal') {
+        body.insertAdjacentHTML('beforeend',
+          '<p class="test-model"><span>Model answer</span>' + escapeHtml(modelAnswer(q)) + '</p>');
+        actions.innerHTML =
+          '<button class="btn btn-lg btn-ok" data-act="got">I had it</button>' +
+          '<button class="btn btn-lg btn-again" data-act="missed">Not quite</button>';
+        return;
+      }
+      settle(q, b.dataset.act === 'got', null, null, true);
+    });
+  }
+
+  function heardHtml(r) {
+    return '<p class="test-heard">' + r.words.map(function (w) {
+      return '<span class="hw hw-' + w.state + '">' + escapeHtml(w.word) + '</span>';
+    }).join(' ') + '<span class="test-heard-pct">' + r.pct + '%</span></p>' +
+      '<p class="test-note">Heard: ' + escapeHtml(r.heard || '—') + '</p>';
+  }
+
+  /* ---------------------------------------------------------- verdict */
+
+  function settle(q, right, given, extra, selfMarked) {
+    var s = run;
+    if (!s) return;
+    if (right) s.right++;
+    s.answered.push({ id: q.id, ch: q.ch, right: !!right, given: given || '' });
+
+    // Chapter exercises and tests share the same store, so a test answer
+    // shows up in the chapter's accuracy too.
+    Progress.setEx(q.ch || s.id, 'test', q.id, right ? 'ok' : 'again');
+
+    var v = s.host.querySelector('#testVerdict');
+    v.hidden = false;
+    v.className = 'test-verdict ' + (right ? 'is-right' : 'is-wrong');
+    v.innerHTML =
+      '<strong>' + (right ? (selfMarked ? 'Marked as known' : 'Correct') : 'Not quite') + '</strong>' +
+      (!right && !selfMarked && q.type !== 'say'
+        ? '<p class="test-answer">' + escapeHtml(modelAnswer(q)) + '</p>' : '') +
+      '<p>' + escapeHtml(q.why || '') + '</p>';
+
+    // Swap the whole row rather than its contents: the question type that
+    // just finished left a click handler on it, and that handler would
+    // otherwise also catch the Next click and settle the following
+    // question before it had been answered.
+    var stale = s.host.querySelector('#testActions');
+    var actions = stale.cloneNode(false);
+    stale.parentNode.replaceChild(actions, stale);
+
+    var last = s.i === s.questions.length - 1;
+    actions.innerHTML = '<button class="btn btn-primary btn-lg" data-act="next">' +
+      (last ? 'See the score' : 'Next') + '</button>';
+    var next = actions.querySelector('[data-act="next"]');
+    next.addEventListener('click', function () { s.i++; render(); });
+    next.focus();
+  }
+
+  /* ---------------------------------------------------------- summary */
+
+  function renderSummary() {
+    var s = run;
+    var pct = s.questions.length ? Math.round((s.right / s.questions.length) * 100) : 0;
+    Progress.recordTest(s.id, pct);
+
+    var byCh = {};
+    s.answered.forEach(function (a) {
+      var c = byCh[a.ch] = byCh[a.ch] || { right: 0, total: 0 };
+      c.total++;
+      if (a.right) c.right++;
+    });
+
+    var weak = Object.keys(byCh).filter(function (c) {
+      return byCh[c].right / byCh[c].total < 0.7;
+    });
+
+    var level = Progress.mastery(s.masteryKey).level;
+
+    s.host.innerHTML =
+      '<div class="test-summary">' +
+        '<div class="test-score ' + (pct >= 80 ? 'is-good' : pct >= 50 ? 'is-mid' : 'is-low') + '">' +
+          '<strong>' + pct + '%</strong><span>' + s.right + ' of ' + s.questions.length + '</span>' +
+        '</div>' +
+        (weak.length
+          ? '<p>Worth another look: ' + weak.map(function (c) {
+              return '<a href="#/' + c + '">' + escapeHtml(c.replace(/-/g, ' ')) + '</a>';
+            }).join(', ') + '.</p>'
+          : '<p>Nothing stood out as weak.</p>') +
+        '<div class="mastery-box">' +
+          '<p><strong>Your call.</strong> The score is just evidence — mark this how you ' +
+          'actually feel about it.</p>' +
+          '<div class="mastery-picker">' +
+            level3btn(0, 'Not yet', level) +
+            level3btn(1, 'Shaky', level) +
+            level3btn(2, 'Confident', level) +
+          '</div>' +
+        '</div>' +
+        '<div class="test-actions">' +
+          '<button class="btn btn-lg" data-act="retry">Take it again</button>' +
+        '</div>' +
+      '</div>';
+
+    s.host.querySelector('.mastery-picker').addEventListener('click', function (e) {
+      var b = e.target.closest('[data-level]');
+      if (!b) return;
+      Progress.setMastery(s.masteryKey, Number(b.dataset.level), pct);
+      s.host.querySelectorAll('[data-level]').forEach(function (el) {
+        el.classList.toggle('is-set', el === b);
+      });
+    });
+
+    s.host.querySelector('[data-act="retry"]').addEventListener('click', function () {
+      if (s.onDone) s.onDone({ retry: true });
+    });
+
+    if (s.onDone) s.onDone({ pct: pct, right: s.right, total: s.questions.length });
+  }
+
+  function level3btn(n, label, current) {
+    return '<button class="btn mastery-btn' + (current === n ? ' is-set' : '') +
+      '" data-level="' + n + '">' + label + '</button>';
+  }
+
+  /* ---------------------------------------------------------- helpers */
+
+  function escapeHtml(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  return {
+    loadChapter: loadChapter, loadPart: loadPart, hasBank: hasBank, pathFor: pathFor,
+    sample: sample, shuffle: shuffle, start: start, stop: stop,
+    gradeText: gradeText, gradeOrder: gradeOrder, norm: norm, modelAnswer: modelAnswer
+  };
+})();

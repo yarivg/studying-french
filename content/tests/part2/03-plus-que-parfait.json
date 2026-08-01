@@ -1,0 +1,179 @@
+{
+  "ch": "plus-que-parfait",
+  "title": "Le plus-que-parfait",
+  "questions": [
+    {
+      "id": "plus-que-parfait-01",
+      "type": "mcq",
+      "q": "How is the plus-que-parfait built?",
+      "choices": [
+        "Avoir or être in the imperfect, plus the past participle",
+        "Avoir or être in the present, plus the past participle",
+        "The imperfect stem, plus the future endings",
+        "Two past participles in a row"
+      ],
+      "a": 0,
+      "why": "It is the passé composé with the auxiliary shifted into the imperfect: j'ai mangé → j'avais mangé. Nothing else about the tense changes."
+    },
+    {
+      "id": "plus-que-parfait-02",
+      "type": "mcq",
+      "q": "How do auxiliary choice and participle agreement work in the plus-que-parfait?",
+      "choices": [
+        "Everything takes avoir, and nothing agrees",
+        "Everything takes être, and everything agrees with the subject",
+        "Exactly as in the passé composé",
+        "The participle agrees with the object, always"
+      ],
+      "a": 2,
+      "why": "The only change from the passé composé is the tense of the auxiliary. If you can build je suis allé, you can build j'étais allé."
+    },
+    {
+      "id": "plus-que-parfait-03",
+      "type": "fill",
+      "q": "Plus-que-parfait: « nous (finir) ___ »",
+      "a": [
+        "avions fini",
+        "nous avions fini"
+      ],
+      "why": "Finir takes avoir, and the imperfect of avoir for nous is avions. The participle stays flat: fini."
+    },
+    {
+      "id": "plus-que-parfait-04",
+      "type": "fill",
+      "q": "Plus-que-parfait: « elle (aller) ___ »",
+      "a": [
+        "était allée",
+        "elle était allée"
+      ],
+      "why": "Aller takes être, so the participle agrees with the feminine singular subject: allée. Auxiliary in the imperfect: était."
+    },
+    {
+      "id": "plus-que-parfait-05",
+      "type": "fill",
+      "q": "Plus-que-parfait: « elles (naître) ___ »",
+      "a": [
+        "étaient nées",
+        "elles étaient nées"
+      ],
+      "why": "Naître is on the être list and its participle is né, so feminine plural gives nées."
+    },
+    {
+      "id": "plus-que-parfait-06",
+      "type": "fill",
+      "q": "Plus-que-parfait, masculine speaker: « je (se lever) ___ »",
+      "a": [
+        "m'étais levé",
+        "je m'étais levé"
+      ],
+      "why": "Reflexives take être, and here se is the direct object, so the participle agrees with the subject: levé. The reflexive pronoun sits before the auxiliary."
+    },
+    {
+      "id": "plus-que-parfait-07",
+      "type": "fill",
+      "q": "« Quand je suis arrivé, il ___ (partir) déjà. »",
+      "a": [
+        "était déjà parti",
+        "il était déjà parti"
+      ],
+      "why": "My arrival is the past point; his leaving is earlier still, so plus-que-parfait. Déjà slots between the auxiliary and the participle, as pas and encore do."
+    },
+    {
+      "id": "plus-que-parfait-08",
+      "type": "fill",
+      "q": "Report it: « J'ai mangé. » → Il a dit qu'il ___",
+      "a": [
+        "avait mangé"
+      ],
+      "why": "Reported speech pushes each tense one step back, so a passé composé in the original becomes a plus-que-parfait in the report."
+    },
+    {
+      "id": "plus-que-parfait-09",
+      "type": "fill",
+      "q": "Report it: « Je suis partie tôt. » → Elle a dit qu'elle ___ tôt.",
+      "a": [
+        "était partie"
+      ],
+      "why": "Partir takes être, so the participle keeps agreeing with the feminine subject even after the shift: était partie."
+    },
+    {
+      "id": "plus-que-parfait-10",
+      "type": "mcq",
+      "q": "Which of these is the notorious error?",
+      "choices": [
+        "Si j'avais su, je serais venu",
+        "Si j'aurais su, je serais venu",
+        "Si seulement j'avais su",
+        "Il était fatigué parce qu'il n'avait pas dormi"
+      ],
+      "a": 1,
+      "why": "Si never takes a conditional. The si half gets the pluperfect, and the conditional goes in the other half: si j'avais su, je serais venu."
+    },
+    {
+      "id": "plus-que-parfait-11",
+      "type": "order",
+      "q": "Build the sentence: He was tired because he hadn't slept.",
+      "words": [
+        "Il",
+        "était",
+        "fatigué",
+        "parce",
+        "qu'il",
+        "n'avait",
+        "pas",
+        "dormi"
+      ],
+      "a": [
+        "Il",
+        "était",
+        "fatigué",
+        "parce",
+        "qu'il",
+        "n'avait",
+        "pas",
+        "dormi"
+      ],
+      "why": "The imperfect states the past situation, the pluperfect explains what came before it. The negation wraps the auxiliary, as always."
+    },
+    {
+      "id": "plus-que-parfait-12",
+      "type": "listen",
+      "say": "Il était déjà parti.",
+      "q": "Type what you hear.",
+      "a": [
+        "Il était déjà parti",
+        "Il était déjà parti."
+      ],
+      "why": "Être in the imperfect plus parti, the standard shape of an earlier past. Déjà is the word that most often flags it."
+    },
+    {
+      "id": "plus-que-parfait-13",
+      "type": "mcq",
+      "q": "In a past narrative, which tense carries the events themselves, in order?",
+      "choices": [
+        "The imparfait",
+        "The plus-que-parfait",
+        "The passé composé",
+        "All three equally"
+      ],
+      "a": 2,
+      "why": "Passé composé for the events, imparfait for the circumstances around them, plus-que-parfait for anything already finished before the story's present moment."
+    },
+    {
+      "id": "plus-que-parfait-14",
+      "type": "say",
+      "q": "Say this out loud: if only I had known!",
+      "target": "si seulement j'avais su",
+      "why": "Si seulement plus the pluperfect is the fixed way of expressing regret about the past."
+    },
+    {
+      "id": "plus-que-parfait-15",
+      "type": "open",
+      "q": "Give the four main uses of the plus-que-parfait, with a short French example each.",
+      "a": [
+        "1. An earlier past: Quand je suis arrivé, il était déjà parti. 2. Explaining a past situation: Il était fatigué parce qu'il n'avait pas dormi. 3. Regret with si seulement: Si seulement j'avais su ! 4. The si half of the past unreal condition: Si j'avais su, je serais venu. Plus reported speech, where a passé composé shifts back to it: Il a dit qu'il avait mangé."
+      ],
+      "why": "All of them are the same idea seen from different angles: a point in the past, and something already complete before it."
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "ch": "quantity",
+  "title": "Tout, and how much",
+  "questions": [
+    {
+      "id": "quantity-01",
+      "type": "fill",
+      "q": "Complete: « ___ le monde est là. » (Everyone is here.)",
+      "a": ["tout", "Tout"],
+      "why": "Monde is masculine singular, so tout. Note the verb: tout le monde is grammatically singular, so est, never sont."
+    },
+    {
+      "id": "quantity-02",
+      "type": "fill",
+      "q": "Complete: « J'ai travaillé ___ la nuit. » (all night)",
+      "a": ["toute"],
+      "why": "Nuit is feminine singular, so toute. With a singular noun, tout means the whole of: toute la journée, tout le gâteau."
+    },
+    {
+      "id": "quantity-03",
+      "type": "mcq",
+      "q": "Which form means « every day » ?",
+      "choices": ["tout les jours", "tous les jours", "toute les jours", "toutes les jours"],
+      "a": 1,
+      "why": "With a plural noun, tout means every, and jours is masculine plural, so tous. Note the order: tout always comes before the article."
+    },
+    {
+      "id": "quantity-04",
+      "type": "fill",
+      "q": "Complete: « ___ les semaines » (every week)",
+      "a": ["toutes"],
+      "why": "Semaines is feminine plural, so toutes. Four forms, four agreements: tout, toute, tous, toutes."
+    },
+    {
+      "id": "quantity-05",
+      "type": "mcq",
+      "q": "Where is the final s of « tous » pronounced?",
+      "choices": ["in « ils sont tous là », but not in « tous les jours »", "in « tous les jours », but not in « ils sont tous là »", "in both", "in neither"],
+      "a": 0,
+      "why": "The s is heard only when tous is a pronoun standing on its own. As an adjective in front of a noun it stays silent. Same spelling, two pronunciations."
+    },
+    {
+      "id": "quantity-06",
+      "type": "listen",
+      "say": "tout de suite",
+      "q": "Type what you hear.",
+      "a": ["tout de suite"],
+      "why": "A fixed expression meaning right away. Tout appears in a whole family of them: tout à coup, tout à fait, tout à l'heure, pas du tout."
+    },
+    {
+      "id": "quantity-07",
+      "type": "fill",
+      "q": "Complete: « Elle est ___ étonnée. » (quite astonished)",
+      "a": ["tout"],
+      "why": "Adverbial tout means completely and is normally invariable. Before a feminine adjective starting with a vowel it stays tout, because nothing needs smoothing."
+    },
+    {
+      "id": "quantity-08",
+      "type": "fill",
+      "q": "Complete: « Elles sont ___ contentes. » (They're all pleased.)",
+      "a": ["toutes"],
+      "why": "Here is the one exception: adverbial tout does agree before a feminine adjective beginning with a consonant. Contrast tout étonnée, where the vowel blocks it."
+    },
+    {
+      "id": "quantity-09",
+      "type": "fill",
+      "q": "Complete: « beaucoup ___ gens »",
+      "a": ["de"],
+      "why": "Every quantifier takes bare de, never du, de la or des, even before a plural noun. Beaucoup des gens would mean many of the gens, a specific known set."
+    },
+    {
+      "id": "quantity-10",
+      "type": "mcq",
+      "q": "Which is correct for « most people » ?",
+      "choices": ["la plupart de gens", "la plupart des gens", "la plupart du gens", "la plupart gens"],
+      "a": 1,
+      "why": "La plupart is the one genuine exception to the bare-de rule: it always takes des. Everything in the beaucoup family does the opposite."
+    },
+    {
+      "id": "quantity-11",
+      "type": "mcq",
+      "q": "Which is correct for « several books » ?",
+      "choices": ["plusieurs livres", "plusieurs de livres", "plusieurs des livres", "plusieurs du livres"],
+      "a": 0,
+      "why": "Plusieurs, quelques and certains attach straight to the noun with no de at all. Only the beaucoup family needs de."
+    },
+    {
+      "id": "quantity-12",
+      "type": "fill",
+      "q": "Complete: « Je n'ai ___ idée. » (I have no idea.)",
+      "a": ["aucune"],
+      "why": "Aucun agrees with the noun, and idée is feminine, so aucune. It always needs the ne alongside it."
+    },
+    {
+      "id": "quantity-13",
+      "type": "order",
+      "q": "Build the sentence: Everyone is here.",
+      "words": ["tout", "le", "monde", "est", "là"],
+      "a": ["tout", "le", "monde", "est", "là"],
+      "why": "Tout comes before the article, and the whole phrase counts as singular, so the verb is est. Chacun a son avis behaves the same way."
+    },
+    {
+      "id": "quantity-14",
+      "type": "say",
+      "q": "Say this out loud.",
+      "target": "toutes les semaines",
+      "why": "Feminine plural before a noun. The final s of toutes is silent, but the t before it is fully audible, which is what separates it from tous."
+    },
+    {
+      "id": "quantity-15",
+      "type": "open",
+      "q": "List five quantifiers that take « de », and three quantity words that take nothing.",
+      "a": ["With de: beaucoup de, un peu de, peu de, trop de, assez de, tant de, autant de, plus de, moins de, combien de, plus containers like une tasse de, un verre de, un kilo de. With nothing: plusieurs, quelques, certains / certaines, chaque. And la plupart des is the exception that takes des."],
+      "why": "Sorting quantifiers into these three buckets once removes most quantity errors: the de family, the bare family, and la plupart on its own."
+    }
+  ]
+}

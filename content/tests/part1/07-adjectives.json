@@ -1,0 +1,119 @@
+{
+  "ch": "adjectives",
+  "title": "Adjectives",
+  "questions": [
+    {
+      "id": "adjectives-01",
+      "type": "mcq",
+      "q": "Which form fits? « une ___ maison » (grand)",
+      "choices": ["grand", "grande", "grands", "grandes"],
+      "a": 1,
+      "why": "Maison is feminine singular, so grand takes -e and nothing more. The -e is not silent decoration: it makes the d audible, so grande is something you hear."
+    },
+    {
+      "id": "adjectives-02",
+      "type": "fill",
+      "q": "Make it agree: « une femme ___ » (jeune)",
+      "a": ["jeune"],
+      "why": "An adjective that already ends in -e has no separate feminine form. Un homme jeune, une femme jeune."
+    },
+    {
+      "id": "adjectives-03",
+      "type": "fill",
+      "q": "Make it agree: « des jours ___ » (gris)",
+      "a": ["gris"],
+      "why": "An adjective ending in -s or -x does not add another -s in the masculine plural. Same for heureux and vieux."
+    },
+    {
+      "id": "adjectives-04",
+      "type": "mcq",
+      "q": "What is the feminine singular of « heureux » ?",
+      "choices": ["heureuse", "heureuxe", "heureux", "heureusse"],
+      "a": 0,
+      "why": "The -eux ending becomes -euse: paresseux/paresseuse, délicieux/délicieuse. The masculine plural, by contrast, stays heureux."
+    },
+    {
+      "id": "adjectives-05",
+      "type": "fill",
+      "q": "Write the feminine singular of « neuf ».",
+      "a": ["neuve"],
+      "why": "Adjectives in -f switch to -ve: actif/active, vif/vive. Note this is the -f rule, not the fully irregular list."
+    },
+    {
+      "id": "adjectives-06",
+      "type": "mcq",
+      "q": "Which is correct? « un ___ ami » (nouveau)",
+      "choices": ["nouveau", "nouvel", "nouvelle", "nouveaux"],
+      "a": 1,
+      "why": "Beau, nouveau, vieux, fou and mou have a third masculine form before a vowel or mute h: bel, nouvel, vieil, fol, mol. Ami is still masculine, so nouvelle is wrong."
+    },
+    {
+      "id": "adjectives-07",
+      "type": "listen",
+      "say": "une vieille ville",
+      "q": "Type what you hear.",
+      "a": ["une vieille ville"],
+      "why": "Vieux has the fully irregular feminine vieille. The masculine before a vowel would be vieil, as in un vieil arbre."
+    },
+    {
+      "id": "adjectives-08",
+      "type": "order",
+      "q": "Build the phrase: a big red house",
+      "words": ["une", "grande", "maison", "rouge"],
+      "a": ["une", "grande", "maison", "rouge"],
+      "why": "Grand is a BAGS adjective (size), so it comes before the noun; colours always come after. Both agree as feminine singular."
+    },
+    {
+      "id": "adjectives-09",
+      "type": "mcq",
+      "q": "In writing, which is correct for « good ideas » ?",
+      "choices": ["des bonnes idées", "de bonnes idées", "des bonne idées", "de bonne idées"],
+      "a": 1,
+      "why": "When a plural adjective stands before the noun, des shortens to de. The adjective still agrees: bonnes, feminine plural. Casual speech often keeps des, but writing does not."
+    },
+    {
+      "id": "adjectives-10",
+      "type": "mcq",
+      "q": "What does « un ancien professeur » mean?",
+      "choices": ["a former teacher", "an elderly teacher", "an antique teacher", "a teacher of ancient history"],
+      "a": 0,
+      "why": "Before the noun the adjective is figurative, after it literal. Un professeur ancien would be an aged one; un livre ancien is an antique book."
+    },
+    {
+      "id": "adjectives-11",
+      "type": "fill",
+      "q": "Complete so it means « last week »: « la semaine ___ »",
+      "a": ["dernière"],
+      "why": "After the noun, dernier is literal: la semaine dernière is last week. Before it, la dernière semaine means the final week of a series."
+    },
+    {
+      "id": "adjectives-12",
+      "type": "fill",
+      "q": "très or beaucoup? « Elle est ___ intelligente. »",
+      "a": ["très"],
+      "why": "Très modifies adjectives and adverbs; beaucoup modifies verbs or attaches to a quantity with de. Beaucoup intelligent is not possible."
+    },
+    {
+      "id": "adjectives-13",
+      "type": "mcq",
+      "q": "Which is correct for « I like this film a lot » ?",
+      "choices": ["J'aime très ce film.", "J'aime beaucoup ce film.", "J'aime très beaucoup ce film.", "J'aime beaucoup de ce film."],
+      "a": 1,
+      "why": "Beaucoup modifies the verb aimer. Très can never modify a verb, and très beaucoup does not exist. The test: if English accepts a lot, use beaucoup."
+    },
+    {
+      "id": "adjectives-14",
+      "type": "say",
+      "q": "Say this out loud.",
+      "target": "un bel homme",
+      "why": "Bel is the masculine form used before a vowel or mute h, and it links straight onto homme. Un beau homme is not said."
+    },
+    {
+      "id": "adjectives-15",
+      "type": "open",
+      "q": "What does BAGS stand for, and give one adjective for each letter?",
+      "a": ["Beauty (beau, joli), Age (jeune, vieux, nouveau, ancien), Goodness (bon, mauvais, meilleur, gentil), Size (grand, petit, gros, long, haut) — these go before the noun; everything else, including colours, shapes, nationalities and past participles, goes after."],
+      "why": "BAGS is the whole of the exception. Anything not on that short list, plus autre, même, tout, chaque, premier and dernier, follows the noun by default."
+    }
+  ]
+}

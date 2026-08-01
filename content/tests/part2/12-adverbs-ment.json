@@ -1,0 +1,119 @@
+{
+  "ch": "adverbs-ment",
+  "title": "Making adverbs in -ment",
+  "questions": [
+    {
+      "id": "adverbs-ment-01",
+      "type": "fill",
+      "q": "Make the adverb from « lent ».",
+      "a": ["lentement"],
+      "why": "Go through the feminine: lent → lente → lentement. That single step makes almost the whole system regular."
+    },
+    {
+      "id": "adverbs-ment-02",
+      "type": "mcq",
+      "q": "What is the adverb from « heureux » ?",
+      "choices": ["heureusement", "heureuxment", "heureument", "heureusment"],
+      "a": 0,
+      "why": "The feminine is heureuse, so the adverb is heureusement. Never build -ment onto the masculine."
+    },
+    {
+      "id": "adverbs-ment-03",
+      "type": "fill",
+      "q": "Make the adverb from « vrai ».",
+      "a": ["vraiment"],
+      "why": "When the masculine already ends in a vowel, -ment attaches directly: vrai, poli, absolu, rapide all skip the feminine."
+    },
+    {
+      "id": "adverbs-ment-04",
+      "type": "fill",
+      "q": "Make the adverb from « doux ».",
+      "a": ["doucement"],
+      "why": "The feminine of doux is douce, giving doucement. It means gently, and also slowly."
+    },
+    {
+      "id": "adverbs-ment-05",
+      "type": "mcq",
+      "q": "What is the adverb from « constant » ?",
+      "choices": ["constamment", "constantement", "constemment", "constanment"],
+      "a": 0,
+      "why": "Adjectives in -ant swap to -amment; those in -ent swap to -emment. Constant → constamment, évident → évidemment."
+    },
+    {
+      "id": "adverbs-ment-06",
+      "type": "fill",
+      "q": "Make the adverb from « récent ».",
+      "a": ["récemment"],
+      "why": "-ent becomes -emment. Careful with lent, which is a plain adjective, not a present participle, so it takes the ordinary route: lentement."
+    },
+    {
+      "id": "adverbs-ment-07",
+      "type": "mcq",
+      "q": "« Il chante ___. » (He sings well.)",
+      "choices": ["bien", "bon", "bonne", "meilleur"],
+      "a": 0,
+      "why": "Bien is the adverb, describing the verb. Bon is the adjective: c'est un bon chanteur. Il chante bon is the classic error."
+    },
+    {
+      "id": "adverbs-ment-08",
+      "type": "mcq",
+      "q": "« C'est un ___ film, il joue ___. »",
+      "choices": ["mauvais … mal", "mal … mauvais", "mauvais … mauvais", "mal … mal"],
+      "a": 0,
+      "why": "Mauvais is the adjective describing film; mal is the adverb describing how he acts. Same split as bon and bien."
+    },
+    {
+      "id": "adverbs-ment-09",
+      "type": "order",
+      "q": "Build the sentence: I slept well.",
+      "words": ["j'ai", "bien", "dormi"],
+      "a": ["j'ai", "bien", "dormi"],
+      "why": "In a compound tense a short adverb sits between the auxiliary and the participle. A long one goes after it: il a répondu poliment."
+    },
+    {
+      "id": "adverbs-ment-10",
+      "type": "order",
+      "q": "Build the sentence: I often eat here.",
+      "words": ["je", "mange", "souvent", "ici"],
+      "a": ["je", "mange", "souvent", "ici"],
+      "why": "In a simple tense the adverb follows the verb. French never puts it between subject and verb, however natural he often eats sounds in English."
+    },
+    {
+      "id": "adverbs-ment-11",
+      "type": "listen",
+      "say": "Elle est vraiment gentille.",
+      "q": "Type what you hear.",
+      "a": ["elle est vraiment gentille"],
+      "why": "An adverb modifying an adjective goes in front of it. Gentille is the feminine of gentil, whose own adverb is the irregular gentiment."
+    },
+    {
+      "id": "adverbs-ment-12",
+      "type": "mcq",
+      "q": "« Je parle couramment français » means:",
+      "choices": ["I speak French fluently", "I currently speak French", "I speak French correctly", "I usually speak French"],
+      "a": 0,
+      "why": "Couramment is fluently. Currently is actuellement — a false friend that catches almost everyone."
+    },
+    {
+      "id": "adverbs-ment-13",
+      "type": "fill",
+      "q": "Translate the opener: « ___, je suis fatigué. » (Actually, I'm tired.)",
+      "a": ["en fait"],
+      "why": "Actuellement means currently, so actually is en fait. In the same family, éventuellement means possibly, and eventually is finalement."
+    },
+    {
+      "id": "adverbs-ment-14",
+      "type": "say",
+      "q": "Say this out loud.",
+      "target": "heureusement, il est arrivé",
+      "why": "An adverb commenting on the whole sentence goes at the front, marked off by a comma. Heureusement means fortunately."
+    },
+    {
+      "id": "adverbs-ment-15",
+      "type": "open",
+      "q": "Give the three rules for forming an adverb in -ment, with an example of each, then name two ways French avoids -ment altogether.",
+      "a": ["1. Default: take the feminine adjective and add -ment — lent → lente → lentement, heureux → heureuse → heureusement. 2. Masculine already ending in a vowel: add -ment directly — vrai → vraiment, absolu → absolument (a few take an accent: précis → précisément, énorme → énormément). 3. Adjectives in -ant / -ent: swap to -amment / -emment — constant → constamment, évident → évidemment. Avoiding -ment: avec + abstract noun (avec soin, en silence, avec joie), and de façon / de manière + adjective (de façon régulière)."],
+      "why": "The three rules cover nearly every adjective; the prepositional patterns cover the rest and often sound more natural than a long -ment word."
+    }
+  ]
+}

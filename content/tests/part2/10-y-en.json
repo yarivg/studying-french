@@ -1,0 +1,120 @@
+{
+  "ch": "y-en",
+  "title": "Y, en and pronoun order",
+  "questions": [
+    {
+      "id": "y-en-01",
+      "type": "mcq",
+      "q": "« Je vais à Paris. » → « J'___ vais. »",
+      "choices": ["y", "en", "le", "lui"],
+      "a": 0,
+      "why": "Y replaces a place, whatever the preposition: à, en, dans, sur, chez. En would mean coming back from there."
+    },
+    {
+      "id": "y-en-02",
+      "type": "mcq",
+      "q": "« Je parle de mon travail. » → « J'___ parle. »",
+      "choices": ["en", "y", "le", "de le"],
+      "a": 0,
+      "why": "En replaces de + something. The verb decides: parler de gives en, penser à gives y."
+    },
+    {
+      "id": "y-en-03",
+      "type": "fill",
+      "q": "Complete: « J'ai besoin d'aide. » → « J'___ ai besoin. »",
+      "a": ["en"],
+      "why": "Avoir besoin de contains de, so the replacement is en. Every avoir + noun expression behaves this way."
+    },
+    {
+      "id": "y-en-04",
+      "type": "fill",
+      "q": "Complete: « Je pense à mon travail. » → « J'___ pense. »",
+      "a": ["y"],
+      "why": "Penser à a thing gives y. If it were a person you could not use y: je pense à lui."
+    },
+    {
+      "id": "y-en-05",
+      "type": "mcq",
+      "q": "« Je pense à mon frère. » → how do you replace « à mon frère » ?",
+      "choices": ["Je pense à lui.", "J'y pense.", "Je lui pense.", "J'en pense."],
+      "a": 0,
+      "why": "Y is for things and places only. With penser à and s'intéresser à, a person is picked up by a stressed pronoun kept after the verb."
+    },
+    {
+      "id": "y-en-06",
+      "type": "mcq",
+      "q": "« Tu veux du café ? » — how do you say « Yes, I do » in French?",
+      "choices": ["Oui, j'en veux.", "Oui, je veux.", "Oui, j'y veux.", "Oui, je le veux."],
+      "a": 0,
+      "why": "English can drop some; French cannot drop en. Whenever the noun disappears but a quantity is implied, en has to appear."
+    },
+    {
+      "id": "y-en-07",
+      "type": "fill",
+      "q": "Complete: « J'ai deux frères. » → « J'en ai ___. »",
+      "a": ["deux"],
+      "why": "The number stays, at the end: subject + en + verb + amount. En on its own would not say how many."
+    },
+    {
+      "id": "y-en-08",
+      "type": "mcq",
+      "q": "« J'ai un frère. » → which is right?",
+      "choices": ["J'en ai un.", "J'en ai.", "J'ai un.", "J'y en ai un."],
+      "a": 0,
+      "why": "Un and une survive as numbers at the end, exactly like deux or trois. Dropping it leaves the sentence incomplete."
+    },
+    {
+      "id": "y-en-09",
+      "type": "listen",
+      "say": "Il y en a beaucoup.",
+      "q": "Type what you hear.",
+      "a": ["il y en a beaucoup"],
+      "why": "Y then en, always in that order and always last in the queue. This is the phrase to anchor the whole order table."
+    },
+    {
+      "id": "y-en-10",
+      "type": "order",
+      "q": "Build the sentence: He gives it to me.",
+      "words": ["il", "me", "le", "donne"],
+      "a": ["il", "me", "le", "donne"],
+      "why": "Column 1 (me, te, se, nous, vous) comes before column 2 (le, la, les). Il le me donne is not possible."
+    },
+    {
+      "id": "y-en-11",
+      "type": "order",
+      "q": "Build the sentence: I give it to him.",
+      "words": ["je", "le", "lui", "donne"],
+      "a": ["je", "le", "lui", "donne"],
+      "why": "Here it is column 2 before column 3: le, la, les come before lui and leur. Note the order flips compared with me le donne."
+    },
+    {
+      "id": "y-en-12",
+      "type": "fill",
+      "q": "Put the pronouns in: « (te, en) Je ___ parle. »",
+      "a": ["t'en"],
+      "why": "Te is column 1 and en is always last, so t'en. Te elides to t' before the vowel of en."
+    },
+    {
+      "id": "y-en-13",
+      "type": "mcq",
+      "q": "Which is the correct positive command for « Give it to me » ?",
+      "choices": ["Donne-le-moi.", "Donne-moi-le.", "Me le donne.", "Donne-me-le."],
+      "a": 0,
+      "why": "After a positive imperative the pronouns follow the verb and the direct object comes first, with me becoming moi. The negative reverts: ne me le donne pas."
+    },
+    {
+      "id": "y-en-14",
+      "type": "say",
+      "q": "Say this out loud.",
+      "target": "donne-m'en",
+      "why": "Give me some. Even after the verb, en stays last, and moi shrinks back to m' before it."
+    },
+    {
+      "id": "y-en-15",
+      "type": "open",
+      "q": "State when you use y, when en, and when neither will do. Give an example of each.",
+      "a": ["Y replaces à or any preposition of place plus a thing: j'y vais, j'y pense, il y répond. En replaces de plus something, and any quantity: j'en parle, j'en ai besoin, j'en veux, j'en ai deux. Neither works for a person: à + person is lui / leur (je lui parle) or a stressed pronoun with penser à (je pense à lui), and de + person is de + stressed pronoun (je parle d'elle). Order: y and en come last, in that order — il y en a."],
+      "why": "The split is thing or place versus person, then à versus de. Getting it wrong is one of the most audible learner mistakes."
+    }
+  ]
+}

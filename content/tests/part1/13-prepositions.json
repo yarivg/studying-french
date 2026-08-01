@@ -1,0 +1,88 @@
+{
+  "ch": "prepositions",
+  "title": "Prepositions",
+  "questions": [
+    { "id": "prepositions-01", "type": "mcq",
+      "q": "Which preposition goes with a city? « Je vis ___ Paris. »",
+      "choices": ["à", "en", "au", "dans"],
+      "a": 0,
+      "why": "Cities always take à: à Paris, à Rome, à Tel-Aviv. En and au are for countries." },
+
+    { "id": "prepositions-02", "type": "fill",
+      "q": "Je vis ___ France.",
+      "a": ["en"],
+      "why": "France is a feminine country (most countries ending in -e are), and feminine countries take en." },
+
+    { "id": "prepositions-03", "type": "fill",
+      "q": "Je vis ___ Canada.",
+      "a": ["au"],
+      "why": "Canada is a masculine country, so à + le contracts to au. Plural countries take aux: aux États-Unis." },
+
+    { "id": "prepositions-04", "type": "mcq",
+      "q": "Why is it « en Israël » and not « au Israël » ?",
+      "choices": ["Israël is feminine", "A country starting with a vowel takes en, whatever its gender", "All small countries take en", "Because of the accent on the ë"],
+      "a": 1,
+      "why": "A country beginning with a vowel takes en regardless of gender: en Israël, en Iran. It avoids the clash of au + vowel." },
+
+    { "id": "prepositions-05", "type": "mcq",
+      "q": "« Je vais ___ pied. » Which one, and why?",
+      "choices": ["en — it is a means of transport", "à — you are not inside it", "dans — you move along the ground", "par — it is a channel"],
+      "a": 1,
+      "why": "En is for transport you sit inside (en voiture, en train, en avion). Things you sit on, or use with your body, take à: à pied, à vélo, à cheval." },
+
+    { "id": "prepositions-06", "type": "fill",
+      "q": "Time: « Je pars ___ une heure. » (an hour from now)",
+      "a": ["dans"],
+      "why": "Dans une heure is an hour from now. En une heure is how long something took: J'ai fini le travail en une heure." },
+
+    { "id": "prepositions-07", "type": "fill",
+      "q": "Time: « J'ai fini ___ une heure. » (it took an hour)",
+      "a": ["en"],
+      "why": "En + duration measures the time the action consumed. Swap it for dans and you have shifted to a point in the future instead." },
+
+    { "id": "prepositions-08", "type": "mcq",
+      "q": "« Il est parti ___ une heure. » — He left an hour ago.",
+      "choices": ["depuis", "pendant", "il y a", "dès"],
+      "a": 2,
+      "why": "Beyond there is / there are, il y a + a duration means ago. Depuis means since and needs the thing to still be going on." },
+
+    { "id": "prepositions-09", "type": "mcq",
+      "q": "Which preposition means at someone's place or premises?",
+      "choices": ["vers", "parmi", "chez", "auprès"],
+      "a": 2,
+      "why": "Chez has no single English equivalent: chez moi, chez le médecin, chez Google, chez Proust. English needs a different phrasing each time." },
+
+    { "id": "prepositions-10", "type": "mcq",
+      "q": "« ___ toi, j'ai réussi. » Which fits?",
+      "choices": ["À cause de", "Grâce à", "Malgré", "Sauf"],
+      "a": 1,
+      "why": "Grâce à carries a positive outcome, à cause de a negative one: Grâce à toi, j'ai réussi / À cause de toi, j'ai échoué." },
+
+    { "id": "prepositions-11", "type": "fill",
+      "q": "Complete with one word: « J'habite ___ la rue Dekel. »",
+      "a": ["dans"],
+      "why": "A street takes dans, not à or en. À is for the city, dans for an address within it." },
+
+    { "id": "prepositions-12", "type": "order",
+      "q": "Build the sentence: I come from the United States.",
+      "words": ["Je", "viens", "des", "États-Unis"],
+      "a": ["Je", "viens", "des", "États-Unis"],
+      "why": "Coming from uses the same logic in reverse: de + city, de + feminine country, du + masculine, des + plural." },
+
+    { "id": "prepositions-13", "type": "listen",
+      "say": "Je viens du Canada.",
+      "q": "Type what you hear.",
+      "a": ["Je viens du Canada.", "Je viens du Canada"],
+      "why": "Masculine country: de + le contracts to du for origin, just as à + le gives au for destination (je vais au Canada)." },
+
+    { "id": "prepositions-14", "type": "say",
+      "q": "Say this out loud: at the dentist's.",
+      "target": "chez le dentiste",
+      "why": "Chez + a person or a profession. Note there is no de: chez le dentiste, not chez du dentiste." },
+
+    { "id": "prepositions-15", "type": "open",
+      "q": "Give the rule for cities and countries: which preposition for a city, a feminine country, a country starting with a vowel, a masculine country, a plural country? One example each.",
+      "a": ["City → à (à Paris). Feminine country → en (en France). Country starting with a vowel → en (en Israël). Masculine country → au (au Canada). Plural country → aux (aux États-Unis)."],
+      "why": "This block is worth learning as one system, because the same four-way split reappears with de for origin: de Paris, de France, du Canada, des États-Unis." }
+  ]
+}

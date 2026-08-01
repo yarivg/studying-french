@@ -1,0 +1,118 @@
+{
+  "ch": "demonstratives",
+  "title": "This and that",
+  "questions": [
+    {
+      "id": "demonstratives-01",
+      "type": "fill",
+      "q": "Complete: « ___ livre est intéressant. »",
+      "a": ["ce"],
+      "why": "Ce is the masculine singular form before a consonant. French has no separate word for this and that: ce livre is both."
+    },
+    {
+      "id": "demonstratives-02",
+      "type": "mcq",
+      "q": "Which form goes with « homme » ?",
+      "choices": ["ce", "cet", "cette", "ces"],
+      "a": 1,
+      "why": "Homme is masculine and its h is mute, so ce becomes cet to avoid two vowels colliding. Same for cet arbre and cet été."
+    },
+    {
+      "id": "demonstratives-03",
+      "type": "fill",
+      "q": "Complete: « ___ heure » (this hour)",
+      "a": ["cette"],
+      "why": "Heure is feminine, and cette is used before anything, vowel or consonant. Cet would mean the noun was masculine."
+    },
+    {
+      "id": "demonstratives-04",
+      "type": "listen",
+      "say": "cette maison",
+      "q": "Type what you hear.",
+      "a": ["cette maison"],
+      "why": "Cet and cette sound identical, so only the noun's gender tells you which to write. Maison is feminine, so cette."
+    },
+    {
+      "id": "demonstratives-05",
+      "type": "fill",
+      "q": "Complete so it means « that book, over there »: « ce livre-___ »",
+      "a": ["là"],
+      "why": "-ci marks the nearer thing, -là the further one, hyphenated onto the noun. In speech -là does most of the work as a general emphatic: ce mec-là."
+    },
+    {
+      "id": "demonstratives-06",
+      "type": "mcq",
+      "q": "« Quel livre ? — ___ » (that one)",
+      "choices": ["Celui-là.", "Celle-là.", "Ceux-là.", "Cela."],
+      "a": 0,
+      "why": "Livre is masculine singular, so celui, and -là for the further one. Celle is feminine, ceux masculine plural."
+    },
+    {
+      "id": "demonstratives-07",
+      "type": "fill",
+      "q": "Complete: « Quelle robe préfères-tu ? — ___. » (this one)",
+      "a": ["celle-ci", "Celle-ci"],
+      "why": "Robe is feminine singular, and -ci marks the nearer one. The feminine plural would be celles-ci."
+    },
+    {
+      "id": "demonstratives-08",
+      "type": "mcq",
+      "q": "Celui, celle, ceux and celles never stand alone. What must follow?",
+      "choices": ["-ci or -là, de, or a relative pronoun", "an adjective", "an article", "a verb in the infinitive"],
+      "a": 0,
+      "why": "Celui-là, celui de mon frère, celui qui parle. On its own the pronoun is incomplete, which is why celui alone always sounds wrong."
+    },
+    {
+      "id": "demonstratives-09",
+      "type": "fill",
+      "q": "Complete: « ___ qui arrivent en retard attendront. » (Those who arrive late)",
+      "a": ["ceux", "Ceux"],
+      "why": "Masculine plural celui becomes ceux, and here it is followed by the relative pronoun qui, which is one of the three legal continuations."
+    },
+    {
+      "id": "demonstratives-10",
+      "type": "order",
+      "q": "Build the phrase: my opinion and my brother's",
+      "words": ["mon", "avis", "et", "celui", "de", "mon", "frère"],
+      "a": ["mon", "avis", "et", "celui", "de", "mon", "frère"],
+      "why": "Celui de replaces the repeated noun: literally the one of my brother. Celui is masculine because avis is."
+    },
+    {
+      "id": "demonstratives-11",
+      "type": "mcq",
+      "q": "You are talking to a friend. Which sounds natural for « I like that » ?",
+      "choices": ["Ça me plaît.", "Cela me plaît.", "Ceci me plaît.", "Ce me plaît."],
+      "a": 0,
+      "why": "Ça is the spoken contraction of cela and dominates conversation; cela belongs to writing. Ce only ever appears before être."
+    },
+    {
+      "id": "demonstratives-12",
+      "type": "fill",
+      "q": "Complete: « ___ sont mes amis. » (These are my friends.)",
+      "a": ["ce", "Ce"],
+      "why": "Ce is used only before être, and becomes ce sont before a plural noun. C'est mes amis is heard, but ce sont is the correct form."
+    },
+    {
+      "id": "demonstratives-13",
+      "type": "mcq",
+      "q": "Which is correct for « He's a doctor », with no article?",
+      "choices": ["Il est médecin.", "C'est médecin.", "Il est un médecin.", "Ce sont médecin."],
+      "a": 0,
+      "why": "A bare profession takes il/elle est. Put an article in front and you must switch: c'est un médecin."
+    },
+    {
+      "id": "demonstratives-14",
+      "type": "say",
+      "q": "Say this out loud.",
+      "target": "cet homme-là",
+      "why": "Cet links straight onto the mute h of homme, and -là points at him. Practising the join is the point here."
+    },
+    {
+      "id": "demonstratives-15",
+      "type": "open",
+      "q": "When do you use « c'est » and when « il / elle est » ? Give two contrasting examples.",
+      "a": ["C'est before a noun with an article (c'est un professeur), before a name (c'est Marie), before a stressed pronoun (c'est moi) and for a general comment (c'est difficile). Il / elle est before a bare noun of profession (il est professeur) and before an adjective describing a known person (elle est difficile)."],
+      "why": "The reliable trigger is what comes next: an article or a name pulls c'est, a bare profession or a personal adjective pulls il/elle est."
+    }
+  ]
+}

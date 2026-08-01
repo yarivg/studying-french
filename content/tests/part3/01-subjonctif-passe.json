@@ -1,0 +1,172 @@
+{
+  "ch": "subjonctif-passe",
+  "title": "Subjonctif passé and sequence of tenses",
+  "questions": [
+    {
+      "id": "subjonctif-passe-01",
+      "type": "mcq",
+      "q": "How do you build the subjonctif passé?",
+      "choices": [
+        "Avoir or être in the present subjunctive, plus the past participle",
+        "Avoir or être in the imperfect, plus the past participle",
+        "The present subjunctive of the verb, plus an infinitive",
+        "Être in the present subjunctive, for every verb"
+      ],
+      "a": 0,
+      "why": "Same shape as the passé composé, but the auxiliary is in the present subjunctive: qu'il ait mangé, qu'il soit venu."
+    },
+    {
+      "id": "subjonctif-passe-02",
+      "type": "fill",
+      "q": "Je suis content qu'il ___ (venir) demain.",
+      "a": [
+        "vienne"
+      ],
+      "why": "The coming happens after the being glad, so the present subjunctive. The choice is about order, not about when."
+    },
+    {
+      "id": "subjonctif-passe-03",
+      "type": "fill",
+      "q": "Je suis content qu'il ___ (venir) hier.",
+      "a": [
+        "soit venu"
+      ],
+      "why": "The coming happened before the main verb, so the past subjunctive. Venir takes être, hence soit venu."
+    },
+    {
+      "id": "subjonctif-passe-04",
+      "type": "mcq",
+      "q": "Complete: « J'étais content qu'il ___ le lendemain. »",
+      "choices": [
+        "vienne",
+        "venait",
+        "viendrait",
+        "soit venu"
+      ],
+      "a": 0,
+      "why": "The main verb is past, but the subjunctive does not backshift: the coming is later than the gladness, so present subjunctive. Modern French has only two working subjunctives, so there is nothing to shift into."
+    },
+    {
+      "id": "subjonctif-passe-05",
+      "type": "fill",
+      "q": "Bien qu'elle ___ (finir) son travail, elle reste au bureau.",
+      "a": [
+        "ait fini"
+      ],
+      "why": "She finished first, then stayed, so the earlier action takes the past subjunctive. Bien que always triggers the subjunctive."
+    },
+    {
+      "id": "subjonctif-passe-06",
+      "type": "fill",
+      "q": "Il fallait que tu ___ (partir).",
+      "a": [
+        "partes"
+      ],
+      "why": "The obligation is in the past but the leaving still follows it, so present subjunctive. Il fallait que does not drag the subjunctive backwards."
+    },
+    {
+      "id": "subjonctif-passe-07",
+      "type": "mcq",
+      "q": "« Il dit qu'il viendra. » Put the main verb in the past: « Il a dit qu'il ___ . »",
+      "choices": [
+        "viendra",
+        "viendrait",
+        "vienne",
+        "était venu"
+      ],
+      "a": 1,
+      "why": "This clause is indicative, and the indicative does shift. A future seen from a past viewpoint takes the conditional form: the futur dans le passé."
+    },
+    {
+      "id": "subjonctif-passe-08",
+      "type": "fill",
+      "q": "Je savais qu'il ___ (partir) le lendemain.",
+      "a": [
+        "partirait"
+      ],
+      "why": "Past main verb plus a later subordinate action gives the conditional. I knew he would leave: the form is conditional, the meaning is simply future-in-the-past."
+    },
+    {
+      "id": "subjonctif-passe-09",
+      "type": "fill",
+      "q": "Je sais qu'il ___ (partir) hier.",
+      "a": [
+        "est parti"
+      ],
+      "why": "Savoir states a certainty, so this is indicative, not subjunctive. Present main verb plus an earlier action gives the passé composé."
+    },
+    {
+      "id": "subjonctif-passe-10",
+      "type": "listen",
+      "say": "Je doute qu'il soit venu.",
+      "q": "Type what you hear, in correct written French.",
+      "a": [
+        "Je doute qu'il soit venu.",
+        "Je doute qu'il soit venu"
+      ],
+      "why": "Douter triggers the subjunctive, and the coming is earlier than the doubting, so past subjunctive with être."
+    },
+    {
+      "id": "subjonctif-passe-11",
+      "type": "order",
+      "q": "Build the sentence: I doubted he had come.",
+      "words": [
+        "Je",
+        "doutais",
+        "qu'il",
+        "soit",
+        "venu"
+      ],
+      "a": [
+        "Je",
+        "doutais",
+        "qu'il",
+        "soit",
+        "venu"
+      ],
+      "why": "Past main verb, earlier subordinate action, so past subjunctive. The main verb being in the imperfect changes nothing about the subjunctive."
+    },
+    {
+      "id": "subjonctif-passe-12",
+      "type": "say",
+      "q": "Say the modern equivalent of « Bien qu'il eût compris… » out loud.",
+      "target": "bien qu'il ait compris",
+      "why": "Eût compris is the plus-que-parfait du subjonctif, a literary form. Modern French replaces it with the past subjunctive: ait compris."
+    },
+    {
+      "id": "subjonctif-passe-13",
+      "type": "mcq",
+      "q": "« Je voulais qu'il vînt. » What is this in modern French?",
+      "choices": [
+        "Je voulais qu'il vienne.",
+        "Je voulais qu'il soit venu.",
+        "Je voulais qu'il venait.",
+        "Je voulais qu'il viendrait."
+      ],
+      "a": 0,
+      "why": "Vînt is the imparfait du subjonctif, built on the passé simple stem with a circumflex. It corresponds to the modern present subjunctive, so vienne."
+    },
+    {
+      "id": "subjonctif-passe-14",
+      "type": "mcq",
+      "q": "In a nineteenth-century novel you read « Il eût été plus simple de partir. » What does it mean?",
+      "choices": [
+        "It would have been simpler to leave",
+        "It was simpler to leave",
+        "May it be simpler to leave",
+        "It had to be simpler to leave"
+      ],
+      "a": 0,
+      "why": "The plus-que-parfait du subjonctif doubles as a literary past conditional. Read eût été as aurait été."
+    },
+    {
+      "id": "subjonctif-passe-15",
+      "type": "open",
+      "q": "Explain in one or two sentences how you choose between the present and the past subjunctive, and why « J'étais content qu'il vienne » is not a mistake.",
+      "a": [
+        "You choose on order, not on tense: if the subordinate action is simultaneous with or later than the main verb, use the present subjunctive; if it is earlier, use the past subjunctive. J'étais content qu'il vienne is correct because the subjunctive never backshifts the way the indicative does: the coming is still later than the gladness, so the present subjunctive stays."
+      ],
+      "why": "The whole chapter reduces to this: the indicative shifts with the main verb, the subjunctive shifts with the order of events."
+    }
+  ]
+}

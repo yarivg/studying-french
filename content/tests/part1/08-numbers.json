@@ -1,0 +1,120 @@
+{
+  "ch": "numbers",
+  "title": "Numbers",
+  "questions": [
+    {
+      "id": "numbers-01",
+      "type": "mcq",
+      "q": "How is 80 written?",
+      "choices": ["quatre-vingt", "quatre-vingts", "quatre vingt", "quatre-vingt-zéro"],
+      "a": 1,
+      "why": "Quatre-vingts takes an -s when it ends the number. Add anything after it and the -s disappears: quatre-vingt-cinq."
+    },
+    {
+      "id": "numbers-02",
+      "type": "fill",
+      "q": "Write 71 out in French words.",
+      "a": ["soixante et onze", "soixante-et-onze"],
+      "why": "From 70 French counts by arithmetic: soixante-dix is sixty-ten, and 71 is sixty-and-eleven. The 1990 reform allows the hyphenated spelling too."
+    },
+    {
+      "id": "numbers-03",
+      "type": "mcq",
+      "q": "Which of these does NOT take « et » ?",
+      "choices": ["81", "21", "31", "71"],
+      "a": 0,
+      "why": "21, 31, 41, 51, 61 and 71 use et with no hyphen. 81 and 91 break the pattern: quatre-vingt-un, quatre-vingt-onze."
+    },
+    {
+      "id": "numbers-04",
+      "type": "fill",
+      "q": "Write 97 out in French words.",
+      "a": ["quatre-vingt-dix-sept", "quatre vingt dix sept"],
+      "why": "Literally four-twenty-seventeen. No -s on quatre-vingt here, because something follows it."
+    },
+    {
+      "id": "numbers-05",
+      "type": "listen",
+      "say": "quarante-deux",
+      "q": "Type the number you hear, in digits.",
+      "a": ["42"],
+      "why": "The tens up to soixante are regular, and 42 is simply quarante plus deux with a hyphen."
+    },
+    {
+      "id": "numbers-06",
+      "type": "mcq",
+      "q": "How is 250 written?",
+      "choices": ["deux cents cinquante", "deux cent cinquante", "deux-cents-cinquante", "deux cent et cinquante"],
+      "a": 1,
+      "why": "Cent takes -s only when it is the last element: deux cents euros. As soon as another number follows, the -s vanishes."
+    },
+    {
+      "id": "numbers-07",
+      "type": "mcq",
+      "q": "How is 2 000 written?",
+      "choices": ["deux mille", "deux milles", "deux mils", "deux milliers"],
+      "a": 0,
+      "why": "Mille is invariable and never takes an -s, unlike cent and vingt. Des milliers exists but means thousands, an approximation, not 2 000."
+    },
+    {
+      "id": "numbers-08",
+      "type": "fill",
+      "q": "Complete: « un million ___ habitants » (a million inhabitants)",
+      "a": ["d'"],
+      "why": "Million and milliard are nouns, not numbers: they take un in front and de before the noun that follows, elided here to d'."
+    },
+    {
+      "id": "numbers-09",
+      "type": "listen",
+      "say": "soixante-quinze",
+      "q": "Type the number you hear, in digits.",
+      "a": ["75"],
+      "why": "Sixty-fifteen. Anything in the seventies is soixante plus a number from ten to nineteen."
+    },
+    {
+      "id": "numbers-10",
+      "type": "mcq",
+      "q": "On a French price tag you see « 3,14 ». What is it?",
+      "choices": ["three point one four", "three hundred and fourteen", "three thousand one hundred and forty", "three thousand and fourteen"],
+      "a": 0,
+      "why": "France uses a comma as the decimal point and a space or dot for thousands. So 19,99 € is nineteen euros ninety-nine, and 1 000 000 is a million."
+    },
+    {
+      "id": "numbers-11",
+      "type": "mcq",
+      "q": "How does the x of « six » sound in « six ans » ?",
+      "choices": ["like a z, linking onto ans", "like an s", "it is silent"],
+      "a": 0,
+      "why": "Before a vowel the x links as a z. Before a consonant it goes silent (six livres), and standing alone it is a hard s (il y en a six)."
+    },
+    {
+      "id": "numbers-12",
+      "type": "listen",
+      "say": "quatre-vingt-treize",
+      "q": "Type the number you hear, in digits.",
+      "a": ["93"],
+      "why": "Four-twenty-thirteen. The nineties are quatre-vingt plus a teen, so you have to hold two additions at once."
+    },
+    {
+      "id": "numbers-13",
+      "type": "fill",
+      "q": "Write the ordinal for « neuf » (9th).",
+      "a": ["neuvième"],
+      "why": "Ordinals add -ième, but neuf changes its f to v first. Compare quatre, which drops its -e (quatrième), and cinq, which inserts a u (cinquième)."
+    },
+    {
+      "id": "numbers-14",
+      "type": "say",
+      "q": "Say this number out loud.",
+      "target": "quatre-vingt-dix-sept",
+      "why": "97 spoken as one word group, four-twenty-seventeen. Getting it out at speed is the only way the arithmetic stops slowing you down."
+    },
+    {
+      "id": "numbers-15",
+      "type": "open",
+      "q": "When does « cent » take an -s, and when does it not? Give an example of each.",
+      "a": ["Cent takes -s when it is multiplied and ends the number: deux cents euros. It loses the -s as soon as another number follows: deux cent dix euros. Plain cent (100) never takes one. Quatre-vingts follows the same rule; mille never takes an -s at all."],
+      "why": "The rule is about position, not size: an -s only survives at the end of the number. That single test covers cent and vingt together."
+    }
+  ]
+}

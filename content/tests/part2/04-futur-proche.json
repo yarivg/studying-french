@@ -1,0 +1,180 @@
+{
+  "ch": "futur-proche",
+  "title": "Near future and recent past",
+  "questions": [
+    {
+      "id": "futur-proche-01",
+      "type": "mcq",
+      "q": "How is the futur proche built?",
+      "choices": [
+        "Aller in the present, plus an infinitive",
+        "Aller in the present, plus de, plus an infinitive",
+        "Être in the present, plus an infinitive",
+        "The infinitive, plus future endings"
+      ],
+      "a": 0,
+      "why": "Je vais partir, nous allons manger. No preposition: je vais à manger is not French."
+    },
+    {
+      "id": "futur-proche-02",
+      "type": "fill",
+      "q": "« Nous ___ manger. » (we're about to eat)",
+      "a": [
+        "allons"
+      ],
+      "why": "Aller is conjugated normally and the infinitive follows bare. This is the default future in conversation."
+    },
+    {
+      "id": "futur-proche-03",
+      "type": "fill",
+      "q": "« Il ___ d'arriver. » (he's just arrived)",
+      "a": [
+        "vient"
+      ],
+      "why": "Venir de plus an infinitive is the passé récent. The verb is in the present even though the meaning is past."
+    },
+    {
+      "id": "futur-proche-04",
+      "type": "mcq",
+      "q": "Where does the negation go in the futur proche?",
+      "choices": [
+        "Je ne vais pas partir",
+        "Je vais ne pas partir",
+        "Je vais pas ne partir",
+        "Je ne vais partir pas"
+      ],
+      "a": 0,
+      "why": "Ne … pas wraps the conjugated verb, which is aller. The infinitive sits outside the sandwich."
+    },
+    {
+      "id": "futur-proche-05",
+      "type": "fill",
+      "q": "« Je vais ___ lever. » (I'm going to get up)",
+      "a": [
+        "me"
+      ],
+      "why": "Pronouns attach to the infinitive, not to aller, and the reflexive pronoun still matches the subject: je vais me lever, tu vas te lever."
+    },
+    {
+      "id": "futur-proche-06",
+      "type": "mcq",
+      "q": "What is wrong with « Je suis venu de manger » ?",
+      "choices": [
+        "Venir should take avoir here",
+        "It needs à instead of de",
+        "Venir de stays in the present — je viens de manger",
+        "Nothing; it means I've just eaten"
+      ],
+      "a": 2,
+      "why": "Venir de is a present-tense construction with a past meaning. Putting venir itself into the past produces something French does not say."
+    },
+    {
+      "id": "futur-proche-07",
+      "type": "mcq",
+      "q": "Which sentence means « I'm going to Paris » rather than a future?",
+      "choices": [
+        "Je vais partir",
+        "Je vais à Paris",
+        "Je vais manger",
+        "Je vais me lever"
+      ],
+      "a": 1,
+      "why": "An infinitive after aller makes it a future auxiliary; a place after it keeps it a verb of movement. The infinitive is the signal, and the same test sorts je viens de manger from je viens de Paris."
+    },
+    {
+      "id": "futur-proche-08",
+      "type": "fill",
+      "q": "Translate: He had just arrived.",
+      "a": [
+        "Il venait d'arriver",
+        "Il venait d'arriver."
+      ],
+      "why": "Putting the conjugated verb into the imperfect shifts the whole construction one step back: je viens de → je venais de, I had just."
+    },
+    {
+      "id": "futur-proche-09",
+      "type": "fill",
+      "q": "Translate: I was about to leave when he arrived.",
+      "a": [
+        "J'allais partir quand il est arrivé",
+        "J'allais partir quand il est arrivé."
+      ],
+      "why": "Aller in the imperfect plus an infinitive is was about to. The interruption is an event, so it takes the passé composé."
+    },
+    {
+      "id": "futur-proche-10",
+      "type": "mcq",
+      "q": "When should you use « être en train de » ?",
+      "choices": [
+        "For every English -ing form",
+        "Only when the point is that something is in progress right now",
+        "Only in writing",
+        "Whenever the verb is reflexive"
+      ],
+      "a": 1,
+      "why": "The ordinary present already covers I am eating: je mange. Être en train de adds insistence on the in-progress-ness, and using it by default makes your French heavy."
+    },
+    {
+      "id": "futur-proche-11",
+      "type": "order",
+      "q": "Build the sentence: I'm not going to see him.",
+      "words": [
+        "Je",
+        "ne",
+        "vais",
+        "pas",
+        "le",
+        "voir"
+      ],
+      "a": [
+        "Je",
+        "ne",
+        "vais",
+        "pas",
+        "le",
+        "voir"
+      ],
+      "why": "Two rules at once: the negation wraps aller, and the object pronoun clings to the infinitive it belongs to."
+    },
+    {
+      "id": "futur-proche-12",
+      "type": "listen",
+      "say": "Je viens de le voir.",
+      "q": "Type what you hear.",
+      "a": [
+        "Je viens de le voir",
+        "Je viens de le voir."
+      ],
+      "why": "The pronoun goes between de and the infinitive, because that is where the infinitive's own objects live."
+    },
+    {
+      "id": "futur-proche-13",
+      "type": "mcq",
+      "q": "« En 2050, les villes ___ différentes. » Which future fits?",
+      "choices": [
+        "vont être — the futur proche",
+        "seront — the futur simple",
+        "sont en train d'être",
+        "viennent d'être"
+      ],
+      "a": 1,
+      "why": "The futur proche is for the near and planned; a remote, abstract prediction takes the futur simple. Compare attention, tu vas tomber, where only the proche works."
+    },
+    {
+      "id": "futur-proche-14",
+      "type": "say",
+      "q": "Say this out loud: you're going to fall!",
+      "target": "tu vas tomber",
+      "why": "Imminent and spoken, so the futur proche is the only natural choice here."
+    },
+    {
+      "id": "futur-proche-15",
+      "type": "open",
+      "q": "Place the three constructions on a timeline, and say what each becomes in the imperfect.",
+      "a": [
+        "venir de + infinitive = just happened (je viens de manger) → je venais de manger, I had just eaten. Être en train de + infinitive = happening now (je suis en train de manger) → j'étais en train de manger, I was in the middle of eating. Aller + infinitive = about to happen (je vais manger) → j'allais manger, I was going to eat."
+      ],
+      "why": "All three are a conjugated verb plus an infinitive, and putting that conjugated verb in the imperfect slides the whole thing one step into the past."
+    }
+  ]
+}

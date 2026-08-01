@@ -1,0 +1,172 @@
+{
+  "ch": "relatifs-composes",
+  "title": "Compound relative pronouns",
+  "questions": [
+    {
+      "id": "relatifs-composes-01",
+      "type": "mcq",
+      "q": "Which contraction is wrong?",
+      "choices": [
+        "à + lequel = auquel",
+        "à + laquelle = à laquelle",
+        "à + lesquelles = auxquelles",
+        "à + laquelle = alaquelle"
+      ],
+      "a": 3,
+      "why": "Auquel, auxquels and auxquelles contract; à laquelle stays two words, exactly like au and à la."
+    },
+    {
+      "id": "relatifs-composes-02",
+      "type": "fill",
+      "q": "La table ___ j'ai posé mes clés. (on which)",
+      "a": [
+        "sur laquelle"
+      ],
+      "why": "Table is feminine singular, and the preposition sur does not contract, so sur laquelle. French can never strand the preposition at the end."
+    },
+    {
+      "id": "relatifs-composes-03",
+      "type": "fill",
+      "q": "Le projet ___ je travaille. (the project I'm working on)",
+      "a": [
+        "auquel"
+      ],
+      "why": "Travailler à plus a masculine singular thing gives à + lequel, contracted to auquel."
+    },
+    {
+      "id": "relatifs-composes-04",
+      "type": "mcq",
+      "q": "« La personne ___ je travaille. » Which is the natural choice?",
+      "choices": [
+        "avec laquelle",
+        "avec qui",
+        "avec dont",
+        "avec où"
+      ],
+      "a": 1,
+      "why": "After a preposition, qui is the natural form for people. Avec laquelle is grammatical but heavier, and reserved for when you need to be unambiguous."
+    },
+    {
+      "id": "relatifs-composes-05",
+      "type": "mcq",
+      "q": "« L'immeuble ___ j'habite. » — the building next to which I live.",
+      "choices": [
+        "à côté dont",
+        "à côté duquel",
+        "dont à côté",
+        "à côté de lequel"
+      ],
+      "a": 1,
+      "why": "Dont covers a plain de. When the de is buried inside a compound preposition (à côté de, au-dessus de, près de), you must switch to duquel."
+    },
+    {
+      "id": "relatifs-composes-06",
+      "type": "fill",
+      "q": "Le film ___ je parle. (the film I'm talking about)",
+      "a": [
+        "dont"
+      ],
+      "why": "Parler de is a plain de, so dont. Duquel here would be wrong, and heavy."
+    },
+    {
+      "id": "relatifs-composes-07",
+      "type": "fill",
+      "q": "Le pays ___ je viens. (the country I come from)",
+      "a": [
+        "d'où"
+      ],
+      "why": "For place and time, où is lighter than lequel and generally preferred. Venir de plus a place gives d'où, not duquel."
+    },
+    {
+      "id": "relatifs-composes-08",
+      "type": "order",
+      "q": "Build the phrase: the pen I write with.",
+      "words": [
+        "Le",
+        "stylo",
+        "avec",
+        "lequel",
+        "j'écris"
+      ],
+      "a": [
+        "Le",
+        "stylo",
+        "avec",
+        "lequel",
+        "j'écris"
+      ],
+      "why": "The preposition and the pronoun stay welded together at the front of the relative clause. There is no French sentence ending in avec."
+    },
+    {
+      "id": "relatifs-composes-09",
+      "type": "fill",
+      "q": "Je ne sais pas ___ se passe. (what's going on)",
+      "a": [
+        "ce qui"
+      ],
+      "why": "No noun antecedent, and the pronoun is the subject of se passe, so ce qui. If it were the object, it would be ce que."
+    },
+    {
+      "id": "relatifs-composes-10",
+      "type": "fill",
+      "q": "C'est ___ j'ai besoin. (that's what I need)",
+      "a": [
+        "ce dont"
+      ],
+      "why": "Avoir besoin de takes de, and with no noun antecedent the de form is ce dont."
+    },
+    {
+      "id": "relatifs-composes-11",
+      "type": "mcq",
+      "q": "« C'est ___ je pense. » — that's what I'm thinking about.",
+      "choices": [
+        "ce que",
+        "ce dont",
+        "ce à quoi",
+        "ce qui"
+      ],
+      "a": 2,
+      "why": "Penser à takes à, and with no noun antecedent à becomes ce à quoi. Ce dont would go with penser de, which means to have an opinion of."
+    },
+    {
+      "id": "relatifs-composes-12",
+      "type": "mcq",
+      "q": "Which is correct?",
+      "choices": [
+        "Il est parti, qui m'a surpris.",
+        "Il est parti, ce qui m'a surpris.",
+        "Il est parti, que m'a surpris.",
+        "Il est parti, dont m'a surpris."
+      ],
+      "a": 1,
+      "why": "The antecedent is the whole preceding idea, not a noun, so it must be ce qui. This is the French for the English which that comments on a clause."
+    },
+    {
+      "id": "relatifs-composes-13",
+      "type": "listen",
+      "say": "La ville où j'habite.",
+      "q": "Type what you hear, in correct written French.",
+      "a": [
+        "La ville où j'habite.",
+        "La ville où j'habite"
+      ],
+      "why": "For a place, où beats dans laquelle every time. Note the accent: où is where, ou is or."
+    },
+    {
+      "id": "relatifs-composes-14",
+      "type": "say",
+      "q": "Say this out loud: the project I'm working on.",
+      "target": "le projet auquel je travaille",
+      "why": "English strands the preposition at the end; French puts it first, fused into auquel."
+    },
+    {
+      "id": "relatifs-composes-15",
+      "type": "open",
+      "q": "You need a relative pronoun. Give the questions you ask yourself, in order, to pick the right one.",
+      "a": [
+        "1. Is there no noun antecedent, just an idea? Then ce qui / ce que / ce dont / ce à quoi. 2. Is the preposition a plain de? Then dont. 3. Is it a place or a time? Then où. 4. Another preposition, and a person? Then qui. 5. Another preposition, and a thing? Then lequel and its contractions. 6. No preposition at all: subject qui, object que."
+      ],
+      "why": "The choice is mechanical once you ask about the antecedent and the preposition in that order."
+    }
+  ]
+}

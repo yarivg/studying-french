@@ -1,0 +1,115 @@
+{
+ "part": "part1",
+ "tests": [
+  {
+   "ch": "vowels",
+   "file": "part1/01-vowels.json",
+   "title": "Vowel sounds"
+  },
+  {
+   "ch": "consonants",
+   "file": "part1/02-consonants.json",
+   "title": "Consonant sounds"
+  },
+  {
+   "ch": "silent-letters",
+   "file": "part1/03-silent-letters.json",
+   "title": "Silent letters and the final -e"
+  },
+  {
+   "ch": "liaisons",
+   "file": "part1/04-liaisons.json",
+   "title": "Liaisons"
+  },
+  {
+   "ch": "nouns-gender",
+   "file": "part1/05-nouns-gender.json",
+   "title": "Nouns and gender"
+  },
+  {
+   "ch": "articles",
+   "file": "part1/06-articles.json",
+   "title": "Articles: le, un, du"
+  },
+  {
+   "ch": "adjectives",
+   "file": "part1/07-adjectives.json",
+   "title": "Adjectives"
+  },
+  {
+   "ch": "numbers",
+   "file": "part1/08-numbers.json",
+   "title": "Numbers"
+  },
+  {
+   "ch": "possessives",
+   "file": "part1/09-possessives.json",
+   "title": "Possessives"
+  },
+  {
+   "ch": "demonstratives",
+   "file": "part1/10-demonstratives.json",
+   "title": "This and that"
+  },
+  {
+   "ch": "quantity",
+   "file": "part1/11-quantity.json",
+   "title": "Tout, and how much"
+  },
+  {
+   "ch": "pronouns",
+   "file": "part1/12-pronouns.json",
+   "title": "Pronouns"
+  },
+  {
+   "ch": "prepositions",
+   "file": "part1/13-prepositions.json",
+   "title": "Prepositions"
+  },
+  {
+   "ch": "present-tense",
+   "file": "part1/14-present-tense.json",
+   "title": "The present tense"
+  },
+  {
+   "ch": "reflexive-verbs",
+   "file": "part1/15-reflexive-verbs.json",
+   "title": "Reflexive verbs"
+  },
+  {
+   "ch": "negation",
+   "file": "part1/16-negation.json",
+   "title": "Negation"
+  },
+  {
+   "ch": "questions",
+   "file": "part1/17-questions.json",
+   "title": "Questions"
+  },
+  {
+   "ch": "passe-compose",
+   "file": "part1/18-passe-compose.json",
+   "title": "Le passé composé"
+  },
+  {
+   "ch": "futur-simple",
+   "file": "part1/19-futur-simple.json",
+   "title": "Le futur simple"
+  },
+  {
+   "ch": "imperatif-gerondif",
+   "file": "part1/20-imperatif-gerondif.json",
+   "title": "L'impératif and le gérondif"
+  },
+  {
+   "ch": "adverbs-connectors",
+   "file": "part1/21-adverbs-connectors.json",
+   "title": "Adverbs, frequency and connectors"
+  },
+  {
+   "ch": "il-y-a",
+   "file": "part1/22-il-y-a.json",
+   "title": "Il y a"
+  }
+ ]
+}

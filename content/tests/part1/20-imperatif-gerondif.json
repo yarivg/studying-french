@@ -1,0 +1,119 @@
+{
+  "ch": "imperatif-gerondif",
+  "title": "L'impératif and le gérondif",
+  "questions": [
+    {
+      "id": "imperatif-gerondif-01",
+      "type": "mcq",
+      "q": "How many persons does the French imperative have?",
+      "choices": ["Two: tu and vous", "Three: tu, nous and vous", "Four: tu, il, nous and vous", "Six, like any other tense"],
+      "a": 1,
+      "why": "The imperative exists only for tu, nous and vous, and the subject pronoun itself disappears: Finis ! Finissons ! Finissez !"
+    },
+    {
+      "id": "imperatif-gerondif-02",
+      "type": "fill",
+      "q": "Give the tu imperative of « manger ».",
+      "a": ["Mange", "Mange !"],
+      "why": "-er verbs drop the final -s of the tu form in the imperative: tu manges → Mange ! Verbs in -ir and -re keep it (Finis ! Attends !)."
+    },
+    {
+      "id": "imperatif-gerondif-03",
+      "type": "listen",
+      "say": "Écoute-moi",
+      "q": "Type what you hear. It is a command addressed to tu.",
+      "a": ["Écoute-moi", "Écoute-moi.", "Ecoute-moi"],
+      "why": "An -er verb loses its -s in the tu imperative, and the object pronoun follows the verb with a hyphen, me becoming moi."
+    },
+    {
+      "id": "imperatif-gerondif-04",
+      "type": "mcq",
+      "q": "Why is it « Vas-y ! » with an s, when the imperative of aller is « Va ! » ?",
+      "choices": ["Because y is a plural pronoun", "For pronunciation: the s comes back before y and en so the liaison works", "Because aller is irregular in every form", "Because the command is negative"],
+      "a": 1,
+      "why": "The -s reappears purely so there is a consonant to link onto: Vas-y ! Manges-en ! Without it the phrase would stumble."
+    },
+    {
+      "id": "imperatif-gerondif-05",
+      "type": "mcq",
+      "q": "Which four verbs build their imperative from the subjunctive?",
+      "choices": ["aller, faire, dire, prendre", "avoir, être, savoir, vouloir", "avoir, aller, pouvoir, devoir", "être, faire, venir, savoir"],
+      "a": 1,
+      "why": "avoir (aie, ayons, ayez), être (sois, soyons, soyez), savoir (sache, sachons, sachez) and vouloir (veuille, veuillons, veuillez) are the irregulars."
+    },
+    {
+      "id": "imperatif-gerondif-06",
+      "type": "fill",
+      "q": "Formal request: ___ vous asseoir. (the politest way to say « please sit down »)",
+      "a": ["Veuillez"],
+      "why": "Veuillez + infinitive is the standard formal formula: Veuillez patienter, Veuillez agréer mes salutations. Veux and voulez are almost never used as commands."
+    },
+    {
+      "id": "imperatif-gerondif-07",
+      "type": "order",
+      "q": "Build the positive command: Give it to me.",
+      "words": ["Donne", "le", "moi"],
+      "a": ["Donne", "le", "moi"],
+      "why": "In a positive command the pronouns follow the verb, joined by hyphens, direct before indirect, and me becomes moi: « Donne-le-moi. »"
+    },
+    {
+      "id": "imperatif-gerondif-08",
+      "type": "order",
+      "q": "Build the negative command: Don't give me the book.",
+      "words": ["Ne", "me", "donne", "pas", "le", "livre"],
+      "a": ["Ne", "me", "donne", "pas", "le", "livre"],
+      "why": "A negative command puts the pronoun back before the verb in its normal place, and me stays me: « Ne me donne pas le livre. »"
+    },
+    {
+      "id": "imperatif-gerondif-09",
+      "type": "mcq",
+      "q": "Which tu imperative is correctly spelled?",
+      "choices": ["Attend !", "Attends !", "Attendes !", "Attende !"],
+      "a": 1,
+      "why": "Only -er verbs (plus aller, ouvrir, offrir, souffrir) drop the -s. An -re verb keeps the present tu form intact: tu attends → Attends !"
+    },
+    {
+      "id": "imperatif-gerondif-10",
+      "type": "fill",
+      "q": "Make it negative: « Inquiète-toi ! » → ___ (Don't worry.)",
+      "a": ["Ne t'inquiète pas", "Ne t'inquiète pas !", "Ne t'inquiète pas."],
+      "why": "The reflexive pronoun moves back in front of the verb and reverts to te, which elides before the vowel of inquiète."
+    },
+    {
+      "id": "imperatif-gerondif-11",
+      "type": "mcq",
+      "q": "How is the gérondif formed?",
+      "choices": ["en + the infinitive", "en + the nous form of the present minus -ons, plus -ant", "en + the past participle", "à + the je form of the present, plus -ant"],
+      "a": 1,
+      "why": "nous parlons → en parlant, nous finissons → en finissant, nous buvons → en buvant. The nous stem is what keeps the irregular verbs regular here."
+    },
+    {
+      "id": "imperatif-gerondif-12",
+      "type": "fill",
+      "q": "Give the gérondif of « faire ».",
+      "a": ["en faisant", "faisant"],
+      "why": "Nous faisons gives the stem fais-, so the gérondif is en faisant. The only three genuine irregulars are en ayant, en étant and en sachant."
+    },
+    {
+      "id": "imperatif-gerondif-13",
+      "type": "fill",
+      "q": "Join with a gérondif: « Il apprend le français et il lit des livres. » → Il apprend le français ___ des livres.",
+      "a": ["en lisant"],
+      "why": "Nous lisons → en lisant. Here the gérondif answers « how? » — he learns by reading, the same subject doing both actions."
+    },
+    {
+      "id": "imperatif-gerondif-14",
+      "type": "open",
+      "q": "When can you not use a gérondif, and what do you use instead? Give an example of each.",
+      "a": ["The gérondif's action must belong to the sentence's subject. One subject: Elles cuisinent en écoutant de la musique. Two subjects: you need pendant que — Je cuisine pendant qu'elle écoute de la musique."],
+      "why": "One subject, always. This is the single constraint on the gérondif, and pendant que is the escape hatch when the two actions belong to different people."
+    },
+    {
+      "id": "imperatif-gerondif-15",
+      "type": "say",
+      "q": "Say this out loud as a command.",
+      "target": "Dépêche-toi",
+      "why": "A positive reflexive command puts the pronoun after the verb with a hyphen, and te becomes toi."
+    }
+  ]
+}

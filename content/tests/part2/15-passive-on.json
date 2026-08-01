@@ -1,0 +1,120 @@
+{
+  "ch": "passive-on",
+  "title": "The passive, and on",
+  "questions": [
+    {
+      "id": "passive-on-01",
+      "type": "mcq",
+      "q": "How is the passive built in French?",
+      "choices": ["être + past participle, agreeing with the subject", "avoir + past participle", "se + verb in the present", "aller + infinitive"],
+      "a": 0,
+      "why": "Être in any tense plus the participle: la maison est construite, a été construite, sera construite. The auxiliary carries the tense."
+    },
+    {
+      "id": "passive-on-02",
+      "type": "fill",
+      "q": "Complete: « La maison a été ___ en 1920. » (construire)",
+      "a": ["construite"],
+      "why": "With être as auxiliary the participle behaves like an adjective and agrees with the subject: maison is feminine singular."
+    },
+    {
+      "id": "passive-on-03",
+      "type": "mcq",
+      "q": "« Le voleur a été arrêté ___ la police. »",
+      "choices": ["par", "de", "avec", "pour"],
+      "a": 0,
+      "why": "Par names the agent of an action. De is kept for a state or a feeling: il est respecté de tous."
+    },
+    {
+      "id": "passive-on-04",
+      "type": "fill",
+      "q": "Complete: « Il est respecté ___ tous. » (by everyone)",
+      "a": ["de"],
+      "why": "Respecter, aimer, admirer and other verbs of feeling take de rather than par, because the result is a state, not an event."
+    },
+    {
+      "id": "passive-on-05",
+      "type": "order",
+      "q": "Turn it into the passive: « La police a arrêté le voleur. »",
+      "words": ["le", "voleur", "a", "été", "arrêté", "par", "la", "police"],
+      "a": ["le", "voleur", "a", "été", "arrêté", "par", "la", "police"],
+      "why": "The direct object becomes the subject, avoir + participle becomes a été + participle, and the old subject follows par."
+    },
+    {
+      "id": "passive-on-06",
+      "type": "mcq",
+      "q": "Which is the natural French for « French is spoken here » ?",
+      "choices": ["On parle français ici.", "Français est parlé ici.", "Il est parlé français ici.", "Ça parle français ici."],
+      "a": 0,
+      "why": "When the agent is unnamed, French reaches for on with an active verb rather than a passive. The passive is heavy and mostly written."
+    },
+    {
+      "id": "passive-on-07",
+      "type": "mcq",
+      "q": "Which verb form goes with « on » ?",
+      "choices": ["third person singular, always", "third person plural", "first person plural, like nous", "it varies with meaning"],
+      "a": 0,
+      "why": "On est là, on va partir, on a mangé — singular even when on plainly means we. Only a following participle may agree with the real meaning: on est allés."
+    },
+    {
+      "id": "passive-on-08",
+      "type": "fill",
+      "q": "Translate with « on »: « I was told that he's leaving. » → « ___ m'a dit qu'il part. »",
+      "a": ["on"],
+      "why": "French cannot promote an indirect object to subject, so there is no je suis dit. For I was told and he was given, on is the only option."
+    },
+    {
+      "id": "passive-on-09",
+      "type": "fill",
+      "q": "Complete with a reflexive: « Comment ça ___ ? » (How is that spelled?)",
+      "a": ["s'écrit"],
+      "why": "A reflexive verb is the natural passive when the subject is a thing and no agent matters: ça se dit, ce livre se vend bien."
+    },
+    {
+      "id": "passive-on-10",
+      "type": "mcq",
+      "q": "« Le vin blanc ___ frais. » (White wine is drunk chilled.)",
+      "choices": ["se boit", "est bu", "on boit", "se boire"],
+      "a": 0,
+      "why": "A general truth about a thing goes reflexive. Est bu is grammatical but sounds like a report of one specific glass."
+    },
+    {
+      "id": "passive-on-11",
+      "type": "mcq",
+      "q": "« Elle s'est ___ renverser par une voiture. »",
+      "choices": ["fait", "faite", "faits", "faites"],
+      "a": 0,
+      "why": "Se faire + infinitive is for something that happened to someone, usually unwelcome, and the participle fait is invariable there."
+    },
+    {
+      "id": "passive-on-12",
+      "type": "listen",
+      "say": "On a volé ma voiture.",
+      "q": "Type what you hear.",
+      "a": ["on a volé ma voiture"],
+      "why": "My car has been stolen. On here means someone, unidentified — one of its three uses alongside we and people in general."
+    },
+    {
+      "id": "passive-on-13",
+      "type": "mcq",
+      "q": "In « Nous, on préfère rester », what is « on » doing?",
+      "choices": ["it means we, with nous added for emphasis", "it means people in general", "it means someone unknown", "it is a mistake for nous préférons"],
+      "a": 0,
+      "why": "In speech on has largely replaced nous as the subject, and nous can be tacked on in front purely for stress."
+    },
+    {
+      "id": "passive-on-14",
+      "type": "say",
+      "q": "Say this out loud.",
+      "target": "il s'est fait voler son portefeuille",
+      "why": "He got his wallet stolen. Se faire + infinitive, with fait never agreeing."
+    },
+    {
+      "id": "passive-on-15",
+      "type": "open",
+      "q": "French has four ways to express an English passive. Name them and say when each is the right choice.",
+      "a": ["1. The true passive, être + participle: use it when the agent matters (le livre a été écrit par Camus) or the register is formal or written (la décision a été prise). Par for an action, de for a feeling. 2. On + active verb: the default when there is no named agent, especially in speech — on a construit cette maison en 1920, on m'a dit que… It is also the only option when English promotes an indirect object (I was told, he was given a book). 3. A reflexive verb: for a general truth about a thing — ça se dit, ce livre se vend bien, comment ça s'écrit ? 4. Se faire + infinitive: for something, usually bad, that happened to someone — il s'est fait voler, je me suis fait avoir."],
+      "why": "Knowing the passive is for reading; knowing the three alternatives is what makes you sound French. On covers the largest share by far."
+    }
+  ]
+}

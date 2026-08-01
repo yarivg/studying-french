@@ -7,6 +7,11 @@
      #/vocab             vocabulary browser
      #/cards             deck list
      #/cards/<deckId>    review session
+     #/tests             every chapter and part test
+     #/test/<slug>       one chapter's test
+     #/test/part-<n>     a whole-part exam
+     #/read              reading passages
+     #/read/<id>         one passage
      #/<slug>            a lesson from content/
    ============================================================ */
 
@@ -117,7 +122,9 @@
       '<a class="nav-link nav-meta" href="#/"><span>Start here</span></a>' +
       '<a class="nav-link nav-meta" href="#/dashboard"><span>Progress</span></a>' +
       '<a class="nav-link nav-meta" href="#/vocab"><span>Vocabulary</span></a>' +
-      '<a class="nav-link nav-meta" href="#/cards"><span>Flashcards</span></a>';
+      '<a class="nav-link nav-meta" href="#/cards"><span>Flashcards</span></a>' +
+      '<a class="nav-link nav-meta" href="#/tests"><span>Tests</span></a>' +
+      '<a class="nav-link nav-meta" href="#/read"><span>Reading</span></a>';
 
     manifest.parts.forEach(function (part) {
       html += '<div class="nav-part"><span class="nav-part-n">' + escapeHtml(part.numeral) + '</span>' +
@@ -137,6 +144,10 @@
   function markNavRead() {
     navEl.querySelectorAll('a[data-slug]').forEach(function (a) {
       a.classList.toggle('is-read', Progress.isRead(a.dataset.slug));
+      // Read and understood are different things, so they get different marks.
+      var level = Progress.mastery(a.dataset.slug).level;
+      a.classList.toggle('is-shaky', level === 1);
+      a.classList.toggle('is-solid', level === 2);
     });
   }
 
@@ -145,6 +156,8 @@
       a.classList.toggle('is-current', a.getAttribute('href') === '#/' + slug);
     });
   }
+
+  var renderSidebarProgress = function () { markNavRead(); updateProgressCard(); };
 
   function updateProgressCard() {
     var total = chapters.length || 1;
@@ -165,6 +178,7 @@
     var hash = location.hash.replace(/^#\/?/, '');
     closeSearch();
     Quiz.endSession();
+    Test.stop();
     window.scrollTo(0, 0);
     document.getElementById('main').focus({ preventScroll: true });
 
@@ -173,6 +187,10 @@
     if (hash === 'vocab') return renderVocabPage();
     if (hash === 'cards') return renderDeckList();
     if (hash.indexOf('cards/') === 0) return renderDeck(hash.slice(6));
+    if (hash === 'tests') return renderTestList();
+    if (hash.indexOf('test/') === 0) return renderTest(hash.slice(5));
+    if (hash === 'read') return renderReadList();
+    if (hash.indexOf('read/') === 0) return renderPassage(hash.slice(5));
     return renderChapter(hash);
   }
 
@@ -227,19 +245,26 @@
   function renderDoneBar(ch) {
     var bar = document.createElement('div');
     bar.className = 'chapter-done';
-    function paint() {
+    function paint(hasTest) {
       var done = Progress.isRead(ch.slug);
+      var m = Progress.mastery(ch.slug);
       bar.classList.toggle('is-done', done);
-      bar.innerHTML = '<p>' + (done ? 'Marked as read.' : 'Finished this lesson?') + '</p>' +
-        '<button class="btn ' + (done ? '' : 'btn-primary') + '">' +
+      bar.innerHTML = '<p>' +
+          (m.level ? 'You marked this <strong>' + LEVEL_LABEL[m.level].toLowerCase() + '</strong>.'
+                   : done ? 'Marked as read.' : 'Finished this lesson?') +
+        '</p>' +
+        (hasTest ? '<a class="btn btn-primary" href="#/test/' + ch.slug + '">Test yourself</a>' : '') +
+        '<button class="btn ' + (done || hasTest ? '' : 'btn-primary') + '">' +
         (done ? 'Mark as unread' : 'Mark as read') + '</button>';
       bar.querySelector('button').addEventListener('click', function () {
         Progress.toggleRead(ch.slug);
-        paint();
+        paint(hasTest);
       });
     }
-    paint();
+    paint(false);
     view.appendChild(bar);
+    // Drawn without the test button first, so the lesson never waits on it.
+    Test.loadChapter(ch).then(function (bank) { if (bank) paint(true); });
   }
 
   function renderPager(idx) {
@@ -272,7 +297,9 @@
       '<p class="lead">' + escapeHtml(manifest.subtitle) + '</p>' +
       '<div class="cards">' +
         card('#/' + nextCh.slug, '▶', read ? 'Continue' : 'Start reading', nextCh.title) +
-        card('#/vocab', '📖', 'Vocabulary', '1,493 words, searchable and filterable by theme') +
+        card('#/tests', '📝', 'Tests', 'A drill per chapter, an exam per part, marked by you') +
+        card('#/read', '📕', 'Reading', 'Passages to read, hear, and read back out loud') +
+        card('#/vocab', '📖', 'Vocabulary', 'Searchable and filterable, and you can add your own') +
         card('#/cards', '🗂', 'Flashcards', 'Spaced repetition across every theme') +
         card('#/dashboard', '📊', 'Progress', 'What you have read, learned and still owe') +
       '</div>';
@@ -305,11 +332,14 @@
       var total = chapters.length;
       var read = chapters.filter(function (c) { return Progress.isRead(c.slug); }).length;
       var words = Vocab.all();
-      var allCards = [];
+      // Every card id from every deck, deduplicated. Counting only the
+      // FR → EN deck used to hide all of a session spent on EN → FR: the
+      // two directions are separate cards with separate schedules.
+      var seen = Object.create(null);
       Vocab.decks().forEach(function (d) {
-        if (d.id === 'all-fr') allCards = d.cards;
+        d.cards.forEach(function (c) { seen[c.id] = 1; });
       });
-      var ids = allCards.map(function (c) { return c.id; });
+      var ids = Object.keys(seen);
       var stats = Progress.cardStats(ids);
       var due = Progress.dueCount(ids);
 
@@ -335,16 +365,42 @@
           '<div class="bar"><span style="width:' + pct + '%"></span></div>';
       });
 
+      html += '<h2>What you have understood</h2>' +
+        '<p>Reading a lesson and understanding it are tracked separately. ' +
+        'These are the marks you gave yourself after a test.</p>' +
+        '<div class="stat-grid">' +
+          stat(Progress.masteryCount(2), 'Marked confident', 'good') +
+          stat(Progress.masteryCount(1) - Progress.masteryCount(2), 'Marked shaky', 'warn') +
+        '</div>';
+
+      manifest.parts.forEach(function (part, pi) {
+        if (part.reference) return;
+        var solid = part.chapters.filter(function (c) { return Progress.mastery(c.slug).level === 2; }).length;
+        var shaky = part.chapters.filter(function (c) { return Progress.mastery(c.slug).level === 1; }).length;
+        var exam = Progress.testScore('part-' + (pi + 1));
+        html += '<p style="margin:.7rem 0 .3rem"><strong>' + escapeHtml(part.numeral) + '</strong> — ' +
+          solid + ' confident, ' + shaky + ' shaky, of ' + part.chapters.length + ' chapters' +
+          (exam.runs ? ' · exam best ' + exam.best + '%' : '') + '</p>' +
+          '<div class="bar"><span style="width:' +
+          Math.round((solid / part.chapters.length) * 100) + '%"></span></div>';
+      });
+      html += '<p><a class="btn btn-primary btn-lg" href="#/tests" ' +
+        'style="display:inline-block;text-decoration:none">Go to the tests</a></p>';
+
       html += '<h2>Flashcards</h2>' +
+        '<p>Each word is two cards, French to English and back, scheduled ' +
+        'separately. A card reaches box 4 after four correct answers on four ' +
+        'different days, so "learned" takes a week at the earliest.</p>' +
         '<div class="stat-grid">' +
           stat(stats.learned, 'Learned (box 4+)', 'good') +
-          stat(stats.learning, 'Still learning', '') +
-          stat(stats.fresh, 'Not started yet', '') +
+          stat(stats.learning, 'Started, not there yet', stats.learning ? 'accent' : '') +
+          stat(stats.fresh, 'Never seen', '') +
           stat(Progress.reviewsToday(), 'Reviews today', 'accent') +
         '</div>' +
         '<p><a class="btn btn-primary btn-lg" href="#/cards" style="display:inline-block;text-decoration:none">Go to the decks</a></p>';
 
-      html += '<h2>Vocabulary</h2><p>' + words.length + ' words in the list. ' +
+      html += '<h2>Vocabulary</h2><p>' + words.length + ' words in the list' +
+        (Vocab.mine().length ? ', ' + Vocab.mine().length + ' of them yours' : '') + '. ' +
         Progress.knownCount() + ' marked as known.</p>' +
         '<div class="bar"><span style="width:' +
         Math.round((Progress.knownCount() / words.length) * 100) + '%"></span></div>';
@@ -490,8 +546,8 @@
 
       view.innerHTML =
         '<h1>Vocabulary</h1>' +
-        '<p class="lead">' + Vocab.all().length + ' words from my own list, with gender and theme. ' +
-        'Tick a word once you are sure of it.</p>' +
+        '<p class="lead">' + Vocab.all().length + ' words, with gender and theme — ' +
+        Vocab.mine().length + ' of them added by you. Tick a word once you are sure of it.</p>' +
         '<div class="vocab-toolbar">' +
           '<input type="search" id="vq" placeholder="Search French or English…" autocomplete="off">' +
           '<select id="vtheme">' + themeOpts + '</select>' +
@@ -500,9 +556,12 @@
             '<option value="all">All</option>' +
             '<option value="unknown">Not yet known</option>' +
             '<option value="known">Known</option>' +
+            '<option value="mine">My words</option>' +
           '</select>' +
+          '<button class="btn btn-primary" id="vadd">+ Add word</button>' +
           '<span class="vocab-count" id="vcount"></span>' +
         '</div>' +
+        '<div id="vform"></div>' +
         '<div id="vlist"></div>';
 
       var q = document.getElementById('vq');
@@ -531,7 +590,363 @@
         el.addEventListener('input', refresh);
       });
       Vocab.bindList(list);
+
+      var form = new WordForm(document.getElementById('vform'), function () {
+        // A new word changes the counts and the theme list, so the whole
+        // page is cheaper to redraw than to patch.
+        renderVocabPage();
+      });
+      document.getElementById('vadd').addEventListener('click', function () { form.open(null); });
+      list.addEventListener('vocab:edit', function (e) { form.open(e.detail.id); });
+
       refresh();
+    });
+  }
+
+  /* ---------------------------------------------------------- add a word */
+
+  // One panel, three jobs: add, edit, and paste a whole list. Kept small
+  // enough to use one-handed, because words turn up away from the desk.
+  function WordForm(host, onChange) {
+    var editing = null;
+    var dirty = false;      // words were added while the panel stayed open
+
+    function close() {
+      host.innerHTML = '';
+      if (dirty) { dirty = false; onChange(); }
+    }
+
+    function open(id) {
+      editing = id || null;
+      var w = editing ? Progress.getWord(editing) : null;
+      if (editing && !w) return;
+
+      host.innerHTML =
+        '<div class="word-form">' +
+          '<div class="word-form-head">' +
+            '<strong>' + (editing ? 'Edit word' : 'Add a word') + '</strong>' +
+            '<button class="btn btn-sm" data-act="bulk">Paste a list</button>' +
+            '<button class="btn btn-sm" data-act="close" aria-label="Close">✕</button>' +
+          '</div>' +
+          '<div class="word-fields">' +
+            '<label>French<input id="wfr" value="' + escapeAttr(w ? w.fr : '') +
+              '" placeholder="le brouillard" autocomplete="off" spellcheck="false"></label>' +
+            '<label>English<input id="wen" value="' + escapeAttr(w ? w.en : '') +
+              '" placeholder="fog" autocomplete="off"></label>' +
+            '<label>Type<select id="wpos">' + posOptions(w ? w.pos : '') + '</select></label>' +
+            '<label>Gender<select id="wg">' + genderOptions(w ? w.g : '') + '</select></label>' +
+            '<label>Themes<input id="wth" value="' + escapeAttr(w ? w.themes.join(', ') : '') +
+              '" placeholder="nature, weather" autocomplete="off"></label>' +
+          '</div>' +
+          '<p class="word-msg" id="wmsg" hidden></p>' +
+          '<div class="word-actions">' +
+            '<button class="btn btn-primary" data-act="save">' + (editing ? 'Save' : 'Add word') + '</button>' +
+            (editing ? '<button class="btn btn-again" data-act="delete">Delete</button>' : '') +
+          '</div>' +
+        '</div>';
+
+      var fr = host.querySelector('#wfr');
+      var en = host.querySelector('#wen');
+      var posSel = host.querySelector('#wpos');
+      var gSel = host.querySelector('#wg');
+
+      // Filling in the article usually settles both of these.
+      if (!editing) {
+        fr.addEventListener('blur', function () {
+          var g = Vocab.guess(fr.value);
+          if (posSel.value === 'other') posSel.value = g.pos;
+          if (!gSel.value && g.g) gSel.value = g.g;
+        });
+      }
+
+      host.querySelector('.word-form').addEventListener('click', onClick);
+      host.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' && e.target.tagName === 'INPUT') { e.preventDefault(); save(); }
+        if (e.key === 'Escape') close();
+      });
+      fr.focus();
+      host.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+
+    function onClick(e) {
+      var b = e.target.closest('[data-act]');
+      if (!b) return;
+      if (b.dataset.act === 'close') return close();
+      if (b.dataset.act === 'bulk') return openBulk();
+      if (b.dataset.act === 'save') return save();
+      if (b.dataset.act === 'delete') return remove();
+    }
+
+    function msg(text, bad) {
+      var el = host.querySelector('#wmsg');
+      if (!el) return;
+      el.textContent = text;
+      el.hidden = !text;
+      el.classList.toggle('is-bad', !!bad);
+    }
+
+    function save() {
+      var input = {
+        fr: host.querySelector('#wfr').value,
+        en: host.querySelector('#wen').value,
+        pos: host.querySelector('#wpos').value,
+        g: host.querySelector('#wg').value,
+        themes: host.querySelector('#wth').value.split(/[,\s]+/).filter(Boolean)
+      };
+      // Submitting with Enter never blurs the French field, so the guess
+      // has to run here too rather than only on the way out of it.
+      var guess = Vocab.guess(input.fr);
+      if (input.pos === 'other') input.pos = guess.pos;
+      if (!input.g) input.g = guess.g;
+      try {
+        if (editing) {
+          Progress.updateWord(editing, input);
+        } else {
+          var dupe = Progress.findWord(input.fr);
+          if (dupe) return msg('You already added that one.', true);
+          Progress.addWord(input);
+        }
+      } catch (err) {
+        return msg(err.message, true);
+      }
+      close();
+      onChange();
+    }
+
+    function remove() {
+      if (!confirm('Delete this word? It disappears from your other devices too.')) return;
+      Progress.deleteWord(editing);
+      close();
+      onChange();
+    }
+
+    function openBulk() {
+      host.innerHTML =
+        '<div class="word-form">' +
+          '<div class="word-form-head">' +
+            '<strong>Paste a list</strong>' +
+            '<button class="btn btn-sm" data-act="close" aria-label="Close">✕</button>' +
+          '</div>' +
+          '<p class="sync-note">One word per line, <code>french - english</code>. A leading number is ' +
+          'ignored, so a slice of <code>vocab-source.txt</code> pastes straight in. Duplicates are skipped.</p>' +
+          '<textarea id="wbulk" rows="8" spellcheck="false" ' +
+            'placeholder="le brouillard - fog&#10;éteindre - to switch off"></textarea>' +
+          '<p class="word-msg" id="wmsg" hidden></p>' +
+          '<div class="word-actions">' +
+            '<button class="btn btn-primary" data-act="import">Add them</button>' +
+            '<button class="btn" data-act="export">Copy my words out</button>' +
+          '</div>' +
+        '</div>';
+
+      host.querySelector('.word-form').addEventListener('click', function (e) {
+        var b = e.target.closest('[data-act]');
+        if (!b) return;
+        if (b.dataset.act === 'close') return close();
+        if (b.dataset.act === 'export') {
+          var text = Vocab.exportMine();
+          if (!text) return msg('You have not added any words yet.', true);
+          host.querySelector('#wbulk').value = text;
+          return msg('Numbered from where vocab-source.txt left off. Copy, paste at the end of that ' +
+            'file, then run tools/build-vocab.py to make them part of the curated list.');
+        }
+        var rows = Vocab.parseBulk(host.querySelector('#wbulk').value);
+        if (!rows.length) return msg('Nothing there I could read as "french - english".', true);
+        var added = 0, skipped = 0;
+        rows.forEach(function (r) {
+          if (Progress.findWord(r.fr)) { skipped++; return; }
+          Progress.addWord(r);
+          added++;
+        });
+        // Keep the panel open with the count rather than throwing up a
+        // dialog: pasting several batches in a row is the normal case.
+        // The page behind it redraws when the panel closes, because
+        // redrawing now would tear this panel out of the document.
+        dirty = true;
+        host.querySelector('#wbulk').value = '';
+        msg(added + ' added' + (skipped ? ', ' + skipped + ' already on your list' : '') + '.');
+      });
+    }
+
+    return { open: open, close: close };
+  }
+
+  function posOptions(current) {
+    return Object.keys(Vocab.POS_LABEL).map(function (p) {
+      return '<option value="' + p + '"' + (p === current ? ' selected' : '') + '>' +
+        Vocab.POS_LABEL[p] + '</option>';
+    }).join('');
+  }
+
+  function genderOptions(current) {
+    var opts = [['', '—'], ['m', 'masculine'], ['f', 'feminine'], ['pl', 'plural'], ['mf', 'either']];
+    return opts.map(function (o) {
+      return '<option value="' + o[0] + '"' + (o[0] === current ? ' selected' : '') + '>' + o[1] + '</option>';
+    }).join('');
+  }
+
+  /* ---------------------------------------------------------- tests */
+
+  var LEVEL_LABEL = ['Not yet', 'Shaky', 'Confident'];
+
+  function renderTestList() {
+    setCurrentNav('tests');
+    pager.innerHTML = '';
+
+    var html = '<h1>Tests</h1>' +
+      '<p class="lead">A drill for each chapter, and a longer exam for each part. ' +
+      'The score is automatic; whether you have actually got it is your call.</p>';
+
+    manifest.parts.forEach(function (part, pi) {
+      // Part IV is lookup tables. There is nothing there to be tested on.
+      if (part.reference) return;
+      var key = 'part-' + (pi + 1);
+      var m = Progress.mastery(key);
+      var score = Progress.testScore(key);
+      html += '<h2>' + escapeHtml(part.numeral) + ' — ' + escapeHtml(part.title) + '</h2>' +
+        '<p class="test-partline">' +
+          '<a class="btn btn-primary" href="#/test/' + key + '">Take the ' + escapeHtml(part.numeral) + ' exam</a>' +
+          (score.runs
+            ? '<span class="test-best">best ' + score.best + '% over ' + score.runs +
+              ' attempt' + (score.runs === 1 ? '' : 's') + '</span>'
+            : '') +
+          (m.level ? '<span class="mastery-tag lv' + m.level + '">' + LEVEL_LABEL[m.level] + '</span>' : '') +
+        '</p>' +
+        '<div class="test-grid">';
+
+      part.chapters.forEach(function (ch) {
+        var cm = Progress.mastery(ch.slug);
+        var cs = Progress.testScore(ch.slug);
+        html += '<a class="test-tile lv' + cm.level + '" href="#/test/' + ch.slug + '">' +
+          '<span class="test-tile-name">' + escapeHtml(ch.title) + '</span>' +
+          '<span class="test-tile-meta">' +
+            (cs.runs ? 'best ' + cs.best + '%' : 'not taken') +
+            (cm.level ? ' · ' + LEVEL_LABEL[cm.level] : '') +
+          '</span></a>';
+      });
+      html += '</div>';
+    });
+
+    view.innerHTML = html;
+  }
+
+  function renderTest(key) {
+    setCurrentNav('tests');
+    pager.innerHTML = '';
+    view.innerHTML = '<div class="loading">Loading the questions…</div>';
+
+    var part = key.indexOf('part-') === 0 ? manifest.parts[Number(key.slice(5)) - 1] : null;
+    if (part) return startPartTest(key, part);
+
+    var ch = bySlug[key];
+    if (!ch) return notFound(key);
+
+    Test.loadChapter(ch).then(function (bank) {
+      if (!bank) {
+        return noBank(ch.title, 'There is no question bank for this chapter yet.');
+      }
+      runTest({
+        id: ch.slug,
+        title: ch.title,
+        eyebrow: ch.part.numeral + ' · chapter test',
+        back: '#/' + ch.slug,
+        backLabel: 'Back to the lesson',
+        questions: Test.shuffle(bank.questions),
+        masteryKey: ch.slug
+      });
+    });
+  }
+
+  function startPartTest(key, part) {
+    Test.loadPart(part).then(function (banks) {
+      if (!banks.length) {
+        return noBank(part.numeral, 'No chapter in this part has a question bank yet.');
+      }
+      // Two per chapter keeps a 22-chapter part to a sitting rather than a
+      // marathon, while still touching everything.
+      var questions = Test.sample(banks, 2);
+      runTest({
+        id: key,
+        title: part.numeral + ' exam — ' + part.title,
+        eyebrow: banks.length + ' chapters covered',
+        back: '#/tests',
+        backLabel: 'All tests',
+        questions: questions,
+        subtitle: 'part',
+        masteryKey: key
+      });
+    });
+  }
+
+  function runTest(opts) {
+    view.innerHTML =
+      '<div class="eyebrow"><a href="' + opts.back + '" style="color:inherit;text-decoration:none">← ' +
+        escapeHtml(opts.backLabel) + '</a><span class="dot"></span><span>' +
+        escapeHtml(opts.eyebrow) + '</span></div>' +
+      '<h1>' + escapeHtml(opts.title) + '</h1>' +
+      '<div id="testHost"></div>';
+
+    Test.start(document.getElementById('testHost'), {
+      id: opts.id,
+      title: opts.title,
+      subtitle: opts.subtitle,
+      masteryKey: opts.masteryKey,
+      questions: opts.questions,
+      onDone: function (r) {
+        if (r.retry) return renderTest(opts.id);
+        renderSidebarProgress();
+      }
+    });
+  }
+
+  function noBank(title, message) {
+    view.innerHTML = '<h1>' + escapeHtml(title) + '</h1>' +
+      '<div class="empty"><div class="empty-icon">📝</div><p>' + escapeHtml(message) + '</p>' +
+      '<p><a href="#/tests">Back to the tests</a></p></div>';
+  }
+
+  function notFound(key) {
+    view.innerHTML = '<div class="empty"><div class="empty-icon">🤷</div>' +
+      '<p>No test called <code>' + escapeHtml(key) + '</code>.</p>' +
+      '<p><a href="#/tests">All tests</a></p></div>';
+  }
+
+  /* ---------------------------------------------------------- reading */
+
+  function renderReadList() {
+    setCurrentNav('read');
+    pager.innerHTML = '';
+    view.innerHTML = '<div class="loading">Loading the passages…</div>';
+
+    Promise.all([Read.loadIndex(), Vocab.load()]).then(function (r) {
+      view.innerHTML =
+        '<h1>Reading</h1>' +
+        '<p class="lead">Passages that use only the grammar the course has covered by that level. ' +
+        'Tap a line to hear it, tap a word for the meaning, then answer for what you understood ' +
+        'and read a line back into the microphone.</p>' +
+        Read.listHtml(r[0]);
+    }).catch(function (err) {
+      view.innerHTML = '<div class="empty"><div class="empty-icon">⚠️</div><p>' +
+        escapeHtml(err.message) + '</p></div>';
+    });
+  }
+
+  function renderPassage(id) {
+    setCurrentNav('read');
+    pager.innerHTML = '';
+    view.innerHTML = '<div class="loading">Loading…</div>';
+
+    Promise.all([Read.loadIndex(), Vocab.load()]).then(function () {
+      var entry = Read.byId(id);
+      if (!entry) {
+        view.innerHTML = '<div class="empty"><div class="empty-icon">🤷</div>' +
+          '<p>No passage called <code>' + escapeHtml(id) + '</code>.</p>' +
+          '<p><a href="#/read">All passages</a></p></div>';
+        return;
+      }
+      return Read.render(view, entry, { onRetry: function () { renderPassage(id); } });
+    }).catch(function (err) {
+      view.innerHTML = '<div class="empty"><div class="empty-icon">⚠️</div><p>' +
+        escapeHtml(err.message) + '</p></div>';
     });
   }
 
@@ -705,6 +1120,8 @@
   function escapeHtml(s) {
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
+
+  var escapeAttr = escapeHtml;   // escapeHtml already quotes "
 
   boot();
 })();

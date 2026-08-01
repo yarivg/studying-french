@@ -1,0 +1,171 @@
+{
+  "ch": "infinitif-passe",
+  "title": "Infinitif passé and faire causatif",
+  "questions": [
+    {
+      "id": "infinitif-passe-01",
+      "type": "mcq",
+      "q": "What is the past infinitive of « voir » ?",
+      "choices": [
+        "avoir vu",
+        "être vu",
+        "ayant vu",
+        "avoir voir"
+      ],
+      "a": 0,
+      "why": "Avoir or être in the infinitive, plus the past participle. Voir takes avoir, so avoir vu: to have seen."
+    },
+    {
+      "id": "infinitif-passe-02",
+      "type": "fill",
+      "q": "___ mangé, je suis sorti. (after)",
+      "a": [
+        "Après avoir"
+      ],
+      "why": "Après is always followed by the past infinitive. Après manger does not exist in French."
+    },
+    {
+      "id": "infinitif-passe-03",
+      "type": "mcq",
+      "q": "Which is correct?",
+      "choices": [
+        "Avant de manger, je me lave les mains.",
+        "Avant d'avoir mangé, je me lave les mains.",
+        "Avant manger, je me lave les mains.",
+        "Avant que manger, je me lave les mains."
+      ],
+      "a": 0,
+      "why": "Avant de takes the plain infinitive, and après takes the past infinitive. That asymmetry is the whole trap."
+    },
+    {
+      "id": "infinitif-passe-04",
+      "type": "fill",
+      "q": "Après s'être ___ (lever), elle a pris une douche.",
+      "a": [
+        "levée"
+      ],
+      "why": "Reflexive verbs use être, and here se is the direct object, so the participle agrees with the feminine subject: levée."
+    },
+    {
+      "id": "infinitif-passe-05",
+      "type": "fill",
+      "q": "Après être ___ (partir), elles ont téléphoné.",
+      "a": [
+        "parties"
+      ],
+      "why": "With être the participle agrees with the subject even inside an infinitive, so feminine plural: parties."
+    },
+    {
+      "id": "infinitif-passe-06",
+      "type": "mcq",
+      "q": "Which pair of meanings is right?",
+      "choices": [
+        "Je suis content de venir = I'm glad I came; je suis content d'être venu = I'm glad to be coming",
+        "Je suis content de venir = I'm glad to be coming; je suis content d'être venu = I'm glad I came",
+        "Both mean exactly the same thing",
+        "Only the first is grammatical"
+      ],
+      "a": 1,
+      "why": "The past infinitive shifts the action backwards. The plain infinitive stays at the same time as the main verb, or later."
+    },
+    {
+      "id": "infinitif-passe-07",
+      "type": "fill",
+      "q": "Translate: I regret having said that. → Je regrette ___ dit ça.",
+      "a": [
+        "d'avoir"
+      ],
+      "why": "Any verb or preposition that takes an infinitive can take the past infinitive when the action is earlier. Regretter takes de, which elides before avoir."
+    },
+    {
+      "id": "infinitif-passe-08",
+      "type": "mcq",
+      "q": "Which word order is correct for « I'm having my car repaired » ?",
+      "choices": [
+        "Je fais ma voiture réparer.",
+        "Je fais réparer ma voiture.",
+        "Je fais ma voiture à réparer.",
+        "Je réparer fais ma voiture."
+      ],
+      "a": 1,
+      "why": "Faire and its infinitive never separate; the object comes after both. This is the exact opposite of the English order, where the object sits in the middle."
+    },
+    {
+      "id": "infinitif-passe-09",
+      "type": "order",
+      "q": "Build the sentence: He made me laugh.",
+      "words": [
+        "Il",
+        "m'a",
+        "fait",
+        "rire"
+      ],
+      "a": [
+        "Il",
+        "m'a",
+        "fait",
+        "rire"
+      ],
+      "why": "The pronoun goes before faire, not between faire and the infinitive. Never il a fait moi rire."
+    },
+    {
+      "id": "infinitif-passe-10",
+      "type": "fill",
+      "q": "Agreement: « Je les ai (faire) ___ travailler. »",
+      "a": [
+        "fait"
+      ],
+      "why": "Fait followed by an infinitive is invariable, always. Compare je les ai faits, with no infinitive, where it does agree."
+    },
+    {
+      "id": "infinitif-passe-11",
+      "type": "fill",
+      "q": "Agreement: « Je les ai (voir) ___ partir. »",
+      "a": [
+        "vus"
+      ],
+      "why": "Voir, entendre and laisser do agree when the preceding pronoun is the subject of the infinitive. Faire is the one verb that never agrees."
+    },
+    {
+      "id": "infinitif-passe-12",
+      "type": "fill",
+      "q": "Elle s'est ___ couper les cheveux. — she had her hair cut.",
+      "a": [
+        "fait"
+      ],
+      "why": "Se faire plus infinitive means something was done to you. And fait before an infinitive stays invariable even here."
+    },
+    {
+      "id": "infinitif-passe-13",
+      "type": "mcq",
+      "q": "« J'ai fait réparer la voiture ___ un mécanicien. » Which preposition, and why?",
+      "choices": [
+        "à — the doer always takes à",
+        "par — the emphasis is on who performed the work",
+        "de — after a causative faire",
+        "pour — the mechanic benefits"
+      ],
+      "a": 1,
+      "why": "À is for a person you are directing (faire lire un livre à un enfant); par when the point is who did it, and it also removes the ambiguity à can create."
+    },
+    {
+      "id": "infinitif-passe-14",
+      "type": "listen",
+      "say": "Après avoir mangé, je suis sorti.",
+      "q": "Type what you hear, in correct written French.",
+      "a": [
+        "Après avoir mangé, je suis sorti.",
+        "Après avoir mangé je suis sorti",
+        "Après avoir mangé, je suis sorti"
+      ],
+      "why": "Après plus past infinitive, same subject throughout. The comma marks the boundary between the two clauses."
+    },
+    {
+      "id": "infinitif-passe-15",
+      "type": "say",
+      "q": "Say this out loud: I'm having my car repaired.",
+      "target": "je fais réparer ma voiture",
+      "why": "Faire plus infinitive, with the object after both verbs. Nothing may come between fais and réparer."
+    }
+  ]
+}

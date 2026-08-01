@@ -1,0 +1,119 @@
+{
+  "ch": "pronouns",
+  "title": "Pronouns",
+  "questions": [
+    {
+      "id": "pronouns-01",
+      "type": "mcq",
+      "q": "« Tu vois le livre ? — Oui, je ___ vois. »",
+      "choices": ["le", "la", "lui", "les"],
+      "a": 0,
+      "why": "Livre is masculine singular and it is a direct object, so le. And it lands before the verb, not after it: je le vois."
+    },
+    {
+      "id": "pronouns-02",
+      "type": "fill",
+      "q": "Complete: « Tu connais Marie ? — Oui, je ___ connais. »",
+      "a": ["la"],
+      "why": "Connaître takes its object with no preposition, so this is a direct object: la for a feminine person. Before a vowel it would elide to l'."
+    },
+    {
+      "id": "pronouns-03",
+      "type": "fill",
+      "q": "Replace the object: « Il achète les billets. » → « Il ___ achète. »",
+      "a": ["les"],
+      "why": "Les covers both genders in the plural for direct objects. The indirect plural would be leur, with no -s on the pronoun."
+    },
+    {
+      "id": "pronouns-04",
+      "type": "mcq",
+      "q": "« Je parle à Marie. » → « Je ___ parle. »",
+      "choices": ["la", "lui", "le", "leur"],
+      "a": 1,
+      "why": "Parler à takes a preposition before the person, so this is indirect: lui, which serves both his and her. Only ils/elles switches to leur."
+    },
+    {
+      "id": "pronouns-05",
+      "type": "fill",
+      "q": "Replace the object: « Nous téléphonons à nos amis. » → « Nous ___ téléphonons. »",
+      "a": ["leur"],
+      "why": "Téléphoner à takes à before the person even though English says phone someone with no to. Plural indirect object, so leur, never leurs."
+    },
+    {
+      "id": "pronouns-06",
+      "type": "mcq",
+      "q": "« J'écoute Marie. » → which pronoun replaces Marie?",
+      "choices": ["Je l'écoute.", "Je lui écoute.", "Je la écoute.", "Je leur écoute."],
+      "a": 0,
+      "why": "Écouter takes no preposition in French, so the object is direct: la, elided to l' before the vowel. English listen to is the trap."
+    },
+    {
+      "id": "pronouns-07",
+      "type": "listen",
+      "say": "Elle m'aime.",
+      "q": "Type what you hear.",
+      "a": ["elle m'aime", "elle m'aime."],
+      "why": "Me elides to m' before a vowel, and like every object pronoun it sits in front of the verb."
+    },
+    {
+      "id": "pronouns-08",
+      "type": "order",
+      "q": "Build the sentence: I don't see him.",
+      "words": ["je", "ne", "le", "vois", "pas"],
+      "a": ["je", "ne", "le", "vois", "pas"],
+      "why": "In the negative the pronoun still hugs the verb, so it slots between ne and the verb. Ne le vois pas, never ne vois le pas."
+    },
+    {
+      "id": "pronouns-09",
+      "type": "order",
+      "q": "Build the sentence: I saw him.",
+      "words": ["je", "l'", "ai", "vu"],
+      "a": ["je", "l'", "ai", "vu"],
+      "why": "In a compound tense the pronoun goes before the auxiliary, not before the participle. Je l'ai vu, never j'ai le vu."
+    },
+    {
+      "id": "pronouns-10",
+      "type": "mcq",
+      "q": "Which is the correct positive command for « Give me the book » ?",
+      "choices": ["Donne-moi le livre !", "Donne-me le livre !", "Me donne le livre !", "Donne moi-le livre !"],
+      "a": 0,
+      "why": "A positive command is the one place the pronoun follows the verb, hyphenated, and me becomes moi (te becomes toi)."
+    },
+    {
+      "id": "pronouns-11",
+      "type": "fill",
+      "q": "Complete the negative command: « Ne ___ lève pas ! » (Don't get up!)",
+      "a": ["te"],
+      "why": "A negative command puts everything back in the normal order, before the verb, and the pronoun reverts to te, not toi. Compare lève-toi !"
+    },
+    {
+      "id": "pronouns-12",
+      "type": "mcq",
+      "q": "« Viens avec ___. » (Come with me.)",
+      "choices": ["moi", "me", "je", "mien"],
+      "a": 0,
+      "why": "After a preposition French uses a stressed pronoun. Same set after c'est, standing alone, in comparisons, and joined by et."
+    },
+    {
+      "id": "pronouns-13",
+      "type": "fill",
+      "q": "Complete: « — Je ne suis pas fatigué. — Moi ___ . » (Me neither.)",
+      "a": ["non plus"],
+      "why": "Moi aussi answers a positive statement, moi non plus a negative one. Using moi aussi after a negative is a very common learner error."
+    },
+    {
+      "id": "pronouns-14",
+      "type": "say",
+      "q": "Say this out loud.",
+      "target": "je vais le voir",
+      "why": "With an infinitive the pronoun attaches to the infinitive, not to the conjugated verb: je vais le voir, not je le vais voir."
+    },
+    {
+      "id": "pronouns-15",
+      "type": "open",
+      "q": "What is the test for choosing le / la / les versus lui / leur? Name two verbs where English misleads you.",
+      "a": ["Ask whether the French verb takes à before the person. If yes, use lui / leur (parler à, dire à, donner à, demander à, répondre à, téléphoner à, écrire à). If no, use le / la / les. English misleads with écouter quelqu'un (listen to → je l'écoute), regarder quelqu'un (look at → je le regarde), attendre quelqu'un (wait for → je l'attends), and téléphoner à quelqu'un (phone someone → je lui téléphone)."],
+      "why": "The choice is decided by the French preposition, never by the English one. Learning the à-verbs as a list is faster than reasoning it out each time."
+    }
+  ]
+}

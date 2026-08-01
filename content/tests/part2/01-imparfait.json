@@ -1,0 +1,180 @@
+{
+  "ch": "imparfait",
+  "title": "L'imparfait",
+  "questions": [
+    {
+      "id": "imparfait-01",
+      "type": "mcq",
+      "q": "Where does the imperfect stem come from?",
+      "choices": [
+        "The nous form of the present, minus -ons",
+        "The infinitive, minus its ending",
+        "The ils form of the present, minus -ent",
+        "The je form of the present"
+      ],
+      "a": 0,
+      "why": "Nous parlons → parl-, nous finissons → finiss-, nous buvons → buv-. Because the stem is taken from a real present-tense form, even wild irregulars behave."
+    },
+    {
+      "id": "imparfait-02",
+      "type": "mcq",
+      "q": "How many verbs have an irregular imperfect in French?",
+      "choices": [
+        "None",
+        "One: être",
+        "Six, like the subjunctive",
+        "About twenty"
+      ],
+      "a": 1,
+      "why": "Être has no -ons stem to work from, so it uses ét-: j'étais, nous étions. Everything else follows the nous rule exactly."
+    },
+    {
+      "id": "imparfait-03",
+      "type": "fill",
+      "q": "Imperfect: « nous (finir) ___ »",
+      "a": [
+        "finissions",
+        "nous finissions"
+      ],
+      "why": "Nous finissons gives the stem finiss-, and the nous ending is -ions: finissions. The -iss- belongs to the stem, not to the ending."
+    },
+    {
+      "id": "imparfait-04",
+      "type": "fill",
+      "q": "Imperfect: « je (être) ___ »",
+      "a": [
+        "étais",
+        "j'étais"
+      ],
+      "why": "The one irregular stem in the language: ét- plus the ordinary endings. J'étais, tu étais, il était, nous étions."
+    },
+    {
+      "id": "imparfait-05",
+      "type": "fill",
+      "q": "Imperfect: « il (faire) ___ »",
+      "a": [
+        "faisait",
+        "il faisait"
+      ],
+      "why": "Nous faisons → fais-, so faisait. The spelling keeps the ai even though this stem is not pronounced the way it looks."
+    },
+    {
+      "id": "imparfait-06",
+      "type": "mcq",
+      "q": "Which imperfect of « manger » is correct?",
+      "choices": [
+        "nous mangeions",
+        "nous mangions",
+        "nous mangons",
+        "nous mangeons"
+      ],
+      "a": 1,
+      "why": "The e of -ger is only there to soften the g before a or o. The nous ending is -ions, which starts with i, so the e is dropped: nous mangions. Compare je mangeais, where it must stay."
+    },
+    {
+      "id": "imparfait-07",
+      "type": "fill",
+      "q": "Imperfect: « il (commencer) ___ »",
+      "a": [
+        "commençait",
+        "il commençait"
+      ],
+      "why": "The cedilla keeps the c soft before a: commençait. It disappears in nous commencions, where the i already softens it."
+    },
+    {
+      "id": "imparfait-08",
+      "type": "fill",
+      "q": "Imperfect: « nous (étudier) ___ »",
+      "a": [
+        "étudiions",
+        "nous étudiions"
+      ],
+      "why": "The stem étudi- already ends in i, and the ending -ions adds another: étudiions. It looks like a typo and is correct, exactly like nous riions."
+    },
+    {
+      "id": "imparfait-09",
+      "type": "mcq",
+      "q": "Why is « Elle avait vingt ans » in the imperfect?",
+      "choices": [
+        "Because it happened once and finished",
+        "Because age is a state, and the imperfect describes",
+        "Because avoir has no passé composé",
+        "Because it happened suddenly"
+      ],
+      "a": 1,
+      "why": "The imperfect answers what was going on, never what happened next. Age, weather, feelings and appearance are all states, so they live in the imperfect."
+    },
+    {
+      "id": "imparfait-10",
+      "type": "mcq",
+      "q": "In speech, what separates « je parlais » from « je parlerai » ?",
+      "choices": [
+        "Nothing — they are identical",
+        "The stress falls differently",
+        "An extra r sound in the future",
+        "The vowel of the je"
+      ],
+      "a": 2,
+      "why": "The future is built on the whole infinitive, so parlerai carries a second r that parlais does not. That r is the only audible difference between the two tenses."
+    },
+    {
+      "id": "imparfait-11",
+      "type": "listen",
+      "say": "Il pleuvait.",
+      "q": "Type what you hear.",
+      "a": [
+        "Il pleuvait",
+        "Il pleuvait."
+      ],
+      "why": "Nous pleuvons is not used, but the stem pleuv- is what the imperfect needs. Weather is description, so it is almost always the imperfect."
+    },
+    {
+      "id": "imparfait-12",
+      "type": "fill",
+      "q": "Translate: I used to live in Paris.",
+      "a": [
+        "J'habitais à Paris",
+        "J'habitais Paris",
+        "J'habitais à Paris.",
+        "Je vivais à Paris"
+      ],
+      "why": "Used to is the habit meaning, which is one of the imperfect's three jobs. French has no separate used to construction: the tense carries it."
+    },
+    {
+      "id": "imparfait-13",
+      "type": "order",
+      "q": "Build the suggestion: How about going to the cinema?",
+      "words": [
+        "Si",
+        "on",
+        "allait",
+        "au",
+        "cinéma"
+      ],
+      "a": [
+        "Si",
+        "on",
+        "allait",
+        "au",
+        "cinéma"
+      ],
+      "why": "Si plus the imperfect, with no second half, is a fixed way of proposing something. Nothing about it is past."
+    },
+    {
+      "id": "imparfait-14",
+      "type": "say",
+      "q": "Say this out loud: the weather was nice.",
+      "target": "il faisait beau",
+      "why": "Faire in the imperfect is the standard weather verb, and the -ait ending is the same sound as -ais and -aient."
+    },
+    {
+      "id": "imparfait-15",
+      "type": "open",
+      "q": "Name the three jobs of the imperfect, with a French example each.",
+      "a": [
+        "1. Ongoing background action: Je lisais quand tu es arrivé. 2. Habit or repeated action: Quand j'étais petit, j'allais à la mer tous les étés. 3. Description of a state — weather, age, feelings, appearance: Il faisait beau / Elle avait vingt ans / J'étais fatigué."
+      ],
+      "why": "All three reduce to the same idea: the imperfect describes rather than narrates. Verbs of state — être, avoir, savoir, vouloir, pouvoir — default to it for that reason."
+    }
+  ]
+}

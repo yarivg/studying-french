@@ -1,0 +1,118 @@
+{
+  "ch": "silent-letters",
+  "title": "Silent letters and the final -e",
+  "questions": [
+    {
+      "id": "silent-letters-01",
+      "type": "mcq",
+      "q": "In which of these is the final c silent?",
+      "choices": ["le banc", "le parc", "avec", "le lac"],
+      "a": 0,
+      "why": "c is one of the CaReFuL consonants that usually survive at the end of a word, but le banc is one of the words that breaks the tendency: it ends on a nasal vowel with no k."
+    },
+    {
+      "id": "silent-letters-02",
+      "type": "mcq",
+      "q": "Which of these words keeps its final r?",
+      "choices": ["la mer", "parler", "manger", "le boulanger"],
+      "a": 0,
+      "why": "Every -er infinitive ends in the sound of é: parler, manger, travailler. Short -er words keep the r instead: la mer, hier, l'hiver, le fer, cher."
+    },
+    {
+      "id": "silent-letters-03",
+      "type": "mcq",
+      "q": "The mnemonic CaReFuL tells you which final consonants often stay audible. Which letters is it standing for?",
+      "choices": ["c, r, f, l", "c, r, f, n", "s, t, d, x", "c, l, s, t"],
+      "a": 0,
+      "why": "It is a tendency, not a law: le tabac, gentil, le fusil and the whole -er infinitive family all break it. Everything else final is silent by default."
+    },
+    {
+      "id": "silent-letters-04",
+      "type": "mcq",
+      "q": "In which of these is the ending -ent actually pronounced?",
+      "choices": ["souvent", "ils chantent", "elles parlent", "ils arrivent"],
+      "a": 0,
+      "why": "The silence belongs to the verb ending, not to the letters. On a third person plural verb, -ent is completely silent; in an ordinary word like souvent, content or le vent it is a nasal vowel."
+    },
+    {
+      "id": "silent-letters-05",
+      "type": "mcq",
+      "q": "What is the audible difference between « le gâteau » and « les gâteaux » ?",
+      "choices": ["Only the article: the noun sounds identical", "The x is heard at the end of the plural", "The plural has an extra syllable", "There is no difference at all"],
+      "a": 0,
+      "why": "Plural -s and -x are never pronounced, so the whole singular/plural distinction rides on the article. If you blur le and les, or un and des, your listener cannot tell how many you mean."
+    },
+    {
+      "id": "silent-letters-06",
+      "type": "mcq",
+      "q": "What sound does the ending -ée have in « l'année » or « la durée » ?",
+      "choices": ["the tight \"ay\" of é", "\"ee\"", "a soft \"uh\"", "nothing — it is silent"],
+      "a": 0,
+      "why": "A vowel followed by a silent e keeps its own sound: -ée is é, -ie is \"ee\" (la vie), -oue is \"oo\" (la roue). The e adds nothing but a letter."
+    },
+    {
+      "id": "silent-letters-07",
+      "type": "fill",
+      "q": "« grand » ends on a nasal vowel with no d. Write the form with a silent final e, where the d becomes audible.",
+      "a": ["grande"],
+      "why": "The job of a silent final e is to make the consonant before it sound. Il est grand and elle est grande differ by exactly that one consonant."
+    },
+    {
+      "id": "silent-letters-08",
+      "type": "fill",
+      "q": "« heureux » ends in a silent x. Write the form ending in -euse, where that letter is heard as a z.",
+      "a": ["heureuse"],
+      "why": "Same mechanism as grand/grande: français becomes française with an audible z, vert becomes verte with an audible t."
+    },
+    {
+      "id": "silent-letters-09",
+      "type": "fill",
+      "q": "Write the ils / elles form of « chanter ».",
+      "a": ["chantent"],
+      "why": "Written with four extra letters, said exactly like je chante, tu chantes and il chante. Three of the six present-tense forms of an -er verb are homophones."
+    },
+    {
+      "id": "silent-letters-10",
+      "type": "fill",
+      "q": "Write the vous form of « chanter ».",
+      "a": ["chantez"],
+      "why": "-ez is the sound of é, like the infinitive. Only nous (-ons) and vous (-ez) break away from the silent block of the other four forms."
+    },
+    {
+      "id": "silent-letters-11",
+      "type": "listen",
+      "say": "les gâteaux",
+      "q": "Type what you hear, singular or plural.",
+      "a": ["les gâteaux"],
+      "why": "The noun is identical in both numbers; only the vowel of the article tells you. les is a tight \"lay\", le is a soft \"luh\"."
+    },
+    {
+      "id": "silent-letters-12",
+      "type": "say",
+      "q": "Say this out loud. The last four letters are silent.",
+      "target": "ils parlent",
+      "why": "Verb -ent is silent, so this sounds exactly like il parle. Only the pronoun tells a listener how many people are talking."
+    },
+    {
+      "id": "silent-letters-13",
+      "type": "say",
+      "q": "Say this out loud, and land clearly on the final consonant.",
+      "target": "elle est grande",
+      "why": "Swallow the d and you have said elle est grand. In speech the audible final consonant is the agreement."
+    },
+    {
+      "id": "silent-letters-14",
+      "type": "say",
+      "q": "Say this at natural speed — the e in the middle usually disappears.",
+      "target": "maintenant",
+      "why": "An unaccented e inside a word is routinely dropped: maintenant is two syllables in ordinary speech, la semaine can lose its first e, and je ne sais pas collapses almost to one word."
+    },
+    {
+      "id": "silent-letters-15",
+      "type": "open",
+      "q": "A final -e is silent. Explain why it still matters, with two examples.",
+      "a": ["Its job is to make the consonant before it audible: grand has no d but grande does, petit has no t but petite does, français ends in a vowel but française ends in a z sound. That is the whole mechanism behind feminine adjectives and past participles, so swallowing the final consonant removes the agreement from your speech."],
+      "why": "Almost every audible masculine/feminine contrast in French comes from this one spelling fact."
+    }
+  ]
+}

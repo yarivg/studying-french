@@ -1,0 +1,174 @@
+{
+  "ch": "participe-present",
+  "title": "Participe présent, gérondif, adjectif verbal",
+  "questions": [
+    {
+      "id": "participe-present-01",
+      "type": "mcq",
+      "q": "How is the -ant form built?",
+      "choices": [
+        "The infinitive plus -ant",
+        "The nous form of the present, minus -ons, plus -ant",
+        "The je form of the present, plus -ant",
+        "The past participle plus -ant"
+      ],
+      "a": 1,
+      "why": "Nous parlons gives parlant, nous finissons gives finissant. The only irregulars are ayant, étant and sachant."
+    },
+    {
+      "id": "participe-present-02",
+      "type": "fill",
+      "q": "Il travaille ___ (écouter) la radio.",
+      "a": [
+        "en écoutant"
+      ],
+      "why": "Two actions at once by the same subject is the gérondif, and the gérondif always carries en."
+    },
+    {
+      "id": "participe-present-03",
+      "type": "mcq",
+      "q": "In « Les gens habitant ici doivent s'inscrire », what is habitant?",
+      "choices": [
+        "A gérondif",
+        "A participe présent",
+        "An adjectif verbal",
+        "A noun"
+      ],
+      "a": 1,
+      "why": "No en, and it stands in for a relative clause: qui habitent ici. That is the participe présent, and it never agrees."
+    },
+    {
+      "id": "participe-present-04",
+      "type": "fill",
+      "q": "Agreement: « des films (fasciner) ___ »",
+      "a": [
+        "fascinants"
+      ],
+      "why": "Here the -ant word simply describes the noun, like an ordinary adjective, so it is an adjectif verbal and it agrees: masculine plural."
+    },
+    {
+      "id": "participe-present-05",
+      "type": "fill",
+      "q": "Agreement: « une soirée (charmer) ___ »",
+      "a": [
+        "charmante"
+      ],
+      "why": "Adjectif verbal, feminine singular. Compare « une femme charmant ses invités », where the complement makes it a verb and it stays invariable."
+    },
+    {
+      "id": "participe-present-06",
+      "type": "mcq",
+      "q": "Why is there no -e on charmant in « Une femme charmant ses invités » ?",
+      "choices": [
+        "Because charmer has no feminine form",
+        "Because it has a complement, so it is a verb and invariable",
+        "Because femme is treated as masculine here",
+        "Because the -e is silent anyway"
+      ],
+      "a": 1,
+      "why": "The complement ses invités is the giveaway: the word is doing verb work, so it is a participe présent. Une femme charmante, with no complement, is an adjective and agrees."
+    },
+    {
+      "id": "participe-present-07",
+      "type": "fill",
+      "q": "Spelling: « un travail (fatiguer) ___ » — an exhausting job.",
+      "a": [
+        "fatigant"
+      ],
+      "why": "The adjective drops the u: fatigant. The participle keeps it: « ce travail, fatiguant tout le monde, a été abandonné »."
+    },
+    {
+      "id": "participe-present-08",
+      "type": "fill",
+      "q": "Spelling: « le jour (précéder) ___ son départ » — the day preceding his departure.",
+      "a": [
+        "précédant"
+      ],
+      "why": "With a complement it is a verb, spelled -ant. Le jour précédent, with -ent, is the adjective meaning the previous day."
+    },
+    {
+      "id": "participe-present-09",
+      "type": "mcq",
+      "q": "Which construction can have its own subject, different from the main clause's?",
+      "choices": [
+        "The gérondif",
+        "The participe présent",
+        "The adjectif verbal",
+        "None of them"
+      ],
+      "a": 1,
+      "why": "« Le train étant en retard, nous avons attendu » — le train is the participle's own subject. A gérondif can only ever refer to the sentence's subject."
+    },
+    {
+      "id": "participe-present-10",
+      "type": "order",
+      "q": "Build the sentence: People wishing to take part must sign up.",
+      "words": [
+        "Les",
+        "personnes",
+        "souhaitant",
+        "participer",
+        "doivent",
+        "s'inscrire"
+      ],
+      "a": [
+        "Les",
+        "personnes",
+        "souhaitant",
+        "participer",
+        "doivent",
+        "s'inscrire"
+      ],
+      "why": "The participe présent compresses a relative clause: souhaitant stands for qui souhaitent. It never agrees, however plural the noun."
+    },
+    {
+      "id": "participe-present-11",
+      "type": "fill",
+      "q": "Translate the opening: « ___ mangé, je suis sorti. » — after eating, I went out.",
+      "a": [
+        "Après avoir"
+      ],
+      "why": "French uses the infinitive after prepositions, not -ant. En is the single exception, which is exactly why the gérondif exists."
+    },
+    {
+      "id": "participe-present-12",
+      "type": "mcq",
+      "q": "How do you say « Reading is useful » in French?",
+      "choices": [
+        "Lisant est utile.",
+        "Lire est utile.",
+        "En lisant est utile.",
+        "La lisant est utile."
+      ],
+      "a": 1,
+      "why": "Where English nominalises with -ing, French uses the plain infinitive. Voir, c'est croire — seeing is believing."
+    },
+    {
+      "id": "participe-present-13",
+      "type": "listen",
+      "say": "On apprend en faisant des erreurs.",
+      "q": "Type what you hear, in correct written French.",
+      "a": [
+        "On apprend en faisant des erreurs.",
+        "On apprend en faisant des erreurs"
+      ],
+      "why": "Gérondif of manner: this is how you learn. Faisant comes from nous faisons, minus -ons."
+    },
+    {
+      "id": "participe-present-14",
+      "type": "say",
+      "q": "Say this out loud: Having finished, she went home.",
+      "target": "Ayant fini, elle est rentrée",
+      "why": "Ayant plus a past participle is the participe passé composé, meaning having done. It marks the action as earlier than the main verb."
+    },
+    {
+      "id": "participe-present-15",
+      "type": "open",
+      "q": "Give the one test that separates the gérondif, the participe présent and the adjectif verbal, with an example of each.",
+      "a": [
+        "Ask what job the word is doing. Is there an en in front? Gérondif, invariable: il travaille en écoutant la radio. Does it have a complement or replace qui plus a verb? Participe présent, invariable: les personnes souhaitant participer. Is it just describing a noun, like big or red? Adjectif verbal, and it agrees: une histoire intéressante."
+      ],
+      "why": "The three forms are spelled the same, so only their function in the sentence tells them apart — and only the adjective ever agrees."
+    }
+  ]
+}

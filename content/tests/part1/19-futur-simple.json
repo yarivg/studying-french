@@ -1,0 +1,175 @@
+{
+  "ch": "futur-simple",
+  "title": "Le futur simple",
+  "questions": [
+    {
+      "id": "futur-simple-01",
+      "type": "mcq",
+      "q": "Where do the futur simple endings come from?",
+      "choices": [
+        "The present tense of « avoir »",
+        "The present tense of « être »",
+        "The imperfect endings",
+        "The present tense of « aller »"
+      ],
+      "a": 0,
+      "why": "The endings -ai, -as, -a, -ons, -ez, -ont are the present of avoir (with the -av- of avons/avez dropped), stuck onto the stem."
+    },
+    {
+      "id": "futur-simple-02",
+      "type": "mcq",
+      "q": "How do you build the future stem of an -re verb like « vendre » ?",
+      "choices": [
+        "Use the whole infinitive",
+        "Drop the final -e, then add the endings",
+        "Drop -re and add -ir",
+        "Use the nous form of the present"
+      ],
+      "a": 1,
+      "why": "-er and -ir verbs keep the whole infinitive; -re verbs lose the final -e first, giving vendr- : je vendrai."
+    },
+    {
+      "id": "futur-simple-03",
+      "type": "fill",
+      "q": "Conjugate in the futur simple: nous (finir) ___ le travail demain.",
+      "a": [
+        "finirons"
+      ],
+      "why": "-ir verbs use the full infinitive as the stem: finir- + -ons. Every future form keeps the r before the ending."
+    },
+    {
+      "id": "futur-simple-04",
+      "type": "mcq",
+      "q": "Which letter is always present just before a futur simple ending?",
+      "choices": [
+        "s",
+        "r",
+        "t",
+        "v"
+      ],
+      "a": 1,
+      "why": "Every future form contains an r before the ending. That /r/ is what separates « je parlerai » (future) from « je parlais » (imperfect) in speech."
+    },
+    {
+      "id": "futur-simple-05",
+      "type": "fill",
+      "q": "Irregular stem: je (être) ___ à Paris l'année prochaine.",
+      "a": [
+        "serai"
+      ],
+      "why": "Être has the stem ser-. The endings never change, so only the stem has to be memorised: je serai, tu seras, il sera."
+    },
+    {
+      "id": "futur-simple-06",
+      "type": "fill",
+      "q": "Irregular stem: il (aller) ___ au marché.",
+      "a": [
+        "ira"
+      ],
+      "why": "Aller has the shortest stem in the language, ir-, so the whole future is irai, iras, ira, irons, irez, iront."
+    },
+    {
+      "id": "futur-simple-07",
+      "type": "mcq",
+      "q": "Which of these future forms is correct for « voir » in the je form?",
+      "choices": [
+        "je voirai",
+        "je verrai",
+        "je voirrai",
+        "je verai"
+      ],
+      "a": 1,
+      "why": "Voir has the stem verr- with a double r. Pouvoir (pourr-), envoyer (enverr-), courir (courr-) and mourir (mourr-) behave the same way."
+    },
+    {
+      "id": "futur-simple-08",
+      "type": "fill",
+      "q": "Spelling change: j'(acheter) ___ du pain.",
+      "a": [
+        "achèterai"
+      ],
+      "why": "The e → è shift of the present carries into the future, and unlike the present it applies to all six persons: j'achèterai, nous achèterons."
+    },
+    {
+      "id": "futur-simple-09",
+      "type": "mcq",
+      "q": "Which verb keeps its é unchanged in the future?",
+      "choices": [
+        "acheter",
+        "appeler",
+        "préférer",
+        "jeter"
+      ],
+      "a": 2,
+      "why": "Verbs in é are the exception: préférer → je préférerai. Acheter takes è, while appeler and jeter double the consonant (j'appellerai, je jetterai)."
+    },
+    {
+      "id": "futur-simple-10",
+      "type": "fill",
+      "q": "Complete: Quand j'___ (avoir) le temps, je t'appellerai.",
+      "a": [
+        "aurai"
+      ],
+      "why": "After quand, lorsque, dès que and tant que, French uses the future where English uses the present. Avoir's stem is aur-."
+    },
+    {
+      "id": "futur-simple-11",
+      "type": "order",
+      "q": "Build the sentence: As soon as he arrives, we'll eat.",
+      "words": [
+        "Dès",
+        "qu'il",
+        "arrivera",
+        "on",
+        "mangera"
+      ],
+      "a": [
+        "Dès",
+        "qu'il",
+        "arrivera",
+        "on",
+        "mangera"
+      ],
+      "why": "Both halves are in the future after dès que — the English present (\"as soon as he arrives\") does not transfer."
+    },
+    {
+      "id": "futur-simple-12",
+      "type": "mcq",
+      "q": "« Attention, tu ___ tomber ! » Which fits?",
+      "choices": [
+        "vas",
+        "tomberas",
+        "seras"
+      ],
+      "a": 0,
+      "why": "The event is immediate, so the futur proche (aller + infinitive) is the only natural choice. The futur simple suits distant or general statements."
+    },
+    {
+      "id": "futur-simple-13",
+      "type": "listen",
+      "say": "Il pleuvra demain",
+      "q": "Type what you hear.",
+      "a": [
+        "Il pleuvra demain",
+        "Il pleuvra demain."
+      ],
+      "why": "Pleuvoir has the future stem pleuvr- and exists only in the il form: il pleuvra."
+    },
+    {
+      "id": "futur-simple-14",
+      "type": "say",
+      "q": "Say this out loud, making the double r audible.",
+      "target": "je courrai",
+      "why": "The doubled r of courrai is longer than a single one, and it is the only thing distinguishing « je courais » (imperfect) from « je courrai » (future)."
+    },
+    {
+      "id": "futur-simple-15",
+      "type": "open",
+      "q": "Explain what the futur antérieur is, how it is formed, and give one example sentence.",
+      "a": [
+        "Avoir or être in the futur simple + past participle, meaning 'will have done'. Auxiliary choice and participle agreement follow the passé composé rules. Example: J'aurai fini avant midi. / Quand tu arriveras, je serai déjà parti."
+      ],
+      "why": "Once you know the future of avoir and être, the future perfect costs nothing extra: it is just the passé composé with a future auxiliary."
+    }
+  ]
+}

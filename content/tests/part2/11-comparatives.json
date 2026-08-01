@@ -1,0 +1,119 @@
+{
+  "ch": "comparatives",
+  "title": "Comparatives and superlatives",
+  "questions": [
+    {
+      "id": "comparatives-01",
+      "type": "fill",
+      "q": "Complete: « Elle est ___ intelligente que son frère. » (as intelligent as)",
+      "a": ["aussi"],
+      "why": "Aussi … que is as … as with an adjective. Plus … que and moins … que fill the same frame."
+    },
+    {
+      "id": "comparatives-02",
+      "type": "mcq",
+      "q": "« Il est plus grand que ___. » (than me)",
+      "choices": ["moi", "je", "me", "mien"],
+      "a": 0,
+      "why": "After que a comparison takes a stressed pronoun: moi, toi, lui, elle, nous, vous, eux, elles. Que je is never possible."
+    },
+    {
+      "id": "comparatives-03",
+      "type": "mcq",
+      "q": "« J'ai ___ livres que toi. » (as many books as)",
+      "choices": ["autant de", "aussi", "aussi de", "autant"],
+      "a": 0,
+      "why": "Aussi is for qualities (aussi grand que), autant de for quantities of a noun. With a noun the comparative always needs de."
+    },
+    {
+      "id": "comparatives-04",
+      "type": "fill",
+      "q": "Complete: « Il a ___ argent que moi. » (less money than)",
+      "a": ["moins d'"],
+      "why": "Moins de before a noun, and de elides before the vowel of argent. Compare il travaille moins que moi, where a verb needs no de."
+    },
+    {
+      "id": "comparatives-05",
+      "type": "mcq",
+      "q": "« Ce vin est ___ que l'autre. »",
+      "choices": ["meilleur", "mieux", "plus bon", "plus bien"],
+      "a": 0,
+      "why": "Meilleur is the comparative of the adjective bon, describing the wine. Plus bon does not exist."
+    },
+    {
+      "id": "comparatives-06",
+      "type": "mcq",
+      "q": "« Il chante ___ que moi. »",
+      "choices": ["mieux", "meilleur", "plus bien", "meilleure"],
+      "a": 0,
+      "why": "Mieux is the comparative of the adverb bien, describing how he sings. Adjective bon → meilleur; adverb bien → mieux."
+    },
+    {
+      "id": "comparatives-07",
+      "type": "fill",
+      "q": "Complete: « C'est la ___ solution. » (the best)",
+      "a": ["meilleure"],
+      "why": "Meilleur is an adjective, so it agrees: meilleur, meilleure, meilleurs, meilleures. Mieux never changes."
+    },
+    {
+      "id": "comparatives-08",
+      "type": "mcq",
+      "q": "« Je me sens ___. » (I feel better)",
+      "choices": ["mieux", "meilleur", "plus bien", "meilleure"],
+      "a": 0,
+      "why": "Se sentir is being modified as a verb, so the adverb mieux. C'est meilleur would mean it tastes better."
+    },
+    {
+      "id": "comparatives-09",
+      "type": "order",
+      "q": "Build the phrase: the most serious problem",
+      "words": ["le", "problème", "le", "plus", "grave"],
+      "a": ["le", "problème", "le", "plus", "grave"],
+      "why": "Grave normally follows the noun, so the superlative follows too and the article is repeated. Grand goes before, giving le plus grand problème with one article."
+    },
+    {
+      "id": "comparatives-10",
+      "type": "fill",
+      "q": "Complete: « C'est le plus grand ___ la classe. » (the tallest in the class)",
+      "a": ["de"],
+      "why": "English in becomes French de after a superlative: le plus grand de la classe, la plus belle ville du monde."
+    },
+    {
+      "id": "comparatives-11",
+      "type": "listen",
+      "say": "Il court le plus vite.",
+      "q": "Type what you hear.",
+      "a": ["il court le plus vite"],
+      "why": "A superlative adverb has no gender, so the article is always le, even about a woman: c'est elle qui travaille le plus."
+    },
+    {
+      "id": "comparatives-12",
+      "type": "mcq",
+      "q": "Which means « the worst » ?",
+      "choices": ["le pire", "le plus pire", "le moindre", "le mieux"],
+      "a": 0,
+      "why": "Mauvais → pire → le pire. Le moindre is the superlative of petit in its abstract sense: je n'ai pas la moindre idée."
+    },
+    {
+      "id": "comparatives-13",
+      "type": "fill",
+      "q": "Complete: « J'ai ___ temps. » (less and less time)",
+      "a": ["de moins en moins de"],
+      "why": "De plus en plus and de moins en moins express progression, and before a noun they need a second de: de moins en moins de temps."
+    },
+    {
+      "id": "comparatives-14",
+      "type": "say",
+      "q": "Say this out loud.",
+      "target": "de plus en plus froid",
+      "why": "De plus en plus sits before the adjective as a block. The more … the more uses a different pattern: plus je travaille, plus je suis fatigué."
+    },
+    {
+      "id": "comparatives-15",
+      "type": "open",
+      "q": "Explain the difference between meilleur and mieux, and give one sentence for each.",
+      "a": ["Meilleur is an adjective, the comparative of bon: it describes a noun and agrees with it. Ce vin est meilleur que l'autre. C'est la meilleure solution. Mieux is an adverb, the comparative of bien: it describes a verb and never changes. Il chante mieux que moi. Je me sens mieux. Superlatives: le meilleur (adjective) versus le mieux (adverb). Neither plus bon nor plus bien exists."],
+      "why": "The pair is just bon versus bien one step up. Ask whether the word is describing a noun or a verb, and the choice makes itself."
+    }
+  ]
+}

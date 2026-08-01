@@ -1,0 +1,174 @@
+{
+  "ch": "subjonctif-forms",
+  "title": "Le subjonctif: forms",
+  "questions": [
+    {
+      "id": "subjonctif-forms-01",
+      "type": "mcq",
+      "q": "Where does the subjunctive stem come from?",
+      "choices": [
+        "The nous form of the present, minus -ons",
+        "The ils / elles form of the present, minus -ent",
+        "The infinitive, minus its ending",
+        "The future stem"
+      ],
+      "a": 1,
+      "why": "Ils finissent → finiss-, ils écrivent → écriv-, ils mettent → mett-. Compare the imperfect, which takes the nous stem instead."
+    },
+    {
+      "id": "subjonctif-forms-02",
+      "type": "fill",
+      "q": "Subjunctive: « que je (finir) ___ »",
+      "a": [
+        "finisse",
+        "que je finisse"
+      ],
+      "why": "Stem finiss- plus the ending -e. The endings are -e, -es, -e, -ions, -iez, -ent for every verb except être and avoir."
+    },
+    {
+      "id": "subjonctif-forms-03",
+      "type": "fill",
+      "q": "Subjunctive: « que je (prendre) ___ »",
+      "a": [
+        "prenne",
+        "que je prenne"
+      ],
+      "why": "Ils prennent gives the stem prenn-. Prendre is a two-stem verb, so nous and vous fall back on the nous stem: que nous prenions."
+    },
+    {
+      "id": "subjonctif-forms-04",
+      "type": "fill",
+      "q": "Subjunctive: « que nous (boire) ___ »",
+      "a": [
+        "buvions",
+        "que nous buvions"
+      ],
+      "why": "The nous and vous forms borrow the nous stem of the present: nous buvons → buvions. Compare que je boive, from ils boivent."
+    },
+    {
+      "id": "subjonctif-forms-05",
+      "type": "mcq",
+      "q": "Which verb is NOT one of the six outright irregulars?",
+      "choices": [
+        "être",
+        "aller",
+        "venir",
+        "savoir"
+      ],
+      "a": 2,
+      "why": "The six are être, avoir, aller, faire, pouvoir, savoir. Venir just has two stems, exactly as it does in the present: que je vienne, que nous venions."
+    },
+    {
+      "id": "subjonctif-forms-06",
+      "type": "fill",
+      "q": "Subjunctive: « que je (être) ___ »",
+      "a": [
+        "sois",
+        "que je sois"
+      ],
+      "why": "Être and avoir break the endings too: que je sois with no -e, que nous soyons. They matter most because they build the past subjunctive."
+    },
+    {
+      "id": "subjonctif-forms-07",
+      "type": "fill",
+      "q": "Subjunctive: « qu'il (avoir) ___ »",
+      "a": [
+        "ait",
+        "qu'il ait"
+      ],
+      "why": "Que j'aie, que tu aies, qu'il ait, que nous ayons. The endings are irregular here in the same way as for être."
+    },
+    {
+      "id": "subjonctif-forms-08",
+      "type": "fill",
+      "q": "Subjunctive: « que nous (aller) ___ »",
+      "a": [
+        "allions",
+        "que nous allions"
+      ],
+      "why": "Aller is irregular in the singular and third plural, with aill-, but nous and vous are perfectly regular: allions, alliez."
+    },
+    {
+      "id": "subjonctif-forms-09",
+      "type": "mcq",
+      "q": "Which set is correct?",
+      "choices": [
+        "que je fasse, que je puisse, que je sache",
+        "que je faise, que je peuve, que je savoie",
+        "que je fasse, que je pouve, que je sache",
+        "que je fais, que je puis, que je sais"
+      ],
+      "a": 0,
+      "why": "Faire → fass-, pouvoir → puiss-, savoir → sach-, all with the ordinary endings. These three plus être, avoir and aller are the whole irregular list."
+    },
+    {
+      "id": "subjonctif-forms-10",
+      "type": "mcq",
+      "q": "What is the subjunctive of « falloir » ?",
+      "choices": [
+        "qu'il faut",
+        "qu'il faille",
+        "qu'il faudrait",
+        "qu'il fallait"
+      ],
+      "a": 1,
+      "why": "Impersonal and irregular: qu'il faille, alongside qu'il vaille from valoir and qu'il pleuve from pleuvoir."
+    },
+    {
+      "id": "subjonctif-forms-11",
+      "type": "fill",
+      "q": "Past subjunctive: « Je suis content qu'il ___ (venir) hier. »",
+      "a": [
+        "soit venu"
+      ],
+      "why": "The subordinate action happened before the main verb, so the subjunctive of the auxiliary plus the participle. Venir takes être, so the participle agrees: venu."
+    },
+    {
+      "id": "subjonctif-forms-12",
+      "type": "order",
+      "q": "Build the sentence, in the past subjunctive: I doubt he understood.",
+      "words": [
+        "Je",
+        "doute",
+        "qu'il",
+        "ait",
+        "compris"
+      ],
+      "a": [
+        "Je",
+        "doute",
+        "qu'il",
+        "ait",
+        "compris"
+      ],
+      "why": "Comprendre takes avoir, so the subjunctive of avoir: ait, plus compris. Auxiliary choice and agreement follow the usual rules."
+    },
+    {
+      "id": "subjonctif-forms-13",
+      "type": "say",
+      "q": "Say this out loud: I want him to do that.",
+      "target": "je veux qu'il fasse ça",
+      "why": "Fasse is the subjunctive of faire, one of the six irregulars. Learn the forms with que attached, since the mood never appears without it."
+    },
+    {
+      "id": "subjonctif-forms-14",
+      "type": "listen",
+      "say": "Il faut que tu partes.",
+      "q": "Type what you hear.",
+      "a": [
+        "Il faut que tu partes",
+        "Il faut que tu partes."
+      ],
+      "why": "Ils partent gives the stem part-, and the tu ending is -es. The final -es is silent, so only the written form shows the mood."
+    },
+    {
+      "id": "subjonctif-forms-15",
+      "type": "open",
+      "q": "Give the « que je » and « que nous » forms of the six irregular subjunctives.",
+      "a": [
+        "être: que je sois, que nous soyons. avoir: que j'aie, que nous ayons. aller: que j'aille, que nous allions. faire: que je fasse, que nous fassions. pouvoir: que je puisse, que nous puissions. savoir: que je sache, que nous sachions."
+      ],
+      "why": "Only être and avoir also break the endings; the other four take the normal -e, -es, -e, -ions, -iez, -ent on an irregular stem."
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "ch": "si-clauses",
+  "title": "Si-clauses",
+  "questions": [
+    {
+      "id": "si-clauses-01",
+      "type": "mcq",
+      "q": "Which two tenses may never appear after conditional « si » ?",
+      "choices": [
+        "The imperfect and the pluperfect",
+        "The future and the conditional",
+        "The present and the imperfect",
+        "The pluperfect and the past conditional"
+      ],
+      "a": 1,
+      "why": "After si you may write the present, the imperfect or the pluperfect, and nothing else. Si j'aurais su is the textbook example of bad French; the correct form is si j'avais su."
+    },
+    {
+      "id": "si-clauses-02",
+      "type": "say",
+      "q": "Say this out loud: if you want, we can leave.",
+      "target": "si tu veux, on peut partir",
+      "why": "Type 1, the everyday one: si plus the present, with the present, future or imperative in the other half."
+    },
+    {
+      "id": "si-clauses-03",
+      "type": "fill",
+      "q": "Type 1: « S'il ___ (pleuvoir), je resterai à la maison. »",
+      "a": [
+        "pleut"
+      ],
+      "why": "The main clause may be in the future, but the si clause stays in the present. Note s' before il: the elision happens only before il and ils."
+    },
+    {
+      "id": "si-clauses-04",
+      "type": "fill",
+      "q": "Type 2: « Si j'___ (avoir) de l'argent, j'achèterais une maison. »",
+      "a": [
+        "avais"
+      ],
+      "why": "Unreal present: si plus the imperfect, with the present conditional opposite. The imperfect here has nothing to do with the past — it is just what the pattern requires."
+    },
+    {
+      "id": "si-clauses-05",
+      "type": "fill",
+      "q": "Type 2, other half: « Si tu venais, on ___ (être) content. »",
+      "a": [
+        "serait",
+        "on serait content"
+      ],
+      "why": "Imperfect in the si half forces the present conditional in the main half. Never the reverse."
+    },
+    {
+      "id": "si-clauses-06",
+      "type": "fill",
+      "q": "Type 3: « Si j'___ (savoir), je serais venu. »",
+      "a": [
+        "avais su"
+      ],
+      "why": "Unreal past: si plus the pluperfect, with the past conditional opposite. This is the tense of regret — it did not happen and it is too late."
+    },
+    {
+      "id": "si-clauses-07",
+      "type": "fill",
+      "q": "Type 3, other half: « Si tu m'avais appelé, j'___ (répondre). »",
+      "a": [
+        "aurais répondu"
+      ],
+      "why": "Pluperfect in the si half, past conditional in the main half. Répondre takes avoir, and there is no preceding direct object, so the participle stays flat."
+    },
+    {
+      "id": "si-clauses-08",
+      "type": "mcq",
+      "q": "Which pairing is a real French pattern?",
+      "choices": [
+        "si + imparfait → conditionnel présent",
+        "si + conditionnel → imparfait",
+        "si + futur → présent",
+        "si + subjonctif → conditionnel"
+      ],
+      "a": 0,
+      "why": "The three legal rows are: présent → présent/futur/impératif, imparfait → conditionnel présent, plus-que-parfait → conditionnel passé. There is no French subjunctive after si, ever."
+    },
+    {
+      "id": "si-clauses-09",
+      "type": "mcq",
+      "q": "« Si j'étais toi, je ne dirais rien. » What is « étais » here?",
+      "choices": [
+        "A subjunctive, matching English if I were",
+        "The ordinary imperfect, which is simply what type 2 requires",
+        "A past tense — it is about something that used to be true",
+        "A mistake for si je serais"
+      ],
+      "a": 1,
+      "why": "English marks this with a special subjunctive form, were. French just uses the imperfect, and that trap catches English speakers constantly."
+    },
+    {
+      "id": "si-clauses-10",
+      "type": "mcq",
+      "q": "Is « Je ne sais pas s'il viendra » correct?",
+      "choices": [
+        "No — si never takes the future",
+        "Yes — here si means whether, and the ban does not apply",
+        "No — it should be s'il vienne",
+        "Yes, but only in writing"
+      ],
+      "a": 1,
+      "why": "The ban on the future applies only to conditional si. If you can substitute whether in English, the future is allowed: s'il viendra, je serai content would be wrong, because there si means if."
+    },
+    {
+      "id": "si-clauses-11",
+      "type": "mcq",
+      "q": "Which type is « Si j'avais étudié, je parlerais français maintenant » ?",
+      "choices": [
+        "Type 2, unreal present",
+        "Type 3, unreal past",
+        "Mixed: a past condition with a present result",
+        "Ungrammatical"
+      ],
+      "a": 2,
+      "why": "The halves keep their own logic. A pluperfect condition can carry a present conditional result, and the reverse also works: si j'étais plus organisé, j'aurais fini hier."
+    },
+    {
+      "id": "si-clauses-12",
+      "type": "mcq",
+      "q": "Which tense follows « au cas où » ?",
+      "choices": [
+        "The subjunctive",
+        "The future",
+        "The conditional",
+        "The pluperfect"
+      ],
+      "a": 2,
+      "why": "Au cas où is the one if-like expression that takes the conditional: au cas où il pleuvrait, prends un parapluie. À condition que and à moins que take the subjunctive; même si takes the indicative."
+    },
+    {
+      "id": "si-clauses-13",
+      "type": "order",
+      "q": "Build the sentence: I'll stay home if it rains.",
+      "words": [
+        "Je",
+        "resterai",
+        "à",
+        "la",
+        "maison",
+        "s'il",
+        "pleut"
+      ],
+      "a": [
+        "Je",
+        "resterai",
+        "à",
+        "la",
+        "maison",
+        "s'il",
+        "pleut"
+      ],
+      "why": "Either half may come first; only the comma changes, and with the main clause first there is none. The future stays out of the si half."
+    },
+    {
+      "id": "si-clauses-14",
+      "type": "listen",
+      "say": "Si j'étais toi, je partirais.",
+      "q": "Type what you hear.",
+      "a": [
+        "Si j'étais toi, je partirais",
+        "Si j'étais toi je partirais",
+        "Si j'étais toi, je partirais."
+      ],
+      "why": "Type 2 in its purest form: imperfect after si, present conditional after the comma."
+    },
+    {
+      "id": "si-clauses-15",
+      "type": "open",
+      "q": "Write out the three si-patterns as a table: which tense goes in each half, and what each means.",
+      "a": [
+        "1. Real: si + présent → présent, futur or impératif. It may well happen: S'il pleut, je resterai à la maison. 2. Unreal present: si + imparfait → conditionnel présent. It isn't so, but imagine: Si j'avais de l'argent, j'achèterais une maison. 3. Unreal past: si + plus-que-parfait → conditionnel passé. It didn't happen: Si j'avais su, je serais venu."
+      ],
+      "why": "Three rows, learned once, and conditionals stop being a problem. The one thing to carry above all: no future and no conditional after si."
+    }
+  ]
+}

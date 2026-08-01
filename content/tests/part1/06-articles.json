@@ -1,0 +1,119 @@
+{
+  "ch": "articles",
+  "title": "Articles: le, un, du",
+  "questions": [
+    {
+      "id": "articles-01",
+      "type": "mcq",
+      "q": "How do you say \"I like coffee\" in French?",
+      "choices": ["J'aime le café.", "J'aime café.", "J'aime du café.", "J'aime un café."],
+      "a": 0,
+      "why": "French keeps an article where English drops one, and a general preference takes the definite article. Aimer, adorer, détester and préférer always take le, la or les, because you like the category and not a portion."
+    },
+    {
+      "id": "articles-02",
+      "type": "mcq",
+      "q": "What does à + les contract to?",
+      "choices": ["aux", "à les", "aus", "des"],
+      "a": 0,
+      "why": "à contracts with le and les only: au, aux. de does the same: du, des. à la, à l', de la and de l' are left alone."
+    },
+    {
+      "id": "articles-03",
+      "type": "mcq",
+      "q": "« Je mange un poulet. » What does it actually mean?",
+      "choices": ["I'm eating a whole chicken", "I'm eating some chicken", "I like chicken in general", "I'm eating at a chicken place"],
+      "a": 0,
+      "why": "The article decides how much: du poulet is an amount off a plate, un poulet is one entire bird, le poulet is chicken as a category. All three are grammatical; they describe different meals."
+    },
+    {
+      "id": "articles-04",
+      "type": "mcq",
+      "q": "Make it negative: « J'aime le fromage. »",
+      "choices": ["Je n'aime pas le fromage.", "Je n'aime pas de fromage.", "Je n'aime pas du fromage.", "Je n'aime pas fromage."],
+      "a": 0,
+      "why": "The collapse to de hits un, une, du, de la and des only. The definite article never changes after a negative."
+    },
+    {
+      "id": "articles-05",
+      "type": "mcq",
+      "q": "Make it negative: « C'est un livre. »",
+      "choices": ["Ce n'est pas un livre.", "Ce n'est pas de livre.", "Ce n'est pas livre.", "C'est pas de livre."],
+      "a": 0,
+      "why": "After être the article survives untouched. That is the second exception to the negative rule, alongside the definite article."
+    },
+    {
+      "id": "articles-06",
+      "type": "fill",
+      "q": "Nous allons ___ marché.",
+      "a": ["au"],
+      "why": "à + le contracts to au. Writing à le is never possible."
+    },
+    {
+      "id": "articles-07",
+      "type": "fill",
+      "q": "C'est la voiture ___ professeur.",
+      "a": ["du"],
+      "why": "de + le contracts to du. The same du also spells the partitive, so context tells you which one you are looking at: here it means \"of the\"."
+    },
+    {
+      "id": "articles-08",
+      "type": "fill",
+      "q": "Elle boit ___ eau.",
+      "a": ["de l'"],
+      "why": "Eau is feminine, so the partitive would be de la, but the vowel forces de l'. Same for de l'argent and de l'huile."
+    },
+    {
+      "id": "articles-09",
+      "type": "fill",
+      "q": "Je n'ai pas ___ voiture.",
+      "a": ["de", "d'"],
+      "why": "After a negative verb, un, une, du, de la and des all collapse to de. J'ai une voiture becomes je n'ai pas de voiture."
+    },
+    {
+      "id": "articles-10",
+      "type": "fill",
+      "q": "Il y a beaucoup ___ gens ici.",
+      "a": ["de", "d'"],
+      "why": "Every expression of quantity is followed by bare de, even before a plural noun: beaucoup de, un peu de, trop de, assez de, combien de. Beaucoup des is wrong. The one exception is the slightly literary bien des."
+    },
+    {
+      "id": "articles-11",
+      "type": "order",
+      "q": "Build the sentence: I don't eat bread.",
+      "words": ["je", "ne", "mange", "pas", "de", "pain"],
+      "a": ["je", "ne", "mange", "pas", "de", "pain"],
+      "why": "ne and pas wrap the verb, and the partitive du drops to de inside the negative."
+    },
+    {
+      "id": "articles-12",
+      "type": "order",
+      "q": "Build the sentence: there aren't any children.",
+      "words": ["il", "n'y", "a", "pas", "d'enfants"],
+      "a": ["il", "n'y", "a", "pas", "d'enfants"],
+      "why": "Il y a des enfants becomes il n'y a pas d'enfants: des collapses to de, and de elides before the vowel of enfants."
+    },
+    {
+      "id": "articles-13",
+      "type": "listen",
+      "say": "Je mange du pain.",
+      "q": "Type what you hear.",
+      "a": ["je mange du pain", "je mange du pain."],
+      "why": "The partitive du is the default for an unmeasured amount of something uncountable. English says nothing at all here, which is exactly why it gets left out."
+    },
+    {
+      "id": "articles-14",
+      "type": "say",
+      "q": "Say this out loud — the negative form of « j'ai de l'argent ».",
+      "target": "je n'ai pas d'argent",
+      "why": "de l' collapses to de like every other indefinite and partitive after a negative, then elides to d' before the vowel."
+    },
+    {
+      "id": "articles-15",
+      "type": "open",
+      "q": "Name the three families of article, the question each one answers, and their forms.",
+      "a": ["Definite (which one? and also the general category): le, la, l', les. Indefinite (one of several?): un, une, des. Partitive (how much of it?): du, de la, de l', des. After a negative the indefinite and partitive collapse to de or d', but the definite article and anything after être stay as they are; after an expression of quantity you always get bare de."],
+      "why": "Choosing an article is choosing between those three questions, so naming the question you are answering is faster than memorising sentences."
+    }
+  ]
+}

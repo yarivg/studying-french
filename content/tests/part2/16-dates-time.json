@@ -1,0 +1,120 @@
+{
+  "ch": "dates-time",
+  "title": "Dates, time and ordinals",
+  "questions": [
+    {
+      "id": "dates-time-01",
+      "type": "mcq",
+      "q": "« Je travaille le lundi » means:",
+      "choices": ["I work on Mondays", "I'm working this Monday", "I worked last Monday", "I'll work next Monday"],
+      "a": 0,
+      "why": "The article turns a single day into a habit. Without it, je travaille lundi means this coming Monday. Same for le matin versus ce matin."
+    },
+    {
+      "id": "dates-time-02",
+      "type": "fill",
+      "q": "Translate: « I'm leaving on Monday. » → « Je pars ___. »",
+      "a": ["lundi"],
+      "why": "No preposition and no article for one specific day: French says je pars lundi, never sur lundi. Adding le would make it every Monday."
+    },
+    {
+      "id": "dates-time-03",
+      "type": "mcq",
+      "q": "How do you write « 1 January » in French?",
+      "choices": ["le premier janvier", "le un janvier", "le premier de janvier", "le première janvier"],
+      "a": 0,
+      "why": "The first of the month is the only ordinal in a date, it is masculine, and no de follows it. After that the numbers are plain: le deux mai, le trois mai."
+    },
+    {
+      "id": "dates-time-04",
+      "type": "fill",
+      "q": "Complete: « Nous sommes ___ 12 avril. » (It's 12 April.)",
+      "a": ["le"],
+      "why": "The date pattern is le + number + month + year, with a plain cardinal number. On est le mardi 12 avril adds the day."
+    },
+    {
+      "id": "dates-time-05",
+      "type": "mcq",
+      "q": "In French usage, what date is « 12/04/2026 » ?",
+      "choices": ["12 April 2026", "4 December 2026", "either, depending on context", "12 December 2026"],
+      "a": 0,
+      "why": "French dates are written day first. In an international context, write the month out to avoid the ambiguity."
+    },
+    {
+      "id": "dates-time-06",
+      "type": "mcq",
+      "q": "Which season takes « au » rather than « en » ?",
+      "choices": ["le printemps", "l'été", "l'automne", "l'hiver"],
+      "a": 0,
+      "why": "Au printemps, but en été, en automne, en hiver. Printemps starts with a consonant, and that is the whole reason."
+    },
+    {
+      "id": "dates-time-07",
+      "type": "fill",
+      "q": "Tell the time: 4:15 → « Il est quatre heures ___. »",
+      "a": ["et quart"],
+      "why": "Et quart for quarter past, et demie for half past, moins le quart for quarter to. They belong to the 12-hour clock only."
+    },
+    {
+      "id": "dates-time-08",
+      "type": "listen",
+      "say": "Il est cinq heures et demie.",
+      "q": "Type what you hear.",
+      "a": ["il est cinq heures et demie"],
+      "why": "Demie takes an -e because it agrees with the feminine heure. That final -e is the whole trap in this phrase."
+    },
+    {
+      "id": "dates-time-09",
+      "type": "mcq",
+      "q": "How do you write 12:30 at noon?",
+      "choices": ["Il est midi et demi.", "Il est midi et demie.", "Il est douze heures et demi.", "Il est midi et la demie."],
+      "a": 0,
+      "why": "Midi and minuit are masculine, so demi loses its -e. Compare cinq heures et demie, where heure is feminine."
+    },
+    {
+      "id": "dates-time-10",
+      "type": "listen",
+      "say": "Il est six heures moins dix.",
+      "q": "Type what you hear.",
+      "a": ["il est six heures moins dix"],
+      "why": "Past the half hour French counts down to the next one: 5:50 is ten to six. Moins le quart works the same way."
+    },
+    {
+      "id": "dates-time-11",
+      "type": "listen",
+      "say": "le premier janvier",
+      "q": "Type the date you hear.",
+      "a": ["le premier janvier", "le 1er janvier"],
+      "why": "Only the first of the month is an ordinal, and the month keeps its small letter."
+    },
+    {
+      "id": "dates-time-12",
+      "type": "order",
+      "q": "Build the sentence: The train leaves at 18:45. (official 24-hour style)",
+      "words": ["le", "train", "part", "à", "dix-huit", "heures", "quarante-cinq"],
+      "a": ["le", "train", "part", "à", "dix-huit", "heures", "quarante-cinq"],
+      "why": "The 24-hour clock drops et quart, et demie and moins entirely, and à marks the time of an event: il est huit heures, but je pars à huit heures."
+    },
+    {
+      "id": "dates-time-13",
+      "type": "fill",
+      "q": "Write the ordinal for 9.",
+      "a": ["neuvième"],
+      "why": "The f of neuf becomes v. Two more adjustments: quatre loses its silent e (quatrième), and cinq gains a u (cinquième)."
+    },
+    {
+      "id": "dates-time-14",
+      "type": "say",
+      "q": "Say this out loud.",
+      "target": "deux fois par semaine",
+      "why": "Frequency is une fois par jour, deux fois par semaine. Tous les jours is every day, tous les deux jours every other day."
+    },
+    {
+      "id": "dates-time-15",
+      "type": "open",
+      "q": "Give the French for 3:10, 4:15, 5:30, 5:45 and 6:50, then say how the same times are given on the 24-hour clock.",
+      "a": ["Il est trois heures dix. Il est quatre heures et quart. Il est cinq heures et demie. Il est six heures moins le quart. Il est sept heures moins dix. On the 24-hour clock the minutes are simply counted out and et quart / et demie / moins disappear: quinze heures dix, seize heures quinze, dix-sept heures trente, dix-sept heures quarante-cinq, dix-huit heures cinquante. In speech, du matin, de l'après-midi and du soir remove the ambiguity instead."],
+      "why": "Two systems run side by side: the conversational one with quarters and moins, and the official one used for timetables and appointments."
+    }
+  ]
+}

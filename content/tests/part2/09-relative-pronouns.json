@@ -1,0 +1,120 @@
+{
+  "ch": "relative-pronouns",
+  "title": "Relative pronouns",
+  "questions": [
+    {
+      "id": "relative-pronouns-01",
+      "type": "mcq",
+      "q": "« L'homme ___ parle est mon frère. »",
+      "choices": ["qui", "que", "dont", "où"],
+      "a": 0,
+      "why": "A verb follows directly, with no other subject, so the pronoun is filling the subject hole: qui. The fast test is simply what comes next."
+    },
+    {
+      "id": "relative-pronouns-02",
+      "type": "mcq",
+      "q": "« L'homme ___ j'aime s'appelle Boris. »",
+      "choices": ["que", "qui", "dont", "lequel"],
+      "a": 0,
+      "why": "A new subject (j') appears right after the pronoun, so the hole is the direct object: que. Qui is followed by a verb, que by a subject."
+    },
+    {
+      "id": "relative-pronouns-03",
+      "type": "fill",
+      "q": "Complete: « Le livre ___ tu lis est à moi. »",
+      "a": ["que"],
+      "why": "English drops the that in the book you're reading; French never can. Tu is a new subject, so it is que."
+    },
+    {
+      "id": "relative-pronouns-04",
+      "type": "mcq",
+      "q": "Which is correct for « the man he loves » ?",
+      "choices": ["l'homme qu'il aime", "l'homme qui il aime", "l'homme qu'aime", "l'homme dont il aime"],
+      "a": 0,
+      "why": "Que elides to qu' before a vowel. Qui never elides, which is a second way to tell the two apart in writing."
+    },
+    {
+      "id": "relative-pronouns-05",
+      "type": "mcq",
+      "q": "« Le jour ___ je l'ai rencontré, il pleuvait. »",
+      "choices": ["où", "quand", "que", "dont"],
+      "a": 0,
+      "why": "For time inside a relative clause French uses où, not quand. Quand asks questions and introduces subordinate clauses, but it is not a relative pronoun."
+    },
+    {
+      "id": "relative-pronouns-06",
+      "type": "fill",
+      "q": "Complete: « Le film ___ je parle est français. » (the film I'm talking about)",
+      "a": ["dont"],
+      "why": "Parler takes de, and dont stands in for any de + something. Decide it from the French verb, never from the English preposition."
+    },
+    {
+      "id": "relative-pronouns-07",
+      "type": "mcq",
+      "q": "Which is correct for « the man whose car is red » ?",
+      "choices": ["l'homme dont la voiture est rouge", "l'homme dont sa voiture est rouge", "l'homme que sa voiture est rouge", "l'homme qui la voiture est rouge"],
+      "a": 0,
+      "why": "After dont, French uses the plain article: dont has already supplied the possession, so a possessive on top is wrong."
+    },
+    {
+      "id": "relative-pronouns-08",
+      "type": "fill",
+      "q": "Agreement: « Les pommes que j'ai ___ étaient bonnes. » (manger)",
+      "a": ["mangées"],
+      "why": "Que puts the direct object before the verb, so the participle agrees with it: les pommes is feminine plural, hence -ées."
+    },
+    {
+      "id": "relative-pronouns-09",
+      "type": "listen",
+      "say": "La ville où j'habite.",
+      "q": "Type what you hear.",
+      "a": ["la ville où j'habite"],
+      "why": "Où is the relative for place, and it is one word you hear constantly. Note it is not qui or que: no subject or object is missing here."
+    },
+    {
+      "id": "relative-pronouns-10",
+      "type": "mcq",
+      "q": "« La table ___ j'ai posé mes clés. » (on which)",
+      "choices": ["sur laquelle", "sur lequel", "dont", "sur qui"],
+      "a": 0,
+      "why": "With a preposition other than de you need lequel, agreeing with the noun: table is feminine, so laquelle. Sur qui would only work for a person."
+    },
+    {
+      "id": "relative-pronouns-11",
+      "type": "mcq",
+      "q": "« Le projet ___ je travaille est fini. » (travailler à)",
+      "choices": ["auquel", "à lequel", "dont", "que"],
+      "a": 0,
+      "why": "Lequel contracts with à: auquel, à laquelle, auxquels, auxquelles. Dont is only for verbs that take de."
+    },
+    {
+      "id": "relative-pronouns-12",
+      "type": "fill",
+      "q": "Complete: « Je ne sais pas ___ tu veux. » (what you want)",
+      "a": ["ce que"],
+      "why": "With no noun to attach to, add ce. Tu is a subject, so the hole is the object: ce que. Ce qui se passe would be the subject version."
+    },
+    {
+      "id": "relative-pronouns-13",
+      "type": "order",
+      "q": "Build the phrase: the woman whose son works here",
+      "words": ["la", "femme", "dont", "le", "fils", "travaille", "ici"],
+      "a": ["la", "femme", "dont", "le", "fils", "travaille", "ici"],
+      "why": "Whose is dont, and what follows keeps its own article: dont le fils, never dont son fils."
+    },
+    {
+      "id": "relative-pronouns-14",
+      "type": "say",
+      "q": "Say this out loud.",
+      "target": "la personne avec qui je travaille",
+      "why": "After a preposition French prefers qui for people and lequel for things: avec qui je travaille, but la table sur laquelle."
+    },
+    {
+      "id": "relative-pronouns-15",
+      "type": "open",
+      "q": "Give the four-way test for choosing qui, que, dont or où, with one example each.",
+      "a": ["Build the second clause alone and see what is missing. Missing subject → qui (l'homme qui parle). Missing direct object → que (l'homme que j'aime). Missing de + something → dont (le film dont je parle, l'homme dont la voiture est rouge). Missing a place or a time → où (la ville où j'habite, le jour où je l'ai rencontré). Shortcut: qui is followed by a verb, que by a subject."],
+      "why": "The choice is decided by the grammatical hole, never by whether the noun is a person or a thing. Both qui and que serve people and things alike."
+    }
+  ]
+}

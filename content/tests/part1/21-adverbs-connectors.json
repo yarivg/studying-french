@@ -1,0 +1,120 @@
+{
+  "ch": "adverbs-connectors",
+  "title": "Adverbs, frequency and connectors",
+  "questions": [
+    {
+      "id": "adverbs-connectors-01",
+      "type": "mcq",
+      "q": "Do French adverbs agree with anything?",
+      "choices": ["Yes, with the subject", "Yes, with the verb's tense", "No, they are invariable", "Only in the plural"],
+      "a": 2,
+      "why": "An adverb modifies a verb, an adjective or another adverb, and never changes form. Only adjectives agree."
+    },
+    {
+      "id": "adverbs-connectors-02",
+      "type": "order",
+      "q": "Place the adverb: build « I often eat here. »",
+      "words": ["Je", "mange", "souvent", "ici"],
+      "a": ["Je", "mange", "souvent", "ici"],
+      "why": "In a simple tense the adverb comes after the verb. French never puts it between subject and verb, so « je souvent mange » is impossible."
+    },
+    {
+      "id": "adverbs-connectors-03",
+      "type": "order",
+      "q": "Place the adverb: build « I have already eaten. »",
+      "words": ["J'ai", "déjà", "mangé"],
+      "a": ["J'ai", "déjà", "mangé"],
+      "why": "Short adverbs (bien, mal, déjà, encore, toujours, souvent, trop, beaucoup, presque) sit between the auxiliary and the past participle."
+    },
+    {
+      "id": "adverbs-connectors-04",
+      "type": "mcq",
+      "q": "Where does a long adverb like « immédiatement » go in a compound tense?",
+      "choices": ["Between the auxiliary and the participle", "After the participle", "Before the subject only", "Directly after the subject"],
+      "a": 1,
+      "why": "Only short adverbs squeeze inside: « J'ai bien mangé » but « J'ai répondu immédiatement. »"
+    },
+    {
+      "id": "adverbs-connectors-05",
+      "type": "fill",
+      "q": "Complete: Je vais à la piscine deux fois ___ semaine.",
+      "a": ["par"],
+      "why": "The rate pattern is always __ fois par __ : une fois par jour, trois fois par semaine, deux fois par an. Never dans or à."
+    },
+    {
+      "id": "adverbs-connectors-06",
+      "type": "say",
+      "q": "Say this frequency expression out loud.",
+      "target": "de temps en temps",
+      "why": "De temps en temps means from time to time. It is four words but one unit, said without a break."
+    },
+    {
+      "id": "adverbs-connectors-07",
+      "type": "fill",
+      "q": "bon or bien? Il chante ___.",
+      "a": ["bien"],
+      "why": "Bien is the adverb and modifies the verb. Bon is the adjective and modifies a noun: « C'est un bon chanteur. »"
+    },
+    {
+      "id": "adverbs-connectors-08",
+      "type": "mcq",
+      "q": "« Actuellement, je travaille à Paris. » What does actuellement mean?",
+      "choices": ["Actually", "Currently", "Eventually", "Occasionally"],
+      "a": 1,
+      "why": "Actuellement means currently. For actually, say en fait. Its partner false friend is éventuellement, which means possibly, not eventually (that is finalement)."
+    },
+    {
+      "id": "adverbs-connectors-09",
+      "type": "fill",
+      "q": "Which connector opens the sentence? ___ il pleut, on reste ici. (since / as)",
+      "a": ["Comme"],
+      "why": "Comme can only start a sentence. Car does the opposite: it never starts one. Parce que is the general-purpose everyday choice."
+    },
+    {
+      "id": "adverbs-connectors-10",
+      "type": "mcq",
+      "q": "Which pair is correct?",
+      "choices": ["grâce à = negative outcome, à cause de = positive outcome", "grâce à = positive outcome, à cause de = negative outcome", "both are neutral and interchangeable", "grâce à takes a verb, à cause de takes a noun"],
+      "a": 1,
+      "why": "« Grâce à toi, j'ai réussi » is a thank-you; « À cause de la grève, je suis en retard » is a complaint. En raison de is the neutral formal option."
+    },
+    {
+      "id": "adverbs-connectors-11",
+      "type": "fill",
+      "q": "Contrast connector: Il est fatigué, ___ il travaille. (however)",
+      "a": ["pourtant", "cependant"],
+      "why": "Pourtant and cependant both mean however or yet. Quand même adds the sense of anyway or in spite of it all."
+    },
+    {
+      "id": "adverbs-connectors-12",
+      "type": "mcq",
+      "q": "Which of these takes the subjunctive?",
+      "choices": ["même si", "bien que", "parce que", "puisque"],
+      "a": 1,
+      "why": "« Bien qu'il soit fatigué » takes the subjunctive; « Même s'il est fatigué » takes the indicative. They mean nearly the same thing, so même si is the safe option."
+    },
+    {
+      "id": "adverbs-connectors-13",
+      "type": "mcq",
+      "q": "« Il pleut, ___ on ne sort pas. » Which fits, in everyday speech?",
+      "choices": ["du coup", "pourtant", "au cas où", "bref"],
+      "a": 0,
+      "why": "Du coup marks a consequence and is everywhere in spoken French; donc is the neutral written equivalent. Pourtant would reverse the logic."
+    },
+    {
+      "id": "adverbs-connectors-14",
+      "type": "listen",
+      "say": "Elle ne vient presque jamais",
+      "q": "Type what you hear.",
+      "a": ["Elle ne vient presque jamais", "Elle ne vient presque jamais."],
+      "why": "Presque jamais means almost never, and presque slots in front of the jamais it modifies."
+    },
+    {
+      "id": "adverbs-connectors-15",
+      "type": "open",
+      "q": "Name the four connectors the chapter says make you sound native, with their meanings.",
+      "a": ["du coup (so, as a result), en fait (actually), quand même (still, anyway), d'ailleurs (besides, incidentally)"],
+      "why": "All four are constant in spoken French and nearly absent from textbooks, so using them changes how you sound more than extra vocabulary does."
+    }
+  ]
+}

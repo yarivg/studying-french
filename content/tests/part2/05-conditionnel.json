@@ -1,0 +1,174 @@
+{
+  "ch": "conditionnel",
+  "title": "Le conditionnel",
+  "questions": [
+    {
+      "id": "conditionnel-01",
+      "type": "mcq",
+      "q": "How is the present conditional built?",
+      "choices": [
+        "The future stem plus the imperfect endings",
+        "The imperfect stem plus the future endings",
+        "The infinitive plus -rais",
+        "The nous form of the present plus -ais"
+      ],
+      "a": 0,
+      "why": "Every stem you learned for the future works here unchanged: parler- gives je parlerais, and the irregulars ser-, aur-, ir-, fer-, viendr- are the same list."
+    },
+    {
+      "id": "conditionnel-02",
+      "type": "fill",
+      "q": "Present conditional: « je (parler) ___ »",
+      "a": [
+        "parlerais",
+        "je parlerais"
+      ],
+      "why": "Future stem parler- plus the imperfect ending -ais. The future je parlerai is one letter shorter, and the two are clearly different in speech."
+    },
+    {
+      "id": "conditionnel-03",
+      "type": "fill",
+      "q": "Present conditional: « nous (avoir) ___ »",
+      "a": [
+        "aurions",
+        "nous aurions"
+      ],
+      "why": "The stem is aur-, as in the future, and the nous ending is -ions: aurions."
+    },
+    {
+      "id": "conditionnel-04",
+      "type": "fill",
+      "q": "Present conditional: « il (falloir) ___ »",
+      "a": [
+        "faudrait",
+        "il faudrait"
+      ],
+      "why": "Falloir has the irregular stem faudr- and exists only in the third person singular: il faudrait, it would be necessary."
+    },
+    {
+      "id": "conditionnel-05",
+      "type": "mcq",
+      "q": "« Demain, je partirai » versus « Si j'avais le temps, je partirais ». What separates them?",
+      "choices": [
+        "Nothing — the two spellings are interchangeable",
+        "-ai is the future, -ais the conditional",
+        "-ais is the future, -ai the conditional",
+        "The first is plural"
+      ],
+      "a": 1,
+      "why": "One letter in writing, and an audible difference in speech. The conditional takes the imperfect endings, which is why it looks like -ais, -ait, -aient."
+    },
+    {
+      "id": "conditionnel-06",
+      "type": "fill",
+      "q": "Make it polite: « Je veux un café. » → « Je ___ un café. »",
+      "a": [
+        "voudrais"
+      ],
+      "why": "Je veux un café is grammatically perfect and socially blunt. Je voudrais is the normal form in a shop, and this one substitution does more for how you come across than almost anything else."
+    },
+    {
+      "id": "conditionnel-07",
+      "type": "fill",
+      "q": "Soften the advice: « Tu dois te reposer. » → « Tu ___ te reposer. »",
+      "a": [
+        "devrais"
+      ],
+      "why": "Devoir in the conditional is exactly English should, and pouvoir in the conditional is exactly could: tu devrais, vous pourriez."
+    },
+    {
+      "id": "conditionnel-08",
+      "type": "mcq",
+      "q": "What is the conditional doing in « Le président serait malade » ?",
+      "choices": [
+        "Making a polite request",
+        "Reporting unverified information — he is said to be ill",
+        "Stating a condition that was never met",
+        "Giving advice"
+      ],
+      "a": 1,
+      "why": "Journalism and gossip use the conditional where English says reportedly or apparently. Il y aurait vingt blessés works the same way."
+    },
+    {
+      "id": "conditionnel-09",
+      "type": "mcq",
+      "q": "How is the past conditional built?",
+      "choices": [
+        "Avoir or être in the conditional, plus the past participle",
+        "Avoir or être in the imperfect, plus the past participle",
+        "The conditional of the main verb, plus été",
+        "Aller in the conditional, plus an infinitive"
+      ],
+      "a": 0,
+      "why": "J'aurais mangé, je serais allé. Same auxiliary choice and same agreement rules as ever, with the auxiliary now in the conditional."
+    },
+    {
+      "id": "conditionnel-10",
+      "type": "fill",
+      "q": "« I should have told you » → « J'___ dû te le dire. »",
+      "a": [
+        "aurais"
+      ],
+      "why": "J'aurais dû is the single most useful past-conditional phrase: should have. Its twin is tu aurais pu, you could have."
+    },
+    {
+      "id": "conditionnel-11",
+      "type": "fill",
+      "q": "Past conditional: « elles (venir) ___ » (they would have come)",
+      "a": [
+        "seraient venues",
+        "elles seraient venues"
+      ],
+      "why": "Venir takes être, so the participle agrees with the feminine plural subject: venues."
+    },
+    {
+      "id": "conditionnel-12",
+      "type": "order",
+      "q": "Build the sentence: I would have come if I had known.",
+      "words": [
+        "Je",
+        "serais",
+        "venu",
+        "si",
+        "j'avais",
+        "su"
+      ],
+      "a": [
+        "Je",
+        "serais",
+        "venu",
+        "si",
+        "j'avais",
+        "su"
+      ],
+      "why": "The conditional goes in the main clause and never after si, which takes the pluperfect. With the main clause first, no comma is needed."
+    },
+    {
+      "id": "conditionnel-13",
+      "type": "listen",
+      "say": "Je voudrais un café.",
+      "q": "Type what you hear.",
+      "a": [
+        "Je voudrais un café",
+        "Je voudrais un café."
+      ],
+      "why": "Vouloir has the irregular stem voudr-, and the -ais ending marks it as conditional rather than future."
+    },
+    {
+      "id": "conditionnel-14",
+      "type": "say",
+      "q": "Say this out loud: I should have told you.",
+      "target": "j'aurais dû te le dire",
+      "why": "Regret and reproach are the past conditional's home ground, and the two pronouns stack in the order te le before the infinitive."
+    },
+    {
+      "id": "conditionnel-15",
+      "type": "open",
+      "q": "Name five jobs the conditional does, with a short French example each.",
+      "a": [
+        "1. Politeness: Je voudrais un café. 2. Hypotheses: Ce serait génial. 3. The main clause of a si-sentence: Si j'avais de l'argent, j'achèterais une maison. 4. Unverified information: Le président serait malade. 5. Softened advice with devoir and pouvoir: Tu devrais te reposer, vous pourriez essayer. And in the past: j'aurais dû, tu aurais pu."
+      ],
+      "why": "One form, five jobs. What unites them is distance: the conditional holds the statement slightly away from being asserted as fact."
+    }
+  ]
+}
