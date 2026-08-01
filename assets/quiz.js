@@ -89,7 +89,7 @@ window.Quiz = (function () {
 
     session = {
       container: container, byId: byId, queue: queue,
-      index: 0, total: queue.length, right: 0, wrong: 0,
+      index: 0, total: queue.length, right: 0, wrong: 0, retired: 0,
       flipped: false, cram: !!opts.cram, onDone: opts.onDone
     };
     renderCard();
@@ -117,10 +117,17 @@ window.Quiz = (function () {
           '<span class="flash-hint">click, or press space, to flip' +
             (card.fr && window.Say && Say.supported() ? ' · H to hear it' : '') + '</span>' +
         '</div>' +
-        (card.fr && window.Say && Say.supported()
-          ? '<button class="btn flash-say" type="button" data-say="' + escapeAttr(card.fr) + '"' +
-            (card.frOnFront ? '' : ' hidden') + '>🔊 Hear it</button>'
-          : '') +
+        '<div class="flash-side">' +
+          (card.fr && window.Say && Say.supported()
+            ? '<button class="btn flash-say" type="button" data-say="' + escapeAttr(card.fr) + '"' +
+              (card.frOnFront ? '' : ' hidden') + '>🔊 Hear it</button>'
+            : '') +
+          // The moment you decide you know a word is here, not in the
+          // browser, so the same toggle belongs on the card.
+          (card.wordId
+            ? '<button class="btn flash-know" type="button">I know this — retire it</button>'
+            : '') +
+        '</div>' +
         '<div class="flash-actions" hidden>' +
           '<button class="btn btn-lg btn-again" data-grade="0">Again</button>' +
           '<button class="btn btn-lg btn-ok" data-grade="1">Got it</button>' +
@@ -155,8 +162,27 @@ window.Quiz = (function () {
       if (b) grade(b.dataset.grade === '1');
     });
 
+    var knowBtn = s.container.querySelector('.flash-know');
+    if (knowBtn) knowBtn.addEventListener('click', function () { retire(card); });
+
     s.flip = flip;
     s.flipped = false;
+  }
+
+  // "I know this" is a stronger statement than "got it": the word is marked
+  // known, which takes it out of every deck, and both of its cards leave the
+  // rest of this session rather than reappearing in the other direction.
+  function retire(card) {
+    var s = session;
+    if (!s || !card.wordId) return;
+    if (!Progress.isKnown(card.wordId)) Progress.toggleKnown(card.wordId);
+    s.retired = (s.retired || 0) + 1;
+    s.queue = s.queue.filter(function (id, i) {
+      return i <= s.index || s.byId[id].wordId !== card.wordId;
+    });
+    s.total = s.queue.length;
+    s.index++;
+    renderCard();
   }
 
   function grade(correct) {
@@ -175,7 +201,9 @@ window.Quiz = (function () {
       '<div class="empty">' +
         '<div class="empty-icon">' + (pct >= 80 ? '🎉' : pct >= 50 ? '👍' : '💪') + '</div>' +
         '<p style="font-size:1.3rem;color:var(--ink)"><strong>' + s.right + ' / ' + s.total + '</strong> — ' + pct + '%</p>' +
-        '<p>Cards you missed come back tomorrow; the rest move up a box.</p>' +
+        '<p>Cards you missed come back tomorrow; the rest move up a box.' +
+          (s.retired ? ' ' + s.retired + ' word' + (s.retired === 1 ? '' : 's') +
+            ' retired as known and gone from the decks.' : '') + '</p>' +
         '<p style="margin-top:1.2rem"><button class="btn btn-primary btn-lg" data-act="again">Review again</button></p>' +
       '</div>';
     var again = s.container.querySelector('[data-act="again"]');

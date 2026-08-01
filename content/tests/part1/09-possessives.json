@@ -1,118 +1,174 @@
 {
-  "ch": "possessives",
-  "title": "Possessives",
-  "questions": [
-    {
-      "id": "possessives-01",
-      "type": "fill",
-      "q": "Complete with « my »: « ___ frère »",
-      "a": ["mon"],
-      "why": "The possessive agrees with the thing owned, not the owner. Frère is masculine singular, so mon. Ma sœur, mes parents."
-    },
-    {
-      "id": "possessives-02",
-      "type": "mcq",
-      "q": "Which is correct for « my friend » (a female friend)?",
-      "choices": ["mon amie", "ma amie", "mes amie", "m'amie"],
-      "a": 0,
-      "why": "Before a feminine noun beginning with a vowel or mute h, ma/ta/sa become mon/ton/son. It is a pronunciation patch only."
-    },
-    {
-      "id": "possessives-03",
-      "type": "mcq",
-      "q": "Which is correct for « my new friend » (female)?",
-      "choices": ["ma nouvelle amie", "mon nouvelle amie", "mon nouvel amie", "mes nouvelle amie"],
-      "a": 0,
-      "why": "The mon patch applies only when the vowel comes immediately after. Nouvelle stands between, so ma returns and the adjective stays feminine."
-    },
-    {
-      "id": "possessives-04",
-      "type": "fill",
-      "q": "Complete with « their »: « ___ enfants »",
-      "a": ["leurs"],
-      "why": "Leur has only two forms: leur for one thing owned, leurs for several. Enfants is plural, so leurs."
-    },
-    {
-      "id": "possessives-05",
-      "type": "fill",
-      "q": "Complete with « their »: « ___ voiture » (one car between them)",
-      "a": ["leur"],
-      "why": "Still one car, so leur stays singular however many owners there are. The number of owners never shows on the possessive."
-    },
-    {
-      "id": "possessives-06",
-      "type": "mcq",
-      "q": "« Son livre » means:",
-      "choices": ["his book only", "her book only", "his book or her book", "their book"],
-      "a": 2,
-      "why": "French does not mark the owner's gender at all. If it genuinely matters you add à lui or à elle: c'est son livre à elle."
-    },
-    {
-      "id": "possessives-07",
-      "type": "listen",
-      "say": "notre maison",
-      "q": "Type what you hear.",
-      "a": ["notre maison"],
-      "why": "Notre and votre have one form for both genders in the singular; only the plurals nos and vos change. Note there is no accent on notre."
-    },
-    {
-      "id": "possessives-08",
-      "type": "mcq",
-      "q": "Complete: « Mon amie est ___ » (beau)",
-      "choices": ["belle", "beau", "bel", "beaux"],
-      "a": 0,
-      "why": "Amie is still feminine even though the possessive is mon. The adjective agrees with the noun's real gender, not with the patched possessive."
-    },
-    {
-      "id": "possessives-09",
-      "type": "fill",
-      "q": "Complete: « J'ai mal à ___ tête. » (My head hurts.)",
-      "a": ["la"],
-      "why": "With body parts French uses the definite article, because ownership is already obvious. Il lève la main, elle se lave les cheveux."
-    },
-    {
-      "id": "possessives-10",
-      "type": "order",
-      "q": "Build the phrase: my father's car",
-      "words": ["la", "voiture", "de", "mon", "père"],
-      "a": ["la", "voiture", "de", "mon", "père"],
-      "why": "There is no apostrophe-s in French: the owner comes second, introduced by de. Remember de + le = du and de + les = des."
-    },
-    {
-      "id": "possessives-11",
-      "type": "fill",
-      "q": "Replace the noun phrase: « C'est ma voiture. » → « C'est ___. »",
-      "a": ["la mienne"],
-      "why": "Possessive pronouns carry an article and agree with the thing owned. Voiture is feminine singular, so la mienne."
-    },
-    {
-      "id": "possessives-12",
-      "type": "mcq",
-      "q": "Replace the noun phrase: « Ce sont nos places. » → « Ce sont ___. »",
-      "choices": ["les nôtres", "les notres", "les nos", "les nôtre"],
-      "a": 0,
-      "why": "The pronoun le nôtre carries a circumflex and a closer o sound, unlike the adjective notre. Les nôtres serves both genders in the plural."
-    },
-    {
-      "id": "possessives-13",
-      "type": "fill",
-      "q": "Complete: « À qui est ce sac ? — Il est ___ moi. »",
-      "a": ["à"],
-      "why": "To stress ownership or answer whose?, French uses être à plus a stressed pronoun rather than a possessive: à moi, à toi, à lui, à eux."
-    },
-    {
-      "id": "possessives-14",
-      "type": "say",
-      "q": "Say this out loud.",
-      "target": "c'est à moi",
-      "why": "The everyday way to claim something. Note the stressed pronoun moi, never je or me, after a preposition."
-    },
-    {
-      "id": "possessives-15",
-      "type": "open",
-      "q": "Why is it « mon amie » but « ma nouvelle amie » ? Explain the rule.",
-      "a": ["Ma becomes mon only when the feminine noun starts with a vowel or mute h and follows immediately, purely so the two vowels do not collide. In ma nouvelle amie, nouvelle intervenes, so ma is kept. The noun stays feminine either way, so adjectives agree as feminine: mon amie est belle."],
-      "why": "The whole rule is about the sound at the junction, not about gender. Losing sight of that is what makes learners write mon amie est beau."
-    }
-  ]
+ "ch": "possessives",
+ "title": "Possessives",
+ "questions": [
+  {
+   "id": "possessives-01",
+   "type": "fill",
+   "q": "Complete with « my »: « ___ frère »",
+   "a": [
+    "mon"
+   ],
+   "why": "The possessive agrees with the thing owned, not the owner. Frère is masculine singular, so mon. Ma sœur, mes parents."
+  },
+  {
+   "id": "possessives-02",
+   "type": "mcq",
+   "q": "Which is correct for « my friend » (a female friend)?",
+   "choices": [
+    "mon amie",
+    "ma amie",
+    "mes amie",
+    "m'amie"
+   ],
+   "a": 0,
+   "why": "Before a feminine noun beginning with a vowel or mute h, ma/ta/sa become mon/ton/son. It is a pronunciation patch only."
+  },
+  {
+   "id": "possessives-03",
+   "type": "mcq",
+   "q": "Which is correct for « my new friend » (female)?",
+   "choices": [
+    "ma nouvelle amie",
+    "mon nouvelle amie",
+    "mon nouvel amie",
+    "mes nouvelle amie"
+   ],
+   "a": 0,
+   "why": "The mon patch applies only when the vowel comes immediately after. Nouvelle stands between, so ma returns and the adjective stays feminine."
+  },
+  {
+   "id": "possessives-04",
+   "type": "fill",
+   "q": "Complete with « their »: « ___ enfants »",
+   "a": [
+    "leurs"
+   ],
+   "why": "Leur has only two forms: leur for one thing owned, leurs for several. Enfants is plural, so leurs."
+  },
+  {
+   "id": "possessives-05",
+   "type": "fill",
+   "q": "Complete with « their »: « ___ voiture » (one car between them)",
+   "a": [
+    "leur"
+   ],
+   "why": "Still one car, so leur stays singular however many owners there are. The number of owners never shows on the possessive."
+  },
+  {
+   "id": "possessives-06",
+   "type": "mcq",
+   "q": "« Son livre » means:",
+   "choices": [
+    "his book only",
+    "her book only",
+    "his book or her book",
+    "their book"
+   ],
+   "a": 2,
+   "why": "French does not mark the owner's gender at all. If it genuinely matters you add à lui or à elle: c'est son livre à elle."
+  },
+  {
+   "id": "possessives-07",
+   "type": "listen",
+   "say": "notre maison",
+   "q": "Type what you hear.",
+   "a": [
+    "notre maison"
+   ],
+   "why": "Notre and votre have one form for both genders in the singular; only the plurals nos and vos change. Note there is no accent on notre."
+  },
+  {
+   "id": "possessives-08",
+   "type": "mcq",
+   "q": "Complete: « Mon amie est ___ » (beau)",
+   "choices": [
+    "belle",
+    "beau",
+    "bel",
+    "beaux"
+   ],
+   "a": 0,
+   "why": "Amie is still feminine even though the possessive is mon. The adjective agrees with the noun's real gender, not with the patched possessive."
+  },
+  {
+   "id": "possessives-09",
+   "type": "fill",
+   "q": "Complete: « J'ai mal à ___ tête. » (My head hurts.)",
+   "a": [
+    "la"
+   ],
+   "why": "With body parts French uses the definite article, because ownership is already obvious. Il lève la main, elle se lave les cheveux."
+  },
+  {
+   "id": "possessives-10",
+   "type": "order",
+   "q": "Build the phrase: my father's car",
+   "words": [
+    "la",
+    "voiture",
+    "de",
+    "mon",
+    "père"
+   ],
+   "a": [
+    "la",
+    "voiture",
+    "de",
+    "mon",
+    "père"
+   ],
+   "why": "There is no apostrophe-s in French: the owner comes second, introduced by de. Remember de + le = du and de + les = des."
+  },
+  {
+   "id": "possessives-11",
+   "type": "fill",
+   "q": "Replace the noun phrase: « C'est ma voiture. » → « C'est ___. »",
+   "a": [
+    "la mienne"
+   ],
+   "why": "Possessive pronouns carry an article and agree with the thing owned. Voiture is feminine singular, so la mienne."
+  },
+  {
+   "id": "possessives-12",
+   "type": "mcq",
+   "q": "Replace the noun phrase: « Ce sont nos places. » → « Ce sont ___. »",
+   "choices": [
+    "les nôtres",
+    "les notres",
+    "les nos",
+    "les nôtre"
+   ],
+   "a": 0,
+   "why": "The pronoun le nôtre carries a circumflex and a closer o sound, unlike the adjective notre. Les nôtres serves both genders in the plural."
+  },
+  {
+   "id": "possessives-13",
+   "type": "mcq",
+   "q": "Complete: « À qui est ce sac ? — Il est ___ moi. »",
+   "a": 0,
+   "why": "To stress ownership or answer whose?, French uses être à plus a stressed pronoun rather than a possessive: à moi, à toi, à lui, à eux.",
+   "choices": [
+    "à",
+    "a",
+    "de"
+   ]
+  },
+  {
+   "id": "possessives-14",
+   "type": "say",
+   "q": "Say this out loud.",
+   "target": "c'est à moi",
+   "why": "The everyday way to claim something. Note the stressed pronoun moi, never je or me, after a preposition."
+  },
+  {
+   "id": "possessives-15",
+   "type": "open",
+   "q": "Why is it « mon amie » but « ma nouvelle amie » ? Explain the rule.",
+   "a": [
+    "Ma becomes mon only when the feminine noun starts with a vowel or mute h and follows immediately, purely so the two vowels do not collide. In ma nouvelle amie, nouvelle intervenes, so ma is kept. The noun stays feminine either way, so adjectives agree as feminine: mon amie est belle."
+   ],
+   "why": "The whole rule is about the sound at the junction, not about gender. Losing sight of that is what makes learners write mon amie est beau."
+  }
+ ]
 }

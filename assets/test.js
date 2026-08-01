@@ -163,8 +163,10 @@ window.Test = (function () {
 
   BODY.mcq = function (body, actions, q) {
     body.innerHTML = '<div class="test-choices">' + q.choices.map(function (c, i) {
-      return '<button class="test-choice" data-i="' + i + '">' + escapeHtml(c) + '</button>';
-    }).join('') + '</div>';
+      return '<button class="test-choice" data-i="' + i + '">' +
+        '<kbd class="test-key">' + (i + 1) + '</kbd>' + escapeHtml(c) + '</button>';
+    }).join('') + '</div>' +
+      '<p class="test-keyhint">Press 1-' + q.choices.length + ', or click.</p>';
 
     body.addEventListener('click', function (e) {
       var b = e.target.closest('.test-choice');
@@ -184,8 +186,9 @@ window.Test = (function () {
   BODY.fill = function (body, actions, q) {
     body.innerHTML =
       '<input class="test-input" id="testIn" autocomplete="off" autocapitalize="off" ' +
-      'spellcheck="false" placeholder="Type your answer">';
+      'spellcheck="false" placeholder="Type your answer">' + accentBar();
     var input = body.querySelector('#testIn');
+    bindAccents(body, input);
     actions.innerHTML = '<button class="btn btn-primary btn-lg" data-act="check">Check</button>';
     actions.addEventListener('click', function (e) {
       if (!e.target.closest('[data-act="check"]')) return;
@@ -211,8 +214,9 @@ window.Test = (function () {
         '<button class="btn" data-act="slow">Slower</button>' +
       '</div>' +
       '<input class="test-input" id="testIn" autocomplete="off" autocapitalize="off" ' +
-      'spellcheck="false" placeholder="Type what you hear">';
+      'spellcheck="false" placeholder="Type what you hear">' + accentBar();
     var input = body.querySelector('#testIn');
+    bindAccents(body, input);
     body.addEventListener('click', function (e) {
       var b = e.target.closest('[data-act]');
       if (!b) return;
@@ -246,7 +250,8 @@ window.Test = (function () {
         '<div class="test-pool">' + pool.map(function (w, i) {
           return picked.indexOf(i) === -1
             ? '<button class="chip" data-pick="' + i + '">' + escapeHtml(w) + '</button>' : '';
-        }).join('') + '</div>';
+        }).join('') + '</div>' +
+        '<p class="test-keyhint">Keys: a number picks the next word, Enter checks it.</p>';
     }
 
     // `picked` holds pool indexes, not words, so repeated words behave.
@@ -295,10 +300,21 @@ window.Test = (function () {
     actions.innerHTML = '<button class="btn btn-primary btn-lg" data-act="rec">🎤 Say it</button>' +
       '<button class="btn" data-act="skip">Skip</button>';
 
+    // Three goes, best one counts. The recogniser is the unreliable half of
+    // this exchange, so a single bad transcript should not decide anything.
+    var TRIES = 3;
+    var tries = 0;
+    var bestTry = null;
+    var out = document.createElement('div');
+    body.appendChild(out);
+
     actions.addEventListener('click', function (e) {
       var b = e.target.closest('[data-act]');
       if (!b) return;
-      if (b.dataset.act === 'skip') return settle(q, false, '(skipped)');
+      if (b.dataset.act === 'skip') {
+        return settle(q, bestTry ? bestTry.pass : false,
+          bestTry ? bestTry.heard : '(skipped)', bestTry);
+      }
       if (b.disabled) return;
 
       b.disabled = true;
@@ -308,22 +324,129 @@ window.Test = (function () {
       Speech.check(q.target, {
         onPartial: function (text) { b.textContent = '🎤 ' + text; }
       }).then(function (r) {
-        body.insertAdjacentHTML('beforeend', heardHtml(r));
-        settle(q, r.pass, r.heard, r);
+        if (!bestTry || r.pct > bestTry.pct) bestTry = r;
+
+        // An unusable transcript costs nothing: it is the recogniser's
+        // failure, not yours, so it does not consume an attempt.
+        if (r.unclear) {
+          b.disabled = false;
+          b.textContent = '🎤 Again';
+          out.innerHTML =
+            '<p class="test-note is-bad">The recogniser did not make that out — it heard ' +
+            '<em>' + escapeHtml(r.heard || 'nothing') + '</em>, which is not a possible ' +
+            'attempt at this. Short phrases confuse it, so it guesses a real word that ' +
+            'fits the sounds. Say it again, a little slower, with a gap between the words.</p>' +
+            '<p class="test-note">If it keeps failing, hear the model and mark yourself.</p>' +
+            selfMarkHtml();
+          wireSelfMark(out, q);
+          return;
+        }
+
+        tries++;
+        out.innerHTML = heardHtml(r);
+        if (r.pass || tries >= TRIES) {
+          return settle(q, bestTry.pass, bestTry.heard, bestTry);
+        }
+        b.disabled = false;
+        b.textContent = '🎤 Again (' + (TRIES - tries) + ' left)';
+        out.insertAdjacentHTML('beforeend',
+          '<p class="test-note">Best so far ' + bestTry.pct + '%. The underlined words are the ' +
+          'ones to fix.</p>');
       }).catch(function (err) {
         b.disabled = false;
         b.textContent = '🎤 Try again';
-        body.insertAdjacentHTML('beforeend',
-          '<p class="test-note is-bad">' + escapeHtml(err.message) + '</p>');
+        out.innerHTML = '<p class="test-note is-bad">' + escapeHtml(err.message) + '</p>';
       });
     });
   };
 
+  // Offered when the microphone route has failed us rather than the learner.
+  function selfMarkHtml() {
+    return '<div class="test-actions">' +
+      '<button class="btn btn-ok" data-self="ok">I said it right</button>' +
+      '<button class="btn btn-again" data-self="no">I did not</button>' +
+      '</div>';
+  }
+
+  function wireSelfMark(host, q) {
+    host.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-self]');
+      if (!b) return;
+      settle(q, b.dataset.self === 'ok', '(marked by you)', null, true);
+    });
+  }
+
   BODY.open = function (body, actions, q) {
     body.innerHTML = '<textarea class="test-input" id="testIn" rows="3" ' +
-      'placeholder="Answer in your own words, then reveal the model answer."></textarea>';
+      'placeholder="Answer in your own words, then reveal the model answer."></textarea>' +
+      accentBar();
+    bindAccents(body, body.querySelector('#testIn'));
     selfMark(body, actions, q);
   };
+
+  /* ---------------------------------------------------------- accents */
+
+  // Answers here are graded with their accents, and a US keyboard cannot
+  // type them. Rather than loosening the grading, hand over the letters.
+  var ACCENTS = ['é', 'è', 'ê', 'ë', 'à', 'â', 'ù', 'û', 'ü', 'î', 'ï', 'ô', 'ç', 'œ', 'æ'];
+
+  // Holding a plain vowel and pressing the same key cycles its accents, so
+  // the keyboard alone can still get there: e -> é -> è -> ê -> ë.
+  var CYCLE = {
+    a: 'àâä', e: 'éèêë', i: 'îï', o: 'ôö', u: 'ùûü', y: 'ÿ', c: 'ç',
+    'à': 'â', 'â': 'ä', 'ä': 'a', 'é': 'è', 'è': 'ê', 'ê': 'ë', 'ë': 'e',
+    'î': 'ï', 'ï': 'i', 'ô': 'ö', 'ö': 'o', 'ù': 'û', 'û': 'ü', 'ü': 'u', 'ç': 'c'
+  };
+
+  function accentBar() {
+    return '<div class="accent-bar" role="group" aria-label="Insert an accented letter">' +
+      ACCENTS.map(function (c) {
+        return '<button class="accent-key" type="button" tabindex="-1" data-ch="' + c + '">' + c + '</button>';
+      }).join('') +
+      '<span class="accent-note">or press the plain letter twice to add its accent</span>' +
+      '</div>';
+  }
+
+  function bindAccents(body, input) {
+    var bar = body.querySelector('.accent-bar');
+    if (!bar || !input) return;
+
+    // mousedown, not click: the button must not take focus off the field,
+    // or the caret position is lost before the character is inserted.
+    bar.addEventListener('mousedown', function (e) {
+      var b = e.target.closest('[data-ch]');
+      if (!b) return;
+      e.preventDefault();
+      insert(input, b.dataset.ch);
+    });
+
+    input.addEventListener('keydown', function (e) {
+      if (e.metaKey || e.ctrlKey || e.altKey || e.key.length !== 1) return;
+      var at = input.selectionStart;
+      if (at === null || at !== input.selectionEnd || at === 0) return;
+      var prev = input.value.charAt(at - 1);
+      var next = CYCLE[prev];
+      // Pressing the same letter again walks it round its accents instead
+      // of doubling it. "fete" then a second e gives "fetè"… so only the
+      // key matching the letter under the caret cycles.
+      if (!next || e.key.toLowerCase() !== base(prev)) return;
+      e.preventDefault();
+      input.setRangeText(next.charAt(0), at - 1, at, 'end');
+    });
+  }
+
+  // The unaccented letter a character belongs to, so the cycle knows which
+  // key should advance it.
+  function base(ch) {
+    return ch.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  }
+
+  function insert(input, ch) {
+    var at = input.selectionStart;
+    if (at === null) { input.value += ch; return; }
+    input.setRangeText(ch, at, input.selectionEnd, 'end');
+    input.focus();
+  }
 
   // Types the machine cannot judge: reveal the model answer, you decide.
   function selfMark(body, actions, q) {
@@ -349,6 +472,36 @@ window.Test = (function () {
     }).join(' ') + '<span class="test-heard-pct">' + r.pct + '%</span></p>' +
       '<p class="test-note">Heard: ' + escapeHtml(r.heard || '—') + '</p>';
   }
+
+  /* ---------------------------------------------------------- keyboard */
+
+  // 1-4 answers a multiple choice, or picks the next word in an ordering
+  // question; Enter moves on once something has been graded.
+  function onKey(e) {
+    if (!run) return;
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var t = e.target;
+    if (t && t.matches && t.matches('input, textarea, select')) return;
+
+    var next = run.host.querySelector('[data-act="next"]');
+    if (e.key === 'Enter' || e.key === ' ') {
+      if (next) { e.preventDefault(); next.click(); }
+      return;
+    }
+
+    if (!/^[1-9]$/.test(e.key) || next) return;
+    var n = Number(e.key) - 1;
+
+    var choices = run.host.querySelectorAll('.test-choice:not([disabled])');
+    if (choices.length) {
+      if (choices[n]) { e.preventDefault(); choices[n].click(); }
+      return;
+    }
+    var chips = run.host.querySelectorAll('.test-pool [data-pick]');
+    if (chips[n]) { e.preventDefault(); chips[n].click(); }
+  }
+
+  document.addEventListener('keydown', onKey);
 
   /* ---------------------------------------------------------- verdict */
 

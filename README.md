@@ -34,7 +34,7 @@ sampling two from every chapter in it. Six question types:
 | type | how it is graded |
 |---|---|
 | `mcq` | pick one, automatic |
-| `fill` | type the answer; case and surrounding punctuation are ignored, accents are not |
+| `fill` | type the answer; case and surrounding punctuation are ignored, accents are not — a row of accented letters sits under the box, and pressing a plain vowel twice cycles its accents |
 | `order` | tap the words into order |
 | `listen` | the voice reads it, you type what you heard |
 | `say` | you read it aloud and the microphone checks you |
@@ -51,6 +51,14 @@ fall back to hearing the model and marking yourself. Two honest caveats: recogni
 to Google's or Apple's service, and it measures **intelligibility, not accent** — its language
 model will forgive a sloppy vowel in a word it can guess. That is why targets are capped at six
 words, and why the result shows you which word failed rather than one flattering number.
+
+Keyboard: `1`-`4` answers a multiple choice, a digit picks the next word in an
+ordering question, `Enter` moves on. On a flashcard, `H` speaks the French.
+
+Two rules the validator enforces, both because the course is written for someone
+without a French keyboard: a typed answer may not be a word already in the prompt
+that differs only by an accent (that question belongs in `mcq`), and no answer may
+be an IPA symbol.
 
 Add questions by editing the JSON in `content/tests/` — the format is documented in
 `content/tests/SCHEMA.md`, and `python3 tools/check-tests.py` validates every bank against what

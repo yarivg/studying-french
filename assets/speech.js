@@ -227,10 +227,29 @@ window.Speech = (function () {
 
   var PASS = 80;
 
+  /* A transcript can fail in two different ways, and they deserve different
+     answers. Either the recogniser understood you and you said the wrong
+     thing, or it did not produce anything usable — most often by collapsing
+     a short phrase into one real word that happens to fit the sounds ("la
+     rue" coming back as "garou"). The second is not evidence about your
+     pronunciation, so it must not be reported as a failed attempt. */
+  function unusable(target, r) {
+    var want = tokens(target).length, got = r.heard ? r.heard.split(' ').length : 0;
+    if (!got) return true;
+    // Fewer words than asked for, and nothing matched: it guessed a word
+    // rather than transcribing what it heard.
+    if (got < want && r.pct < 50) return true;
+    // Every single word missed on a short phrase is far likelier to be a
+    // bad transcript than a person who got every sound wrong.
+    if (want <= 3 && r.pct === 0) return true;
+    return false;
+  }
+
   function check(target, opts) {
     return listen(opts).then(function (alternatives) {
       var r = best(target, alternatives);
       r.pass = r.pct >= PASS;
+      r.unclear = !r.pass && unusable(target, r);
       return r;
     });
   }

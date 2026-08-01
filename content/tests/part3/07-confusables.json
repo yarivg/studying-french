@@ -1,171 +1,174 @@
 {
-  "ch": "confusables",
-  "title": "Pairs that catch everyone",
-  "questions": [
-    {
-      "id": "confusables-01",
-      "type": "mcq",
-      "q": "Which is correct?",
-      "choices": [
-        "Il est un médecin.",
-        "C'est un médecin.",
-        "Ce est un médecin.",
-        "Elle est une médecin."
-      ],
-      "a": 1,
-      "why": "A determiner in front of the noun forces c'est. Without the article the noun is bare, and then it is il est médecin."
-    },
-    {
-      "id": "confusables-02",
-      "type": "fill",
-      "q": "___ difficile de parler français. (commenting in general)",
-      "a": [
-        "C'est"
-      ],
-      "why": "For the it of an unspecified situation, French uses c'est with a masculine singular adjective. Elle est difficile would describe one specific person or thing."
-    },
-    {
-      "id": "confusables-03",
-      "type": "mcq",
-      "q": "Which is correct?",
-      "choices": [
-        "Je connais où il habite.",
-        "Je sais où il habite.",
-        "Je connais qu'il habite ici.",
-        "Je sais Paris."
-      ],
-      "a": 1,
-      "why": "Savoir takes a clause or a question word; connaître takes a noun and is never followed by a clause. Je connais Paris, but je sais où il habite."
-    },
-    {
-      "id": "confusables-04",
-      "type": "fill",
-      "q": "Je ___ (savoir / connaître) cette chanson.",
-      "a": [
-        "connais"
-      ],
-      "why": "A familiar thing, so connaître. Note the pair from Part II: j'ai su means I found out, j'ai connu means I met."
-    },
-    {
-      "id": "confusables-05",
-      "type": "mcq",
-      "q": "Which set is right?",
-      "choices": [
-        "J'ai vingt-cinq années. / Bonne an !",
-        "J'ai vingt-cinq ans. / Bonne année !",
-        "J'ai vingt-cinq ans. / Bonne an !",
-        "J'ai vingt-cinq années. / Bonne année !"
-      ],
-      "a": 1,
-      "why": "Counted with a number, use the short form: ans. Described as a whole span, use the long one: année. Same logic for jour / journée and soir / soirée."
-    },
-    {
-      "id": "confusables-06",
-      "type": "fill",
-      "q": "J'ai travaillé toute la ___ . (jour / journée)",
-      "a": [
-        "journée"
-      ],
-      "why": "The whole span, experienced, so the long form. Je pars dans trois jours, counted, takes the short one."
-    },
-    {
-      "id": "confusables-07",
-      "type": "mcq",
-      "q": "Which is right?",
-      "choices": [
-        "J'apporte mon frère à la fête.",
-        "J'amène mon frère à la fête.",
-        "J'emporte mon frère à la fête.",
-        "J'emmène le gâteau à la fête."
-      ],
-      "a": 1,
-      "why": "Two axes: amener / emmener for people, apporter / emporter for things; a- forms bring towards, em- forms take away."
-    },
-    {
-      "id": "confusables-08",
-      "type": "fill",
-      "q": "___ ton parapluie. (take it away with you)",
-      "a": [
-        "Emporte"
-      ],
-      "why": "A thing, taken away, so emporter. Apporte would mean bring it here."
-    },
-    {
-      "id": "confusables-09",
-      "type": "mcq",
-      "q": "How do you say « I miss you » ?",
-      "choices": [
-        "Je te manque.",
-        "Tu me manques.",
-        "Je manque toi.",
-        "Tu manques à moi."
-      ],
-      "a": 1,
-      "why": "Manquer reverses the roles: literally, you are lacking to me. Je te manque means the opposite, that you miss me."
-    },
-    {
-      "id": "confusables-10",
-      "type": "fill",
-      "q": "I like that. → Ça me ___ .",
-      "a": [
-        "plaît"
-      ],
-      "why": "Plaire works like manquer: the thing liked is the subject. Tu lui plais means he or she likes you."
-    },
-    {
-      "id": "confusables-11",
-      "type": "mcq",
-      "q": "Which pair is correct?",
-      "choices": [
-        "Je visite ma tante. / Je rends visite à Paris.",
-        "Je rends visite à ma tante. / Je visite Paris.",
-        "Je visite à ma tante. / Je rends visite Paris.",
-        "Je visite ma tante. / Je visite Paris."
-      ],
-      "a": 1,
-      "why": "Visiter is for places; a person gets rendre visite à. Saying je visite ma tante sounds like an inspection."
-    },
-    {
-      "id": "confusables-12",
-      "type": "fill",
-      "q": "Je joue ___ piano. (an instrument)",
-      "a": [
-        "du"
-      ],
-      "why": "Jouer de for an instrument, jouer à for a game: je joue du piano, je joue au tennis."
-    },
-    {
-      "id": "confusables-13",
-      "type": "mcq",
-      "q": "« Actuellement, il est en France. » What does actuellement mean?",
-      "choices": [
-        "actually, in fact",
-        "currently",
-        "eventually",
-        "accurately"
-      ],
-      "a": 1,
-      "why": "Actuellement means currently; actually is en fait. Its neighbour éventuellement means possibly, not eventually, which is finalement."
-    },
-    {
-      "id": "confusables-14",
-      "type": "listen",
-      "say": "Tu me manques.",
-      "q": "Type what you hear.",
-      "a": [
-        "Tu me manques.",
-        "Tu me manques"
-      ],
-      "why": "Three words, and the subject is the person being missed. Reason it as you are missed by me."
-    },
-    {
-      "id": "confusables-15",
-      "type": "open",
-      "q": "Why should you never say « Je suis excité » or « Je suis plein » ? Give the correct alternatives.",
-      "a": [
-        "Je suis excité means sexually aroused, not excited: say j'ai hâte or je suis impatient. Je suis plein means drunk (or pregnant, of an animal), not full after a meal: say j'ai bien mangé or je n'ai plus faim."
-      ],
-      "why": "These are the two false friends in the chapter that cost you more than accuracy. Both come from translating the English adjective directly."
-    }
-  ]
+ "ch": "confusables",
+ "title": "Pairs that catch everyone",
+ "questions": [
+  {
+   "id": "confusables-01",
+   "type": "mcq",
+   "q": "Which is correct?",
+   "choices": [
+    "Il est un médecin.",
+    "C'est un médecin.",
+    "Ce est un médecin.",
+    "Elle est une médecin."
+   ],
+   "a": 1,
+   "why": "A determiner in front of the noun forces c'est. Without the article the noun is bare, and then it is il est médecin."
+  },
+  {
+   "id": "confusables-02",
+   "type": "fill",
+   "q": "___ difficile de parler français. (commenting in general)",
+   "a": [
+    "C'est"
+   ],
+   "why": "For the it of an unspecified situation, French uses c'est with a masculine singular adjective. Elle est difficile would describe one specific person or thing."
+  },
+  {
+   "id": "confusables-03",
+   "type": "mcq",
+   "q": "Which is correct?",
+   "choices": [
+    "Je connais où il habite.",
+    "Je sais où il habite.",
+    "Je connais qu'il habite ici.",
+    "Je sais Paris."
+   ],
+   "a": 1,
+   "why": "Savoir takes a clause or a question word; connaître takes a noun and is never followed by a clause. Je connais Paris, but je sais où il habite."
+  },
+  {
+   "id": "confusables-04",
+   "type": "fill",
+   "q": "Je ___ (savoir / connaître) cette chanson.",
+   "a": [
+    "connais"
+   ],
+   "why": "A familiar thing, so connaître. Note the pair from Part II: j'ai su means I found out, j'ai connu means I met."
+  },
+  {
+   "id": "confusables-05",
+   "type": "mcq",
+   "q": "Which set is right?",
+   "choices": [
+    "J'ai vingt-cinq années. / Bonne an !",
+    "J'ai vingt-cinq ans. / Bonne année !",
+    "J'ai vingt-cinq ans. / Bonne an !",
+    "J'ai vingt-cinq années. / Bonne année !"
+   ],
+   "a": 1,
+   "why": "Counted with a number, use the short form: ans. Described as a whole span, use the long one: année. Same logic for jour / journée and soir / soirée."
+  },
+  {
+   "id": "confusables-06",
+   "type": "mcq",
+   "q": "J'ai travaillé toute la ___ . (jour / journée)",
+   "a": 0,
+   "why": "The whole span, experienced, so the long form. Je pars dans trois jours, counted, takes the short one.",
+   "choices": [
+    "journée",
+    "jour",
+    "journal"
+   ]
+  },
+  {
+   "id": "confusables-07",
+   "type": "mcq",
+   "q": "Which is right?",
+   "choices": [
+    "J'apporte mon frère à la fête.",
+    "J'amène mon frère à la fête.",
+    "J'emporte mon frère à la fête.",
+    "J'emmène le gâteau à la fête."
+   ],
+   "a": 1,
+   "why": "Two axes: amener / emmener for people, apporter / emporter for things; a- forms bring towards, em- forms take away."
+  },
+  {
+   "id": "confusables-08",
+   "type": "fill",
+   "q": "___ ton parapluie. (take it away with you)",
+   "a": [
+    "Emporte"
+   ],
+   "why": "A thing, taken away, so emporter. Apporte would mean bring it here."
+  },
+  {
+   "id": "confusables-09",
+   "type": "mcq",
+   "q": "How do you say « I miss you » ?",
+   "choices": [
+    "Je te manque.",
+    "Tu me manques.",
+    "Je manque toi.",
+    "Tu manques à moi."
+   ],
+   "a": 1,
+   "why": "Manquer reverses the roles: literally, you are lacking to me. Je te manque means the opposite, that you miss me."
+  },
+  {
+   "id": "confusables-10",
+   "type": "fill",
+   "q": "I like that. → Ça me ___ .",
+   "a": [
+    "plaît"
+   ],
+   "why": "Plaire works like manquer: the thing liked is the subject. Tu lui plais means he or she likes you."
+  },
+  {
+   "id": "confusables-11",
+   "type": "mcq",
+   "q": "Which pair is correct?",
+   "choices": [
+    "Je visite ma tante. / Je rends visite à Paris.",
+    "Je rends visite à ma tante. / Je visite Paris.",
+    "Je visite à ma tante. / Je rends visite Paris.",
+    "Je visite ma tante. / Je visite Paris."
+   ],
+   "a": 1,
+   "why": "Visiter is for places; a person gets rendre visite à. Saying je visite ma tante sounds like an inspection."
+  },
+  {
+   "id": "confusables-12",
+   "type": "fill",
+   "q": "Je joue ___ piano. (an instrument)",
+   "a": [
+    "du"
+   ],
+   "why": "Jouer de for an instrument, jouer à for a game: je joue du piano, je joue au tennis."
+  },
+  {
+   "id": "confusables-13",
+   "type": "mcq",
+   "q": "« Actuellement, il est en France. » What does actuellement mean?",
+   "choices": [
+    "actually, in fact",
+    "currently",
+    "eventually",
+    "accurately"
+   ],
+   "a": 1,
+   "why": "Actuellement means currently; actually is en fait. Its neighbour éventuellement means possibly, not eventually, which is finalement."
+  },
+  {
+   "id": "confusables-14",
+   "type": "listen",
+   "say": "Tu me manques.",
+   "q": "Type what you hear.",
+   "a": [
+    "Tu me manques.",
+    "Tu me manques"
+   ],
+   "why": "Three words, and the subject is the person being missed. Reason it as you are missed by me."
+  },
+  {
+   "id": "confusables-15",
+   "type": "open",
+   "q": "Why should you never say « Je suis excité » or « Je suis plein » ? Give the correct alternatives.",
+   "a": [
+    "Je suis excité means sexually aroused, not excited: say j'ai hâte or je suis impatient. Je suis plein means drunk (or pregnant, of an animal), not full after a meal: say j'ai bien mangé or je n'ai plus faim."
+   ],
+   "why": "These are the two false friends in the chapter that cost you more than accuracy. Both come from translating the English adjective directly."
+  }
+ ]
 }

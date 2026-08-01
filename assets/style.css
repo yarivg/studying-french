@@ -644,10 +644,13 @@ a.card:hover { border-color: var(--bleu); box-shadow: var(--shadow-md); transfor
 .vocab-row .v-know {
   width: 22px; height: 22px; border-radius: 50%; align-self: center;
   border: 1.5px solid var(--line); background: transparent; cursor: pointer;
-  display: grid; place-items: center; font-size: .7rem; color: transparent;
+  display: grid; place-items: center; font-size: .7rem;
+  /* Faint but always drawn. It used to be transparent until the row was
+     hovered, which on a touch screen meant an unexplained empty circle. */
+  color: var(--line);
   transition: background .13s, border-color .13s, color .13s;
 }
-.vocab-row:hover .v-know { color: var(--line); }
+.vocab-row:hover .v-know { color: var(--muted); }
 .vocab-row .v-know:hover { border-color: var(--vert); color: var(--vert); }
 .vocab-row.is-known .v-know { background: var(--vert); border-color: var(--vert); color: var(--on-accent); }
 .vocab-row.is-known .v-fr, .vocab-row.is-known .v-en { opacity: .55; }
@@ -658,6 +661,9 @@ a.card:hover { border-color: var(--bleu); box-shadow: var(--shadow-md); transfor
 }
 
 /* ---------------------------------------------------------- flashcards */
+
+.deck-note { color: var(--muted); font-size: .86rem; line-height: 1.6; margin: 0 0 1.2rem; }
+.deck-note a { color: var(--bleu); }
 
 .deck-grid { display: grid; gap: .8rem; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); margin: 1.2rem 0 2rem; }
 .deck {
@@ -789,7 +795,8 @@ tr:hover .say-btn, .vocab-row:hover .say-btn { opacity: .8; }
 .ipa { white-space: nowrap; }
 .prose .ipa { font-family: var(--mono); font-size: .86em; color: var(--rouge); }
 
-.flash-say { display: block; margin: .7rem auto 0; }
+.flash-side { margin: .7rem 0 0; }
+.flash-say { display: block; }
 
 /* Audio switched off: leave the prose exactly as it was before. */
 body.audio-off em.say { cursor: inherit; }
@@ -820,6 +827,18 @@ body.audio-off .say-btn, body.audio-off .flash-say { display: none; }
 .sync-syncing .sync-dot { background: var(--or); }
 .sync-error   { color: var(--rouge); }
 .sync-error   .sync-dot { background: var(--rouge); }
+
+/* The tick shown inline in the vocabulary page's intro, so the sentence
+   points at something recognisable. */
+.v-know-demo {
+  display: inline-grid; place-items: center;
+  width: 1.15rem; height: 1.15rem; vertical-align: -.2rem;
+  font-size: .7rem; color: var(--muted);
+  border: 1.5px solid var(--line); border-radius: 50%;
+}
+
+.flash-side { display: flex; gap: .5rem; justify-content: center; flex-wrap: wrap; }
+.flash-know.is-known { color: var(--vert); border-color: var(--vert); background: var(--vert-soft); }
 
 /* ---------------------------------------------------------- my words */
 
@@ -947,6 +966,19 @@ body.audio-off .say-btn, body.audio-off .flash-say { display: none; }
   background: var(--rouge-soft); border-color: var(--rouge);
 }
 
+.test-key {
+  display: inline-grid; place-items: center; flex-shrink: 0;
+  width: 1.3rem; height: 1.3rem; margin-right: .6rem;
+  font: 600 .72rem var(--mono); color: var(--muted);
+  background: var(--surface-2); border: 1px solid var(--line); border-radius: 4px;
+}
+.test-choice { display: flex; align-items: center; }
+.test-choice.is-right .test-key { color: var(--vert); border-color: var(--vert); }
+.test-choice.is-wrong .test-key { color: var(--rouge); border-color: var(--rouge); }
+.test-keyhint { margin: .7rem 0 0; color: var(--muted); font-size: .78rem; }
+/* On a touch screen there is no keyboard to press. */
+@media (hover: none) { .test-key, .test-keyhint { display: none; } }
+
 .test-input {
   display: block; width: 100%; padding: .65rem .8rem;
   font: inherit; font-size: 1.05rem; color: var(--ink);
@@ -954,6 +986,24 @@ body.audio-off .say-btn, body.audio-off .flash-say { display: none; }
 }
 .test-input:focus { outline: 2px solid var(--bleu); outline-offset: 1px; }
 textarea.test-input { font-size: .95rem; line-height: 1.6; resize: vertical; }
+
+.accent-bar {
+  display: flex; align-items: center; gap: .3rem; flex-wrap: wrap;
+  margin-top: .6rem;
+}
+.accent-key {
+  min-width: 2rem; padding: .3rem .1rem;
+  font: 500 1rem var(--serif); color: var(--ink);
+  background: var(--surface-2); border: 1px solid var(--line);
+  border-radius: var(--r-sm); cursor: pointer;
+}
+.accent-key:hover { border-color: var(--bleu); background: var(--bleu-soft); }
+.accent-key:active { transform: translateY(1px); }
+.accent-note { margin-left: .3rem; color: var(--muted); font-size: .74rem; }
+@media (max-width: 560px) {
+  .accent-key { min-width: 1.8rem; font-size: .95rem; }
+  .accent-note { display: none; }
+}
 
 .test-listen { display: flex; gap: .6rem; margin-bottom: .9rem; }
 .test-target { margin: 0 0 .9rem; font-size: 1.6rem; font-weight: 600; letter-spacing: -.01em; }

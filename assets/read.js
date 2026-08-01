@@ -240,6 +240,14 @@ window.Read = (function () {
       }).then(function (r) {
         b.disabled = false;
         b.textContent = '🎤 Again';
+        // A transcript that is not a possible attempt at the line says
+        // nothing about how you read it, so it is not scored.
+        if (r.unclear) {
+          out.innerHTML = '<p class="test-note is-bad">The recogniser did not make that out — ' +
+            'it heard <em>' + escapeHtml(r.heard || 'nothing') + '</em>. It guesses a real word ' +
+            'when a phrase is short or rushed. Try again a little slower.</p>';
+          return;
+        }
         out.innerHTML =
           '<p class="test-heard">' + r.words.map(function (w) {
             return '<span class="hw hw-' + w.state + '">' + escapeHtml(w.word) + '</span>';

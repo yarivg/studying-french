@@ -1,164 +1,168 @@
 {
-  "ch": "present-tense",
-  "title": "The present tense",
-  "questions": [
-    {
-      "id": "present-tense-01",
-      "type": "fill",
-      "q": "Conjugate: nous (finir) ___",
-      "a": [
-        "finissons"
-      ],
-      "why": "The big -ir family inserts -iss- in the plural: finissons, finissez, finissent. Singular is finis, finis, finit."
-    },
-    {
-      "id": "present-tense-02",
-      "type": "fill",
-      "q": "Conjugate: ils (vendre) ___",
-      "a": [
-        "vendent"
-      ],
-      "why": "-re verbs take -s, -s, nothing, -ons, -ez, -ent. The il form of vendre is bare vend, with no ending at all."
-    },
-    {
-      "id": "present-tense-03",
-      "type": "mcq",
-      "q": "Which of these vous forms does NOT end in -ez?",
-      "choices": [
-        "vous parlez",
-        "vous faites",
-        "vous finissez",
-        "vous vendez"
-      ],
-      "a": 1,
-      "why": "Only three verbs in the language break the -ez pattern: vous êtes, vous faites, vous dites."
-    },
-    {
-      "id": "present-tense-04",
-      "type": "fill",
-      "q": "Conjugate: nous (faire) ___",
-      "a": [
-        "faisons"
-      ],
-      "why": "Nous faisons is the one verb where -ai- is said as a flat uh sound, so it rhymes with fe-zon and not with fait."
-    },
-    {
-      "id": "present-tense-05",
-      "type": "fill",
-      "q": "Conjugate: nous (manger) ___",
-      "a": [
-        "mangeons"
-      ],
-      "why": "An -er verb in -ger keeps the e before -ons so the g stays soft: mangeons, nageons, voyageons. Compare -cer verbs: nous commençons."
-    },
-    {
-      "id": "present-tense-06",
-      "type": "fill",
-      "q": "Conjugate: nous (commencer) ___",
-      "a": [
-        "commençons"
-      ],
-      "why": "The cedilla keeps the c soft before o. Without it, commencons would be read with a hard k."
-    },
-    {
-      "id": "present-tense-07",
-      "type": "mcq",
-      "q": "Which pair is right for préférer?",
-      "choices": [
-        "je préfère / nous préférons",
-        "je préfére / nous préfèrons",
-        "je préfère / nous préfèrons",
-        "je préfere / nous preferons"
-      ],
-      "a": 0,
-      "why": "The accent flips to è only where the ending is silent (je, tu, il, ils). Nous and vous have a pronounced ending, so préférons keeps the é."
-    },
-    {
-      "id": "present-tense-08",
-      "type": "fill",
-      "q": "Conjugate: j' (acheter) ___",
-      "a": [
-        "achète"
-      ],
-      "why": "e_er verbs take a grave accent in the silent-ending forms: j'achète, tu achètes, ils achètent, but nous achetons."
-    },
-    {
-      "id": "present-tense-09",
-      "type": "mcq",
-      "q": "Which is the correct present tense of partir for « il » ?",
-      "choices": [
-        "il partit",
-        "il part",
-        "il partis",
-        "il partisse"
-      ],
-      "a": 1,
-      "why": "Partir belongs to the smaller -ir group that drops the consonant in the singular: pars, pars, part, then partons, partez, partent."
-    },
-    {
-      "id": "present-tense-10",
-      "type": "fill",
-      "q": "Conjugate: ils (venir) ___",
-      "a": [
-        "viennent"
-      ],
-      "why": "Venir follows the classic irregular silhouette: viens/viens/vient and viennent share one stem, venons/venez another."
-    },
-    {
-      "id": "present-tense-11",
-      "type": "order",
-      "q": "Build the sentence: She can't come.",
-      "words": [
-        "Elle",
-        "ne",
-        "peut",
-        "pas",
-        "venir"
-      ],
-      "a": [
-        "Elle",
-        "ne",
-        "peut",
-        "pas",
-        "venir"
-      ],
-      "why": "Pouvoir is conjugated and carries the negation; the second verb stays in the infinitive: elle ne peut pas venir."
-    },
-    {
-      "id": "present-tense-12",
-      "type": "fill",
-      "q": "Translate, using the tense French requires: « I have lived here for three years. » J'habite ici ___ trois ans.",
-      "a": [
-        "depuis"
-      ],
-      "why": "Depuis takes the present, because you still live there. Using a past tense here is one of the most persistent English-speaker errors."
-    },
-    {
-      "id": "present-tense-13",
-      "type": "listen",
-      "say": "Nous mangeons à midi.",
-      "q": "Type what you hear.",
-      "a": [
-        "Nous mangeons à midi.",
-        "Nous mangeons à midi"
-      ],
-      "why": "The present covers habits as well as the moment: nous mangeons à midi means we eat at noon, every day."
-    },
-    {
-      "id": "present-tense-14",
-      "type": "open",
-      "q": "Give the six present-tense endings of a regular -er verb, and say which four sound identical.",
-      "a": [
-        "-e, -es, -e, -ons, -ez, -ent. Parle, parles, parle and parlent are all pronounced the same; only parlons and parlez differ."
-      ],
-      "why": "The written endings matter enormously and the spoken ones barely exist, which is why -er verbs are easy to say and easy to misspell."
-    },
-    {
-      "id": "present-tense-15",
-      "type": "say",
-      "q": "Say this out loud: we do / we make.",
-      "target": "nous faisons",
-      "why": "Faisons is the one place in the language where -ai- is said as a flat uh sound: fe-zon, not fay-zon."
-    }
-  ]
+ "ch": "present-tense",
+ "title": "The present tense",
+ "questions": [
+  {
+   "id": "present-tense-01",
+   "type": "fill",
+   "q": "Conjugate: nous (finir) ___",
+   "a": [
+    "finissons"
+   ],
+   "why": "The big -ir family inserts -iss- in the plural: finissons, finissez, finissent. Singular is finis, finis, finit."
+  },
+  {
+   "id": "present-tense-02",
+   "type": "fill",
+   "q": "Conjugate: ils (vendre) ___",
+   "a": [
+    "vendent"
+   ],
+   "why": "-re verbs take -s, -s, nothing, -ons, -ez, -ent. The il form of vendre is bare vend, with no ending at all."
+  },
+  {
+   "id": "present-tense-03",
+   "type": "mcq",
+   "q": "Which of these vous forms does NOT end in -ez?",
+   "choices": [
+    "vous parlez",
+    "vous faites",
+    "vous finissez",
+    "vous vendez"
+   ],
+   "a": 1,
+   "why": "Only three verbs in the language break the -ez pattern: vous êtes, vous faites, vous dites."
+  },
+  {
+   "id": "present-tense-04",
+   "type": "fill",
+   "q": "Conjugate: nous (faire) ___",
+   "a": [
+    "faisons"
+   ],
+   "why": "Nous faisons is the one verb where -ai- is said as a flat uh sound, so it rhymes with fe-zon and not with fait."
+  },
+  {
+   "id": "present-tense-05",
+   "type": "fill",
+   "q": "Conjugate: nous (manger) ___",
+   "a": [
+    "mangeons"
+   ],
+   "why": "An -er verb in -ger keeps the e before -ons so the g stays soft: mangeons, nageons, voyageons. Compare -cer verbs: nous commençons."
+  },
+  {
+   "id": "present-tense-06",
+   "type": "fill",
+   "q": "Conjugate: nous (commencer) ___",
+   "a": [
+    "commençons"
+   ],
+   "why": "The cedilla keeps the c soft before o. Without it, commencons would be read with a hard k."
+  },
+  {
+   "id": "present-tense-07",
+   "type": "mcq",
+   "q": "Which pair is right for préférer?",
+   "choices": [
+    "je préfère / nous préférons",
+    "je préfére / nous préfèrons",
+    "je préfère / nous préfèrons",
+    "je préfere / nous preferons"
+   ],
+   "a": 0,
+   "why": "The accent flips to è only where the ending is silent (je, tu, il, ils). Nous and vous have a pronounced ending, so préférons keeps the é."
+  },
+  {
+   "id": "present-tense-08",
+   "type": "mcq",
+   "q": "Conjugate: j' (acheter) ___",
+   "a": 0,
+   "why": "e_er verbs take a grave accent in the silent-ending forms: j'achète, tu achètes, ils achètent, but nous achetons.",
+   "choices": [
+    "achète",
+    "achete",
+    "achette",
+    "achetes"
+   ]
+  },
+  {
+   "id": "present-tense-09",
+   "type": "mcq",
+   "q": "Which is the correct present tense of partir for « il » ?",
+   "choices": [
+    "il partit",
+    "il part",
+    "il partis",
+    "il partisse"
+   ],
+   "a": 1,
+   "why": "Partir belongs to the smaller -ir group that drops the consonant in the singular: pars, pars, part, then partons, partez, partent."
+  },
+  {
+   "id": "present-tense-10",
+   "type": "fill",
+   "q": "Conjugate: ils (venir) ___",
+   "a": [
+    "viennent"
+   ],
+   "why": "Venir follows the classic irregular silhouette: viens/viens/vient and viennent share one stem, venons/venez another."
+  },
+  {
+   "id": "present-tense-11",
+   "type": "order",
+   "q": "Build the sentence: She can't come.",
+   "words": [
+    "Elle",
+    "ne",
+    "peut",
+    "pas",
+    "venir"
+   ],
+   "a": [
+    "Elle",
+    "ne",
+    "peut",
+    "pas",
+    "venir"
+   ],
+   "why": "Pouvoir is conjugated and carries the negation; the second verb stays in the infinitive: elle ne peut pas venir."
+  },
+  {
+   "id": "present-tense-12",
+   "type": "fill",
+   "q": "Translate, using the tense French requires: « I have lived here for three years. » J'habite ici ___ trois ans.",
+   "a": [
+    "depuis"
+   ],
+   "why": "Depuis takes the present, because you still live there. Using a past tense here is one of the most persistent English-speaker errors."
+  },
+  {
+   "id": "present-tense-13",
+   "type": "listen",
+   "say": "Nous mangeons à midi.",
+   "q": "Type what you hear.",
+   "a": [
+    "Nous mangeons à midi.",
+    "Nous mangeons à midi"
+   ],
+   "why": "The present covers habits as well as the moment: nous mangeons à midi means we eat at noon, every day."
+  },
+  {
+   "id": "present-tense-14",
+   "type": "open",
+   "q": "Give the six present-tense endings of a regular -er verb, and say which four sound identical.",
+   "a": [
+    "-e, -es, -e, -ons, -ez, -ent. Parle, parles, parle and parlent are all pronounced the same; only parlons and parlez differ."
+   ],
+   "why": "The written endings matter enormously and the spoken ones barely exist, which is why -er verbs are easy to say and easy to misspell."
+  },
+  {
+   "id": "present-tense-15",
+   "type": "say",
+   "q": "Say this out loud: we do / we make.",
+   "target": "nous faisons",
+   "why": "Faisons is the one place in the language where -ai- is said as a flat uh sound: fe-zon, not fay-zon."
+  }
+ ]
 }

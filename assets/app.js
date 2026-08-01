@@ -550,7 +550,10 @@
       view.innerHTML =
         '<h1>Vocabulary</h1>' +
         '<p class="lead">' + Vocab.all().length + ' words, with gender and theme — ' +
-        Vocab.mine().length + ' of them added by you. Tick a word once you are sure of it.</p>' +
+        Vocab.mine().length + ' of them added by you. Tap the <span class="v-know-demo">✓</span> ' +
+        'at the left of a row when you know a word; it turns green and counts on the ' +
+        '<a href="#/dashboard">Progress</a> page. Use <em>Not yet known</em> to hide the ones ' +
+        'you have already ticked.</p>' +
         '<div class="vocab-toolbar">' +
           '<input type="search" id="vq" placeholder="Search French or English…" autocomplete="off">' +
           '<select id="vtheme">' + themeOpts + '</select>' +
@@ -961,9 +964,19 @@
     view.innerHTML = '<div class="loading">Loading decks…</div>';
 
     Vocab.load().then(function () {
+      var known = Progress.knownCount();
       var html = '<h1>Flashcards</h1>' +
         '<p class="lead">Leitner spaced repetition: a card you get right moves up a box and comes ' +
         'back later (1, 2, 5, 10, 21, then 45 days). Get it wrong and it drops back to daily.</p>' +
+        (known
+          ? '<p class="deck-note">' + known + ' word' + (known === 1 ? '' : 's') +
+            ' you marked as known ' + (known === 1 ? 'is' : 'are') + ' held out of every deck. ' +
+            'Untick ' + (known === 1 ? 'it' : 'them') + ' in the ' +
+            '<a href="#/vocab">vocabulary list</a> to bring ' +
+            (known === 1 ? 'it' : 'them') + ' back — the old schedule is kept.</p>'
+          : '<p class="deck-note">Marking a word known in the ' +
+            '<a href="#/vocab">vocabulary list</a>, or retiring it mid-review, takes it out of ' +
+            'every deck.</p>') +
         '<div class="deck-grid">';
 
       Vocab.decks().forEach(function (d) {

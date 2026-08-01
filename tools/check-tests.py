@@ -28,6 +28,11 @@ def bad(path, qid, msg):
     problems.append("%s [%s] %s" % (os.path.relpath(path, ROOT), qid or "-", msg))
 
 
+def unaccent(s):
+    return "".join(c for c in unicodedata.normalize("NFD", s)
+                   if not unicodedata.combining(c))
+
+
 def norm(s):
     """Mirror of Test.norm() with loose=False."""
     s = str(s).lower().replace("’", "'")
@@ -101,6 +106,17 @@ def check_bank(path, slugs):
                 # Giving the answer away in the prompt makes it free.
                 if any(norm(a) and norm(a) in norm(q.get("q", "")) for a in answers):
                     bad(path, qid, "the answer appears in the question text")
+
+            # A typed answer whose letters are already in the prompt, differing
+            # only by a diacritic, is a question about the accent — and the
+            # learner has no French keyboard. Those belong in `mcq`.
+            first = str(answers[0]) if answers else ""
+            if first and unaccent(first) != first:
+                whole = r"\b%s\b" % re.escape(unaccent(norm(first)))
+                if re.search(whole, unaccent(norm(q.get("q", "")))):
+                    bad(path, qid,
+                        "the prompt already gives the letters and only the accent is missing; "
+                        "make this an mcq so it can be answered without a French keyboard")
 
         elif t == "order":
             words, answer = q.get("words"), q.get("a")

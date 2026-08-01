@@ -115,7 +115,8 @@ window.Vocab = (function () {
     var known = Progress.isKnown(w.id);
     return '<div class="vocab-row' + (known ? ' is-known' : '') + (w.mine ? ' is-mine' : '') +
       '" data-id="' + w.id + '">' +
-      '<button class="v-know" aria-label="Mark as known" aria-pressed="' + known + '">✓</button>' +
+      '<button class="v-know" aria-label="Mark as known" aria-pressed="' + known + '" ' +
+        'title="' + (known ? 'Known — tap to unmark' : 'Tap when you know this word') + '">✓</button>' +
       '<span class="v-fr">' + escapeHtml(w.fr) + '</span>' +
       '<span class="v-en">' + escapeHtml(w.en) + '</span>' +
       '<span class="v-tag">' + (POS_LABEL[w.pos] || w.pos) +
@@ -148,6 +149,7 @@ window.Vocab = (function () {
       var on = Progress.toggleKnown(row.dataset.id);
       row.classList.toggle('is-known', on);
       btn.setAttribute('aria-pressed', String(on));
+      btn.setAttribute('title', on ? 'Known — tap to unmark' : 'Tap when you know this word');
     });
   }
 
@@ -226,6 +228,9 @@ window.Vocab = (function () {
       cards: words.map(function (w) {
         return {
           id: w.id + ':' + dir,
+          // The card id carries the direction; the known flag is per word,
+          // so it needs the bare id too.
+          wordId: w.id,
           front: dir === 'fr-en' ? w.fr : w.en,
           back: dir === 'fr-en' ? w.en : w.fr,
           fr: w.fr,
@@ -238,22 +243,30 @@ window.Vocab = (function () {
     };
   }
 
+  // A word you have ticked as known is done with: it leaves the decks
+  // rather than coming round again. Untick it and it comes back, with its
+  // old box and schedule intact, because nothing about the card is deleted.
+  function unknown(list) {
+    return list.filter(function (w) { return !Progress.isKnown(w.id); });
+  }
+
   function decks() {
     var out = [];
-    if (mine().length) {
-      out.push(deck('mine-fr', 'My words (FR → EN)', mine(), 'fr-en'));
-      out.push(deck('mine-en', 'My words (EN → FR)', mine(), 'en-fr'));
+    if (unknown(mine()).length) {
+      out.push(deck('mine-fr', 'My words (FR → EN)', unknown(mine()), 'fr-en'));
+      out.push(deck('mine-en', 'My words (EN → FR)', unknown(mine()), 'en-fr'));
     }
     themes().forEach(function (t) {
       if (t === 'general') return;
-      var words = byTheme(t);
+      var words = unknown(byTheme(t));
+      if (!words.length) return;
       out.push(deck('theme-' + t + '-fr', capitalise(t), words, 'fr-en'));
     });
-    out.push(deck('all-fr', 'Everything (FR → EN)', all(), 'fr-en'));
-    out.push(deck('all-en', 'Everything (EN → FR)', all(), 'en-fr'));
-    var verbs = all().filter(function (w) { return w.pos === 'verb'; });
+    out.push(deck('all-fr', 'Everything (FR → EN)', unknown(all()), 'fr-en'));
+    out.push(deck('all-en', 'Everything (EN → FR)', unknown(all()), 'en-fr'));
+    var verbs = unknown(all()).filter(function (w) { return w.pos === 'verb'; });
     out.push(deck('verbs-fr', 'Verbs', verbs, 'fr-en'));
-    var nouns = all().filter(function (w) { return w.pos === 'noun' && w.g; });
+    var nouns = unknown(all()).filter(function (w) { return w.pos === 'noun' && w.g; });
     out.push(deck('gender', 'Noun genders', nouns, 'fr-en'));
     return out;
   }
