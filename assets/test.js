@@ -151,7 +151,8 @@ window.Test = (function () {
         '<div class="test-bar"><span style="width:' + pct + '%"></span></div>' +
         '<div class="test-meta">' +
           (s.i ? '<button class="test-back" type="button" data-act="back" ' +
-            'title="Go back and answer it again (left arrow)">← Back</button>' : '') +
+            'title="Go back and answer it again (left arrow)">' +
+            '<span class="test-back-arrow" aria-hidden="true">←</span>Back</button>' : '') +
           '<span>Question ' + (s.i + 1) + ' of ' + s.questions.length + '</span>' +
           '<span>' + s.right + ' right</span>' +
         '</div>' +
@@ -171,6 +172,13 @@ window.Test = (function () {
     var body = s.host.querySelector('#testBody');
     var actions = s.host.querySelector('#testActions');
     BODY[q.type](body, actions, q);
+
+    // Anything you answer by typing gets the caret straight away, so a run of
+    // written questions never needs a click between them. preventScroll keeps
+    // the question itself in view: the field is below it, and letting the
+    // browser scroll to the field pushed the prompt off a short screen.
+    var typed = body.querySelector('#testIn');
+    if (typed && !typed.disabled) typed.focus({ preventScroll: true });
   }
 
   // Step back and ask it again. Anything already recorded for the question we
@@ -240,7 +248,6 @@ window.Test = (function () {
     input.addEventListener('keydown', function (e) {
       if (e.key === 'Enter') actions.querySelector('[data-act="check"]').click();
     });
-    input.focus();
   };
 
   BODY.listen = function (body, actions, q) {
@@ -425,8 +432,16 @@ window.Test = (function () {
     body.innerHTML = '<textarea class="test-input" id="testIn" rows="3" ' +
       'placeholder="Answer in your own words, then reveal the model answer."></textarea>' +
       accentBar();
-    bindAccents(body, body.querySelector('#testIn'));
+    var input = body.querySelector('#testIn');
+    bindAccents(body, input);
     selfMark(body, actions, q);
+    // The caret is in the box from the start, so the global Enter shortcut
+    // never sees the key. Shift-Enter is left as the way to a new line.
+    input.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' || e.shiftKey) return;
+      var reveal = actions.querySelector('[data-act="reveal"]');
+      if (reveal) { e.preventDefault(); reveal.click(); }
+    });
   };
 
   /* ---------------------------------------------------------- accents */
@@ -494,9 +509,21 @@ window.Test = (function () {
   }
 
   // Types the machine cannot judge: reveal the model answer, you decide.
+  // A digit is only offered when there is nothing to type into. On an open
+  // answer the caret is in the box, where a "1" is a character you meant, so
+  // the buttons wear no digit rather than advertising a key that types.
   function selfMark(body, actions, q) {
-    actions.innerHTML = '<button class="btn btn-lg btn-keyed" data-act="reveal" data-key="1">' +
-      key(1) + 'Show the answer</button>';
+    var typed = !!body.querySelector('#testIn');
+    // One attribute, not two: a second class="" on the same element is thrown
+    // away by the parser, taking btn-lg with it.
+    var btn = function (extra, n) {
+      return ' class="btn btn-lg' + (extra ? ' ' + extra : '') + (typed ? '' : ' btn-keyed') + '"' +
+        (typed ? '' : ' data-key="' + n + '"');
+    };
+    var chip = function (n) { return typed ? '' : key(n); };
+
+    actions.innerHTML = '<button' + btn('', 1) + ' data-act="reveal">' +
+      chip(1) + 'Show the answer</button>';
     actions.addEventListener('click', function (e) {
       var b = e.target.closest('[data-act]');
       if (!b) return;
@@ -504,10 +531,8 @@ window.Test = (function () {
         body.insertAdjacentHTML('beforeend',
           '<p class="test-model"><span>Model answer</span>' + escapeHtml(modelAnswer(q)) + '</p>');
         actions.innerHTML =
-          '<button class="btn btn-lg btn-keyed btn-ok" data-act="got" data-key="1">' +
-            key(1) + 'I had it</button>' +
-          '<button class="btn btn-lg btn-keyed btn-again" data-act="missed" data-key="2">' +
-            key(2) + 'Not quite</button>';
+          '<button' + btn('btn-ok', 1) + ' data-act="got">' + chip(1) + 'I had it</button>' +
+          '<button' + btn('btn-again', 2) + ' data-act="missed">' + chip(2) + 'Not quite</button>';
         return;
       }
       settle(q, b.dataset.act === 'got', null, null, true);

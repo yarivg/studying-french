@@ -17,6 +17,7 @@ No build step, no dependencies, no tracking. Progress lives in your browser and 
 | **Part III — Refining** | 9 chapters. Sequence of tenses, reported speech, register, passé simple. B2. |
 | **Part IV — Reference** | Irregular verb tables, a one-page sound cheat sheet, and a study plan. |
 | **Tests** | A drill for every chapter and an exam for every part. Six question types, auto-graded, but you decide what counts as learned. |
+| **Statistics** | Your progress plotted over time, how many words you know by three different measures, half a year of activity as a day-per-square heatmap, every test you have taken, and what you did lately. |
 | **Reading** | Ten passages A1–B2. Hear any line, tap any word for its meaning, answer for comprehension, then read a line back into the microphone. |
 | **Vocabulary** | 1,493 entries, searchable and filterable by theme, part of speech and gender — plus any word you add yourself. |
 | **Flashcards** | Leitner spaced repetition, sliced by theme or by word type. |
@@ -70,6 +71,12 @@ flashcard, `1` and `2` grade
 it and `H` speaks the French. Anywhere, `/` is the search box and `n` opens the quick add. The
 digit chips are hidden on a touch screen, where there is no keyboard to press.
 
+Anything you answer by typing gets the caret as the question appears, so a run of written
+questions needs no click in between. An open answer is the one place a digit stays a digit: it
+is prose, `1789` is something you might mean, and the two marks there carry no digit chip
+rather than advertise a key that would type. `Enter` still reveals the model answer, and
+`Shift`-`Enter` is a new line.
+
 Two rules the validator enforces, both because the course is written for someone
 without a French keyboard: a typed answer may not be a word already in the prompt
 that differs only by an accent (that question belongs in `mcq`), and no answer may
@@ -85,6 +92,28 @@ but it needs a French voice installed on the machine. macOS ships one; on Linux,
 `espeak-ng` or a `speech-dispatcher` French voice. The speaker button in the header turns the
 audio off, slows it down, or picks between the French voices you have. Shift-click any example
 to hear it slowly.
+
+## Statistics
+
+**Progress → Statistics** is the same figures over time rather than as they stand today.
+
+Two of the curves need no history to exist, because the data was already dated: a chapter
+records when you marked it, a word records when you added it. So the **course progress** line
+can be drawn backwards through months of study, with each chapter stepping up on the day you
+last marked it, and the time axis is real time — a fortnight of doing nothing looks like a
+fortnight.
+
+Two numbers could not be recovered that way. A tick in the vocabulary list and a flashcard box
+are counts of entries with no date attached, so one snapshot a day is written: the counters as
+they stood, last write of the day wins, kept for about a year. That is what **words over time**
+plots. It starts the day you first open the page; the rest of the statistics do not.
+
+Also there: how many words you know by three deliberately different measures (ticked in the
+list, ever right on a flashcard, still right after four reviews spread over a fortnight), which
+themes you have got through, half a year of activity as one square a day, every test with its
+best score and the mark you gave yourself, and a feed of what you did lately.
+
+Charts are inline SVG drawn from your own numbers. No chart library, nothing fetched.
 
 ## Adding your own words
 
@@ -137,7 +166,9 @@ that each device pulls, merges and pushes on load and a few seconds after anythi
 Merging is per entry, not per file: whichever device touched an entry last wins, deletions are
 recorded so they are not undone by the other device still having the entry, and flashcard
 counters take the higher of the two. So a session on the phone and a session on the laptop on
-the same day both survive.
+the same day both survive. A day's statistics snapshot is one reading of several counters, so it
+is taken whole from whichever device wrote it later: mixing the fields of two devices would
+invent a state neither was ever in.
 
 Security, briefly:
 

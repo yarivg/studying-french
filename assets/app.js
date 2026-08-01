@@ -4,6 +4,7 @@
    Routes
      #/                  home
      #/dashboard         progress overview
+     #/stats             statistics: progress over time, words known, activity
      #/vocab             vocabulary browser
      #/cards             deck list
      #/cards/<deckId>    review session
@@ -57,7 +58,9 @@
         window.addEventListener('progress:change', function () {
           updateProgressCard();
           markNavRead();
+          recordSnapshot();
         });
+        recordSnapshot();
         // A sync can change everything the dashboard is showing.
         window.addEventListener('sync:status', function () {
           if (location.hash.replace(/^#\/?/, '') === 'dashboard') renderSyncCard();
@@ -122,6 +125,7 @@
     var html =
       '<a class="nav-link nav-meta" href="#/"><span>Start here</span></a>' +
       '<a class="nav-link nav-meta" href="#/dashboard"><span>Progress</span></a>' +
+      '<a class="nav-link nav-meta" href="#/stats"><span>Statistics</span></a>' +
       '<a class="nav-link nav-meta" href="#/vocab"><span>Vocabulary</span></a>' +
       '<a class="nav-link nav-meta" href="#/cards"><span>Flashcards</span></a>' +
       '<a class="nav-link nav-meta" href="#/tests"><span>Tests</span></a>' +
@@ -189,6 +193,44 @@
     return list.length ? Math.round((creditOf(list) / list.length) * 100) : 0;
   }
 
+  function solidOf(list) {
+    return list.filter(function (c) { return Progress.mastery(c.slug).level === 2; }).length;
+  }
+
+  // Every card id from every deck, deduplicated. Counting only the FR → EN
+  // deck used to hide all of a session spent on EN → FR: the two directions
+  // are separate cards with separate schedules.
+  function allCardIds() {
+    var seen = Object.create(null);
+    Vocab.decks().forEach(function (d) {
+      d.cards.forEach(function (c) { seen[c.id] = 1; });
+    });
+    return Object.keys(seen);
+  }
+
+  // One reading of the counters a day, for the statistics page. Words ticked
+  // as known and flashcard boxes carry no date of their own, so without this
+  // there would be no way to draw them over time. Written after things settle
+  // so a run of grades is one write, not twenty.
+  var snapTimer = null;
+  function recordSnapshot() {
+    clearTimeout(snapTimer);
+    snapTimer = setTimeout(function () {
+      Vocab.load().then(function () {
+        var cs = Progress.cardStats(allCardIds());
+        Progress.snapDay({
+          pct: pctOf(chapters),
+          marked: marked(chapters),
+          solid: solidOf(chapters),
+          known: Progress.knownCount(),
+          words: Progress.wordCount(),
+          right: cs.right,
+          stuck: cs.learned
+        });
+      });
+    }, 2500);
+  }
+
   function updateProgressCard() {
     var total = chapters.length || 1;
     var pct = pctOf(chapters);
@@ -216,6 +258,7 @@
 
     if (!hash) return renderHome();
     if (hash === 'dashboard') return renderDashboard();
+    if (hash === 'stats') return renderStats();
     if (hash === 'vocab') return renderVocabPage();
     if (hash === 'cards') return renderDeckList();
     if (hash.indexOf('cards/') === 0) return renderDeck(hash.slice(6));
@@ -334,6 +377,7 @@
         card('#/vocab', '📖', 'Vocabulary', 'Searchable and filterable, and you can add your own') +
         card('#/cards', '🗂', 'Flashcards', 'Spaced repetition across every theme') +
         card('#/dashboard', '📊', 'Progress', 'What you have read, learned and still owe') +
+        card('#/stats', '📈', 'Statistics', 'Your progress over time, and how many words you know') +
       '</div>';
 
     manifest.parts.forEach(function (part) {
@@ -364,14 +408,7 @@
       var total = chapters.length;
       var read = chapters.filter(function (c) { return Progress.isRead(c.slug); }).length;
       var words = Vocab.all();
-      // Every card id from every deck, deduplicated. Counting only the
-      // FR → EN deck used to hide all of a session spent on EN → FR: the
-      // two directions are separate cards with separate schedules.
-      var seen = Object.create(null);
-      Vocab.decks().forEach(function (d) {
-        d.cards.forEach(function (c) { seen[c.id] = 1; });
-      });
-      var ids = Object.keys(seen);
+      var ids = allCardIds();
       var stats = Progress.cardStats(ids);
       var due = Progress.dueCount(ids);
 
@@ -381,12 +418,14 @@
           ? 'Kept in this browser and mirrored to your private gist.'
           : 'Everything here lives in this browser only. Nothing is uploaded.') + '</p>' +
         '<div class="stat-grid">' +
-          stat(pctOf(chapters) + '%', 'Course progress', 'accent') +
+          stat('<a href="#/stats" style="color:inherit;text-decoration:none">' +
+            pctOf(chapters) + '%</a>', 'Course progress', 'accent') +
           stat(read + '<span style="font-size:1rem;color:var(--muted)"> / ' + total + '</span>', 'Lessons read', '') +
           stat(Progress.knownCount(), 'Words marked known', 'good') +
           stat(due, 'Cards due now', due ? 'warn' : '') +
           stat(Progress.streak(), 'Day streak', '') +
-        '</div>';
+        '</div>' +
+        '<p><a href="#/stats">Statistics →</a> for the same figures over time, day by day.</p>';
 
       html += '<h2>By part</h2>';
       manifest.parts.forEach(function (part) {
@@ -560,13 +599,407 @@
     if (s < 60) return 'just now';
     if (s < 3600) return Math.round(s / 60) + ' min ago';
     if (s < 86400) return Math.round(s / 3600) + ' h ago';
-    return Math.round(s / 86400) + ' days ago';
+    var days = Math.round(s / 86400);
+    return days === 1 ? 'yesterday' : days + ' days ago';
   }
 
   function stat(num, label, kind) {
     return '<div class="stat ' + (kind || '') + '">' +
       '<div class="stat-num">' + num + '</div>' +
       '<div class="stat-label">' + escapeHtml(label) + '</div></div>';
+  }
+
+  /* ---------------------------------------------------------- statistics */
+
+  var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  function pad2(n) { return String(n).padStart(2, '0'); }
+
+  // Days are counted as whole local days, the same way the streak counts
+  // them, so a chart and the streak never disagree about what "yesterday" is.
+  function dayKeyOf(ts) {
+    var d = new Date(ts);
+    return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
+  }
+
+  function dayNum(key) {
+    var p = key.split('-');
+    return Math.floor(Date.UTC(+p[0], +p[1] - 1, +p[2]) / 86400000);
+  }
+
+  function keyOfDayNum(n) {
+    var d = new Date(n * 86400000);
+    return d.getUTCFullYear() + '-' + pad2(d.getUTCMonth() + 1) + '-' + pad2(d.getUTCDate());
+  }
+
+  function fmtDay(key) {
+    var p = key.split('-');
+    return (+p[2]) + ' ' + MONTHS[+p[1] - 1];
+  }
+
+  function fmtWhen(ts) {
+    if (!ts) return '';
+    var d = new Date(ts);
+    var age = Date.now() - ts;
+    if (age < 7 * 86400000) return timeAgo(ts);
+    return d.getDate() + ' ' + MONTHS[d.getMonth()] + ' ' + d.getFullYear();
+  }
+
+  function niceMax(v) {
+    if (v <= 0) return 1;
+    var step = Math.pow(10, Math.floor(Math.log(v) / Math.LN10));
+    var mult = [1, 2, 2.5, 5, 10];
+    for (var i = 0; i < mult.length; i++) {
+      if (step * mult[i] >= v) return step * mult[i];
+    }
+    return step * 10;
+  }
+
+  function round1(v) { return Math.round(v * 10) / 10; }
+
+  /* One chart function for every line on this page. `sets` is a list of
+     { label, cls, points: [{ day, v }] }, oldest point first. The x axis is
+     real time, not the index of a point, so a fortnight of doing nothing
+     looks like a fortnight. */
+  function lineChart(sets, opts) {
+    opts = opts || {};
+    sets = sets.filter(function (s) { return s.points.length; });
+    if (!sets.length) return '';
+    // L leaves room for the widest y label at the size it grows to on a
+    // phone, where the whole viewBox is scaled to about half.
+    var W = 720, H = 210, L = 50, R = 12, T = 14, B = 30;
+
+    var all = sets.reduce(function (a, s) { return a.concat(s.points); }, []);
+    var x0 = Math.min.apply(null, all.map(function (p) { return dayNum(p.day); }));
+    var x1 = Math.max.apply(null, all.map(function (p) { return dayNum(p.day); }));
+    // A single day still needs a width, or every point sits on one pixel.
+    if (x1 <= x0) x0 = x1 - 1;
+    var top = opts.max || niceMax(Math.max.apply(null, all.map(function (p) { return p.v; })));
+
+    function px(day) { return L + (dayNum(day) - x0) / (x1 - x0) * (W - L - R); }
+    function py(v) { return T + (1 - Math.min(v, top) / top) * (H - T - B); }
+
+    var svg = '';
+    [0, 0.5, 1].forEach(function (f) {
+      var y = py(top * f);
+      svg += '<line class="chart-grid" x1="' + L + '" y1="' + y + '" x2="' + (W - R) + '" y2="' + y + '"/>' +
+        '<text class="chart-tick" x="' + (L - 6) + '" y="' + (y + 4) + '" text-anchor="end">' +
+        round1(top * f) + (opts.suffix || '') + '</text>';
+    });
+
+    sets.forEach(function (s) {
+      var pts = s.points.map(function (p) { return px(p.day).toFixed(1) + ' ' + py(p.v).toFixed(1); });
+      var line = 'M' + pts.join(' L');
+      if (s.points.length > 1) {
+        svg += '<path class="chart-area ' + s.cls + '" d="' + line +
+          ' L' + px(s.points[s.points.length - 1].day).toFixed(1) + ' ' + py(0) +
+          ' L' + px(s.points[0].day).toFixed(1) + ' ' + py(0) + ' Z"/>';
+      }
+      svg += '<path class="chart-line ' + s.cls + '" d="' + line + '"/>';
+      var last = s.points[s.points.length - 1];
+      svg += '<circle class="chart-dot ' + s.cls + '" cx="' + px(last.day).toFixed(1) +
+        '" cy="' + py(last.v).toFixed(1) + '" r="3.5"/>';
+    });
+
+    var labels = [keyOfDayNum(x0), keyOfDayNum(x1)];
+    if (x1 - x0 > 40) labels.splice(1, 0, keyOfDayNum(Math.round((x0 + x1) / 2)));
+    labels.forEach(function (key, i) {
+      svg += '<text class="chart-tick" x="' + px(key).toFixed(1) + '" y="' + (H - 8) +
+        '" text-anchor="' + (i === 0 ? 'start' : i === labels.length - 1 ? 'end' : 'middle') +
+        '">' + fmtDay(key) + '</text>';
+    });
+
+    var legend = sets.length > 1 || opts.legend
+      ? '<p class="chart-legend">' + sets.map(function (s) {
+          return '<span class="' + s.cls + '"><i></i>' + escapeHtml(s.label) + '</span>';
+        }).join('') + '</p>'
+      : '';
+
+    return legend + '<svg class="chart" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' +
+      escapeHtml(sets.map(function (s) {
+        return s.label + ': ' + round1(s.points[s.points.length - 1].v) + (opts.suffix || '');
+      }).join(', ')) + '">' + svg + '</svg>';
+  }
+
+  /* Half a year of days, one square each, darker the more you did. */
+  function heatmap(counts) {
+    var WEEKS = 26, CELL = 13, GAP = 3, STEP = CELL + GAP, TOP = 14;
+    var W = WEEKS * STEP - GAP, H = TOP + 7 * STEP - GAP;
+    var now = new Date();
+    var todayN = dayNum(dayKeyOf(now.getTime()));
+    var startN = todayN - now.getDay() - (WEEKS - 1) * 7;
+
+    var cells = '', months = '', lastMonth = -1, active = 0, reviews = 0;
+    for (var w = 0; w < WEEKS; w++) {
+      var weekStart = startN + w * 7;
+      var m = new Date(weekStart * 86400000).getUTCMonth();
+      if (m !== lastMonth && w < WEEKS - 1) {
+        months += '<text class="chart-tick" x="' + (w * STEP) + '" y="9">' + MONTHS[m] + '</text>';
+        lastMonth = m;
+      }
+      for (var d = 0; d < 7; d++) {
+        var n = weekStart + d;
+        if (n > todayN) continue;
+        var key = keyOfDayNum(n);
+        var c = counts[key] || 0;
+        if (c) { active++; reviews += c; }
+        var level = !c ? 0 : c < 3 ? 1 : c < 10 ? 2 : c < 25 ? 3 : 4;
+        cells += '<rect class="hm-cell hm-' + level + '" x="' + (w * STEP) + '" y="' +
+          (TOP + d * STEP) + '" width="' + CELL + '" height="' + CELL + '" rx="3">' +
+          '<title>' + fmtDay(key) + ': ' + (c ? c + (c === 1 ? ' review' : ' reviews') : 'nothing') +
+          '</title></rect>';
+      }
+    }
+
+    return '<svg class="heatmap" viewBox="0 0 ' + W + ' ' + H + '" role="img" ' +
+      'aria-label="Activity over the last 26 weeks: ' + active + ' days studied, ' +
+      reviews + ' reviews">' + months + cells + '</svg>' +
+      '<p class="hm-legend">Fewer' +
+      [0, 1, 2, 3, 4].map(function (l) { return '<i class="hm-' + l + '"></i>'; }).join('') +
+      'More · <strong>' + active + '</strong> day' + (active === 1 ? '' : 's') +
+      ' studied here, <strong>' + reviews + '</strong> answers</p>';
+  }
+
+  // The longest run of consecutive studied days ever, not only the current one.
+  function longestStreak(counts) {
+    var keys = Object.keys(counts).filter(function (k) { return counts[k]; }).sort();
+    var best = 0, run = 0, prev = null;
+    keys.forEach(function (k) {
+      var n = dayNum(k);
+      run = prev !== null && n === prev + 1 ? run + 1 : 1;
+      prev = n;
+      if (run > best) best = run;
+    });
+    return best;
+  }
+
+  function renderStats() {
+    setCurrentNav('stats');
+    pager.innerHTML = '';
+    view.innerHTML = '<div class="loading">Adding it all up…</div>';
+
+    Vocab.load().then(function () {
+      var total = chapters.length;
+      var words = Vocab.all();
+      var cs = Progress.cardStats(allCardIds());
+      var hist = Progress.history();
+      var days = Progress.dayCounts();
+      var todayKey = dayKeyOf(Date.now());
+
+      /* -- course progress over time. Every chapter carries the time you
+            last marked it, so the curve can be drawn for days before this
+            page existed. It is the marks you hold *now*, each placed on the
+            day you gave it: re-marking a chapter moves its step along. */
+      var marks = [];
+      chapters.forEach(function (ch) {
+        var m = Progress.mastery(ch.slug);
+        if (m.level && m.at) marks.push({ at: m.at, credit: m.level === 2 ? 1 : 0.5 });
+      });
+      marks.sort(function (a, b) { return a.at - b.at; });
+      var byDay = {}, run = 0;
+      marks.forEach(function (m) { run += m.credit; byDay[dayKeyOf(m.at)] = run; });
+      var markDays = Object.keys(byDay).sort();
+      var curve = [];
+      if (markDays.length) {
+        curve.push({ day: keyOfDayNum(dayNum(markDays[0]) - 1), v: 0 });
+        markDays.forEach(function (k) { curve.push({ day: k, v: byDay[k] / total * 100 }); });
+        // Flat since the last mark is worth seeing, so the line runs to today.
+        if (markDays[markDays.length - 1] !== todayKey) {
+          curve.push({ day: todayKey, v: run / total * 100 });
+        }
+      }
+
+      var html =
+        '<h1>Statistics</h1>' +
+        '<p class="lead">Where you have got to, and how you got there. Worked out from what ' +
+        'is already stored on this device, so nothing here is tracked anywhere else.</p>' +
+        '<div class="stat-grid">' +
+          stat(pctOf(chapters) + '%', 'Course progress', 'accent') +
+          stat(solidOf(chapters), 'Chapters confident', 'good') +
+          stat(marked(chapters) - solidOf(chapters), 'Chapters shaky', 'warn') +
+          stat(Progress.knownCount(), 'Words you know', 'good') +
+          stat(Progress.streak(), 'Day streak', '') +
+        '</div>';
+
+      html += '<h2>Course progress over time</h2>';
+      if (curve.length) {
+        html += '<p>Confident counts a whole chapter, shaky counts half, out of ' + total +
+          '. Each chapter steps up on the day you last marked it.</p>' +
+          lineChart([{ label: 'Course progress', cls: 'c-bleu', points: curve }],
+            { max: 100, suffix: '%' });
+      } else {
+        html += '<p class="stats-empty">Nothing to plot yet. Take a chapter test and mark ' +
+          'yourself at the end, and the line starts here. ' +
+          '<a href="#/tests">Go to the tests</a>.</p>';
+      }
+
+      /* -- words. The ticks in the vocabulary list are the direct claim;
+            the flashcards are the evidence, and disagree with it on purpose. */
+      html += '<h2>Words you know</h2>' +
+        '<p>Three different claims, deliberately. <strong>Ticked known</strong> is you saying ' +
+        'so in the list. <strong>Right at least once</strong> counts flashcards you have ever ' +
+        'answered correctly. <strong>Stuck</strong> is the strict one: still right after four ' +
+        'reviews spread over a fortnight or more.</p>' +
+        '<div class="stat-grid">' +
+          stat(Progress.knownCount() + '<span class="stat-of"> / ' + words.length + '</span>',
+            'Ticked known', 'good') +
+          stat(cs.right, 'Right at least once', cs.right ? 'accent' : '') +
+          stat(cs.learned, 'Stuck (box 4+)', 'good') +
+          stat(Vocab.mine().length, 'Words you added', '') +
+        '</div>' +
+        '<div class="bar"><span style="width:' +
+        Math.round((Progress.knownCount() / (words.length || 1)) * 100) + '%"></span></div>';
+
+      var knownSeries = hist.map(function (h) { return { day: h.day, v: h.known }; });
+      var stuckSeries = hist.map(function (h) { return { day: h.day, v: h.stuck }; });
+      if (hist.length > 1) {
+        html += '<h3>Words over time</h3>' +
+          lineChart([
+            { label: 'Ticked known', cls: 'c-vert', points: knownSeries },
+            { label: 'Stuck flashcards', cls: 'c-bleu', points: stuckSeries }
+          ], {});
+      } else {
+        html += '<p class="stats-empty">A tick in the list and a flashcard box carry no date ' +
+          'of their own, so these two are counted once a day from now on. Come back tomorrow ' +
+          'and there is a line here.</p>';
+      }
+
+      // Which themes you have actually got through, rather than how big they are.
+      var themes = {};
+      words.forEach(function (w) {
+        (w.themes.length ? w.themes : ['general']).forEach(function (t) {
+          var row = themes[t] || (themes[t] = { total: 0, known: 0 });
+          row.total++;
+          if (Progress.isKnown(w.id)) row.known++;
+        });
+      });
+      var themeRows = Object.keys(themes).map(function (t) {
+        return { theme: t, total: themes[t].total, known: themes[t].known,
+                 pct: Math.round(themes[t].known / themes[t].total * 100) };
+      }).filter(function (r) { return r.known; })
+        .sort(function (a, b) { return b.pct - a.pct || b.known - a.known; });
+
+      if (themeRows.length) {
+        html += '<h3>By theme</h3><div class="stats-rows">' +
+          themeRows.slice(0, 12).map(function (r) {
+            return '<div class="stats-row"><span class="sr-name">' + escapeHtml(r.theme) + '</span>' +
+              '<span class="sr-bar"><i style="width:' + r.pct + '%"></i></span>' +
+              '<span class="sr-num">' + r.known + ' / ' + r.total + '</span></div>';
+          }).join('') + '</div>' +
+          (themeRows.length > 12 ? '<p class="stats-note">' + (themeRows.length - 12) +
+            ' more themes started.</p>' : '');
+      }
+
+      /* -- activity */
+      var totalReviews = Object.keys(days).reduce(function (a, k) { return a + days[k]; }, 0);
+      var activeDays = Object.keys(days).filter(function (k) { return days[k]; }).length;
+      html += '<h2>Activity</h2>' +
+        '<p>One square a day. It counts answers: exercises, flashcard grades and test ' +
+        'questions, whatever you were working on.</p>' +
+        heatmap(days) +
+        '<div class="stat-grid">' +
+          stat(Progress.streak(), 'Day streak', Progress.streak() ? 'accent' : '') +
+          stat(longestStreak(days), 'Longest streak', '') +
+          stat(activeDays, 'Days studied', '') +
+          stat(totalReviews, 'Answers given', '') +
+          stat(Progress.reviewsToday(), 'Today', Progress.reviewsToday() ? 'good' : '') +
+        '</div>';
+
+      /* -- tests */
+      var runs = [];
+      chapters.forEach(function (ch) {
+        var t = Progress.testScore(ch.slug);
+        if (t.runs) runs.push({ name: ch.title, href: '#/test/' + ch.slug, t: t,
+                                level: Progress.mastery(ch.slug).level });
+      });
+      manifest.parts.forEach(function (part, i) {
+        var id = 'part-' + (i + 1);
+        var t = Progress.testScore(id);
+        if (t.runs) runs.push({ name: part.numeral + ' exam', href: '#/test/' + id, t: t,
+                                level: Progress.mastery(id).level });
+      });
+      runs.sort(function (a, b) { return b.t.at - a.t.at; });
+
+      html += '<h2>Tests you have taken</h2>';
+      if (runs.length) {
+        var avg = Math.round(runs.reduce(function (a, r) { return a + r.t.best; }, 0) / runs.length);
+        var attempts = runs.reduce(function (a, r) { return a + r.t.runs; }, 0);
+        // Part IV is reference: its chapters have no test, and there is no
+        // exam for it, so counting them would make the total unreachable.
+        var testable = chapters.filter(function (c) { return !c.part.reference; }).length +
+          manifest.parts.filter(function (part) { return !part.reference; }).length;
+        html += '<div class="stat-grid">' +
+          stat(runs.length + '<span class="stat-of"> / ' + testable + '</span>',
+            'Tests attempted', 'accent') +
+          stat(attempts, 'Attempts in total', '') +
+          stat(avg + '%', 'Average of your bests', avg >= 80 ? 'good' : '') +
+        '</div>' +
+        '<div class="stats-rows">' + runs.slice(0, 20).map(function (r) {
+          var mark = ['—', 'shaky', 'confident'][r.level];
+          return '<div class="stats-row"><a class="sr-name" href="' + r.href + '">' +
+            escapeHtml(r.name) + '</a>' +
+            '<span class="sr-bar"><i class="lv' + r.level + '" style="width:' + r.t.best + '%"></i></span>' +
+            '<span class="sr-num">' + r.t.best + '%</span>' +
+            '<span class="sr-when">' + escapeHtml(mark) + ' · ' + escapeHtml(fmtWhen(r.t.at)) + '</span>' +
+            '</div>';
+        }).join('') + '</div>' +
+        (runs.length > 20 ? '<p class="stats-note">' + (runs.length - 20) + ' more.</p>' : '');
+      } else {
+        html += '<p class="stats-empty">No test taken yet. ' +
+          '<a href="#/tests">Pick one</a> and this fills in: best score, how many goes, ' +
+          'and the mark you gave yourself.</p>';
+      }
+
+      /* -- what happened lately. Words added on the same day are one line,
+            or a batch paste would be the whole feed. */
+      var events = [];
+      chapters.forEach(function (ch) {
+        var m = Progress.mastery(ch.slug);
+        if (m.level && m.at) {
+          events.push({ at: m.at, icon: m.level === 2 ? '✔' : '~',
+            text: 'Marked <strong>' + (m.level === 2 ? 'confident' : 'shaky') + '</strong>: ' +
+              '<a href="#/' + ch.slug + '">' + escapeHtml(ch.title) + '</a>' });
+        }
+      });
+      manifest.parts.forEach(function (part, i) {
+        var m = Progress.mastery('part-' + (i + 1));
+        if (m.level && m.at) {
+          events.push({ at: m.at, icon: '★',
+            text: 'Marked the ' + escapeHtml(part.numeral) + ' exam <strong>' +
+              (m.level === 2 ? 'confident' : 'shaky') + '</strong>' });
+        }
+      });
+      var wordDays = {};
+      Progress.words().forEach(function (w) {
+        var k = dayKeyOf(w.at);
+        var row = wordDays[k] || (wordDays[k] = { at: w.at, list: [] });
+        row.at = Math.max(row.at, w.at);
+        row.list.push(w.fr);
+      });
+      Object.keys(wordDays).forEach(function (k) {
+        var row = wordDays[k];
+        events.push({ at: row.at, icon: '+',
+          text: 'Added ' + row.list.length + ' word' + (row.list.length === 1 ? '' : 's') +
+            ': <em>' + escapeHtml(row.list.slice(0, 4).join(', ')) + '</em>' +
+            (row.list.length > 4 ? ' and ' + (row.list.length - 4) + ' more' : '') });
+      });
+      events.sort(function (a, b) { return b.at - a.at; });
+
+      if (events.length) {
+        html += '<h2>Lately</h2><ul class="stats-feed">' +
+          events.slice(0, 14).map(function (e) {
+            return '<li><span class="sf-icon">' + e.icon + '</span>' +
+              '<span class="sf-text">' + e.text + '</span>' +
+              '<span class="sf-when">' + escapeHtml(fmtWhen(e.at)) + '</span></li>';
+          }).join('') + '</ul>';
+      }
+
+      html += '<p><a class="btn btn-lg" href="#/dashboard" ' +
+        'style="display:inline-block;text-decoration:none">Progress and your data</a></p>';
+
+      view.innerHTML = html;
+    });
   }
 
   /* ---------------------------------------------------------- vocabulary */

@@ -15,6 +15,7 @@
      mastery: { "<slug|partN>": { level: 0-2, at, score } },   // self-marked
      tests:   { "<testId>": { best, runs, at } },              // best auto score
      days:  { "<yyyy-mm-dd>": <reviews that day> },
+     hist:  { "<yyyy-mm-dd>": { at, pct, marked, solid, known, words, right, stuck } },
      m:     { "<kind>:<key>": <epoch-ms> },   // when each entry last changed
      clearedAt: <epoch-ms>                    // last "reset everything"
    }
@@ -40,7 +41,7 @@ window.Progress = (function () {
   function blank() {
     return {
       v: 1, read: {}, ex: {}, cards: {}, known: {}, words: {},
-      mastery: {}, tests: {}, days: {}, m: {}, clearedAt: 0
+      mastery: {}, tests: {}, days: {}, hist: {}, m: {}, clearedAt: 0
     };
   }
 
@@ -120,6 +121,9 @@ window.Progress = (function () {
   }
 
   function readCount() { return Object.keys(state.read).length; }
+
+  // When, so the statistics page can put a chapter on a timeline. 0 = unread.
+  function readAt(slug) { return state.read[slug] || 0; }
 
   /* ---------------------------------------------------------- exercises */
 
@@ -401,6 +405,52 @@ window.Progress = (function () {
 
   function reviewsToday() { return state.days[todayKey()] || 0; }
 
+  function dayCounts() {
+    var out = {};
+    for (var k in state.days) if (has(state.days, k)) out[k] = state.days[k];
+    return out;
+  }
+
+  /* ---------------------------------------------------------- history */
+
+  // Chapter marks and added words carry their own timestamp, so a curve for
+  // those can be drawn backwards from what is already stored. Two numbers
+  // cannot: how many words you had ticked as known, and how far the
+  // flashcards had got, because both are a count of entries with no date.
+  // So one snapshot a day is kept — last write of the day wins — and the
+  // statistics page draws those two from it.
+  var HIST_FIELDS = ['pct', 'marked', 'solid', 'known', 'words', 'right', 'stuck'];
+  var HIST_DAYS = 400;          // a bit over a year, then the oldest go
+
+  function snapDay(metrics) {
+    metrics = metrics || {};
+    var rec = { at: stamp() };
+    HIST_FIELDS.forEach(function (f) { rec[f] = clamp(num(metrics[f]), 0, 1e6); });
+    var key = todayKey();
+    var was = state.hist[key];
+    // Nothing moved today: keep the earlier record rather than rewriting it,
+    // so an idle page load does not count as a change the sync has to push.
+    if (was && HIST_FIELDS.every(function (f) { return was[f] === rec[f]; })) return false;
+    state.hist[key] = rec;
+    trimHist();
+    save();
+    return true;
+  }
+
+  function trimHist() {
+    var keys = Object.keys(state.hist).sort();
+    for (var i = 0; i < keys.length - HIST_DAYS; i++) delete state.hist[keys[i]];
+  }
+
+  // Oldest first, each entry stamped with its day, ready to plot.
+  function history() {
+    return Object.keys(state.hist).sort().map(function (day) {
+      var rec = state.hist[day], out = { day: day };
+      HIST_FIELDS.forEach(function (f) { out[f] = rec[f] || 0; });
+      return out;
+    });
+  }
+
   /* ---------------------------------------------------------- merging */
 
   // Anything arriving from outside this module — a gist, an imported file —
@@ -453,6 +503,12 @@ window.Progress = (function () {
     });
     each(input.days, function (key, value) {
       if (/^\d{4}-\d{2}-\d{2}$/.test(key)) out.days[key] = clamp(num(value), 0, 1e6);
+    });
+    each(input.hist, function (key, value) {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(key) || !value || typeof value !== 'object') return;
+      var rec = { at: num(value.at) };
+      HIST_FIELDS.forEach(function (f) { rec[f] = clamp(num(value[f]), 0, 1e6); });
+      out.hist[key] = rec;
     });
     each(input.m, function (key, value) {
       var t = num(value);
@@ -534,6 +590,15 @@ window.Progress = (function () {
       out.days[day] = Math.max(state.days[day] || 0, remote.days[day] || 0);
     });
 
+    // A day's snapshot is one reading of several counters, so it is taken
+    // whole from whichever device wrote it later. Mixing the fields of two
+    // devices would invent a state neither of them was ever in.
+    Object.keys(state.hist).concat(Object.keys(remote.hist)).forEach(function (day) {
+      var a = state.hist[day], b = remote.hist[day];
+      var rec = !a ? b : !b ? a : (b.at > a.at ? b : a);
+      if (rec && !(cleared && (rec.at || 0) <= cleared)) out.hist[day] = rec;
+    });
+
     state = out;
     save();
     return state;
@@ -584,6 +649,7 @@ window.Progress = (function () {
   return {
     mergeRemote: mergeRemote, snapshot: snapshot, fingerprint: fingerprint,
     isRead: isRead, setRead: setRead, toggleRead: toggleRead, readCount: readCount,
+    readAt: readAt,
     getEx: getEx, setEx: setEx, exStats: exStats,
     card: card, isDue: isDue, gradeCard: gradeCard, resetCard: resetCard,
     dueCount: dueCount, dueQueue: dueQueue, cardStats: cardStats,
@@ -592,7 +658,8 @@ window.Progress = (function () {
     addWord: addWord, updateWord: updateWord, deleteWord: deleteWord,
     mastery: mastery, setMastery: setMastery, masteryCount: masteryCount,
     testScore: testScore, recordTest: recordTest, LEVELS: LEVELS,
-    streak: streak, reviewsToday: reviewsToday,
+    streak: streak, reviewsToday: reviewsToday, dayCounts: dayCounts,
+    history: history, snapDay: snapDay,
     exportJSON: exportJSON, importJSON: importJSON, reset: reset,
     INTERVALS: INTERVALS, MAX_BOX: MAX_BOX
   };

@@ -607,6 +607,101 @@ a.card:hover { border-color: var(--bleu); box-shadow: var(--shadow-md); transfor
 .bar { height: 7px; border-radius: 999px; background: var(--line); overflow: hidden; margin-top: .5rem; }
 .bar > span { display: block; height: 100%; border-radius: 999px; background: var(--vert); transition: width .5s ease; }
 
+/* ---------------------------------------------------------- statistics */
+
+.stat .stat-of { font-size: 1rem; color: var(--muted); }
+
+/* Charts are inline SVG on a fixed viewBox, scaled by width. No library, and
+   nothing to load: the numbers are already in the browser. */
+.chart, .heatmap {
+  display: block; width: 100%; height: auto; margin: .2rem 0 1.4rem;
+  overflow: visible;
+}
+.chart { max-width: 720px; }
+.chart-grid { stroke: var(--line); stroke-width: 1; }
+.chart-tick { fill: var(--muted); font-size: 11px; font-family: var(--sans); }
+.chart-line { fill: none; stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round; }
+.chart-area { stroke: none; opacity: .16; }
+.chart-line.c-bleu, .chart-dot.c-bleu { stroke: var(--bleu); }
+.chart-area.c-bleu { fill: var(--bleu); }
+.chart-line.c-vert, .chart-dot.c-vert { stroke: var(--vert); }
+.chart-area.c-vert { fill: var(--vert); }
+.chart-dot { fill: var(--surface); stroke-width: 2.2; }
+
+.chart-legend { display: flex; flex-wrap: wrap; gap: .9rem; margin: .2rem 0 .1rem; font-size: .82rem; color: var(--muted); }
+.chart-legend span { display: inline-flex; align-items: center; gap: .35rem; }
+.chart-legend i { width: 10px; height: 10px; border-radius: 3px; }
+.chart-legend .c-bleu i { background: var(--bleu); }
+.chart-legend .c-vert i { background: var(--vert); }
+
+.heatmap { max-width: 480px; margin-bottom: .5rem; }
+.hm-cell { stroke: var(--line-soft); stroke-width: .5; }
+.hm-0 { fill: var(--surface-2); }
+.hm-1 { fill: var(--vert); opacity: .28; }
+.hm-2 { fill: var(--vert); opacity: .5; }
+.hm-3 { fill: var(--vert); opacity: .74; }
+.hm-4 { fill: var(--vert); }
+.hm-legend { display: flex; align-items: center; gap: .3rem; font-size: .8rem; color: var(--muted); margin: 0 0 1.4rem; }
+.hm-legend i { width: 11px; height: 11px; border-radius: 3px; background: var(--surface-2); }
+.hm-legend i.hm-1 { background: var(--vert); opacity: .28; }
+.hm-legend i.hm-2 { background: var(--vert); opacity: .5; }
+.hm-legend i.hm-3 { background: var(--vert); opacity: .74; }
+.hm-legend i.hm-4 { background: var(--vert); opacity: 1; }
+.hm-legend strong { color: var(--ink); }
+
+.stats-rows {
+  border: 1px solid var(--line); border-radius: var(--r-md);
+  background: var(--surface); overflow: hidden; margin: .6rem 0 1.2rem;
+}
+.stats-row {
+  display: grid; grid-template-columns: minmax(0, 11rem) minmax(60px, 1fr) 4.2rem;
+  align-items: center; gap: .8rem;
+  padding: .5rem .85rem; border-bottom: 1px solid var(--line-soft);
+  font-size: .88rem;
+}
+.stats-row:last-child { border-bottom: 0; }
+.stats-row:hover { background: var(--surface-2); }
+.stats-row .sr-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.stats-row a.sr-name { color: var(--ink); text-decoration: none; }
+.stats-row a.sr-name:hover { color: var(--bleu); text-decoration: underline; }
+.stats-row .sr-bar { height: 7px; border-radius: 999px; background: var(--line); overflow: hidden; }
+.stats-row .sr-bar i { display: block; height: 100%; border-radius: 999px; background: var(--bleu); }
+.stats-row .sr-bar i.lv1 { background: var(--or); }
+.stats-row .sr-bar i.lv2 { background: var(--vert); }
+.stats-row .sr-num { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+/* The date only fits on a wide row, so it takes the whole second line when
+   the grid has to collapse. */
+.stats-row .sr-when { grid-column: 1 / -1; font-size: .78rem; color: var(--muted); }
+
+.stats-feed { list-style: none; padding: 0; margin: .6rem 0 1.6rem; }
+.stats-feed li {
+  display: grid; grid-template-columns: 1.5rem minmax(0, 1fr) auto;
+  align-items: baseline; gap: .6rem;
+  padding: .45rem 0; border-bottom: 1px solid var(--line-soft); font-size: .9rem;
+}
+.stats-feed li:last-child { border-bottom: 0; }
+.stats-feed .sf-icon { color: var(--vert); text-align: center; font-size: .95rem; }
+.stats-feed .sf-when { color: var(--muted); font-size: .78rem; white-space: nowrap; }
+.stats-feed em { color: var(--ink-soft); }
+
+.stats-empty {
+  padding: .9rem 1rem; border-radius: var(--r-md);
+  background: var(--surface-2); border: 1px dashed var(--line);
+  color: var(--ink-soft); font-size: .9rem;
+}
+.stats-note { color: var(--muted); font-size: .82rem; margin-top: -.6rem; }
+
+@media (max-width: 620px) {
+  .stats-row { grid-template-columns: minmax(0, 1fr) 4.2rem; }
+  .stats-row .sr-bar { grid-column: 1 / -1; }
+  /* A viewBox scaled to half its width takes the text with it, so the axis
+     labels are set in the units they need to stay readable at that size. The
+     two charts scale by different amounts, hence two sizes. */
+  .chart .chart-tick { font-size: 21px; }
+  .heatmap .chart-tick { font-size: 15px; }
+  .hm-legend { flex-wrap: wrap; }
+}
+
 /* ---------------------------------------------------------- vocabulary */
 
 .vocab-toolbar {
@@ -1021,11 +1116,25 @@ body.audio-off .say-btn, body.audio-off .flash-say { display: none; }
 /* "Question 3 of 12" stays put whether or not Back is there, so the header
    does not shift under the eye on the first question. */
 .test-meta > span:first-of-type { margin-right: auto; }
+/* A real button rather than a link: it undoes an answer, which is closer to
+   an action than to navigation, and it has to be findable without being
+   louder than Check or Next. */
 .test-back {
-  padding: 0; font: inherit; color: var(--bleu);
-  background: none; border: 0; cursor: pointer;
+  display: inline-flex; align-items: center; gap: .35rem;
+  padding: .2rem .6rem .2rem .45rem;
+  font: inherit; font-size: .8rem; font-weight: 600; line-height: 1.6;
+  color: var(--ink-soft); background: var(--surface); cursor: pointer;
+  border: 1px solid var(--line); border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+  transition: color .15s ease, border-color .15s ease, background .15s ease;
 }
-.test-back:hover { text-decoration: underline; }
+.test-back .test-back-arrow { transition: transform .15s ease; }
+.test-back:hover {
+  color: var(--bleu); border-color: var(--bleu); background: var(--bleu-soft);
+}
+.test-back:hover .test-back-arrow { transform: translateX(-2px); }
+.test-back:active { transform: translateY(1px); }
+.test-back:focus-visible { outline: 2px solid var(--bleu); outline-offset: 2px; }
 
 .test-card {
   padding: 1.3rem 1.4rem;
