@@ -923,6 +923,9 @@
       if (!bank) {
         return noBank(ch.title, 'There is no question bank for this chapter yet.');
       }
+      // Where the summary should point once this chapter is done.
+      var at = chapters.indexOf(ch);
+      var after = at > -1 ? chapters[at + 1] : null;
       runTest({
         id: ch.slug,
         title: ch.title,
@@ -930,7 +933,8 @@
         back: '#/' + ch.slug,
         backLabel: 'Back to the lesson',
         questions: Test.shuffle(bank.questions),
-        masteryKey: ch.slug
+        masteryKey: ch.slug,
+        next: after ? { href: '#/' + after.slug, label: 'Next: ' + after.title } : null
       });
     });
   }
@@ -943,6 +947,11 @@
       // Two per chapter keeps a 22-chapter part to a sitting rather than a
       // marathon, while still touching everything.
       var questions = Test.sample(banks, 2);
+      // A part exam has no next chapter of its own, so it points at the
+      // first chapter of the part after it.
+      var pi = manifest.parts.indexOf(part);
+      var nextPart = manifest.parts.slice(pi + 1).filter(function (p) { return !p.reference; })[0];
+      var after = nextPart && nextPart.chapters[0];
       runTest({
         id: key,
         title: part.numeral + ' exam — ' + part.title,
@@ -951,7 +960,8 @@
         backLabel: 'All tests',
         questions: questions,
         subtitle: 'part',
-        masteryKey: key
+        masteryKey: key,
+        next: after ? { href: '#/' + after.slug, label: 'On to ' + nextPart.numeral } : null
       });
     });
   }
@@ -970,6 +980,7 @@
       subtitle: opts.subtitle,
       masteryKey: opts.masteryKey,
       questions: opts.questions,
+      next: opts.next,
       onDone: function (r) {
         if (r.retry) return renderTest(opts.id);
         renderSidebarProgress();

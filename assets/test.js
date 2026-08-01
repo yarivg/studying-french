@@ -123,6 +123,9 @@ window.Test = (function () {
       questions: opts.questions,
       masteryKey: opts.masteryKey || opts.id,
       onDone: opts.onDone,
+      // {href, label} for the summary, when there is somewhere to go after
+      // this test. The router knows the chapter order; this does not.
+      next: opts.next || null,
       i: 0,
       right: 0,
       answered: []
@@ -147,6 +150,8 @@ window.Test = (function () {
       '<div class="test-head">' +
         '<div class="test-bar"><span style="width:' + pct + '%"></span></div>' +
         '<div class="test-meta">' +
+          (s.i ? '<button class="test-back" type="button" data-act="back" ' +
+            'title="Go back and answer it again (left arrow)">← Back</button>' : '') +
           '<span>Question ' + (s.i + 1) + ' of ' + s.questions.length + '</span>' +
           '<span>' + s.right + ' right</span>' +
         '</div>' +
@@ -160,9 +165,31 @@ window.Test = (function () {
       '</div>' +
       '<div class="test-actions" id="testActions"></div>';
 
+    var back = s.host.querySelector('[data-act="back"]');
+    if (back) back.addEventListener('click', goBack);
+
     var body = s.host.querySelector('#testBody');
     var actions = s.host.querySelector('#testActions');
     BODY[q.type](body, actions, q);
+  }
+
+  // Step back and ask it again. Anything already recorded for the question we
+  // land on is thrown away first, along with the answer to the one we are
+  // leaving if it had been graded: otherwise a second pass at either would
+  // count as an extra question and a better second guess would inflate the
+  // score. answered runs in step with i, so everything from i onwards goes.
+  function goBack() {
+    var s = run;
+    if (!s || !s.i) return;
+    s.i--;
+    while (s.answered.length > s.i) {
+      var a = s.answered.pop();
+      if (a.right) s.right--;
+      Progress.setEx(a.ch || s.id, 'test', a.id, null);
+    }
+    if (window.Speech) Speech.stop();
+    if (window.Say) Say.stop();
+    render();
   }
 
   // Each type fills the body and decides what the action row does. All of
@@ -507,6 +534,14 @@ window.Test = (function () {
     var t = e.target;
     if (t && t.matches && t.matches('input, textarea, select')) return;
 
+    // Left arrow goes back a question, wherever you are in one. A text field
+    // has already claimed the key above, where the caret needs it.
+    if (e.key === 'ArrowLeft') {
+      var back = run.host.querySelector('[data-act="back"]');
+      if (back) { e.preventDefault(); back.click(); }
+      return;
+    }
+
     var next = run.host.querySelector('[data-act="next"]');
     if (e.key === 'Enter' || e.key === ' ') {
       var reveal = next ? null : run.host.querySelector('[data-act="reveal"]');
@@ -636,9 +671,19 @@ window.Test = (function () {
           '</div>' +
         '</div>' +
         '<div class="test-actions">' +
+          // Where to go next, when whoever started the test knows: at the end
+          // of a chapter test that is the next chapter, and having to go by
+          // way of the sidebar was the long road to the obvious place.
+          (s.next ? '<a class="btn btn-primary btn-lg" href="' + s.next.href + '">' +
+            escapeHtml(s.next.label) + ' →</a>' : '') +
           '<button class="btn btn-lg" data-act="retry">Take it again</button>' +
+          // The score is not the end of it either: one answer you want back
+          // should not mean sitting the whole thing again.
+          '<button class="btn btn-lg" data-act="back">← Last question</button>' +
         '</div>' +
       '</div>';
+
+    s.host.querySelector('[data-act="back"]').addEventListener('click', goBack);
 
     s.host.querySelector('.mastery-picker').addEventListener('click', function (e) {
       var b = e.target.closest('[data-level]');

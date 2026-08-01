@@ -341,6 +341,12 @@ window.Progress = (function () {
     if (!level) delete state.mastery[key];
     else state.mastery[key] = { level: level, at: stamp(), score: clamp(num(score), 0, 100) };
     touch('mastery', key);
+    // Judging a chapter means you have read it, so the tick follows the mark
+    // and there is nothing left to press by hand. A part exam ("part-2") and
+    // a reading passage ("read:a1-01") are not chapters, so they are left out.
+    if (level && !/^part-/.test(key) && key.indexOf(':') === -1 && !state.read[key]) {
+      setRead(key, true);
+    }
     save();
     return level;
   }

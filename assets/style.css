@@ -1015,9 +1015,17 @@ body.audio-off .say-btn, body.audio-off .flash-say { display: none; }
 .test-bar { height: 4px; background: var(--surface-2); border-radius: 2px; overflow: hidden; }
 .test-bar span { display: block; height: 100%; background: var(--bleu); transition: width .25s ease; }
 .test-meta {
-  display: flex; justify-content: space-between;
+  display: flex; align-items: center; gap: .7rem;
   margin-top: .45rem; color: var(--muted); font-size: .82rem;
 }
+/* "Question 3 of 12" stays put whether or not Back is there, so the header
+   does not shift under the eye on the first question. */
+.test-meta > span:first-of-type { margin-right: auto; }
+.test-back {
+  padding: 0; font: inherit; color: var(--bleu);
+  background: none; border: 0; cursor: pointer;
+}
+.test-back:hover { text-decoration: underline; }
 
 .test-card {
   padding: 1.3rem 1.4rem;
