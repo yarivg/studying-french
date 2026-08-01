@@ -741,6 +741,54 @@ a.card:hover { border-color: var(--bleu); box-shadow: var(--shadow-md); transfor
   .brand-text { font-size: 1rem; }
 }
 
+@media (max-width: 470px) {
+  /* Four controls and a search box do not fit next to the wordmark, and the
+     mark alone still says which site this is. */
+  .brand-text { display: none; }
+  .topbar { gap: .35rem; padding: 0 .6rem; }
+}
+
+/* ------------------------------------------------------- quick add */
+
+.quickadd { position: relative; }
+
+.quickadd-menu {
+  position: absolute; top: calc(100% + 8px); right: 0; z-index: 60;
+  width: 300px; padding: .8rem .85rem .85rem;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--r-md); box-shadow: var(--shadow-md);
+  text-align: left;
+}
+.qa-head { display: flex; align-items: baseline; gap: .5rem; margin-bottom: .55rem; }
+.qa-head strong { font-size: .95rem; }
+.qa-hint { margin-left: auto; font-size: .68rem; color: var(--muted); }
+.qa-in {
+  display: block; width: 100%; margin-bottom: .4rem; padding: .5rem .6rem;
+  font: inherit; font-size: 1rem;   /* under 16px and iOS zooms the page in */
+  color: var(--ink); background: var(--paper);
+  border: 1px solid var(--line); border-radius: var(--r-sm);
+}
+.qa-in:focus { outline: 2px solid var(--bleu); outline-offset: 1px; }
+/* The line that does the talking: what it will be filed as, or what it
+   collides with. Three states, three colours, one line each. */
+.qa-note {
+  margin: .15rem 0 .1rem; font-size: .78rem; line-height: 1.45;
+  color: var(--muted); min-height: 2.2em;
+}
+.qa-note.is-new { color: var(--bleu); }
+.qa-note.is-dupe { color: var(--rouge); }
+.qa-note.is-done { color: var(--vert); }
+.qa-actions { display: flex; align-items: center; gap: .6rem; margin-top: .35rem; }
+.qa-actions .btn { flex: 1; }
+/* Add is off while the word is already on the list, and has to look it. */
+.qa-actions .btn:disabled { opacity: .45; cursor: not-allowed; }
+.qa-link { font-size: .78rem; color: var(--muted); }
+
+@media (max-width: 560px) {
+  /* Room for two fields matters more than sitting under the button. */
+  .quickadd-menu { position: fixed; top: calc(var(--topbar-h) + 6px); left: 8px; right: 8px; width: auto; }
+}
+
 /* ---------------------------------------------------------- audio */
 
 .audio-control { position: relative; }
@@ -1083,6 +1131,10 @@ textarea.test-input { font-size: .95rem; line-height: 1.6; resize: vertical; }
 .test-verdict.is-right strong { color: var(--vert); }
 .test-verdict.is-wrong { border-left-color: var(--rouge); }
 .test-verdict.is-wrong strong { color: var(--rouge); }
+/* A pass with the accents missing: green would say nothing was wrong, red
+   would say the answer was, so it is marked in the third colour. */
+.test-verdict.is-slip { border-left-color: var(--or); }
+.test-verdict.is-slip strong { color: var(--or); }
 .test-answer { font-size: 1.05rem !important; color: var(--ink) !important; font-weight: 600; }
 
 .test-actions { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1.1rem; }

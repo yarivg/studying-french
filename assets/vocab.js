@@ -48,7 +48,7 @@ window.Vocab = (function () {
   var mineCache = null;
   var joinedCache = null;
 
-  function invalidate() { mineCache = null; joinedCache = null; }
+  function invalidate() { mineCache = null; joinedCache = null; indexCache = null; }
   window.addEventListener('progress:change', invalidate);
 
   function mine() {
@@ -191,6 +191,39 @@ window.Vocab = (function () {
     return out;
   }
 
+  /* -------------------------------------------------- already have it? */
+
+  // Same shape of key as Progress uses for its own duplicate check: case, an
+  // accent, a leading article and the slash notation are not what makes a
+  // word a different word, so "La Semaine" finds "la semaine".
+  function key(fr) {
+    return strip(String(fr || '').toLowerCase())
+      .replace(/^(le|la|les|l'|un|une|des|du|de la)\s*/, '')
+      .replace(/[^a-z0-9' ]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  var indexCache = null;
+
+  function index() {
+    if (indexCache) return indexCache;
+    indexCache = {};
+    // Yours go in last so an entry you edited is the one you are shown.
+    all().slice().reverse().forEach(function (w) {
+      var k = key(w.fr);
+      if (k) indexCache[k] = w;
+    });
+    return indexCache;
+  }
+
+  // The whole point of the quick add: say so before a word is added twice,
+  // whether the match is in the curated list or in your own.
+  function findExisting(fr) {
+    var k = key(fr);
+    return k ? index()[k] || null : null;
+  }
+
   // Accepts the same "fr - en" shape as data/vocab-source.txt, with or
   // without the leading number, so pasting from anywhere works.
   function parseBulk(text) {
@@ -305,7 +338,7 @@ window.Vocab = (function () {
     byTheme: byTheme, search: search,
     listHtml: listHtml, bindList: bindList, hydrateEmbeds: hydrateEmbeds,
     decks: decks, deckById: deckById,
-    guess: guess, parseBulk: parseBulk, exportMine: exportMine,
+    guess: guess, findExisting: findExisting, parseBulk: parseBulk, exportMine: exportMine,
     POS_LABEL: POS_LABEL, GENDER_LABEL: GENDER_LABEL
   };
 })();

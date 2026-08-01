@@ -34,10 +34,10 @@ sampling two from every chapter in it. Six question types:
 | type | how it is graded |
 |---|---|
 | `mcq` | pick one, automatic |
-| `fill` | type the answer; case and surrounding punctuation are ignored, accents are not — a row of accented letters sits under the box, and pressing a plain vowel twice cycles its accents |
+| `fill` | type the answer; case, surrounding punctuation and missing accents are forgiven. *derniere* for *dernière* passes, but comes back as "Correct, accents aside" with the accented spelling shown. A row of accented letters sits under the box, and pressing a plain vowel twice cycles its accents |
 | `order` | tap the words into order |
 | `listen` | the voice reads it, you type what you heard |
-| `say` | you read it aloud and the microphone checks you |
+| `say` | you read it aloud and the microphone checks you; three goes, best one counts, and **Say it again** after the verdict re-asks it and un-marks the old attempt |
 | `open` | free answer against a model answer, marked by you |
 
 The score is automatic, but **the score is not the verdict.** At the end of every test you mark
@@ -53,7 +53,8 @@ model will forgive a sloppy vowel in a word it can guess. That is why targets ar
 words, and why the result shows you which word failed rather than one flattering number.
 
 Keyboard: `1`-`4` answers a multiple choice, a digit picks the next word in an
-ordering question, `Enter` moves on. On a flashcard, `H` speaks the French.
+ordering question, `Enter` moves on. On a flashcard, `H` speaks the French. Anywhere, `/` is the
+search box and `n` opens the quick add.
 
 Two rules the validator enforces, both because the course is written for someone
 without a French keyboard: a typed answer may not be a word already in the prompt
@@ -74,9 +75,15 @@ to hear it slowly.
 ## Adding your own words
 
 The 1,493 curated entries are baked into `data/vocab.json` and never change at runtime. Words
-you meet yourself go somewhere else: **Vocabulary → + Add word**, or paste a whole list at once
-in `french - english` form (a leading number is ignored, so a slice of `vocab-source.txt` pastes
-straight in).
+you meet yourself go somewhere else. Three ways in:
+
+- the **+** in the top bar, on every page, or the `n` key: two fields, `Enter`, and it stays open
+  for the next one. The line under the fields says either what it will file the word as or that
+  the word is already there, naming the entry it collided with (yours or the course's). Matching
+  ignores case, accents, a leading article and the slash notation, so `Pluie` finds `la pluie`.
+- **Vocabulary → + Add word** for the same two fields with the guesses laid open to change.
+- **Paste a list** for a whole batch in `french - english` form (a leading number is ignored, so
+  a slice of `vocab-source.txt` pastes straight in). Duplicates are skipped.
 
 The form asks for two things, French and English, and works out the rest. What it reads off the
 French side:

@@ -81,11 +81,19 @@ window.Test = (function () {
     return out;
   }
 
+  function bare(s) { return s.normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+
+  // Three outcomes, not two. An answer that is right apart from its accents
+  // is a French answer typed on a keyboard that has no accents, so it counts
+  // as right, but it comes back as 'accent' so the verdict can show the
+  // accented spelling. The accent bar is still there for anyone who wants it.
   function gradeText(q, given) {
     var answers = Array.isArray(q.a) ? q.a : [q.a];
     var mine = norm(given, q.loose);
     if (!mine) return false;
-    return answers.some(function (a) { return norm(a, q.loose) === mine; });
+    if (answers.some(function (a) { return norm(a, q.loose) === mine; })) return true;
+    var flat = bare(mine);
+    return answers.some(function (a) { return bare(norm(a, q.loose)) === flat; }) ? 'accent' : false;
   }
 
   function gradeOrder(q, given) {
@@ -242,8 +250,9 @@ window.Test = (function () {
     function paint() {
       body.innerHTML =
         '<div class="test-slot" id="slot">' + (picked.length
-          ? picked.map(function (w, i) {
-              return '<button class="chip chip-set" data-drop="' + i + '">' + escapeHtml(w) + '</button>';
+          // `picked` holds pool indexes, so the chip text comes from the pool.
+          ? picked.map(function (n, i) {
+              return '<button class="chip chip-set" data-drop="' + i + '">' + escapeHtml(pool[n]) + '</button>';
             }).join('')
           : '<span class="test-slot-empty">Tap the words in order</span>') +
         '</div>' +
@@ -386,8 +395,8 @@ window.Test = (function () {
 
   /* ---------------------------------------------------------- accents */
 
-  // Answers here are graded with their accents, and a US keyboard cannot
-  // type them. Rather than loosening the grading, hand over the letters.
+  // A missing accent does not cost the answer (see gradeText), but the bar is
+  // here so the accented spelling is typeable on a keyboard that has none.
   var ACCENTS = ['é', 'è', 'ê', 'ë', 'à', 'â', 'ù', 'û', 'ü', 'î', 'ï', 'ô', 'ç', 'œ', 'æ'];
 
   // Holding a plain vowel and pressing the same key cycles its accents, so
@@ -515,12 +524,17 @@ window.Test = (function () {
     // shows up in the chapter's accuracy too.
     Progress.setEx(q.ch || s.id, 'test', q.id, right ? 'ok' : 'again');
 
+    // An accent slip is a pass, but the spelling is still worth seeing, so it
+    // gets the model answer that a plain pass does not.
+    var slip = right === 'accent';
     var v = s.host.querySelector('#testVerdict');
     v.hidden = false;
-    v.className = 'test-verdict ' + (right ? 'is-right' : 'is-wrong');
+    v.className = 'test-verdict ' + (right ? 'is-right' : 'is-wrong') + (slip ? ' is-slip' : '');
     v.innerHTML =
-      '<strong>' + (right ? (selfMarked ? 'Marked as known' : 'Correct') : 'Not quite') + '</strong>' +
-      (!right && !selfMarked && q.type !== 'say'
+      '<strong>' + (right
+        ? (slip ? 'Correct, accents aside' : selfMarked ? 'Marked as known' : 'Correct')
+        : 'Not quite') + '</strong>' +
+      (slip || (!right && !selfMarked && q.type !== 'say')
         ? '<p class="test-answer">' + escapeHtml(modelAnswer(q)) + '</p>' : '') +
       '<p>' + escapeHtml(q.why || '') + '</p>';
 
@@ -533,8 +547,26 @@ window.Test = (function () {
     stale.parentNode.replaceChild(actions, stale);
 
     var last = s.i === s.questions.length - 1;
-    actions.innerHTML = '<button class="btn btn-primary btn-lg" data-act="next">' +
+    // A spoken answer is the one type where the verdict can be the tool's
+    // fault: a noisy room or a recogniser that guessed a real word. Offer the
+    // question back rather than making you live with that.
+    actions.innerHTML =
+      (q.type === 'say' ? '<button class="btn btn-lg" data-act="redo">🎤 Say it again</button>' : '') +
+      '<button class="btn btn-primary btn-lg" data-act="next">' +
       (last ? 'See the score' : 'Next') + '</button>';
+
+    var redo = actions.querySelector('[data-act="redo"]');
+    if (redo) {
+      redo.addEventListener('click', function () {
+        // Undo the mark first, or a second go would count as a second
+        // question and a lucky retry would inflate the score.
+        var prev = s.answered.pop();
+        if (prev && prev.right) s.right--;
+        Progress.setEx(q.ch || s.id, 'test', q.id, null);
+        render();
+      });
+    }
+
     var next = actions.querySelector('[data-act="next"]');
     next.addEventListener('click', function () { s.i++; render(); });
     next.focus();

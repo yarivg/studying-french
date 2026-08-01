@@ -34,6 +34,7 @@
     setupTheme();
     setupNav();
     setupSearch();
+    setupQuickAdd();
     Say.setup();
 
     fetch('content/manifest.json')
@@ -1050,6 +1051,140 @@
         '<h1>' + escapeHtml(d.name) + '</h1>' +
         '<div id="stage"></div>';
       Quiz.startSession(document.getElementById('stage'), d.cards, { limit: 25 });
+    });
+  }
+
+  /* ------------------------------------------------------- quick add */
+
+  // A word turns up mid-lesson, and the vocabulary page is three taps away.
+  // This is the same two fields as the full form, in the topbar, on every
+  // page: type, read the one line under the fields, press Enter. It stays
+  // open afterwards because words arrive in twos and threes.
+  function setupQuickAdd() {
+    var btn = document.getElementById('addWordBtn');
+    var menu = document.getElementById('addWordMenu');
+    if (!btn || !menu) return;
+    var timer = null;
+
+    function close() {
+      if (menu.hidden) return;
+      menu.hidden = true;
+      menu.innerHTML = '';
+      btn.setAttribute('aria-expanded', 'false');
+    }
+
+    function open() {
+      menu.hidden = false;
+      btn.setAttribute('aria-expanded', 'true');
+      menu.innerHTML =
+        '<div class="qa-head"><strong>Add a word</strong>' +
+          '<span class="qa-hint">Enter to add · Esc to close</span></div>' +
+        '<input id="qaFr" class="qa-in" placeholder="le brouillard" autocomplete="off" ' +
+          'spellcheck="false" aria-label="French">' +
+        '<input id="qaEn" class="qa-in" placeholder="fog" autocomplete="off" aria-label="English">' +
+        '<p class="qa-note" id="qaNote">Two fields, that is all: the type, the gender and the ' +
+          'theme are read off the French.</p>' +
+        '<div class="qa-actions">' +
+          '<button class="btn btn-primary btn-sm" id="qaSave">Add</button>' +
+          '<a class="qa-link" href="#/vocab">All my words</a>' +
+        '</div>';
+
+      var fr = menu.querySelector('#qaFr');
+      var en = menu.querySelector('#qaEn');
+      fr.focus();
+      // The duplicate check needs the curated list, but the fields are usable
+      // before it lands; the note simply gets better once it has.
+      Vocab.load().then(function () { look(); });
+
+      function look() {
+        var note = menu.querySelector('#qaNote');
+        var save = menu.querySelector('#qaSave');
+        if (!note) return;
+        var text = fr.value.trim();
+        if (!text) {
+          note.className = 'qa-note';
+          note.textContent = 'Two fields, that is all: the type, the gender and the theme are ' +
+            'read off the French.';
+          save.disabled = false;
+          return;
+        }
+        var hit = Vocab.findExisting(text);
+        if (hit) {
+          note.className = 'qa-note is-dupe';
+          note.innerHTML = (hit.mine ? 'You already added ' : 'Already in the course: ') +
+            '<strong>' + escapeHtml(hit.fr) + '</strong>, ' + escapeHtml(hit.en);
+          save.disabled = true;
+          return;
+        }
+        var g = Vocab.guess(text);
+        note.className = 'qa-note is-new';
+        note.textContent = 'New. Filing it as ' + (Vocab.POS_LABEL[g.pos] || g.pos) +
+          (g.g ? ', ' + { m: 'masculine', f: 'feminine', pl: 'plural', mf: 'either' }[g.g] : '') +
+          ', theme mine.';
+        save.disabled = false;
+      }
+
+      function add() {
+        var note = menu.querySelector('#qaNote');
+        var input = { fr: fr.value, en: en.value, themes: [] };
+        if (!input.fr.trim() || !input.en.trim()) {
+          note.className = 'qa-note is-dupe';
+          note.textContent = 'Both sides, please: the French and what it means.';
+          (input.fr.trim() ? en : fr).focus();
+          return;
+        }
+        if (Vocab.findExisting(input.fr)) return look();
+        var g = Vocab.guess(input.fr);
+        input.pos = g.pos;
+        input.g = g.g;
+        try {
+          Progress.addWord(input);
+        } catch (err) {
+          note.className = 'qa-note is-dupe';
+          note.textContent = err.message;
+          return;
+        }
+        var added = input.fr.trim();
+        fr.value = '';
+        en.value = '';
+        fr.focus();
+        note.className = 'qa-note is-done';
+        note.innerHTML = '✓ Added <strong>' + escapeHtml(added) + '</strong>. Next one?';
+        // The vocabulary page is a snapshot, so it has to be redrawn to show
+        // the new word; every other page is unaffected.
+        if (location.hash.replace(/^#\/?/, '') === 'vocab') renderVocabPage();
+      }
+
+      menu.addEventListener('input', function (e) {
+        if (e.target !== fr) return;
+        clearTimeout(timer);
+        timer = setTimeout(look, 140);
+      });
+      menu.addEventListener('click', function (e) {
+        if (e.target.closest('#qaSave')) add();
+        if (e.target.closest('.qa-link')) close();
+      });
+      menu.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { e.preventDefault(); add(); }
+        if (e.key === 'Escape') { e.preventDefault(); close(); btn.focus(); }
+      });
+    }
+
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (menu.hidden) open(); else close();
+    });
+    menu.addEventListener('click', function (e) { e.stopPropagation(); });
+    document.addEventListener('click', close);
+
+    // A word heard in passing should cost one key. Not while something is
+    // being typed, and not while a test is taking the digits.
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'n' && e.key !== 'N') return;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) return;
+      e.preventDefault();
+      if (menu.hidden) open();
     });
   }
 
