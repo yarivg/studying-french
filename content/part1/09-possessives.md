@@ -42,7 +42,7 @@ une histoire → mon histoire ||
 :::
 
 ::: warning The noun is still feminine
-*Mon amie* takes feminine adjectives: **mon amie est *belle***, not *beau*. The *mon* is a
+*Mon amie* takes feminine adjectives — **mon amie est belle**, not *beau*. The *mon* is a
 pronunciation patch, not a change of gender.
 
 And this only applies when the vowel is immediately after: *ma nouvelle amie* keeps *ma*,

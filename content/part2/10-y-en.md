@@ -98,8 +98,8 @@ Tu as combien de livres ? — J'en ai dix. ||
 *J'ai **un** frère* → *J'**en** ai **un***, not *j'en ai*.
 *Elle a **une** voiture* → *Elle **en** a **une***.
 
-The article survives as a number. This is the *phrase elliptique* pattern: **subject + en + verb
-+ amount**.
+The article survives as a number. This is the *phrase elliptique* pattern:
+**subject + en + verb + amount**.
 
 *J'en veux un.* — I want one of them.
 *J'en prends une tranche.* — I'll take a slice of it.

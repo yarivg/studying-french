@@ -53,7 +53,9 @@ window.MD = (function () {
     });
 
     s = s.replace(/\*\*\*([^*]+)\*\*\*/g, '<strong><em>$1</em></strong>');
-    s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    // Allow a single * (nested italics) inside bold, but never a ** pair,
+    // so adjacent bold spans still close at the right place.
+    s = s.replace(/\*\*((?:[^*]|\*(?!\*))+?)\*\*/g, '<strong>$1</strong>');
     s = s.replace(/(^|[^\w*])\*([^*\n]+)\*(?!\w)/g, '$1<em>$2</em>');
     s = s.replace(/(^|[^\w_])_([^_\n]+)_(?!\w)/g, '$1<em>$2</em>');
     s = s.replace(/~~([^~]+)~~/g, '<del>$1</del>');
@@ -267,18 +269,18 @@ window.MD = (function () {
       }
 
       /* list */
-      if (/^([-*+]|\d+[.)])\s+/.test(trimmed)) {
+      if (/^([-*]|\d+[.)])\s+/.test(trimmed)) {
         flushPara();
         var ordered = /^\d+[.)]\s+/.test(trimmed);
         var block = [];
         for (; i < lines.length; i++) {
           var L = lines[i];
-          var m = /^(\s*)([-*+]|\d+[.)])\s+/.exec(L);
+          var m = /^(\s*)([-*]|\d+[.)])\s+/.exec(L);
           if (!L.trim()) {
             // A blank line ends the list unless what follows is still part of
             // it -- an indented continuation, or another item of the same kind.
             var next = lines[i + 1] || '';
-            var nm = /^(\s*)([-*+]|\d+[.)])\s+/.exec(next);
+            var nm = /^(\s*)([-*]|\d+[.)])\s+/.exec(next);
             if (!nm && !/^\s{2,}\S/.test(next)) break;
             if (nm && nm[1].length === 0 && /^\d/.test(nm[2]) !== ordered) break;
             block.push('');
@@ -307,7 +309,7 @@ window.MD = (function () {
     var baseIndent = null;
 
     block.forEach(function (line) {
-      var m = /^(\s*)([-*+]|\d+[.)])\s+(.*)$/.exec(line);
+      var m = /^(\s*)([-*]|\d+[.)])\s+(.*)$/.exec(line);
       if (m && (baseIndent === null || m[1].length <= baseIndent)) {
         if (baseIndent === null) baseIndent = m[1].length;
         if (cur) items.push(cur);
@@ -327,7 +329,7 @@ window.MD = (function () {
       var k = 1;
       while (k < parts.length) {
         var l = parts[k];
-        if (!l.trim() || /^\s*([-*+]|\d+[.)])\s+/.test(l) || /^\s*(:::|\||>|#|```)/.test(l.trim())) break;
+        if (!l.trim() || /^\s*([-*]|\d+[.)])\s+/.test(l) || /^\s*(:::|\||>|#|```)/.test(l.trim())) break;
         lead.push(l.trim());
         k++;
       }

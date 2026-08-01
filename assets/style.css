@@ -293,6 +293,9 @@ main {
 
 .prose > *:first-child { margin-top: 0; }
 
+/* Anchor links would otherwise land the heading under the sticky topbar. */
+.prose h1, .prose h2, .prose h3, .prose h4 { scroll-margin-top: calc(var(--topbar-h) + 1rem); }
+
 .prose h1 {
   font-family: var(--serif); font-weight: 600;
   font-size: clamp(2rem, 1.5rem + 1.8vw, 2.7rem);
