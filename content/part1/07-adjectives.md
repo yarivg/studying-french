@@ -78,13 +78,44 @@ a vowel or mute h. It exists purely so the phrase is pronounceable.
 | nouveau | **nouvel** | nouvelle |
 | vieux | **vieil** | vieille |
 | fou | **fol** | folle |
+| mou | **mol** | molle |
+
+### How the middle column sounds
+
+One rule covers all five: **the before-a-vowel form is said exactly like the feminine.**
+*bel* and *belle* are the same sound, *vieil* and *vieille* are the same sound. The spelling
+loses the doubled letter and the final *-e*, but nothing about the pronunciation changes.
+
+| Form | Sounds like | IPA | Say it as | The trap |
+|---|---|---|---|---|
+| bel | belle | /bɛl/ | **bèl** | not "bell": the l is light, tongue forward against the teeth |
+| nouvel | nouvelle | /nuvɛl/ | **nou-vèl** | the first syllable is the rounded ou, never "know" |
+| vieil | vieille | /vjɛj/ | **vyèy** | the final -il is a **y** sound, not an l at all |
+| fol | folle | /fɔl/ | **fol** | one short open o, the vowel of "sort" |
+| mol | molle | /mɔl/ | **mol** | same shape as fol, and rare outside set phrases |
+
+Then that final consonant does not sit at the end of the word: it slides onto the vowel it
+was invented for, so the two words come out as one. *un bel homme* is said **un bè-lomme**,
+and *un nouvel ami* is **un nou-vè-lami**. *vieil* passes its y sound across the same way.
 
 ::: examples
-un beau garçon || normal masculine
-un bel homme || before a vowel
-un nouvel ami || not *un nouveau ami*
-un vieil arbre || not *un vieux arbre*
+un beau garçon || the normal masculine, no linking
+un bel homme || *bè-lomme*, one block of sound
+un nouvel ami || *nou-vè-lami*, not *un nouveau ami*
+un vieil arbre || *vyè-yarbre*, not *un vieux arbre*
+un vieil homme || the h is mute, so it links just like a vowel
+un fol espoir || *fo-lespoir*, a wild hope
 :::
+
+::: rule Why this form exists at all
+Say *un beau homme* aloud: two vowels collide with nothing to join them, and French dislikes
+that. *bel* supplies a consonant to bridge the gap. That is also why the feminine never needs
+a third form: *belle*, *nouvelle*, *vieille* already end in a consonant sound, so *une belle
+amie* links without help.
+:::
+
+Press the speaker on any line above to hear it. Shift-click reads it slowly, which is the
+setting worth using for *vieil arbre* until the y sound is automatic.
 
 ## Position: after the noun, usually
 
@@ -145,6 +176,40 @@ figurative; after it, literal.
 | **seul** | *un seul homme* — a single man | *un homme seul* — a lonely man |
 | **certain** | *un certain âge* — a certain age | *un fait certain* — an undoubted fact |
 
+## Adjectives that shift nuance, not meaning
+
+*heureux* is not in BAGS, yet it can still go in front of the noun. Nothing flips the way
+*ancien* flips: both positions mean something close to *happy*. What moves is what the
+adjective is describing.
+
+| Position | What it describes | Examples |
+|---|---|---|
+| Before | the event or the outcome: *fortunate, lucky* | *un heureux hasard* (a lucky coincidence) · *un heureux événement* (a happy event, i.e. a baby) · *un heureux choix* (a fortunate choice) |
+| After | the person and their mood: *happy* | *un homme heureux* (a happy man) · *une famille heureuse* · *un visage heureux* |
+
+::: rule Which one do you want?
+Ask whether you are describing **how someone feels** or **how something turned out**.
+
+*Il est heureux.* He is happy. A mood, so it can only follow.
+*C'est un heureux hasard.* It turned out well. A judgement on the event, so it precedes.
+:::
+
+A handful of others behave the same way: a preceding position turns the adjective into a
+judgement, and it usually sounds a shade more literary.
+
+| Adjective | Before | After |
+|---|---|---|
+| **heureux** | *un heureux hasard*: fortunate | *un homme heureux*: happy |
+| **curieux** | *un curieux personnage*: an odd character | *un enfant curieux*: an inquisitive child |
+| **triste** | *un triste individu*: a wretched individual | *un homme triste*: a sad man |
+| **vrai** | *un vrai problème*: a real problem (emphasis) | *une histoire vraie*: a true story |
+
+::: warning Do not generalise this
+Most adjectives cannot move. *un rouge livre* and *une française langue* are simply wrong.
+Fronting is licensed word by word: BAGS, the meaning-changing list above, and this short
+nuance list. Everything else stays after the noun.
+:::
+
 ## Adverbs of degree: beaucoup vs très
 
 Both translate loosely as *very / a lot*, but they attach to different things.
@@ -188,6 +253,16 @@ un (beau) hôtel || un bel hôtel || *hôtel* has h muet
 *un livre propre* || A clean book.
 *la semaine dernière* || Last week.
 *la dernière semaine* || The final week.
+*un heureux hasard* || A lucky coincidence. Before = a judgement on the event.
+*un homme heureux* || A happy man. After = the person's mood.
+*un curieux personnage* || An odd character, not an inquisitive one.
+:::
+
+::: exercise Fortunate or happy? Place *heureux*
+The couple looked happy. || *Le couple avait l'air heureux.* || A mood, so it follows.
+It was a fortunate choice. || *C'était un heureux choix.* || A verdict on the outcome, so it precedes.
+They are expecting a baby (the set phrase). || *un heureux événement* || Always fronted in this idiom.
+She has a happy face. || *un visage heureux* || Describing the face itself.
 :::
 
 ::: exercise très or beaucoup?

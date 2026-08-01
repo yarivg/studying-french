@@ -20,7 +20,7 @@ No build step, no dependencies, no tracking. Progress lives in your browser and 
 | **Reading** | Ten passages A1–B2. Hear any line, tap any word for its meaning, answer for comprehension, then read a line back into the microphone. |
 | **Vocabulary** | 1,493 entries, searchable and filterable by theme, part of speech and gender — plus any word you add yourself. |
 | **Flashcards** | Leitner spaced repetition, sliced by theme or by word type. |
-| **Audio** | Click any French example to hear it spoken; every phonetic transcription has a play button. |
+| **Audio** | Every French example has a play button, italics in the prose are clickable, and each phonetic transcription plays the word it transcribes. Shift-click reads slowly. |
 | **Sync** | Optional: mirror your progress to a private GitHub gist so the phone and the laptop stay in step. |
 
 Every chapter ends with exercises you reveal and grade yourself. The grades feed the same
@@ -76,8 +76,26 @@ to hear it slowly.
 The 1,493 curated entries are baked into `data/vocab.json` and never change at runtime. Words
 you meet yourself go somewhere else: **Vocabulary → + Add word**, or paste a whole list at once
 in `french - english` form (a leading number is ignored, so a slice of `vocab-source.txt` pastes
-straight in). Fill in the French with its article and the gender and part of speech are guessed
-for you.
+straight in).
+
+The form asks for two things, French and English, and works out the rest. What it reads off the
+French side:
+
+| You type | It files it as |
+|---|---|
+| `le brouillard` | masculine noun (the article is the gender) |
+| `les cheveux` | plural noun |
+| `le/la bénévole` | noun of either gender |
+| `ancien/ne` | adjective: masculine, then the feminine **ending** |
+| `noir/e/s` | adjective, with the plural ending too |
+| `éteindre`, `se lever` | verb |
+| `avoir hâte de` | phrase |
+
+A word with no theme of its own is filed under **mine**, which is a real deck you can revise
+from, so nothing needs tagging at the moment you add it. "Change what it guessed" is there if a
+guess is wrong, and the line above it always says what is about to be saved. Because the slash
+form is understood rather than read out literally, `ancien/ne` is spoken as "ancien, ancienne"
+instead of "ancien ou ne".
 
 Your words live in the same synced progress state as everything else, so they reach the phone
 by the same route and merge the same way. They show up in the browser, in search, in their

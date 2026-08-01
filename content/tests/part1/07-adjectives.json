@@ -164,6 +164,42 @@
    "why": "Bel is the masculine form used before a vowel or mute h, and it links straight onto homme. Un beau homme is not said."
   },
   {
+   "id": "adjectives-16",
+   "type": "mcq",
+   "q": "« It was a lucky coincidence. » Which one?",
+   "choices": [
+    "un heureux hasard",
+    "un hasard heureux",
+    "un hasard de chance"
+   ],
+   "a": 0,
+   "why": "Heureux before the noun judges the event: fortunate, lucky. Un hasard heureux is not wrong French, but it reads as the coincidence itself being cheerful, and the set phrase is un heureux hasard."
+  },
+  {
+   "id": "adjectives-17",
+   "type": "mcq",
+   "q": "Where does heureux go in « a happy man » ?",
+   "choices": [
+    "un homme heureux",
+    "un heureux homme",
+    "either, with no difference"
+   ],
+   "a": 0,
+   "why": "A mood belongs to the person, so the adjective follows: un homme heureux. Un heureux homme would suggest a man favoured by luck, not a man in a good mood."
+  },
+  {
+   "id": "adjectives-18",
+   "type": "mcq",
+   "q": "« un curieux personnage » describes someone who is…",
+   "choices": [
+    "odd, strange",
+    "nosy, inquisitive",
+    "interested in everything"
+   ],
+   "a": 0,
+   "why": "Fronted, curieux is a verdict on the person: odd. After the noun it is the ordinary sense, un enfant curieux, an inquisitive child. Heureux, triste and vrai shift the same way."
+  },
+  {
    "id": "adjectives-15",
    "type": "open",
    "q": "What does BAGS stand for, and give one adjective for each letter?",

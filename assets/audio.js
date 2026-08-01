@@ -87,10 +87,58 @@ window.Say = (function () {
 
   /* ---------------------------------------------------------- speaking */
 
+  /* The word list writes an adjective as one entry with its endings hung off
+     the back: "fort/e", "bon/ne", "ancien/ne", "noir/e/s". That is a spelling
+     convention, not a list of words, so reading it out needs the endings put
+     back onto the stem — otherwise the voice says "fort ou e".
+
+     Only these endings expand. Anything else after a slash is two separate
+     words ("le/la", "mon/ton/son", "du/au") and keeps the spoken "ou". */
+  var ENDINGS = /^(e|es|s|ne|nes|le|les|te|tes|se|ses|sse|ce|ve|che)$/;
+
+  function inflect(stem, suf) {
+    if (suf === 's' || suf === 'es') {
+      // amical becomes amicaux, not amicals.
+      if (/al$/.test(stem)) return stem.slice(0, -1) + 'ux';
+      // gris already ends in the s; saying it twice gives "griss".
+      if (suf === 's' && /s$/.test(stem)) return stem;
+      return stem + suf;
+    }
+    // courageux + se is courageuse, doux + ce is douce: the x goes.
+    if (/x$/.test(stem) && /^[sc]/.test(suf)) return stem.slice(0, -1) + suf;
+    // serveur + se is serveuse, menteur + se is menteuse.
+    if (/eur$/.test(stem) && suf === 'se') return stem.slice(0, -1) + suf;
+    // Any stem in -er takes the grave: chère, fière, régulière, étrangère.
+    if (/er$/.test(stem) && suf === 'e') return stem.slice(0, -2) + 'ère';
+    // -ne doubles after -on and -en (bonne, ancienne) but not after -un or
+    // -in (brune, radine), so the doubling depends on the vowel before it.
+    if (suf === 'ne' && /n$/.test(stem)) {
+      return /[oe]n$/.test(stem) ? stem + 'ne' : stem.slice(0, -1) + 'ne';
+    }
+    return stem + suf;
+  }
+
+  function expandForms(text) {
+    // The lookahead matters: without it "lequel/lesquels" matches as far as
+    // "/les" and leaves the rest of the word stranded.
+    return text.replace(/([a-zà-ÿœæ]{3,})((?:\/[a-zà-ÿœæ]{1,3})+)(?![a-zà-ÿœæ])/gi,
+      function (m, stem, tail) {
+        var sufs = tail.split('/').filter(Boolean);
+        if (!sufs.every(function (s) { return ENDINGS.test(s.toLowerCase()); })) return m;
+        var forms = [stem];
+        sufs.forEach(function (s) {
+          var form = inflect(stem, s.toLowerCase());
+          // Two spellings can land on one form; saying it twice is noise.
+          if (forms.indexOf(form) === -1) forms.push(form);
+        });
+        return forms.join(', ');
+      });
+  }
+
   // Strip the things that surround an example in the source text but
   // should not be read out: glosses in brackets, phonetics, markers.
   function clean(text) {
-    return String(text || '')
+    var s = String(text || '')
       // Drop IPA transcriptions, but only real ones: "précédent/e/s" also
       // has something between two slashes, and it is not a transcription.
       .replace(/\/[^/]*\//g, function (m) {
@@ -98,14 +146,23 @@ window.Say = (function () {
       })
       .replace(/\([^)]*\)/g, ' ')
       .replace(/\[[^\]]*\]/g, ' ')
-      .replace(/[*_`«»"]/g, ' ')
+      .replace(/[*_`«»"]/g, ' ');
+
+    // Endings first: "fort/e" is one word, while "le/la" really is two and
+    // falls through to the rule below.
+    return expandForms(s)
       // A slash between two forms is read out as "barre oblique" by every
       // voice, which is not what "délicieux/délicieuse" means. Say it.
       // A lookahead, not a second group: "précédent/e/s" has two slashes
       // sharing a letter, and a consuming match would skip the second.
       .replace(/([^\s/])\s*\/\s*(?=[^\s/])/g, '$1 ou ')
       .replace(/\//g, ' ')
+      // An arrow means "becomes": the tables are full of "cruel → cruelle".
+      // Left in, a French voice announces it as "flèche". A comma gives the
+      // pause that makes the pair audible as two forms of one word.
+      .replace(/\s*(→|⟶|⇒|->|←)\s*/g, ', ')
       .replace(/\s*[·—–]\s*/g, ', ')
+      .replace(/‑/g, '-')
       .replace(/…/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
@@ -247,6 +304,28 @@ window.Say = (function () {
     el.insertAdjacentElement('afterend', btn);
   }
 
+  // The French side of an examples block is the same kind of thing as an
+  // italic in prose, but it is not italicised, so nothing above catches it.
+  // These are the lines a learner most wants to hear, so they get a button.
+  function markPhrase(el) {
+    if (el.dataset.wired) return;
+    el.dataset.wired = '1';
+    // An italic inside it was already wired by markExample; a second
+    // control for the same words would be noise.
+    if (el.querySelector('em.say')) return;
+    var text = clean(el.textContent);
+    if (!text || text.length > 80) return;
+    if (!/[a-zà-ÿœæ]/i.test(text)) return;
+    var btn = document.createElement('button');
+    btn.className = 'say-btn';
+    btn.type = 'button';
+    btn.dataset.say = text;
+    btn.setAttribute('aria-label', 'Hear “' + text + '”');
+    btn.setAttribute('title', 'Hear “' + text + '”');
+    btn.innerHTML = SPEAKER;
+    el.appendChild(btn);
+  }
+
   // Give a vocabulary row its own play button next to the French column.
   function markVocab(el) {
     if (el.dataset.wired) return;
@@ -269,6 +348,7 @@ window.Say = (function () {
     if (!root || !supported()) return;
     root.querySelectorAll('em').forEach(markExample);
     root.querySelectorAll('.ipa').forEach(markIpa);
+    root.querySelectorAll('.ex-fr').forEach(markPhrase);
     root.querySelectorAll('.v-fr').forEach(markVocab);
   }
 

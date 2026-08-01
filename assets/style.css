@@ -882,6 +882,36 @@ body.audio-off .say-btn, body.audio-off .flash-say { display: none; }
 /* The French field is the one you type accents into, so give it room. */
 .word-fields label:first-child { grid-column: span 2; }
 
+/* What the form worked out for itself, said in a sentence rather than left
+   sitting in three fields nobody wants to fill in on a phone. */
+.word-auto {
+  margin: .8rem 0 0; font-size: .85rem; color: var(--muted);
+  min-height: 1.2em;
+}
+
+.word-more { margin-top: .7rem; font-size: .85rem; }
+.word-more > summary {
+  color: var(--bleu); cursor: pointer; width: fit-content;
+  padding: .15rem 0;
+}
+.word-more > summary:hover { text-decoration: underline; }
+.word-more[open] > summary { margin-bottom: .6rem; }
+
+/* One line per case, not a three-column table: on a phone the table put
+   two words per cell and ran off the bottom of the screen. */
+.word-help-list { margin: 0; padding: 0; list-style: none; font-size: .84rem; }
+.word-help-list li {
+  padding: .3rem 0; color: var(--muted);
+  border-bottom: 1px solid var(--line);
+}
+.word-help-list li:last-child { border-bottom: 0; }
+.word-help-list code {
+  margin-right: .45rem; color: var(--ink);
+  font-size: .92em; white-space: nowrap;
+}
+.word-help-list em { color: var(--ink); font-style: normal; font-weight: 600; }
+.word-help-note { margin: .6rem 0 0; font-size: .82rem; color: var(--muted); }
+
 .word-actions { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1rem; }
 
 .word-msg { margin: .8rem 0 0; font-size: .85rem; color: var(--muted); }

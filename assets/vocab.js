@@ -160,14 +160,29 @@ window.Vocab = (function () {
   function guess(fr) {
     var s = String(fr || '').trim().toLowerCase();
     var out = { pos: 'other', g: '' };
-    var article = s.match(/^(le|la|les|un|une|l')\s*/);
+
+    // "le/la bénévole" is one noun that takes either gender, so it has to be
+    // read before the plain-article branch, which would call it masculine.
+    if (/^(le\s*\/\s*la|la\s*\/\s*le|un\s*\/\s*une|une\s*\/\s*un)\b/.test(s)) {
+      return { pos: 'noun', g: 'mf' };
+    }
+    // "ancien/ne", "fort/e", "courageux/se": a word carrying its feminine
+    // ending is an adjective by construction. Before the verb branch, or
+    // "régulier/e" would be read as an infinitive in -er.
+    if (/^[^\s/]+(\/[a-zà-ÿœæ']{1,3})+$/.test(s)) return { pos: 'adj', g: '' };
+
+    // "les" before "le": alternation is ordered, and the shorter one would
+    // match "les cheveux" and call it masculine.
+    var article = s.match(/^(les|le|la|une|un|l')\s*/);
     if (article) {
       out.pos = 'noun';
       var a = article[1];
       out.g = a === 'le' || a === 'un' ? 'm' : a === 'la' || a === 'une' ? 'f' : a === 'les' ? 'pl' : '';
       return out;
     }
-    if (/^(se |s')/.test(s) || /(er|ir|re|oir)$/.test(s)) {
+    // A reflexive is a verb however many words it runs to: "se lever".
+    if (/^(se\s|s')/.test(s)) return { pos: 'verb', g: '' };
+    if (/(er|ir|re|oir)$/.test(s)) {
       // Only a guess: "la mer" is caught by the article branch above, but
       // "cher" or "hier" would land here. Cheap to correct in the form.
       if (s.split(/\s+/).length === 1) out.pos = 'verb';

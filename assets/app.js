@@ -639,11 +639,38 @@
               '" placeholder="le brouillard" autocomplete="off" spellcheck="false"></label>' +
             '<label>English<input id="wen" value="' + escapeAttr(w ? w.en : '') +
               '" placeholder="fog" autocomplete="off"></label>' +
-            '<label>Type<select id="wpos">' + posOptions(w ? w.pos : '') + '</select></label>' +
-            '<label>Gender<select id="wg">' + genderOptions(w ? w.g : '') + '</select></label>' +
-            '<label>Themes<input id="wth" value="' + escapeAttr(w ? w.themes.join(', ') : '') +
-              '" placeholder="nature, weather" autocomplete="off"></label>' +
           '</div>' +
+          '<details class="word-more word-help">' +
+            '<summary>How to write the French side</summary>' +
+            '<ul class="word-help-list">' +
+              '<li><code>le brouillard</code> a noun keeps its article: that is how the ' +
+                'gender gets recorded</li>' +
+              '<li><code>ancien/ne</code> an adjective is masculine first, then the ' +
+                '<em>feminine ending only</em></li>' +
+              '<li><code>noir/e/s</code> add a third piece for the plural ending</li>' +
+              '<li><code>le/la bénévole</code> one noun that takes either gender</li>' +
+              '<li><code>éteindre</code> a verb is the infinitive; <code>se lever</code> if ' +
+                'it is reflexive</li>' +
+              '<li><code>avoir hâte de</code> a phrase, written as you would say it</li>' +
+              '<li><code>vieux / vieille</code> spaces around the slash when both sides are ' +
+                'whole words</li>' +
+            '</ul>' +
+            '<p class="word-help-note">The slash is always masculine first. Written that way, ' +
+            '<code>ancien/ne</code> is read aloud as “ancien, ancienne”.</p>' +
+          '</details>' +
+          // Two fields are the whole job. Type, gender and theme are worked
+          // out from the French, and a word with no theme lands in "mine",
+          // which is a real deck you can revise from on its own.
+          '<p class="word-auto" id="wauto"></p>' +
+          '<details class="word-more"' + (editing ? ' open' : '') + '>' +
+            '<summary>Change what it guessed</summary>' +
+            '<div class="word-fields">' +
+              '<label>Type<select id="wpos">' + posOptions(w ? w.pos : '', !editing) + '</select></label>' +
+              '<label>Gender<select id="wg">' + genderOptions(w ? w.g : '') + '</select></label>' +
+              '<label>Themes<input id="wth" value="' + escapeAttr(w ? w.themes.join(', ') : '') +
+                '" placeholder="leave empty for “mine”" autocomplete="off"></label>' +
+            '</div>' +
+          '</details>' +
           '<p class="word-msg" id="wmsg" hidden></p>' +
           '<div class="word-actions">' +
             '<button class="btn btn-primary" data-act="save">' + (editing ? 'Save' : 'Add word') + '</button>' +
@@ -656,13 +683,20 @@
       var posSel = host.querySelector('#wpos');
       var gSel = host.querySelector('#wg');
 
-      // Filling in the article usually settles both of these.
+      // Show the guess as it is typed, so nothing is decided behind your
+      // back and there is no field to fill in when it is already right.
       if (!editing) {
-        fr.addEventListener('blur', function () {
+        var auto = host.querySelector('#wauto');
+        var show = function () {
           var g = Vocab.guess(fr.value);
-          if (posSel.value === 'other') posSel.value = g.pos;
-          if (!gSel.value && g.g) gSel.value = g.g;
-        });
+          var th = host.querySelector('#wth').value.split(/[,\s]+/).filter(Boolean);
+          if (!fr.value.trim()) { auto.textContent = ''; return; }
+          auto.textContent = 'Filing it as ' + (Vocab.POS_LABEL[g.pos] || g.pos) +
+            (g.g ? ', ' + { m: 'masculine', f: 'feminine', pl: 'plural', mf: 'either' }[g.g] : '') +
+            ', theme ' + (th.length ? th.join(' · ') : 'mine') + '.';
+        };
+        fr.addEventListener('input', show);
+        host.querySelector('#wth').addEventListener('input', show);
       }
 
       host.querySelector('.word-form').addEventListener('click', onClick);
@@ -699,10 +733,9 @@
         g: host.querySelector('#wg').value,
         themes: host.querySelector('#wth').value.split(/[,\s]+/).filter(Boolean)
       };
-      // Submitting with Enter never blurs the French field, so the guess
-      // has to run here too rather than only on the way out of it.
+      // An untouched Type or Gender means "you work it out".
       var guess = Vocab.guess(input.fr);
-      if (input.pos === 'other') input.pos = guess.pos;
+      if (!input.pos) input.pos = guess.pos;
       if (!input.g) input.g = guess.g;
       try {
         if (editing) {
@@ -776,8 +809,9 @@
     return { open: open, close: close };
   }
 
-  function posOptions(current) {
-    return Object.keys(Vocab.POS_LABEL).map(function (p) {
+  function posOptions(current, auto) {
+    return (auto ? '<option value="" selected>work it out</option>' : '') +
+      Object.keys(Vocab.POS_LABEL).map(function (p) {
       return '<option value="' + p + '"' + (p === current ? ' selected' : '') + '>' +
         Vocab.POS_LABEL[p] + '</option>';
     }).join('');

@@ -41,6 +41,7 @@ disagree with a call, edit `data/vocab-source.txt` or the `CORRECTIONS` table in
 | 557 | anglias — english | anglais — English | Typo: anglias. |
 | 559 | la salade — salat | la salade — salad | Typo: salat. |
 | 561 | le frites — fries | les frites — fries | Plural and feminine: les frites. |
+| 611 | gentil/e/s — kind | gentil/le/s — kind | The feminine doubles the l: gentille. Written gentil/e it reads as 'gentile'. |
 | 625 | actuellement — currently/actually | actuellement — currently | False friend: actuellement means currently, never 'actually'. |
 | 706 | le passée — past | le passé — past | le passé (noun). 'passée' is the feminine past participle. |
 | 724 | ç'est parti — let's go | c'est parti — let's go | No cedilla-apostrophe: c'est parti. |
@@ -51,18 +52,21 @@ disagree with a call, edit `data/vocab-source.txt` or the `CORRECTIONS` table in
 | 811 | À cause de — as a result | À cause de — because of / due to | à cause de gives a cause, usually a negative one; 'as a result' is par conséquent. |
 | 833 | sauf — unless/expect | sauf — except / unless | Typo: expect. |
 | 891 | lourde — heavy | lourd/e — heavy | Citation form is the masculine lourd. |
+| 907 | cruel/s/le/s — cruel | cruel/le/s — cruel | One masculine, one feminine, one plural marker. The source listed the plural twice. |
 | 927 | attire — to attract | attirer — to attract | Infinitive, not the third-person 'attire'. |
 | 944 | surement — surely | sûrement — surely | Missing circumflex. |
 | 967 | la pâte — the pastry (2) | la pâte — dough / batter / pasta dough | La pâte is the raw dough, not the finished pastry — that is la pâtisserie, already at 966. |
 | 995 | naître — to born | naître — to be born | naître = to be born. |
 | 1005 | la grèce — greece | la Grèce — greece | Country names are capitalised. |
 | 1017 | le haut — a top shirt | le haut — the top (garment) | Clearer gloss. |
+| 1043 | le coloc/ataire — roommate | le colocataire / le coloc — roommate | Written coloc/ataire the slash falls mid-word; these are the full word and its clipping. |
 | 1053 | á la fin — in the end | à la fin — in the end | Wrong accent: á. |
 | 1060 | à travers — towards | à travers — through / across | à travers = through. 'Towards' is vers. |
 | 1090 | coincer — to stuck | coincer — to jam / to get stuck | Grammatical English gloss. |
 | 1097 | ce n'est pas peine — it doesn't worth | ce n'est pas la peine — it's not worth it | The set phrase needs 'la'. |
 | 1122 | le sculpture — sculpture | la sculpture — sculpture | sculpture is feminine. |
 | 1143 | se manque — to miss each other | se manquer — to miss each other | Infinitive form. |
+| 1173 | violet/e/es — purple | violet/te/tes — purple | The feminine doubles the t: violette. |
 | 1194 | le roche — the rock | la roche — the rock | roche is feminine. |
 | 1201 | le feuille — leaf/paper | la feuille — leaf/paper | feuille is feminine. |
 | 1202 | le grenouille — frog | la grenouille — frog | grenouille is feminine. |
@@ -131,4 +135,4 @@ any extra meaning is folded into its gloss.
 | 1463 | grimper — to climb (2) | 132 |
 | 1516 | actuellement — currently (not actually!) | 625 |
 
-**Totals:** 1521 source entries, 85 corrections, 28 duplicates merged, 1493 unique words.
+**Totals:** 1521 source entries, 89 corrections, 28 duplicates merged, 1493 unique words.

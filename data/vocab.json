@@ -2,7 +2,7 @@
  "count": 1493,
  "source_count": 1521,
  "themes": {
-  "general": 592,
+  "general": 594,
   "food": 98,
   "connectors": 74,
   "time": 68,
@@ -20,9 +20,9 @@
   "numbers": 33,
   "people": 31,
   "clothes": 30,
-  "family": 28,
+  "family": 27,
   "health": 25,
-  "colours": 19,
+  "colours": 18,
   "animals": 18
  },
  "words": [
@@ -7276,11 +7276,11 @@
   },
   {
    "n": 611,
-   "fr": "gentil/e/s",
+   "fr": "gentil/le/s",
    "en": "kind",
    "pos": "adj",
    "g": "",
-   "base": "gentil/e/s",
+   "base": "gentil/le/s",
    "themes": [
     "general"
    ],
@@ -10766,11 +10766,11 @@
   },
   {
    "n": 907,
-   "fr": "cruel/s/le/s",
+   "fr": "cruel/le/s",
    "en": "cruel",
    "pos": "adj",
    "g": "",
-   "base": "cruel/s/le/s",
+   "base": "cruel/le/s",
    "themes": [
     "general"
    ],
@@ -12401,13 +12401,13 @@
   },
   {
    "n": 1043,
-   "fr": "le coloc/ataire",
+   "fr": "le colocataire / le coloc",
    "en": "roommate",
    "pos": "noun",
    "g": "m",
-   "base": "coloc/ataire",
+   "base": "colocataire / le coloc",
    "themes": [
-    "family"
+    "general"
    ],
    "id": "w1043"
   },
@@ -13933,13 +13933,13 @@
   },
   {
    "n": 1173,
-   "fr": "violet/e/es",
+   "fr": "violet/te/tes",
    "en": "purple",
-   "pos": "adj",
+   "pos": "other",
    "g": "",
-   "base": "violet/e/es",
+   "base": "violet/te/tes",
    "themes": [
-    "colours"
+    "general"
    ],
    "id": "w1173"
   },
