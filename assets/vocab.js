@@ -20,11 +20,7 @@ window.Vocab = (function () {
   function load() {
     if (data) return Promise.resolve(data);
     if (loading) return loading;
-    loading = fetch('data/vocab.json')
-      .then(function (r) {
-        if (!r.ok) throw new Error('vocab.json ' + r.status);
-        return r.json();
-      })
+    loading = Data.json('data/vocab.json')
       .then(function (json) {
         data = json;
         data.words.forEach(function (w) {

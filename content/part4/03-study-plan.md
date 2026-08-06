@@ -32,6 +32,25 @@ sliced by theme, so you can drill *food* before a restaurant and *work* before a
 **Search** covers every lesson and every vocabulary entry. Press `/` from anywhere to jump into
 it.
 
+## Using it offline
+
+Everything works with no network, in two ways.
+
+**Installed as an app.** Open the site over https while you still have signal and wait for the
+header pill to read **Offline ready** — that means all 133 files are on the device: every
+lesson, every test, the reading passages and the whole vocabulary. Then add it to your home
+screen (iOS: Share → *Add to Home Screen*; Android: ⋮ → *Install app*). It behaves like any
+other app after that, aeroplane mode included.
+
+**As a single file.** `le-carnet-offline.html` is the entire course in one file. Put it on a
+phone, a laptop or a memory stick and open it. No server, no install, no network.
+
+::: warning The two keep separate progress
+A browser treats the hosted site and a local file as different origins, so they do not share
+storage. If you move between them, carry your progress with **Export** / **Import** on the
+Progress page. Gist sync cannot run from a local file.
+:::
+
 ## A route through the material
 
 You do not have to read in order, but the order is not arbitrary — later chapters assume earlier

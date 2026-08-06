@@ -185,6 +185,39 @@ Security, briefly:
 - A `gist`-scoped token can read and write *all* your gists. Give it an expiry, and revoke it
   on GitHub if a device is lost. "Disconnect this device" forgets the token locally.
 
+## Offline
+
+Two independent routes, because they fail in different situations.
+
+### Install it as an app
+
+The site is a PWA. Open it over **https** while online and wait for the pill in the header to
+read **"Offline ready"** — that means all 133 files are stored on the device: every lesson,
+every test bank, the reading passages, the vocabulary and the flashcards.
+
+On iOS: Share → *Add to Home Screen*. On Android: ⋮ → *Install app*.
+
+After that it opens with no network at all. The Progress page shows exactly how much is stored
+and has a button to refresh it.
+
+The catch: a service worker needs **https**, so this route only works once the site is served
+from GitHub Pages or another https host. It cannot work from `file://` or plain `http://`.
+
+### The single file
+
+**`le-carnet-offline.html`** — one file, ~1.1 MB, everything inlined: 50 chapters, 47 test
+banks, 10 reading passages and all 1,493 words. Download it, put it anywhere, open it. No
+server, no https, no install, no network.
+
+```sh
+python3 tools/build-single-file.py     # rebuild after editing any content
+```
+
+**The two keep separate progress.** A browser treats the hosted site and a local file as
+different origins, so they do not share `localStorage`. Move progress between them with
+Export / Import on the Progress page — gist sync does not work from `file://`, because the
+GitHub API rejects requests from a `null` origin.
+
 ## Running it locally
 
 The page fetches its content at runtime, so opening `index.html` straight off disk will not
@@ -200,6 +233,9 @@ Then open <http://localhost:8000>.
 
 ```
 index.html              app shell
+sw.js                   service worker — precaches everything for offline use
+manifest.webmanifest    PWA manifest (installable to a home screen)
+le-carnet-offline.html  generated — the whole course as one standalone file
 assets/
   style.css             light/dark theme, print stylesheet
   md.js                 markdown renderer (tables, callouts, exercises)
@@ -238,6 +274,8 @@ CORRECTIONS.md          every change made to the source material
 | a reading passage | `content/reading/*.json`, then `python3 tools/check-reading.py` |
 | a correction to the source notes | the `CORRECTIONS` table in `tools/build-vocab.py` |
 | styling | `assets/style.css` |
+| the offline file | rebuild with `python3 tools/build-single-file.py` |
+| the app icons | `python3 tools/make-icons.py` |
 
 Lessons are Markdown plus five custom blocks:
 

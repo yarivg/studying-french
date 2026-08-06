@@ -38,11 +38,7 @@
     setupQuickAdd();
     Say.setup();
 
-    fetch('content/manifest.json')
-      .then(function (r) {
-        if (!r.ok) throw new Error('manifest.json ' + r.status);
-        return r.json();
-      })
+    Data.json('content/manifest.json')
       .then(function (json) {
         manifest = json;
         chapters = [];
@@ -273,11 +269,7 @@
 
   function fetchChapter(ch) {
     if (cache[ch.slug]) return Promise.resolve(cache[ch.slug]);
-    return fetch('content/' + ch.file)
-      .then(function (r) {
-        if (!r.ok) throw new Error(ch.file + ' — ' + r.status);
-        return r.text();
-      })
+    return Data.text('content/' + ch.file)
       .then(function (text) { cache[ch.slug] = text; return text; });
   }
 

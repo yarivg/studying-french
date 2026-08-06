@@ -23,8 +23,8 @@ window.Test = (function () {
   function loadChapter(ch) {
     var path = pathFor(ch);
     if (cache[path]) return Promise.resolve(cache[path]);
-    return fetch(path)
-      .then(function (r) { return r.ok ? r.json() : null; })
+    return Data.json(path)
+      .catch(function () { return null; })
       .then(function (bank) {
         if (bank && Array.isArray(bank.questions)) {
           bank.questions.forEach(function (q) { q.ch = bank.ch; q.chTitle = bank.title; });
@@ -42,9 +42,9 @@ window.Test = (function () {
   }
 
   function hasBank(ch) {
-    return fetch(pathFor(ch), { method: 'HEAD' })
-      .then(function (r) { return r.ok; })
-      .catch(function () { return false; });
+    // A HEAD request would bypass the offline cache, which only serves GET,
+    // so ask for the bank itself -- it is cached, and loadChapter memoises it.
+    return loadChapter(ch).then(function (bank) { return !!bank; });
   }
 
   /* ---------------------------------------------------------- picking */

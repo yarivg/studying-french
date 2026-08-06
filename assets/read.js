@@ -17,11 +17,7 @@ window.Read = (function () {
 
   function loadIndex() {
     if (index) return Promise.resolve(index);
-    return fetch('content/reading/index.json')
-      .then(function (r) {
-        if (!r.ok) throw new Error('No reading index (' + r.status + ')');
-        return r.json();
-      })
+    return Data.json('content/reading/index.json')
       .then(function (json) {
         // A passage listed but not yet written must not break the list.
         index = json.passages.filter(function (p) { return p && p.id && p.file; });
@@ -31,11 +27,7 @@ window.Read = (function () {
 
   function loadPassage(entry) {
     if (cache[entry.id]) return Promise.resolve(cache[entry.id]);
-    return fetch('content/reading/' + entry.file)
-      .then(function (r) {
-        if (!r.ok) throw new Error(entry.file + ' — ' + r.status);
-        return r.json();
-      })
+    return Data.json('content/reading/' + entry.file)
       .then(function (p) { cache[entry.id] = p; return p; });
   }
 
