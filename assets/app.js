@@ -478,6 +478,8 @@
         '<div class="bar"><span style="width:' +
         Math.round((Progress.knownCount() / words.length) * 100) + '%"></span></div>';
 
+      html += '<h2 id="offline">Offline</h2><div id="offlineBox"></div>';
+
       html += '<h2>Sync across devices</h2><div id="syncCard"></div>';
 
       html += '<h2>Your data</h2>' +
@@ -490,6 +492,7 @@
 
       view.innerHTML = html;
       renderSyncCard();
+      renderOfflineBox();
 
       document.getElementById('exportBtn').addEventListener('click', function () {
         var blob = new Blob([Progress.exportJSON()], { type: 'application/json' });
@@ -521,6 +524,68 @@
   /* ---------------------------------------------------------- sync card */
 
   var TOKEN_URL = 'https://github.com/settings/tokens/new?scopes=gist&description=Le%20Carnet';
+
+  function renderOfflineBox() {
+    var box = document.getElementById('offlineBox');
+    if (!box) return;
+
+    function paint() {
+      var st = Offline.state;
+      var body;
+
+      if (st.embedded) {
+        body = '<p style="color:var(--vert);font-weight:600">✓ This is the standalone file.</p>' +
+          '<p>Every lesson, test, reading passage and all 1,493 words are inside this one HTML ' +
+          'file. It needs no server and no network, ever.</p>';
+      } else if (!st.supported || !window.isSecureContext) {
+        body = '<p>Offline storage needs the page served over <strong>https</strong> (or from ' +
+          'localhost). On a plain <code>http://</code> or <code>file://</code> address the ' +
+          'browser will not allow it.</p>' +
+          '<p>Use the published site, or <code>le-carnet-offline.html</code>, which needs none ' +
+          'of this.</p>';
+      } else if (st.caching) {
+        var pct = st.total ? Math.round((st.done / st.total) * 100) : 0;
+        body = '<p>Saving the course to this device — <strong>' + st.done + ' / ' + st.total +
+          '</strong> files.</p><div class="bar"><span style="width:' + pct + '%"></span></div>' +
+          '<p style="font-size:.88rem;color:var(--muted)">Stay on this page until it finishes.</p>';
+      } else if (st.ready) {
+        // st.done is what the cache actually holds; st.total is only the
+        // required subset, so it under-reports by the ~47 test banks.
+        var stored = Math.max(st.done, st.total);
+        body = '<p style="color:var(--vert);font-weight:600;font-size:1.05rem">' +
+          '✓ Ready to go offline.</p>' +
+          '<p>All ' + stored + ' files are stored on this device — every lesson, every test, ' +
+          'the reading passages and the whole vocabulary. Turn the network off and it all still ' +
+          'works. Your progress was already local, so nothing changes there.</p>';
+      } else {
+        body = '<p><strong>Not saved to this device yet.</strong></p>' +
+          '<p>Stay on the page a few seconds while you still have signal, or press the button ' +
+          'below. It is about 1 MB.</p>';
+      }
+
+      var actions = (!st.embedded && st.supported && window.isSecureContext)
+        ? '<p><button class="btn' + (st.ready ? '' : ' btn-primary') + '" id="recacheBtn">' +
+          (st.ready ? 'Refresh the offline copy' : 'Save for offline now') +
+          '</button> <span id="storageInfo" style="font-size:.85rem;color:var(--muted)"></span></p>'
+        : '';
+
+      box.innerHTML = body + actions;
+
+      var btn = document.getElementById('recacheBtn');
+      if (btn) btn.addEventListener('click', function () { Offline.recache(); });
+
+      Offline.estimate().then(function (e) {
+        var el = document.getElementById('storageInfo');
+        if (el && e && e.usage) {
+          el.textContent = Math.round(e.usage / 1024) + ' KB used on this device';
+        }
+      });
+    }
+
+    Offline.on(paint);
+    paint();
+    Offline.status();
+  }
 
   function renderSyncCard() {
     var host = document.getElementById('syncCard');

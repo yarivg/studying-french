@@ -111,7 +111,7 @@ window.Offline = (function () {
     }
     if (state.ready) {
       set(el, 'ok', '✓', online ? 'Offline ready' : 'Offline',
-        online ? 'The whole course is stored on this device'
+        online ? 'The whole course is stored on this device — tap for details'
                : 'No network — running entirely from this device');
       return;
     }
@@ -121,7 +121,17 @@ window.Offline = (function () {
   function set(el, kind, icon, label, detail) {
     el.hidden = false;
     el.className = 'offline-pill is-' + kind;
-    el.textContent = icon + ' ' + label;
+    // The glyph is its own element so a narrow screen can hide the words
+    // without hiding the state -- font-size:0 on the parent would take both.
+    el.innerHTML = '';
+    var g = document.createElement('span');
+    g.className = 'offline-glyph';
+    g.textContent = icon;
+    var t = document.createElement('span');
+    t.className = 'offline-text';
+    t.textContent = label;
+    el.appendChild(g);
+    el.appendChild(t);
     el.title = detail || label;
     el.setAttribute('aria-label', detail || label);
   }

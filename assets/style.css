@@ -1423,9 +1423,18 @@ textarea.test-input { font-size: .95rem; line-height: 1.6; resize: vertical; }
 .offline-pill.is-busy { color: var(--bleu);  border-color: color-mix(in srgb, var(--bleu) 40%, transparent);  background: var(--bleu-soft); }
 .offline-pill.is-wait { color: var(--muted); }
 
-@media (max-width: 980px) {
-  /* Keep the state visible on a phone, but drop to just the glyph. */
-  .offline-pill { font-size: 0; gap: 0; padding: .3rem .45rem; }
-  .offline-pill::first-letter { font-size: .8rem; }
+.offline-pill { text-decoration: none; cursor: pointer; }
+.offline-pill:hover { filter: brightness(.97); }
+.offline-glyph { font-size: .85em; line-height: 1; }
+
+/* A phone still gets the words -- a bare tick tells you nothing. Only when
+   the bar is genuinely out of room does it fall back to the glyph alone. */
+@media (max-width: 560px) {
+  .offline-pill { padding: .2rem .45rem; font-size: .62rem; }
+}
+@media (max-width: 389px) {
+  .offline-text { display: none; }
+  .offline-pill { padding: .3rem .42rem; }
+  .offline-glyph { font-size: .95rem; }
 }
 @media print { .offline-pill { display: none; } }
