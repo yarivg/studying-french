@@ -7219,6 +7219,7 @@ window.Offline = (function () {
       emit();
     });
 
+    // The reload-on-upgrade is handled by boot.js, which loads first.
     navigator.serviceWorker.register('sw.js', { scope: './' })
       .then(function (reg) {
         state.registered = true;
@@ -7228,6 +7229,8 @@ window.Offline = (function () {
           setTimeout(status, 400);
         });
         reg.addEventListener('updatefound', function () { paint(); });
+        // An installed PWA can sit for days without checking.
+        reg.update().catch(function () {});
       })
       .catch(function () { paint(); });
   }

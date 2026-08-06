@@ -5,19 +5,23 @@
    file list from it, so adding a chapter to the manifest is
    enough — this file never needs a hand-maintained list.
 
-   Strategy:
-     - navigations      → cache first, fall back to the cached shell
-     - everything else  → cache first, revalidate in the background
-   The content is versioned prose, not live data, so serving from
-   cache instantly and updating quietly afterwards is the right
-   trade. Bump CACHE_VERSION to force a refetch of everything.
+   Strategy, split by what the file is:
+     - the shell (html/css/js/manifest) → network first, cache as
+       fallback. Cache-first here means a deploy is invisible until
+       the *second* load, which is how a stale UI shipped once
+       already. Offline it still comes from the cache, so nothing
+       is lost.
+     - content (markdown, json) → cache first, revalidated in the
+       background. It is versioned prose, not live data.
+   Bump CACHE_VERSION to force a full refetch.
    ============================================================ */
 
-var CACHE_VERSION = 'le-carnet-v2';
+var CACHE_VERSION = 'le-carnet-v3';
 var SHELL = [
   './',
   'index.html',
   'assets/style.css',
+  'assets/boot.js',
   'assets/data.js',
   'assets/md.js',
   'assets/progress.js',
@@ -145,11 +149,19 @@ self.addEventListener('activate', function (event) {
 
 /* ---------------------------------------------------------- fetch */
 
+// The app shell must never be served stale while online, or a fix stays
+// invisible until the next load.
+function isShell(url) {
+  return /\.(html|css|js|webmanifest)$/.test(url.pathname) ||
+         url.pathname.endsWith('/');
+}
+
 self.addEventListener('fetch', function (event) {
   var req = event.request;
 
   if (req.method !== 'GET') return;
-  if (new URL(req.url).origin !== self.location.origin) return;
+  var url = new URL(req.url);
+  if (url.origin !== self.location.origin) return;
 
   // A navigation offline should still land on the app shell; the hash
   // route is handled client-side once it boots.
@@ -159,6 +171,25 @@ self.addEventListener('fetch', function (event) {
         .catch(function () {
           return caches.match('index.html', { ignoreSearch: true })
             .then(function (hit) { return hit || caches.match('./'); });
+        })
+    );
+    return;
+  }
+
+  if (isShell(url)) {
+    event.respondWith(
+      // 'reload' skips the browser's own HTTP cache. Without it the first
+      // load after an upgrade can pair new HTML with a stale stylesheet.
+      fetch(new Request(req.url, { cache: 'reload', credentials: 'same-origin' }))
+        .then(function (res) {
+          if (res && res.ok) {
+            var copy = res.clone();
+            caches.open(CACHE_VERSION).then(function (c) { c.put(req, copy); });
+          }
+          return res;
+        })
+        .catch(function () {
+          return caches.match(req, { ignoreSearch: true });
         })
     );
     return;
