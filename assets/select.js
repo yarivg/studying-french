@@ -100,10 +100,20 @@ window.Selected = (function () {
     var left = rect.left + (rect.width / 2) - (box.width / 2);
     left = Math.max(pad, Math.min(left, window.innerWidth - box.width - pad));
 
+    // The top bar is sticky and the bubble outranks it, so without this the
+    // bubble covers the navigation whenever the selection is near the top.
+    var bar = parseInt(getComputedStyle(document.documentElement)
+      .getPropertyValue('--topbar-h'), 10) || 0;
+    var min = bar + pad;
+
     var above = rect.top - box.height - 10;
     // No room above — a selection in the first line of the page — so drop it
-    // under the selection instead of off the top of the screen.
-    var top = above >= pad ? above : rect.bottom + 10;
+    // under the selection instead of behind the bar.
+    var top = above >= min ? above : rect.bottom + 10;
+    // A selection scrolled half under the bar can push it either way; the
+    // bubble stays on screen and below the bar whatever the arithmetic says.
+    if (top + box.height > window.innerHeight - pad) top = window.innerHeight - box.height - pad;
+    if (top < min) top = min;
 
     bubble.style.left = Math.round(left) + 'px';
     bubble.style.top = Math.round(top) + 'px';
