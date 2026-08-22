@@ -16,7 +16,7 @@
    Bump CACHE_VERSION to force a full refetch.
    ============================================================ */
 
-var CACHE_VERSION = 'le-carnet-v3';
+var CACHE_VERSION = 'le-carnet-v4';
 var SHELL = [
   './',
   'index.html',
@@ -32,6 +32,7 @@ var SHELL = [
   'assets/read.js',
   'assets/quiz.js',
   'assets/vocab.js',
+  'assets/select.js',
   'assets/app.js',
   'assets/offline.js',
   'manifest.webmanifest',
