@@ -129,7 +129,7 @@ six present-tense forms of an **-er** verb sound identical.
 |---|---|---|
 | je | *chante* | /ʃɑ̃t/ |
 | tu | *chantes* | /ʃɑ̃t/ |
-| il / elle | *chante* | /ʃɑ̃t/ |
+| il / elle / on | *chante* | /ʃɑ̃t/ |
 | nous | *chantons* | /ʃɑ̃tɔ̃/ |
 | vous | *chantez* | /ʃɑ̃te/ |
 | ils / elles | *chantent* | /ʃɑ̃t/ |

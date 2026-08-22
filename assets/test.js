@@ -246,7 +246,7 @@ window.Test = (function () {
       settle(q, gradeText(q, input.value), input.value);
     });
     input.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') actions.querySelector('[data-act="check"]').click();
+      if (e.key === 'Enter') { e.preventDefault(); enterStep(); }
     });
   };
 
@@ -280,7 +280,7 @@ window.Test = (function () {
       settle(q, gradeText(q, input.value), input.value);
     });
     input.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') actions.querySelector('[data-act="check"]').click();
+      if (e.key === 'Enter') { e.preventDefault(); enterStep(); }
     });
   };
 
@@ -301,7 +301,8 @@ window.Test = (function () {
           return picked.indexOf(i) === -1
             ? '<button class="chip" data-pick="' + i + '">' + escapeHtml(w) + '</button>' : '';
         }).join('') + '</div>' +
-        '<p class="test-keyhint">Keys: a number picks the next word, Enter checks it.</p>';
+        '<p class="test-keyhint">Keys: a number picks the next word, Enter checks it, ' +
+        'Enter again moves on.</p>';
     }
 
     // `picked` holds pool indexes, not words, so repeated words behave.
@@ -320,6 +321,9 @@ window.Test = (function () {
     actions.innerHTML = '<button class="btn btn-primary btn-lg" data-act="check">Check</button>';
     actions.addEventListener('click', function (e) {
       if (!e.target.closest('[data-act="check"]')) return;
+      // Enter reaches this button too, so an empty slot must not be graded as
+      // a wrong answer just because the key was pressed early.
+      if (!picked.length) return;
       body.classList.add('is-done');
       settle(q, gradeOrder(q, words()), words().join(' '));
     });
@@ -439,8 +443,8 @@ window.Test = (function () {
     // never sees the key. Shift-Enter is left as the way to a new line.
     input.addEventListener('keydown', function (e) {
       if (e.key !== 'Enter' || e.shiftKey) return;
-      var reveal = actions.querySelector('[data-act="reveal"]');
-      if (reveal) { e.preventDefault(); reveal.click(); }
+      e.preventDefault();
+      enterStep();
     });
   };
 
@@ -548,11 +552,21 @@ window.Test = (function () {
 
   /* ---------------------------------------------------------- keyboard */
 
+  // One Enter, one step: it grades what is on screen, and only a second Enter
+  // moves on. Pressing it once used to skip past the verdict on anything that
+  // was graded by another route, which is the half of a test worth reading.
+  function enterStep() {
+    if (!run) return;
+    var step = run.host.querySelector('[data-act="next"]') ||
+      run.host.querySelector('[data-act="check"]') ||
+      run.host.querySelector('[data-act="reveal"]');
+    if (step && !step.disabled) step.click();
+  }
+
   // A digit presses whatever wears it: a multiple choice, the two self-marks,
   // the three mastery levels, another go at a spoken answer. Anything without
   // a digit of its own falls through to the ordering pool, where a digit picks
-  // the next word. Enter reveals a model answer, or moves on once something
-  // has been graded.
+  // the next word. Enter is handled by enterStep above.
   function onKey(e) {
     if (!run) return;
     if (e.metaKey || e.ctrlKey || e.altKey) return;
@@ -569,8 +583,8 @@ window.Test = (function () {
 
     var next = run.host.querySelector('[data-act="next"]');
     if (e.key === 'Enter' || e.key === ' ') {
-      var reveal = next ? null : run.host.querySelector('[data-act="reveal"]');
-      if (next || reveal) { e.preventDefault(); (next || reveal).click(); }
+      e.preventDefault();
+      enterStep();
       return;
     }
 

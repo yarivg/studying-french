@@ -12,7 +12,7 @@ infinitive.
 |---|---|
 | je | **-ai** |
 | tu | **-as** |
-| il / elle | **-a** |
+| il / elle / on | **-a** |
 | nous | **-ons** |
 | vous | **-ez** |
 | ils / elles | **-ont** |
@@ -26,7 +26,7 @@ infinitive.
 |---|---|---|---|
 | je | parlerai | finirai | vendrai |
 | tu | parleras | finiras | vendras |
-| il / elle | parlera | finira | vendra |
+| il / elle / on | parlera | finira | vendra |
 | nous | parlerons | finirons | vendrons |
 | vous | parlerez | finirez | vendrez |
 | ils / elles | parleront | finiront | vendront |
@@ -68,7 +68,7 @@ The four you will use constantly, in full:
 |---|---|---|---|---|
 | je / j' | serai | aurai | irai | viendrai |
 | tu | seras | auras | iras | viendras |
-| il / elle | sera | aura | ira | viendra |
+| il / elle / on | sera | aura | ira | viendra |
 | nous | serons | aurons | irons | viendrons |
 | vous | serez | aurez | irez | viendrez |
 | ils / elles | seront | auront | iront | viendront |

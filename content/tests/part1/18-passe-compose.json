@@ -183,6 +183,14 @@
    "q": "Say this out loud: she went to the market.",
    "target": "elle est allée au marché",
    "why": "Aller takes être and the participle agrees with the subject, though the extra -e of allée changes nothing you can hear."
+  },
+  {
+   "id": "passe-compose-16",
+   "type": "mcq",
+   "q": "On here means we, two men: « On est ___ en retard. » (arriver)",
+   "choices": ["arrivé", "arrivés", "arrivée", "arrivées"],
+   "a": 1,
+   "why": "Arriver takes être, so the participle agrees with what on stands for: arrivés. The auxiliary stays singular, est, which is why the pair looks odd and is right."
   }
  ]
 }

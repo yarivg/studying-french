@@ -13,9 +13,11 @@ grammatical job the word is doing. Get the job right and the form follows.
 | we | **nous** | **nous** | **nous** | **nous** |
 | you (formal / plural) | **vous** | **vous** | **vous** | **vous** |
 | they | **ils / elles** | **les** | **leur** | **eux / elles** |
+| we / people (spoken) | **on** | none — uses **nous** | none — uses **nous** | **soi** |
 
 Four of the six rows are identical across three columns, so the real work is in the *il/elle*
-and *ils/elles* rows.
+and *ils/elles* rows. **On** is the seventh person you will hear more than any other: it is a
+subject only, it takes the *il* verb form, and where it needs an object it borrows *nous*.
 
 ## Subject pronouns
 
@@ -27,13 +29,31 @@ Nous allons au marché. || We're going to the market.
 :::
 
 ::: note on — the pronoun that does everything
-**On** takes a third-person singular verb but means, depending on context:
+**On** takes a third-person singular verb — the same form as *il* — but means, depending on
+context:
 
 - **we** — in speech this has almost entirely replaced *nous*: *On y va !* (Let's go)
 - **one / people in general** — *On ne fume pas ici.* (No smoking here)
 - **someone** — *On m'a dit que…* (Someone told me / I was told)
 
 *On mange à huit heures* is what you will actually hear; *nous mangeons* sounds careful.
+
+Conjugate it exactly like *il*, in every tense: *on **est***, *on **a** mangé*, *on **allait***,
+*on **ira***, *qu'on **soit***.
+:::
+
+::: rule Everything about on that is not the verb
+| Point | How it works |
+|---|---|
+| object pronoun | there is none; use *nous* — *On nous a vus.* |
+| reflexive | **se** — *On **se** lève à sept heures.* |
+| possessive | **son / sa / ses** — *On fait **son** travail.* |
+| stressed form | **soi** — *On reste chez **soi**.* |
+| adjective / participle | agrees with the real meaning when *on* = we — *On est **contents***, *on est **allés*** |
+| after *si*, *que*, *où*, *et* | often written **l'on**, for sound only — *si **l'on** veut* |
+
+The verb stays singular even when the agreement after it is plural: *On est allé**s*** has a
+singular *est* and a plural *allés*. That combination looks wrong and is correct.
 :::
 
 ::: warning tu or vous?
@@ -177,6 +197,17 @@ Je ___ écoute (Marie). || l' — *écouter* is direct
 (le) Je vais voir. || Je vais le voir.
 (moi) Donne le livre ! || Donne-moi le livre !
 (me) Ne donne pas le livre ! || Ne me donne pas le livre !
+:::
+
+::: exercise on — put the verb, and anything agreeing with it, right
+On ___ (aller) au marché. || va — *on* takes the *il* form
+On ___ (être) fatigués ce soir. || est — singular verb, plural adjective when *on* means *we*
+Hier, on ___ (partir) tôt. || est parti(s) — *partir* takes *être*; the -s follows the meaning
+On fait ___ travail. || son — *on* owns with *son / sa / ses*
+On reste chez ___. || soi — the stressed form of *on*
+On ___ lève à sept heures. || se — the reflexive of *on* is *se*
+Rewrite with on: *Nous avons mangé.* || On a mangé.
+Rewrite with on: *Quelqu'un a volé ma voiture.* || On a volé ma voiture.
 :::
 
 ::: exercise Answer with a stressed pronoun

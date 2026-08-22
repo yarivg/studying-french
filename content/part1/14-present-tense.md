@@ -33,7 +33,7 @@ entering the language joins it.
 |---|---|---|
 | je | **-is** | finis |
 | tu | **-is** | finis |
-| il / elle | **-it** | finit |
+| il / elle / on | **-it** | finit |
 | nous | **-issons** | finissons |
 | vous | **-issez** | finissez |
 | ils / elles | **-issent** | finissent |
@@ -47,7 +47,7 @@ Others in this family: *choisir*, *réussir*, *remplir*, *punir*, *réfléchir*,
 |---|---|---|
 | je | **-s** | vends |
 | tu | **-s** | vends |
-| il / elle | **—** | vend |
+| il / elle / on | **—** | vend |
 | nous | **-ons** | vendons |
 | vous | **-ez** | vendez |
 | ils / elles | **-ent** | vendent |
@@ -62,7 +62,7 @@ If you learn only four verbs, learn these. Between them they build most of the t
 |---|---|---|---|---|
 | je / j' | suis | ai | vais | fais |
 | tu | es | as | vas | fais |
-| il / elle | est | a | va | fait |
+| il / elle / on | est | a | va | fait |
 | nous | sommes | avons | allons | faisons |
 | vous | êtes | avez | allez | faites |
 | ils / elles | sont | ont | vont | font |
@@ -84,7 +84,7 @@ A second, smaller **-ir** group drops a consonant instead of adding **-iss-**. *
 |---|---|---|---|---|---|
 | je | pars | dors | sors | sens | sers |
 | tu | pars | dors | sors | sens | sers |
-| il / elle | part | dort | sort | sent | sert |
+| il / elle / on | part | dort | sort | sent | sert |
 | nous | partons | dormons | sortons | sentons | servons |
 | vous | partez | dormez | sortez | sentez | servez |
 | ils / elles | partent | dorment | sortent | sentent | servent |
@@ -99,7 +99,7 @@ Also here: *mentir*, *courir*, *ouvrir*, *offrir*, *souffrir* — though the las
 |---|---|---|---|---|---|
 | je | peux | veux | dois | prends | viens |
 | tu | peux | veux | dois | prends | viens |
-| il / elle | peut | veut | doit | prend | vient |
+| il / elle / on | peut | veut | doit | prend | vient |
 | nous | pouvons | voulons | devons | prenons | venons |
 | vous | pouvez | voulez | devez | prenez | venez |
 | ils / elles | peuvent | veulent | doivent | prennent | viennent |
@@ -108,7 +108,7 @@ Also here: *mentir*, *courir*, *ouvrir*, *offrir*, *souffrir* — though the las
 |---|---|---|---|---|---|---|
 | je | sais | vois | dis | lis | écris | bois |
 | tu | sais | vois | dis | lis | écris | bois |
-| il / elle | sait | voit | dit | lit | écrit | boit |
+| il / elle / on | sait | voit | dit | lit | écrit | boit |
 | nous | savons | voyons | disons | lisons | écrivons | buvons |
 | vous | savez | voyez | **dites** | lisez | écrivez | buvez |
 | ils / elles | savent | voient | disent | lisent | écrivent | boivent |

@@ -11,7 +11,7 @@ main clause and a subordinate one. The second is what French calls **la concorda
 |---|---|---|
 | que je / j' | aie mangé | sois allé(e) |
 | que tu | aies mangé | sois allé(e) |
-| qu'il / elle | ait mangé | soit allé(e) |
+| qu'il / elle / on | ait mangé | soit allé(e) |
 | que nous | ayons mangé | soyons allé(e)s |
 | que vous | ayez mangé | soyez allé(e)s |
 | qu'ils / elles | aient mangé | soient allé(e)s |

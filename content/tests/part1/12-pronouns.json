@@ -114,6 +114,44 @@
       "q": "What is the test for choosing le / la / les versus lui / leur? Name two verbs where English misleads you.",
       "a": ["Ask whether the French verb takes à before the person. If yes, use lui / leur (parler à, dire à, donner à, demander à, répondre à, téléphoner à, écrire à). If no, use le / la / les. English misleads with écouter quelqu'un (listen to → je l'écoute), regarder quelqu'un (look at → je le regarde), attendre quelqu'un (wait for → je l'attends), and téléphoner à quelqu'un (phone someone → je lui téléphone)."],
       "why": "The choice is decided by the French preposition, never by the English one. Learning the à-verbs as a list is faster than reasoning it out each time."
+    },
+    {
+      "id": "pronouns-16",
+      "type": "mcq",
+      "q": "« On ___ au marché le samedi. »",
+      "choices": ["allons", "va", "vont", "allez"],
+      "a": 1,
+      "why": "On always takes the third-person singular, the same form as il, even when it plainly means we. On va, never on vont."
+    },
+    {
+      "id": "pronouns-17",
+      "type": "fill",
+      "q": "Rewrite with on: « Nous avons mangé à huit heures. » → « ___ a mangé à huit heures. »",
+      "a": ["on"],
+      "why": "In speech on has almost entirely replaced nous as a subject. The verb stays singular either way: on a mangé, never on ont mangé."
+    },
+    {
+      "id": "pronouns-18",
+      "type": "mcq",
+      "q": "« On reste chez ___ ce soir. » — which stressed pronoun goes with on?",
+      "choices": ["nous", "lui", "soi", "eux"],
+      "a": 2,
+      "why": "The stressed form of on is soi: on reste chez soi, chacun pour soi. Nous would be right only if the subject itself were nous."
+    },
+    {
+      "id": "pronouns-19",
+      "type": "mcq",
+      "q": "On here means we, several men: « On est ___ de partir. » (content)",
+      "choices": ["content", "contents", "contente", "contentes"],
+      "a": 1,
+      "why": "The verb stays singular, est, but the adjective may agree with what on really stands for. Singular verb plus plural adjective looks wrong and is correct."
+    },
+    {
+      "id": "pronouns-20",
+      "type": "fill",
+      "q": "Complete with the reflexive pronoun: « On ___ lève à sept heures. »",
+      "a": ["se"],
+      "why": "On is a third-person subject, so it reflexes with se, exactly like il: on se lève, on s'habille."
     }
   ]
 }

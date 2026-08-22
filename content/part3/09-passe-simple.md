@@ -33,7 +33,7 @@ Three families, keyed by the vowel that runs through them: **a**, **i**, **u**.
 |---|---|
 | je | parl**ai** |
 | tu | parl**as** |
-| il / elle | parl**a** |
+| il / elle / on | parl**a** |
 | nous | parl**âmes** |
 | vous | parl**âtes** |
 | ils / elles | parl**èrent** |
@@ -52,7 +52,7 @@ description is imperfect.
 |---|---|---|
 | je | fin**is** | vend**is** |
 | tu | fin**is** | vend**is** |
-| il / elle | fin**it** | vend**it** |
+| il / elle / on | fin**it** | vend**it** |
 | nous | fin**îmes** | vend**îmes** |
 | vous | fin**îtes** | vend**îtes** |
 | ils / elles | fin**irent** | vend**irent** |
@@ -73,7 +73,7 @@ Mostly verbs whose past participle ends in **-u**.
 |---|---|---|---|
 | je | e**us** | f**us** | voul**us** |
 | tu | e**us** | f**us** | voul**us** |
-| il / elle | e**ut** | f**ut** | voul**ut** |
+| il / elle / on | e**ut** | f**ut** | voul**ut** |
 | nous | e**ûmes** | f**ûmes** | voul**ûmes** |
 | vous | e**ûtes** | f**ûtes** | voul**ûtes** |
 | ils / elles | e**urent** | f**urent** | voul**urent** |

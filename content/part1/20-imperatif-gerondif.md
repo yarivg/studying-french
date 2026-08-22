@@ -18,6 +18,12 @@ Take the present tense and delete the subject pronoun.
 | nous | *nous finissons* | **Finissons !** | Let's finish! |
 | vous | *vous finissez* | **Finissez !** | Finish! |
 
+::: note There is no on imperative — but there is on
+Spoken French says *let's* with **on** and a present tense far more often than with the *nous*
+imperative: ***On y va !*** rather than *Allons-y !*, ***On mange ?*** rather than *Mangeons !*
+Both are correct; *on* is what you will hear.
+:::
+
 ::: rule -er verbs drop the final -s in the tu form
 *tu manges* → **Mange !**
 *tu vas* → **Va !**

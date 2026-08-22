@@ -11,7 +11,7 @@ past event. English builds it the same way — *had done* — so the concept tra
 |---|---|---|---|
 | je / j' | j'avais mangé | j'étais allé(e) | je m'étais levé(e) |
 | tu | tu avais mangé | tu étais allé(e) | tu t'étais levé(e) |
-| il / elle | il avait mangé | elle était allée | il s'était levé |
+| il / elle / on | il avait mangé | elle était allée | il s'était levé |
 | nous | nous avions mangé | nous étions allé(e)s | nous nous étions levé(e)s |
 | vous | vous aviez mangé | vous étiez allé(e)s | vous vous étiez levé(e)s |
 | ils / elles | ils avaient mangé | elles étaient allées | ils s'étaient levés |

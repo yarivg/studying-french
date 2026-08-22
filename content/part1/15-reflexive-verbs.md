@@ -22,7 +22,7 @@ The verb itself conjugates completely normally. The only new thing is the pronou
 |---|---|---|---|
 | je | je me lève | je me lave | je m'habille |
 | tu | tu te lèves | tu te laves | tu t'habilles |
-| il / elle | il se lève | il se lave | il s'habille |
+| il / elle / on | il se lève | il se lave | il s'habille |
 | nous | nous nous levons | nous nous lavons | nous nous habillons |
 | vous | vous vous levez | vous vous lavez | vous vous habillez |
 | ils / elles | ils se lèvent | ils se lavent | ils s'habillent |

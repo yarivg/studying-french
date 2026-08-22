@@ -11,7 +11,7 @@ Take the **nous** form of the present tense, drop **-ons**, add the endings.
 |---|---|
 | je | **-ais** |
 | tu | **-ais** |
-| il / elle | **-ait** |
+| il / elle / on | **-ait** |
 | nous | **-ions** |
 | vous | **-iez** |
 | ils / elles | **-aient** |

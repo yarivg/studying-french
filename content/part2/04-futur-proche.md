@@ -11,7 +11,7 @@ same way — a conjugated verb plus an infinitive — and all three are used con
 |---|---|
 | je | vais partir |
 | tu | vas partir |
-| il / elle | va partir |
+| il / elle / on | va partir |
 | nous | allons partir |
 | vous | allez partir |
 | ils / elles | vont partir |
@@ -54,7 +54,7 @@ French would need *je vais pour manger* or a different verb entirely.
 |---|---|
 | je | viens de partir |
 | tu | viens de partir |
-| il / elle | vient de partir |
+| il / elle / on | vient de partir |
 | nous | venons de partir |
 | vous | venez de partir |
 | ils / elles | viennent de partir |

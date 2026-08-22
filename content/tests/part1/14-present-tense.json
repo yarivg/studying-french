@@ -163,6 +163,13 @@
    "q": "Say this out loud: we do / we make.",
    "target": "nous faisons",
    "why": "Faisons is the one place in the language where -ai- is said as a flat uh sound: fe-zon, not fay-zon."
+  },
+  {
+   "id": "present-tense-16",
+   "type": "fill",
+   "q": "Conjugate: « On ___ (faire) la cuisine ensemble. »",
+   "a": ["fait"],
+   "why": "On takes the il form in every tense, so faire gives fait. On fait, never on faisons, even though the sentence means we."
   }
  ]
 }

@@ -13,7 +13,7 @@ That is the whole rule. Every stem you learned for the future works here unchang
 |---|---|---|---|---|---|
 | je | **-ais** | parlerais | serais | aurais | irais |
 | tu | **-ais** | parlerais | serais | aurais | irais |
-| il / elle | **-ait** | parlerait | serait | aurait | irait |
+| il / elle / on | **-ait** | parlerait | serait | aurait | irait |
 | nous | **-ions** | parlerions | serions | aurions | irions |
 | vous | **-iez** | parleriez | seriez | auriez | iriez |
 | ils / elles | **-aient** | parleraient | seraient | auraient | iraient |
@@ -102,7 +102,7 @@ Meaning: *would have done*.
 |---|---|---|
 | je | j'aurais mangé | je serais allé(e) |
 | tu | tu aurais mangé | tu serais allé(e) |
-| il / elle | il aurait mangé | elle serait allée |
+| il / elle / on | il aurait mangé | elle serait allée |
 | nous | nous aurions mangé | nous serions allé(e)s |
 | vous | vous auriez mangé | vous seriez allé(e)s |
 | ils / elles | ils auraient mangé | elles seraient allées |

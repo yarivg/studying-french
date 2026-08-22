@@ -109,6 +109,7 @@ Like an adjective: add **-e** for feminine, **-s** for plural.
 | Je (f.) | *je suis allée* |
 | Nous (m. or mixed) | *nous sommes allés* |
 | Elles | *elles sont allées* |
+| On, meaning *we* | *on est allé**s*** — singular verb, plural participle |
 
 ::: examples
 Je suis allé au marché. || I went to the market (m.)
@@ -116,6 +117,7 @@ Elle est venue tard. || She came late.
 Nous sommes partis à huit heures. || We left at eight.
 Vous êtes restés à la maison. || You stayed home.
 Ils sont nés en France. || They were born in France.
+On est arrivés en retard. || We arrived late — *on* = we, so the participle goes plural.
 :::
 
 ### With avoir: no agreement — unless the object comes first

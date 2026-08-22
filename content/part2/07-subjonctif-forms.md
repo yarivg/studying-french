@@ -15,7 +15,7 @@ Take the **ils / elles** form of the present tense, drop **-ent**, add the endin
 |---|---|
 | que je | **-e** |
 | que tu | **-es** |
-| qu'il / elle | **-e** |
+| qu'il / elle / on | **-e** |
 | que nous | **-ions** |
 | que vous | **-iez** |
 | qu'ils / elles | **-ent** |
@@ -73,7 +73,7 @@ These do not follow the *ils* rule and must be learned outright.
 |---|---|---|---|---|---|---|
 | que je / j' | sois | aie | aille | fasse | puisse | sache |
 | que tu | sois | aies | ailles | fasses | puisses | saches |
-| qu'il / elle | soit | ait | aille | fasse | puisse | sache |
+| qu'il / elle / on | soit | ait | aille | fasse | puisse | sache |
 | que nous | soyons | ayons | allions | fassions | puissions | sachions |
 | que vous | soyez | ayez | alliez | fassiez | puissiez | sachiez |
 | qu'ils / elles | soient | aient | aillent | fassent | puissent | sachent |
