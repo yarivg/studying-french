@@ -1,0 +1,67 @@
+{
+ "groups": [
+  {
+   "id": "de-family",
+   "title": "The de family",
+   "blurb": "Partitive, quantity and the collapse after a negative — the three places de behaves differently.",
+   "chapters": ["articles", "quantity", "negation"],
+   "perChapter": 5
+  },
+  {
+   "id": "pronoun-choice",
+   "title": "Choosing the right pronoun",
+   "blurb": "Possessive, demonstrative and stressed pronouns, and the object pronouns that sit before the verb.",
+   "chapters": ["possessives", "demonstratives", "pronouns"],
+   "perChapter": 5
+  },
+  {
+   "id": "verb-forms",
+   "title": "Verb forms",
+   "blurb": "Present-tense endings, the spelling changes, and the reflexive pronoun that has to match the subject.",
+   "chapters": ["present-tense", "reflexive-verbs"],
+   "perChapter": 7
+  },
+  {
+   "id": "noun-phrase",
+   "title": "Building the noun phrase",
+   "blurb": "Gender, article, adjective agreement and position, all in one string of words.",
+   "chapters": ["nouns-gender", "articles", "adjectives", "quantity"],
+   "perChapter": 4
+  },
+  {
+   "id": "saying-no",
+   "title": "Saying no",
+   "blurb": "Every negation, where each half sits, and what happens to the article.",
+   "chapters": ["negation", "articles", "quantity"],
+   "perChapter": 5
+  },
+  {
+   "id": "place-and-time",
+   "title": "Place and time",
+   "blurb": "Prepositions of place, countries and cities, and the four ways French says for.",
+   "chapters": ["prepositions", "il-y-a", "numbers"],
+   "perChapter": 5
+  },
+  {
+   "id": "sound-and-spelling",
+   "title": "Sound and spelling",
+   "blurb": "The chapters that decide how a written word comes out of your mouth.",
+   "chapters": ["vowels", "consonants", "silent-letters", "liaisons"],
+   "perChapter": 4
+  },
+  {
+   "id": "past-tenses",
+   "title": "Talking about the past",
+   "blurb": "Passé composé, imparfait and the choice between them, plus the past behind the past.",
+   "chapters": ["passe-compose", "imparfait", "imparfait-vs-passe-compose", "plus-que-parfait"],
+   "perChapter": 5
+  },
+  {
+   "id": "hypothetical",
+   "title": "If, would and must",
+   "blurb": "Conditionnel, si-clauses and the subjunctive triggers that follow them around.",
+   "chapters": ["conditionnel", "si-clauses", "subjonctif-forms", "subjonctif-uses"],
+   "perChapter": 5
+  }
+ ]
+}

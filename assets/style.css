@@ -1474,3 +1474,26 @@ textarea.test-input { font-size: .95rem; line-height: 1.6; resize: vertical; }
 
 /* No mouse selection worth a bubble on paper. */
 @media print { .sel-bubble { display: none; } }
+
+/* Tests: cross-chapter sets and the questions that keep catching you.
+   The chip list is deliberately small: it is a pointer to a drill, not a
+   scoreboard, and a long one would read as a list of failures. */
+.test-weak {
+  background: var(--rouge-soft);
+  border: 1px solid var(--rouge);
+  border-radius: var(--r-md);
+  padding: 14px 16px;
+  margin: 18px 0 6px;
+}
+.test-weak h2 { margin: 0 0 4px; font-size: 1.05rem; }
+.test-weak p { margin: 0; font-size: .92rem; color: var(--ink-soft); }
+.test-weak-chips { margin-top: 10px !important; display: flex; flex-wrap: wrap; gap: 6px; }
+.test-weak-none { color: var(--muted); font-size: .9rem; margin: 14px 0 0; }
+.test-groupline { color: var(--muted); font-size: .92rem; margin: 0 0 10px; }
+.test-tile-blurb {
+  display: block;
+  font-size: .85rem;
+  color: var(--muted);
+  margin: 4px 0 2px;
+  line-height: 1.4;
+}

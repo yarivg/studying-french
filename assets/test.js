@@ -41,6 +41,40 @@ window.Test = (function () {
       .then(function (banks) { return banks.filter(Boolean); });
   }
 
+  // A group is a named set of chapters that cross part and chapter lines,
+  // because what you get wrong rarely respects either. Defined in
+  // content/tests/groups.json; the banks themselves are untouched.
+  var groupsCache = null;
+
+  function loadGroups() {
+    if (groupsCache) return Promise.resolve(groupsCache);
+    return Data.json('content/tests/groups.json')
+      .then(function (doc) {
+        groupsCache = (doc && Array.isArray(doc.groups)) ? doc.groups : [];
+        return groupsCache;
+      })
+      .catch(function () { groupsCache = []; return groupsCache; });
+  }
+
+  function findGroup(id) {
+    return loadGroups().then(function (list) {
+      for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i];
+      return null;
+    });
+  }
+
+  // Every chapter named by a group, from any part, resolved through the manifest.
+  function loadGroupBanks(group, manifest) {
+    var wanted = {};
+    group.chapters.forEach(function (slug) { wanted[slug] = true; });
+    var chapters = [];
+    manifest.parts.forEach(function (part) {
+      (part.chapters || []).forEach(function (ch) { if (wanted[ch.slug]) chapters.push(ch); });
+    });
+    return Promise.all(chapters.map(loadChapter))
+      .then(function (banks) { return banks.filter(Boolean); });
+  }
+
   function hasBank(ch) {
     // A HEAD request would bypass the offline cache, which only serves GET,
     // so ask for the bank itself -- it is cached, and loadChapter memoises it.
@@ -72,7 +106,8 @@ window.Test = (function () {
 
   function norm(s, loose) {
     var out = String(s == null ? '' : s).toLowerCase()
-      .replace(/[’]/g, "'")
+      .replace(/[’‘`]/g, "'")
+      .replace(/[-‐‑–]/g, ' ')       // trois-cent-quatre-vingts = trois cent quatre-vingts
       .replace(/\s+/g, ' ')
       .replace(/^[\s.,;:!?«»"]+|[\s.,;:!?«»"]+$/g, '')
       .trim();
@@ -81,19 +116,54 @@ window.Test = (function () {
     return out;
   }
 
-  function bare(s) { return s.normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+  // What is left of an answer once every accident of typing is removed:
+  // accents, cedilla, apostrophes. Used for the 'accent' verdict, which counts
+  // as right — the answer is French, the keyboard just could not spell it.
+  function bare(s) {
+    return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/'/g, '');
+  }
 
   // Three outcomes, not two. An answer that is right apart from its accents
   // is a French answer typed on a keyboard that has no accents, so it counts
   // as right, but it comes back as 'accent' so the verdict can show the
   // accented spelling. The accent bar is still there for anyone who wants it.
+  // The words a prompt already prints, either side of its gap. Writing only the
+  // missing piece and writing the whole sentence out are both right answers, so
+  // the question carries `pre` and `post` and we try the answer glued to them.
+  function candidates(q, given) {
+    var out = [given];
+    if (q.pre) out.push(q.pre + ' ' + given);
+    if (q.post) out.push(given + ' ' + q.post);
+    if (q.pre && q.post) out.push(q.pre + ' ' + given + ' ' + q.post);
+    return out;
+  }
+
+  // For questions that ask for a set — 'name the three verbs' — the order they
+  // come out in carries no meaning, so compare the words as a bag.
+  function bag(s) { return s.split(' ').filter(Boolean).sort().join(' '); }
+
   function gradeText(q, given) {
     var answers = Array.isArray(q.a) ? q.a : [q.a];
-    var mine = norm(given, q.loose);
-    if (!mine) return false;
-    if (answers.some(function (a) { return norm(a, q.loose) === mine; })) return true;
-    var flat = bare(mine);
-    return answers.some(function (a) { return bare(norm(a, q.loose)) === flat; }) ? 'accent' : false;
+    if (!norm(given, q.loose)) return false;
+    var mine = candidates(q, given).map(function (c) { return norm(c, q.loose); });
+    // Expand the keys the same way: the bank stores the gap filler, and the
+    // whole sentence is that filler sitting between `pre` and `post`.
+    var keys = [];
+    answers.forEach(function (a) {
+      candidates(q, a).forEach(function (c) { keys.push(norm(c, q.loose)); });
+    });
+    var same = q.anyorder
+      ? function (a, b) { return bag(a) === bag(b); }
+      : function (a, b) { return a === b; };
+    var hit = mine.some(function (m) {
+      return keys.some(function (k) { return same(k, m); });
+    });
+    if (hit) return true;
+    // Same again, with accents, cedillas and apostrophes stripped from both.
+    var flatMine = mine.map(bare), flatKeys = keys.map(bare);
+    return flatMine.some(function (m) {
+      return flatKeys.some(function (k) { return same(k, m); });
+    }) ? 'accent' : false;
   }
 
   function gradeOrder(q, given) {
@@ -674,7 +744,15 @@ window.Test = (function () {
   function renderSummary() {
     var s = run;
     var pct = s.questions.length ? Math.round((s.right / s.questions.length) * 100) : 0;
-    Progress.recordTest(s.id, pct);
+    // The score is the headline; the detail is what makes a later sitting
+    // comparable — which questions came up, and which ones went wrong.
+    Progress.recordTest(s.id, pct, {
+      n: s.questions.length,
+      got: s.right,
+      asked: s.answered.map(function (a) { return a.id; }),
+      wrong: s.answered.filter(function (a) { return !a.right; })
+        .map(function (a) { return a.id; })
+    });
 
     var byCh = {};
     s.answered.forEach(function (a) {
@@ -815,6 +893,7 @@ window.Test = (function () {
   }
 
   return {
+    loadGroups: loadGroups, findGroup: findGroup, loadGroupBanks: loadGroupBanks,
     loadChapter: loadChapter, loadPart: loadPart, hasBank: hasBank, pathFor: pathFor,
     sample: sample, shuffle: shuffle, start: start, stop: stop,
     gradeText: gradeText, gradeOrder: gradeOrder, norm: norm, modelAnswer: modelAnswer

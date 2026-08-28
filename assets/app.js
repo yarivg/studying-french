@@ -1362,8 +1362,10 @@
     pager.innerHTML = '';
 
     var html = '<h1>Tests</h1>' +
-      '<p class="lead">A drill for each chapter, and a longer exam for each part. ' +
-      'The score is automatic; whether you have actually got it is your call.</p>';
+      '<p class="lead">A drill for each chapter, a longer exam for each part, and sets ' +
+      'that cut across both. The score is automatic; whether you have actually got it is your call.</p>' +
+      weakSpotHtml() +
+      '<div id="groupBlock"></div>';
 
     manifest.parts.forEach(function (part, pi) {
       // Part IV is lookup tables. There is nothing there to be tested on.
@@ -1396,12 +1398,73 @@
     });
 
     view.innerHTML = html;
+    paintGroups();
+  }
+
+  // What you keep getting wrong, across every sitting. Only questions asked
+  // more than once count: one bad answer is a slip, three out of four is a gap.
+  function weakSpotHtml() {
+    if (!Progress.weakSpots) return '';
+    var weak = Progress.weakSpots(2).filter(function (w) { return w.rate >= 0.4; }).slice(0, 8);
+    var sittings = Progress.runs ? Progress.runs().length : 0;
+    if (!weak.length) {
+      return sittings
+        ? '<p class="test-weak-none">' + sittings + ' sitting' + (sittings === 1 ? '' : 's') +
+          ' recorded, nothing repeatedly wrong. </p>'
+        : '';
+    }
+    // A question id is "<chapter-slug>-NN", so the chapter is everything
+    // before the last dash.
+    var byCh = {};
+    weak.forEach(function (w) {
+      var slug = w.id.replace(/-\d+$/, '');
+      byCh[slug] = (byCh[slug] || 0) + 1;
+    });
+    var chips = Object.keys(byCh).map(function (slug) {
+      var ch = bySlug[slug];
+      return '<a class="pill" href="#/test/' + slug + '">' +
+        escapeHtml(ch ? ch.title : slug.replace(/-/g, ' ')) + ' · ' + byCh[slug] + '</a>';
+    }).join(' ');
+    return '<div class="test-weak"><h2>What keeps catching you</h2>' +
+      '<p>' + weak.length + ' question' + (weak.length === 1 ? '' : 's') + ' you have got wrong ' +
+      'more often than not, over ' + sittings + ' sitting' + (sittings === 1 ? '' : 's') + '.</p>' +
+      '<p class="test-weak-chips">' + chips + '</p></div>';
+  }
+
+  function paintGroups() {
+    var host = document.getElementById('groupBlock');
+    if (!host || !Test.loadGroups) return;
+    Test.loadGroups().then(function (groups) {
+      if (!groups.length) return;
+      // Only offer a set whose chapters this course actually has.
+      var usable = groups.filter(function (g) {
+        return g.chapters.some(function (slug) { return bySlug[slug]; });
+      });
+      if (!usable.length) return;
+      host.innerHTML = '<h2>By subject</h2>' +
+        '<p class="test-groupline">Sets that cross chapters, because mistakes do.</p>' +
+        '<div class="test-grid">' +
+        usable.map(function (g) {
+          var key = 'group-' + g.id;
+          var sc = Progress.testScore(key);
+          return '<a class="test-tile" href="#/test/' + key + '">' +
+            '<span class="test-tile-name">' + escapeHtml(g.title) + '</span>' +
+            '<span class="test-tile-blurb">' + escapeHtml(g.blurb || '') + '</span>' +
+            '<span class="test-tile-meta">' +
+              (sc.runs ? 'best ' + sc.best + '%' : 'not taken') +
+              ' · ' + g.chapters.length + ' chapters' +
+            '</span></a>';
+        }).join('') +
+        '</div>';
+    });
   }
 
   function renderTest(key) {
     setCurrentNav('tests');
     pager.innerHTML = '';
     view.innerHTML = '<div class="loading">Loading the questions…</div>';
+
+    if (key.indexOf('group-') === 0) return startGroupTest(key, key.slice(6));
 
     var part = key.indexOf('part-') === 0 ? manifest.parts[Number(key.slice(5)) - 1] : null;
     if (part) return startPartTest(key, part);
@@ -1452,6 +1515,31 @@
         subtitle: 'part',
         masteryKey: key,
         next: after ? { href: '#/' + after.slug, label: 'On to ' + nextPart.numeral } : null
+      });
+    });
+  }
+
+  // A subject group crosses chapters on purpose: the mistakes worth drilling
+  // cluster by idea, not by where the idea happened to be taught.
+  function startGroupTest(key, id) {
+    Test.findGroup(id).then(function (group) {
+      if (!group) return notFound(key);
+      Test.loadGroupBanks(group, manifest).then(function (banks) {
+        if (!banks.length) {
+          return noBank(group.title, 'None of the chapters in this set has a question bank yet.');
+        }
+        var questions = Test.sample(banks, group.perChapter || 4);
+        runTest({
+          id: key,
+          title: group.title,
+          eyebrow: banks.length + ' chapters · ' + questions.length + ' questions',
+          back: '#/tests',
+          backLabel: 'All tests',
+          questions: questions,
+          subtitle: 'part',          // shows which chapter each question came from
+          masteryKey: key,
+          next: null
+        });
       });
     });
   }

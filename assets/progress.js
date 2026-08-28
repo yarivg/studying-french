@@ -14,6 +14,8 @@
      words: { "<u...>": { fr, en, pos, g, themes: [], at } },  // words you added
      mastery: { "<slug|partN>": { level: 0-2, at, score } },   // self-marked
      tests:   { "<testId>": { best, runs, at } },              // best auto score
+     runs:  [ { at, id, n, got, wrong: ["<qId>"] } ],         // every sitting, newest last
+     qstat: { "<qId>": { seen, bad } },                       // lifetime per question
      days:  { "<yyyy-mm-dd>": <reviews that day> },
      hist:  { "<yyyy-mm-dd>": { at, pct, marked, solid, known, words, right, stuck } },
      m:     { "<kind>:<key>": <epoch-ms> },   // when each entry last changed
@@ -36,12 +38,12 @@ window.Progress = (function () {
 
   var state = load();
 
-  var MAPS = ['read', 'ex', 'cards', 'known', 'words', 'mastery', 'tests'];
+  var MAPS = ['read', 'ex', 'cards', 'known', 'words', 'mastery', 'tests', 'qstat'];
 
   function blank() {
     return {
       v: 1, read: {}, ex: {}, cards: {}, known: {}, words: {},
-      mastery: {}, tests: {}, days: {}, hist: {}, m: {}, clearedAt: 0
+      mastery: {}, tests: {}, qstat: {}, runs: [], days: {}, hist: {}, m: {}, clearedAt: 0
     };
   }
 
@@ -366,16 +368,70 @@ window.Progress = (function () {
     return t ? { best: t.best, runs: t.runs, at: t.at } : { best: 0, runs: 0, at: 0 };
   }
 
-  function recordTest(id, pct) {
+  // How many sittings we keep in full. Each row is a few dozen bytes, so 200
+  // is well under a tenth of a megabyte and the gist stays small. The per
+  // question counters below never grow past the number of questions there are.
+  var MAX_RUNS = 200;
+
+  // detail is optional: { n: asked, got: right, wrong: [question ids] }
+  function recordTest(id, pct, detail) {
     var t = state.tests[id] || { best: 0, runs: 0, at: 0 };
     t.best = Math.max(t.best, clamp(num(pct), 0, 100));
     t.runs++;
     t.at = stamp();
     state.tests[id] = t;
     touch('tests', id);
+
+    if (detail) {
+      if (!Array.isArray(state.runs)) state.runs = [];
+      state.runs.push({
+        at: Date.now(),
+        id: id,
+        n: num(detail.n) || 0,
+        got: num(detail.got) || 0,
+        wrong: (detail.wrong || []).slice(0, 60)
+      });
+      if (state.runs.length > MAX_RUNS) state.runs = state.runs.slice(-MAX_RUNS);
+
+      if (!state.qstat) state.qstat = {};
+      (detail.asked || []).forEach(function (qid) {
+        var q = state.qstat[qid] || { seen: 0, bad: 0 };
+        q.seen++;
+        state.qstat[qid] = q;
+        touch('qstat', qid);
+      });
+      (detail.wrong || []).forEach(function (qid) {
+        var q = state.qstat[qid] || { seen: 0, bad: 0 };
+        q.bad++;
+        state.qstat[qid] = q;
+        touch('qstat', qid);
+      });
+    }
+
     bumpDay();
     save();
     return t;
+  }
+
+  // Every sitting, newest first, optionally filtered to one test id.
+  function runs(id) {
+    var all = (state.runs || []).slice().reverse();
+    return id ? all.filter(function (r) { return r.id === id; }) : all;
+  }
+
+  // The questions you get wrong most often. `min` is how many times a question
+  // must have been asked before its rate means anything.
+  function weakSpots(min) {
+    min = min || 2;
+    var out = [];
+    for (var qid in state.qstat) {
+      if (!has(state.qstat, qid)) continue;
+      var q = state.qstat[qid];
+      if (q.seen >= min && q.bad) {
+        out.push({ id: qid, seen: q.seen, bad: q.bad, rate: q.bad / q.seen });
+      }
+    }
+    return out.sort(function (a, b) { return b.rate - a.rate || b.bad - a.bad; });
   }
 
   /* ---------------------------------------------------------- streak */
@@ -501,6 +557,26 @@ window.Progress = (function () {
         at: num(value.at)
       };
     });
+    each(input.qstat, function (key, value) {
+      if (!value || typeof value !== 'object') return;
+      out.qstat[key] = {
+        seen: clamp(num(value.seen), 0, 1e6),
+        bad: clamp(num(value.bad), 0, 1e6)
+      };
+    });
+    if (Array.isArray(input.runs)) {
+      out.runs = input.runs.slice(-MAX_RUNS).filter(function (r) {
+        return r && typeof r === 'object' && typeof r.id === 'string';
+      }).map(function (r) {
+        return {
+          at: num(r.at), id: r.id.slice(0, KEY_MAX),
+          n: clamp(num(r.n), 0, 1e4), got: clamp(num(r.got), 0, 1e4),
+          wrong: Array.isArray(r.wrong)
+            ? r.wrong.filter(function (x) { return typeof x === 'string'; }).slice(0, 60)
+            : []
+        };
+      });
+    }
     each(input.days, function (key, value) {
       if (/^\d{4}-\d{2}-\d{2}$/.test(key)) out.days[key] = clamp(num(value), 0, 1e6);
     });
@@ -565,6 +641,14 @@ window.Progress = (function () {
         var lHas = has(state[kind], key), rHas = has(remote[kind], key);
         if (kind === 'cards' && lHas && rHas) {
           out.cards[key] = mergeCard(state.cards[key], remote.cards[key], lt, rt);
+        } else if (kind === 'qstat' && lHas && rHas) {
+          // Both devices counted real sittings, so neither count is stale:
+          // take the higher of each, the same way a best score works.
+          var qa = state.qstat[key], qb = remote.qstat[key];
+          out.qstat[key] = {
+            seen: Math.max(num(qa.seen), num(qb.seen)),
+            bad: Math.max(num(qa.bad), num(qb.bad))
+          };
         } else if (kind === 'tests' && lHas && rHas) {
           // A best score is a high-water mark on both sides, not a value
           // the later write should be allowed to lower.
@@ -598,6 +682,20 @@ window.Progress = (function () {
       var rec = !a ? b : !b ? a : (b.at > a.at ? b : a);
       if (rec && !(cleared && (rec.at || 0) <= cleared)) out.hist[day] = rec;
     });
+
+    // Sittings are append-only history, so the union is the truth. Two rows
+    // are the same sitting when the same test was graded at the same instant.
+    var seenRun = {};
+    out.runs = (state.runs || []).concat(remote.runs || [])
+      .filter(function (r) {
+        if (cleared && (r.at || 0) <= cleared) return false;
+        var k = r.at + '|' + r.id;
+        if (seenRun[k]) return false;
+        seenRun[k] = 1;
+        return true;
+      })
+      .sort(function (a, b) { return a.at - b.at; })
+      .slice(-MAX_RUNS);
 
     state = out;
     save();
@@ -658,6 +756,7 @@ window.Progress = (function () {
     addWord: addWord, updateWord: updateWord, deleteWord: deleteWord,
     mastery: mastery, setMastery: setMastery, masteryCount: masteryCount,
     testScore: testScore, recordTest: recordTest, LEVELS: LEVELS,
+    runs: runs, weakSpots: weakSpots,
     streak: streak, reviewsToday: reviewsToday, dayCounts: dayCounts,
     history: history, snapDay: snapDay,
     exportJSON: exportJSON, importJSON: importJSON, reset: reset,
