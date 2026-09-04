@@ -24,8 +24,9 @@ Yariv is working through Part I and self-testing. The loop we run:
    drill from whatever is still failing.
 
 Progress so far on the Part I exam: 53% → 65% → 90% → 100% over eight sittings.
-The running log is kept outside the repo, in the session scratchpad, as
-`french-progress-log.md`.
+Then `drill-traduction`, English → French: 3 of 21 right first time, 21/21 after
+45 graded passes. The running log is kept outside the repo, in the session
+scratchpad, as `french-progress-log.md`.
 
 ### Exam pages
 
@@ -37,6 +38,8 @@ with `python3 -m http.server 8787` from that directory:
 | `test-part1-ch1-16.html` | 106 q, chapters 3-16, shuffled into one stream |
 | `drill-possessives.html` | 18 q, chapter 9, the `le mien / la tienne` half |
 | `drill-production.html` | 24 q, built from repeat offenders, English → French |
+| `drill-traduction.html` | 21 q, English → French. Closed at 21/21 |
+| `drill-frames.html` | 32 q, the eight error themes drill-traduction exposed |
 
 Each page keeps its own `localStorage` keys, so they never disturb each other.
 
@@ -73,10 +76,25 @@ Learned the hard way, from grading Yariv unfairly:
 
 ## Current picture
 
-Recognition is solid. Production from English is the weak side: fixed frames where
-French needs a word English omits (`avoir mal à la`, `être en train de`, `aucun`,
-`nulle part`, `à vélo`), and choosing between possessive, demonstrative and
-stressed pronouns under pressure.
+Recognition is solid. Production from English is the weak side. The eight themes
+that keep costing points, heaviest first:
+
+1. Indirect object pronouns where he reaches for `à` + a stressed pronoun
+   (`à leur` for `leur`, `à nous` for the noun that should have stayed).
+2. Reflexive + body part: the missing `se`, and the slot order in `se les lave`.
+3. `aucun` written without its `ne`, and with a plural verb.
+4. Demonstrative pronouns: `celui/celle/ceux/celles de`, and the `c'est` in
+   front of them.
+5. Agreement: `longs` not `longue`, `petites` not `petits`, `tous` not `touts`,
+   and the participle after a preceding direct object.
+6. Fixed frames whose preposition is not the English one: `passer ... à lire`,
+   `avoir mal au`, `avant de`, `être en train de`, `à vélo`.
+7. Habitual time: `le dimanche`, `tous les soirs`, `tous les lundis`.
+8. Passé composé: present written for past, and `être` vs `avoir`.
+
+A grading note that matters more than any of them: three of the last sitting's
+"errors" were correct French rejected by a too-narrow key. A drill page must
+accept every real variant, or a sitting is wasted arguing with it.
 
 ## Housekeeping
 
