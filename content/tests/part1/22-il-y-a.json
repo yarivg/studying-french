@@ -113,6 +113,22 @@
       "q": "Type what you hear.",
       "a": ["Il reste du pain", "Il reste du pain."],
       "why": "Il reste means there is … left, one of the impersonal expressions built like il y a, alongside il manque and il faut."
+    },
+    {
+      "id": "il-y-a-16",
+      "type": "order",
+      "q": "Build the sentence: I arrived two hours ago.",
+      "words": ["Je", "suis", "arrivé", "il y a", "deux", "heures"],
+      "a": ["Je", "suis", "arrivé", "il y a", "deux", "heures"],
+      "why": "Il y a plus a length of time means ago, and it follows the verb. Depuis would mean I am still arriving, which is nonsense."
+    },
+    {
+      "id": "il-y-a-17",
+      "type": "order",
+      "q": "Build the sentence: There was nobody there.",
+      "words": ["Il", "n'y", "avait", "personne"],
+      "a": ["Il", "n'y", "avait", "personne"],
+      "why": "Il y avait is the imperfect, for a scene rather than an event. Personne closes the sentence and needs no pas."
     }
   ]
 }

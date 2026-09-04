@@ -114,6 +114,22 @@
       "q": "Say this out loud as a command.",
       "target": "Dépêche-toi",
       "why": "A positive reflexive command puts the pronoun after the verb with a hyphen, and te becomes toi."
+    },
+    {
+      "id": "imperatif-gerondif-16",
+      "type": "order",
+      "q": "Build the sentence: He answered while smiling.",
+      "words": ["Il", "a", "répondu", "en", "souriant"],
+      "a": ["Il", "a", "répondu", "en", "souriant"],
+      "why": "En + present participle says two things happen at once, and the subject of both has to be the same person."
+    },
+    {
+      "id": "imperatif-gerondif-17",
+      "type": "order",
+      "q": "Build the sentence: She learns French by reading.",
+      "words": ["Elle", "apprend", "le", "français", "en", "lisant"],
+      "a": ["Elle", "apprend", "le", "français", "en", "lisant"],
+      "why": "The gérondif also covers by doing something, not just while doing it. Same form either way."
     }
   ]
 }

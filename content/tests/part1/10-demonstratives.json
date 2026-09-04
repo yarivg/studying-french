@@ -113,6 +113,14 @@
       "q": "When do you use « c'est » and when « il / elle est » ? Give two contrasting examples.",
       "a": ["C'est before a noun with an article (c'est un professeur), before a name (c'est Marie), before a stressed pronoun (c'est moi) and for a general comment (c'est difficile). Il / elle est before a bare noun of profession (il est professeur) and before an adjective describing a known person (elle est difficile)."],
       "why": "The reliable trigger is what comes next: an article or a name pulls c'est, a bare profession or a personal adjective pulls il/elle est."
+    },
+    {
+      "id": "demonstratives-16",
+      "type": "order",
+      "q": "Build the sentence: I prefer this one, not that one.",
+      "words": ["Je", "préfère", "celui-ci", "pas", "celui-là"],
+      "a": ["Je", "préfère", "celui-ci", "pas", "celui-là"],
+      "why": "Celui cannot stand alone: -ci points at the near one, -là at the far one."
     }
   ]
 }

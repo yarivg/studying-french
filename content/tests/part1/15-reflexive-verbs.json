@@ -177,6 +177,40 @@
         "1. Genuinely reflexive: Je me lave. 2. Reciprocal, to each other: Ils se parlent. 3. Idiomatic, the meaning shifts: Qu'est-ce qui se passe ? 4. Instead of a passive: Le vin blanc se boit frais."
       ],
       "why": "Only the first job matches the English idea of self; the idiomatic group is the biggest, and the passive-replacement use is the one English speakers never predict."
+    },
+    {
+      "id": "reflexive-verbs-16",
+      "type": "order",
+      "q": "Build the sentence: I'm going to get up early.",
+      "words": [
+       "Je",
+       "vais",
+       "me",
+       "lever",
+       "tôt"
+      ],
+      "a": [
+       "Je",
+       "vais",
+       "me",
+       "lever",
+       "tôt"
+      ],
+      "why": "The reflexive pronoun agrees with the subject and travels with the infinitive: me lever, not se lever."
+    },
+    {
+      "id": "reflexive-verbs-17",
+      "type": "order",
+      "q": "Build the positive command: Get up! (tu)",
+      "words": [
+       "Lève",
+       "toi"
+      ],
+      "a": [
+       "Lève",
+       "toi"
+      ],
+      "why": "In a positive command the pronoun follows the verb and te becomes toi. The negative goes back to normal: ne te lève pas."
     }
   ]
 }

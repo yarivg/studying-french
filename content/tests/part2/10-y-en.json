@@ -115,6 +115,38 @@
       "q": "State when you use y, when en, and when neither will do. Give an example of each.",
       "a": ["Y replaces à or any preposition of place plus a thing: j'y vais, j'y pense, il y répond. En replaces de plus something, and any quantity: j'en parle, j'en ai besoin, j'en veux, j'en ai deux. Neither works for a person: à + person is lui / leur (je lui parle) or a stressed pronoun with penser à (je pense à lui), and de + person is de + stressed pronoun (je parle d'elle). Order: y and en come last, in that order — il y en a."],
       "why": "The split is thing or place versus person, then à versus de. Getting it wrong is one of the most audible learner mistakes."
+    },
+    {
+      "id": "y-en-16",
+      "type": "order",
+      "q": "Build the sentence: There are three of them.",
+      "words": ["Il", "y", "en", "a", "trois"],
+      "a": ["Il", "y", "en", "a", "trois"],
+      "why": "Y then en, always last and always in that order. Il y en a is the phrase to anchor the whole queue to."
+    },
+    {
+      "id": "y-en-17",
+      "type": "order",
+      "q": "Build the sentence: I'm talking to him about it.",
+      "words": ["Je", "lui", "en", "parle"],
+      "a": ["Je", "lui", "en", "parle"],
+      "why": "Lui is slot 3, en is the very last slot. So lui en, never en lui."
+    },
+    {
+      "id": "y-en-18",
+      "type": "order",
+      "q": "Build the negative command: Don't give it to me.",
+      "words": ["Ne", "me", "le", "donne", "pas"],
+      "a": ["Ne", "me", "le", "donne", "pas"],
+      "why": "A negative command drops back to the normal queue, so me comes before le. Only the positive command flips it to donne-le-moi."
+    },
+    {
+      "id": "y-en-19",
+      "type": "order",
+      "q": "Build the sentence: She takes them there.",
+      "words": ["Elle", "les", "y", "emmène"],
+      "a": ["Elle", "les", "y", "emmène"],
+      "why": "Les is slot 2, y is slot 4, and both sit in front of the verb in that order."
     }
   ]
 }

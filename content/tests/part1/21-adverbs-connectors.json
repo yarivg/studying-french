@@ -115,6 +115,14 @@
       "q": "Name the four connectors the chapter says make you sound native, with their meanings.",
       "a": ["du coup (so, as a result), en fait (actually), quand même (still, anyway), d'ailleurs (besides, incidentally)"],
       "why": "All four are constant in spoken French and nearly absent from textbooks, so using them changes how you sound more than extra vocabulary does."
+    },
+    {
+      "id": "adverbs-connectors-16",
+      "type": "order",
+      "q": "Build the sentence: He answered immediately.",
+      "words": ["Il", "a", "répondu", "immédiatement"],
+      "a": ["Il", "a", "répondu", "immédiatement"],
+      "why": "A long adverb goes after the participle. A short one goes between auxiliary and participle: j'ai bien dormi."
     }
   ]
 }

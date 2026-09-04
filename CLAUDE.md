@@ -23,9 +23,12 @@ Yariv is working through Part I and self-testing. The loop we run:
 4. We log the sitting, name the error themes, teach them, and build the next
    drill from whatever is still failing.
 
-Progress so far on the Part I exam: 53% → 65% → 90% → 100% over eight sittings.
+Progress so far on the scratchpad Part I exam: 53% → 65% → 90% → 100% over eight
+sittings. The in-app Part I exam, which covers all 22 chapters rather than the
+first 16, is at 95% best of 2 and self-marked confident: Part I is closed.
 Then `drill-traduction`, English → French: 3 of 21 right first time, 21/21 after
-45 graded passes. The running log is kept outside the repo, in the session
+45 graded passes. Part II is open: `imparfait` and
+`imparfait-vs-passe-compose` are both marked done. The running log is kept outside the repo, in the session
 scratchpad, as `french-progress-log.md`.
 
 ### Exam pages
@@ -40,8 +43,17 @@ with `python3 -m http.server 8787` from that directory:
 | `drill-production.html` | 24 q, built from repeat offenders, English → French |
 | `drill-traduction.html` | 21 q, English → French. Closed at 21/21 |
 | `drill-frames.html` | 32 q, the eight error themes drill-traduction exposed |
+| `drill-passe.html` | 34 q, imparfait and the choice against the passé composé |
+| `drill-liants.html` | 45 q, adverb placement, frequency, connectors, false friends |
+| `drill-mix.html` | 30 dealt out of those two banks joined; the current one |
 
 Each page keeps its own `localStorage` keys, so they never disturb each other.
+The newer ones share `engine.js` and `drill.css`: a drill is a `questions-<name>.js`
+bank plus a thin shell that names its own key, so a new drill is a bank rather
+than another copy of the page. A shell can also set `size` to deal a subset,
+`priority` to say which questions the deal prefers, and `importFrom` to read
+progress out of the drills it was assembled from - ids are never reused across
+banks, so a question already cleared elsewhere comes across already locked.
 
 ### Rules these pages follow
 

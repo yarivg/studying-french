@@ -191,6 +191,64 @@
    "choices": ["arrivé", "arrivés", "arrivée", "arrivées"],
    "a": 1,
    "why": "Arriver takes être, so the participle agrees with what on stands for: arrivés. The auxiliary stays singular, est, which is why the pair looks odd and is right."
+  },
+  {
+   "id": "passe-compose-17",
+   "type": "order",
+   "q": "Build the sentence: She hasn't arrived yet.",
+   "words": [
+    "Elle",
+    "n'est",
+    "pas",
+    "encore",
+    "arrivée"
+   ],
+   "a": [
+    "Elle",
+    "n'est",
+    "pas",
+    "encore",
+    "arrivée"
+   ],
+   "why": "Arriver takes être, so the participle agrees with the subject. Encore sits after pas, and the whole negation wraps the auxiliary."
+  },
+  {
+   "id": "passe-compose-18",
+   "type": "order",
+   "q": "Build the sentence: I saw her yesterday.",
+   "words": [
+    "Je",
+    "l'ai",
+    "vue",
+    "hier"
+   ],
+   "a": [
+    "Je",
+    "l'ai",
+    "vue",
+    "hier"
+   ],
+   "why": "The direct object comes before the auxiliary, which is exactly what makes an avoir participle agree: vue."
+  },
+  {
+   "id": "passe-compose-19",
+   "type": "order",
+   "q": "Build the sentence: We got up early. (nous, se lever)",
+   "words": [
+    "Nous",
+    "nous",
+    "sommes",
+    "levés",
+    "tôt"
+   ],
+   "a": [
+    "Nous",
+    "nous",
+    "sommes",
+    "levés",
+    "tôt"
+   ],
+   "why": "A reflexive always takes être, and here se is the direct object, so the participle agrees: levés."
   }
  ]
 }

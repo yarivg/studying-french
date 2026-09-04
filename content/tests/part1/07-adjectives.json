@@ -207,6 +207,42 @@
     "Beauty (beau, joli), Age (jeune, vieux, nouveau, ancien), Goodness (bon, mauvais, meilleur, gentil), Size (grand, petit, gros, long, haut) — these go before the noun; everything else, including colours, shapes, nationalities and past participles, goes after."
    ],
    "why": "BAGS is the whole of the exception. Anything not on that short list, plus autre, même, tout, chaque, premier and dernier, follows the noun by default."
+  },
+  {
+   "id": "adjectives-19",
+   "type": "order",
+   "q": "Build the phrase: the same red dress",
+   "words": [
+    "La",
+    "même",
+    "robe",
+    "rouge"
+   ],
+   "a": [
+    "La",
+    "même",
+    "robe",
+    "rouge"
+   ],
+   "why": "Même is one of the adjectives that goes before the noun; a colour always goes after it."
+  },
+  {
+   "id": "adjectives-20",
+   "type": "order",
+   "q": "Build the phrase: a beautiful old house",
+   "words": [
+    "Une",
+    "belle",
+    "vieille",
+    "maison"
+   ],
+   "a": [
+    "Une",
+    "belle",
+    "vieille",
+    "maison"
+   ],
+   "why": "Beauty and age are both BAGS adjectives, so both go before the noun, and they stack in that order."
   }
  ]
 }

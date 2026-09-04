@@ -114,6 +114,22 @@
       "q": "Explain the difference between meilleur and mieux, and give one sentence for each.",
       "a": ["Meilleur is an adjective, the comparative of bon: it describes a noun and agrees with it. Ce vin est meilleur que l'autre. C'est la meilleure solution. Mieux is an adverb, the comparative of bien: it describes a verb and never changes. Il chante mieux que moi. Je me sens mieux. Superlatives: le meilleur (adjective) versus le mieux (adverb). Neither plus bon nor plus bien exists."],
       "why": "The pair is just bon versus bien one step up. Ask whether the word is describing a noun or a verb, and the choice makes itself."
+    },
+    {
+      "id": "comparatives-16",
+      "type": "order",
+      "q": "Build the sentence: She works better than me.",
+      "words": ["Elle", "travaille", "mieux", "que", "moi"],
+      "a": ["Elle", "travaille", "mieux", "que", "moi"],
+      "why": "Mieux is the adverb and describes the verb. Meilleur is the adjective and describes a noun: son travail est meilleur."
+    },
+    {
+      "id": "comparatives-17",
+      "type": "order",
+      "q": "Build the phrase: the best restaurant in town",
+      "words": ["le", "meilleur", "restaurant", "de", "la", "ville"],
+      "a": ["le", "meilleur", "restaurant", "de", "la", "ville"],
+      "why": "After a superlative, in is de, never dans: le plus grand de la classe, le meilleur de la ville."
     }
   ]
 }

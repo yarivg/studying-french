@@ -169,6 +169,28 @@
     "Ma becomes mon only when the feminine noun starts with a vowel or mute h and follows immediately, purely so the two vowels do not collide. In ma nouvelle amie, nouvelle intervenes, so ma is kept. The noun stays feminine either way, so adjectives agree as feminine: mon amie est belle."
    ],
    "why": "The whole rule is about the sound at the junction, not about gender. Losing sight of that is what makes learners write mon amie est beau."
+  },
+  {
+   "id": "possessives-16",
+   "type": "order",
+   "q": "Build the sentence: This book is mine, not yours.",
+   "words": [
+    "Ce",
+    "livre",
+    "est",
+    "le mien",
+    "pas",
+    "le tien"
+   ],
+   "a": [
+    "Ce",
+    "livre",
+    "est",
+    "le mien",
+    "pas",
+    "le tien"
+   ],
+   "why": "A possessive pronoun keeps its article and agrees with the thing owned, not the owner: le mien for a masculine book."
   }
  ]
 }

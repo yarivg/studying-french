@@ -173,6 +173,62 @@
       "q": "Say this out loud, in full written form: I don't know.",
       "target": "je ne sais pas",
       "why": "In conversation this collapses to j'sais pas, with ne gone entirely. Understand the dropped form, but produce the full one in writing and in any formal register."
+    },
+    {
+      "id": "negation-16",
+      "type": "order",
+      "q": "Build the sentence: He hasn't eaten anything.",
+      "words": [
+       "Il",
+       "n'a",
+       "rien",
+       "mangé"
+      ],
+      "a": [
+       "Il",
+       "n'a",
+       "rien",
+       "mangé"
+      ],
+      "why": "Rien goes between the auxiliary and the participle. Personne is the one that goes after it: il n'a vu personne."
+    },
+    {
+      "id": "negation-17",
+      "type": "order",
+      "q": "Build the sentence: I don't want to go out any more.",
+      "words": [
+       "Je",
+       "ne",
+       "veux",
+       "plus",
+       "sortir"
+      ],
+      "a": [
+       "Je",
+       "ne",
+       "veux",
+       "plus",
+       "sortir"
+      ],
+      "why": "The negation wraps the conjugated verb, and the infinitive follows it whole."
+    },
+    {
+      "id": "negation-18",
+      "type": "order",
+      "q": "Build the sentence: We are going nowhere.",
+      "words": [
+       "Nous",
+       "n'allons",
+       "nulle",
+       "part"
+      ],
+      "a": [
+       "Nous",
+       "n'allons",
+       "nulle",
+       "part"
+      ],
+      "why": "Nulle part behaves like personne: it comes after the verb, and after the participle in a compound tense."
     }
   ]
 }

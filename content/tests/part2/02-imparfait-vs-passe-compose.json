@@ -181,6 +181,54 @@
         "Il était huit heures. Il pleuvait. J'attendais le bus. Une voiture s'est arrêtée. Un homme est descendu."
       ],
       "why": "Time, weather and waiting are circumstances, so imperfect; the car stopping and the man getting out are the events, so passé composé. Both take être here, and arrêtée agrees."
+    },
+    {
+      "id": "imparfait-vs-passe-compose-16",
+      "type": "order",
+      "q": "Build the sentence: Suddenly a car stopped in front of the house.",
+      "words": [
+       "Soudain",
+       "une",
+       "voiture",
+       "s'est",
+       "arrêtée",
+       "devant",
+       "la",
+       "maison"
+      ],
+      "a": [
+       "Soudain",
+       "une",
+       "voiture",
+       "s'est",
+       "arrêtée",
+       "devant",
+       "la",
+       "maison"
+      ],
+      "why": "Soudain marks the break in the scene, so passé composé. The reflexive takes être and agrees: arrêtée."
+    },
+    {
+      "id": "imparfait-vs-passe-compose-17",
+      "type": "order",
+      "q": "Build the sentence: It was raining when we left.",
+      "words": [
+       "Il",
+       "pleuvait",
+       "quand",
+       "nous",
+       "sommes",
+       "partis"
+      ],
+      "a": [
+       "Il",
+       "pleuvait",
+       "quand",
+       "nous",
+       "sommes",
+       "partis"
+      ],
+      "why": "The rain lasted, the leaving happened. Quand decides nothing on its own; which action lasted does."
     }
   ]
 }

@@ -112,6 +112,14 @@
       "q": "List five quantifiers that take « de », and three quantity words that take nothing.",
       "a": ["With de: beaucoup de, un peu de, peu de, trop de, assez de, tant de, autant de, plus de, moins de, combien de, plus containers like une tasse de, un verre de, un kilo de. With nothing: plusieurs, quelques, certains / certaines, chaque. And la plupart des is the exception that takes des."],
       "why": "Sorting quantifiers into these three buckets once removes most quantity errors: the de family, the bare family, and la plupart on its own."
+    },
+    {
+      "id": "quantity-16",
+      "type": "order",
+      "q": "Build the sentence: All my friends are here.",
+      "words": ["Tous", "mes", "amis", "sont", "là"],
+      "a": ["Tous", "mes", "amis", "sont", "là"],
+      "why": "Tous comes in front of the possessive, not after it. And it is tous, never touts, which does not exist."
     }
   ]
 }

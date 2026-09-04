@@ -175,6 +175,50 @@
         "1. Ongoing background action: Je lisais quand tu es arrivé. 2. Habit or repeated action: Quand j'étais petit, j'allais à la mer tous les étés. 3. Description of a state — weather, age, feelings, appearance: Il faisait beau / Elle avait vingt ans / J'étais fatigué."
       ],
       "why": "All three reduce to the same idea: the imperfect describes rather than narrates. Verbs of state — être, avoir, savoir, vouloir, pouvoir — default to it for that reason."
+    },
+    {
+      "id": "imparfait-16",
+      "type": "order",
+      "q": "Build the suggestion: Why don't you come with us?",
+      "words": [
+       "Si",
+       "tu",
+       "venais",
+       "avec",
+       "nous"
+      ],
+      "a": [
+       "Si",
+       "tu",
+       "venais",
+       "avec",
+       "nous"
+      ],
+      "why": "Si plus the imperfect is a suggestion, not a condition. Si tu venais ? means shall you come, not if you came."
+    },
+    {
+      "id": "imparfait-17",
+      "type": "order",
+      "q": "Build the sentence: I was in the middle of eating when he called.",
+      "words": [
+       "J'étais",
+       "en train de",
+       "manger",
+       "quand",
+       "il",
+       "a",
+       "appelé"
+      ],
+      "a": [
+       "J'étais",
+       "en train de",
+       "manger",
+       "quand",
+       "il",
+       "a",
+       "appelé"
+      ],
+      "why": "Être en train de in the imperfect insists on the exact moment; the call is the event that cuts into it."
     }
   ]
 }

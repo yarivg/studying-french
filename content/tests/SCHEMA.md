@@ -63,6 +63,12 @@ unaccented answer, for questions where the accent is not the point.
 `words` is what gets shuffled and shown as chips; `a` is the correct order.
 Add `"also": [[...]]` for other orders that are equally correct.
 
+Chips are compared exactly, so the answer has to be reachable by clicking:
+drop the hyphens of a command (`["Donne", "le", "moi"]`), keep an elision as
+one chip (`"n'ai"`, `"l'ai"`, `"il y a"`) and leave the final `?` or `!` out
+altogether. Every chip must be used, and only one arrangement of them should
+read as correct - otherwise list the rest in `also`.
+
 ### `listen` — hear it, write it
 ```json
 { "id": "vowels-11", "type": "listen",

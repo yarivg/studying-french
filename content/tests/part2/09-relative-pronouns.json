@@ -115,6 +115,22 @@
       "q": "Give the four-way test for choosing qui, que, dont or où, with one example each.",
       "a": ["Build the second clause alone and see what is missing. Missing subject → qui (l'homme qui parle). Missing direct object → que (l'homme que j'aime). Missing de + something → dont (le film dont je parle, l'homme dont la voiture est rouge). Missing a place or a time → où (la ville où j'habite, le jour où je l'ai rencontré). Shortcut: qui is followed by a verb, que by a subject."],
       "why": "The choice is decided by the grammatical hole, never by whether the noun is a person or a thing. Both qui and que serve people and things alike."
+    },
+    {
+      "id": "relative-pronouns-16",
+      "type": "order",
+      "q": "Build the phrase: the town where I was born",
+      "words": ["la", "ville", "où", "je", "suis", "né"],
+      "a": ["la", "ville", "où", "je", "suis", "né"],
+      "why": "Où covers a missing place or time, and reads as where or when. Que would be wrong: the gap is not an object."
+    },
+    {
+      "id": "relative-pronouns-17",
+      "type": "order",
+      "q": "Build the sentence: The book I'm talking about is French.",
+      "words": ["Le", "livre", "dont", "je", "parle", "est", "français"],
+      "a": ["Le", "livre", "dont", "je", "parle", "est", "français"],
+      "why": "Parler de leaves a de-shaped gap, and dont is the pronoun that fills it."
     }
   ]
 }

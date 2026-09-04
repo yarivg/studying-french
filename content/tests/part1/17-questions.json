@@ -170,6 +170,56 @@
         "The first half says what you are asking about (qui = person, que = thing), the last half says its grammatical role (qui = subject, que = object). Qu'est-ce qui se passe ? (thing, subject) · Qu'est-ce que tu fais ? (thing, object) · Qui est-ce qui a téléphoné ? (person, subject) · Qui est-ce que tu as vu ? (person, object)."
       ],
       "why": "Once you read them as two halves they decode themselves, which beats memorising four separate strings."
+    },
+    {
+      "id": "questions-16",
+      "type": "order",
+      "q": "Build the est-ce que question: Where do you live? (tu)",
+      "words": [
+       "Où",
+       "est-ce que",
+       "tu",
+       "habites"
+      ],
+      "a": [
+       "Où",
+       "est-ce que",
+       "tu",
+       "habites"
+      ],
+      "why": "Est-ce que bolts onto the front and changes nothing behind it: the word order stays the same as a statement."
+    },
+    {
+      "id": "questions-17",
+      "type": "order",
+      "q": "Build the inversion question: When are you leaving? (vous)",
+      "words": [
+       "Quand",
+       "partez",
+       "vous"
+      ],
+      "a": [
+       "Quand",
+       "partez",
+       "vous"
+      ],
+      "why": "Inversion hyphenates the verb to the pronoun. It is the most natural of the three with vous."
+    },
+    {
+      "id": "questions-18",
+      "type": "order",
+      "q": "Build the question: What is he doing?",
+      "words": [
+       "Qu'est-ce",
+       "qu'il",
+       "fait"
+      ],
+      "a": [
+       "Qu'est-ce",
+       "qu'il",
+       "fait"
+      ],
+      "why": "Qu'est-ce que asks about a thing as the object; que elides to qu' before il."
     }
   ]
 }

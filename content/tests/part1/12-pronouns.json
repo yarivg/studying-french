@@ -152,6 +152,30 @@
       "q": "Complete with the reflexive pronoun: « On ___ lève à sept heures. »",
       "a": ["se"],
       "why": "On is a third-person subject, so it reflexes with se, exactly like il: on se lève, on s'habille."
+    },
+    {
+      "id": "pronouns-21",
+      "type": "order",
+      "q": "Build the sentence: I never answer him.",
+      "words": ["Je", "ne", "lui", "réponds", "jamais"],
+      "a": ["Je", "ne", "lui", "réponds", "jamais"],
+      "why": "Répondre takes an indirect object, so lui, and it goes before the verb, inside the ne … jamais."
+    },
+    {
+      "id": "pronouns-22",
+      "type": "order",
+      "q": "Build the sentence: I'm going to call her tomorrow.",
+      "words": ["Je", "vais", "l'appeler", "demain"],
+      "a": ["Je", "vais", "l'appeler", "demain"],
+      "why": "With an infinitive the pronoun attaches to the infinitive, not to the conjugated verb: je vais l'appeler, never je la vais appeler."
+    },
+    {
+      "id": "pronouns-23",
+      "type": "order",
+      "q": "Build the sentence: She doesn't know us.",
+      "words": ["Elle", "ne", "nous", "connaît", "pas"],
+      "a": ["Elle", "ne", "nous", "connaît", "pas"],
+      "why": "Nous is the direct object here, and like every object pronoun it sits between ne and the verb."
     }
   ]
 }

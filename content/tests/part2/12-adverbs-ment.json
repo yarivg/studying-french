@@ -114,6 +114,22 @@
       "q": "Give the three rules for forming an adverb in -ment, with an example of each, then name two ways French avoids -ment altogether.",
       "a": ["1. Default: take the feminine adjective and add -ment — lent → lente → lentement, heureux → heureuse → heureusement. 2. Masculine already ending in a vowel: add -ment directly — vrai → vraiment, absolu → absolument (a few take an accent: précis → précisément, énorme → énormément). 3. Adjectives in -ant / -ent: swap to -amment / -emment — constant → constamment, évident → évidemment. Avoiding -ment: avec + abstract noun (avec soin, en silence, avec joie), and de façon / de manière + adjective (de façon régulière)."],
       "why": "The three rules cover nearly every adjective; the prepositional patterns cover the rest and often sound more natural than a long -ment word."
+    },
+    {
+      "id": "adverbs-ment-16",
+      "type": "order",
+      "q": "Build the sentence: He answered politely.",
+      "words": ["Il", "a", "répondu", "poliment"],
+      "a": ["Il", "a", "répondu", "poliment"],
+      "why": "Poliment is long, so it goes after the participle. A short adverb goes between the auxiliary and the participle."
+    },
+    {
+      "id": "adverbs-ment-17",
+      "type": "order",
+      "q": "Build the sentence: He always drives dangerously.",
+      "words": ["Il", "conduit", "toujours", "dangereusement"],
+      "a": ["Il", "conduit", "toujours", "dangereusement"],
+      "why": "In a simple tense the adverb follows the verb, and a frequency adverb comes first when two of them meet. Dangereux is a -ant adjective, hence -amment."
     }
   ]
 }
