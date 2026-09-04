@@ -12,6 +12,7 @@
      cards: { "<cardId>": { box: 0-5, due: <epoch-day>, seen: n, ok: n } },
      known: { "<wordId>": true },
      words: { "<u...>": { fr, en, pos, g, themes: [], at } },  // words you added
+     edits: { "<wId>":  { fr, en, pos, g, themes: [], at } },  // curated words you corrected
      mastery: { "<slug|partN>": { level: 0-2, at, score } },   // self-marked
      tests:   { "<testId>": { best, runs, at } },              // best auto score
      runs:  [ { at, id, n, got, wrong: ["<qId>"] } ],         // every sitting, newest last
@@ -38,11 +39,11 @@ window.Progress = (function () {
 
   var state = load();
 
-  var MAPS = ['read', 'ex', 'cards', 'known', 'words', 'mastery', 'tests', 'qstat'];
+  var MAPS = ['read', 'ex', 'cards', 'known', 'words', 'edits', 'mastery', 'tests', 'qstat'];
 
   function blank() {
     return {
-      v: 1, read: {}, ex: {}, cards: {}, known: {}, words: {},
+      v: 1, read: {}, ex: {}, cards: {}, known: {}, words: {}, edits: {},
       mastery: {}, tests: {}, qstat: {}, runs: [], days: {}, hist: {}, m: {}, clearedAt: 0
     };
   }
@@ -301,6 +302,38 @@ window.Progress = (function () {
     return true;
   }
 
+  /* ------------------------------------------------ correcting a curated word
+
+     A gloss in vocab.json is sometimes wrong or too narrow, and the file
+     ships with the site, so the correction has to live here instead. It is
+     stored against the curated id, which is what every tick, card and
+     score is already keyed by: an edit changes what a word says, never
+     which word it is. Clear the edit and the shipped version is back,
+     because the original was never overwritten. */
+
+  function getEdit(id) { return has(state.edits, id) ? state.edits[id] : null; }
+
+  function editCount() { return Object.keys(state.edits).length; }
+
+  function setEdit(id, input) {
+    if (String(id).charAt(0) !== 'w') return false;
+    var e = cleanWord(input);
+    if (!e) throw new Error('A word needs both a French side and an English side.');
+    state.edits[id] = e;
+    touch('edits', id);
+    save();
+    return true;
+  }
+
+  function clearEdit(id) {
+    if (!has(state.edits, id)) return false;
+    delete state.edits[id];
+    // The tombstone is what stops the other device putting it back.
+    touch('edits', id);
+    save();
+    return true;
+  }
+
   function cleanWord(input) {
     input = input || {};
     var fr = trim(input.fr), en = trim(input.en);
@@ -543,6 +576,11 @@ window.Progress = (function () {
       var w = cleanWord(value);
       if (w) out.words[key] = w;
     });
+    each(input.edits, function (key, value) {
+      if (key.charAt(0) !== 'w') return;   // only the curated ids can be overridden
+      var e = cleanWord(value);
+      if (e) out.edits[key] = e;
+    });
     each(input.mastery, function (key, value) {
       if (!value || typeof value !== 'object') return;
       var level = clamp(num(value.level), 0, LEVELS.length - 1);
@@ -753,6 +791,7 @@ window.Progress = (function () {
     dueCount: dueCount, dueQueue: dueQueue, cardStats: cardStats,
     isKnown: isKnown, toggleKnown: toggleKnown, knownCount: knownCount,
     words: words, wordCount: wordCount, getWord: getWord, findWord: findWord,
+    getEdit: getEdit, setEdit: setEdit, clearEdit: clearEdit, editCount: editCount,
     addWord: addWord, updateWord: updateWord, deleteWord: deleteWord,
     mastery: mastery, setMastery: setMastery, masteryCount: masteryCount,
     testScore: testScore, recordTest: recordTest, LEVELS: LEVELS,

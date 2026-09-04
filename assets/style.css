@@ -722,7 +722,7 @@ a.card:hover { border-color: var(--bleu); box-shadow: var(--shadow-md); transfor
 .vocab-row {
   /* Fixed last column: an `auto` track would resize per row and the
      columns would no longer line up down the list. */
-  display: grid; grid-template-columns: 2.1rem minmax(0,1.15fr) minmax(0,1fr) 8.5rem;
+  display: grid; grid-template-columns: 2.1rem minmax(0,1.15fr) minmax(0,1fr) 5.6rem 2.9rem;
   align-items: baseline; gap: .7rem;
   padding: .5rem .85rem;
   border-bottom: 1px solid var(--line-soft);
@@ -750,9 +750,12 @@ a.card:hover { border-color: var(--bleu); box-shadow: var(--shadow-md); transfor
 .vocab-row.is-known .v-know { background: var(--vert); border-color: var(--vert); color: var(--on-accent); }
 .vocab-row.is-known .v-fr, .vocab-row.is-known .v-en { opacity: .55; }
 @media (max-width: 620px) {
-  .vocab-row { grid-template-columns: 1.9rem 1fr; }
+  /* The type and gender tag is what a narrow screen drops. The edit button
+     is not: it moves up beside the French instead. */
+  .vocab-row { grid-template-columns: 1.9rem 1fr auto; }
   .vocab-row .v-tag { display: none; }
   .vocab-row .v-en { grid-column: 2; }
+  .vocab-row .v-edit { grid-column: 3; grid-row: 1; align-self: center; }
 }
 
 /* ---------------------------------------------------------- flashcards */
@@ -1064,10 +1067,16 @@ body.audio-off .say-btn, body.audio-off .flash-say { display: none; }
   content: "•"; margin-left: .4rem; color: var(--bleu);
 }
 .v-edit {
-  padding: 0; font: inherit; color: var(--bleu);
+  padding: 0; color: var(--muted);
+  font: inherit; font-size: .68rem; letter-spacing: .06em; text-transform: uppercase;
   background: none; border: 0; border-bottom: 1px dotted currentColor;
-  cursor: pointer;
+  cursor: pointer; justify-self: end; align-self: baseline; white-space: nowrap;
 }
+.v-edit:hover { color: var(--bleu); }
+/* The button itself is the marker: it reads "edited" and goes blue, so
+   the list shows at a glance which glosses you have rewritten. */
+.vocab-row.is-edited .v-edit { color: var(--bleu); }
+.vocab-embed .word-form { margin-top: 1rem; }
 
 @media (max-width: 560px) {
   .word-fields { grid-template-columns: 1fr; }

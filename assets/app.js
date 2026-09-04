@@ -300,7 +300,10 @@
 
       Quiz.bindExercises(view, slug);
       Say.hydrate(view);
-      Vocab.hydrateEmbeds(view).then(function () { Say.hydrate(view); });
+      Vocab.hydrateEmbeds(view).then(function () {
+        Say.hydrate(view);
+        bindEmbedEdits(view);
+      });
       renderDoneBar(ch);
       renderPager(idx);
     }).catch(function (err) {
@@ -1061,6 +1064,11 @@
 
   /* ---------------------------------------------------------- vocabulary */
 
+  // What the toolbar was set to. Adding or correcting a word redraws the
+  // whole page, and coming back to an unfiltered list of 1,493 words when
+  // you had narrowed it to one is the wrong place to be put.
+  var vocabView = { q: '', theme: 'all', pos: 'all', status: 'all' };
+
   function renderVocabPage() {
     setCurrentNav('vocab');
     pager.innerHTML = '';
@@ -1079,7 +1087,9 @@
       view.innerHTML =
         '<h1>Vocabulary</h1>' +
         '<p class="lead">' + Vocab.all().length + ' words, with gender and theme — ' +
-        Vocab.mine().length + ' of them added by you. Tap the <span class="v-know-demo">✓</span> ' +
+        Vocab.mine().length + ' of them added by you' +
+        (Progress.editCount() ? ', ' + Progress.editCount() + ' corrected by you' : '') +
+        '. Tap the <span class="v-know-demo">✓</span> ' +
         'at the left of a row when you know a word; it turns green and counts on the ' +
         '<a href="#/dashboard">Progress</a> page. Use <em>Not yet known</em> to hide the ones ' +
         'you have already ticked.</p>' +
@@ -1106,6 +1116,15 @@
       var list = document.getElementById('vlist');
       var count = document.getElementById('vcount');
 
+      q.value = vocabView.q;
+      // A theme can go away when the last word in it is retagged, so a
+      // stale choice falls back to "all" rather than showing nothing.
+      [[theme, 'theme'], [pos, 'pos'], [status, 'status']].forEach(function (pair) {
+        var el = pair[0], want = vocabView[pair[1]];
+        el.value = want;
+        if (el.value !== want) el.value = 'all';
+      });
+
       function refresh() {
         var words = Vocab.search(q.value, {
           theme: theme.value, pos: pos.value, status: status.value
@@ -1122,7 +1141,10 @@
       }
 
       [q, theme, pos, status].forEach(function (el) {
-        el.addEventListener('input', refresh);
+        el.addEventListener('input', function () {
+          vocabView = { q: q.value, theme: theme.value, pos: pos.value, status: status.value };
+          refresh();
+        });
       });
       Vocab.bindList(list);
 
@@ -1138,12 +1160,31 @@
     });
   }
 
+  // The vocabulary blocks inside a lesson are the same rows as the browser,
+  // so their edit button has to lead somewhere too. Each block gets its own
+  // form, opening under the block you tapped in, and only that block is
+  // redrawn afterwards.
+  function bindEmbedEdits(root) {
+    root.querySelectorAll('.vocab-embed').forEach(function (el) {
+      var host = document.createElement('div');
+      var form = new WordForm(host, function () {
+        Vocab.fillEmbed(el);
+        // Refilling the block took the form host with it.
+        el.appendChild(host);
+        Say.hydrate(el);
+      });
+      el.appendChild(host);
+      el.addEventListener('vocab:edit', function (e) { form.open(e.detail.id); });
+    });
+  }
+
   /* ---------------------------------------------------------- add a word */
 
   // One panel, three jobs: add, edit, and paste a whole list. Kept small
   // enough to use one-handed, because words turn up away from the desk.
   function WordForm(host, onChange) {
     var editing = null;
+    var curated = false;    // editing a word the course shipped, not one of yours
     var dirty = false;      // words were added while the panel stayed open
 
     function close() {
@@ -1153,8 +1194,16 @@
 
     function open(id) {
       editing = id || null;
-      var w = editing ? Progress.getWord(editing) : null;
-      if (editing && !w) return;
+      // A "w" id is a word the site shipped, a "u" id is one you added.
+      // Both are edited in this form; only where the change is stored
+      // differs, and only the curated one can be put back as it was.
+      curated = !!editing && editing.charAt(0) === 'w';
+      var w = null;
+      if (editing) {
+        w = curated ? Vocab.byId(editing) : Progress.getWord(editing);
+        if (!w) return;
+      }
+      var reverts = curated && !!Progress.getEdit(editing);
 
       host.innerHTML =
         '<div class="word-form">' +
@@ -1169,6 +1218,11 @@
             '<label>English<input id="wen" value="' + escapeAttr(w ? w.en : '') +
               '" placeholder="fog" autocomplete="off"></label>' +
           '</div>' +
+          (curated
+            ? '<p class="sync-note">This one came with the course. Your correction is kept ' +
+              'with your progress and follows you to your other devices; the shipped entry is ' +
+              'left alone, so you can put it back at any time.</p>'
+            : '') +
           '<details class="word-more word-help">' +
             '<summary>How to write the French side</summary>' +
             '<ul class="word-help-list">' +
@@ -1203,7 +1257,8 @@
           '<p class="word-msg" id="wmsg" hidden></p>' +
           '<div class="word-actions">' +
             '<button class="btn btn-primary" data-act="save">' + (editing ? 'Save' : 'Add word') + '</button>' +
-            (editing ? '<button class="btn btn-again" data-act="delete">Delete</button>' : '') +
+            (editing && !curated ? '<button class="btn btn-again" data-act="delete">Delete</button>' : '') +
+            (reverts ? '<button class="btn" data-act="revert">Put the original back</button>' : '') +
           '</div>' +
         '</div>';
 
@@ -1244,6 +1299,7 @@
       if (b.dataset.act === 'bulk') return openBulk();
       if (b.dataset.act === 'save') return save();
       if (b.dataset.act === 'delete') return remove();
+      if (b.dataset.act === 'revert') return revert();
     }
 
     function msg(text, bad) {
@@ -1267,7 +1323,9 @@
       if (!input.pos) input.pos = guess.pos;
       if (!input.g) input.g = guess.g;
       try {
-        if (editing) {
+        if (curated) {
+          Progress.setEdit(editing, input);
+        } else if (editing) {
           Progress.updateWord(editing, input);
         } else {
           var dupe = Progress.findWord(input.fr);
@@ -1277,6 +1335,14 @@
       } catch (err) {
         return msg(err.message, true);
       }
+      close();
+      onChange();
+    }
+
+    function revert() {
+      if (!confirm('Put the original entry back? Your correction is dropped, here and on your ' +
+        'other devices. What you have marked known or revised is not affected.')) return;
+      Progress.clearEdit(editing);
       close();
       onChange();
     }

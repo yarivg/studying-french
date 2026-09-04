@@ -42,9 +42,12 @@ window.Vocab = (function () {
   // words you add live in the synced progress state. They are kept in two
   // places and joined here, so a rebuild of vocab.json cannot lose yours.
   var mineCache = null;
+  var curatedCache = null;
   var joinedCache = null;
 
-  function invalidate() { mineCache = null; joinedCache = null; indexCache = null; }
+  function invalidate() {
+    mineCache = null; curatedCache = null; joinedCache = null; indexCache = null;
+  }
   window.addEventListener('progress:change', invalidate);
 
   function mine() {
@@ -61,22 +64,61 @@ window.Vocab = (function () {
     return mineCache;
   }
 
+  // A gloss in the curated list is sometimes wrong or too narrow. Your
+  // correction is stored against the shipped id, so it is laid over the
+  // word here rather than replacing it: the original stays on `was`, and
+  // clearing the edit brings it straight back.
+  function curated() {
+    if (!data) return [];
+    if (curatedCache) return curatedCache;
+    curatedCache = data.words.map(function (w) {
+      var e = Progress.getEdit(w.id);
+      if (!e) return w;
+      var out = {
+        n: w.n, id: w.id, fr: e.fr, en: e.en, pos: e.pos, g: e.g, base: e.fr,
+        // No themes typed means "leave it where it was filed"; for a word
+        // you added the same empty box means "mine", but a curated word
+        // already has a theme worth keeping.
+        themes: e.themes.length ? e.themes : w.themes.slice(),
+        edited: true, was: w
+      };
+      out.search = (out.fr + ' ' + out.en + ' ' + out.themes.join(' ')).toLowerCase();
+      out.searchPlain = strip(out.search);
+      return out;
+    });
+    return curatedCache;
+  }
+
   function all() {
     if (!data) return [];
-    if (!joinedCache) joinedCache = mine().concat(data.words);
+    if (!joinedCache) joinedCache = mine().concat(curated());
     return joinedCache;
   }
 
   function themeCounts() {
     var counts = {};
     if (data) for (var t in data.themes) counts[t] = data.themes[t];
+    // The shipped tallies were counted before your edits, and an edit can
+    // move a word to another theme, so the difference is applied here.
+    curated().forEach(function (w) {
+      if (!w.edited) return;
+      w.was.themes.forEach(function (t) { counts[t] = (counts[t] || 0) - 1; });
+      w.themes.forEach(function (t) { counts[t] = (counts[t] || 0) + 1; });
+    });
     mine().forEach(function (w) {
       w.themes.forEach(function (t) { counts[t] = (counts[t] || 0) + 1; });
     });
+    for (var k in counts) if (counts[k] <= 0) delete counts[k];
     return counts;
   }
 
   function themes() { return Object.keys(themeCounts()); }
+
+  function byId(id) {
+    var list = all();
+    for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i];
+    return null;
+  }
 
   function byTheme(list) {
     var wanted = String(list || '').split(/[,\s]+/).filter(Boolean);
@@ -110,15 +152,19 @@ window.Vocab = (function () {
   function rowHtml(w) {
     var known = Progress.isKnown(w.id);
     return '<div class="vocab-row' + (known ? ' is-known' : '') + (w.mine ? ' is-mine' : '') +
-      '" data-id="' + w.id + '">' +
+      (w.edited ? ' is-edited' : '') + '" data-id="' + w.id + '">' +
       '<button class="v-know" aria-label="Mark as known" aria-pressed="' + known + '" ' +
         'title="' + (known ? 'Known — tap to unmark' : 'Tap when you know this word') + '">✓</button>' +
       '<span class="v-fr">' + escapeHtml(w.fr) + '</span>' +
       '<span class="v-en">' + escapeHtml(w.en) + '</span>' +
       '<span class="v-tag">' + (POS_LABEL[w.pos] || w.pos) +
         (w.g ? ' · ' + GENDER_LABEL[w.g] : '') +
-        (w.mine ? ' · <button class="v-edit" data-edit="' + w.id + '">edit</button>' : '') +
       '</span>' +
+      // Its own cell rather than part of the tag, because the tag is the
+      // one thing a narrow screen drops and this has to survive that.
+      '<button class="v-edit" data-edit="' + w.id + '" ' +
+        'title="' + (w.edited ? 'You corrected this one' : 'Correct this entry') + '">' +
+        (w.edited ? 'edited' : 'edit') + '</button>' +
       '</div>';
   }
 
@@ -129,8 +175,12 @@ window.Vocab = (function () {
     return '<div class="vocab-list">' + words.map(rowHtml).join('') + '</div>';
   }
 
-  // One delegated handler covers every list on the page.
+  // One delegated handler covers every list on the page. An embed is
+  // refilled in place after an edit, so binding is once per container,
+  // not once per fill, or the second tap would fire twice.
   function bindList(root) {
+    if (root.dataset.vbound) return;
+    root.dataset.vbound = '1';
     root.addEventListener('click', function (e) {
       var edit = e.target.closest('.v-edit');
       if (edit) {
@@ -248,19 +298,22 @@ window.Vocab = (function () {
     }).join('\n');
   }
 
+  // Fill one ::: vocab block. Separate from the sweep below so a block can
+  // be redrawn after you correct a word in it, without touching the rest
+  // of the lesson.
+  function fillEmbed(el) {
+    var words = byTheme(el.dataset.themes);
+    el.innerHTML =
+      '<h4>' + escapeHtml(el.dataset.themes.replace(/,/g, ' · ')) + ' — ' + words.length + ' words</h4>' +
+      listHtml(words);
+    bindList(el);
+  }
+
   // Fill any ::: vocab blocks that the markdown renderer left behind.
   function hydrateEmbeds(root) {
     var embeds = root.querySelectorAll('.vocab-embed');
     if (!embeds.length) return Promise.resolve();
-    return load().then(function () {
-      embeds.forEach(function (el) {
-        var words = byTheme(el.dataset.themes);
-        el.innerHTML =
-          '<h4>' + escapeHtml(el.dataset.themes.replace(/,/g, ' · ')) + ' — ' + words.length + ' words</h4>' +
-          listHtml(words);
-        bindList(el);
-      });
-    });
+    return load().then(function () { embeds.forEach(fillEmbed); });
   }
 
   /* ---------------------------------------------------------- decks */
@@ -330,9 +383,11 @@ window.Vocab = (function () {
   }
 
   return {
-    load: load, all: all, mine: mine, themes: themes, themeCounts: themeCounts,
-    byTheme: byTheme, search: search,
-    listHtml: listHtml, bindList: bindList, hydrateEmbeds: hydrateEmbeds,
+    load: load, all: all, mine: mine, curated: curated,
+    themes: themes, themeCounts: themeCounts,
+    byTheme: byTheme, byId: byId, search: search,
+    listHtml: listHtml, bindList: bindList,
+    hydrateEmbeds: hydrateEmbeds, fillEmbed: fillEmbed,
     decks: decks, deckById: deckById,
     guess: guess, findExisting: findExisting, parseBulk: parseBulk, exportMine: exportMine,
     POS_LABEL: POS_LABEL, GENDER_LABEL: GENDER_LABEL
