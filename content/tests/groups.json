@@ -57,6 +57,13 @@
    "perChapter": 5
   },
   {
+   "id": "asking-and-exclaiming",
+   "title": "Asking and exclaiming",
+   "blurb": "The same words build both: quel, que and comme. A question inverts, an exclamation never does.",
+   "chapters": ["questions", "exclamations", "adjectives"],
+   "perChapter": 5
+  },
+  {
    "id": "hypothetical",
    "title": "If, would and must",
    "blurb": "Conditionnel, si-clauses and the subjunctive triggers that follow them around.",

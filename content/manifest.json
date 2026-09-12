@@ -51,7 +51,8 @@
     { "slug": "verb-prepositions", "file": "part2/13-verb-prepositions.md", "title": "Verbs + à / de + infinitive", "level": "B1", "summary": "Which preposition a verb takes, and the lists worth learning whole." },
     { "slug": "time-expressions", "file": "part2/14-time-expressions.md", "title": "Depuis, pendant, il y a, pour", "level": "B1", "summary": "Four ways to talk about duration that English collapses into 'for'." },
     { "slug": "passive-on", "file": "part2/15-passive-on.md", "title": "The passive, and on", "level": "B1", "summary": "Why French avoids the passive, and what it uses instead." },
-    { "slug": "dates-time", "file": "part2/16-dates-time.md", "title": "Dates, time and ordinals", "level": "B1", "summary": "Telling the time, writing the date, and premier vs deuxième." }
+    { "slug": "dates-time", "file": "part2/16-dates-time.md", "title": "Dates, time and ordinals", "level": "B1", "summary": "Telling the time, writing the date, and premier vs deuxième." },
+    { "slug": "exclamations", "file": "part2/17-exclamations.md", "title": "Exclamations", "level": "B1", "summary": "Quel takes a noun, que and comme take a clause, and nothing ever inverts." }
    ]
   },
   {

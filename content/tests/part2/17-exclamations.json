@@ -1,0 +1,216 @@
+{
+  "ch": "exclamations",
+  "title": "Exclamations",
+  "questions": [
+    {
+      "id": "exclamations-01",
+      "type": "mcq",
+      "q": "Which is correct?",
+      "choices": [
+        "Comme il est gentil !",
+        "Comme est-il gentil !",
+        "Comme est gentil il !",
+        "Comme il est-il gentil !"
+      ],
+      "a": 0,
+      "why": "An exclamation never inverts. Que and comme sit in front of an untouched statement: subject, verb, rest. Inversion belongs to questions."
+    },
+    {
+      "id": "exclamations-02",
+      "type": "fill",
+      "q": "Complete with one word: « ___ beau bateau ! » (What a beautiful boat!)",
+      "a": [
+        "quel"
+      ],
+      "why": "Quel takes the noun and agrees with it. The English a is already inside quel, so no article follows it."
+    },
+    {
+      "id": "exclamations-03",
+      "type": "mcq",
+      "q": "« ___ belle maison ! »",
+      "choices": [
+        "Quelle",
+        "Quel",
+        "Quelles",
+        "Qu'elle"
+      ],
+      "a": 0,
+      "why": "Maison is feminine singular, so quelle. Qu'elle is the same sound but a different structure: que + the pronoun elle, which would need a verb after it."
+    },
+    {
+      "id": "exclamations-04",
+      "type": "mcq",
+      "q": "Which one needs a verb after it?",
+      "choices": [
+        "Qu'elle",
+        "Quelle",
+        "Quels",
+        "Quelles"
+      ],
+      "a": 0,
+      "why": "Qu'elle is que + elle, so a verb follows: Qu'elle est belle ! The quel forms are adjectives and take a noun: Quelle belle voix !"
+    },
+    {
+      "id": "exclamations-05",
+      "type": "mcq",
+      "q": "Only one of these can be embedded under another verb, as in « Tu sais ___ il est têtu. » Which?",
+      "choices": [
+        "comme",
+        "que",
+        "quel",
+        "qu'est-ce que"
+      ],
+      "a": 0,
+      "why": "Comme keeps its exclamative sense inside a larger sentence. Tu sais que il est têtu would mean you know that he is stubborn, a reported fact rather than an exclamation."
+    },
+    {
+      "id": "exclamations-06",
+      "type": "fill",
+      "q": "Complete: « ___ de monde ! » (So many people!)",
+      "a": [
+        "Que",
+        "que"
+      ],
+      "why": "Que de + noun is the quantity exclamation, with no article. Comme cannot do this, and the spoken equivalent is il y a tellement de monde."
+    },
+    {
+      "id": "exclamations-07",
+      "type": "mcq",
+      "q": "Which is wrong?",
+      "choices": [
+        "Quel un beau bateau !",
+        "Quel beau bateau !",
+        "Comme ce bateau est beau !",
+        "Qu'il est beau, ce bateau !"
+      ],
+      "a": 0,
+      "why": "Quel replaces the article, it does not sit in front of one. English what a becomes quel on its own."
+    },
+    {
+      "id": "exclamations-08",
+      "type": "fill",
+      "q": "Rewrite as an exclamation with comme: « Elle chante bien. »",
+      "a": [
+        "comme elle chante bien",
+        "comme elle chante bien !"
+      ],
+      "why": "Nothing moves. Comme is bolted onto the front of the statement, exactly like est-ce que on a question."
+    },
+    {
+      "id": "exclamations-09",
+      "type": "mcq",
+      "q": "« Il y a ___ monde ! » (so many people)",
+      "choices": [
+        "tellement de",
+        "si de",
+        "tellement",
+        "si"
+      ],
+      "a": 0,
+      "why": "Si and tellement intensify an adjective (c'est si beau). With a noun the quantity form is tellement de, the same split as aussi against autant de in the comparative."
+    },
+    {
+      "id": "exclamations-10",
+      "type": "mcq",
+      "q": "Which of these is a question, not an exclamation?",
+      "choices": [
+        "Qu'est-ce que tu fais ?",
+        "Qu'est-ce que tu es drôle !",
+        "Ce que tu es drôle !",
+        "Que tu es drôle !"
+      ],
+      "a": 0,
+      "why": "Qu'est-ce que has two lives. A question leaves a gap where the object belongs; an exclamation is already a complete sentence and only adds intensity."
+    },
+    {
+      "id": "exclamations-11",
+      "type": "order",
+      "q": "Build the exclamation: That boat is so beautiful! (pronoun first, noun at the end)",
+      "words": [
+        "Qu'il",
+        "est",
+        "beau",
+        "ce",
+        "bateau"
+      ],
+      "a": [
+        "Qu'il",
+        "est",
+        "beau",
+        "ce",
+        "bateau"
+      ],
+      "why": "Right dislocation: exclaim with the pronoun, then name the thing after a comma. Very common in speech, and the pronoun and the noun point at the same boat."
+    },
+    {
+      "id": "exclamations-12",
+      "type": "order",
+      "q": "Build the exclamation: What luck you have!",
+      "words": [
+        "Quelle",
+        "chance",
+        "tu",
+        "as"
+      ],
+      "a": [
+        "Quelle",
+        "chance",
+        "tu",
+        "as"
+      ],
+      "why": "Quel can carry a whole clause behind its noun, still with no inversion: Quelle chance tu as ! and Quel bateau tu as acheté !"
+    },
+    {
+      "id": "exclamations-13",
+      "type": "mcq",
+      "q": "Rank these from most formal to most casual: 1 Ce que c'est beau ! 2 Que c'est beau ! 3 Qu'est-ce que c'est beau ! 4 Comme c'est beau !",
+      "choices": [
+        "2, 4, 1, 3",
+        "1, 2, 3, 4",
+        "4, 2, 3, 1",
+        "3, 1, 4, 2"
+      ],
+      "a": 0,
+      "why": "Que is the written one, comme the neutral default, ce que casual, qu'est-ce que the heaviest spoken form. All four fill the same slot and mean the same thing."
+    },
+    {
+      "id": "exclamations-14",
+      "type": "fill",
+      "q": "Fix the sentence: « Que c'est très beau ! »",
+      "a": [
+        "que c'est beau",
+        "que c'est beau !",
+        "c'est très beau",
+        "c'est très beau !"
+      ],
+      "why": "Que already does the intensifying, so très is doing the same job twice. Keep one: Que c'est beau ! or C'est très beau !"
+    },
+    {
+      "id": "exclamations-15",
+      "type": "say",
+      "q": "Say this out loud.",
+      "target": "Quelle belle journée",
+      "why": "Quelle and belle both agree with the feminine journée, and the liaison runs quelle into belle into journée as one breath."
+    },
+    {
+      "id": "exclamations-16",
+      "type": "open",
+      "q": "Give the four ways French exclaims, one example each: a clause, a noun, a quantity, and a plain intensifier.",
+      "a": [
+        "Clause: Comme ce bateau est beau ! (also Que / Ce que / Qu'est-ce que, same slot, different register). Noun: Quel beau bateau ! with quel agreeing and no article. Quantity: Que de monde ! or in speech Il y a tellement de monde ! Intensifier inside a normal sentence: C'est si beau ! / C'est tellement beau ! The rule that ties them together is that none of them invert."
+      ],
+      "why": "Choosing is a matter of what carries the weight: the adjective, the noun, the amount, or nothing in particular."
+    },
+    {
+      "id": "exclamations-17",
+      "type": "listen",
+      "say": "Quel dommage",
+      "q": "Type what you hear.",
+      "a": [
+        "Quel dommage",
+        "Quel dommage !"
+      ],
+      "why": "A fixed exclamation, what a shame. Dommage is masculine, so quel: compare quelle horreur and quelle chance, both feminine."
+    }
+  ]
+}
