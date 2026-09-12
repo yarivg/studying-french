@@ -103,12 +103,75 @@ Verbs in **é** are the exception: *préférer → je préférerai*, keeping the
 | a polite command | *Vous **fermerez** la porte, s'il vous plaît.* |
 | after *quand*, *lorsque*, *dès que* | *Quand j'**aurai** le temps, je t'**appellerai**.* |
 
+## The quand family
+
 ::: rule quand takes the future in French
 English uses the present after *when*: *When I **have** time, I'll call you.*
 French uses the future in **both** halves: *Quand j'**aurai** le temps, je t'**appellerai**.*
 
 The same applies after **lorsque**, **dès que** (as soon as), **aussitôt que**, **tant que** (as
 long as). Using the present here is a very common English-speaker error.
+:::
+
+Six conjunctions behave this way. Learn them as one block:
+
+| | |
+|---|---|
+| **quand** | when |
+| **lorsque** | when, slightly more written |
+| **dès que** | as soon as |
+| **aussitôt que** | as soon as, a shade more formal |
+| **tant que** | as long as |
+| **une fois que** | once |
+
+*Après que* belongs here too, and takes the indicative despite what half of France does to it.
+
+### quand imposes nothing
+
+It is tempting to file this as "*quand* takes the future". That is not the rule, and it breaks
+the moment you talk about your childhood. **quand** never imposes a tense at all: it simply lets
+the verb tell the truth about the time.
+
+| The event is | Tense | Example |
+|---|---|---|
+| in the future | futur | *Quand j'**aurai** le temps, je t'**appellerai**.* |
+| a past state | imparfait | *Quand j'**avais** huit ans, j'**étais** assez grand.* |
+| a single past event | passé composé | *Quand il **est arrivé**, on **a** mangé.* |
+| a habit, or generally true | présent | *Quand il **pleut**, je **reste** à la maison.* |
+
+The present after *quand* is therefore perfectly correct, as long as it means *whenever*:
+
+::: examples
+Quand il pleut, je reste à la maison. || whenever it rains - a habit
+Quand il pleuvra, je resterai à la maison. || one coming occasion
+:::
+
+So the test is not which conjunction you used. Ask **when the thing actually happens**, and put
+that tense. English is the odd one out here, swapping in a present where it means a future; French
+refuses the swap.
+
+### The two halves are decided separately
+
+*quand* does not make the tenses match. Each verb answers for its own event, so a sentence can
+easily carry two different past tenses.
+
+::: examples
+Quand je suis entré, tu mangeais. || the entry is one moment, the meal was already under way
+Quand je suis entré, tu as crié. || two bounded events, one after the other
+Quand j'entrais dans cette maison, j'avais toujours peur. || both habitual: whenever I went in
+:::
+
+The first is the ordinary shape of a story: an **imparfait** background, cut into by a **passé
+composé** event. The choice is made by the shape of each event, never by the conjunction.
+
+::: warning si is not in this family
+*si* keeps the present, exactly like English. The two conjunctions look interchangeable in English
+and behave in opposite ways in French.
+
+- *S'il **pleut**, on **restera** à la maison.* - present after *si*
+- *Tant qu'il **pleuvra**, on **restera** à la maison.* - future after *tant que*
+
+*Si tu viendras* is never possible. Neither is *quand tu viens* about tomorrow.
 :::
 
 ## Futur simple vs futur proche
@@ -171,6 +234,15 @@ Quand j'___ (avoir) le temps, je t'appellerai. || aurai — French uses the futu
 Dès qu'il ___ (arriver), on mangera. || arrivera
 Tant que tu ___ (être) là, ça ira. || seras
 Je le ferai quand je ___ (pouvoir). || pourrai
+:::
+
+::: exercise Which tense after quand? Ask when it actually happens
+Quand je ___ (être) petit, j'avais peur du noir. || étais - a past state, so the imparfait
+Quand tu ___ (arriver), appelle-moi. || arriveras - one coming event, so the futur
+Quand il ___ (faire) beau, on mange dehors. || fait - a habit, so the présent
+Quand elle ___ (entrer), tout le monde s'est tu. || est entrée - one past event, passé composé
+Si tu ___ (venir) demain, on ira au cinéma. || viens - si keeps the présent, never the futur
+Une fois que j'___ (finir), je te préviendrai. || aurai fini - finished before the next event
 :::
 
 ::: exercise Futur proche or futur simple?

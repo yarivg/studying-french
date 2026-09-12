@@ -170,6 +170,98 @@
         "Avoir or être in the futur simple + past participle, meaning 'will have done'. Auxiliary choice and participle agreement follow the passé composé rules. Example: J'aurai fini avant midi. / Quand tu arriveras, je serai déjà parti."
       ],
       "why": "Once you know the future of avoir and être, the future perfect costs nothing extra: it is just the passé composé with a future auxiliary."
+    },
+    {
+      "id": "futur-simple-16",
+      "type": "mcq",
+      "q": "« Quand j'___ huit ans, j'étais assez grand. »",
+      "choices": [
+        "avais",
+        "aurai",
+        "aurais",
+        "ai"
+      ],
+      "a": 0,
+      "why": "Quand imposes no tense. A past state takes the imparfait, exactly as it would without quand. The future only appears when the event itself is in the future."
+    },
+    {
+      "id": "futur-simple-17",
+      "type": "mcq",
+      "q": "Which sentence is correct?",
+      "choices": [
+        "Quand il pleut, je reste à la maison.",
+        "Quand il pleut, je resterai demain.",
+        "Si tu viendras, on ira au cinéma.",
+        "Quand tu viens demain, on mangera."
+      ],
+      "a": 0,
+      "why": "A habit is genuinely present, so the présent is right after quand. The present is only wrong there when it stands in for a future, as in the last option, which needs quand tu viendras."
+    },
+    {
+      "id": "futur-simple-18",
+      "type": "fill",
+      "q": "Complete: « S'il ___ (pleuvoir), on restera à la maison. »",
+      "a": [
+        "pleut"
+      ],
+      "why": "Si is not in the quand family: it keeps the présent, like English. Compare tant qu'il pleuvra, where the future is obligatory. Si tu viendras does not exist."
+    },
+    {
+      "id": "futur-simple-19",
+      "type": "order",
+      "q": "Build the sentence: Once I have finished, I'll let you know.",
+      "words": [
+        "Une",
+        "fois",
+        "que",
+        "j'aurai",
+        "fini",
+        "je",
+        "te",
+        "préviendrai"
+      ],
+      "a": [
+        "Une",
+        "fois",
+        "que",
+        "j'aurai",
+        "fini",
+        "je",
+        "te",
+        "préviendrai"
+      ],
+      "why": "Une fois que joins quand, lorsque, dès que, aussitôt que and tant que. An action finished before the next one takes the futur antérieur, so aurai fini rather than finirai."
+    },
+    {
+      "id": "futur-simple-20",
+      "type": "open",
+      "q": "What tense follows quand, and why is the usual rule of thumb misleading?",
+      "a": [
+        "Quand imposes no tense at all: the verb simply tells the truth about the time. A future event takes the futur (quand j'aurai le temps, je t'appellerai), a past state takes the imparfait (quand j'avais huit ans, j'étais assez grand), a single past event takes the passé composé (quand il est arrivé, on a mangé), and a habit or general truth takes the présent (quand il pleut, je reste à la maison). The rule of thumb quand takes the future is misleading because it only describes the future case. What is really happening is that English swaps in a present where it means a future, and French refuses that swap. The same holds after lorsque, dès que, aussitôt que, tant que and une fois que. Si is the exception that is not in this family: it keeps the présent, so s'il pleut, on restera."
+      ],
+      "why": "Getting this right removes two errors at once: the present written for a coming event, and the future written after si."
+    },
+    {
+      "id": "futur-simple-21",
+      "type": "fill",
+      "q": "Complete: « Quand je suis entré dans la maison, tu ___ (manger). »",
+      "a": [
+        "mangeais"
+      ],
+      "why": "Quand does not make the two halves match. The entry is one bounded moment, so passé composé; the meal was already under way, so imparfait. Each verb answers for its own event."
+    },
+    {
+      "id": "futur-simple-22",
+      "type": "mcq",
+      "q": "« Quand j'entrais dans cette maison, j'avais toujours peur. » What does this mean?",
+      "choices": [
+        "Whenever I went into that house, I was afraid",
+        "When I went into that house once, I got frightened",
+        "When I enter that house, I am afraid",
+        "When I had gone into that house, I was afraid"
+      ],
+      "a": 0,
+      "why": "Two imparfaits and toujours make it a habit. One single visit would be quand je suis entré, j'ai eu peur: a bounded event needs the passé composé."
     }
   ]
 }
