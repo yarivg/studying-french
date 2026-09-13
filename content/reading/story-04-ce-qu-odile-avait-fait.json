@@ -1,0 +1,133 @@
+{
+  "id": "story-04-ce-qu-odile-avait-fait",
+  "title": "IV. Ce qu'Odile avait fait",
+  "level": "B1",
+  "blurb": "Chapter four of ten. The notary lays out a document signed in 1998 and the inheritance changes shape: the plus-que-parfait, the past behind the past, plus dates and legal precision.",
+  "grammar": [
+    "plus-que-parfait",
+    "dates-time",
+    "passe-compose",
+    "imparfait-vs-passe-compose",
+    "numbers"
+  ],
+  "text": "L'étude de Maître Vasseur se trouvait rue de Rivoli, au troisième étage d'un immeuble où tout était silencieux, même les portes.\nAdrien est arrivé à quatorze heures moins dix.\nOn l'a fait attendre jusqu'à quatorze heures vingt, ce qui, dans un endroit pareil, est probablement une forme de politesse.\n\nMaître Vasseur avait cinquante ans, une poignée de main sèche et un dossier déjà ouvert devant lui.\n\n« Vous êtes monté rue Lepic ce matin », a-t-il dit.\n\nCe n'était pas une question.\nAdrien a compris que madame Berthier avait téléphoné avant lui.\n\n« Alors vous avez rencontré madame Berthier, et je n'aurai pas à vous annoncer la partie désagréable.\nC'est toujours ça de gagné. »\n\nIl a tourné le dossier vers Adrien.\n\n« Votre grand-tante avait signé cet acte le 12 novembre 1998.\nElle avait quarante-six ans.\nElle venait d'acheter l'appartement, six mois plus tôt, avec l'argent de la vente de la maison de ses parents. »\n\nAdrien a lu le titre du document et n'a rien compris.\n\n« Je vous traduis, a dit le notaire.\nEn droit français, la propriété d'un bien peut se couper en deux.\nD'un côté la nue-propriété : vous possédez les murs.\nDe l'autre l'usufruit : le droit d'habiter le logement, ou de le louer et d'en encaisser les loyers.\nOdile Rambert a gardé la nue-propriété, qu'elle vous lègue aujourd'hui, et elle a donné l'usufruit à Françoise Berthier.\nÀ titre viager. »\n\n« C'est-à-dire ?\n— C'est-à-dire jusqu'à la mort de madame Berthier.\nTant qu'elle vit, elle habite là, et personne ne peut l'en faire sortir.\nNi vous, ni moi, ni un juge. »\n\nAdrien a regardé la date une seconde fois.\n1998.\nIl avait sept ans en 1998.\nOdile avait donc pris cette décision vingt-sept ans plus tôt, longtemps avant le Noël du manteau vert, et personne, dans sa famille à lui, n'en avait jamais rien su.\n\n« Est-ce que ma grand-mère était au courant ?\n— Je l'ignore.\nJe peux seulement vous dire que votre grand-tante était venue seule, qu'elle avait tout relu deux fois, et qu'elle avait refusé que je prévienne qui que ce soit. »\n\nLe notaire a sorti une seconde feuille.\n\n« Il y a autre chose.\nElle était passée me voir en janvier dernier, deux mois avant sa mort.\nElle savait qu'elle était malade.\nElle avait apporté une lettre, qu'elle a laissée ici, dans le dossier, avec une consigne. »\n\n« Quelle consigne ?\n— Que je vous la remette seulement quand vous auriez posé la bonne question. »\n\nAdrien a ri, un peu trop fort pour la pièce.\n\n« Et c'est quoi, la bonne question ?\n— Ce n'est pas à moi de le savoir.\nElle a écrit : “Il la reconnaîtra quand elle sortira de sa bouche.” »\n\nIl a rangé la feuille.\n\n« Pour être clair, monsieur Rambert : vous héritez d'un appartement estimé à six cent quarante mille euros, dont vous ne pourrez ni disposer ni tirer un euro avant peut-être vingt ans.\nVous devrez malgré tout payer certains frais.\nBeaucoup de gens, à votre place, seraient déjà en train de chercher un avocat. »\n\nAdrien s'est rendu compte qu'il n'était pas en colère.\nIl a même trouvé, sans le dire, que sa grand-tante avait eu un certain style.",
+  "gloss": {
+    "une étude": "a notary's practice",
+    "une poignée de main": "a handshake",
+    "un dossier": "a file",
+    "un acte": "a legal deed",
+    "la nue-propriété": "bare ownership: you own the property but not the right to use it",
+    "l'usufruit": "the lifetime right to live in or rent out a property",
+    "encaisser": "to collect, to cash in",
+    "un loyer": "rent",
+    "léguer": "to bequeath",
+    "à titre viager": "for life, until death",
+    "tant que": "as long as",
+    "être au courant": "to know about it",
+    "j'ignore": "I don't know",
+    "qui que ce soit": "anyone at all",
+    "une consigne": "an instruction",
+    "remettre": "to hand over",
+    "disposer de": "to dispose of, to do as one likes with",
+    "des frais": "costs, charges",
+    "malgré tout": "all the same"
+  },
+  "aloud": [
+    "Votre grand-tante avait signé cet acte en 1998.",
+    "Tant qu'elle vit, elle habite là."
+  ],
+  "questions": [
+    {
+      "id": "story-04-01",
+      "type": "mcq",
+      "q": "Qu'est-ce qu'Adrien hérite exactement ?",
+      "choices": [
+        "L'appartement, libre de tout occupant",
+        "La nue-propriété seulement : les murs, sans le droit d'usage",
+        "L'usufruit",
+        "La moitié de l'appartement"
+      ],
+      "a": 1,
+      "why": "He owns the walls; madame Berthier owns the right to live there for life. Neither half is worth much without the other, which is the trap Odile built."
+    },
+    {
+      "id": "story-04-02",
+      "type": "fill",
+      "q": "Elle ___ signé cet acte le 12 novembre 1998, bien avant ce Noël-là.",
+      "a": [
+        "avait"
+      ],
+      "loose": true,
+      "why": "The story's reference point is already past. An event earlier still takes the plus-que-parfait: **avoir/être à l'imparfait** + participe passé."
+    },
+    {
+      "id": "story-04-03",
+      "type": "mcq",
+      "q": "« Elle venait d'acheter l'appartement six mois plus tôt. » Que signifie « venir de » ici ?",
+      "choices": [
+        "Elle arrivait de l'appartement",
+        "Passé récent : elle l'avait acheté peu de temps avant",
+        "Futur proche",
+        "Elle avait l'intention d'acheter"
+      ],
+      "a": 1,
+      "why": "*Venir de* + infinitif is the recent past. In the imparfait (*elle venait de*) it means \"had just\", the mirror of *aller* + infinitif for the near future."
+    },
+    {
+      "id": "story-04-04",
+      "type": "fill",
+      "q": "L'acte a été signé le 12 novembre ___ .",
+      "a": [
+        "1998",
+        "mille neuf cent quatre-vingt-dix-huit"
+      ],
+      "loose": true,
+      "why": "French dates run *le + number + month*, with no preposition and no ordinal, except *le premier*. And *quatre-vingt-dix-huit* is 4×20 + 10 + 8."
+    },
+    {
+      "id": "story-04-05",
+      "type": "mcq",
+      "q": "Pourquoi le notaire dit-il qu'il n'aura pas à annoncer « la partie désagréable » ?",
+      "choices": [
+        "Parce qu'il n'y en a pas",
+        "Parce que madame Berthier a téléphoné et qu'Adrien sait déjà",
+        "Parce qu'Adrien a lu l'acte",
+        "Parce qu'il l'a écrit dans sa lettre"
+      ],
+      "a": 1,
+      "why": "« Vous êtes monté rue Lepic ce matin » is not a question — he was told. Berthier controls information in this story more than anyone."
+    },
+    {
+      "id": "story-04-06",
+      "type": "fill",
+      "q": "Il avait sept ans en 1998, donc elle a pris cette décision vingt-sept ans ___ tôt.",
+      "a": [
+        "plus"
+      ],
+      "loose": true,
+      "why": "**Plus tôt** in two words = earlier in time, the opposite of *plus tard*. One word, *plutôt*, means \"rather, instead\" — a different idea entirely."
+    },
+    {
+      "id": "story-04-07",
+      "type": "mcq",
+      "q": "Quelle est la condition posée par Odile pour la remise de sa lettre ?",
+      "choices": [
+        "Qu'Adrien vende l'appartement",
+        "Qu'Adrien pose la bonne question",
+        "Que madame Berthier meure",
+        "Qu'Adrien vienne avec sa sœur"
+      ],
+      "a": 1,
+      "why": "« Que je vous la remette seulement quand vous auriez posé la bonne question. » Note the conditionnel passé inside reported speech: the futur antérieur *aurez posé* shifts back when the reporting verb is past."
+    },
+    {
+      "id": "story-04-08",
+      "type": "open",
+      "q": "Pourquoi Odile a-t-elle pu vouloir couper la propriété en deux plutôt que tout laisser à Françoise Berthier ?",
+      "a": [
+        "Plusieurs lectures tiennent : protéger Françoise d'une contestation de la famille, qui aurait pu attaquer un legs total à une étrangère ; rendre malgré tout le bien à un Rambert, mais à celui qui n'avait rien fait ; obliger les deux à se rencontrer. Le montage ne donne à personne le pouvoir de chasser l'autre."
+      ],
+      "why": "The legal structure is the character. She gave each of them exactly half a thing, which forces a conversation neither would have chosen."
+    }
+  ]
+}

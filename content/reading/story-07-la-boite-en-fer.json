@@ -1,0 +1,126 @@
+{
+  "id": "story-07-la-boite-en-fer",
+  "title": "VII. La boîte en fer",
+  "level": "B2",
+  "blurb": "Chapter seven of ten. Françoise opens a biscuit tin of letters and thirty years get reported in the past: discours indirect, the tense push-back, and the pronouns that shift with it.",
+  "grammar": [
+    "discours-indirect",
+    "plus-que-parfait",
+    "conditionnel",
+    "relative-pronouns",
+    "time-expressions"
+  ],
+  "text": "Adrien est remonté à Paris le samedi suivant.\nIl n'avait pas prévenu, ce qui était une erreur, et madame Berthier le lui a fait remarquer avant même de le laisser entrer.\n\n« On téléphone, monsieur Rambert.\n— Vous détestez le téléphone.\n— C'est vrai.\nEntrez. »\n\nIl lui a dit qu'il savait, maintenant.\nIl lui a dit que sa mère lui avait tout raconté le dimanche précédent, qu'elle lui avait expliqué ce qui s'était passé en 1998, et qu'il était désolé d'avoir mis trente-quatre ans à poser la question.\n\nFrançoise l'a écouté jusqu'au bout, sans l'aider.\n\n« Votre mère vous a dit “une femme”, a-t-elle fini par répondre.\nPas “Françoise”.\n— Non.\n— Elle ne l'a jamais dit.\nEn vingt-sept ans, personne dans cette famille n'a prononcé mon prénom. »\n\nElle est allée chercher une boîte en fer, du genre qui a contenu des biscuits vers 1970 et qui, depuis, contient tout autre chose.\n\n« Odile écrivait à sa sœur.\nDeux ou trois fois par an, pendant des années.\nElle n'a jamais reçu de réponse, mais elle continuait, parce qu'elle disait que ce n'était pas à elle de s'arrêter. »\n\nElle a sorti une enveloppe ouverte.\n\n« Celle-ci est revenue.\n“N'habite plus à l'adresse indiquée.”\nC'était faux, évidemment.\nVotre grand-mère habitait là depuis quarante ans. »\n\nAdrien a lu.\nLes lettres étaient courtes et très peu sentimentales.\nOdile y racontait ce qu'elle faisait, ce qu'elle lisait, ce qu'elle pensait du gouvernement.\nDans l'une d'elles, datée de 2003, elle écrivait qu'elle avait eu une pneumonie l'hiver précédent, que Françoise avait dormi trois semaines sur une chaise à côté du lit, et qu'elle-même trouvait cela ridicule.\nDans une autre, elle demandait des nouvelles d'Adrien : elle voulait savoir s'il avait passé son bac, ce qu'il comptait faire, et s'il ressemblait toujours à son grand-père.\n\n« Elle m'a demandé de mes nouvelles.\n— Elle demandait de vos nouvelles dans presque toutes.\nElle disait que vous étiez le seul qui l'avait regardée, ce Noël-là.\nLes autres regardaient le tapis. »\n\nAdrien a reposé la lettre.\n\n« Je ne me souviens pas de l'avoir regardée.\n— Vous aviez douze ans.\nVous ne saviez pas que c'était la dernière fois.\nPersonne ne le sait jamais. »\n\nElle a refermé la boîte.\n\n« Je vais vous dire ce qu'elle m'a répété pendant trente ans, et vous ferez ce que vous voudrez de cette information.\nElle m'a dit qu'elle ne pardonnerait pas.\nElle me l'a dit très souvent, très calmement, et elle avait raison de ne pas pardonner.\nMais elle m'a dit aussi qu'elle ne voulait pas que ça continue après elle.\nQue la colère était à elle, et qu'elle partirait avec elle. »\n\nAdrien a regardé la boîte en fer.\n\n« Pourquoi ne m'avez-vous pas écrit, vous ?\nAprès sa mort ?\nOu avant ? »\n\nFrançoise a mis longtemps à répondre.\n\n« Parce que j'ai eu peur que vous soyez comme eux, a-t-elle dit.\nEt parce que, si je vous avais écrit, vous seriez venu par obligation.\nLà, vous êtes monté quatre étages pour voir des murs.\nCe n'est pas pareil. »",
+  "gloss": {
+    "prévenir": "to let someone know in advance",
+    "faire remarquer": "to point out",
+    "jusqu'au bout": "right to the end",
+    "une boîte en fer": "a tin",
+    "évidemment": "obviously",
+    "une pneumonie": "pneumonia",
+    "le bac": "the baccalauréat, the French school-leaving exam",
+    "compter faire": "to intend to do",
+    "un tapis": "a carpet",
+    "pardonner": "to forgive",
+    "la colère": "anger",
+    "par obligation": "out of duty"
+  },
+  "aloud": [
+    "Les autres regardaient le tapis.",
+    "Personne ne le sait jamais."
+  ],
+  "questions": [
+    {
+      "id": "story-07-01",
+      "type": "mcq",
+      "q": "Au discours direct, « sa mère lui avait tout raconté » correspond à :",
+      "choices": [
+        "« Ma mère m'a tout raconté »",
+        "« Ma mère me racontera tout »",
+        "« Ma mère m'avait tout raconté »",
+        "« Ma mère me raconte tout »"
+      ],
+      "a": 0,
+      "why": "Reported speech pushes one step back: passé composé → plus-que-parfait. It also shifts the pronouns, *ma → sa*, *me → lui*."
+    },
+    {
+      "id": "story-07-02",
+      "type": "fill",
+      "q": "Discours direct : « Je ne pardonnerai pas. » → Elle m'a dit qu'elle ne ___ pas.",
+      "a": [
+        "pardonnerait"
+      ],
+      "loose": true,
+      "why": "Futur → conditionnel présent under a past reporting verb. The conditionnel here is not hypothetical at all: it is simply the past's way of pointing forward."
+    },
+    {
+      "id": "story-07-03",
+      "type": "fill",
+      "q": "Discours direct : « Est-ce qu'il a passé son bac ? » → Elle voulait savoir ___ il avait passé son bac.",
+      "a": [
+        "s'",
+        "si"
+      ],
+      "loose": true,
+      "why": "A yes/no question becomes **si** in reported speech, and the inversion or *est-ce que* disappears entirely."
+    },
+    {
+      "id": "story-07-04",
+      "type": "mcq",
+      "q": "« Elle écrivait deux ou trois fois par an pendant des années. » Pourquoi « pendant » ?",
+      "choices": [
+        "Pendant marque une durée achevée",
+        "Depuis conviendrait mieux",
+        "Pour marque une durée passée",
+        "Il y a marque une durée"
+      ],
+      "a": 0,
+      "why": "*Pendant* = a completed stretch of time. *Depuis* = still going on now. *Pour* = an intended future duration. *Il y a* = ago, a point."
+    },
+    {
+      "id": "story-07-05",
+      "type": "mcq",
+      "q": "Pourquoi la lettre est-elle revenue avec « N'habite plus à l'adresse indiquée » ?",
+      "choices": [
+        "La grand-mère avait déménagé",
+        "La grand-mère a refusé la lettre et a menti à la poste",
+        "L'adresse était fausse",
+        "Odile s'était trompée de rue"
+      ],
+      "a": 1,
+      "why": "The text corrects it immediately: « C'était faux, évidemment. Votre grand-mère habitait là depuis quarante ans. » The refusal is deliberate and it is written down."
+    },
+    {
+      "id": "story-07-06",
+      "type": "fill",
+      "q": "J'ai eu peur que vous ___ comme eux. (être, subjonctif)",
+      "a": [
+        "soyez"
+      ],
+      "loose": true,
+      "why": "*Avoir peur que* takes the subjunctive. In careful written French it may also carry the expletive *ne*: « j'ai eu peur que vous **ne** soyez comme eux », which is not a negation."
+    },
+    {
+      "id": "story-07-07",
+      "type": "mcq",
+      "q": "Pourquoi Françoise n'a-t-elle jamais écrit à Adrien ?",
+      "choices": [
+        "Elle n'avait pas son adresse",
+        "Elle craignait qu'il ressemble à sa famille, et voulait qu'il vienne librement",
+        "Odile le lui avait interdit",
+        "Elle ne savait pas qu'il existait"
+      ],
+      "a": 1,
+      "why": "Her answer is a pattern-three si-clause: « si je vous avais écrit, vous seriez venu par obligation ». She chose a smaller chance of a real visit over a certain dutiful one."
+    },
+    {
+      "id": "story-07-08",
+      "type": "open",
+      "q": "« La colère était à elle, et elle partirait avec elle. » Reformulez cette idée au discours direct, comme Odile l'aurait dite.",
+      "a": [
+        "« La colère est à moi, et elle partira avec moi. » — le passage au discours indirect recule le présent à l'imparfait (est → était) et le futur au conditionnel (partira → partirait), et fait passer moi à elle."
+      ],
+      "why": "Doing the shift backwards is the fastest way to feel the machine. Every reported sentence is a direct one with its tense and its pronouns bent."
+    }
+  ]
+}

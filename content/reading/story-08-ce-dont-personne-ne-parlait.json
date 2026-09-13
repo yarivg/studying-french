@@ -1,0 +1,130 @@
+{
+  "id": "story-08-ce-dont-personne-ne-parlait",
+  "title": "VIII. Ce dont personne ne parlait",
+  "level": "B2",
+  "blurb": "Chapter eight of ten. Adrien reads a 1998 letter his grandmother did send, and the family sentence is finally quoted: ce qui / ce que / ce dont, lequel after prepositions, on, and restriction with ne … que.",
+  "grammar": [
+    "relatifs-composes",
+    "negation-advanced",
+    "passive-on",
+    "relative-pronouns",
+    "register"
+  ],
+  "text": "Il restait une enveloppe au fond de la boîte, plus petite que les autres, et c'était la seule que Françoise n'avait pas sortie.\n\n« Celle-là, c'est la réponse, a-t-elle dit.\nLa seule qu'elle ait jamais reçue.\nJe ne l'ai relue qu'une fois, et il y a longtemps. »\n\nLe papier était fin, l'écriture penchée, appliquée, celle d'une femme pour qui écrire une lettre était un acte sérieux.\nElle tenait en onze lignes.\nAdrien les a lues deux fois, dont la dernière très lentement, et il s'est rendu compte à mi-chemin qu'il retenait son souffle.\n\nOn y trouvait, dans l'ordre : deux phrases sur la santé du mari, une phrase sur le temps qu'il faisait, puis ceci.\n\n« Tu me demandes ce que je pense.\nJe pense que tu as choisi une vie dont on ne parle pas, et je n'ai pas l'intention d'en parler.\nTu seras toujours ma sœur, ce qui ne signifie pas que tu seras reçue ici.\nNous ne dirons rien aux enfants, non pour te protéger, mais pour leur éviter d'avoir à choisir.\nSi tu changes d'avis, la porte est ouverte, et tu sais à quelles conditions.\nNe m'écris plus ce genre de chose. »\n\nSous la signature, une ligne ajoutée après coup, d'une autre encre :\n\n« Je ne dirai pas que je ne t'aime pas. »\n\nAdrien a remis la lettre dans l'enveloppe avec des précautions absurdes, comme si le papier pouvait encore blesser quelqu'un.\n\n« Elle a répondu ? »\n« Une fois, oui.\nDeux lignes, dont je me souviens par cœur : “Les conditions auxquelles tu penses, je ne les remplirai jamais. Embrasse tes enfants.” »\n\nIls sont restés silencieux un moment.\nDans la cour, quelqu'un déplaçait des poubelles, et le bruit montait par la fenêtre ouverte, ce qui rendait le silence de la cuisine encore plus épais.\n\n« C'est ça qui me reste en travers, a dit Françoise, et ce n'est pas ce que vous croyez.\nCe n'est pas la porte fermée.\nC'est la phrase sur les enfants.\n“Pour leur éviter d'avoir à choisir.”\nOn vous a protégés de nous.\nOn a décidé, sans vous demander votre avis, que nous étions quelque chose dont il fallait vous protéger. »\n\nElle a dit ça sans élever la voix, et c'est ce qui l'a rendu insupportable.\n\n« Vous savez ce qui est drôle ? a-t-elle ajouté, avec un mot que la génération d'Odile employait encore : Odile disait toujours que votre grand-mère n'était pas méchante.\nElle disait qu'elle était lâche, ce qui est pire, parce que la méchanceté, au moins, on peut lui répondre. »\n\nAdrien a regardé la boîte, les lettres, la table, la chaise creusée.\n\n« Elle m'a laissé les murs pour que je monte cet escalier, c'est ça ? »\n\nFrançoise a haussé les épaules.\n\n« Je n'en sais rien.\nElle ne m'a pas expliqué.\nC'était bien son genre de préparer quelque chose et de ne le dire à personne. »\n\nPuis, après un temps :\n\n« Il n'y a qu'une chose dont je suis sûre.\nElle savait que la seule façon de vous faire venir, c'était de vous donner quelque chose dont vous ne pourriez rien faire. »",
+  "gloss": {
+    "penché": "slanted",
+    "appliqué": "careful, painstaking",
+    "tenir en": "to fit into",
+    "retenir son souffle": "to hold one's breath",
+    "après coup": "afterwards, after the fact",
+    "une encre": "an ink",
+    "blesser": "to hurt, to wound",
+    "par cœur": "by heart",
+    "remplir une condition": "to meet a condition",
+    "rester en travers": "to stick in one's throat",
+    "insupportable": "unbearable",
+    "lâche": "cowardly",
+    "la méchanceté": "cruelty, spite",
+    "hausser les épaules": "to shrug",
+    "c'était bien son genre": "that was just like her"
+  },
+  "aloud": [
+    "Tu as choisi une vie dont on ne parle pas.",
+    "On vous a protégés de nous."
+  ],
+  "questions": [
+    {
+      "id": "story-08-01",
+      "type": "fill",
+      "q": "Tu as choisi une vie ___ on ne parle pas.",
+      "a": [
+        "dont"
+      ],
+      "loose": true,
+      "why": "*Parler **de** quelque chose* → **dont**. The preposition the verb demands decides the relative pronoun, every time."
+    },
+    {
+      "id": "story-08-02",
+      "type": "fill",
+      "q": "Les conditions ___ tu penses, je ne les remplirai jamais.",
+      "a": [
+        "auxquelles"
+      ],
+      "loose": true,
+      "why": "*Penser **à*** + a plural feminine noun → *à + lesquelles* = **auxquelles**. Contracted forms: *auquel*, *à laquelle*, *auxquels*, *auxquelles*; and *duquel*, *desquels* for *de*."
+    },
+    {
+      "id": "story-08-03",
+      "type": "mcq",
+      "q": "« Tu seras toujours ma sœur, ce qui ne signifie pas que… » Pourquoi « ce qui » ?",
+      "choices": [
+        "Il reprend un nom féminin",
+        "Il reprend toute la proposition précédente et sert de sujet",
+        "Il annonce une question",
+        "Il remplace dont"
+      ],
+      "a": 1,
+      "why": "*Ce qui / ce que / ce dont* stand in for a whole clause rather than a noun. Subject → *ce qui*; object → *ce que*; verb needing *de* → *ce dont*."
+    },
+    {
+      "id": "story-08-04",
+      "type": "mcq",
+      "q": "« On vous a protégés de nous. » Que fait « on » ici ?",
+      "choices": [
+        "Il désigne un groupe précis nommé plus haut",
+        "Il remplace un passif : vous avez été protégés",
+        "Il signifie nous deux",
+        "C'est une faute d'accord"
+      ],
+      "a": 1,
+      "why": "French prefers *on* to the passive. Note the agreement: the direct object *vous* precedes, so the participle agrees — *protégés*."
+    },
+    {
+      "id": "story-08-05",
+      "type": "fill",
+      "q": "Il n'y a ___ une chose dont je suis sûre. (= only one thing)",
+      "a": [
+        "qu'",
+        "que",
+        "qu"
+      ],
+      "loose": true,
+      "why": "*Ne … que* is restriction. It is not a negation: « il n'y a qu'une chose » asserts that the thing exists."
+    },
+    {
+      "id": "story-08-06",
+      "type": "mcq",
+      "q": "Quelle est, selon Françoise, la phrase la plus dure de la lettre ?",
+      "choices": [
+        "« la porte est ouverte »",
+        "« tu ne seras pas reçue ici »",
+        "« pour leur éviter d'avoir à choisir »",
+        "« ne m'écris plus »"
+      ],
+      "a": 2,
+      "why": "Because it is the line that includes Adrien. The exclusion of Odile was one generation's decision; the sentence about the children made it into the next one's inheritance."
+    },
+    {
+      "id": "story-08-07",
+      "type": "mcq",
+      "q": "« Elle était lâche, ce qui est pire. » Quelle est la forme correcte du comparatif de « mauvais » ici ?",
+      "choices": [
+        "plus mauvais",
+        "pire",
+        "plus pire",
+        "le mieux"
+      ],
+      "a": 1,
+      "why": "*Mauvais* → **pire** (adjective), *mal* → **pis** (adverb, now mostly in *tant pis*). *Plus pire* does not exist, any more than *more worse* does."
+    },
+    {
+      "id": "story-08-08",
+      "type": "open",
+      "q": "La lettre finit par « Je ne dirai pas que je ne t'aime pas. » Pourquoi cette double négation, et qu'aurait changé « Je t'aime » ?",
+      "a": [
+        "La double négation permet de ne rien renier sans rien accorder : elle dit l'affection tout en refusant de la formuler, ce qui la garde compatible avec la porte fermée. « Je t'aime » aurait été un engagement, donc une contradiction avec les dix lignes précédentes — et aurait obligé son autrice à choisir, exactement ce qu'elle dit vouloir épargner à ses enfants."
+      ],
+      "why": "The whole letter is written to avoid a choice. The last line is its most honest sentence and its most cowardly one at the same time."
+    }
+  ]
+}

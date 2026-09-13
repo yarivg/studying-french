@@ -1,0 +1,132 @@
+{
+  "id": "story-10-au-fur-et-a-mesure",
+  "title": "X. Au fur et à mesure",
+  "level": "B2",
+  "blurb": "Chapter ten of ten. A year of Saturdays, one signature, and a paragraph in a printed book: durations with depuis, pendant and il y a, comparatives, exclamations, and a first taste of the passé simple.",
+  "grammar": [
+    "time-expressions",
+    "comparatives",
+    "exclamations",
+    "passe-simple",
+    "register",
+    "adverbs-connectors"
+  ],
+  "text": "Ils ont mis presque un an à trouver leur rythme.\n\nAdrien montait à Paris un samedi sur trois, pas davantage, parce que Françoise le lui avait fait remarquer dès le deuxième mois : « Vous venez trop.\nÇa sent l'obligation. »\nIl avait espacé.\nAu fur et à mesure, quelque chose s'était installé qui ne ressemblait ni à une famille ni à une amitié, et qui tenait debout tout seul.\n\nIls déjeunaient.\nIls marchaient jusqu'au marché, qu'elle faisait plus lentement qu'avant, en s'arrêtant devant le poisson sans jamais en acheter.\nIls se disputaient sur la politique, sur les livres, et une fois sérieusement sur la question de savoir s'il fallait remplacer la chaudière.\n\nAu mois de mars, ils sont allés ensemble au cimetière, pour la première fois depuis l'enterrement.\nIl pleuvait, évidemment.\n\n« Elle détestait ce cimetière, a dit Françoise.\nElle disait qu'il était mal tenu.\nIl y a trente ans, elle voulait qu'on la jette dans la Loire.\nEt puis elle a vieilli, et elle a trouvé que ça faisait beaucoup de démarches pour les autres. »\n\nEn avril, Adrien a signé chez Maître Vasseur un document de trois pages.\nIl renonçait, de son vivant, à tout droit de vendre la nue-propriété à un tiers sans l'accord écrit de Françoise Berthier.\nJuridiquement, cela l'appauvrissait.\nLe notaire le lui a dit deux fois, avec la même phrase exactement, pour que ce soit dans le dossier.\n\n« Vous vous rendez compte que vous réduisez volontairement la valeur de votre patrimoine ?\n— Oui.\n— Bien.\nSignez ici. »\n\nQuand Françoise a reçu la copie, elle a téléphoné, ce qui, chez elle, était un événement considérable.\n\n« Qu'est-ce que c'est que cette bêtise ?\n— C'est une garantie.\n— Je n'en avais pas besoin !\nJ'avais déjà l'usufruit, le droit, le notaire, tout.\n— Je sais.\n— Alors pourquoi ?\n— Parce que vous ne saviez pas ce que je ferais.\nMaintenant vous le savez. »\n\nIl y a eu un silence très long.\n\n« Quel imbécile », a-t-elle dit, et elle a raccroché.\nC'était, de très loin, la chose la plus affectueuse qu'elle lui ait jamais dite.\n\nEn juin, elle lui a donné un livre.\nUn essai des années soixante sur les mathématiques, corné, annoté partout au stylo rouge.\nSur la page de garde, une phrase d'Odile, à vingt ans : « Acheté au lieu de déjeuner pendant six jours. »\n\nAdrien l'a ouvert au hasard dans le train du retour.\nLa langue était ancienne, les temps aussi :\n\n« Il regarda le problème pendant toute une nuit. Au matin, il ne le comprenait pas mieux, mais il eut le sentiment très net qu'il ne le craignait plus. »\n\nDans la marge, Odile avait écrit un seul mot : oui.\n\nAdrien a fermé le livre.\nDerrière la vitre, la Bourgogne défilait dans l'autre sens, exactement comme un an plus tôt, et il s'est rendu compte qu'il n'avait toujours pas les clés de l'appartement de la rue Lepic.\nIl ne les aurait sans doute jamais.\nÇa n'avait plus la moindre importance.\n\nLe samedi suivant, en entrant dans la cuisine, il a demandé :\n\n« Vous me montrez, pour le sel dans le café ? »",
+  "gloss": {
+    "davantage": "more, any more than that",
+    "espacer": "to space out, to make less frequent",
+    "tenir debout": "to stand up on its own",
+    "une chaudière": "a boiler",
+    "un enterrement": "a funeral",
+    "mal tenu": "badly kept",
+    "des démarches": "paperwork, formalities",
+    "de son vivant": "during his lifetime",
+    "un tiers": "a third party",
+    "appauvrir": "to make poorer",
+    "un patrimoine": "assets, estate",
+    "corné": "dog-eared",
+    "la page de garde": "the flyleaf",
+    "la marge": "the margin",
+    "une vitre": "a window pane",
+    "la moindre importance": "the slightest importance"
+  },
+  "aloud": [
+    "Ils ont mis presque un an à trouver leur rythme.",
+    "Ça n'avait plus la moindre importance."
+  ],
+  "questions": [
+    {
+      "id": "story-10-01",
+      "type": "fill",
+      "q": "Ils sont allés au cimetière pour la première fois ___ l'enterrement.",
+      "a": [
+        "depuis"
+      ],
+      "loose": true,
+      "why": "*Depuis* = from a point up to now. *Pendant* = a closed stretch. *Il y a* = ago. *Pour* = an intended future length. English collapses all four into \"for\" or \"since\"."
+    },
+    {
+      "id": "story-10-02",
+      "type": "fill",
+      "q": "« Acheté au lieu de déjeuner ___ six jours. » (durée achevée)",
+      "a": [
+        "pendant"
+      ],
+      "loose": true,
+      "why": "A finished duration, wholly in the past → *pendant*. *Depuis* would claim she was still skipping lunch."
+    },
+    {
+      "id": "story-10-03",
+      "type": "mcq",
+      "q": "« Il y a trente ans, elle voulait qu'on la jette dans la Loire. » Que signifie « il y a » ici ?",
+      "choices": [
+        "Il existe",
+        "Depuis trente ans",
+        "Trente ans auparavant",
+        "Pendant trente ans"
+      ],
+      "a": 2,
+      "why": "*Il y a* + a length = **ago**, a point in the past. Do not confuse it with *il y a* = there is, or with *depuis*, which would mean she still wants it."
+    },
+    {
+      "id": "story-10-04",
+      "type": "mcq",
+      "q": "« Quel imbécile ! » — pourquoi pas « Quel un imbécile ! » ?",
+      "choices": [
+        "Parce que quel prend toujours le pluriel",
+        "Parce que quel remplace l'article devant le nom",
+        "Parce que imbécile commence par une voyelle",
+        "Parce que c'est du langage familier"
+      ],
+      "a": 1,
+      "why": "*Quel* takes a noun directly and agrees with it: *Quelle idée !*, *Quels imbéciles !* For a clause you use *Comme* or *Que* : « Comme il est bête ! » And nothing ever inverts."
+    },
+    {
+      "id": "story-10-05",
+      "type": "fill",
+      "q": "Elle faisait le marché plus lentement ___ avant.",
+      "a": [
+        "qu'",
+        "que",
+        "qu"
+      ],
+      "loose": true,
+      "why": "Comparative of an adverb: *plus lentement que*. The irregulars to watch are *bien → mieux* and *bon → meilleur*, never *plus bien* or *plus bon*."
+    },
+    {
+      "id": "story-10-06",
+      "type": "mcq",
+      "q": "Dans la citation du livre, « il regarda » et « il eut » sont :",
+      "choices": [
+        "Du subjonctif",
+        "Du passé simple, temps littéraire équivalent au passé composé",
+        "De l'imparfait",
+        "Du conditionnel"
+      ],
+      "a": 1,
+      "why": "Passé simple: read constantly, spoken never. *Il regarda* = *il a regardé*; *il eut* = *il a eu*. Note that *il ne le comprenait pas* stays imparfait — the background rule is unchanged."
+    },
+    {
+      "id": "story-10-07",
+      "type": "mcq",
+      "q": "Pourquoi Adrien signe-t-il un acte qui diminue la valeur de son bien ?",
+      "choices": [
+        "Pour payer moins d'impôts",
+        "Pour que Françoise sache ce qu'il fera, et non seulement ce qu'il peut faire",
+        "Parce que le notaire l'exige",
+        "Pour obtenir les clés"
+      ],
+      "a": 1,
+      "why": "« Vous ne saviez pas ce que je ferais. Maintenant vous le savez. » He converts a promise into a document, which is precisely what Odile did in 1998."
+    },
+    {
+      "id": "story-10-08",
+      "type": "open",
+      "q": "Le roman se termine sur une question à propos du café. Pourquoi cette fin plutôt qu'une scène au cimetière ou chez le notaire ?",
+      "a": [
+        "Parce que la transmission qui compte n'est ni juridique ni funéraire : demander la recette, c'est accepter d'apprendre quelque chose d'Odile par la personne qu'on avait effacée. La question suppose aussi qu'il reviendra, sans que personne l'ait promis — l'inverse exact du devoir qu'Odile lui interdisait."
+      ],
+      "why": "The salt in the coffee appears in chapter three as a detail and comes back as the ending. That is how a first mention earns its second."
+    }
+  ]
+}

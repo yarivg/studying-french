@@ -1,0 +1,120 @@
+{
+  "id": "story-05-si-j-avais-su",
+  "title": "V. Si j'avais su",
+  "level": "B1",
+  "blurb": "Chapter five of ten. Adrien and his sister argue about money down a bad phone line: the conditionnel, all three si-clause patterns, and what people say they would have done.",
+  "grammar": [
+    "conditionnel",
+    "si-clauses",
+    "futur-simple",
+    "verb-prepositions",
+    "negation"
+  ],
+  "text": "Adrien a appelé Claire du train, quelque part après Le Creusot.\nLa ligne était mauvaise, et ils se sont coupés deux fois avant de vraiment commencer.\n\n« Donc tu hérites d'un appartement à Montmartre, a résumé Claire, et tu ne peux pas y habiter, tu ne peux pas le vendre, tu ne peux pas le louer, et tu dois payer des frais dessus.\n— C'est à peu près ça.\n— Si je te racontais cette histoire, tu ne me croirais pas. »\n\nElle avait raison, et ça l'a fait sourire.\n\n« Qu'est-ce que tu vas faire ?\n— Rien.\nIl n'y a rien à faire.\nSi elle avait voulu me laisser un appartement, elle m'aurait laissé un appartement.\nElle m'a laissé une situation. »\n\nClaire est restée silencieuse une seconde.\nPuis elle a dit la phrase qu'il attendait depuis le début.\n\n« Tu sais qu'il y a des gens qui rachètent ce genre de nue-propriété ?\n— Oui.\n— Tu toucherais peut-être cent cinquante mille, tout de suite.\nPeut-être plus.\n— Peut-être. »\n\n« Adrien.\nAvec cent cinquante mille euros, tu arrêterais de payer un loyer.\nTu achèterais quelque chose à Lyon.\nSi maman avait eu cet argent à ton âge, elle aurait changé de vie. »\n\n« Je sais.\n— Mais tu ne vas pas le faire.\n— Non. »\n\nIl a regardé défiler un champ, puis un autre champ.\n\n« Si je vends, une entreprise rachètera les murs et attendra qu'elle meure.\nIls lui enverront des courriers.\nIls passeront tous les ans pour vérifier l'état du logement.\nUne vieille dame de soixante-treize ans recevrait une lettre par an d'une société qui espère sa mort.\nJe ne peux pas faire ça. »\n\n« Tu l'as rencontrée une heure.\n— Oui.\n— Et elle t'a eu en une heure.\n— Probablement. »\n\nClaire a soupiré.\nCe n'était pas un soupir de colère, plutôt un soupir de sœur.\n\n« Tu lui ressembles, tu sais.\nÀ Odile.\nMaman le disait déjà quand tu avais quinze ans, et ce n'était pas un compliment dans sa bouche. »\n\nAdrien a changé de sujet, parce qu'il ne savait pas quoi faire de cette phrase-là.\n\n« Claire, qu'est-ce qu'elle a fait ?\nTu m'as parlé d'une bêtise.\n— Je t'ai dit ce que je sais.\nRien.\n— Demande à maman.\n— Demande-lui toi-même. »\n\n« Elle ne me répondra pas.\n— Elle ne te répondra pas parce que tu poses la question comme quelqu'un qui accuse.\nSi tu lui demandais gentiment, elle te dirait peut-être quelque chose. »\n\nLe train est entré dans un tunnel et la ligne est tombée.\nQuand elle est revenue, Claire parlait encore, et Adrien n'a entendu que la fin :\n\n« … et franchement, si j'avais su que ça existait, cette histoire, j'aurais posé la question il y a vingt ans. »\n\nIls ont raccroché avant Lyon.\nAdrien a sorti son carnet et il a écrit une seule ligne, qu'il a regardée longtemps sans savoir si c'était une question ou une accusation :\n\nQu'est-ce que la famille lui a fait ?",
+  "gloss": {
+    "se couper": "to be cut off (on the phone)",
+    "toucher": "to receive (money)",
+    "un loyer": "rent",
+    "racheter": "to buy up, to buy out",
+    "un courrier": "a letter, post",
+    "soupirer / un soupir": "to sigh / a sigh",
+    "ressembler à": "to resemble, to look like",
+    "raccrocher": "to hang up",
+    "un carnet": "a notebook",
+    "franchement": "honestly, frankly"
+  },
+  "aloud": [
+    "Il n'y a rien à faire.",
+    "Qu'est-ce que la famille lui a fait ?"
+  ],
+  "questions": [
+    {
+      "id": "story-05-01",
+      "type": "fill",
+      "q": "Si je te racontais cette histoire, tu ne me ___ pas. (croire)",
+      "a": [
+        "croirais"
+      ],
+      "loose": true,
+      "why": "Pattern two: **si + imparfait → conditionnel présent**. Hypothetical, unlikely, present time. Never a conditionnel after *si* itself."
+    },
+    {
+      "id": "story-05-02",
+      "type": "fill",
+      "q": "Si elle avait voulu me laisser un appartement, elle me l'___ laissé.",
+      "a": [
+        "aurait"
+      ],
+      "loose": true,
+      "why": "Pattern three: **si + plus-que-parfait → conditionnel passé**. The past that did not happen. *Aurait*, not *avait*: one letter, and the whole meaning."
+    },
+    {
+      "id": "story-05-03",
+      "type": "mcq",
+      "q": "« Si je vends, une entreprise rachètera les murs. » Quel schéma ?",
+      "choices": [
+        "si + présent → futur : hypothèse réelle",
+        "si + imparfait → conditionnel",
+        "si + plus-que-parfait → conditionnel passé",
+        "aucun des trois"
+      ],
+      "a": 0,
+      "why": "Pattern one, the real one. Adrien is describing something that would actually happen if he chose it, which is exactly why he refuses."
+    },
+    {
+      "id": "story-05-04",
+      "type": "mcq",
+      "q": "Pourquoi Adrien refuse-t-il de vendre la nue-propriété ?",
+      "choices": [
+        "Il n'en a pas le droit",
+        "La somme est trop faible",
+        "Il refuse qu'une société attende la mort de madame Berthier",
+        "Sa sœur le lui interdit"
+      ],
+      "a": 2,
+      "why": "« Une société qui espère sa mort. » The objection is moral, not legal or financial, and the chapter makes sure the financial case is strong first."
+    },
+    {
+      "id": "story-05-05",
+      "type": "fill",
+      "q": "Il ne savait pas quoi faire ___ cette phrase-là.",
+      "a": [
+        "de"
+      ],
+      "loose": true,
+      "why": "*Faire quelque chose **de** quelque chose*. French verbs carry their own preposition and it rarely matches English: *penser à*, *se souvenir de*, *jouer à* / *jouer de*."
+    },
+    {
+      "id": "story-05-06",
+      "type": "mcq",
+      "q": "Que reproche Claire à Adrien à propos de leur mère ?",
+      "choices": [
+        "De ne jamais l'appeler",
+        "De poser ses questions comme une accusation",
+        "De vouloir vendre",
+        "De ressembler à Odile"
+      ],
+      "a": 1,
+      "why": "« Si tu lui demandais gentiment, elle te dirait peut-être quelque chose » — another pattern-two si-clause, used as advice rather than as speculation."
+    },
+    {
+      "id": "story-05-07",
+      "type": "fill",
+      "q": "Franchement, si j'___ su que ça existait, j'aurais posé la question il y a vingt ans.",
+      "a": [
+        "avais"
+      ],
+      "loose": true,
+      "why": "*Si j'avais su* is the regret formula in French, exactly as \"if only I'd known\" is in English. It can even stand alone: « Ah, si j'avais su ! »"
+    },
+    {
+      "id": "story-05-08",
+      "type": "open",
+      "q": "Claire dit à Adrien : « Tu lui ressembles, et ce n'était pas un compliment dans sa bouche. » Que nous apprend cette phrase sur leur mère ?",
+      "a": [
+        "Qu'elle voyait déjà chez Adrien adolescent le trait qu'elle reprochait à Odile — dire ce qu'on pense, ne pas céder — et qu'elle le tenait pour un défaut. La rupture familiale n'était donc pas un accident : c'était un jugement de caractère, transmis d'une génération à l'autre."
+      ],
+      "why": "The sentence does two jobs at once: it tells us about the mother, and it warns us that Adrien is about to repeat something."
+    }
+  ]
+}

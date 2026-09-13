@@ -1,0 +1,130 @@
+{
+  "id": "story-06-il-faut-que",
+  "title": "VI. Il faut que",
+  "level": "B2",
+  "blurb": "Chapter six of ten. A lawyer explains what Adrien is entitled to do, and his mother explains what he ought to do: the subjunctive and its triggers, on both sides of an argument.",
+  "grammar": [
+    "subjonctif-forms",
+    "subjonctif-uses",
+    "verb-prepositions",
+    "conditionnel",
+    "adverbs-ment"
+  ],
+  "text": "L'avocate que Claire lui avait conseillée s'appelait maître Sow, et elle recevait le samedi matin, ce qui, à Lyon, est presque un miracle.\n\n« Il faut que je vous dise d'abord ce que vous pouvez faire, a-t-elle commencé, et ensuite ce que je pense.\nCe sont deux choses différentes, et beaucoup de clients confondent les deux. »\n\nElle a énuméré.\nIl pouvait vendre la nue-propriété, bien que le prix soit toujours décevant.\nIl pouvait attendre, sans rien faire, pourvu qu'il paie sa part des charges et des travaux importants.\nIl pouvait proposer à madame Berthier de lui racheter son usufruit, à condition qu'elle accepte, ce que rien ne l'obligeait à faire.\nIl pouvait enfin contester l'acte de 1998, à supposer qu'il trouve un vice de forme, ce qu'elle jugeait improbable.\n\n« Vous pourriez aussi, a-t-elle ajouté, attendre qu'elle meure.\nJe le dis pour que la liste soit complète, pas pour que vous le fassiez. »\n\n« Et ce que vous pensez ? »\n\nMaître Sow a fermé le dossier.\n\n« Que votre grand-tante savait exactement ce qu'elle faisait, et qu'elle voulait que quelqu'un de sa famille rencontre cette femme avant d'hériter quoi que ce soit.\nElle a réussi.\nIl est rare qu'un acte notarié réussisse quelque chose d'aussi précis vingt-sept ans plus tard. »\n\nLe dimanche, Adrien est allé déjeuner chez sa mère.\n\nIl avait préparé sa phrase pendant tout le trajet, et il l'a quand même mal posée.\nEntre le plat et le fromage, il a dit :\n\n« Je voudrais que tu me parles d'Odile. »\n\nSa mère a continué de couper le pain.\n\n« Il n'y a rien à en dire.\n— Maman.\n— Je ne veux pas qu'on parle de ça à table. »\n\n« Il n'y a que nous à table. »\n\nElle a posé le couteau, lentement, et Adrien a compris qu'il n'aurait pas dû employer ce ton.\nTrop tard : il l'avait employé.\n\n« Tu crois que c'est courageux, ce que tu fais ?\nTu débarques, tu as vu cette femme une heure, et tu viens me demander des comptes chez moi. »\n\n« Je ne te demande pas de comptes.\nJe te demande une explication.\n— C'est le même mot, prononcé autrement. »\n\nElle s'est levée pour aller chercher quelque chose qu'elle n'a pas rapporté.\nQuand elle est revenue s'asseoir, sa voix avait changé : plus basse, plus égale, la voix des choses qu'on a décidé de dire une fois.\n\n« Ma mère avait une sœur, et cette sœur vivait avec une femme.\nVoilà.\nTu voulais un mot, tu l'as.\nEn 1998, quand ta grand-mère l'a appris, elle a demandé à Odile de choisir.\nOdile a choisi.\nCe Noël-là, elle est venue une dernière fois, elle a compris en dix minutes que rien n'avait bougé, et elle est repartie.\nJe n'ai jamais rien fait pour la retenir.\nJ'avais vingt-neuf ans et je n'ai rien dit du tout. »\n\nElle a regardé son fils.\n\n« Alors ne viens pas me demander pourquoi je n'en parle pas.\nIl n'est pas nécessaire que tu comprennes.\nIl suffit que tu saches. »",
+  "gloss": {
+    "conseiller": "to recommend",
+    "confondre": "to mix up, to confuse two things",
+    "énumérer": "to list",
+    "décevant": "disappointing",
+    "les charges": "service charges on a flat",
+    "des travaux": "building work",
+    "contester": "to challenge (legally)",
+    "un vice de forme": "a procedural flaw",
+    "à supposer que": "supposing that",
+    "quoi que ce soit": "anything at all",
+    "un trajet": "a journey",
+    "débarquer": "to turn up unannounced",
+    "demander des comptes": "to demand an explanation, to call to account",
+    "retenir": "to hold back, to stop someone leaving",
+    "il suffit que": "it is enough that"
+  },
+  "aloud": [
+    "Il n'y a que nous à table.",
+    "Je voudrais que tu me parles d'Odile."
+  ],
+  "questions": [
+    {
+      "id": "story-06-01",
+      "type": "fill",
+      "q": "Il faut que je vous ___ d'abord ce que vous pouvez faire. (dire)",
+      "a": [
+        "dise"
+      ],
+      "loose": true,
+      "why": "*Il faut que* triggers the subjunctive. *Dire* is one of the irregulars: *que je dise, que tu dises, que nous disions*."
+    },
+    {
+      "id": "story-06-02",
+      "type": "mcq",
+      "q": "Pourquoi « bien que le prix soit décevant » et non « est décevant » ?",
+      "choices": [
+        "Parce que la phrase est longue",
+        "Parce que bien que exige toujours le subjonctif",
+        "Parce que soit est plus littéraire",
+        "Parce que le prix est incertain"
+      ],
+      "a": 1,
+      "why": "*Bien que* and *quoique* take the subjunctive without exception, even when the fact is certain. *Même si*, which means almost the same thing, takes the indicative — that is why it is the safer tool."
+    },
+    {
+      "id": "story-06-03",
+      "type": "fill",
+      "q": "Je le dis pour que la liste ___ complète. (être)",
+      "a": [
+        "soit"
+      ],
+      "loose": true,
+      "why": "*Pour que*, *afin que*, *à condition que*, *pourvu que*, *avant que*, *sans que* — all purpose and condition conjunctions, all subjunctive."
+    },
+    {
+      "id": "story-06-04",
+      "type": "mcq",
+      "q": "Lequel de ces verbes ne déclenche PAS le subjonctif ?",
+      "choices": [
+        "Je veux que…",
+        "Je voudrais que…",
+        "J'espère que…",
+        "Il est rare que…"
+      ],
+      "a": 2,
+      "why": "*Espérer* is the famous exception: « j'espère qu'il **viendra** », indicative. Wanting, fearing, doubting and judging take the subjunctive; hoping does not."
+    },
+    {
+      "id": "story-06-05",
+      "type": "fill",
+      "q": "Adrien a compris qu'il ___ dû employer ce ton. (= he should not have)",
+      "a": [
+        "n'aurait pas",
+        "naurait pas",
+        "n'aurait pas"
+      ],
+      "loose": true,
+      "why": "**Conditionnel passé de devoir** = should have. *Il n'aurait pas dû*, not *il n'avait pas dû*, which would mean \"he had not had to\"."
+    },
+    {
+      "id": "story-06-06",
+      "type": "mcq",
+      "q": "Que révèle la mère à la fin du chapitre ?",
+      "choices": [
+        "Qu'Odile avait volé de l'argent",
+        "Qu'Odile vivait avec une femme et que sa sœur lui a demandé de choisir",
+        "Qu'Odile n'était pas vraiment de la famille",
+        "Qu'Odile avait un enfant caché"
+      ],
+      "a": 1,
+      "why": "The « bêtise » was a life. The chapter withholds the word *Françoise* here deliberately: Adrien has already had coffee with the answer."
+    },
+    {
+      "id": "story-06-07",
+      "type": "mcq",
+      "q": "« Il n'est pas nécessaire que tu comprennes. Il suffit que tu saches. » Pourquoi deux subjonctifs ?",
+      "choices": [
+        "Ce sont des ordres",
+        "Les tournures impersonnelles de nécessité et de suffisance appellent le subjonctif",
+        "Les verbes comprendre et savoir n'ont pas d'indicatif ici",
+        "Parce que la phrase est négative"
+      ],
+      "a": 1,
+      "why": "*Il est nécessaire / important / possible / dommage que* + subjunctive. Note *que tu saches*, an irregular worth memorising alongside *que je fasse*, *que j'aille*, *que je puisse*."
+    },
+    {
+      "id": "story-06-08",
+      "type": "open",
+      "q": "« Tu voulais un mot, tu l'as. » Pourquoi la mère parle-t-elle si brièvement d'un événement aussi lourd ?",
+      "a": [
+        "Parce que la brièveté est sa défense : elle a passé vingt-sept ans à ne pas dire la phrase, et elle ne la dit qu'une fois, sans détail, pour ne pas avoir à la commenter. Son aveu le plus coûteux n'est d'ailleurs pas sur Odile mais sur elle-même : « je n'ai rien dit du tout. »"
+      ],
+      "why": "Her silence then and her terseness now are the same gesture. The chapter's real confession is her own inaction, not her aunt's life."
+    }
+  ]
+}

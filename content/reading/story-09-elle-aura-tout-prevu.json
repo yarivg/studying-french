@@ -1,0 +1,127 @@
+{
+  "id": "story-09-elle-aura-tout-prevu",
+  "title": "IX. Elle aura tout prévu",
+  "level": "B2",
+  "blurb": "Chapter nine of ten. A second document surfaces at the notary's and Adrien works out what Odile planned: futur antérieur as supposition, infinitif passé, and the three things that end in -ant.",
+  "grammar": [
+    "infinitif-passe",
+    "participe-present",
+    "futur-simple",
+    "conditionnel",
+    "subjonctif-passe"
+  ],
+  "text": "Maître Vasseur a rappelé un mardi, en fin de journée.\n\n« Monsieur Rambert, j'ai une question à vous poser, et elle va vous paraître étrange.\nAvez-vous, depuis notre entretien, posé une question à quelqu'un ?\nUne question qui comptait ? »\n\nAdrien, debout dans sa cuisine, a mis trois secondes à comprendre.\n\n« J'ai demandé à ma mère ce qu'Odile avait fait.\n— Et qu'a-t-elle répondu ?\n— Elle m'a dit la vérité. »\n\nIl y a eu, au bout du fil, un bruit de tiroir.\n\n« Alors je crois que nous y sommes. »\n\nAprès avoir raccroché, Adrien est resté un long moment sans bouger, une main encore sur le plan de travail.\nPuis il a réservé un billet pour le lendemain.\n\nLa lettre faisait une page.\nOdile l'avait écrite en janvier, sachant ce qui l'attendait, d'une écriture encore ferme mais qui hésitait en fin de ligne.\n\n« Adrien,\n\nSi tu lis ceci, c'est que tu as posé la question, et que quelqu'un y a répondu.\nJe ne sais pas qui.\nTa mère, j'espère.\nNe lui en veux pas trop : à vingt-neuf ans, on ne sait pas encore qu'on aura des regrets.\n\nTu te demandes sans doute pourquoi je t'ai fait ça.\nJe vais être honnête, puisque c'est le dernier moment où cela me coûte peu.\nJe ne t'ai rien laissé par affection : je ne te connais pas.\nJe t'ai laissé la nue-propriété parce que tu étais le seul de cette famille à ne m'avoir rien fait.\nTu avais douze ans et tu m'as regardée.\nC'est peu.\nÀ la fin, on travaille avec ce qu'on a.\n\nFrançoise restera chez elle.\nC'est la seule chose qui m'importe, et je l'ai verrouillée il y a vingt-sept ans, en n'ayant confiance en personne.\nSi tu es honnête, tu ne pourras rien faire contre elle.\nSi tu ne l'es pas, tu ne pourras rien faire non plus.\nJ'ai trouvé cela reposant.\n\nLe reste dépend de toi.\nTu auras sans doute déjà calculé ce que vaudrait une vente immédiate.\nQuelqu'un t'aura dit qu'il faut rentabiliser.\nTu feras ce que tu voudras, et je serai morte, ce qui règle la question de mon avis.\n\nUne dernière chose.\nNe fais pas de Françoise un devoir.\nElle déteste ça encore plus que moi, et c'est dire.\nVa la voir seulement si tu en as envie, et si tu n'en as pas envie, ne va pas la voir en te disant que tu le lui dois.\nElle le verra tout de suite.\nElle voit tout tout de suite : c'est très fatigant.\n\nOdile »\n\nAdrien a levé les yeux.\n\n« Elle a écrit ça en janvier, alors qu'elle ne savait pas si je poserais un jour la question. »\n\nMaître Vasseur a rangé le dossier, avec un demi-sourire de notaire, c'est-à-dire presque rien.\n\n« Elle aura pensé que vous la poseriez.\nOu elle aura accepté l'idée que la lettre reste ici.\nLes gens comme elle ne parient pas, monsieur Rambert.\nIls installent une situation, et ils attendent de voir ce que les autres en feront. »",
+  "gloss": {
+    "un entretien": "a meeting, an interview",
+    "au bout du fil": "on the other end of the line",
+    "un tiroir": "a drawer",
+    "le plan de travail": "the kitchen worktop",
+    "sachant": "knowing (present participle of savoir)",
+    "en vouloir à quelqu'un": "to hold it against someone",
+    "verrouiller": "to lock down",
+    "reposant": "restful",
+    "rentabiliser": "to make something pay, to monetise",
+    "régler": "to settle",
+    "et c'est dire": "and that's saying something",
+    "devoir (nom)": "a duty",
+    "parier": "to bet"
+  },
+  "aloud": [
+    "Après avoir raccroché, il a réservé un billet.",
+    "Elle aura pensé que vous la poseriez."
+  ],
+  "questions": [
+    {
+      "id": "story-09-01",
+      "type": "mcq",
+      "q": "« Elle aura pensé que vous la poseriez. » Quelle est la valeur du futur antérieur ici ?",
+      "choices": [
+        "Une action future achevée",
+        "Une supposition sur le passé : elle a dû penser",
+        "Un ordre",
+        "Un passé habituel"
+      ],
+      "a": 1,
+      "why": "French uses the futur antérieur to guess about the past, where English says \"she must have\". Same as *il aura oublié* = he must have forgotten."
+    },
+    {
+      "id": "story-09-02",
+      "type": "fill",
+      "q": "___ avoir raccroché, il a réservé un billet. (= after hanging up)",
+      "a": [
+        "Après",
+        "apres"
+      ],
+      "loose": true,
+      "why": "**Après + infinitif passé**, never *après avoir raccrochant*. And the subject must be the same in both halves, otherwise French needs *après que* + a full clause."
+    },
+    {
+      "id": "story-09-03",
+      "type": "mcq",
+      "q": "Dans « sachant ce qui l'attendait », quelle est la nature de « sachant » ?",
+      "choices": [
+        "Un adjectif verbal, donc variable",
+        "Un participe présent, invariable",
+        "Un gérondif, il manque en",
+        "Un nom"
+      ],
+      "a": 1,
+      "why": "Invariable participe présent, doing the work of a relative clause (*qui savait*). With *en* it would be a gérondif (*en sachant*), and an adjectif verbal would agree: *une femme savante*."
+    },
+    {
+      "id": "story-09-04",
+      "type": "fill",
+      "q": "Je l'ai verrouillée il y a vingt-sept ans, ___ n'ayant confiance en personne. (gérondif)",
+      "a": [
+        "en"
+      ],
+      "loose": true,
+      "why": "**En + participe présent** = the gérondif, saying by what means or at what moment. Its subject is always the subject of the main verb."
+    },
+    {
+      "id": "story-09-05",
+      "type": "mcq",
+      "q": "Pourquoi Odile dit-elle ne rien laisser à Adrien par affection ?",
+      "choices": [
+        "Elle le déteste",
+        "Elle ne le connaît pas et refuse de faire semblant",
+        "Elle préfère sa sœur",
+        "C'est une obligation légale"
+      ],
+      "a": 1,
+      "why": "« Je ne te connais pas… tu étais le seul à ne m'avoir rien fait. » Her bequest is an argument, not a feeling, and she says so to keep it from becoming sentimental."
+    },
+    {
+      "id": "story-09-06",
+      "type": "fill",
+      "q": "Tu étais le seul à ne m'___ rien fait. (infinitif passé de avoir)",
+      "a": [
+        "avoir"
+      ],
+      "loose": true,
+      "why": "*Ne m'avoir rien fait*: in an infinitive, both halves of the negation come **before** the infinitive — *ne rien faire*, *ne jamais avoir vu*, *ne pas être venu*."
+    },
+    {
+      "id": "story-09-07",
+      "type": "mcq",
+      "q": "Quelle instruction Odile donne-t-elle sur Françoise ?",
+      "choices": [
+        "De s'occuper d'elle chaque semaine",
+        "De ne pas faire d'elle un devoir",
+        "De lui racheter son usufruit",
+        "De ne plus jamais la voir"
+      ],
+      "a": 1,
+      "why": "« Ne fais pas de Françoise un devoir. » It is the only thing in the letter phrased as a command, and it forbids obligation rather than imposing one."
+    },
+    {
+      "id": "story-09-08",
+      "type": "open",
+      "q": "« Les gens comme elle ne parient pas. Ils installent une situation. » Appliquez cette phrase à l'acte de 1998 et au legs de 2025.",
+      "a": [
+        "Dans les deux cas Odile ne cherche pas à obtenir un résultat : elle rend certains résultats impossibles. En 1998 elle met Françoise à l'abri d'une famille en la protégeant par le droit plutôt qu'en lui faisant confiance. En 2025 elle donne à Adrien un bien inutilisable, ce qui élimine l'intérêt et ne laisse que le choix. La lettre ne lui demande rien, elle lui retire seulement ses excuses."
+      ],
+      "why": "Both moves have the same shape: remove the options you fear, then leave the person free inside what remains."
+    }
+  ]
+}

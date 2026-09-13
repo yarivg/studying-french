@@ -1,0 +1,133 @@
+{
+  "id": "story-01-l-heritage",
+  "title": "I. L'héritage",
+  "level": "B1",
+  "blurb": "Chapter one of ten. A notary's letter arrives in Lyon about an aunt Adrien had almost forgotten: the passé composé against the imparfait, possessives, and the whole ne … family.",
+  "grammar": [
+    "passe-compose",
+    "imparfait",
+    "imparfait-vs-passe-compose",
+    "possessives",
+    "negation",
+    "articles"
+  ],
+  "text": "La lettre est arrivée un mardi, entre une facture d'électricité et une publicité pour des fenêtres.\nAdrien l'a posée sur la table de la cuisine et il ne l'a pas ouverte tout de suite.\nL'enveloppe était épaisse et portait le nom d'une étude notariale à Paris.\nPersonne ne lui écrivait jamais de Paris.\n\nIl avait trente-quatre ans, il vivait à Lyon depuis huit ans, et sa vie tenait dans un appartement de deux pièces au-dessus d'une boulangerie.\nLe matin, il sentait le pain avant d'entendre son réveil.\nIl travaillait dans un bureau d'études, il aimait son travail sans le trouver passionnant, et il ne se plaignait pas.\nD'ailleurs, il n'avait personne à qui se plaindre.\n\nCe soir-là, il a mangé debout, il a rangé son assiette, puis il a ouvert l'enveloppe.\nLe notaire écrivait quatre phrases et les quatre phrases ont suffi.\nSa grand-tante Odile Rambert était morte au mois de mars.\nElle lui laissait son appartement, rue Lepic, dans le dix-huitième arrondissement de Paris.\n\nAdrien s'est assis.\nIl a relu la deuxième phrase trois fois, parce qu'il ne se souvenait presque pas de cette femme.\nIl avait douze ans la dernière fois qu'il l'avait vue.\nC'était un dimanche de Noël, il faisait froid, et une vieille dame en manteau vert était restée vingt minutes dans l'entrée sans enlever ses gants.\nElle n'avait pas voulu s'asseoir.\nSa mère à lui lui avait parlé à voix basse, dans le couloir, et la vieille dame était repartie avant le dessert.\n\nAprès, on n'a plus prononcé son nom à la maison.\nQuand Adrien posait une question, sa mère répondait « c'est compliqué » et changeait de sujet.\nUn enfant comprend très vite qu'une porte est fermée.\nIl a arrêté de demander, et au fur et à mesure des années, Odile est devenue une histoire que personne ne racontait.\n\nIl a appelé sa sœur.\nClaire a décroché à la deuxième sonnerie, comme toujours.\n« Tu es assise ? » a demandé Adrien.\n« Je conduis.\n— Alors arrête-toi. »\n\nIl lui a lu la lettre.\nIl y a eu un silence, puis Claire a dit quelque chose qu'il n'a pas oublié :\n« Maman m'a dit une fois qu'Odile avait fait une bêtise.\nJe n'ai jamais su laquelle. »\n\nAdrien a regardé par la fenêtre.\nEn bas, le boulanger sortait ses poubelles.\nUn appartement à Paris, rue Lepic, pour un homme qui n'avait jamais eu que des studios loués.\nC'était absurde.\nC'était gratuit.\nC'était à lui.\n\nIl a rappelé le notaire le lendemain matin, à neuf heures précises.\nLa secrétaire lui a demandé son numéro, puis elle a marqué un temps d'arrêt.\n« Monsieur Rambert, il y a une petite difficulté avec le bien.\n— Quel genre de difficulté ?\n— Maître Vasseur préfère vous l'expliquer lui-même.\nVous pouvez venir vendredi ? »\n\nAdrien a dit oui avant de se rendre compte qu'il venait de poser trois jours de congé pour une femme dont il ne savait rien.",
+  "gloss": {
+    "une étude notariale": "a notary's office (in France the notaire handles inheritance and property)",
+    "un bureau d'études": "an engineering / design consultancy",
+    "se plaindre": "to complain",
+    "d'ailleurs": "besides, and in any case",
+    "a suffi": "were enough (suffire)",
+    "des gants": "gloves",
+    "à voix basse": "in a low voice",
+    "au fur et à mesure": "gradually, little by little",
+    "a décroché": "picked up (the phone)",
+    "une sonnerie": "a ring (of the phone)",
+    "une bêtise": "something stupid, a foolish act",
+    "les poubelles": "the bins",
+    "loué": "rented",
+    "le bien": "the property (legal term)",
+    "un congé": "a day off, leave",
+    "se rendre compte": "to realise"
+  },
+  "aloud": [
+    "Personne ne lui écrivait jamais de Paris.",
+    "Elle lui laissait son appartement, rue Lepic."
+  ],
+  "questions": [
+    {
+      "id": "story-01-01",
+      "type": "mcq",
+      "q": "Pourquoi Adrien ne se souvient-il presque pas d'Odile ?",
+      "choices": [
+        "Elle est morte quand il était bébé",
+        "Il ne l'a vue qu'une fois, à douze ans, et on n'en parlait plus ensuite",
+        "Elle vivait à l'étranger",
+        "Sa mère lui a interdit de la voir"
+      ],
+      "a": 1,
+      "why": "The text gives one visit, « il avait douze ans la dernière fois qu'il l'avait vue », then silence at home. Note the plus-que-parfait *l'avait vue*: a past sitting behind another past."
+    },
+    {
+      "id": "story-01-02",
+      "type": "mcq",
+      "q": "Dans « une vieille dame était restée vingt minutes dans l'entrée », pourquoi le plus-que-parfait ?",
+      "choices": [
+        "Parce que c'est une action habituelle",
+        "Parce que l'action se situe avant un autre moment passé déjà installé",
+        "Parce que le verbe est rester",
+        "Parce que la phrase est négative"
+      ],
+      "a": 1,
+      "why": "The narrative is already in the past (that Christmas Sunday). Anything earlier than the reference point steps back to the plus-que-parfait."
+    },
+    {
+      "id": "story-01-03",
+      "type": "fill",
+      "q": "Personne ___ lui écrivait jamais de Paris.",
+      "a": [
+        "ne",
+        "n'"
+      ],
+      "loose": true,
+      "why": "*Personne* is the subject here, but the **ne** is still obligatory. French negation is two-piece even when the second piece is *personne*, *rien* or *jamais* rather than *pas*."
+    },
+    {
+      "id": "story-01-04",
+      "type": "fill",
+      "q": "Elle lui laissait ___ appartement, rue Lepic.",
+      "a": [
+        "son"
+      ],
+      "loose": true,
+      "why": "Possessives agree with the **thing owned**, not the owner. *Appartement* is masculine, so *son*, whatever Odile's gender."
+    },
+    {
+      "id": "story-01-05",
+      "type": "mcq",
+      "q": "« Il travaillait dans un bureau d'études » et « il a ouvert l'enveloppe » : pourquoi deux temps différents ?",
+      "choices": [
+        "Le premier est une erreur",
+        "Le premier décrit un état de fond, le second est un événement ponctuel",
+        "Le passé composé est plus poli",
+        "Le verbe travailler n'a pas de passé composé"
+      ],
+      "a": 1,
+      "why": "Imparfait paints the standing background, passé composé moves the plot one step. This is the whole distinction, and the passage alternates them deliberately."
+    },
+    {
+      "id": "story-01-06",
+      "type": "fill",
+      "q": "Il ___ plaignait pas de son travail.",
+      "a": [
+        "ne se",
+        "ne s'en",
+        "se"
+      ],
+      "loose": true,
+      "why": "*Se plaindre* is reflexive, so the pronoun comes before the verb, and the *ne* comes before that: **ne se plaignait pas**. The full queue is ne + reflexive + verb + pas."
+    },
+    {
+      "id": "story-01-07",
+      "type": "mcq",
+      "q": "Qu'est-ce que la secrétaire annonce à la fin ?",
+      "choices": [
+        "Que l'appartement a été vendu",
+        "Qu'il y a une difficulté avec le bien, que le notaire expliquera lui-même",
+        "Qu'Odile a laissé une dette",
+        "Qu'Adrien doit payer des frais"
+      ],
+      "a": 1,
+      "why": "She says only « il y a une petite difficulté avec le bien » and refuses to go further. The chapter ends on the withheld information."
+    },
+    {
+      "id": "story-01-08",
+      "type": "open",
+      "q": "Résumez en trois phrases ce qu'Adrien sait, et ce qu'il ignore, à la fin du chapitre.",
+      "a": [
+        "Il sait qu'Odile est morte, qu'elle lui a laissé un appartement rue Lepic, et qu'il a rendez-vous vendredi chez le notaire. Il ignore pourquoi sa famille ne parlait plus d'elle, quelle « bêtise » elle avait faite, et ce qu'est la difficulté annoncée par la secrétaire."
+      ],
+      "why": "The chapter is built on that gap. Everything Adrien is given is factual and small; everything withheld is human and large."
+    }
+  ]
+}

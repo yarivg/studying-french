@@ -31,13 +31,17 @@ One JSON file per passage in `content/reading/`, listed in
 ## Writing rules
 
 - **Length by level:** A1 80-120 words, A2 120-180, B1 180-260, B2 260-350.
+  A serialised story is the one exception: a chapter runs 450-550 words, because
+  a plot needs room and the reader is already past the level. Chapters are
+  numbered in the title (`I.`, `II.`) and say which chapter they are in the blurb,
+  since the list groups by level rather than by series.
 - **Only grammar the course has already taught**, and only what the named
   chapters cover. An A1 passage may not use the passé composé.
 - **Vocabulary:** prefer words already in `data/vocab.json`. Anything outside
   it that a learner would not guess belongs in `gloss`.
-- **5 to 7 questions.** At least two must need the passage rather than
-  general knowledge, and at least one must ask about a grammar point rather
-  than the plot. The last one should be `open`.
+- **5 to 7 questions**, or 8 for a story chapter, which is longer. At least
+  two must need the passage rather than general knowledge, and at least one
+  must ask about a grammar point rather than the plot. The last one should be `open`.
 - **Write something worth reading.** A person, a situation, a small turn.
   Not a list of sentences that happen to share a tense.
 - French must be correct, and it must sound like French rather than English

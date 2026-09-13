@@ -1,0 +1,130 @@
+{
+  "id": "story-03-madame-berthier",
+  "title": "III. Madame Berthier",
+  "level": "B1",
+  "blurb": "Chapter three of ten. Over two cups of coffee, a stranger describes the aunt Adrien never knew: the imparfait as portrait, and qui, que, où and dont doing the joining.",
+  "grammar": [
+    "imparfait",
+    "relative-pronouns",
+    "pronouns",
+    "adverbs-connectors",
+    "comparatives"
+  ],
+  "text": "La cuisine donnait sur la cour.\nC'était une pièce étroite, avec une table en formica jaune et deux chaises, dont une était visiblement la sienne : le coussin était creusé à sa forme.\nMadame Berthier a versé le café sans demander à Adrien s'il en voulait.\n\n« Vous prenez du sucre ?\n— Non, merci.\n— Elle non plus. »\n\nElle a dit ça sans le regarder, et Adrien a compris que la conversation avait déjà commencé.\n\nElle s'appelait Françoise Berthier.\nElle avait soixante-treize ans, elle était née à Nantes, et elle vivait dans cet appartement depuis 1998.\nElle parlait lentement, en posant les mots, comme quelqu'un qui a souvent expliqué la même chose à des gens qui écoutaient mal.\n\n« Votre tante avait une façon de faire le café que je n'ai jamais réussi à copier.\nElle mettait une pincée de sel dedans.\nJe trouve toujours ça bizarre, mais je le fais quand même. »\n\nAdrien tenait sa tasse à deux mains.\nIl ne savait pas par où commencer, alors il a commencé par le plus facile.\n\n« Comment était-elle ? »\n\nMadame Berthier a souri, et c'est le seul moment où elle a eu l'air d'avoir soixante-treize ans.\n\n« Difficile.\nDrôle.\nElle était plus drôle que tous les gens que je connais, et elle était beaucoup moins gentille qu'elle en avait l'air.\nElle disait toujours ce qu'elle pensait, ce qui ne l'a pas beaucoup aidée dans la vie. »\n\nElle a expliqué.\nOdile avait été professeur de mathématiques dans un lycée du quatorzième pendant trente et un ans.\nElle corrigeait ses copies à cette table, tous les dimanches, avec un stylo rouge dont elle ne se séparait jamais.\nElle lisait énormément, elle marchait beaucoup, elle détestait le téléphone.\nLe samedi, elles allaient toutes les deux au marché de la rue Lepic, et Odile discutait le prix du poisson alors qu'elle n'en achetait jamais.\n\n« C'est une chose que les gens ne comprenaient pas chez elle.\nElle aimait discuter, pas gagner. »\n\nAdrien écoutait une femme qu'il n'avait vue qu'une fois, dans une entrée, en manteau vert.\n\n« Et ma famille ? » a-t-il demandé.\n\nMadame Berthier a reposé sa tasse.\n\n« Quelle famille ? »\n\nLe silence a duré assez longtemps pour qu'Adrien comprenne qu'il n'y avait pas de piège dans la question.\n\n« Elle ne les voyait plus, a-t-elle repris.\nNi votre grand-mère, qui était sa sœur, ni les autres.\nLa dernière fois qu'elle est allée chez eux, c'était un Noël, et elle est repartie avant le dessert.\nElle est rentrée ici en taxi, ce qui coûtait une fortune à l'époque, et elle n'a pas pleuré.\nElle a dit : “Voilà, c'est fait.”\nEt on n'en a plus jamais parlé. »\n\nAdrien a senti quelque chose se retourner dans sa poitrine.\n\n« J'étais là, ce Noël-là.\nJ'avais douze ans.\nJe me souviens du manteau vert. »\n\nPour la première fois, madame Berthier l'a regardé vraiment.\n\n« Alors vous vous souvenez d'un jour où on l'a mise dehors, a-t-elle dit.\nEt vous ne savez toujours pas pourquoi. »",
+  "gloss": {
+    "donner sur": "to look out onto",
+    "un coussin": "a cushion",
+    "creusé": "hollowed, worn into a shape",
+    "verser": "to pour",
+    "une pincée": "a pinch",
+    "quand même": "all the same, anyway",
+    "une copie": "a pupil's paper, a script",
+    "se séparer de": "to part with",
+    "discuter le prix": "to haggle over the price",
+    "alors que": "whereas, even though",
+    "un piège": "a trap",
+    "reprendre": "to go on, to resume speaking",
+    "la poitrine": "the chest",
+    "mettre quelqu'un dehors": "to throw someone out"
+  },
+  "aloud": [
+    "Elle disait toujours ce qu'elle pensait.",
+    "Vous ne savez toujours pas pourquoi."
+  ],
+  "questions": [
+    {
+      "id": "story-03-01",
+      "type": "fill",
+      "q": "Un stylo rouge ___ elle ne se séparait jamais.",
+      "a": [
+        "dont"
+      ],
+      "loose": true,
+      "why": "*Se séparer **de** quelque chose*. When the relative clause needs *de*, the pronoun is **dont**. That is the whole test: find the preposition the verb demands."
+    },
+    {
+      "id": "story-03-02",
+      "type": "fill",
+      "q": "Une femme ___ il n'avait vue qu'une fois.",
+      "a": [
+        "qu'",
+        "que",
+        "qu"
+      ],
+      "loose": true,
+      "why": "*Voir* takes a direct object, and the gap is that object → **que**. And because *que* precedes the participle, it agrees: *vue*."
+    },
+    {
+      "id": "story-03-03",
+      "type": "mcq",
+      "q": "« Elle disait toujours ce qu'elle pensait, ce qui ne l'a pas beaucoup aidée. » Pourquoi « ce qui » et non « ce que » ?",
+      "choices": [
+        "Parce que la phrase est négative",
+        "Parce que ce qui est sujet du verbe aider",
+        "Parce que ce que ne s'emploie pas après une virgule",
+        "Parce que le verbe est au passé composé"
+      ],
+      "a": 1,
+      "why": "*Ce qui* is the subject of *aider*, *ce que* would be its object. Same split as plain *qui* / *que*, with *ce* standing in for a whole idea rather than a noun."
+    },
+    {
+      "id": "story-03-04",
+      "type": "mcq",
+      "q": "Pourquoi tout le portrait d'Odile est-il à l'imparfait ?",
+      "choices": [
+        "Parce qu'elle est morte",
+        "Parce qu'il décrit des habitudes et des états, pas des événements",
+        "Parce que c'est du discours rapporté",
+        "Parce que l'imparfait est plus poli"
+      ],
+      "a": 1,
+      "why": "*Elle corrigeait, elle lisait, elle marchait, elles allaient au marché* — repeated habit and standing description. The one true event in the passage, « elle est repartie avant le dessert », switches to the passé composé."
+    },
+    {
+      "id": "story-03-05",
+      "type": "fill",
+      "q": "Elle était plus drôle ___ tous les gens que je connais.",
+      "a": [
+        "que",
+        "qu'",
+        "qu"
+      ],
+      "loose": true,
+      "why": "*Plus … que* / *moins … que* / *aussi … que*. The second term of a comparison is always introduced by *que*, never by *de* as in English \"than\"."
+    },
+    {
+      "id": "story-03-06",
+      "type": "mcq",
+      "q": "Que révèle la réponse « Quelle famille ? »",
+      "choices": [
+        "Elle n'a pas entendu la question",
+        "Elle ne connaît pas les Rambert",
+        "Pour Odile, cette famille avait cessé d'exister",
+        "Elle veut changer de sujet"
+      ],
+      "a": 2,
+      "why": "It is not a question, it is a verdict. The passage then confirms it: « Elle ne les voyait plus. »"
+    },
+    {
+      "id": "story-03-07",
+      "type": "fill",
+      "q": "Elle ne voyait plus ___ votre grand-mère ___ les autres. (ni … ni)",
+      "a": [
+        "ni ... ni",
+        "ni",
+        "ni, ni"
+      ],
+      "loose": true,
+      "why": "*Ne … ni … ni* replaces *pas*, and the articles usually drop after it. The *ne* stays: French negation never loses its first half."
+    },
+    {
+      "id": "story-03-08",
+      "type": "open",
+      "q": "Madame Berthier dit qu'Odile « aimait discuter, pas gagner ». En quoi cette phrase éclaire-t-elle la rupture familiale ?",
+      "a": [
+        "Elle suggère qu'Odile n'a pas quitté la famille pour l'emporter dans une dispute, mais parce qu'elle a dit la vérité qu'elle pensait et qu'on ne la lui a pas pardonnée. Le départ n'était pas une victoire : « Voilà, c'est fait » est le constat d'une perte acceptée."
+      ],
+      "why": "The line is the key to her character, and the chapter puts it two paragraphs before the Christmas story on purpose."
+    }
+  ]
+}

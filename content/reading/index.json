@@ -69,6 +69,76 @@
    "title": "La lettre de 1974",
    "level": "B2",
    "blurb": "An unsent letter in the bottom drawer, and a second handwriting at the foot of the last page. Plus-que-parfait, reported speech, participe présent, and lequel after prepositions."
+  },
+  {
+   "id": "story-01-l-heritage",
+   "file": "story-01-l-heritage.json",
+   "title": "I. L'héritage",
+   "level": "B1",
+   "blurb": "Chapter one of ten. A notary's letter arrives in Lyon about an aunt Adrien had almost forgotten: the passé composé against the imparfait, possessives, and the whole ne … family."
+  },
+  {
+   "id": "story-02-la-rue-lepic",
+   "file": "story-02-la-rue-lepic.json",
+   "title": "II. La rue Lepic",
+   "level": "B1",
+   "blurb": "Chapter two of ten. Adrien goes up the hill to the flat that is now his, and someone opens the door from the inside: prepositions, y and en, adjectives, and questions."
+  },
+  {
+   "id": "story-03-madame-berthier",
+   "file": "story-03-madame-berthier.json",
+   "title": "III. Madame Berthier",
+   "level": "B1",
+   "blurb": "Chapter three of ten. Over two cups of coffee, a stranger describes the aunt Adrien never knew: the imparfait as portrait, and qui, que, où and dont doing the joining."
+  },
+  {
+   "id": "story-04-ce-qu-odile-avait-fait",
+   "file": "story-04-ce-qu-odile-avait-fait.json",
+   "title": "IV. Ce qu'Odile avait fait",
+   "level": "B1",
+   "blurb": "Chapter four of ten. The notary lays out a document signed in 1998 and the inheritance changes shape: the plus-que-parfait, the past behind the past, plus dates and legal precision."
+  },
+  {
+   "id": "story-05-si-j-avais-su",
+   "file": "story-05-si-j-avais-su.json",
+   "title": "V. Si j'avais su",
+   "level": "B1",
+   "blurb": "Chapter five of ten. Adrien and his sister argue about money down a bad phone line: the conditionnel, all three si-clause patterns, and what people say they would have done."
+  },
+  {
+   "id": "story-06-il-faut-que",
+   "file": "story-06-il-faut-que.json",
+   "title": "VI. Il faut que",
+   "level": "B2",
+   "blurb": "Chapter six of ten. A lawyer explains what Adrien is entitled to do, and his mother explains what he ought to do: the subjunctive and its triggers, on both sides of an argument."
+  },
+  {
+   "id": "story-07-la-boite-en-fer",
+   "file": "story-07-la-boite-en-fer.json",
+   "title": "VII. La boîte en fer",
+   "level": "B2",
+   "blurb": "Chapter seven of ten. Françoise opens a biscuit tin of letters and thirty years get reported in the past: discours indirect, the tense push-back, and the pronouns that shift with it."
+  },
+  {
+   "id": "story-08-ce-dont-personne-ne-parlait",
+   "file": "story-08-ce-dont-personne-ne-parlait.json",
+   "title": "VIII. Ce dont personne ne parlait",
+   "level": "B2",
+   "blurb": "Chapter eight of ten. Adrien reads a 1998 letter his grandmother did send, and the family sentence is finally quoted: ce qui / ce que / ce dont, lequel after prepositions, on, and restriction with ne … que."
+  },
+  {
+   "id": "story-09-elle-aura-tout-prevu",
+   "file": "story-09-elle-aura-tout-prevu.json",
+   "title": "IX. Elle aura tout prévu",
+   "level": "B2",
+   "blurb": "Chapter nine of ten. A second document surfaces at the notary's and Adrien works out what Odile planned: futur antérieur as supposition, infinitif passé, and the three things that end in -ant."
+  },
+  {
+   "id": "story-10-au-fur-et-a-mesure",
+   "file": "story-10-au-fur-et-a-mesure.json",
+   "title": "X. Au fur et à mesure",
+   "level": "B2",
+   "blurb": "Chapter ten of ten. A year of Saturdays, one signature, and a paragraph in a printed book: durations with depuis, pendant and il y a, comparatives, exclamations, and a first taste of the passé simple."
   }
  ]
 }

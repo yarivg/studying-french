@@ -1,0 +1,138 @@
+{
+  "id": "story-02-la-rue-lepic",
+  "title": "II. La rue Lepic",
+  "level": "B1",
+  "blurb": "Chapter two of ten. Adrien goes up the hill to the flat that is now his, and someone opens the door from the inside: prepositions, y and en, adjectives, and questions.",
+  "grammar": [
+    "prepositions",
+    "y-en",
+    "adjectives",
+    "questions",
+    "il-y-a",
+    "futur-proche"
+  ],
+  "text": "Le vendredi matin, Adrien a pris le premier train pour Paris.\nIl était sept heures douze, il pleuvait sur Lyon, et il n'avait emporté qu'un sac.\nDans le train, il a essayé de travailler, puis il a renoncé et il a regardé défiler la Bourgogne.\nIl n'était pas allé à Paris depuis quatre ans.\n\nLe rendez-vous chez le notaire était à quatorze heures.\nIl avait donc une matinée entière, et il savait déjà ce qu'il allait en faire.\nIl est sorti à Gare de Lyon, il a pris le métro jusqu'à Blanche, et il a remonté la rue Lepic à pied.\n\nLa rue monte.\nElle monte plus qu'on ne l'imagine, elle tourne à mi-chemin, et les touristes s'arrêtent là pour souffler en faisant semblant de photographier quelque chose.\nEn bas, il y avait des primeurs, une poissonnerie, deux cafés pleins à dix heures du matin.\nPlus haut, la rue devenait calme.\n\nLe numéro 47 était une porte bleue, étroite, entre une pharmacie et un magasin de couleurs.\nAdrien a levé la tête.\nCinq étages, des balcons en fer forgé, des fenêtres hautes.\nAu quatrième, à gauche, quelqu'un avait mis des géraniums rouges dans une jardinière.\n\nIl a poussé la porte, qui n'était pas fermée à clé, et il est entré dans la cour.\nIl y avait un vélo, des boîtes aux lettres, et une odeur de cave et de linge propre.\nSur la boîte du quatrième gauche, une étiquette écrite à la main : RAMBERT / BERTHIER.\n\nDeux noms.\nAdrien est resté devant l'étiquette plus longtemps qu'il n'aurait dû.\nBerthier ne lui disait rien du tout.\n\nIl n'avait pas les clés, bien sûr.\nLes clés étaient chez le notaire, et il allait les récupérer l'après-midi même.\nIl voulait seulement voir l'immeuble, se faire une idée, comprendre où il mettait les pieds.\nMais on ne reste pas dix minutes dans une cour sans monter.\n\nL'escalier était en bois, ciré, et il craquait à chaque marche.\nAu quatrième, il s'est arrêté devant la porte de gauche.\nIl allait redescendre.\nIl a sonné.\n\nIl y a eu des pas, lents, sans hésitation, et la porte s'est ouverte.\nUne femme d'environ soixante-dix ans le regardait par-dessus ses lunettes.\nElle portait un gilet gris et tenait un torchon à la main.\nDerrière elle, Adrien a vu un couloir clair, des livres, une plante énorme près de la fenêtre.\nÇa sentait le café.\n\n« C'est pour quoi ? » a-t-elle demandé.\n\nAdrien a ouvert la bouche et n'a rien trouvé de bon à dire.\n\n« Je cherche l'appartement de madame Rambert.\n— Vous l'avez trouvé.\n— Je suis son petit-neveu.\nJe crois que… l'appartement me revient. »\n\nLa femme n'a pas paru surprise.\nElle l'a regardé quelques secondes de plus, elle a posé son torchon sur son épaule, et elle a répondu très calmement :\n\n« Vous devez être Adrien.\nEntrez, il y a du café.\nMais je vous préviens tout de suite : cet appartement est à vous, et j'y habite jusqu'à ma mort. »",
+  "gloss": {
+    "emporter": "to take (something) with you",
+    "renoncer": "to give up",
+    "défiler": "to stream past",
+    "à mi-chemin": "halfway",
+    "souffler": "to catch one's breath",
+    "faire semblant de": "to pretend to",
+    "des primeurs": "a greengrocer's",
+    "une poissonnerie": "a fishmonger's",
+    "un magasin de couleurs": "a paint shop",
+    "en fer forgé": "wrought-iron",
+    "une jardinière": "a window box",
+    "une cave": "a cellar",
+    "le linge": "laundry",
+    "une étiquette": "a label",
+    "ciré": "waxed, polished",
+    "craquer": "to creak",
+    "une marche": "a step",
+    "un gilet": "a cardigan",
+    "un torchon": "a tea towel",
+    "un petit-neveu": "a great-nephew",
+    "revenir à": "to go to, to be due to (someone)",
+    "prévenir": "to warn"
+  },
+  "aloud": [
+    "Il a remonté la rue Lepic à pied.",
+    "Cet appartement est à vous."
+  ],
+  "questions": [
+    {
+      "id": "story-02-01",
+      "type": "mcq",
+      "q": "Pourquoi Adrien monte-t-il rue Lepic avant le rendez-vous ?",
+      "choices": [
+        "Le notaire le lui a demandé",
+        "Il a une matinée libre et veut voir l'immeuble",
+        "Il a déjà les clés",
+        "Il cherche madame Berthier"
+      ],
+      "a": 1,
+      "why": "« Il avait donc une matinée entière » — the keys are still at the notary's, so the visit is pure curiosity, which is what makes the ending land."
+    },
+    {
+      "id": "story-02-02",
+      "type": "fill",
+      "q": "Il savait déjà ce qu'il allait ___ faire.",
+      "a": [
+        "en"
+      ],
+      "loose": true,
+      "why": "*En* replaces **de + something** — here *de cette matinée*. Compare *y*, which replaces **à + something**: *il y est allé*."
+    },
+    {
+      "id": "story-02-03",
+      "type": "mcq",
+      "q": "« Il est sorti à Gare de Lyon » et « il a pris le métro jusqu'à Blanche » : quelle règle gouverne ces prépositions ?",
+      "choices": [
+        "à pour les villes, en pour les pays féminins, jusqu'à pour une limite atteinte",
+        "à s'emploie toujours avec les transports",
+        "jusqu'à est un synonyme de vers",
+        "en s'emploie devant les stations"
+      ],
+      "a": 0,
+      "why": "*À* for cities and points, *jusqu'à* for the limit of a movement. The country rule (*en France*, *au Portugal*, *aux États-Unis*) is the same chapter."
+    },
+    {
+      "id": "story-02-04",
+      "type": "fill",
+      "q": "Complétez : « Il n'avait ___ un sac. » (= only one bag)",
+      "a": [
+        "qu'",
+        "que",
+        "qu"
+      ],
+      "loose": true,
+      "why": "*Ne … que* is restriction, not negation: **only**. It does not take *pas*, and *que* sits immediately before what is being restricted."
+    },
+    {
+      "id": "story-02-05",
+      "type": "mcq",
+      "q": "Sur la boîte aux lettres, pourquoi les deux noms sont-ils importants ?",
+      "choices": [
+        "Odile s'était remariée",
+        "Quelqu'un d'autre vit là et Adrien l'ignorait",
+        "Le notaire s'appelle Berthier",
+        "C'est l'ancienne propriétaire"
+      ],
+      "a": 1,
+      "why": "RAMBERT / BERTHIER is the first crack in the inheritance. The text plants it, then makes Adrien stand in front of it « plus longtemps qu'il n'aurait dû »."
+    },
+    {
+      "id": "story-02-06",
+      "type": "fill",
+      "q": "Il allait redescendre, mais il ___ sonné. (passé composé de sonner)",
+      "a": [
+        "a"
+      ],
+      "loose": true,
+      "why": "*Sonner* takes *avoir*. Note the contrast of tenses around it: *il allait redescendre* (futur proche in the past, an intention) against *il a sonné* (what actually happened)."
+    },
+    {
+      "id": "story-02-07",
+      "type": "mcq",
+      "q": "Comment madame Berthier réagit-elle en apprenant qui est Adrien ?",
+      "choices": [
+        "Elle est surprise et se fâche",
+        "Elle ferme la porte",
+        "Elle l'attendait, l'invite à entrer et pose sa condition",
+        "Elle appelle le notaire"
+      ],
+      "a": 2,
+      "why": "« Vous devez être Adrien » — she knows his name. She has been expecting him, which means she knows more about this family than he does."
+    },
+    {
+      "id": "story-02-08",
+      "type": "open",
+      "q": "« Cet appartement est à vous, et j'y habite jusqu'à ma mort. » Comment ces deux propositions peuvent-elles être vraies en même temps ? Proposez une hypothèse.",
+      "a": [
+        "Elle détient probablement un droit d'usage viager — en droit français, l'usufruit : Odile lui a laissé l'usage du logement à vie, tout en léguant la propriété (la nue-propriété) à Adrien. Il possède les murs, elle possède le droit d'y vivre."
+      ],
+      "why": "French law splits ownership into *nue-propriété* and *usufruit*. The whole plot turns on that split, and chapter four names it."
+    }
+  ]
+}
