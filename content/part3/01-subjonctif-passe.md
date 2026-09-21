@@ -43,6 +43,69 @@ Modern French has only two working subjunctives, present and past, so there is n
 into.
 :::
 
+## Why "present" is a misleading name
+
+The two live subjunctives do not tell you *when* something happened. They tell you *in what
+order* it happened, relative to the main verb. The main verb carries the date; the subjunctive
+only says whether it sits before that date or not.
+
+- **present subjunctive** = not before the main verb
+- **past subjunctive** = before the main verb
+
+So the same form covers three quite different moments, because the anchor moves and the
+subjunctive does not:
+
+::: examples
+Bien qu'elle soit fatiguée, elle travaille. || tired now, working now
+Bien qu'elle soit fatiguée, elle a travaillé. || tired then, worked then
+Bien qu'elle soit fatiguée, elle travaillera. || tired then, will work then
+:::
+
+::: rule The indicative dates, the subjunctive does not
+The indicative asserts facts, and a fact needs a date, so it carries tense. The subjunctive
+asserts nothing: it is the mood of what is doubted, wanted, feared or conceded. A non-assertion
+does not need a date of its own, so it borrows the main verb's.
+
+This is why the subjunctive has two forms where the indicative has eight.
+:::
+
+::: warning There is no future subjunctive
+French never built one. The present subjunctive covers the future too.
+
+*Je pars avant qu'il **arrive**.* - before he arrives, today.
+*Je partirai avant qu'il **arrive**.* - before he arrives, next week.
+
+Same form. Only the main verb moved.
+
+The trap runs the other way after **quand**, **lorsque** and **dès que**, which take the
+**futur de l'indicatif**, never the subjunctive: *Quand il **arrivera**, on mangera.* See the
+chapter on when to use the subjunctive.
+:::
+
+## Choosing when both are grammatical
+
+Both forms will parse. The test is whether the sentence still says something sensible.
+
+::: examples
+Bien qu'elle soit fatiguée, elle travaille. || she is tired while she works: a real concession
+Bien qu'elle ait été fatiguée, elle travaille. || the tiredness is over, so there is nothing left to concede
+:::
+
+The second is well formed and still wrong, because a concession needs an obstacle that is
+actually in the way. Put the obstacle in the past and it stops obstructing.
+
+It becomes good the moment the finished thing leaves a consequence behind:
+
+::: examples
+Bien qu'elle ait été malade toute la semaine, elle a fini le projet. || the illness closed, the finishing is the point
+Je suis content qu'il ait été là. || his being there is over; my gladness is now
+:::
+
+::: note The one question to ask
+Are the two things true at the same moment? Present subjunctive. Did the first one close before
+the second began? Past subjunctive. The tense of the main verb never enters into it.
+:::
+
 ## The four combinations
 
 | Main clause | Subordinate action | Subjunctive |
@@ -146,4 +209,18 @@ Je voulais qu'il ___ (partir). || parte — subjunctive, no backshift
 *Je voulais qu'il vînt.* || Je voulais qu'il vienne.
 *Bien qu'il eût compris…* || Bien qu'il ait compris…
 *Il eût été plus simple.* || Il aurait été plus simple.
+:::
+
+::: exercise Same subordinate, moving anchor
+Bien qu'elle ___ (être) fatiguée, elle travaille. || soit
+Bien qu'elle ___ (être) fatiguée, elle a travaillé. || soit - no backshift, still simultaneous
+Bien qu'elle ___ (être) fatiguée, elle travaillera. || soit - the present subjunctive covers the future
+Bien qu'elle ___ (être) malade toute la semaine, elle a fini le projet. || ait été - the illness closed first
+:::
+
+::: exercise True or false
+There is a future subjunctive in modern French. || False. The present subjunctive covers the future.
+The tense of the main verb decides the tense of the subjunctive. || False. Only the order of the two actions decides it.
+After *quand*, a future meaning takes the subjunctive. || False. It takes the futur de l'indicatif.
+The past subjunctive means the action was in the past. || False. It means the action came before the main verb, wherever that verb sits.
 :::

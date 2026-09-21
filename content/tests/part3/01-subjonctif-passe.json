@@ -167,6 +167,57 @@
         "You choose on order, not on tense: if the subordinate action is simultaneous with or later than the main verb, use the present subjunctive; if it is earlier, use the past subjunctive. J'étais content qu'il vienne is correct because the subjunctive never backshifts the way the indicative does: the coming is still later than the gladness, so the present subjunctive stays."
       ],
       "why": "The whole chapter reduces to this: the indicative shifts with the main verb, the subjunctive shifts with the order of events."
+    },
+    {
+      "id": "subjonctif-passe-16",
+      "type": "mcq",
+      "q": "Which subjunctive tense does a future meaning take?",
+      "choices": [
+        "The present subjunctive - there is no future subjunctive",
+        "The future subjunctive, formed from the futur stem",
+        "The past subjunctive, because the action has not happened",
+        "The imperfect subjunctive"
+      ],
+      "a": 0,
+      "why": "French never built a future subjunctive. Je partirai avant qu'il arrive uses the same form as Je pars avant qu'il arrive; only the main verb moved."
+    },
+    {
+      "id": "subjonctif-passe-17",
+      "type": "fill",
+      "q": "Bien qu'elle ___ (être) fatiguee, elle a travaille.",
+      "a": ["soit"],
+      "loose": true,
+      "why": "The tiredness and the working are simultaneous, so the present subjunctive stays even though the main verb is past. The subjunctive marks order, not date."
+    },
+    {
+      "id": "subjonctif-passe-18",
+      "type": "mcq",
+      "q": "Why is « Bien qu'elle ait ete fatiguee, elle travaille » odd?",
+      "choices": [
+        "The past subjunctive puts the tiredness before the working, so there is no obstacle left to concede",
+        "Bien que takes the indicative, not the subjunctive",
+        "The main verb must be in the past whenever the subjunctive is",
+        "Ait ete is not a real form"
+      ],
+      "a": 0,
+      "why": "The sentence parses, but a concession needs an obstacle still in the way. Close the tiredness off in the past and it stops obstructing the present working."
+    },
+    {
+      "id": "subjonctif-passe-19",
+      "type": "fill",
+      "q": "Quand il ___ (arriver), on mangera.",
+      "a": ["arrivera"],
+      "loose": true,
+      "why": "Quand takes the futur de l'indicatif, never the subjunctive. This is the mirror of avant que, which does take the subjunctive: avant qu'il arrive."
+    },
+    {
+      "id": "subjonctif-passe-20",
+      "type": "open",
+      "q": "The present subjunctive is not really about the present. What does it actually mark, and what carries the time instead?",
+      "a": [
+        "It marks order, not date: the action is not before the main verb. The main verb carries the time, and the subjunctive borrows it, which is why qu'elle soit fatiguee serves elle travaille, elle a travaille and elle travaillera alike. The indicative asserts facts and a fact needs a date, so it carries tense; the subjunctive asserts nothing and needs none."
+      ],
+      "why": "Getting this right collapses the whole topic into one question: are the two actions simultaneous, or did one close before the other began?"
     }
   ]
 }

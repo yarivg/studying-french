@@ -16,7 +16,7 @@
    Bump CACHE_VERSION to force a full refetch.
    ============================================================ */
 
-var CACHE_VERSION = 'le-carnet-v7';
+var CACHE_VERSION = 'le-carnet-v8';
 var SHELL = [
   './',
   'index.html',
