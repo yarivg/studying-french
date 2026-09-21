@@ -27,6 +27,14 @@ window.Selected = (function () {
   var text = '';
   var rect = null;
   var listening = false;
+  // The last gesture that produced a selection. On a phone the operating
+  // system puts its own callout — Copy, Look Up, Share — directly above the
+  // selection, which is exactly where this bubble wants to be, so a touch
+  // selection is served from below instead.
+  var touched = false;
+  // Width only. Mobile browsers fire resize when the URL bar slides away,
+  // which is not a layout change and must not take the bubble with it.
+  var lastWidth = window.innerWidth;
 
   /* ---------------------------------------------------------- what is selected */
 
@@ -73,7 +81,7 @@ window.Selected = (function () {
 
   function paint(extra) {
     var b = ensure();
-    var canSay = window.Say && Say.enabled();
+    var canSay = window.Say && Say.supported() && Say.on();
     var canHear = window.Speech && Speech.supported();
 
     b.innerHTML =
@@ -107,9 +115,18 @@ window.Selected = (function () {
     var min = bar + pad;
 
     var above = rect.top - box.height - 10;
-    // No room above — a selection in the first line of the page — so drop it
-    // under the selection instead of behind the bar.
-    var top = above >= min ? above : rect.bottom + 10;
+    var below = rect.bottom + 12;
+    var top;
+    if (touched) {
+      // Under the selection, clear of the system callout. If there is no room
+      // down there either, above is still better than covered.
+      top = (below + box.height <= window.innerHeight - pad) ? below
+          : (above >= min ? above : below);
+    } else {
+      // No room above — a selection in the first line of the page — so drop it
+      // under the selection instead of behind the bar.
+      top = above >= min ? above : below;
+    }
     // A selection scrolled half under the bar can push it either way; the
     // bubble stays on screen and below the bar whatever the arithmetic says.
     if (top + box.height > window.innerHeight - pad) top = window.innerHeight - box.height - pad;
@@ -121,7 +138,8 @@ window.Selected = (function () {
 
   function show(sel) {
     // Nothing to offer — no voice and no microphone — so no bubble.
-    if (!(window.Say && Say.enabled()) && !(window.Speech && Speech.supported())) return hide();
+    if (!(window.Say && Say.supported() && Say.on()) &&
+        !(window.Speech && Speech.supported())) return hide();
     text = sel.text;
     rect = sel.rect;
     ensure().hidden = false;
@@ -196,7 +214,13 @@ window.Selected = (function () {
     // the score the microphone is about to put there.
     if (listening) return;
     var sel = current();
-    if (sel) show(sel); else hide();
+    if (sel) return show(sel);
+    // On a phone the selection is collapsed by the system the moment you
+    // reach for the bubble, so an empty selection is not a reason to close
+    // one that is already open and holding the text. Touch closes it by the
+    // × , by Escape, or by touching the page somewhere else.
+    if (touched && bubble && !bubble.hidden) return;
+    hide();
   }
 
   function inBubble(el) {
@@ -205,15 +229,39 @@ window.Selected = (function () {
 
   document.addEventListener('mouseup', function (e) {
     if (inBubble(e.target)) return;
+    touched = false;
     setTimeout(settle, 0);
   });
+
+  // Touching the page outside the bubble is what closes it, since the
+  // collapsed selection no longer can. A long press that is about to select
+  // something new closes it too, and settle() opens it again over the new
+  // selection a moment later.
+  document.addEventListener('touchstart', function (e) {
+    touched = true;
+    if (inBubble(e.target) || listening) return;
+    hide();
+  }, { passive: true });
 
   // A touch selection is still being adjusted by the handles when touchend
   // arrives, so this one waits out the gesture rather than reading it early.
   document.addEventListener('touchend', function (e) {
     if (inBubble(e.target)) return;
-    setTimeout(settle, 120);
+    touched = true;
+    setTimeout(settle, 140);
   }, { passive: true });
+
+  // The backstop for the phones. A long-press selection, and every drag of a
+  // selection handle after it, can finish without a touchend this document
+  // ever sees — the gesture belongs to the system, not to the page. This
+  // fires whatever happened, so the bubble appears even when no other event
+  // does, and it is debounced because it also fires on every tick of a drag.
+  var settleTimer = null;
+  document.addEventListener('selectionchange', function () {
+    if (listening) return;
+    clearTimeout(settleTimer);
+    settleTimer = setTimeout(settle, 220);
+  });
 
   document.addEventListener('keyup', function (e) {
     if (e.key === 'Escape') return hide();
@@ -228,6 +276,11 @@ window.Selected = (function () {
   // recording in progress is not interrupted by the click that started it.
   document.addEventListener('mousedown', function (e) {
     if (inBubble(e.target)) return;
+    // On a phone this is the synthetic mousedown behind a tap, and it arrives
+    // after the operating system has already collapsed the selection. Hiding
+    // here would close the bubble on the way to pressing one of its buttons,
+    // so touch is left to selectionchange to decide.
+    if (touched) return;
     hide();
   });
 
@@ -241,6 +294,8 @@ window.Selected = (function () {
   }, { passive: true });
 
   window.addEventListener('resize', function () {
+    if (window.innerWidth === lastWidth) return;   // the URL bar, not a reflow
+    lastWidth = window.innerWidth;
     if (bubble && !bubble.hidden) hide();
   });
 

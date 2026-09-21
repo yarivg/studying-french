@@ -80,7 +80,10 @@ window.Read = (function () {
     return passage.text.split(/\n\s*\n/).map(function (para) {
       var lines = para.split('\n').filter(function (l) { return l.trim(); });
       return '<p class="rd-para">' + lines.map(function (line, i) {
-        return '<span class="rd-line" data-say="' + escapeAttr(line.trim()) + '" tabindex="0" ' +
+        // data-line, not data-say: audio.js claims every [data-say] on the
+        // document and speaks it alone, which would cancel a run of lines
+        // one line in. The reader drives its own playback.
+        return '<span class="rd-line" data-line="' + escapeAttr(line.trim()) + '" tabindex="0" ' +
           'role="button">' + line.trim().split(/(\s+)/).map(function (tok) {
             return /\S/.test(tok)
               ? '<span class="rd-w">' + escapeHtml(tok) + '</span>'
@@ -111,9 +114,10 @@ window.Read = (function () {
           : '') +
         '<div class="rd-toolbar">' +
           (window.Say && Say.supported()
-            ? '<button class="btn" data-act="playall">🔊 Read it to me</button>' +
+            ? '<button class="btn" data-act="playall" id="rdPlay">🔊 Read it to me</button>' +
+              '<button class="btn" data-act="top" id="rdTop" hidden>⤒ From the top</button>' +
               '<button class="btn" data-act="stop">Stop</button>' : '') +
-          '<span class="rd-hint">Tap a line to hear it. Tap a word for the meaning.</span>' +
+          '<span class="rd-hint">Tap a line to read on from there. Tap a word for the meaning.</span>' +
         '</div>' +
         '<div class="rd-text" id="rdText">' + textHtml(passage) + '</div>' +
         '<div class="rd-gloss" id="rdGloss" hidden></div>' +
@@ -144,6 +148,55 @@ window.Read = (function () {
     var text = host.querySelector('#rdText');
     var gloss = host.querySelector('#rdGloss');
 
+    // Where the reading is up to. A passage is long enough that you stop in
+    // the middle of it, and starting again from the first line is not where
+    // you were. This is the resume point: the line you last touched, or the
+    // line the voice had reached when you pressed Stop.
+    var at = 0;
+
+    function lines() {
+      return [].slice.call(text.querySelectorAll('.rd-line'));
+    }
+
+    function clearMarks(ls) {
+      (ls || lines()).forEach(function (l) { l.classList.remove('is-playing'); });
+    }
+
+    // Reflects the resume point in the toolbar: the main button says where it
+    // would start, and the way back to the beginning only exists once you
+    // have left it.
+    function paintControls() {
+      var play = host.querySelector('#rdPlay');
+      var top = host.querySelector('#rdTop');
+      if (play) play.innerHTML = at > 0 ? '🔊 Read on from here' : '🔊 Read it to me';
+      if (top) top.hidden = at <= 0;
+    }
+
+    // Play from line i to the end, each one starting when the last has
+    // finished. `at` tracks the line being spoken, so a Stop halfway leaves
+    // the resume point on the line you actually heard.
+    function playFrom(i) {
+      var ls = lines();
+      if (!ls.length || !(window.Say && Say.supported())) return;
+      if (i < 0) i = 0;
+      if (i >= ls.length) i = 0;
+
+      (function next(k) {
+        clearMarks(ls);
+        if (k >= ls.length) { at = 0; paintControls(); return; }
+        at = k;
+        paintControls();
+        ls[k].classList.add('is-playing');
+        ls[k].scrollIntoView({ block: 'nearest' });
+        Say.speak(ls[k].dataset.line, {
+          onEnd: function (finished) {
+            ls[k].classList.remove('is-playing');
+            if (finished) next(k + 1);
+          }
+        });
+      })(i);
+    }
+
     text.addEventListener('click', function (e) {
       var word = e.target.closest('.rd-w');
       if (word) {
@@ -159,7 +212,7 @@ window.Read = (function () {
         return;
       }
       var line = e.target.closest('.rd-line');
-      if (line && window.Say && Say.supported()) Say.speak(line.dataset.say, {});
+      if (line) playFrom(lines().indexOf(line));
     });
 
     text.addEventListener('keydown', function (e) {
@@ -167,27 +220,17 @@ window.Read = (function () {
       var line = e.target.closest('.rd-line');
       if (!line) return;
       e.preventDefault();
-      if (window.Say && Say.supported()) Say.speak(line.dataset.say, {});
+      playFrom(lines().indexOf(line));
     });
 
-    // Play the lines in order, each one starting when the last has finished.
     host.addEventListener('click', function (e) {
       var b = e.target.closest('[data-act]');
       if (!b) return;
-      if (b.dataset.act === 'stop') return Say.stop();
-      if (b.dataset.act !== 'playall') return;
-      var lines = [].slice.call(text.querySelectorAll('.rd-line'));
-      (function next(i) {
-        if (i >= lines.length) return;
-        lines.forEach(function (l) { l.classList.remove('is-playing'); });
-        lines[i].classList.add('is-playing');
-        Say.speak(lines[i].dataset.say, {
-          onEnd: function (finished) {
-            lines[i].classList.remove('is-playing');
-            if (finished) next(i + 1);
-          }
-        });
-      })(0);
+      var act = b.dataset.act;
+      // Stop keeps the resume point: that is the whole reason it exists.
+      if (act === 'stop') { Say.stop(); clearMarks(); return void paintControls(); }
+      if (act === 'top') { at = 0; return playFrom(0); }
+      if (act === 'playall') return playFrom(at);
     });
   }
 

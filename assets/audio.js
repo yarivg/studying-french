@@ -84,6 +84,13 @@ window.Say = (function () {
   function supported() { return !!synth; }
   function available() { return !!synth && voices.length > 0; }
   function enabled() { return prefs.on && available(); }
+  // Whether the user has the voice switched on, regardless of whether a
+  // French voice has been enumerated yet. Mobile browsers populate
+  // getVoices() late or not at all, and speak() does not need the list: it
+  // falls back to lang="fr-FR" and lets the system choose. Anything that
+  // only needs to know "would speaking work" asks this rather than
+  // enabled(), which would answer no on a phone that speaks perfectly well.
+  function on() { return !!synth && prefs.on; }
 
   /* ---------------------------------------------------------- speaking */
 
@@ -486,6 +493,6 @@ window.Say = (function () {
 
   return {
     setup: setup, hydrate: hydrate, speak: speak, stop: stop,
-    supported: supported, available: available, enabled: enabled
+    supported: supported, available: available, enabled: enabled, on: on
   };
 })();
