@@ -1,0 +1,136 @@
+{
+  "ch": "pronoun-idioms",
+  "title": "Verbs that keep their pronoun",
+  "questions": [
+    {
+      "id": "pronoun-idioms-01",
+      "type": "mcq",
+      "q": "In « Je m'en vais », what does en replace?",
+      "choices": ["Nothing — the expression is frozen", "de la maison", "the place you are going to", "the person you are leaving"],
+      "a": 0,
+      "why": "This is the difference from Chapter 10. In j'en ai besoin the en is recoverable; in s'en aller it replaces nothing and the verb is learned whole, pronoun included."
+    },
+    {
+      "id": "pronoun-idioms-02",
+      "type": "mcq",
+      "q": "« ___ y est, j'ai fini ! »",
+      "choices": ["Ça", "Il", "Ce", "C'en"],
+      "a": 0,
+      "why": "Ça y est is fixed: that's it, done. The y points at nothing in particular, which is what makes it an idiom rather than a replacement."
+    },
+    {
+      "id": "pronoun-idioms-03",
+      "type": "fill",
+      "q": "Complete with the right pronoun: « Ne t'___ fais pas, ça ira. »",
+      "a": ["en"],
+      "why": "S'en faire means to worry, and the en is part of the verb. Ne te fais pas is not French."
+    },
+    {
+      "id": "pronoun-idioms-04",
+      "type": "mcq",
+      "q": "How do you say « He holds it against me » ?",
+      "choices": ["Il m'en veut.", "Il en veut à moi.", "Il me veut en.", "Il y veut à moi."],
+      "a": 0,
+      "why": "En vouloir à quelqu'un takes an indirect object, so the person becomes me / te / lui / leur, never à + stressed pronoun. The person pronoun comes first, en last."
+    },
+    {
+      "id": "pronoun-idioms-05",
+      "type": "fill",
+      "q": "Complete: « Tu t'___ prends mal. » (You're going about it the wrong way.)",
+      "a": ["y"],
+      "why": "S'y prendre is a y expression. Compare s'en prendre à quelqu'un, which is a different verb entirely: to take it out on someone."
+    },
+    {
+      "id": "pronoun-idioms-06",
+      "type": "mcq",
+      "q": "Which sentence is correct French?",
+      "choices": ["Dans ce livre, il s'agit de la guerre.", "Ce livre s'agit de la guerre.", "Ce livre s'agit la guerre.", "Il s'agit ce livre de la guerre."],
+      "a": 0,
+      "why": "S'agir is impersonal: its subject can only be il. A book cannot s'agir of anything. The alternative is ce livre parle de la guerre."
+    },
+    {
+      "id": "pronoun-idioms-07",
+      "type": "fill",
+      "q": "Put s'en aller in the tu imperative: « ___ ! » (Go away!)",
+      "a": ["Va-t'en", "va-t'en", "Va-t'en !", "Vas-t'en"],
+      "why": "Positive command: pronouns go behind, joined by hyphens, and te becomes t' before en. The -s of vas drops in the imperative of aller."
+    },
+    {
+      "id": "pronoun-idioms-08",
+      "type": "mcq",
+      "q": "« Elle ___ sans rien dire. » (She left without saying a thing.)",
+      "choices": ["s'en est allée", "s'est en allée", "est s'en allée", "s'en a allé"],
+      "a": 0,
+      "why": "S'en aller takes être, the participle agrees with the subject, and both pronouns stay in front of the auxiliary — never wrapped around the participle."
+    },
+    {
+      "id": "pronoun-idioms-09",
+      "type": "fill",
+      "q": "Complete: « Je n'___ suis pour rien. » (It's nothing to do with me.)",
+      "a": ["y"],
+      "why": "N'y être pour rien is the standard way to deny responsibility. Je n'en suis pour rien does not exist."
+    },
+    {
+      "id": "pronoun-idioms-10",
+      "type": "mcq",
+      "q": "« J'en ai pour dix minutes » means:",
+      "choices": ["I'll be ten minutes.", "I've had it for ten minutes.", "I want ten minutes of it.", "I've been waiting ten minutes."],
+      "a": 0,
+      "why": "En avoir pour + a length of time is how French says how long something will take you. Nothing in it is deducible from the parts."
+    },
+    {
+      "id": "pronoun-idioms-11",
+      "type": "mcq",
+      "q": "Someone thanks you. Which reply is wrong?",
+      "choices": ["Je vous y prie.", "Je vous en prie.", "De rien.", "Il n'y a pas de quoi."],
+      "a": 0,
+      "why": "Prier quelqu'un de quelque chose gives en, not y. Je t'en prie is the tu version, and de rien is the everyday spoken one."
+    },
+    {
+      "id": "pronoun-idioms-12",
+      "type": "order",
+      "q": "Build: Don't go! (tu)",
+      "words": ["Ne", "t'en", "va", "pas"],
+      "a": ["Ne", "t'en", "va", "pas"],
+      "why": "A negative command drops the hyphens and puts the pronouns back in front of the verb, in the normal order."
+    },
+    {
+      "id": "pronoun-idioms-13",
+      "type": "order",
+      "q": "Build: I'm going to leave.",
+      "words": ["Je", "vais", "m'en", "aller"],
+      "a": ["Je", "vais", "m'en", "aller"],
+      "why": "The pronouns belong to the infinitive and travel with it, so they sit between the conjugated aller and m'en aller — not before vais."
+    },
+    {
+      "id": "pronoun-idioms-14",
+      "type": "fill",
+      "q": "Complete: « J'___ ai marre de ce bruit. »",
+      "a": ["en"],
+      "why": "En avoir marre de is fixed. Same shape as en avoir assez de and ne plus en pouvoir, all of which keep en whatever follows."
+    },
+    {
+      "id": "pronoun-idioms-15",
+      "type": "listen",
+      "say": "Ça en vaut la peine",
+      "q": "Type what you hear.",
+      "a": ["Ça en vaut la peine", "ca en vaut la peine"],
+      "loose": true,
+      "why": "En valoir la peine — to be worth it. The en carries no meaning of its own, which is why it is easy to drop when writing it down."
+    },
+    {
+      "id": "pronoun-idioms-16",
+      "type": "say",
+      "q": "Say it out loud: you'll get used to it.",
+      "target": "Tu t'y feras",
+      "why": "S'y faire, in the futur simple of faire. The t' and y run together as one sound, which is what makes these idioms hard to catch in speech."
+    },
+    {
+      "id": "pronoun-idioms-17",
+      "type": "open",
+      "q": "Give three fixed expressions built on en and three built on y, with a translation each.",
+      "a": ["en: s'en aller (to leave), en vouloir à qqn (to hold a grudge), s'en sortir (to manage) — also s'en faire, en avoir marre, en valoir la peine. y: ça y est (that's it), s'y prendre (to go about it), s'y connaître (to know one's way around) — also y tenir, s'y faire, n'y être pour rien."],
+      "why": "The point of the chapter is that these are vocabulary, not grammar. If you can list them cold, you have done the work."
+    }
+  ]
+}

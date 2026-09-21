@@ -13,7 +13,7 @@ No build step, no dependencies, no tracking. Progress lives in your browser and 
 | | |
 |---|---|
 | **Part I — Foundations** | 22 chapters. Sound, the noun phrase, the present tense, passé composé, futur simple. A1–A2. |
-| **Part II — Building fluency** | 16 chapters. Imparfait, conditionnel, subjonctif, relative pronouns, y/en, comparison. B1. |
+| **Part II — Building fluency** | 18 chapters. Imparfait, conditionnel, subjonctif, relative pronouns, y/en, comparison. B1. |
 | **Part III — Refining** | 9 chapters. Sequence of tenses, reported speech, register, passé simple. B2. |
 | **Part IV — Reference** | Irregular verb tables, a one-page sound cheat sheet, and a study plan. |
 | **Tests** | A drill for every chapter and an exam for every part. Six question types, auto-graded, but you decide what counts as learned. |
@@ -205,8 +205,8 @@ from GitHub Pages or another https host. It cannot work from `file://` or plain 
 
 ### The single file
 
-**`le-carnet-offline.html`** — one file, ~1.1 MB, everything inlined: 50 chapters, 47 test
-banks, 10 reading passages and all 1,493 words. Download it, put it anywhere, open it. No
+**`le-carnet-offline.html`** — one file, ~1.3 MB, everything inlined: 52 chapters, 49 test
+banks, 20 reading passages and all 1,493 words. Download it, put it anywhere, open it. No
 server, no https, no install, no network.
 
 ```sh
