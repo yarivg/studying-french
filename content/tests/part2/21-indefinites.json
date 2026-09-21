@@ -1,0 +1,190 @@
+{
+  "ch": "indefinites",
+  "title": "Someone, something, anything",
+  "questions": [
+    {
+      "id": "indefinites-01",
+      "type": "mcq",
+      "q": "Make it negative: « Je vais quelque part ce week-end. »",
+      "choices": [
+        "Je ne vais pas quelque part ce week-end.",
+        "Je ne vais nulle part ce week-end.",
+        "Je vais nulle part ce week-end.",
+        "Je ne vais rien ce week-end."
+      ],
+      "a": 1,
+      "why": "Each positive has its own negative partner: quelqu'un → personne, quelque chose → rien, quelque part → nulle part. The partner replaces pas, it does not join it."
+    },
+    {
+      "id": "indefinites-02",
+      "type": "fill",
+      "q": "Make it negative: « Quelque chose a changé. » → ___ n'a changé.",
+      "a": [
+        "Rien"
+      ],
+      "why": "Rien and personne can be the subject, and then they come first. The ne stays where it always is, in front of the verb, with nothing behind it."
+    },
+    {
+      "id": "indefinites-03",
+      "type": "mcq",
+      "q": "Which sentence means « It's nothing serious » ?",
+      "choices": [
+        "Ce n'est rien grave.",
+        "Ce n'est rien de grave.",
+        "Ce n'est pas rien de grave.",
+        "Ce n'est rien du grave."
+      ],
+      "a": 1,
+      "why": "An adjective hung on rien, quelque chose, quelqu'un or personne is joined by de. English joins them with nothing at all, which is why the de goes missing."
+    },
+    {
+      "id": "indefinites-04",
+      "type": "fill",
+      "q": "Complete: « J'ai rencontré quelqu'un ___ intéressant. »",
+      "a": [
+        "d'"
+      ],
+      "why": "The linking de elides before a vowel, exactly as elsewhere: quelqu'un d'important, personne d'autre, rien d'utile."
+    },
+    {
+      "id": "indefinites-05",
+      "type": "fill",
+      "q": "Put « belle » in the form this sentence needs: « Elle a dit quelque chose de ___ . »",
+      "a": [
+        "beau"
+      ],
+      "why": "After that de the adjective is always bare masculine singular, whatever it describes. Quelqu'un de gentil is said of a woman too; only quelques-unes, a real plural, forces agreement."
+    },
+    {
+      "id": "indefinites-06",
+      "type": "mcq",
+      "q": "Which sentence is correct?",
+      "choices": [
+        "Tout le monde sont là.",
+        "Tout le monde est là.",
+        "Tous le monde sont là.",
+        "Tout le monde ont compris."
+      ],
+      "a": 1,
+      "why": "The head of tout le monde is monde, a singular noun, so the verb is singular however plural the meaning feels. Chacun behaves the same way: chacun fait ce qu'il veut."
+    },
+    {
+      "id": "indefinites-07",
+      "type": "order",
+      "q": "Build the sentence: Nobody came.",
+      "words": [
+        "Personne",
+        "n'est",
+        "venu"
+      ],
+      "a": [
+        "Personne",
+        "n'est",
+        "venu"
+      ],
+      "why": "As a subject, personne takes the front slot and the ne still leans on the verb. Nothing follows it, because personne is itself the second half of the negation."
+    },
+    {
+      "id": "indefinites-08",
+      "type": "mcq",
+      "q": "Complete: « Prends ___ . » (Take any one of them; the noun has already been said.)",
+      "choices": [
+        "n'importe quel",
+        "n'importe lequel",
+        "n'importe quoi",
+        "n'importe qui"
+      ],
+      "a": 1,
+      "why": "Quel is a determiner and needs its noun beside it; lequel is the pronoun that stands in for a noun already mentioned. Same division as the plain quel / lequel pair."
+    },
+    {
+      "id": "indefinites-09",
+      "type": "fill",
+      "q": "Complete: « Appelle-moi à n'importe ___ heure. »",
+      "a": [
+        "quelle"
+      ],
+      "why": "Here the noun heure is present, so quel is used and agrees with it: feminine singular. With a plural noun it would be n'importe quels jours."
+    },
+    {
+      "id": "indefinites-10",
+      "type": "mcq",
+      "q": "A French friend says « Il dit n'importe quoi. » What does he mean?",
+      "choices": [
+        "He'll say whatever you ask him to",
+        "He's talking rubbish",
+        "He never says anything",
+        "He says something important"
+      ],
+      "a": 1,
+      "why": "N'importe has a neutral reading (prends n'importe lequel, any of them will do) and a dismissive one. With dire, raconter or faire it is almost always the dismissive one: c'est n'importe quoi."
+    },
+    {
+      "id": "indefinites-11",
+      "type": "mcq",
+      "q": "Which sentence means « Each one has their own book » ?",
+      "choices": [
+        "Chaque a son livre.",
+        "Chacun a son livre.",
+        "Chaques ont son livre.",
+        "Chacun ont son livre."
+      ],
+      "a": 1,
+      "why": "Chaque is a determiner and cannot stand without its noun; chacun is the pronoun that replaces it. Both are singular, and chaque has no plural at all."
+    },
+    {
+      "id": "indefinites-12",
+      "type": "fill",
+      "q": "Complete: « Je n'ai lu ___ de ces pages. » (not one of them)",
+      "a": [
+        "aucune"
+      ],
+      "why": "Rien is a pronoun that replaces a whole thing; aucun points back at a noun and agrees with it. Pages is feminine, so aucune. Je n'ai rien lu would say nothing about which pages."
+    },
+    {
+      "id": "indefinites-13",
+      "type": "order",
+      "q": "Build the sentence: There's nobody else here.",
+      "words": [
+        "Il n'y a",
+        "personne",
+        "d'autre",
+        "ici"
+      ],
+      "a": [
+        "Il n'y a",
+        "personne",
+        "d'autre",
+        "ici"
+      ],
+      "why": "Autre is an adjective, so it needs the linking de, elided before its vowel. The ne of il n'y a is what makes personne negative rather than a noun."
+    },
+    {
+      "id": "indefinites-14",
+      "type": "listen",
+      "say": "Personne n'a rien dit.",
+      "q": "Type what you hear, in correct written French.",
+      "a": [
+        "Personne n'a rien dit.",
+        "Personne n'a rien dit"
+      ],
+      "why": "Two negative words, one ne: the subject personne takes the front, rien is a light word so it lands before the participle. Compare je n'ai vu personne, where the heavy word follows it."
+    },
+    {
+      "id": "indefinites-15",
+      "type": "say",
+      "q": "Say the everyday way of dismissing something as nonsense.",
+      "target": "c'est n'importe quoi",
+      "why": "This is the phrase you will hear daily, about a film, an argument or a decision. Its neutral twin, n'importe quoi meaning anything at all, is the same words with a different job."
+    },
+    {
+      "id": "indefinites-16",
+      "type": "open",
+      "q": "Explain how an adjective attaches to quelque chose, rien, quelqu'un and personne. Give the rule, its two mistakes, and one example each.",
+      "a": [
+        "The adjective is joined by de (d' before a vowel) and stays masculine singular: quelque chose de beau, rien de grave, quelqu'un d'intéressant, personne d'autre. Mistake one is dropping the de (quelque chose beau); mistake two is making the adjective agree (quelqu'un d'intelligente). An infinitive takes à instead: quelque chose à manger, rien à faire."
+      ],
+      "why": "The de is invisible in English, so it disappears; the agreement is so drilled elsewhere that it leaks in here. Knowing both failure modes is what stops them."
+    }
+  ]
+}

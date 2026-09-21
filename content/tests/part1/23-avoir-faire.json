@@ -1,0 +1,127 @@
+{
+  "ch": "avoir-faire",
+  "title": "Avoir, faire and the weather",
+  "questions": [
+    {
+      "id": "avoir-faire-01",
+      "type": "mcq",
+      "q": "How do you say « I'm cold » ?",
+      "choices": ["Je suis froid", "J'ai froid", "J'ai le froid", "Je fais froid"],
+      "a": 1,
+      "why": "French treats a bodily state as something you have, so it uses avoir with a bare noun. Je suis froid would describe a cold personality, and il fait froid is the weather, not you."
+    },
+    {
+      "id": "avoir-faire-02",
+      "type": "mcq",
+      "q": "« ___ beau aujourd'hui. » Which one?",
+      "choices": ["Il est", "Il a", "Il fait", "Il y a"],
+      "a": 2,
+      "why": "Beau is an adjective, and an adjective describing the weather needs faire. Il y a only takes a noun with a partitive, as in il y a du soleil."
+    },
+    {
+      "id": "avoir-faire-03",
+      "type": "fill",
+      "q": "J'ai mal ___ tête. (headache)",
+      "a": ["à la", "a la"],
+      "why": "Avoir mal à plus the body part, with à contracting as usual. French uses the definite article here, never a possessive: j'ai mal à ma tête is wrong."
+    },
+    {
+      "id": "avoir-faire-04",
+      "type": "fill",
+      "q": "Il a mal ___ dents depuis hier.",
+      "a": ["aux"],
+      "why": "à + les contracts to aux. Compare j'ai mal au dos, à la gorge, à l'estomac: the contraction follows the gender and number of the body part."
+    },
+    {
+      "id": "avoir-faire-05",
+      "type": "mcq",
+      "q": "How do you say « I'm very hungry » ?",
+      "choices": ["J'ai beaucoup faim", "J'ai très faim", "Je suis très faim", "J'ai très de la faim"],
+      "a": 1,
+      "why": "The bare noun after avoir behaves like an adjective, so it takes très rather than beaucoup. This is the one place très may stand in front of a noun."
+    },
+    {
+      "id": "avoir-faire-06",
+      "type": "fill",
+      "q": "Elle joue ___ piano depuis dix ans.",
+      "a": ["du"],
+      "why": "Jouer de plus an instrument, and de + le contracts to du. Games and sports take the other preposition: jouer au foot, aux cartes."
+    },
+    {
+      "id": "avoir-faire-07",
+      "type": "mcq",
+      "q": "Which sentence is correct for « She plays tennis and the guitar » ?",
+      "choices": ["Elle joue au tennis et de la guitare", "Elle joue du tennis et à la guitare", "Elle joue au tennis et à la guitare", "Elle joue le tennis et la guitare"],
+      "a": 0,
+      "why": "The preposition splits by category, not by sentence: à for a game or sport, de for an instrument. Neither ever takes a bare definite article after jouer."
+    },
+    {
+      "id": "avoir-faire-08",
+      "type": "fill",
+      "q": "Il ___ du vent aujourd'hui, ferme la fenêtre.",
+      "a": ["y a", "fait"],
+      "why": "Vent is a noun with a partitive, so both il y a du vent and il fait du vent work. What you cannot do is drop the partitive: il y a vent and il fait vent are both wrong."
+    },
+    {
+      "id": "avoir-faire-09",
+      "type": "mcq",
+      "q": "Which of these is NOT French?",
+      "choices": ["Il pleut", "Il fait pleuvoir", "Il neige", "Il gèle"],
+      "a": 1,
+      "why": "Pleuvoir, neiger and geler are complete verbs and need no faire. Il fait pleuvoir would mean he makes it rain; faire is only for the adjectives, as in il fait beau."
+    },
+    {
+      "id": "avoir-faire-10",
+      "type": "fill",
+      "q": "Je fais ___ vaisselle après le dîner.",
+      "a": ["la"],
+      "why": "A named household job takes the definite article: faire la vaisselle, la cuisine, le ménage, les courses. An activity you practise takes the partitive instead: faire du sport, de la natation."
+    },
+    {
+      "id": "avoir-faire-11",
+      "type": "listen",
+      "say": "J'ai mal au dos",
+      "q": "Type what you hear.",
+      "a": ["J'ai mal au dos", "j'ai mal au dos", "J'ai mal au dos."],
+      "why": "Le dos is masculine, so à + le gives au. The whole frame is avoir mal à, never être mal or avoir de la douleur."
+    },
+    {
+      "id": "avoir-faire-12",
+      "type": "order",
+      "q": "Build the sentence: I need to leave.",
+      "words": ["J'ai", "besoin", "de", "partir"],
+      "a": ["J'ai", "besoin", "de", "partir"],
+      "why": "Avoir besoin keeps its de, and what follows de is a bare infinitive. The same shape gives j'ai envie de sortir and j'ai hâte de partir."
+    },
+    {
+      "id": "avoir-faire-13",
+      "type": "order",
+      "q": "Build the sentence: We play cards on Sundays.",
+      "words": ["On", "joue", "aux", "cartes", "le", "dimanche"],
+      "a": ["On", "joue", "aux", "cartes", "le", "dimanche"],
+      "why": "Cards is a game, so jouer à, and à + les gives aux. Le dimanche with the definite article means every Sunday, not this one."
+    },
+    {
+      "id": "avoir-faire-14",
+      "type": "mcq",
+      "q": "The coffee is hot, the weather is hot, and you feel hot. Which set is right?",
+      "choices": ["Le café a chaud / il est chaud / je fais chaud", "Le café est chaud / il fait chaud / j'ai chaud", "Le café fait chaud / il a chaud / je suis chaud", "Le café est chaud / il a chaud / je fais chaud"],
+      "a": 1,
+      "why": "Three subjects, three verbs: an object is chaud with être, the weather with faire, a person with avoir. Je suis chaud never means I feel hot."
+    },
+    {
+      "id": "avoir-faire-15",
+      "type": "say",
+      "q": "Say this out loud.",
+      "target": "J'ai de la chance",
+      "why": "Chance is the expression that breaks the bare-noun rule: it keeps its partitive. The negative flattens it to je n'ai pas de chance."
+    },
+    {
+      "id": "avoir-faire-16",
+      "type": "open",
+      "q": "Name the three patterns French uses to talk about the weather, with an example of each, and say what goes wrong when they are crossed.",
+      "a": ["1. il fait + adjective: il fait beau, il fait froid, il fait nuit. 2. il + a weather verb on its own: il pleut, il neige, il gèle. 3. il y a + du / de la / des + noun: il y a du vent, il y a du brouillard, il y a des nuages. Crossing them gives il fait pleuvoir (faire plus a verb), il y a beau (il y a plus an adjective) and il y a vent (the partitive dropped), none of which is French. The overlap is real only for the nouns: il fait du vent and il y a du vent are both said."],
+      "why": "Each weather word belongs to exactly one frame, and English hides that by saying it is for all three. Knowing which word is an adjective and which is a noun is what picks the frame."
+    }
+  ]
+}

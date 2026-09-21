@@ -1,0 +1,216 @@
+{
+  "ch": "mise-en-relief",
+  "title": "Putting the emphasis somewhere",
+  "questions": [
+    {
+      "id": "mise-en-relief-01",
+      "type": "mcq",
+      "q": "How does French stress one word of a sentence?",
+      "choices": [
+        "By rebuilding the sentence around it, usually with c'est ... qui / que",
+        "By saying that word louder, as in English",
+        "By moving that word to the front and changing nothing else",
+        "By repeating the word twice"
+      ],
+      "a": 0,
+      "why": "French word order carries the grammatical roles, so a word cannot simply be moved or shouted. Emphasis is a construction, which is why there are fixed frames to learn."
+    },
+    {
+      "id": "mise-en-relief-02",
+      "type": "mcq",
+      "q": "Stress the subject: « Pierre a cassé le vase. »",
+      "choices": [
+        "C'est Pierre qui a cassé le vase.",
+        "C'est Pierre que a cassé le vase.",
+        "C'est Pierre qu'il a cassé le vase.",
+        "Pierre c'est qui a cassé le vase."
+      ],
+      "a": 0,
+      "why": "Pierre was the subject of casser, so the connector is qui. Qui never elides either, which rules out qu'il here."
+    },
+    {
+      "id": "mise-en-relief-03",
+      "type": "fill",
+      "q": "Stress the object. Complete: « C'est le vase ___ Pierre a cassé. »",
+      "a": [
+        "que",
+        "qu"
+      ],
+      "why": "The choice between qui and que is decided by the role the stressed word played in the plain sentence, not by whether it is a person. The vase was the object, so que."
+    },
+    {
+      "id": "mise-en-relief-04",
+      "type": "fill",
+      "q": "Complete with the right form of avoir: « C'est toi qui ___ raison. »",
+      "a": [
+        "as"
+      ],
+      "why": "Qui passes the person straight through to the verb, so the verb conjugates for toi. C'est is a separate clause and has no say in it."
+    },
+    {
+      "id": "mise-en-relief-05",
+      "type": "mcq",
+      "q": "Which is correct?",
+      "choices": [
+        "C'est moi qui fais la cuisine.",
+        "C'est moi qui fait la cuisine.",
+        "C'est moi qui faire la cuisine.",
+        "C'est je qui fais la cuisine."
+      ],
+      "a": 0,
+      "why": "The commonest error in the whole construction: the verb agrees with the stressed pronoun, never with c'est. And the pronoun in the slot is always the stressed form, so moi, not je."
+    },
+    {
+      "id": "mise-en-relief-06",
+      "type": "fill",
+      "q": "Complete with the right form of être: « C'est nous qui ___ en retard. »",
+      "a": [
+        "sommes"
+      ],
+      "why": "Nous takes sommes even behind c'est. Nous and vous are where the agreement is audible, so they are the forms worth drilling."
+    },
+    {
+      "id": "mise-en-relief-07",
+      "type": "mcq",
+      "q": "Which is the careful written form of « they're the ones who decided »?",
+      "choices": [
+        "Ce sont eux qui ont décidé.",
+        "C'est eux qui a décidé.",
+        "Ce sont eux qui a décidé.",
+        "Ce sommes eux qui ont décidé."
+      ],
+      "a": 0,
+      "why": "Ce sont is used before a plural noun or eux / elles, and the verb after qui still conjugates for eux. Speech says c'est eux everywhere; writing does not."
+    },
+    {
+      "id": "mise-en-relief-08",
+      "type": "fill",
+      "q": "Complete: « C'est à Paris ___ il habite. »",
+      "a": [
+        "qu'",
+        "qu"
+      ],
+      "why": "A place is not a subject, so the connector is que, and que elides before a vowel. Qui in the same slot would never elide."
+    },
+    {
+      "id": "mise-en-relief-09",
+      "type": "mcq",
+      "q": "Which is correct French?",
+      "choices": [
+        "C'est de toi que je parle.",
+        "C'est toi que je parle de.",
+        "C'est toi dont je parle de.",
+        "C'est toi que je parle."
+      ],
+      "a": 0,
+      "why": "The preposition moves into the highlighted slot with its word. French never leaves a preposition stranded at the end of a clause, however normal that is in English."
+    },
+    {
+      "id": "mise-en-relief-10",
+      "type": "mcq",
+      "q": "« ___ j'ai besoin, c'est d'un café. »",
+      "choices": [
+        "Ce dont",
+        "Ce que",
+        "Ce qui",
+        "Ce quoi"
+      ],
+      "a": 0,
+      "why": "Avoir besoin takes de, and ce dont is the form that swallows that de. Look at what the verb on the left demands: subject means ce qui, direct object ce que, de means ce dont."
+    },
+    {
+      "id": "mise-en-relief-11",
+      "type": "fill",
+      "q": "Complete with one short word: « Ce dont j'ai envie, c'est ___ un week-end au calme. »",
+      "a": [
+        "d'",
+        "de"
+      ],
+      "why": "The de that justified ce dont has to reappear on the other side of c'est, because the verb is still avoir envie de. Leaving it out is the standard slip."
+    },
+    {
+      "id": "mise-en-relief-12",
+      "type": "mcq",
+      "q": "Which sentence is wrong?",
+      "choices": [
+        "Je, je pense que c'est une erreur.",
+        "Moi, je pense que c'est une erreur.",
+        "Le film, je l'ai vu hier.",
+        "Je l'ai vu hier, le film."
+      ],
+      "a": 0,
+      "why": "Dislocation puts the stressed form out front (moi, toi, lui, eux) and keeps the ordinary subject pronoun in front of the verb. The doubling is correct and extremely common; only the wrong pronoun form breaks it."
+    },
+    {
+      "id": "mise-en-relief-13",
+      "type": "order",
+      "q": "Build the sentence: I'm the one who paid.",
+      "words": [
+        "C'est",
+        "moi",
+        "qui",
+        "ai",
+        "payé"
+      ],
+      "a": [
+        "C'est",
+        "moi",
+        "qui",
+        "ai",
+        "payé"
+      ],
+      "why": "Two halves: c'est moi, then qui ai payé. The auxiliary is ai and not a because it takes its person from moi."
+    },
+    {
+      "id": "mise-en-relief-14",
+      "type": "order",
+      "q": "Build the split sentence: what I need is a coffee.",
+      "words": [
+        "Ce",
+        "dont",
+        "j'ai",
+        "besoin",
+        "c'est",
+        "d'un",
+        "café"
+      ],
+      "a": [
+        "Ce",
+        "dont",
+        "j'ai",
+        "besoin",
+        "c'est",
+        "d'un",
+        "café"
+      ],
+      "why": "The left half names the topic, the right half after c'est delivers the point, and the de shows up on both sides because avoir besoin de governs the whole thing."
+    },
+    {
+      "id": "mise-en-relief-15",
+      "type": "listen",
+      "say": "C'est toi qui as raison",
+      "q": "Type what you hear.",
+      "a": [
+        "C'est toi qui as raison",
+        "C'est toi qui as raison."
+      ],
+      "why": "Hearing the agreement is the point: as, not a. The verb after qui belongs to the stressed pronoun in front of it."
+    },
+    {
+      "id": "mise-en-relief-16",
+      "type": "say",
+      "q": "Say this out loud, pausing at the comma.",
+      "target": "Ce qui compte c'est l'intention",
+      "why": "The pause is what makes a split sentence work: the left half sets up the topic, the right half lands the emphasis. Ce qui because compte needs a subject."
+    },
+    {
+      "id": "mise-en-relief-17",
+      "type": "open",
+      "q": "Give the four ways of putting something in relief, one example each: a subject, an object or a time, a whole idea, and the spoken pattern.",
+      "a": [
+        "Subject: C'est moi qui fais la cuisine, or Ce sont eux qui ont décidé in writing, with the verb agreeing with the stressed pronoun. Object or time: C'est ce livre que je veux, C'est demain que je pars, C'est à Paris qu'il habite, with any preposition travelling into the slot. Whole idea: Ce qui m'intéresse, c'est la musique / Ce que je veux, c'est partir / Ce dont j'ai besoin, c'est d'un café, choosing by what the verb on the left needs. Spoken: dislocation, Moi, je pense que non, or Le film, je l'ai vu, with the pronoun duplicated on purpose."
+      ],
+      "why": "The four cover almost everything you will hear. Choosing between them is a matter of the grammatical role of the thing you want to stress, and of how formal you are being."
+    }
+  ]
+}

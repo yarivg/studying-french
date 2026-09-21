@@ -28,7 +28,8 @@
     { "slug": "futur-simple", "file": "part1/19-futur-simple.md", "title": "Le futur simple", "level": "A2", "summary": "One set of endings for every verb, plus the irregular stems." },
     { "slug": "imperatif-gerondif", "file": "part1/20-imperatif-gerondif.md", "title": "L'impératif and le gérondif", "level": "A2", "summary": "Giving orders, and saying two things happen at once." },
     { "slug": "adverbs-connectors", "file": "part1/21-adverbs-connectors.md", "title": "Adverbs, frequency and connectors", "level": "A2", "summary": "How often, how well, and the words that glue sentences together." },
-    { "slug": "il-y-a", "file": "part1/22-il-y-a.md", "title": "Il y a", "level": "A1", "summary": "There is, there are, there was — and 'ago'." }
+    { "slug": "il-y-a", "file": "part1/22-il-y-a.md", "title": "Il y a", "level": "A1", "summary": "There is, there are, there was — and 'ago'." },
+    { "slug": "avoir-faire", "file": "part1/23-avoir-faire.md", "title": "Avoir, faire and the weather", "level": "A2", "summary": "The states French has with avoir, the three weather frames, and faire or jouer for what you do." }
    ]
   },
   {
@@ -53,7 +54,10 @@
     { "slug": "passive-on", "file": "part2/15-passive-on.md", "title": "The passive, and on", "level": "B1", "summary": "Why French avoids the passive, and what it uses instead." },
     { "slug": "dates-time", "file": "part2/16-dates-time.md", "title": "Dates, time and ordinals", "level": "B1", "summary": "Telling the time, writing the date, and premier vs deuxième." },
     { "slug": "exclamations", "file": "part2/17-exclamations.md", "title": "Exclamations", "level": "B1", "summary": "Quel takes a noun, que and comme take a clause, and nothing ever inverts." },
-    { "slug": "pronoun-idioms", "file": "part2/18-pronoun-idioms.md", "title": "Verbs that keep their pronoun", "level": "B1", "summary": "s'en aller, il s'agit de, je t'en prie — where en and y replace nothing and the verb is learned whole." }
+    { "slug": "pronoun-idioms", "file": "part2/18-pronoun-idioms.md", "title": "Verbs that keep their pronoun", "level": "B1", "summary": "s'en aller, il s'agit de, je t'en prie — where en and y replace nothing and the verb is learned whole." },
+    { "slug": "mise-en-relief", "file": "part2/19-mise-en-relief.md", "title": "Putting the emphasis somewhere", "level": "B1", "summary": "French cannot stress a word with the voice, so it rebuilds the sentence around it." },
+    { "slug": "impersonal-verbs", "file": "part2/20-impersonal-verbs.md", "title": "Impersonal verbs", "level": "B1", "summary": "Il faut and the whole family whose subject is a placeholder, including which of them take the subjonctif." },
+    { "slug": "indefinites", "file": "part2/21-indefinites.md", "title": "Someone, something, anything", "level": "B1", "summary": "Quelqu'un, rien, nulle part, n'importe quoi, and the de that appears before the adjective." }
    ]
   },
   {

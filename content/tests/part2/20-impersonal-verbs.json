@@ -1,0 +1,192 @@
+{
+  "ch": "impersonal-verbs",
+  "title": "Impersonal verbs",
+  "questions": [
+    {
+      "id": "impersonal-verbs-01",
+      "type": "mcq",
+      "q": "In « Il faut partir », what does the « il » refer to?",
+      "choices": [
+        "The person being spoken to",
+        "Nothing at all - it is a placeholder subject",
+        "The speaker, as a polite form",
+        "Whatever noun came before it"
+      ],
+      "a": 1,
+      "why": "A French verb cannot stand without a subject, so an impersonal verb is given a dummy il. Because it stands for nothing, the verb has nothing to agree with and never leaves the third person singular."
+    },
+    {
+      "id": "impersonal-verbs-02",
+      "type": "mcq",
+      "q": "Which conjugation of « falloir » exists?",
+      "choices": [
+        "je faux",
+        "nous fallons",
+        "il faut, and nothing else",
+        "elle faut, alongside il faut"
+      ],
+      "a": 2,
+      "why": "Falloir is defective: it is only ever used impersonally, so it has one person in each tense. Even the feminine is impossible, since the subject is not a person."
+    },
+    {
+      "id": "impersonal-verbs-03",
+      "type": "fill",
+      "q": "« Il ___ que tu fasses attention. » (necessity, present)",
+      "a": [
+        "faut"
+      ],
+      "why": "Il faut que is the commonest subjunctive trigger in French. The que is what forces fasses: without a named person you would say il faut faire attention."
+    },
+    {
+      "id": "impersonal-verbs-04",
+      "type": "mcq",
+      "q": "What does « Il ne faut pas fumer ici » mean?",
+      "choices": [
+        "You don't have to smoke here",
+        "You mustn't smoke here",
+        "Nobody smokes here",
+        "There's no smoking area here"
+      ],
+      "a": 1,
+      "why": "Negated, il faut becomes a prohibition, not the removal of an obligation. For you don't have to, French switches expression: tu n'es pas obligé de, ce n'est pas la peine de."
+    },
+    {
+      "id": "impersonal-verbs-05",
+      "type": "fill",
+      "q": "« Il faut que je ___ (partir) maintenant. »",
+      "a": [
+        "parte"
+      ],
+      "why": "After il faut que the verb goes to the subjunctive, and the indicative je pars is the single most frequent error in the language. The escape route, if the form will not come, is je dois partir."
+    },
+    {
+      "id": "impersonal-verbs-06",
+      "type": "order",
+      "q": "Build the sentence: There are two seats left.",
+      "words": [
+        "Il",
+        "reste",
+        "deux",
+        "places"
+      ],
+      "a": [
+        "Il",
+        "reste",
+        "deux",
+        "places"
+      ],
+      "why": "The grammatical subject is the dummy il and deux places is the logical subject, sitting after the verb. That is why the verb stays singular however large the quantity is."
+    },
+    {
+      "id": "impersonal-verbs-07",
+      "type": "mcq",
+      "q": "Which sentence is correct?",
+      "choices": [
+        "Ils restent deux places",
+        "Il reste deux places",
+        "Deux places il reste",
+        "Elles restent deux places"
+      ],
+      "a": 1,
+      "why": "Nothing standing after an impersonal verb can pull it into the plural: the verb answers to il. The same holds for il manque trois pages and il y a dix livres."
+    },
+    {
+      "id": "impersonal-verbs-08",
+      "type": "fill",
+      "q": "« Il ___ faut du temps. » (I need time)",
+      "a": [
+        "me"
+      ],
+      "why": "With a noun, il faut means it takes, and the person who needs it is an indirect object placed before the verb: il me faut, il nous faut, il leur faut. Never il faut à moi, and never je faux."
+    },
+    {
+      "id": "impersonal-verbs-09",
+      "type": "listen",
+      "say": "Il vaut mieux attendre.",
+      "q": "Type what you hear.",
+      "a": [
+        "Il vaut mieux attendre",
+        "Il vaut mieux attendre."
+      ],
+      "why": "Il vaut mieux takes a bare infinitive, with no preposition: il vaut mieux d'attendre is wrong, exactly as il faut attendre takes none."
+    },
+    {
+      "id": "impersonal-verbs-10",
+      "type": "fill",
+      "q": "« Il vaut mieux que tu ___ (partir). »",
+      "a": [
+        "partes"
+      ],
+      "why": "Il vaut mieux behaves like il faut: infinitive when nobody is named, que plus subjunctive when someone is. The choice is about who is doing it, not about the verb itself."
+    },
+    {
+      "id": "impersonal-verbs-11",
+      "type": "say",
+      "q": "Say this out loud: It took two hours. (with falloir)",
+      "target": "il a fallu deux heures",
+      "why": "Falloir is conjugated in the ordinary tenses, only always in the third person singular: il fallait, il a fallu, il faudra, il faudrait. The passé composé takes avoir."
+    },
+    {
+      "id": "impersonal-verbs-12",
+      "type": "mcq",
+      "q": "Which pair is correct?",
+      "choices": [
+        "Il paraît qu'il soit malade / il semble qu'il est malade",
+        "Il paraît qu'il est malade / il semble qu'il soit malade",
+        "Both take the subjunctive",
+        "Both take the indicative"
+      ],
+      "a": 1,
+      "why": "Il paraît que passes a report on as fact, so it asserts and takes the indicative. Il semble que holds the claim at arm's length, and unasserted content takes the subjunctive."
+    },
+    {
+      "id": "impersonal-verbs-13",
+      "type": "fill",
+      "q": "« Il est possible qu'elle ___ (venir) demain. »",
+      "a": [
+        "vienne"
+      ],
+      "why": "Possible establishes nothing, so the subjunctive follows. Probable is confident enough to count as an assertion, which is why il est probable qu'elle viendra keeps the indicative."
+    },
+    {
+      "id": "impersonal-verbs-14",
+      "type": "order",
+      "q": "Build the sentence: All you have to do is ask.",
+      "words": [
+        "Il",
+        "suffit",
+        "de",
+        "demander"
+      ],
+      "a": [
+        "Il",
+        "suffit",
+        "de",
+        "demander"
+      ],
+      "why": "Il suffit de is enough plus what is enough, and it keeps its de before an infinitive or a noun: il suffit d'appuyer, il suffit de deux heures."
+    },
+    {
+      "id": "impersonal-verbs-15",
+      "type": "mcq",
+      "q": "How do you say « This book is about the war »?",
+      "choices": [
+        "Ce livre s'agit de la guerre",
+        "Dans ce livre, il s'agit de la guerre",
+        "Ce livre il s'agit de la guerre",
+        "La guerre s'agit de ce livre"
+      ],
+      "a": 1,
+      "why": "S'agir only ever takes the impersonal il as its subject, so no book, film or article can be put in front of it. The everyday alternative is ce livre parle de la guerre."
+    },
+    {
+      "id": "impersonal-verbs-16",
+      "type": "open",
+      "q": "Rewrite these without a subjunctive: « Il faut que tu partes. » « Il vaut mieux que nous attendions. » « Il est possible qu'il vienne. »",
+      "a": [
+        "Tu dois partir (or il faut partir). Il vaut mieux attendre (or nous ferions mieux d'attendre). Il viendra peut-être (or il va peut-être venir)."
+      ],
+      "why": "Drop the named person and the que goes with it, leaving an infinitive; or swap the impersonal frame for a modal verb or an adverb. Native speakers restructure this way constantly rather than reaching for a form they are unsure of."
+    }
+  ]
+}
