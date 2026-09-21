@@ -1872,8 +1872,10 @@
 
     // A word heard in passing should cost one key. Not while something is
     // being typed, and not while a test is taking the digits.
+    // v for vocabulaire is the one to reach for; n still works because it
+    // was the original and fingers remember.
     document.addEventListener('keydown', function (e) {
-      if (e.key !== 'n' && e.key !== 'N') return;
+      if (!/^[vn]$/i.test(e.key)) return;
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       if (/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) return;
       e.preventDefault();
@@ -1885,15 +1887,20 @@
 
   function setupSearch() {
     var input = document.getElementById('globalSearch');
+    labelSearchKey();
     var results = document.getElementById('searchResults');
     var timer = null;
 
+    // Cmd+K, the shortcut every search box now answers to, and / for the
+    // hands already on the keyboard. Cmd+K is claimed by the browser's own
+    // search bar, so it has to be taken before the browser sees it.
     document.addEventListener('keydown', function (e) {
-      if (e.key === '/' && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) {
-        e.preventDefault();
-        input.focus();
-        input.select();
-      }
+      var typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName);
+      var combo = (e.metaKey || e.ctrlKey) && !e.altKey && /^k$/i.test(e.key);
+      if (!combo && !(e.key === '/' && !typing)) return;
+      e.preventDefault();
+      input.focus();
+      input.select();
     });
 
     input.addEventListener('input', function () {
@@ -1913,6 +1920,15 @@
         if (first) { location.hash = first.getAttribute('href'); input.blur(); closeSearch(); }
       }
     });
+  }
+
+  // The hint in the box names the shortcut the user actually has: a Mac
+  // reads ⌘K, everything else Ctrl K.
+  function labelSearchKey() {
+    var hint = document.querySelector('.topbar-search kbd');
+    if (!hint) return;
+    var mac = /Mac|iPhone|iPad|iPod/.test(navigator.platform || navigator.userAgent);
+    hint.textContent = mac ? '⌘K' : 'Ctrl K';
   }
 
   function closeSearch() {
