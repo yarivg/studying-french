@@ -28,8 +28,12 @@ sittings. The in-app Part I exam, which covers all 22 chapters rather than the
 first 16, is at 95% best of 2 and self-marked confident: Part I is closed.
 Then `drill-traduction`, English → French: 3 of 21 right first time, 21/21 after
 45 graded passes. Part II is open: `imparfait` and
-`imparfait-vs-passe-compose` are both marked done. The running log is kept outside the repo, in the session
-scratchpad, as `french-progress-log.md`.
+`imparfait-vs-passe-compose` are both marked done. The Part II production drill
+(36 sentences, English to French) closed at 36/36 on 2026-09-25 after 76 attempts.
+
+Every closed sitting is written up in `study-log/`: the score run, the ranked error
+themes, the full bank, and the wrong answers worth keeping. Read the latest one
+before building a new drill - it names what still fails and what the key got wrong.
 
 ### Exam pages
 
