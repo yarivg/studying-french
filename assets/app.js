@@ -1764,19 +1764,30 @@
 
     function close() {
       if (menu.hidden) return;
+      if (window.Speech) Speech.stop();
       menu.hidden = true;
       menu.innerHTML = '';
       btn.setAttribute('aria-expanded', 'false');
     }
 
-    function open() {
+    // prefill: { fr, full, dropped } from Vocab.baseForm, when a word tapped
+    // on a page is what opened this.
+    function open(prefill) {
+      prefill = prefill || {};
+      if (window.Speech) Speech.stop();
       menu.hidden = false;
       btn.setAttribute('aria-expanded', 'true');
       menu.innerHTML =
         '<div class="qa-head"><strong>Add a word</strong>' +
           '<span class="qa-hint">Enter to add · Esc to close</span></div>' +
-        '<input id="qaFr" class="qa-in" placeholder="le brouillard" autocomplete="off" ' +
-          'spellcheck="false" aria-label="French">' +
+        '<div class="qa-field">' +
+          '<input id="qaFr" class="qa-in" placeholder="le brouillard" autocomplete="off" ' +
+            'spellcheck="false" aria-label="French">' +
+          (window.Speech && Speech.supported()
+            ? '<button type="button" class="qa-tool" id="qaMic" title="Say the word" ' +
+              'aria-label="Say the French word">🎤</button>' : '') +
+        '</div>' +
+        '<p class="qa-drop" id="qaDrop" hidden></p>' +
         '<input id="qaEn" class="qa-in" placeholder="fog" autocomplete="off" aria-label="English">' +
         '<p class="qa-note" id="qaNote">Two fields, that is all: the type, the gender and the ' +
           'theme are read off the French.</p>' +
@@ -1787,7 +1798,21 @@
 
       var fr = menu.querySelector('#qaFr');
       var en = menu.querySelector('#qaEn');
-      fr.focus();
+      var drop = menu.querySelector('#qaDrop');
+      if (prefill.fr) {
+        fr.value = prefill.fr;
+        // What came off the front, and a way to put it back: "qu'il" is
+        // rarely the word you meant, but "d'abord" is.
+        if (prefill.dropped && prefill.dropped.length) {
+          drop.hidden = false;
+          drop.innerHTML = 'Dropped <strong>' + escapeHtml(prefill.dropped.join(' ')) + '</strong> ' +
+            'from <em>' + escapeHtml(prefill.full) + '</em>. ' +
+            '<button type="button" class="qa-keep" id="qaKeep">Keep it</button>';
+        }
+        en.focus();
+      } else {
+        fr.focus();
+      }
       // The duplicate check needs the curated list, but the fields are usable
       // before it lands; the note simply gets better once it has.
       Vocab.load().then(function () { look(); });
@@ -1841,6 +1866,7 @@
           return;
         }
         var added = input.fr.trim();
+        drop.hidden = true;
         fr.value = '';
         en.value = '';
         fr.focus();
@@ -1851,20 +1877,58 @@
         if (location.hash.replace(/^#\/?/, '') === 'vocab') renderVocabPage();
       }
 
-      menu.addEventListener('input', function (e) {
+      // Dictation: the recogniser's first guess goes in the field, where it
+      // can be corrected before it is added.
+      function dictate(mic) {
+        if (mic.classList.contains('is-on')) return void Speech.stop();
+        if (window.Say) Say.stop();
+        mic.classList.add('is-on');
+        var before = fr.value;
+        Speech.listen({
+          onPartial: function (heard) { fr.value = heard; }
+        }).then(function (heard) {
+          fr.value = String(heard[0] || '').trim().toLowerCase();
+          drop.hidden = true;
+          look();
+          en.focus();
+        }).catch(function (err) {
+          fr.value = before;
+          var note = menu.querySelector('#qaNote');
+          if (note) { note.className = 'qa-note is-dupe'; note.textContent = err.message; }
+        }).then(function () { mic.classList.remove('is-on'); });
+      }
+
+      // Properties, not listeners: this runs on every open, and listeners
+      // would pile up on the menu, each holding the fields of an old one.
+      menu.oninput = function (e) {
         if (e.target !== fr) return;
+        drop.hidden = true;
         clearTimeout(timer);
         timer = setTimeout(look, 140);
-      });
-      menu.addEventListener('click', function (e) {
+      };
+      menu.onclick = function (e) {
         if (e.target.closest('#qaSave')) add();
         if (e.target.closest('.qa-link')) close();
-      });
-      menu.addEventListener('keydown', function (e) {
+        if (e.target.closest('#qaMic')) dictate(e.target.closest('#qaMic'));
+        if (e.target.closest('#qaKeep')) {
+          fr.value = prefill.full;
+          drop.hidden = true;
+          look();
+          en.focus();
+        }
+      };
+      menu.onkeydown = function (e) {
         if (e.key === 'Enter') { e.preventDefault(); add(); }
         if (e.key === 'Escape') { e.preventDefault(); close(); btn.focus(); }
-      });
+      };
     }
+
+    // A word tapped in a passage or selected on a page, not in the list yet.
+    // Deferred, so the click that asked for it has finished reaching the
+    // document, whose click handler closes this menu.
+    document.addEventListener('quickadd:open', function (e) {
+      setTimeout(function () { open(e.detail); }, 0);
+    });
 
     btn.addEventListener('click', function (e) {
       e.stopPropagation();

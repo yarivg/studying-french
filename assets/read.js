@@ -205,7 +205,9 @@ window.Read = (function () {
         gloss.hidden = false;
         gloss.innerHTML = '<strong>' + escapeHtml(word.textContent) + '</strong>' +
           (meaning ? '<span>' + escapeHtml(meaning) + '</span>'
-                   : '<span class="rd-nogloss">not in the word list</span>') +
+                   : '<span class="rd-nogloss">not in the word list</span>' +
+                     '<button class="btn btn-sm" data-act="addword" data-word="' +
+                       escapeAttr(word.textContent) + '">+ Add to my words</button>') +
           (window.Say && Say.supported()
             ? '<button class="btn btn-sm" data-say="' + escapeAttr(word.textContent) + '">🔊</button>' : '');
         text.querySelectorAll('.rd-w.is-looked').forEach(function (el) { el.classList.remove('is-looked'); });
@@ -232,6 +234,11 @@ window.Read = (function () {
       if (act === 'stop') { Say.stop(); clearMarks(); return void paintControls(); }
       if (act === 'top') { at = 0; return playFrom(0); }
       if (act === 'playall') return playFrom(at);
+      // Opens the quick add with the word already in it, less what the
+      // sentence put in front of it.
+      if (act === 'addword') {
+        document.dispatchEvent(new CustomEvent('quickadd:open', { detail: Vocab.baseForm(b.dataset.word) }));
+      }
     });
   }
 

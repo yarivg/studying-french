@@ -243,7 +243,8 @@ window.Vocab = (function () {
   // accent, a leading article and the slash notation are not what makes a
   // word a different word, so "La Semaine" finds "la semaine".
   function key(fr) {
-    return strip(String(fr || '').toLowerCase())
+    // œ and æ do not decompose, so without this "œil" would key as "il".
+    return strip(String(fr || '').toLowerCase().replace(/œ/g, 'oe').replace(/æ/g, 'ae'))
       .replace(/^(le|la|les|l'|un|une|des|du|de la)\s*/, '')
       .replace(/[^a-z0-9' ]/g, '')
       .replace(/\s+/g, ' ')
@@ -268,6 +269,21 @@ window.Vocab = (function () {
   function findExisting(fr) {
     var k = key(fr);
     return k ? index()[k] || null : null;
+  }
+
+  // A word tapped on a page is the word as it stands in the sentence:
+  // "Hier,", "qu'il", "d'enfants". The list wants it bare, so the
+  // punctuation comes off, the capital a sentence gave it, and any elided
+  // word in front of it except l', which is the article and says the gender.
+  // { fr, full, dropped }: fr goes in the list, full is what was tapped.
+  function baseForm(word) {
+    var full = String(word == null ? '' : word).trim()
+      .replace(/^[^a-zà-öø-ÿœæ]+/i, '').replace(/[^a-zà-öø-ÿœæ]+$/i, '');
+    full = full.toLowerCase();
+    var out = { fr: full, full: full, dropped: [] };
+    var m = /^((?:jusqu|lorsqu|puisqu|qu|[jnsmtcd])['’])(.+)$/i.exec(out.fr);
+    if (m && m[2].length > 1) { out.dropped.push(m[1].replace('’', "'")); out.fr = m[2]; }
+    return out;
   }
 
   // Accepts the same "fr - en" shape as data/vocab-source.txt, with or
@@ -389,7 +405,7 @@ window.Vocab = (function () {
     listHtml: listHtml, bindList: bindList,
     hydrateEmbeds: hydrateEmbeds, fillEmbed: fillEmbed,
     decks: decks, deckById: deckById,
-    guess: guess, findExisting: findExisting, parseBulk: parseBulk, exportMine: exportMine,
+    guess: guess, findExisting: findExisting, baseForm: baseForm, parseBulk: parseBulk, exportMine: exportMine,
     POS_LABEL: POS_LABEL, GENDER_LABEL: GENDER_LABEL
   };
 })();
