@@ -1801,12 +1801,16 @@
       var drop = menu.querySelector('#qaDrop');
       if (prefill.fr) {
         fr.value = prefill.fr;
-        // What came off the front, and a way to put it back: "qu'il" is
+        // What came off the front or was changed, and a way to put it back: "qu'il" is
         // rarely the word you meant, but "d'abord" is.
+        var did = [];
         if (prefill.dropped && prefill.dropped.length) {
+          did.push('dropped <strong>' + escapeHtml(prefill.dropped.join(' ')) + '</strong>');
+        }
+        if (prefill.change) did.push('made it the ' + prefill.change);
+        if (did.length) {
           drop.hidden = false;
-          drop.innerHTML = 'Dropped <strong>' + escapeHtml(prefill.dropped.join(' ')) + '</strong> ' +
-            'from <em>' + escapeHtml(prefill.full) + '</em>. ' +
+          drop.innerHTML = 'From ' + '<em>' + escapeHtml(prefill.full) + '</em>' + ': ' + did.join(', ') + '. ' +
             '<button type="button" class="qa-keep" id="qaKeep">Keep it</button>';
         }
         en.focus();

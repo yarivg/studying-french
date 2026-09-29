@@ -155,6 +155,19 @@ window.Read = (function () {
     // line the voice had reached when you pressed Stop.
     var at = 0;
 
+    // The word the gloss is showing, as the quick add should receive it.
+    var pending = null;
+
+    // The few words in front of a tapped one, which are what say whether it
+    // is a verb or a plural. The same line only: a line is a sentence or less.
+    function before(word) {
+      var ws = [].slice.call(word.closest('.rd-line').querySelectorAll('.rd-w'));
+      var i = ws.indexOf(word);
+      return ws.slice(Math.max(0, i - 3), i).map(function (el) {
+        return el.dataset.w || el.textContent;
+      }).join(' ');
+    }
+
     function lines() {
       return [].slice.call(text.querySelectorAll('.rd-line'));
     }
@@ -202,8 +215,18 @@ window.Read = (function () {
       var word = e.target.closest('.rd-w');
       if (word) {
         var meaning = lookup(word.textContent, pairs);
+        var base = null, via = '';
+        if (!meaning) {
+          // Not as it stands: try it as the list would have it, a plural made
+          // singular or a verb taken back to its infinitive.
+          base = Vocab.baseForm(word.textContent, { before: before(word) });
+          var hit = base.change && Vocab.findExisting(base.fr);
+          if (hit) { meaning = hit.en; via = hit.fr; }
+        }
+        pending = base;
         gloss.hidden = false;
         gloss.innerHTML = '<strong>' + escapeHtml(word.textContent) + '</strong>' +
+          (via ? '<span class="rd-via">→ ' + escapeHtml(via) + '</span>' : '') +
           (meaning ? '<span>' + escapeHtml(meaning) + '</span>'
                    : '<span class="rd-nogloss">not in the word list</span>' +
                      '<button class="btn btn-sm" data-act="addword" data-word="' +
@@ -237,7 +260,9 @@ window.Read = (function () {
       // Opens the quick add with the word already in it, less what the
       // sentence put in front of it.
       if (act === 'addword') {
-        document.dispatchEvent(new CustomEvent('quickadd:open', { detail: Vocab.baseForm(b.dataset.word) }));
+        document.dispatchEvent(new CustomEvent('quickadd:open', {
+          detail: pending || Vocab.baseForm(b.dataset.word)
+        }));
       }
     });
   }

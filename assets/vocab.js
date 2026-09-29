@@ -245,7 +245,8 @@ window.Vocab = (function () {
   function key(fr) {
     // œ and æ do not decompose, so without this "œil" would key as "il".
     return strip(String(fr || '').toLowerCase().replace(/œ/g, 'oe').replace(/æ/g, 'ae'))
-      .replace(/^(le|la|les|l'|un|une|des|du|de la)\s*/, '')
+      // A space after the article, or "lever" keys as "ver", like "laver".
+      .replace(/^(?:(?:le|la|les|un|une|des|du|de la)\s+|l')/, '')
       .replace(/[^a-z0-9' ]/g, '')
       .replace(/\s+/g, ' ')
       .trim();
@@ -271,18 +272,337 @@ window.Vocab = (function () {
     return k ? index()[k] || null : null;
   }
 
-  // A word tapped on a page is the word as it stands in the sentence:
-  // "Hier,", "qu'il", "d'enfants". The list wants it bare, so the
-  // punctuation comes off, the capital a sentence gave it, and any elided
-  // word in front of it except l', which is the article and says the gender.
-  // { fr, full, dropped }: fr goes in the list, full is what was tapped.
-  function baseForm(word) {
+  /* ------------------------------------------------ the dictionary form
+
+     A word tapped on a page is the word as it stands in the sentence:
+     "Hier,", "qu'il", "études", "mangeons". The list wants it the way a
+     dictionary has it, so this takes off the punctuation, the capital a
+     sentence gave it and any elided word in front of it except l', which is
+     the article and says the gender. Then, where the words before it say
+     what it is, a verb goes back to its infinitive and a plural noun to its
+     singular. "études" alone is left alone: it is a noun as often as not.
+     "tu études" is a verb, "les études" a plural.
+
+     There is no dictionary here, only the endings and the word list. Where
+     the endings allow several infinitives, the one already in the list
+     wins; otherwise the commonest pattern does, and the quick add shows
+     what changed and offers the original back. */
+
+  var SUBJECT = ['je', "j'", 'tu', 'il', 'elle', 'on', 'nous', 'vous', 'ils', 'elles', 'qui'];
+  // Before a verb and not before a noun. le, la and les are both, so they
+  // are not here.
+  var BEFORE_VERB = SUBJECT.concat(['ne', "n'", 'me', "m'", 'te', "t'", 'se', "s'", 'y', 'en', 'lui', 'leur']);
+  var PLURAL_DET = ['les', 'des', 'mes', 'tes', 'ses', 'nos', 'vos', 'leurs', 'ces', 'aux',
+    'quelques', 'plusieurs', 'certains', 'certaines', 'deux', 'trois', 'quatre', 'cinq', 'six',
+    'sept', 'huit', 'neuf', 'dix', 'vingt', 'cent', 'mille', 'beaucoup de', 'nombreux', 'nombreuses'];
+  var AVOIR_AUX = ['ai', 'as', 'a', 'avons', 'avez', 'ont', 'avais', 'avait', 'avions', 'aviez',
+    'avaient', 'aurai', 'auras', 'aura', 'aurons', 'aurez', 'auront', 'aurais', 'aurait', 'avoir'];
+  var ETRE_AUX = ['suis', 'es', 'est', 'sommes', 'êtes', 'sont', 'étais', 'était', 'étions', 'étiez',
+    'étaient', 'serai', 'sera', 'serons', 'serez', 'seront', 'serais', 'serait', 'être'];
+  var AUX = AVOIR_AUX.concat(ETRE_AUX);
+
+  // The irregular verbs, by the forms a learner meets. Checked before any
+  // ending rule, so "ont" is avoir and not some verb in -er.
+  var IRREGULAR = {
+    'être': 'suis es est sommes êtes sont étais était étions étiez étaient été serai seras sera serons serez seront serais serait serions seriez seraient sois soit soyons soyez soient fus fut furent',
+    'avoir': 'ai as a avons avez ont avais avait avions aviez avaient eu eue eus eues aurai auras aura aurons aurez auront aurais aurait aurions auriez auraient aie aies ait ayons ayez aient eut',
+    'aller': 'vais vas va allons allez vont allais allait allions alliez allaient allé allée allés allées irai iras ira irons irez iront irais irait irions iriez iraient aille ailles aillent',
+    'faire': 'fais fait faisons faites font faisais faisait faisions faisiez faisaient faite faits faites ferai feras fera ferons ferez feront ferais ferait fasse fasses fassent fit',
+    'pouvoir': 'peux peut pouvons pouvez peuvent pouvais pouvait pouvions pouviez pouvaient pu pourrai pourras pourra pourrons pourrez pourront pourrais pourrait puisse puissent',
+    'vouloir': 'veux veut voulons voulez veulent voulais voulait voulions vouliez voulaient voulu voudrai voudras voudra voudrons voudrez voudront voudrais voudrait veuille veuillez',
+    'devoir': 'dois doit devons devez doivent devais devait devions deviez devaient dû due dus devrai devras devra devrons devrez devront devrais devrait doive',
+    'savoir': 'sais sait savons savez savent savais savait savions saviez savaient su saurai sauras saura saurons saurez sauront saurais saurait sache saches sachons sachez',
+    'venir': 'viens vient venons venez viennent venais venait venions veniez venaient venu venue venus venues viendrai viendras viendra viendrons viendrez viendront viendrais viendrait vienne vint',
+    'tenir': 'tiens tient tenons tenez tiennent tenais tenait tenu tenue tiendrai tiendra tiendrait tienne',
+    'prendre': 'prends prend prenons prenez prennent prenais prenait prenions preniez prenaient pris prise prises prendrai prendras prendra prendrons prendrez prendront prendrais prendrait prenne prennes prit',
+    'mettre': 'mets met mettons mettez mettent mettais mettait mis mise mises mettrai mettra mettrait mette mit',
+    'dire': 'dis dit disons dites disent disais disait disions disiez disaient dite dits dites dirai diras dira dirons direz diront dirais dirait dise',
+    'voir': 'vois voit voyons voyez voient voyais voyait voyions voyiez voyaient vu vue vus vues verrai verras verra verrons verrez verront verrais verrait voie vit',
+    'boire': 'bois boit buvons buvez boivent buvais buvait bu bue boirai boira boive',
+    'lire': 'lis lit lisons lisez lisent lisais lisait lu lue lus lues lirai lira lise',
+    'écrire': 'écris écrit écrivons écrivez écrivent écrivais écrivait écrite écrits écrites écrirai écrira écrive',
+    'croire': 'crois croit croyons croyez croient croyais croyait cru crue croirai croira croie',
+    'connaître': 'connais connaît connait connaissons connaissez connaissent connaissais connaissait connu connue connus connaîtrai connaîtra connaisse',
+    'partir': 'pars part partons partez partent partais partait parti partie partis parties partirai partira parte',
+    'sortir': 'sors sort sortons sortez sortent sortais sortait sorti sortie sortis sorties sortirai sortira sorte',
+    'dormir': 'dors dort dormons dormez dorment dormais dormait dormi dormirai dormira dorme',
+    'sentir': 'sens sent sentons sentez sentent sentais sentait senti sentie sentirai sentira sente',
+    'servir': 'sers sert servons servez servent servais servait servi servie servirai servira serve',
+    'vivre': 'vis vit vivons vivez vivent vivais vivait vécu vécue vivrai vivra vive',
+    'suivre': 'suit suivons suivez suivent suivais suivait suivi suivie suivrai suivra suive',
+    'ouvrir': 'ouvre ouvres ouvrons ouvrez ouvrent ouvrais ouvrait ouvert ouverte ouverts ouvertes ouvrirai ouvrira',
+    'offrir': 'offre offres offrons offrez offrent offrais offrait offert offerte offrirai offrira',
+    'découvrir': 'découvre découvres découvrons découvrez découvrent découvrait découvert découverte',
+    'souffrir': 'souffre souffres souffrons souffrez souffrent souffrait souffert',
+    'courir': 'cours court courons courez courent courais courait couru courrai courra',
+    'mourir': 'meurs meurt mourons mourez meurent mourait mort morte morts mourra',
+    'naître': 'nais naît naissons naissent naissait né née nés nées naquit',
+    'recevoir': 'reçois reçoit recevons recevez reçoivent recevais recevait reçu reçue recevrai recevra reçoive',
+    'falloir': 'faut fallait fallu faudra faudrait faille',
+    'pleuvoir': 'pleut pleuvait plu pleuvra pleuvrait',
+    'envoyer': 'envoie envoies envoient envoyons envoyez envoyais envoyait envoyé envoyée enverrai enverra enverrait',
+    'asseoir': 'assieds assied asseyons asseyez asseyent assis assise',
+    'rire': 'ris rit rions riez rient riais riait ri rirai rira',
+    'plaire': 'plais plaît plait plaisons plaisent plaisait plu plaira',
+    'conduire': 'conduis conduit conduisons conduisez conduisent conduisais conduisait conduite conduirai conduira',
+    'craindre': 'crains craint craignons craignez craignent craignais craignait crainte',
+    'éteindre': 'éteins éteint éteignons éteignez éteignent éteignait éteinte',
+    'peindre': 'peins peint peignons peignez peignent peignait peinte',
+    'joindre': 'joins joint joignons joignez joignent joignait jointe',
+    'valoir': 'vaux vaut valons valez valent valait valu vaudra vaudrait',
+    'battre': 'bats bat battons battez battent battait battu battue',
+    'acquérir': 'acquiers acquiert acquérons acquièrent acquis acquise',
+    'suffire': 'suffis suffit suffisons suffisez suffisent suffisait suffi'
+  };
+  // The futures and conditionals built on a stem of their own: pourriez,
+  // viendrons, saurait.
+  var FUTURE_STEM = { 'ser': 'être', 'aur': 'avoir', 'ir': 'aller', 'fer': 'faire', 'pourr': 'pouvoir',
+    'voudr': 'vouloir', 'devr': 'devoir', 'saur': 'savoir', 'viendr': 'venir', 'tiendr': 'tenir',
+    'verr': 'voir', 'enverr': 'envoyer', 'faudr': 'falloir', 'vaudr': 'valoir', 'courr': 'courir',
+    'mourr': 'mourir', 'recevr': 'recevoir', 'pleuvr': 'pleuvoir' };
+  var FUTURE_END = /(ai|as|a|ons|ez|ont|ais|ait|ions|iez|aient)$/;
+  var IRREG = {};
+  Object.keys(IRREGULAR).forEach(function (inf) {
+    IRREGULAR[inf].split(' ').forEach(function (f) { if (!IRREG[f]) IRREG[f] = inf; });
+  });
+  // Families that take a prefix and conjugate like the verb inside them:
+  // comprendre, devenir, obtenir, promettre, refaire, prévoir.
+  var FAMILY = ['prendre', 'venir', 'tenir', 'mettre', 'faire', 'voir', 'dire', 'écrire', 'partir', 'sortir',
+    'connaître'];
+  var PREFIX = ['ap', 'com', 'sur', 're', 'ré', 'de', 'dé', 'ob', 'sou', 'con', 'pro', 'ad', 'entre',
+    'pré', 'par', 'sub', 'main', 'per', 'sous', 'contre', 'inter', 'trans', 'con', 'ap', 'dé', 'd', 'in'];
+
+  // Ending rules, longest first. Each gives the infinitive ending that
+  // replaces it. Order within a length does not matter: every match is a
+  // candidate, and the list or the preference below picks between them.
+  var RULES = [
+    ['issaient', 'ir'], ['issions', 'ir'], ['issiez', 'ir'], ['issais', 'ir'], ['issait', 'ir'],
+    ['issant', 'ir'], ['issons', 'ir'], ['issez', 'ir'], ['issent', 'ir'], ['isse', 'ir'],
+    ['eraient', 'er'], ['erions', 'er'], ['eriez', 'er'], ['erais', 'er'], ['erait', 'er'],
+    ['erons', 'er'], ['eront', 'er'], ['erez', 'er'], ['eras', 'er'], ['erai', 'er'], ['era', 'er'],
+    ['iraient', 'ir'], ['irions', 'ir'], ['irais', 'ir'], ['irait', 'ir'], ['irons', 'ir'],
+    ['iront', 'ir'], ['irez', 'ir'], ['iras', 'ir'], ['irai', 'ir'], ['ira', 'ir'],
+    ['draient', 'dre'], ['drais', 'dre'], ['drait', 'dre'], ['drons', 'dre'], ['dront', 'dre'],
+    ['drez', 'dre'], ['dras', 'dre'], ['drai', 'dre'], ['dra', 'dre'],
+    ['daient', 'dre'], ['dions', 'dre'], ['diez', 'dre'], ['dais', 'dre'], ['dait', 'dre'],
+    ['dant', 'dre'], ['dons', 'dre'], ['dez', 'dre'], ['dent', 'dre'], ['dues', 'dre'],
+    ['dus', 'dre'], ['due', 'dre'], ['du', 'dre'], ['ds', 'dre'], ['d', 'dre'],
+    ['aient', 'er'], ['ions', 'er'], ['iez', 'er'], ['ais', 'er'], ['ait', 'er'], ['ant', 'er'],
+    ['ons', 'er'], ['ez', 'er'], ['ent', 'er'], ['ées', 'er'], ['és', 'er'], ['ée', 'er'],
+    ['es', 'er'], ['é', 'er'], ['e', 'er'],
+    ['ies', 'ir'], ['ie', 'ir'], ['is', 'ir'], ['it', 'ir'], ['i', 'ir']
+  ];
+
+  // Words that are never the verb or the noun in question, whatever is in
+  // front of them: "a une", "c'est moi", "ne lui", "est vraiment".
+  var FUNCTION = BEFORE_VERB.concat(PLURAL_DET, ['le', 'la', 'un', 'une', 'du', 'de', 'moi', 'toi',
+    'soi', 'eux', 'pas', 'plus', 'jamais', 'rien', 'personne', 'bien', 'très', 'trop', 'déjà',
+    'encore', 'toujours', 'aussi', 'si', 'là', 'ici', 'que', 'quoi', 'mon', 'ton', 'son', 'ma',
+    'ta', 'sa', 'notre', 'votre', 'leur', 'ce', 'cet', 'cette', 'tout', 'tous', 'toute', 'toutes']);
+  var PARTICIPLE = /(é|ée|és|ées|i|ie|is|ies|u|ue|us|ues|it|ite|its|ites|ert|erte|erts|ertes|eint|einte|aint|ointe?|ort|orte)$/;
+
+  function norm(w) { return String(w || '').toLowerCase().replace(/’/g, "'"); }
+  function inList(fr) { return !!findExisting(fr); }
+
+  // The spelling changes the -er verbs make in their stem, undone:
+  // mangeons, commençons, ennuie, achète, préfère, appelle.
+  function stemVariants(stem, inf) {
+    var out = [stem];
+    if (inf !== 'er') return out;
+    if (/ge$/.test(stem)) out.push(stem.slice(0, -1));
+    if (/ç$/.test(stem)) out.push(stem.slice(0, -1) + 'c');
+    if (/i$/.test(stem)) out.push(stem.slice(0, -1) + 'y');
+    var grave = stem.lastIndexOf('è');
+    if (grave !== -1) {
+      var head = stem.slice(0, grave), tail = stem.slice(grave + 1);
+      // préfère and répète keep an é, achète and lève lose the accent. The
+      // tell is an é earlier in the word.
+      var acute = head + 'é' + tail, bare = head + 'e' + tail;
+      // No infinitive keeps the è, so the stem as written goes last.
+      out = /é/.test(head) ? [acute, bare] : [bare, acute];
+    }
+    if (/(ll|tt)$/.test(stem) && /(appel|jet|rappel|renouvel|épel|ficel)/.test(stem.slice(0, -1))) {
+      out.splice(1, 0, stem.slice(0, -1));
+    } else if (/(ll|tt)$/.test(stem)) {
+      out.push(stem.slice(0, -1));
+    }
+    return out;
+  }
+
+  // The infinitive of a form known to be a verb. Candidates in the list
+  // come first; then the ones the endings make likeliest.
+  function infinitive(w) {
+    if (IRREG[w]) return IRREG[w];
+    var fe = FUTURE_END.exec(w);
+    if (fe && FUTURE_STEM[w.slice(0, -fe[1].length)]) return FUTURE_STEM[w.slice(0, -fe[1].length)];
+    for (var f = 0; f < FAMILY.length; f++) {
+      var fam = FAMILY[f], forms = IRREGULAR[fam].split(' ');
+      for (var i = 0; i < forms.length; i++) {
+        var head = w.slice(0, w.length - forms[i].length);
+        if (head && w.slice(-forms[i].length) === forms[i] && PREFIX.indexOf(head) !== -1) {
+          var cand = head + fam;
+          if (head === 'd' && fam === 'écrire') return 'décrire';
+          if (inList(cand) || head.length > 1) return cand;
+        }
+      }
+    }
+    var cands = [];
+    RULES.forEach(function (r) {
+      var end = r[0];
+      if (w.length <= end.length + 1 || w.slice(-end.length) !== end) return;
+      var stem = w.slice(0, -end.length);
+      if (r[1] === 'dre') {
+        // attend-ons, but demand-ons: -dre only after -en, -on, -er, -or,
+        // -an in répandre and a few more, never after the -and of demander.
+        var st = stem + 'd';
+        cands.push({ v: st + 're', rank: /(en|on|er|or|ou)d$/.test(st) ? 1 : 4 });
+        return;
+      }
+      stemVariants(stem, r[1]).forEach(function (s, k) {
+        var rank = r[1] === 'er' ? 2 : 3;
+        // finis, finit, fini: the -ir reading of a bare -i ending beats -er.
+        if (r[1] === 'ir' && /^(is|it|i|ie|ies)$/.test(end)) rank = /a$/.test(stem) ? 9 : 1;
+        cands.push({ v: s + r[1], rank: rank + k * 0.1 });
+      });
+    });
+    if (!cands.length) return null;
+    for (var c = 0; c < cands.length; c++) {
+      if (inList(cands[c].v) || inList('se ' + cands[c].v)) return cands[c].v;
+    }
+    cands.sort(function (a, b) { return a.rank - b.rank; });
+    return cands[0].v;
+  }
+
+  var SAME_IN_PLURAL = ('bras pays prix voix fois mois temps corps dos fils gens jus nez poids pas repas ' +
+    'souris avis cours discours succès progrès accès français anglais bois choix croix riz gaz héros ' +
+    'ananas autobus bus virus os sens colis tapis radis puits univers vers lilas matelas cas bas tas ' +
+    'palais relais frais marais tennis mais legs remords secours concours parcours taux époux prix ' +
+    'heureux vieux sérieux curieux joyeux paresseux nerveux dangereux délicieux ennuyeux amoureux ' +
+    'jaloux doux roux faux').split(' ');
+
+  // The singular of a form known to be a plural.
+  function singular(w) {
+    if (w === 'yeux') return 'œil';
+    if (SAME_IN_PLURAL.indexOf(w) !== -1) return w;
+    var cands = [];
+    if (/eaux$/.test(w)) cands.push(w.slice(0, -1));
+    if (/aux$/.test(w)) cands.push(w.slice(0, -3) + 'al', w.slice(0, -3) + 'ail');
+    if (/eux$/.test(w)) cands.push(w.slice(0, -1));
+    if (/oux$/.test(w)) cands.push(w.slice(0, -1));
+    if (/[^s]s$/.test(w)) cands.push(w.slice(0, -1));
+    if (!cands.length) return w;
+    for (var i = 0; i < cands.length; i++) if (inList(cands[i])) return cands[i];
+    return cands[0];
+  }
+
+  // What the words in front of it say it is: 'verb', 'participle',
+  // 'plural' or nothing. ctx is { prev, prev2 }, the two words before it
+  // in the same sentence.
+  function roleOf(w, ctx, elided) {
+    if (elided && /^([jnmts]')$/.test(elided)) return 'verb';
+    if (elided === "c'" && IRREG[w] === 'être') return 'verb';
+    var p = norm(ctx.prev), p2 = norm(ctx.prev2);
+    if (!p) return '';
+    if (AUX.indexOf(p) !== -1 || (p === 'pas' && AUX.indexOf(p2) !== -1)) return 'participle';
+    if (BEFORE_VERB.indexOf(p) !== -1) return 'verb';
+    if (p === 'pas' || p === 'jamais' || p === 'plus') return BEFORE_VERB.indexOf(p2) !== -1 ? 'verb' : '';
+    if (PLURAL_DET.indexOf(p) !== -1 || PLURAL_DET.indexOf(p2 + ' ' + p) !== -1) return 'plural';
+    return '';
+  }
+
+  // The last two words before a word, stopping at the end of a sentence.
+  function lastWords(text) {
+    var ws = String(text || '').split(/\s+/).filter(Boolean);
+    var out = [];
+    for (var i = ws.length - 1; i >= 0 && out.length < 2; i--) {
+      if (/[.!?;:»«"]$/.test(ws[i])) break;
+      // "j'ai" is two words: the subject and the auxiliary.
+      var parts = ws[i].toLowerCase().replace(/’/g, "'").replace(/[,()]/g, '').match(/[^']+'?|'/g) || [];
+      for (var k = parts.length - 1; k >= 0 && out.length < 2; k--) out.push(parts[k]);
+    }
+    return { prev: out[0] || '', prev2: out[1] || '' };
+  }
+
+  // { fr, full, dropped, change }: fr goes in the list, full is what was
+  // tapped, change says what was done to it ('infinitive' or 'singular').
+  // ctx is optional: { prev, prev2 }, or { before: 'the text in front' }.
+  function baseForm(word, ctx) {
+    ctx = ctx || {};
+    if (ctx.before !== undefined) ctx = lastWords(ctx.before);
     var full = String(word == null ? '' : word).trim()
       .replace(/^[^a-zà-öø-ÿœæ]+/i, '').replace(/[^a-zà-öø-ÿœæ]+$/i, '');
-    full = full.toLowerCase();
-    var out = { fr: full, full: full, dropped: [] };
-    var m = /^((?:jusqu|lorsqu|puisqu|qu|[jnsmtcd])['’])(.+)$/i.exec(out.fr);
-    if (m && m[2].length > 1) { out.dropped.push(m[1].replace('’', "'")); out.fr = m[2]; }
+    full = norm(full);
+    var out = { fr: full, full: full, dropped: [], change: '' };
+
+    // "tu études", "les maisons": a selection that starts with the words
+    // that decide it is worked like the last word with those in front.
+    var toks = full.split(/\s+/);
+    if (toks.length > 1) {
+      // "j'ai" is two words here too.
+      var lead = [];
+      toks.slice(0, -1).forEach(function (t) { lead = lead.concat(t.match(/[^']+'?|'/g) || []); });
+      var ok = lead.every(function (t) {
+        return BEFORE_VERB.indexOf(t) !== -1 || PLURAL_DET.indexOf(t) !== -1 ||
+          AUX.indexOf(t) !== -1 || t === 'pas';
+      });
+      if (!ok) return out;
+      var inner = baseForm(toks[toks.length - 1], {
+        prev: lead[lead.length - 1], prev2: lead[lead.length - 2] || ctx.prev || ''
+      });
+      inner.full = full;
+      return inner;
+    }
+
+    var elided = '';
+    var m = /^((?:jusqu|lorsqu|puisqu|qu|[jnsmtcd])')(.+)$/.exec(out.fr);
+    if (m && m[2].length > 1) { elided = m[1]; out.dropped.push(elided); out.fr = m[2]; }
+
+    var w = out.fr, role = roleOf(w, ctx, elided);
+    // Already in the list as it stands, or a word no rule should touch.
+    if (inList(w) || FUNCTION.indexOf(w) !== -1 || /ment$/.test(w)) return out;
+    // After avoir or être it is a participle only if it ends like one: "est
+    // important" is an adjective, "a mangé" a verb.
+    if (role === 'participle' && !IRREG[w] && !PARTICIPLE.test(w)) role = '';
+    // "était gratuit", "est petit": after être an -it is an adjective.
+    if (role === 'participle' && !IRREG[w] && /its?|ites?$/.test(w) &&
+        ETRE_AUX.indexOf(norm(ctx.prev)) !== -1) role = '';
+    if (role === 'verb' || role === 'participle') {
+      var inf = infinitive(w);
+      if (inf && inf !== w) {
+        // se lave, s'appelle, je me lave: the list files these under "se".
+        var p = norm(ctx.prev), p2 = norm(ctx.prev2);
+        var refl = elided === "s'" || p === 'se' || p === "s'" ||
+          ((p === 'me' || p === "m'") && (p2 === 'je' || p2 === "j'")) ||
+          ((p === 'te' || p === "t'") && p2 === 'tu') ||
+          (p === 'nous' && p2 === 'nous') || (p === 'vous' && p2 === 'vous') ||
+          // s'est levée, se sont assis, me suis lavé
+          (ETRE_AUX.indexOf(p) !== -1 && ["s'", 'se', "m'", 'me', "t'", 'te'].indexOf(p2) !== -1);
+        if (refl) inf = (/^[aeiouhéèêâîôû]/.test(inf) ? "s'" : 'se ') + inf;
+        out.fr = inf;
+        out.change = 'infinitive';
+      }
+    } else if (role === 'plural' && /[sx]$/.test(w)) {
+      var one = singular(w);
+      if (one !== w) { out.fr = one; out.change = 'singular'; }
+    } else {
+      // No context, but the list knows the singular: "fenêtres" is "fenêtre".
+      var sg = /[sx]$/.test(w) ? singular(w) : w;
+      if (sg !== w && inList(sg)) { out.fr = sg; out.change = 'singular'; }
+      // Or the infinitive: "Odile discutait", a verb opening a line.
+      else if (!role) {
+        var guessInf = infinitive(w);
+        if (guessInf && guessInf !== w) {
+          // "souvenait" is se souvenir, not the noun le souvenir.
+          var plain = findExisting(guessInf);
+          var se = (/^[aeiouhéèêâîôû]/.test(guessInf) ? "s'" : 'se ') + guessInf;
+          var pick = plain && plain.pos === 'verb' ? guessInf : inList(se) ? se : plain ? guessInf : '';
+          if (pick) { out.fr = pick; out.change = 'infinitive'; }
+        }
+      }
+    }
+    // The list's own spelling, article and all, when it has the word.
+    var hit = out.change && findExisting(out.fr);
+    if (hit) out.fr = hit.fr;
     return out;
   }
 
