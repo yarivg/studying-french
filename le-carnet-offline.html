@@ -6,7 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- No third-party code, ever: scripts and styles may only come from this
      origin. The page may talk to GitHub's gist API (sync) and, only on the Talk
-     page and only with a key you paste yourself, to api.anthropic.com. The sync
+     page and only with a key you paste yourself, to api.anthropic.com or
+     generativelanguage.googleapis.com (Gemini). The sync
      token and that key live under separate storage names and never meet. -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
 <meta name="referrer" content="no-referrer">
@@ -5288,26 +5289,45 @@ window.Read = (function () {
    and marks only French that is actually wrong or unnatural.
 
    This is the one place the course talks to anyone but GitHub. Your
-   messages go straight from this browser to api.anthropic.com with
-   your own API key. The key is kept in this browser under its own
-   storage name, so it is never part of the progress snapshot and never
-   reaches the sync gist.
+   messages go straight from this browser to the provider you pick,
+   Anthropic or Google (Gemini), with your own API key. Each key is kept
+   in this browser under its own storage name, so it is never part of the
+   progress snapshot and never reaches the sync gist.
    ============================================================ */
 
 window.Roleplay = (function () {
   'use strict';
 
-  var KEY_STORE = 'lecarnet.talk.key';
-  var MODEL_STORE = 'lecarnet.talk.model';
+  var PROVIDER_STORE = 'lecarnet.talk.provider';
+  var GEMINI_MODELS_STORE = 'lecarnet.talk.geminiModels';
   var SESSION_STORE = 'lecarnet.talk.sessions';
   var MAX_SESSIONS = 30;
   var MAX_SENT = 24;                       // messages of history sent per call
-  var ENDPOINT = 'https://api.anthropic.com/v1/messages';
+  var ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages';
+  var GEMINI_BASE = 'https://generativelanguage.googleapis.com/v1beta/';
 
-  var MODELS = [
-    { id: 'claude-haiku-5-5', label: 'Haiku 5.5: fast and cheap' },
-    { id: 'claude-sonnet-5-5', label: 'Sonnet 5.5: slower, a closer ear' }
-  ];
+  var PROVIDERS = {
+    anthropic: {
+      label: 'Anthropic (Claude)', host: 'api.anthropic.com', short: 'Anthropic',
+      keyStore: 'lecarnet.talk.key', modelStore: 'lecarnet.talk.model',
+      keyName: 'Anthropic API key', where: 'console.anthropic.com',
+      models: [
+        { id: 'claude-haiku-5-5', label: 'Haiku 5.5: fast and cheap' },
+        { id: 'claude-sonnet-5-5', label: 'Sonnet 5.5: slower, a closer ear' }
+      ]
+    },
+    gemini: {
+      label: 'Google (Gemini)', host: 'generativelanguage.googleapis.com', short: 'Google',
+      keyStore: 'lecarnet.talk.key.gemini', modelStore: 'lecarnet.talk.model.gemini',
+      keyName: 'Gemini API key', where: 'aistudio.google.com/apikey',
+      // Only a starting point. The live list from the key replaces it, so a
+      // renamed or retired model never needs a code change.
+      models: [
+        { id: 'gemini-2.5-flash', label: 'gemini-2.5-flash: fast' },
+        { id: 'gemini-2.5-pro', label: 'gemini-2.5-pro: slower, a closer ear' }
+      ]
+    }
+  };
 
   var index = null;
   var live = null;                          // the session on screen
@@ -5325,10 +5345,27 @@ window.Roleplay = (function () {
   }
   function drop(k) { try { localStorage.removeItem(k); } catch (e) { /* private mode */ } }
 
-  function apiKey() { return read(KEY_STORE, ''); }
+  function provider() {
+    var p = read(PROVIDER_STORE, 'anthropic');
+    return PROVIDERS[p] ? p : 'anthropic';
+  }
+  function P() { return PROVIDERS[provider()]; }
+
+  function apiKey() { return read(P().keyStore, ''); }
+
+  function models() {
+    if (provider() === 'gemini') {
+      try {
+        var cached = JSON.parse(read(GEMINI_MODELS_STORE, 'null'));
+        if (Array.isArray(cached) && cached.length) return cached;
+      } catch (e) { /* fall through to the starting list */ }
+    }
+    return P().models;
+  }
   function model() {
-    var m = read(MODEL_STORE, MODELS[0].id);
-    return MODELS.some(function (x) { return x.id === m; }) ? m : MODELS[0].id;
+    var list = models();
+    var m = read(P().modelStore, list[0].id);
+    return list.some(function (x) { return x.id === m; }) ? m : list[0].id;
   }
 
   function sessions() {
@@ -5415,8 +5452,16 @@ window.Roleplay = (function () {
   function callApi(system, messages, maxTokens) {
     var key = apiKey();
     if (!key) return Promise.reject(new Error('No API key saved.'));
+    return (provider() === 'gemini' ? callGemini : callAnthropic)(key, system, messages, maxTokens);
+  }
 
-    return fetch(ENDPOINT, {
+  function unreachable() {
+    return new Error('Could not reach ' + P().host + '. Check the connection. ' +
+      'This section does not work from the offline single file.');
+  }
+
+  function callAnthropic(key, system, messages, maxTokens) {
+    return fetch(ANTHROPIC_URL, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -5439,12 +5484,72 @@ window.Roleplay = (function () {
         if (res.status === 529 || res.status >= 500) throw new Error('The service is busy. Send again in a moment.');
         throw new Error('The request failed (' + res.status + ').' + detail);
       });
-    }, function () {
-      throw new Error('Could not reach api.anthropic.com. Check the connection. ' +
-        'This section does not work from the offline single file.');
-    }).then(function (j) {
+    }, function () { throw unreachable(); }).then(function (j) {
       return (j.content || []).map(function (b) { return b.text || ''; }).join('');
     });
+  }
+
+  // Gemini sends the key in a header, never in the URL, so it cannot land in
+  // a history entry or a log. Roles are user / model, and the system prompt
+  // is its own field. JSON mode keeps the reply parseable. The output budget
+  // is generous because a thinking model spends part of it before it writes.
+  function callGemini(key, system, messages, maxTokens) {
+    return fetch(GEMINI_BASE + 'models/' + encodeURIComponent(model()) + ':generateContent', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', 'x-goog-api-key': key },
+      body: JSON.stringify({
+        systemInstruction: { parts: [{ text: system }] },
+        contents: messages.map(function (m) {
+          return { role: m.role === 'assistant' ? 'model' : 'user', parts: [{ text: m.content }] };
+        }),
+        generationConfig: {
+          maxOutputTokens: Math.max(maxTokens || 700, 4096),
+          responseMimeType: 'application/json',
+          temperature: 0.8
+        }
+      })
+    }).then(function (res) {
+      if (res.ok) return res.json();
+      return res.json().catch(function () { return {}; }).then(function (b) {
+        var msg = (b && b.error && b.error.message) || '';
+        if (res.status === 400 && /api key/i.test(msg)) throw new Error('The API key was rejected. Check it, or save a new one.');
+        if (res.status === 401 || res.status === 403) throw new Error('The key was rejected, or it is not allowed to use this model.');
+        if (res.status === 404) throw new Error('That model was not found for this key. Pick another one in the model list.');
+        if (res.status === 429) throw new Error('Rate limited. Wait a moment and send again.');
+        if (res.status >= 500) throw new Error('The service is busy. Send again in a moment.');
+        throw new Error('The request failed (' + res.status + ').' + (msg ? ' ' + msg : ''));
+      });
+    }, function () { throw unreachable(); }).then(function (j) {
+      var c = j.candidates && j.candidates[0];
+      if (!c || !c.content || !c.content.parts) {
+        var why = j.promptFeedback && j.promptFeedback.blockReason;
+        throw new Error(why ? 'The model declined that message (' + why + '). Rephrase and send again.'
+                            : 'The model returned nothing. Send again.');
+      }
+      return c.content.parts.map(function (p) { return p.text || ''; }).join('');
+    });
+  }
+
+  // The models this key can actually call, so nothing here goes stale.
+  function loadGeminiModels() {
+    var key = read(PROVIDERS.gemini.keyStore, '');
+    if (!key) return Promise.resolve(null);
+    return fetch(GEMINI_BASE + 'models?pageSize=200', { headers: { 'x-goog-api-key': key } })
+      .then(function (res) { return res.ok ? res.json() : null; }, function () { return null; })
+      .then(function (j) {
+        if (!j || !Array.isArray(j.models)) return null;
+        var out = j.models.filter(function (m) {
+          return /^models\/gemini/.test(m.name) &&
+            (m.supportedGenerationMethods || []).indexOf('generateContent') >= 0 &&
+            !/(tts|image|embedding|live|audio|robotics|computer-use|learnlm)/.test(m.name);
+        }).map(function (m) {
+          var id = m.name.replace(/^models\//, '');
+          return { id: id, label: id + (m.displayName ? ': ' + m.displayName : '') };
+        });
+        if (!out.length) return null;
+        write(GEMINI_MODELS_STORE, JSON.stringify(out));
+        return out;
+      });
   }
 
   // The model is told to return bare JSON. Believe it, but survive a fence
@@ -5558,51 +5663,76 @@ window.Roleplay = (function () {
         html += '</ul>';
       }
 
-      html += '<p class="talk-note">Your lines go from this browser to Anthropic, using your key, and ' +
-        'nowhere else. The key stays in this browser and is never synced.</p>';
+      html += '<p class="talk-note">Your lines go from this browser to ' + escapeHtml(P().short) +
+        ', using your key, and nowhere else. The key stays in this browser and is never synced.</p>';
 
-      view.innerHTML = html;
-      bindList(view);
+      // A fresh root each time, so a re-render never leaves a second
+      // listener behind to start two talks from one click.
+      view.innerHTML = '<div class="talk-list">' + html + '</div>';
+      bindList(view.querySelector('.talk-list'), view);
+      refreshModels(view);
     }).catch(function (err) {
       view.innerHTML = '<div class="empty"><div class="empty-icon">⚠️</div><p>' +
         escapeHtml(err.message) + '</p></div>';
     });
   }
 
-  function keyCard() {
-    var has = !!apiKey();
-    var opts = MODELS.map(function (m) {
+  function modelOptions() {
+    return models().map(function (m) {
       return '<option value="' + attr(m.id) + '"' + (m.id === model() ? ' selected' : '') + '>' +
         escapeHtml(m.label) + '</option>';
     }).join('');
-    if (has) {
-      return '<div class="talk-key">' +
-        '<span>API key saved in this browser.</span>' +
-        '<label>Model <select id="talkModel">' + opts + '</select></label>' +
+  }
+
+  function keyCard() {
+    var pv = provider();
+    var provSel = '<label>Provider <select id="talkProvider">' +
+      Object.keys(PROVIDERS).map(function (k) {
+        return '<option value="' + k + '"' + (k === pv ? ' selected' : '') + '>' +
+          escapeHtml(PROVIDERS[k].label) + '</option>';
+      }).join('') + '</select></label>';
+
+    if (apiKey()) {
+      return '<div class="talk-key">' + provSel +
+        '<span>' + escapeHtml(P().keyName) + ' saved in this browser.</span>' +
+        '<label>Model <select id="talkModel">' + modelOptions() + '</select></label>' +
         '<button class="btn btn-sm" type="button" id="talkForget">Forget the key</button></div>';
     }
-    return '<div class="talk-key talk-key-empty">' +
-      '<p><strong>One-time setup.</strong> Paste an Anthropic API key. It is stored only in this ' +
-      'browser, sent only to api.anthropic.com, and never synced.</p>' +
+    return '<div class="talk-key talk-key-empty">' + provSel +
+      '<p><strong>One-time setup.</strong> Paste a ' + escapeHtml(P().keyName) + ' (from ' +
+      escapeHtml(P().where) + '). It is stored only in this browser, sent only to ' +
+      escapeHtml(P().host) + ', and never synced.</p>' +
       '<form id="talkKeyForm" autocomplete="off">' +
       '<input type="password" id="talkKey" placeholder="API key" autocomplete="off" spellcheck="false" ' +
-      'aria-label="Anthropic API key">' +
+      'aria-label="' + attr(P().keyName) + '">' +
       '<button class="btn btn-primary" type="submit">Save</button></form></div>';
   }
 
-  function bindList(view) {
-    view.addEventListener('click', function (e) {
+  // Gemini's model names change; ask the key what it can call and swap the
+  // list in without redrawing the page under the reader.
+  function refreshModels(view) {
+    if (provider() !== 'gemini' || !apiKey()) return;
+    loadGeminiModels().then(function (list) {
+      var sel = view.querySelector('#talkModel');
+      if (!list || !sel) return;
+      sel.innerHTML = modelOptions();
+    });
+  }
+
+  function bindList(root, view) {
+    root.addEventListener('click', function (e) {
       var go = e.target.closest('[data-start]');
       if (go) {
         if (!apiKey()) {
-          var k = view.querySelector('#talkKey');
+          var k = root.querySelector('#talkKey');
           if (k) { k.focus(); k.classList.add('is-needed'); }
           return;
         }
         var sc = scenario(go.dataset.start);
         var s = {
           id: uid(), scenario: sc.id, title: sc.title, started: Date.now(),
-          model: model(), turns: [{ role: 'ai', text: sc.opener }], debrief: null
+          provider: provider(), model: model(),
+          turns: [{ role: 'ai', text: sc.opener }], debrief: null
         };
         saveSession(s);
         location.hash = '#/talk/s/' + s.id;
@@ -5617,24 +5747,29 @@ window.Roleplay = (function () {
         return;
       }
       if (e.target.id === 'talkForget') {
-        drop(KEY_STORE);
+        drop(P().keyStore);
         renderList(view);
       }
     });
-    var form = view.querySelector('#talkKeyForm');
+    var form = root.querySelector('#talkKeyForm');
     if (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        var inp = view.querySelector('#talkKey');
+        var inp = root.querySelector('#talkKey');
         var v = (inp.value || '').trim();
         if (!v) return;
-        write(KEY_STORE, v);
+        write(P().keyStore, v);
         inp.value = '';
         renderList(view);
       });
     }
-    var sel = view.querySelector('#talkModel');
-    if (sel) sel.addEventListener('change', function () { write(MODEL_STORE, sel.value); });
+    var prov = root.querySelector('#talkProvider');
+    if (prov) prov.addEventListener('change', function () {
+      write(PROVIDER_STORE, prov.value);
+      renderList(view);
+    });
+    var sel = root.querySelector('#talkModel');
+    if (sel) sel.addEventListener('change', function () { write(P().modelStore, sel.value); });
   }
 
   /* ---------------------------------------------------------- session page */
@@ -5935,7 +6070,7 @@ window.Roleplay = (function () {
   function reportText(s, sc, errs, d) {
     var lines = ['# Role play: ' + sc.title, '',
       when(s.started) + ', ' + s.turns.filter(function (t) { return t.role === 'you'; }).length +
-      ' lines, ' + errs.length + ' corrections, model ' + s.model, ''];
+      ' lines, ' + errs.length + ' corrections, ' + (s.provider ? s.provider + ' ' : '') + s.model, ''];
     if (d.summary) lines.push(d.summary, '');
     if (d.working_on.length) {
       lines.push('## Work on', '');
