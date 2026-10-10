@@ -16,7 +16,7 @@
    Bump CACHE_VERSION to force a full refetch.
    ============================================================ */
 
-var CACHE_VERSION = 'le-carnet-v13';
+var CACHE_VERSION = 'le-carnet-v14';
 var SHELL = [
   './',
   'index.html',
@@ -30,6 +30,7 @@ var SHELL = [
   'assets/speech.js',
   'assets/test.js',
   'assets/read.js',
+  'assets/roleplay.js',
   'assets/quiz.js',
   'assets/vocab.js',
   'assets/select.js',
@@ -42,7 +43,8 @@ var SHELL = [
   'assets/icons/apple-touch-icon.png',
   'data/vocab.json',
   'content/manifest.json',
-  'content/tests/groups.json'
+  'content/tests/groups.json',
+  'content/roleplay/index.json'
 ];
 
 /* ---------------------------------------------------------- install */

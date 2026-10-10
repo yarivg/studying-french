@@ -1,0 +1,116 @@
+{
+  "focus": [
+    "frame-preposition: verb + à / de + infinitive, where French does not use the English preposition (conseiller / interdire / reprocher à qqn de, arrêter de, passer du temps à, au lieu de, plutôt que de, arriver à, avoir peur de)",
+    "calque: a real French word with the wrong meaning, or English word order carried over (dépenser for time, gentilement for gently, d'ailleurs for otherwise, pas important for never mind)",
+    "negation: ne ... jamais / pas encore / toujours pas, the slot around the auxiliary, ne in front of a negated infinitive, un becoming de",
+    "agreement: silent endings such as tu arrêtes, la plus chère, mes parents, the participle after a preceding direct object",
+    "tense: the futur after quand / dès que, imparfait against passé composé, si + plus-que-parfait",
+    "pronoun: direct against indirect object (lui / l'), dont, y and en"
+  ],
+  "scenarios": [
+    {
+      "id": "medecin",
+      "title": "Chez le médecin",
+      "level": "B1",
+      "blurb": "A check-up that turns into a lecture. Advice, bans and promises.",
+      "setting": "You are at a routine appointment. You have been tired, you smoke, and you do not sleep well.",
+      "ai": "a frank, kind doctor in a city surgery",
+      "you": "the patient",
+      "goal": "Explain how you feel, understand the advice, and say what you will actually do.",
+      "targets": ["conseiller / interdire à qqn de", "arrêter de", "avoir du mal à", "il faut que + subjonctif"],
+      "grammar": ["verb-prepositions"],
+      "opener": "Bonjour, installez-vous. Alors, qu'est-ce qui vous amène aujourd'hui ?"
+    },
+    {
+      "id": "colocataire",
+      "title": "Le nouvel appartement",
+      "level": "B1",
+      "blurb": "Telling a friend about a flat hunt, and an old friend who found one.",
+      "setting": "You meet a friend for coffee. You are moving next year and have not told your parents yet.",
+      "ai": "a chatty friend of yours, a little nosy",
+      "you": "yourself",
+      "goal": "Talk about the move, who you have told, and what the new place is like compared with the old one.",
+      "targets": ["dont", "venir de", "oser / ne pas encore", "comparatives"],
+      "grammar": ["relative-pronouns", "comparatives"],
+      "opener": "Alors, c'est vrai que tu penses déménager ? Raconte !"
+    },
+    {
+      "id": "retard",
+      "title": "Le train en retard",
+      "level": "B1",
+      "blurb": "A cancelled train, a missed meeting, and who is to blame.",
+      "setting": "You are on a platform. Your train is delayed again and you have a meeting in an hour.",
+      "ai": "a station employee at the information desk",
+      "you": "a traveller who is trying to stay polite",
+      "goal": "Find out what happened, what your options are, and get on another train.",
+      "targets": ["avoir peur de", "être en retard / en avance", "reprocher", "plutôt que de", "futur after quand"],
+      "grammar": ["futur-simple", "verb-prepositions"],
+      "opener": "Bonjour monsieur, madame. Je vous écoute, vous avez un problème avec votre train ?"
+    },
+    {
+      "id": "restaurant",
+      "title": "Au restaurant",
+      "level": "A2",
+      "blurb": "Ordering, preferring, changing your mind.",
+      "setting": "A small restaurant, a busy evening. You are with one other person and one of you is a bit fussy.",
+      "ai": "a waiter",
+      "you": "a customer",
+      "goal": "Order a meal, ask about the dishes, and deal with something that is not quite right.",
+      "targets": ["je préférerais", "plutôt que de", "avoir envie de", "partitive and en"],
+      "grammar": ["articles", "quantity", "conditionnel"],
+      "opener": "Bonsoir, bienvenue. Vous avez choisi, ou je vous laisse encore un moment ?"
+    },
+    {
+      "id": "voisin",
+      "title": "Le voisin bruyant",
+      "level": "B1",
+      "blurb": "A polite complaint that has to stay polite.",
+      "setting": "You knock on your neighbour's door at 11 p.m. The music has been loud for three nights.",
+      "ai": "a neighbour, a bit defensive at first, who can be talked round",
+      "you": "the neighbour who is tired",
+      "goal": "Explain the problem, ask them to stop, and agree on something.",
+      "targets": ["reprocher à qqn de", "j'aimerais que + subjonctif", "sinon", "ne ... plus / jamais"],
+      "grammar": ["subjonctif-uses", "negation"],
+      "opener": "Oui ? Ah, c'est vous. Il y a un problème ?"
+    },
+    {
+      "id": "weekend",
+      "title": "Le week-end dernier",
+      "level": "B1",
+      "blurb": "Telling a story in the past. Background against events.",
+      "setting": "Monday morning at work. A colleague asks what you did.",
+      "ai": "a colleague who likes details",
+      "you": "yourself",
+      "goal": "Tell what happened at the weekend, in order, with what was going on around it.",
+      "targets": ["passé composé against imparfait", "plus-que-parfait", "pendant que / quand", "depuis"],
+      "grammar": ["passe-compose", "imparfait", "imparfait-vs-passe-compose"],
+      "opener": "Salut ! Alors, c'était comment, ton week-end ? Tu as fait quelque chose de sympa ?"
+    },
+    {
+      "id": "entretien",
+      "title": "Un entretien d'embauche",
+      "level": "B2",
+      "blurb": "Answer questions about your past and your plans, and ask some back.",
+      "setting": "A job interview for a role you would really like. The interviewer is friendly but exact.",
+      "ai": "an interviewer from the company",
+      "you": "the candidate",
+      "goal": "Present your experience, explain a gap or a change, and say where you want to be in five years.",
+      "targets": ["conditionnel", "si-clauses", "futur after quand", "frames with de + infinitive"],
+      "grammar": ["conditionnel", "si-clauses", "futur-simple"],
+      "opener": "Bonjour, merci d'être venu. Pour commencer, pouvez-vous vous présenter en quelques mots ?"
+    },
+    {
+      "id": "libre",
+      "title": "Free conversation",
+      "level": "B1",
+      "blurb": "Pick your own topic. The model follows you.",
+      "setting": "Whatever you want. Say what you would like to talk about in your first message, in French or in English.",
+      "ai": "a friendly French speaker of your age who is curious about you",
+      "you": "yourself",
+      "goal": "Keep a real conversation going.",
+      "targets": [],
+      "grammar": [],
+      "opener": "Salut ! De quoi as-tu envie de parler aujourd'hui ?"
+    }
+  ]
+}

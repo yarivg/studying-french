@@ -7,6 +7,8 @@ flashcards built from them.
 **→ [yarivg.github.io/studying-french](https://yarivg.github.io/studying-french/)**
 
 No build step, no dependencies, no tracking. Progress lives in your browser and nowhere else.
+The one exception is **Talk**, and only if you paste your own Anthropic API key: your lines then go
+from your browser to api.anthropic.com. The key never leaves the browser and is never synced.
 
 ## What's in it
 
@@ -19,6 +21,7 @@ No build step, no dependencies, no tracking. Progress lives in your browser and 
 | **Tests** | A drill for every chapter and an exam for every part. Six question types, auto-graded, but you decide what counts as learned. |
 | **Statistics** | Your progress plotted over time, how many words you know by three different measures, half a year of activity as a day-per-square heatmap, every test you have taken, and what you did lately. |
 | **Reading** | Ten passages A1–B2. Hear any line, tap any word for its meaning, answer for comprehension, then read a line back into the microphone. |
+| **Talk** | Role play in French with a model that plays the character. No answer key: it follows wherever you take the conversation and marks only French that is actually wrong, never accents. Eight scenes, a stuck button, microphone input, and a review with a copyable report. Needs your own API key and a connection. |
 | **Vocabulary** | 1,493 entries, searchable and filterable by theme, part of speech and gender — plus any word you add yourself. |
 | **Flashcards** | Leitner spaced repetition, sliced by theme or by word type. |
 | **Audio** | Every French example has a play button, italics in the prose are clickable, and each phonetic transcription plays the word it transcribes. Shift-click reads slowly. |

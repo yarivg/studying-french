@@ -1,0 +1,682 @@
+/* ============================================================
+   roleplay.js — talk to a model that plays a character.
+
+   There is no answer key here, on purpose. A key can only list the
+   French its author thought of, and a conversation has no such list.
+   The model plays the character, follows wherever you take the talk,
+   and marks only French that is actually wrong or unnatural.
+
+   This is the one place the course talks to anyone but GitHub. Your
+   messages go straight from this browser to api.anthropic.com with
+   your own API key. The key is kept in this browser under its own
+   storage name, so it is never part of the progress snapshot and never
+   reaches the sync gist.
+   ============================================================ */
+
+window.Roleplay = (function () {
+  'use strict';
+
+  var KEY_STORE = 'lecarnet.talk.key';
+  var MODEL_STORE = 'lecarnet.talk.model';
+  var SESSION_STORE = 'lecarnet.talk.sessions';
+  var MAX_SESSIONS = 30;
+  var MAX_SENT = 24;                       // messages of history sent per call
+  var ENDPOINT = 'https://api.anthropic.com/v1/messages';
+
+  var MODELS = [
+    { id: 'claude-haiku-5-5', label: 'Haiku 5.5: fast and cheap' },
+    { id: 'claude-sonnet-5-5', label: 'Sonnet 5.5: slower, a closer ear' }
+  ];
+
+  var index = null;
+  var live = null;                          // the session on screen
+
+  /* ---------------------------------------------------------- storage */
+
+  function read(k, fallback) {
+    try {
+      var raw = localStorage.getItem(k);
+      return raw === null ? fallback : raw;
+    } catch (e) { return fallback; }
+  }
+  function write(k, v) {
+    try { localStorage.setItem(k, v); return true; } catch (e) { return false; }
+  }
+  function drop(k) { try { localStorage.removeItem(k); } catch (e) { /* private mode */ } }
+
+  function apiKey() { return read(KEY_STORE, ''); }
+  function model() {
+    var m = read(MODEL_STORE, MODELS[0].id);
+    return MODELS.some(function (x) { return x.id === m; }) ? m : MODELS[0].id;
+  }
+
+  function sessions() {
+    try { return JSON.parse(read(SESSION_STORE, '[]')) || []; } catch (e) { return []; }
+  }
+  function saveSession(s) {
+    var all = sessions().filter(function (x) { return x.id !== s.id; });
+    all.unshift(s);
+    write(SESSION_STORE, JSON.stringify(all.slice(0, MAX_SESSIONS)));
+  }
+  function findSession(id) {
+    return sessions().filter(function (x) { return x.id === id; })[0] || null;
+  }
+  function removeSession(id) {
+    write(SESSION_STORE, JSON.stringify(sessions().filter(function (x) { return x.id !== id; })));
+  }
+
+  /* ---------------------------------------------------------- content */
+
+  function load() {
+    if (index) return Promise.resolve(index);
+    return Data.json('content/roleplay/index.json').then(function (j) { index = j; return j; });
+  }
+  function scenario(id) {
+    return ((index && index.scenarios) || []).filter(function (s) { return s.id === id; })[0] || null;
+  }
+
+  /* ---------------------------------------------------------- the prompt */
+
+  var THEMES = 'frame-preposition, calque, negation, agreement, spelling-ending, tense, pronoun, word-order, other';
+
+  function systemPrompt(sc) {
+    var focus = (index.focus || []).map(function (f) { return '- ' + f; }).join('\n');
+    var targets = (sc.targets || []).length ? sc.targets.join('; ') : 'none, follow the learner';
+    return [
+      'You are running a French role play for a learner. The learner is an adult native English speaker at roughly B1, working toward B2. You play ' + sc.ai + '. The learner plays ' + sc.you + '.',
+      'Scene: ' + sc.setting,
+      'The learner\'s goal in the scene: ' + sc.goal,
+      '',
+      'HOW TO PLAY THE CHARACTER',
+      '- Reply in natural French, one to three short sentences, at a level the learner can follow. Then react or ask something so the talk keeps moving. Never reply in English inside "reply".',
+      '- Be a real person. Have opinions, make small problems, change the subject if it would be natural. Do not interrogate.',
+      '- The learner may answer in any way at all: any grammatical French, any register, any vocabulary, a joke, a refusal, a question back, or a complete change of direction. Follow where they go. There is no expected answer and nothing they must say. Never steer them back to a script.',
+      '- Nudge, do not quiz. If you can, let the scene create a reason for these structures to come up: ' + targets + '. Never name them or ask for them.',
+      '',
+      'HOW TO MARK THE LEARNER\'S FRENCH',
+      '- Read their last message as a native teacher would. Flag only what is actually wrong or clearly unnatural. If it is correct, even if you would have said it differently, it is correct.',
+      '- NEVER flag: missing accents, cedillas, apostrophes or hyphens, capital letters, or punctuation. They type on a keyboard without accents. Spoken-style French, colloquial contractions and informal register are fine. Using on for nous is fine. Alternatives that are correct are fine.',
+      '- Accept answers that differ from what you expected. If the French is good and means something different from what you were steering toward, just respond to what they said.',
+      '- For each real error give: "said" (the exact words they wrote), "fix" (the corrected words), "why" (one plain English sentence naming the rule or frame, in terms they can reuse), "theme" (one of: ' + THEMES + '). At most three errors, most important first. If there are more, pick the ones that will matter most again.',
+      '- Add "better" only when their French is correct but there is a clearly more idiomatic way, one short phrase. Otherwise leave it empty. Do not nitpick.',
+      '- If they write in English, or ask how to say something, put the French in "help" (with a one-line note on the frame) and still answer in character as best you can. That is not an error.',
+      '- Judge only what they wrote, never what the key might say. Be right, not strict.',
+      '',
+      'THE LEARNER\'S KNOWN WEAK SPOTS (keep an ear out; do not mention this list)',
+      focus,
+      '',
+      'OUTPUT FORMAT. Return only one JSON object, no prose around it, no code fence:',
+      '{"reply": "your line in French", "ok": true or false, "feedback": [{"said": "", "fix": "", "why": "", "theme": ""}], "better": "", "help": ""}',
+      '"ok" is true when their last message had no real errors. On the very first call there is no learner message yet: set ok true and feedback [].'
+    ].join('\n');
+  }
+
+  function stuckPrompt() {
+    return '[The learner is stuck. Do not continue the role play and do not mark anything. Return only this JSON: {"reply": "", "ok": true, "feedback": [], "better": "", "help": "two or three different natural things they could say next, in French, each with a short English gloss in brackets, then one line naming the frame to use"}]';
+  }
+
+  function debriefPrompt(sc, transcript, errors) {
+    return [
+      'You are a French teacher closing a role play session with an adult learner (B1 going on B2). Scene: ' + sc.title + '.',
+      'Here is the whole conversation, with the corrections already given:',
+      transcript,
+      '',
+      'Errors flagged: ' + (errors.length ? JSON.stringify(errors) : 'none'),
+      '',
+      'Return only one JSON object, no code fence:',
+      '{"summary": "two or three plain sentences: how it went, what was good", "working_on": ["up to three short items: the patterns that repeated, as rules he can reuse"], "redo": [{"en": "an English sentence", "fr": "the French model answer"}]}',
+      'Give three "redo" sentences. Each is an English sentence built from one of his real mistakes or a structure he avoided, so he can translate it again from memory. Direct and brief. No praise padding.'
+    ].join('\n');
+  }
+
+  /* ---------------------------------------------------------- the call */
+
+  function callApi(system, messages, maxTokens) {
+    var key = apiKey();
+    if (!key) return Promise.reject(new Error('No API key saved.'));
+
+    return fetch(ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'x-api-key': key,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
+      body: JSON.stringify({
+        model: model(),
+        max_tokens: maxTokens || 700,
+        system: system,
+        messages: messages
+      })
+    }).then(function (res) {
+      if (res.ok) return res.json();
+      return res.json().catch(function () { return {}; }).then(function (b) {
+        var detail = (b && b.error && b.error.message) ? ' ' + b.error.message : '';
+        if (res.status === 401) throw new Error('The API key was rejected. Check it, or save a new one.');
+        if (res.status === 429) throw new Error('Rate limited. Wait a moment and send again.');
+        if (res.status === 529 || res.status >= 500) throw new Error('The service is busy. Send again in a moment.');
+        throw new Error('The request failed (' + res.status + ').' + detail);
+      });
+    }, function () {
+      throw new Error('Could not reach api.anthropic.com. Check the connection. ' +
+        'This section does not work from the offline single file.');
+    }).then(function (j) {
+      return (j.content || []).map(function (b) { return b.text || ''; }).join('');
+    });
+  }
+
+  // The model is told to return bare JSON. Believe it, but survive a fence
+  // or a line of prose, and never lose the French if it slips completely.
+  function parseTurn(text) {
+    var t = String(text || '').trim().replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '');
+    var obj = null;
+    try { obj = JSON.parse(t); } catch (e) {
+      var a = t.indexOf('{'), b = t.lastIndexOf('}');
+      if (a >= 0 && b > a) { try { obj = JSON.parse(t.slice(a, b + 1)); } catch (e2) { obj = null; } }
+    }
+    if (!obj || typeof obj !== 'object') return { reply: t, ok: true, feedback: [], better: '', help: '' };
+    var fb = Array.isArray(obj.feedback) ? obj.feedback : [];
+    return {
+      reply: String(obj.reply || ''),
+      ok: obj.ok !== false && !fb.length,
+      feedback: fb.slice(0, 3).map(function (f) {
+        return {
+          said: String((f && f.said) || ''), fix: String((f && f.fix) || ''),
+          why: String((f && f.why) || ''), theme: String((f && f.theme) || 'other')
+        };
+      }),
+      better: String(obj.better || ''),
+      help: String(obj.help || '')
+    };
+  }
+
+  function wire(session) {
+    // Anthropic wants the first message from the user. The opener is the
+    // character speaking first, so a stage direction stands in for it.
+    var out = [{ role: 'user', content: '[Begin the role play. Say your first line.]' }];
+    session.turns.forEach(function (t) {
+      if (t.role === 'ai') {
+        out.push({ role: 'assistant', content: JSON.stringify(
+          { reply: t.text, ok: true, feedback: [], better: '', help: '' }) });
+      } else {
+        out.push({ role: 'user', content: t.text });
+      }
+    });
+    return out.length > MAX_SENT ? out.slice(out.length - MAX_SENT) : out;
+  }
+
+  /* ---------------------------------------------------------- helpers */
+
+  function escapeHtml(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+  function attr(s) { return escapeHtml(s).replace(/"/g, '&quot;'); }
+
+  function uid() { return 's' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+
+  function when(ts) {
+    var d = new Date(ts);
+    var p = function (n) { return (n < 10 ? '0' : '') + n; };
+    return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()) + ' ' + p(d.getHours()) + ':' + p(d.getMinutes());
+  }
+
+  function errorsOf(session) {
+    var out = [];
+    session.turns.forEach(function (t) {
+      (t.fb && t.fb.feedback || []).forEach(function (f) { out.push(f); });
+    });
+    return out;
+  }
+
+  function transcriptOf(session) {
+    return session.turns.map(function (t) {
+      return (t.role === 'ai' ? 'Character: ' : 'Learner: ') + t.text;
+    }).join('\n');
+  }
+
+  /* ---------------------------------------------------------- list page */
+
+  function renderList(view) {
+    var embedded = Data.isEmbedded();
+    view.innerHTML = '<div class="loading">Loading…</div>';
+    return load().then(function () {
+      var html = '<h1>Talk</h1>' +
+        '<p class="lead">A role play in French with a model that plays the character. ' +
+        'There is no answer to match: say what you would really say, and it follows you. ' +
+        'It marks only French that is actually wrong, and never your accents.</p>';
+
+      if (embedded) {
+        html += '<div class="callout callout-warn"><p>This section needs the hosted site and a connection. ' +
+          'It does not work from the offline single file.</p></div>';
+      }
+
+      html += keyCard();
+
+      html += '<h2>Scenes</h2><div class="cards">';
+      index.scenarios.forEach(function (sc) {
+        html += '<button class="card talk-card" type="button" data-start="' + attr(sc.id) + '">' +
+          '<span class="pill pill-' + sc.level.toLowerCase() + '">' + escapeHtml(sc.level) + '</span>' +
+          '<h3>' + escapeHtml(sc.title) + '</h3><p>' + escapeHtml(sc.blurb) + '</p></button>';
+      });
+      html += '</div>';
+
+      var past = sessions();
+      if (past.length) {
+        html += '<h2>Earlier talks</h2><ul class="talk-past">';
+        past.forEach(function (s) {
+          var errs = errorsOf(s).length;
+          html += '<li><a href="#/talk/s/' + attr(s.id) + '">' + escapeHtml(s.title) + '</a>' +
+            '<span class="talk-past-meta">' + escapeHtml(when(s.started)) + ' · ' +
+            s.turns.filter(function (t) { return t.role === 'you'; }).length + ' lines · ' +
+            errs + ' correction' + (errs === 1 ? '' : 's') + (s.debrief ? ' · reviewed' : '') + '</span>' +
+            '<button class="btn btn-sm" type="button" data-del="' + attr(s.id) + '">Delete</button></li>';
+        });
+        html += '</ul>';
+      }
+
+      html += '<p class="talk-note">Your lines go from this browser to Anthropic, using your key, and ' +
+        'nowhere else. The key stays in this browser and is never synced.</p>';
+
+      view.innerHTML = html;
+      bindList(view);
+    }).catch(function (err) {
+      view.innerHTML = '<div class="empty"><div class="empty-icon">⚠️</div><p>' +
+        escapeHtml(err.message) + '</p></div>';
+    });
+  }
+
+  function keyCard() {
+    var has = !!apiKey();
+    var opts = MODELS.map(function (m) {
+      return '<option value="' + attr(m.id) + '"' + (m.id === model() ? ' selected' : '') + '>' +
+        escapeHtml(m.label) + '</option>';
+    }).join('');
+    if (has) {
+      return '<div class="talk-key">' +
+        '<span>API key saved in this browser.</span>' +
+        '<label>Model <select id="talkModel">' + opts + '</select></label>' +
+        '<button class="btn btn-sm" type="button" id="talkForget">Forget the key</button></div>';
+    }
+    return '<div class="talk-key talk-key-empty">' +
+      '<p><strong>One-time setup.</strong> Paste an Anthropic API key. It is stored only in this ' +
+      'browser, sent only to api.anthropic.com, and never synced.</p>' +
+      '<form id="talkKeyForm" autocomplete="off">' +
+      '<input type="password" id="talkKey" placeholder="API key" autocomplete="off" spellcheck="false" ' +
+      'aria-label="Anthropic API key">' +
+      '<button class="btn btn-primary" type="submit">Save</button></form></div>';
+  }
+
+  function bindList(view) {
+    view.addEventListener('click', function (e) {
+      var go = e.target.closest('[data-start]');
+      if (go) {
+        if (!apiKey()) {
+          var k = view.querySelector('#talkKey');
+          if (k) { k.focus(); k.classList.add('is-needed'); }
+          return;
+        }
+        var sc = scenario(go.dataset.start);
+        var s = {
+          id: uid(), scenario: sc.id, title: sc.title, started: Date.now(),
+          model: model(), turns: [{ role: 'ai', text: sc.opener }], debrief: null
+        };
+        saveSession(s);
+        location.hash = '#/talk/s/' + s.id;
+        return;
+      }
+      var del = e.target.closest('[data-del]');
+      if (del) {
+        if (window.confirm('Delete this talk?')) {
+          removeSession(del.dataset.del);
+          renderList(view);
+        }
+        return;
+      }
+      if (e.target.id === 'talkForget') {
+        drop(KEY_STORE);
+        renderList(view);
+      }
+    });
+    var form = view.querySelector('#talkKeyForm');
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var inp = view.querySelector('#talkKey');
+        var v = (inp.value || '').trim();
+        if (!v) return;
+        write(KEY_STORE, v);
+        inp.value = '';
+        renderList(view);
+      });
+    }
+    var sel = view.querySelector('#talkModel');
+    if (sel) sel.addEventListener('change', function () { write(MODEL_STORE, sel.value); });
+  }
+
+  /* ---------------------------------------------------------- session page */
+
+  var ACCENTS = ['é', 'è', 'ê', 'à', 'â', 'ù', 'û', 'î', 'ô', 'ç', 'œ'];
+  var CYCLE = {
+    a: 'àâ', e: 'éèêë', i: 'îï', o: 'ôö', u: 'ùûü', c: 'ç',
+    'à': 'â', 'â': 'a', 'é': 'è', 'è': 'ê', 'ê': 'ë', 'ë': 'e',
+    'î': 'ï', 'ï': 'i', 'ô': 'ö', 'ö': 'o', 'ù': 'û', 'û': 'ü', 'ü': 'u', 'ç': 'c'
+  };
+
+  function renderSession(view, id) {
+    view.innerHTML = '<div class="loading">Loading…</div>';
+    return load().then(function () {
+      var s = findSession(id);
+      if (!s) {
+        view.innerHTML = '<div class="empty"><div class="empty-icon">🤷</div>' +
+          '<p>No talk with that id. It may have been deleted.</p>' +
+          '<p><a href="#/talk">All scenes</a></p></div>';
+        return;
+      }
+      var sc = scenario(s.scenario);
+      if (!sc) {
+        view.innerHTML = '<div class="empty"><p>That scene no longer exists.</p>' +
+          '<p><a href="#/talk">All scenes</a></p></div>';
+        return;
+      }
+      live = s;
+      draw(view, s, sc);
+    });
+  }
+
+  function draw(view, s, sc) {
+    var chips = (sc.targets || []).map(function (t) {
+      return '<span class="talk-chip">' + escapeHtml(t) + '</span>';
+    }).join('');
+
+    view.innerHTML =
+      '<p class="talk-back"><a href="#/talk">← All scenes</a></p>' +
+      '<h1>' + escapeHtml(sc.title) + '</h1>' +
+      '<div class="talk-scene"><p>' + escapeHtml(sc.setting) + '</p>' +
+      '<p><strong>Goal.</strong> ' + escapeHtml(sc.goal) + '</p>' +
+      (chips ? '<details class="talk-targets"><summary>Frames this scene may bring up</summary>' + chips + '</details>' : '') +
+      '</div>' +
+      '<div class="talk-log" id="talkLog" aria-live="polite"></div>' +
+      '<div class="talk-error" id="talkError" hidden></div>' +
+      '<div class="talk-compose" id="talkCompose">' +
+      accentBar() +
+      '<textarea id="talkIn" rows="2" spellcheck="false" autocomplete="off" ' +
+      'placeholder="Your answer, in French. Say anything you would really say."></textarea>' +
+      '<div class="talk-actions">' +
+      '<button class="btn btn-primary" type="button" id="talkSend">Send</button>' +
+      (Speech.supported() ? '<button class="btn" type="button" id="talkMic">🎤 Speak</button>' : '') +
+      '<button class="btn" type="button" id="talkStuck">I am stuck</button>' +
+      '<button class="btn" type="button" id="talkEnd">End and review</button>' +
+      '</div></div>' +
+      '<div id="talkReview"></div>';
+
+    var log = view.querySelector('#talkLog');
+    s.turns.forEach(function (t) { log.appendChild(bubble(t)); });
+    if (s.debrief) showReview(view, s, sc);
+    log.scrollIntoView({ block: 'end' });
+
+    bindSession(view, s, sc);
+  }
+
+  function bubble(t) {
+    var el = document.createElement('div');
+    el.className = 'talk-msg talk-' + t.role;
+    var html = '<div class="talk-bubble">' + escapeHtml(t.text) + '</div>';
+    if (t.role === 'ai') {
+      html += '<button class="talk-play" type="button" aria-label="Hear this line" data-say="' + attr(t.text) + '">▶</button>';
+    }
+    if (t.fb) html += feedbackHtml(t.fb);
+    el.innerHTML = html;
+    return el;
+  }
+
+  function feedbackHtml(fb) {
+    var h = '<div class="talk-fb">';
+    if (fb.ok && !(fb.feedback || []).length) {
+      h += '<span class="talk-ok">✓ Natural</span>';
+    } else {
+      (fb.feedback || []).forEach(function (f) {
+        h += '<div class="talk-fix">' +
+          '<span class="talk-theme">' + escapeHtml(f.theme) + '</span> ' +
+          '<s>' + escapeHtml(f.said) + '</s> → <strong>' + escapeHtml(f.fix) + '</strong>' +
+          '<span class="talk-why">' + escapeHtml(f.why) + '</span></div>';
+      });
+    }
+    if (fb.better) h += '<div class="talk-better">More natural: <em>' + escapeHtml(fb.better) + '</em></div>';
+    if (fb.help) h += '<div class="talk-help">' + escapeHtml(fb.help) + '</div>';
+    return h + '</div>';
+  }
+
+  function accentBar() {
+    return '<div class="accent-bar" role="group" aria-label="Insert an accented letter">' +
+      ACCENTS.map(function (c) {
+        return '<button class="accent-key" type="button" tabindex="-1" data-ch="' + c + '">' + c + '</button>';
+      }).join('') + '</div>';
+  }
+
+  function bindSession(view, s, sc) {
+    var input = view.querySelector('#talkIn');
+    var log = view.querySelector('#talkLog');
+    var errBox = view.querySelector('#talkError');
+    var busy = false;
+
+    function setBusy(on) {
+      busy = on;
+      ['#talkSend', '#talkStuck', '#talkEnd', '#talkMic'].forEach(function (q) {
+        var b = view.querySelector(q);
+        if (b) b.disabled = on;
+      });
+      input.disabled = on;
+      var t = log.querySelector('.talk-typing');
+      if (on && !t) {
+        var d = document.createElement('div');
+        d.className = 'talk-msg talk-ai talk-typing';
+        d.innerHTML = '<div class="talk-bubble">…</div>';
+        log.appendChild(d);
+        d.scrollIntoView({ block: 'end' });
+      }
+      if (!on && t) t.remove();
+    }
+
+    function fail(err) {
+      errBox.hidden = false;
+      errBox.textContent = err.message;
+    }
+
+    function send() {
+      var text = input.value.trim();
+      if (!text || busy) return;
+      errBox.hidden = true;
+      var mine = { role: 'you', text: text, fb: null };
+      s.turns.push(mine);
+      var node = bubble(mine);
+      log.appendChild(node);
+      input.value = '';
+      setBusy(true);
+      callApi(systemPrompt(sc), wire(s), 700).then(function (raw) {
+        var r = parseTurn(raw);
+        mine.fb = { ok: r.ok, feedback: r.feedback, better: r.better, help: r.help };
+        var fresh = bubble(mine);
+        log.replaceChild(fresh, node);
+        var ai = { role: 'ai', text: r.reply || '…', fb: null };
+        s.turns.push(ai);
+        setBusy(false);
+        log.appendChild(bubble(ai));
+        saveSession(s);
+        input.focus();
+        log.lastChild.scrollIntoView({ block: 'end' });
+      }).catch(function (err) {
+        // The line was never answered, so take it back and give it to you.
+        s.turns.pop();
+        node.remove();
+        input.value = text;
+        setBusy(false);
+        fail(err);
+      });
+    }
+
+    view.querySelector('#talkSend').addEventListener('click', send);
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) { e.preventDefault(); send(); return; }
+      if (e.metaKey || e.ctrlKey || e.altKey || e.key.length !== 1) return;
+      var at = input.selectionStart;
+      if (at === null || at !== input.selectionEnd || at === 0) return;
+      var prev = input.value.charAt(at - 1);
+      var next = CYCLE[prev];
+      var base = prev.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+      if (!next || e.key.toLowerCase() !== base) return;
+      e.preventDefault();
+      input.setRangeText(next.charAt(0), at - 1, at, 'end');
+    });
+
+    view.querySelector('.accent-bar').addEventListener('mousedown', function (e) {
+      var b = e.target.closest('[data-ch]');
+      if (!b) return;
+      e.preventDefault();
+      input.setRangeText(b.dataset.ch, input.selectionStart, input.selectionEnd, 'end');
+      input.focus();
+    });
+
+    var mic = view.querySelector('#talkMic');
+    if (mic) {
+      mic.addEventListener('click', function () {
+        errBox.hidden = true;
+        mic.textContent = '🎤 Listening…';
+        Speech.listen({ timeout: 12000 }).then(function (alts) {
+          var said = alts[0] || '';
+          input.value = (input.value ? input.value + ' ' : '') + said;
+          input.focus();
+        }).catch(fail).then(function () { mic.textContent = '🎤 Speak'; });
+      });
+    }
+
+    view.querySelector('#talkStuck').addEventListener('click', function () {
+      if (busy) return;
+      errBox.hidden = true;
+      setBusy(true);
+      var msgs = wire(s).concat([{ role: 'user', content: stuckPrompt() }]);
+      callApi(systemPrompt(sc), msgs, 500).then(function (raw) {
+        var r = parseTurn(raw);
+        setBusy(false);
+        var d = document.createElement('div');
+        d.className = 'talk-msg talk-hint';
+        d.innerHTML = '<div class="talk-help">' + escapeHtml(r.help || r.reply || 'No suggestion this time.') + '</div>';
+        log.appendChild(d);
+        d.scrollIntoView({ block: 'end' });
+      }).catch(function (err) { setBusy(false); fail(err); });
+    });
+
+    view.querySelector('#talkEnd').addEventListener('click', function () {
+      if (busy) return;
+      var said = s.turns.filter(function (t) { return t.role === 'you'; }).length;
+      if (!said) { fail(new Error('Say something first, then end it.')); return; }
+      errBox.hidden = true;
+      setBusy(true);
+      callApi(debriefPrompt(sc, transcriptOf(s), errorsOf(s)), [{ role: 'user', content: 'Close the session.' }], 900)
+        .then(function (raw) {
+          var t = String(raw).trim().replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '');
+          var obj = null;
+          try { obj = JSON.parse(t); } catch (e) {
+            var a = t.indexOf('{'), b = t.lastIndexOf('}');
+            if (a >= 0 && b > a) { try { obj = JSON.parse(t.slice(a, b + 1)); } catch (e2) { obj = null; } }
+          }
+          s.debrief = {
+            summary: String((obj && obj.summary) || ''),
+            working_on: Array.isArray(obj && obj.working_on) ? obj.working_on.map(String) : [],
+            redo: Array.isArray(obj && obj.redo) ? obj.redo.map(function (r) {
+              return { en: String(r.en || ''), fr: String(r.fr || '') };
+            }) : []
+          };
+          saveSession(s);
+          setBusy(false);
+          showReview(view, s, sc);
+        }).catch(function (err) { setBusy(false); fail(err); });
+    });
+
+    log.addEventListener('click', function (e) {
+      var p = e.target.closest('[data-say]');
+      if (p && window.Say && Say.supported()) Say.speak(p.dataset.say, { el: p });
+    });
+  }
+
+  /* ---------------------------------------------------------- review */
+
+  function showReview(view, s, sc) {
+    var box = view.querySelector('#talkReview');
+    var errs = errorsOf(s);
+    var d = s.debrief;
+
+    var byTheme = {};
+    errs.forEach(function (f) { byTheme[f.theme] = (byTheme[f.theme] || 0) + 1; });
+    var themes = Object.keys(byTheme).sort(function (a, b) { return byTheme[b] - byTheme[a]; });
+
+    var h = '<h2>Review</h2>';
+    if (d.summary) h += '<p>' + escapeHtml(d.summary) + '</p>';
+    if (themes.length) {
+      h += '<p class="talk-themes">' + themes.map(function (t) {
+        return '<span class="talk-theme">' + escapeHtml(t) + ' ×' + byTheme[t] + '</span>';
+      }).join(' ') + '</p>';
+    }
+    if (d.working_on && d.working_on.length) {
+      h += '<h3>Work on</h3><ul>' + d.working_on.map(function (w) { return '<li>' + escapeHtml(w) + '</li>'; }).join('') + '</ul>';
+    }
+    if (errs.length) {
+      h += '<h3>Every correction</h3><ul class="talk-errors">' + errs.map(function (f) {
+        return '<li><s>' + escapeHtml(f.said) + '</s> → <strong>' + escapeHtml(f.fix) + '</strong>' +
+          '<span class="talk-why">' + escapeHtml(f.why) + '</span></li>';
+      }).join('') + '</ul>';
+    }
+    if (d.redo && d.redo.length) {
+      h += '<h3>Say these again from English</h3><ol class="talk-redo">' + d.redo.map(function (r) {
+        return '<li>' + escapeHtml(r.en) + '<details><summary>Show</summary>' + escapeHtml(r.fr) + '</details></li>';
+      }).join('') + '</ol>';
+    }
+    h += '<p><button class="btn" type="button" id="talkCopy">Copy report</button> ' +
+      '<a class="btn" href="#/talk">New talk</a></p>' +
+      '<p class="talk-note">Paste the copied report into the chat and it goes into the study log.</p>';
+    box.innerHTML = h;
+
+    box.querySelector('#talkCopy').addEventListener('click', function (e) {
+      var text = reportText(s, sc, errs, d);
+      var b = e.target;
+      var done = function () { b.textContent = 'Copied'; };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { window.prompt('Copy this:', text); });
+      } else {
+        window.prompt('Copy this:', text);
+      }
+    });
+    box.scrollIntoView({ block: 'start' });
+  }
+
+  function reportText(s, sc, errs, d) {
+    var lines = ['# Role play: ' + sc.title, '',
+      when(s.started) + ', ' + s.turns.filter(function (t) { return t.role === 'you'; }).length +
+      ' lines, ' + errs.length + ' corrections, model ' + s.model, ''];
+    if (d.summary) lines.push(d.summary, '');
+    if (d.working_on.length) {
+      lines.push('## Work on', '');
+      d.working_on.forEach(function (w) { lines.push('- ' + w); });
+      lines.push('');
+    }
+    if (errs.length) {
+      lines.push('## Corrections', '', '| wrote | should be | theme | why |', '|---|---|---|---|');
+      errs.forEach(function (f) {
+        lines.push('| ' + f.said + ' | ' + f.fix + ' | ' + f.theme + ' | ' + f.why + ' |');
+      });
+      lines.push('');
+    }
+    if (d.redo.length) {
+      lines.push('## Redo from English', '');
+      d.redo.forEach(function (r) { lines.push('- ' + r.en + ' / ' + r.fr); });
+      lines.push('');
+    }
+    lines.push('## Transcript', '');
+    s.turns.forEach(function (t) { lines.push((t.role === 'ai' ? '- Character: ' : '- Me: ') + t.text); });
+    return lines.join('\n');
+  }
+
+  function stop() { live = null; }
+
+  return { renderList: renderList, renderSession: renderSession, stop: stop };
+})();

@@ -27,6 +27,7 @@ SCRIPTS = [
     "assets/speech.js",
     "assets/test.js",
     "assets/read.js",
+    "assets/roleplay.js",
     "assets/quiz.js",
     "assets/vocab.js",
     "assets/app.js",
@@ -77,6 +78,8 @@ def main():
             if entry.get("file") and os.path.exists(os.path.join(ROOT, rel)):
                 embedded[rel] = json.loads(read(rel))
                 passages += 1
+
+    embedded["content/roleplay/index.json"] = json.loads(read("content/roleplay/index.json"))
 
     html = read("index.html")
 

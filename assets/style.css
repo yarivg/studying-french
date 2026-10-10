@@ -1566,3 +1566,95 @@ textarea.test-input { font-size: .95rem; line-height: 1.6; resize: vertical; }
   margin: 4px 0 2px;
   line-height: 1.4;
 }
+
+/* ---------------------------------------------------------- talk (role play) */
+
+.talk-card { text-align: left; font: inherit; color: inherit; cursor: pointer; }
+.talk-card:hover { border-color: var(--bleu); }
+.talk-key {
+  display: flex; align-items: center; gap: .8rem; flex-wrap: wrap;
+  margin: 1.2rem 0; padding: .7rem 1rem;
+  background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--r-md);
+  font-size: .88rem;
+}
+.talk-key-empty { display: block; }
+.talk-key-empty p { margin: 0 0 .6rem; }
+.talk-key form { display: flex; gap: .5rem; flex-wrap: wrap; }
+.talk-key input[type="password"] {
+  flex: 1 1 16rem; padding: .45rem .7rem; font: inherit; color: var(--ink);
+  background: var(--bg); border: 1px solid var(--line); border-radius: var(--r-sm);
+}
+.talk-key input.is-needed { outline: 2px solid var(--rouge); outline-offset: 1px; }
+.talk-key select { font: inherit; margin-left: .3rem; }
+.talk-past { list-style: none; margin: .6rem 0 1.4rem; padding: 0; }
+.talk-past li {
+  display: flex; align-items: center; gap: .8rem; flex-wrap: wrap;
+  padding: .5rem 0; border-bottom: 1px solid var(--line-soft);
+}
+.talk-past-meta { color: var(--muted); font-size: .8rem; flex: 1; }
+.talk-note { color: var(--muted); font-size: .8rem; margin-top: 1.4rem; }
+.talk-back { margin: 0 0 .4rem; font-size: .85rem; }
+
+.talk-scene {
+  margin: .6rem 0 1.2rem; padding: .8rem 1rem; font-size: .92rem;
+  background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--r-md);
+}
+.talk-scene p { margin: .2rem 0; }
+.talk-targets { margin-top: .5rem; font-size: .82rem; color: var(--muted); }
+.talk-chip {
+  display: inline-block; margin: .25rem .3rem 0 0; padding: .1rem .55rem;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--surface);
+}
+
+.talk-log { display: flex; flex-direction: column; gap: .9rem; margin: 1rem 0; }
+.talk-msg { display: flex; flex-direction: column; max-width: min(46rem, 100%); }
+.talk-ai { align-items: flex-start; position: relative; }
+.talk-you { align-items: flex-end; align-self: flex-end; }
+.talk-bubble {
+  padding: .6rem .9rem; border-radius: var(--r-lg); line-height: 1.55;
+  border: 1px solid var(--line); background: var(--surface); white-space: pre-wrap;
+}
+.talk-you .talk-bubble { background: var(--bleu-soft); border-color: color-mix(in srgb, var(--bleu) 30%, var(--line)); }
+.talk-play {
+  margin-top: .2rem; padding: .05rem .5rem; font-size: .7rem; cursor: pointer;
+  color: var(--muted); background: none; border: 1px solid var(--line); border-radius: 999px;
+}
+.talk-play:hover { color: var(--bleu); border-color: var(--bleu); }
+.talk-play.is-speaking { color: var(--bleu); border-color: var(--bleu); }
+.talk-typing .talk-bubble { color: var(--muted); }
+
+.talk-fb { margin-top: .3rem; font-size: .84rem; max-width: 100%; }
+.talk-ok { color: var(--vert); }
+.talk-fix {
+  margin-top: .25rem; padding: .4rem .7rem; text-align: left;
+  border-left: 3px solid var(--or); background: var(--or-soft); border-radius: var(--r-sm);
+}
+.talk-fix s { color: var(--rouge); }
+.talk-why { display: block; color: var(--ink-soft); margin-top: .1rem; }
+.talk-theme {
+  display: inline-block; padding: 0 .45rem; margin-right: .3rem;
+  font: 600 .66rem var(--sans); text-transform: uppercase; letter-spacing: .06em;
+  color: var(--or); border: 1px solid color-mix(in srgb, var(--or) 40%, transparent); border-radius: 999px;
+}
+.talk-better { margin-top: .25rem; color: var(--ink-soft); }
+.talk-help, .talk-hint .talk-help {
+  margin-top: .3rem; padding: .5rem .8rem; white-space: pre-wrap; text-align: left;
+  background: var(--vert-soft); border-left: 3px solid var(--vert); border-radius: var(--r-sm);
+}
+.talk-hint { align-self: center; }
+
+.talk-error {
+  margin: .6rem 0; padding: .6rem .9rem; font-size: .88rem;
+  color: var(--rouge); background: var(--rouge-soft); border-radius: var(--r-sm);
+}
+.talk-compose { position: sticky; bottom: 0; padding: .6rem 0 .8rem; background: var(--paper); }
+.talk-compose textarea {
+  width: 100%; margin-top: .5rem; padding: .6rem .8rem; box-sizing: border-box;
+  font: inherit; font-size: 1rem; line-height: 1.55; color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-sm); resize: vertical;
+}
+.talk-compose textarea:focus { outline: 2px solid var(--bleu); outline-offset: 1px; }
+.talk-actions { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .5rem; }
+.talk-themes { display: flex; gap: .3rem; flex-wrap: wrap; }
+.talk-errors li, .talk-redo li { margin-bottom: .5rem; }
+.talk-redo details { display: inline; margin-left: .5rem; }

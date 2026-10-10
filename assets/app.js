@@ -130,7 +130,8 @@
       '<a class="nav-link nav-meta" href="#/vocab"><span>Vocabulary</span></a>' +
       '<a class="nav-link nav-meta" href="#/cards"><span>Flashcards</span></a>' +
       '<a class="nav-link nav-meta" href="#/tests"><span>Tests</span></a>' +
-      '<a class="nav-link nav-meta" href="#/read"><span>Reading</span></a>';
+      '<a class="nav-link nav-meta" href="#/read"><span>Reading</span></a>' +
+      '<a class="nav-link nav-meta" href="#/talk"><span>Talk</span></a>';
 
     manifest.parts.forEach(function (part) {
       html += '<div class="nav-part"><span class="nav-part-n">' + escapeHtml(part.numeral) + '</span>' +
@@ -252,6 +253,7 @@
     closeSearch();
     Quiz.endSession();
     Test.stop();
+    Roleplay.stop();
     window.scrollTo(0, 0);
     document.getElementById('main').focus({ preventScroll: true });
 
@@ -265,6 +267,8 @@
     if (hash.indexOf('test/') === 0) return renderTest(hash.slice(5));
     if (hash === 'read') return renderReadList();
     if (hash.indexOf('read/') === 0) return renderPassage(hash.slice(5));
+    if (hash === 'talk') return renderTalkList();
+    if (hash.indexOf('talk/s/') === 0) return renderTalk(hash.slice(7));
     return renderChapter(hash);
   }
 
@@ -372,6 +376,7 @@
         card('#/' + nextCh.slug, '▶', read ? 'Continue' : 'Start reading', nextCh.title) +
         card('#/tests', '📝', 'Tests', 'A drill per chapter, an exam per part, marked by you') +
         card('#/read', '📕', 'Reading', 'Passages to read, hear, and read back out loud') +
+        card('#/talk', '💬', 'Talk', 'A role play with a model that follows you, and marks only real errors') +
         card('#/vocab', '📖', 'Vocabulary', 'Searchable and filterable, and you can add your own') +
         card('#/cards', '🗂', 'Flashcards', 'Spaced repetition across every theme') +
         card('#/dashboard', '📊', 'Progress', 'What you have read, learned and still owe') +
@@ -1686,6 +1691,20 @@
       view.innerHTML = '<div class="empty"><div class="empty-icon">⚠️</div><p>' +
         escapeHtml(err.message) + '</p></div>';
     });
+  }
+
+  /* ---------------------------------------------------------- talk */
+
+  function renderTalkList() {
+    setCurrentNav('talk');
+    pager.innerHTML = '';
+    Roleplay.renderList(view);
+  }
+
+  function renderTalk(id) {
+    setCurrentNav('talk');
+    pager.innerHTML = '';
+    Roleplay.renderSession(view, id);
   }
 
   /* ---------------------------------------------------------- flashcards */
