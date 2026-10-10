@@ -5495,9 +5495,33 @@ window.Roleplay = (function () {
 
   // Gemini sends the key in a header, never in the URL, so it cannot land in
   // a history entry or a log. Roles are user / model, and the system prompt
-  // is its own field. JSON mode keeps the reply parseable. The output budget
-  // is generous because a thinking model spends part of it before it writes.
+  // is its own field. JSON mode keeps the reply parseable.
+  //
+  // A Flash model thinks before it writes, which costs seconds on a line of
+  // role play that needs none. Thinking is switched off for Flash. A model
+  // that refuses the setting answers 400, and is asked again without it.
+  var noThinking = {};
+
   function callGemini(key, system, messages, maxTokens) {
+    var m = model();
+    var quiet = /flash/.test(m) && !noThinking[m];
+    return geminiRequest(key, system, messages, maxTokens, quiet).catch(function (err) {
+      if (quiet && err.status === 400 && !err.keyBad) {
+        noThinking[m] = true;
+        return geminiRequest(key, system, messages, maxTokens, false);
+      }
+      throw err;
+    });
+  }
+
+  function geminiRequest(key, system, messages, maxTokens, quiet) {
+    var cfg = {
+      maxOutputTokens: Math.max(maxTokens || 700, 4096),
+      responseMimeType: 'application/json',
+      temperature: 0.8
+    };
+    if (quiet) cfg.thinkingConfig = { thinkingBudget: 0 };
+
     return fetch(GEMINI_BASE + 'models/' + encodeURIComponent(model()) + ':generateContent', {
       method: 'POST',
       headers: { 'content-type': 'application/json', 'x-goog-api-key': key },
@@ -5506,22 +5530,30 @@ window.Roleplay = (function () {
         contents: messages.map(function (m) {
           return { role: m.role === 'assistant' ? 'model' : 'user', parts: [{ text: m.content }] };
         }),
-        generationConfig: {
-          maxOutputTokens: Math.max(maxTokens || 700, 4096),
-          responseMimeType: 'application/json',
-          temperature: 0.8
-        }
+        generationConfig: cfg
       })
     }).then(function (res) {
       if (res.ok) return res.json();
       return res.json().catch(function () { return {}; }).then(function (b) {
         var msg = (b && b.error && b.error.message) || '';
-        if (res.status === 400 && /api key/i.test(msg)) throw new Error('The API key was rejected. Check it, or save a new one.');
-        if (res.status === 401 || res.status === 403) throw new Error('The key was rejected, or it is not allowed to use this model.');
-        if (res.status === 404) throw new Error('Model ' + model() + ' was not found for this key. It may be retired: pick another one in the model list, such as gemini-flash-latest.');
-        if (res.status === 429) throw new Error('Rate limited. Wait a moment and send again.');
-        if (res.status >= 500) throw new Error('The service is busy. Send again in a moment.');
-        throw new Error('The request failed (' + res.status + ').' + (msg ? ' ' + msg : ''));
+        var e;
+        if (res.status === 400 && /api key/i.test(msg)) {
+          e = new Error('The API key was rejected. Check it, or save a new one.');
+          e.keyBad = true;
+        } else if (res.status === 401 || res.status === 403) {
+          e = new Error('The key was rejected, or it is not allowed to use this model.');
+          e.keyBad = true;
+        } else if (res.status === 404) {
+          e = new Error('Model ' + model() + ' was not found for this key. It may be retired: pick another one in the model list, such as gemini-flash-latest.');
+        } else if (res.status === 429) {
+          e = new Error('Rate limited. Wait a moment and send again.');
+        } else if (res.status >= 500) {
+          e = new Error('The service is busy. Send again in a moment.');
+        } else {
+          e = new Error('The request failed (' + res.status + ').' + (msg ? ' ' + msg : ''));
+        }
+        e.status = res.status;
+        throw e;
       });
     }, function () { throw unreachable(); }).then(function (j) {
       var c = j.candidates && j.candidates[0];
