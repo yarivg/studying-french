@@ -41,8 +41,8 @@ window.Roleplay = (function () {
       // Only a starting point. The live list from the key replaces it, so a
       // renamed or retired model never needs a code change.
       models: [
-        { id: 'gemini-2.5-flash', label: 'gemini-2.5-flash: fast' },
-        { id: 'gemini-2.5-pro', label: 'gemini-2.5-pro: slower, a closer ear' }
+        { id: 'gemini-flash-latest', label: 'gemini-flash-latest: tracks the current Flash' },
+        { id: 'gemini-pro-latest', label: 'gemini-pro-latest: slower, a closer ear' }
       ]
     }
   };
@@ -232,7 +232,7 @@ window.Roleplay = (function () {
         var msg = (b && b.error && b.error.message) || '';
         if (res.status === 400 && /api key/i.test(msg)) throw new Error('The API key was rejected. Check it, or save a new one.');
         if (res.status === 401 || res.status === 403) throw new Error('The key was rejected, or it is not allowed to use this model.');
-        if (res.status === 404) throw new Error('That model was not found for this key. Pick another one in the model list.');
+        if (res.status === 404) throw new Error('Model ' + model() + ' was not found for this key. It may be retired: pick another one in the model list, such as gemini-flash-latest.');
         if (res.status === 429) throw new Error('Rate limited. Wait a moment and send again.');
         if (res.status >= 500) throw new Error('The service is busy. Send again in a moment.');
         throw new Error('The request failed (' + res.status + ').' + (msg ? ' ' + msg : ''));
@@ -248,6 +248,28 @@ window.Roleplay = (function () {
     });
   }
 
+  // The first one is the default, so it must be one that works: the moving
+  // alias first, then stable Flash newest first, then Pro, then lite, and
+  // previews last. An old model can be listed and still 404 for a new key.
+  function geminiOrder(a, b) {
+    var ra = geminiRank(a.id), rb = geminiRank(b.id);
+    if (ra !== rb) return ra - rb;
+    return geminiVersion(b.id) - geminiVersion(a.id);
+  }
+  function geminiRank(id) {
+    if (id === 'gemini-flash-latest') return 0;
+    if (/preview|exp/.test(id)) return 5;
+    if (/lite/.test(id)) return 4;
+    if (/latest/.test(id)) return 2;
+    if (/flash/.test(id)) return 1;
+    if (/pro/.test(id)) return 3;
+    return 3;
+  }
+  function geminiVersion(id) {
+    var m = id.match(/(\d+(?:\.\d+)?)/);
+    return m ? parseFloat(m[1]) : 0;
+  }
+
   // The models this key can actually call, so nothing here goes stale.
   function loadGeminiModels() {
     var key = read(PROVIDERS.gemini.keyStore, '');
@@ -259,11 +281,11 @@ window.Roleplay = (function () {
         var out = j.models.filter(function (m) {
           return /^models\/gemini/.test(m.name) &&
             (m.supportedGenerationMethods || []).indexOf('generateContent') >= 0 &&
-            !/(tts|image|embedding|live|audio|robotics|computer-use|learnlm)/.test(m.name);
+            !/(tts|image|embedding|live|audio|robotics|computer-use|learnlm|nano|banana|transcribe|omni|customtools)/.test(m.name);
         }).map(function (m) {
           var id = m.name.replace(/^models\//, '');
           return { id: id, label: id + (m.displayName ? ': ' + m.displayName : '') };
-        });
+        }).sort(geminiOrder);
         if (!out.length) return null;
         write(GEMINI_MODELS_STORE, JSON.stringify(out));
         return out;
@@ -414,7 +436,9 @@ window.Roleplay = (function () {
       return '<div class="talk-key">' + provSel +
         '<span>' + escapeHtml(P().keyName) + ' saved in this browser.</span>' +
         '<label>Model <select id="talkModel">' + modelOptions() + '</select></label>' +
-        '<button class="btn btn-sm" type="button" id="talkForget">Forget the key</button></div>';
+        '<button class="btn btn-sm" type="button" id="talkTest">Test the key</button>' +
+        '<button class="btn btn-sm" type="button" id="talkForget">Forget the key</button>' +
+        '<span class="talk-test-out" id="talkTestOut" role="status"></span></div>';
     }
     return '<div class="talk-key talk-key-empty">' + provSel +
       '<p><strong>One-time setup.</strong> Paste a ' + escapeHtml(P().keyName) + ' (from ' +
@@ -487,7 +511,32 @@ window.Roleplay = (function () {
       renderList(view);
     });
     var sel = root.querySelector('#talkModel');
-    if (sel) sel.addEventListener('change', function () { write(P().modelStore, sel.value); });
+    if (sel) sel.addEventListener('change', function () {
+      write(P().modelStore, sel.value);
+      var out = root.querySelector('#talkTestOut');
+      if (out) { out.textContent = ''; out.className = 'talk-test-out'; }
+    });
+    var test = root.querySelector('#talkTest');
+    if (test) test.addEventListener('click', function () {
+      var out = root.querySelector('#talkTestOut');
+      var started = Date.now();
+      var name = model();
+      test.disabled = true;
+      out.className = 'talk-test-out';
+      out.textContent = 'Testing ' + name + '…';
+      callApi('Reply with exactly this JSON and nothing else: {"reply": "ok"}',
+              [{ role: 'user', content: 'ping' }], 50)
+        .then(function (raw) {
+          if (!String(raw).trim()) throw new Error('The model answered with nothing.');
+          out.className = 'talk-test-out is-ok';
+          out.textContent = '✓ Works. ' + name + ' answered in ' + (Date.now() - started) + ' ms.';
+        })
+        .catch(function (err) {
+          out.className = 'talk-test-out is-bad';
+          out.textContent = '✗ ' + err.message;
+        })
+        .then(function () { test.disabled = false; });
+    });
   }
 
   /* ---------------------------------------------------------- session page */
