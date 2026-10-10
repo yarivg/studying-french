@@ -213,6 +213,8 @@ window.Roleplay = (function () {
   }
   function attr(s) { return escapeHtml(s).replace(/"/g, '&quot;'); }
 
+  function emo(sc) { return sc && sc.emoji ? sc.emoji + ' ' : ''; }
+
   function uid() { return 's' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
 
   function when(ts) {
@@ -257,7 +259,7 @@ window.Roleplay = (function () {
       index.scenarios.forEach(function (sc) {
         html += '<button class="card talk-card" type="button" data-start="' + attr(sc.id) + '">' +
           '<span class="pill pill-' + sc.level.toLowerCase() + '">' + escapeHtml(sc.level) + '</span>' +
-          '<h3>' + escapeHtml(sc.title) + '</h3><p>' + escapeHtml(sc.blurb) + '</p></button>';
+          '<h3>' + emo(sc) + escapeHtml(sc.title) + '</h3><p>' + escapeHtml(sc.blurb) + '</p></button>';
       });
       html += '</div>';
 
@@ -266,7 +268,7 @@ window.Roleplay = (function () {
         html += '<h2>Earlier talks</h2><ul class="talk-past">';
         past.forEach(function (s) {
           var errs = errorsOf(s).length;
-          html += '<li><a href="#/talk/s/' + attr(s.id) + '">' + escapeHtml(s.title) + '</a>' +
+          html += '<li><a href="#/talk/s/' + attr(s.id) + '">' + emo(scenario(s.scenario)) + escapeHtml(s.title) + '</a>' +
             '<span class="talk-past-meta">' + escapeHtml(when(s.started)) + ' · ' +
             s.turns.filter(function (t) { return t.role === 'you'; }).length + ' lines · ' +
             errs + ' correction' + (errs === 1 ? '' : 's') + (s.debrief ? ' · reviewed' : '') + '</span>' +
@@ -391,7 +393,7 @@ window.Roleplay = (function () {
 
     view.innerHTML =
       '<p class="talk-back"><a href="#/talk">← All scenes</a></p>' +
-      '<h1>' + escapeHtml(sc.title) + '</h1>' +
+      '<h1>' + emo(sc) + escapeHtml(sc.title) + '</h1>' +
       '<div class="talk-scene"><p>' + escapeHtml(sc.setting) + '</p>' +
       '<p><strong>Goal.</strong> ' + escapeHtml(sc.goal) + '</p>' +
       (chips ? '<details class="talk-targets"><summary>Frames this scene may bring up</summary>' + chips + '</details>' : '') +

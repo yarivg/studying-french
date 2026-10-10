@@ -9,6 +9,51 @@
   ],
   "scenarios": [
     {
+      "id": "restaurant",
+      "title": "Au restaurant",
+      "level": "A2",
+      "blurb": "Ordering, preferring, changing your mind.",
+      "setting": "A small restaurant, a busy evening. You are with one other person and one of you is a bit fussy.",
+      "ai": "a waiter",
+      "you": "a customer",
+      "goal": "Order a meal, ask about the dishes, and deal with something that is not quite right.",
+      "targets": [
+        "je préférerais",
+        "plutôt que de",
+        "avoir envie de",
+        "partitive and en"
+      ],
+      "grammar": [
+        "articles",
+        "quantity",
+        "conditionnel"
+      ],
+      "opener": "Bonsoir, bienvenue. Vous avez choisi, ou je vous laisse encore un moment ?",
+      "emoji": "🍽️"
+    },
+    {
+      "id": "pharmacie",
+      "emoji": "💊",
+      "title": "À la pharmacie",
+      "level": "A2",
+      "blurb": "Describe symptoms, understand the advice, ask how to take it.",
+      "setting": "You have a sore throat and a headache since yesterday. You go into a pharmacy. Use vous with the pharmacist.",
+      "ai": "a patient, efficient pharmacist",
+      "you": "a customer who feels unwell",
+      "goal": "Say what is wrong and for how long, understand what to take and when, and ask one question about it.",
+      "targets": [
+        "avoir mal à",
+        "depuis + present",
+        "il faut / je vous conseille de",
+        "en and the partitive"
+      ],
+      "grammar": [
+        "verb-prepositions",
+        "time-expressions"
+      ],
+      "opener": "Bonjour, je peux vous aider ?"
+    },
+    {
       "id": "medecin",
       "title": "Chez le médecin",
       "level": "B1",
@@ -17,9 +62,17 @@
       "ai": "a frank, kind doctor in a city surgery",
       "you": "the patient",
       "goal": "Explain how you feel, understand the advice, and say what you will actually do.",
-      "targets": ["conseiller / interdire à qqn de", "arrêter de", "avoir du mal à", "il faut que + subjonctif"],
-      "grammar": ["verb-prepositions"],
-      "opener": "Bonjour, installez-vous. Alors, qu'est-ce qui vous amène aujourd'hui ?"
+      "targets": [
+        "conseiller / interdire à qqn de",
+        "arrêter de",
+        "avoir du mal à",
+        "il faut que + subjonctif"
+      ],
+      "grammar": [
+        "verb-prepositions"
+      ],
+      "opener": "Bonjour, installez-vous. Alors, qu'est-ce qui vous amène aujourd'hui ?",
+      "emoji": "🩺"
     },
     {
       "id": "colocataire",
@@ -30,9 +83,18 @@
       "ai": "a chatty friend of yours, a little nosy",
       "you": "yourself",
       "goal": "Talk about the move, who you have told, and what the new place is like compared with the old one.",
-      "targets": ["dont", "venir de", "oser / ne pas encore", "comparatives"],
-      "grammar": ["relative-pronouns", "comparatives"],
-      "opener": "Alors, c'est vrai que tu penses déménager ? Raconte !"
+      "targets": [
+        "dont",
+        "venir de",
+        "oser / ne pas encore",
+        "comparatives"
+      ],
+      "grammar": [
+        "relative-pronouns",
+        "comparatives"
+      ],
+      "opener": "Alors, c'est vrai que tu penses déménager ? Raconte !",
+      "emoji": "📦"
     },
     {
       "id": "retard",
@@ -43,22 +105,19 @@
       "ai": "a station employee at the information desk",
       "you": "a traveller who is trying to stay polite",
       "goal": "Find out what happened, what your options are, and get on another train.",
-      "targets": ["avoir peur de", "être en retard / en avance", "reprocher", "plutôt que de", "futur after quand"],
-      "grammar": ["futur-simple", "verb-prepositions"],
-      "opener": "Bonjour monsieur, madame. Je vous écoute, vous avez un problème avec votre train ?"
-    },
-    {
-      "id": "restaurant",
-      "title": "Au restaurant",
-      "level": "A2",
-      "blurb": "Ordering, preferring, changing your mind.",
-      "setting": "A small restaurant, a busy evening. You are with one other person and one of you is a bit fussy.",
-      "ai": "a waiter",
-      "you": "a customer",
-      "goal": "Order a meal, ask about the dishes, and deal with something that is not quite right.",
-      "targets": ["je préférerais", "plutôt que de", "avoir envie de", "partitive and en"],
-      "grammar": ["articles", "quantity", "conditionnel"],
-      "opener": "Bonsoir, bienvenue. Vous avez choisi, ou je vous laisse encore un moment ?"
+      "targets": [
+        "avoir peur de",
+        "être en retard / en avance",
+        "reprocher",
+        "plutôt que de",
+        "futur after quand"
+      ],
+      "grammar": [
+        "futur-simple",
+        "verb-prepositions"
+      ],
+      "opener": "Bonjour monsieur, madame. Je vous écoute, vous avez un problème avec votre train ?",
+      "emoji": "🚆"
     },
     {
       "id": "voisin",
@@ -69,9 +128,18 @@
       "ai": "a neighbour, a bit defensive at first, who can be talked round",
       "you": "the neighbour who is tired",
       "goal": "Explain the problem, ask them to stop, and agree on something.",
-      "targets": ["reprocher à qqn de", "j'aimerais que + subjonctif", "sinon", "ne ... plus / jamais"],
-      "grammar": ["subjonctif-uses", "negation"],
-      "opener": "Oui ? Ah, c'est vous. Il y a un problème ?"
+      "targets": [
+        "reprocher à qqn de",
+        "j'aimerais que + subjonctif",
+        "sinon",
+        "ne ... plus / jamais"
+      ],
+      "grammar": [
+        "subjonctif-uses",
+        "negation"
+      ],
+      "opener": "Oui ? Ah, c'est vous. Il y a un problème ?",
+      "emoji": "🔊"
     },
     {
       "id": "weekend",
@@ -82,9 +150,175 @@
       "ai": "a colleague who likes details",
       "you": "yourself",
       "goal": "Tell what happened at the weekend, in order, with what was going on around it.",
-      "targets": ["passé composé against imparfait", "plus-que-parfait", "pendant que / quand", "depuis"],
-      "grammar": ["passe-compose", "imparfait", "imparfait-vs-passe-compose"],
-      "opener": "Salut ! Alors, c'était comment, ton week-end ? Tu as fait quelque chose de sympa ?"
+      "targets": [
+        "passé composé against imparfait",
+        "plus-que-parfait",
+        "pendant que / quand",
+        "depuis"
+      ],
+      "grammar": [
+        "passe-compose",
+        "imparfait",
+        "imparfait-vs-passe-compose"
+      ],
+      "opener": "Salut ! Alors, c'était comment, ton week-end ? Tu as fait quelque chose de sympa ?",
+      "emoji": "🗓️"
+    },
+    {
+      "id": "hotel",
+      "emoji": "🏨",
+      "title": "Un problème à l'hôtel",
+      "level": "B1",
+      "blurb": "A room that is not what you booked, and a polite way to fix it.",
+      "setting": "You arrive late at a hotel. The room is on the street side and you booked a quiet one at the back. Use vous.",
+      "ai": "the receptionist, courteous but short of free rooms",
+      "you": "the guest",
+      "goal": "Explain the problem, say what you booked, and agree on a solution.",
+      "targets": [
+        "conditionnel politeness",
+        "j'aimerais que",
+        "reprocher / se plaindre de",
+        "pas de + noun"
+      ],
+      "grammar": [
+        "conditionnel",
+        "negation"
+      ],
+      "opener": "Bonsoir, bienvenue à l'hôtel des Tilleuls. Vous avez une réservation ?"
+    },
+    {
+      "id": "garage",
+      "emoji": "🔧",
+      "title": "Chez le garagiste",
+      "level": "B1",
+      "blurb": "A car that will not start, and a bill you did not expect.",
+      "setting": "Your car broke down on the way back from a trip. You bring it in and ask when it will be ready. Use vous.",
+      "ai": "a garage mechanic, direct, a little brusque",
+      "you": "the owner of the car",
+      "goal": "Say what happened, understand the diagnosis, and agree on the price and the date.",
+      "targets": [
+        "futur after quand / dès que",
+        "passé composé against imparfait",
+        "il faut + infinitive",
+        "avoir besoin de"
+      ],
+      "grammar": [
+        "futur-simple",
+        "imparfait-vs-passe-compose"
+      ],
+      "opener": "Bonjour. Alors, c'est la voiture qui fait des siennes ? Racontez-moi ce qui s'est passé."
+    },
+    {
+      "id": "soiree",
+      "emoji": "🎉",
+      "title": "Une soirée entre amis",
+      "level": "B1",
+      "blurb": "Invitations, plans, who brings what.",
+      "setting": "You are organising a dinner at your place on Saturday and calling a friend to settle it. Use tu.",
+      "ai": "a close friend who is always late and always cheerful",
+      "you": "the host",
+      "goal": "Invite them, agree on a time, and sort out who brings what.",
+      "targets": [
+        "j'aimerais que + subjonctif",
+        "il faut que",
+        "quand + futur",
+        "comparatives"
+      ],
+      "grammar": [
+        "subjonctif-uses",
+        "futur-simple"
+      ],
+      "opener": "Allô ? Oui, salut ! Alors, tu m'appelles pour quoi ? Dis-moi tout."
+    },
+    {
+      "id": "vacances",
+      "emoji": "✈️",
+      "title": "Planifier les vacances",
+      "level": "B1",
+      "blurb": "Two people who want different holidays.",
+      "setting": "You and a friend are deciding where to go this summer. You want a quiet place, they want a city. Use tu.",
+      "ai": "a friend who wants an energetic city break",
+      "you": "the one who wants to rest",
+      "goal": "Say what you prefer and why, propose a compromise, and decide on a place.",
+      "targets": [
+        "je préférerais / plutôt que de",
+        "si + imparfait, conditionnel",
+        "comparatives",
+        "avoir envie de"
+      ],
+      "grammar": [
+        "conditionnel",
+        "si-clauses",
+        "comparatives"
+      ],
+      "opener": "Alors, cet été, on part où ? Moi, j'ai trouvé un week-end à Barcelone, ça te dit ?"
+    },
+    {
+      "id": "visite",
+      "emoji": "🏠",
+      "title": "Visiter un appartement",
+      "level": "B1",
+      "blurb": "Questions, doubts and a negotiation.",
+      "setting": "You are viewing a flat for rent. It is smaller than the photos, but bright. You have a budget. Use vous.",
+      "ai": "a letting agent who stresses the good points",
+      "you": "a prospective tenant",
+      "goal": "Ask about size, rent and charges, say what bothers you, and say whether you would take it.",
+      "targets": [
+        "comparatives",
+        "dont / celui qui",
+        "conditionnel",
+        "y and en"
+      ],
+      "grammar": [
+        "comparatives",
+        "relative-pronouns",
+        "conditionnel"
+      ],
+      "opener": "Bonjour, entrez, je vous en prie. Voici le séjour, vous voyez comme il est lumineux ?"
+    },
+    {
+      "id": "cinema",
+      "emoji": "🎬",
+      "title": "Parler d'un film",
+      "level": "B1",
+      "blurb": "Opinions, superlatives, no spoilers.",
+      "setting": "You have just seen a film that a friend recommended. You are telling them what you thought. Use tu.",
+      "ai": "a friend who loves films and has strong opinions",
+      "you": "someone who saw it and has mixed feelings",
+      "goal": "Say what you liked and did not, compare it with something else, and say who should see it.",
+      "targets": [
+        "superlatives and le meilleur que j'aie vu",
+        "mieux / meilleur",
+        "je trouve que / je ne pense pas que",
+        "dont"
+      ],
+      "grammar": [
+        "comparatives",
+        "subjonctif-uses"
+      ],
+      "opener": "Alors ? Tu l'as vu, finalement ? Ne me dis pas que tu t'es endormi !"
+    },
+    {
+      "id": "souvenirs",
+      "emoji": "🧒",
+      "title": "Souvenirs d'enfance",
+      "level": "B1",
+      "blurb": "What life used to be like. The imparfait, all of it.",
+      "setting": "You are at a family dinner and an older relative asks what your childhood was like. Use tu.",
+      "ai": "a curious grandparent who loves stories",
+      "you": "the grandchild",
+      "goal": "Describe where you lived, what you did every summer, and one particular day that went wrong.",
+      "targets": [
+        "imparfait for habits and background",
+        "passé composé for the event",
+        "tous les + time",
+        "pendant que"
+      ],
+      "grammar": [
+        "imparfait",
+        "imparfait-vs-passe-compose"
+      ],
+      "opener": "Raconte-moi un peu, comment c'était quand tu étais petit ? Tu habitais où ?"
     },
     {
       "id": "entretien",
@@ -95,9 +329,86 @@
       "ai": "an interviewer from the company",
       "you": "the candidate",
       "goal": "Present your experience, explain a gap or a change, and say where you want to be in five years.",
-      "targets": ["conditionnel", "si-clauses", "futur after quand", "frames with de + infinitive"],
-      "grammar": ["conditionnel", "si-clauses", "futur-simple"],
-      "opener": "Bonjour, merci d'être venu. Pour commencer, pouvez-vous vous présenter en quelques mots ?"
+      "targets": [
+        "conditionnel",
+        "si-clauses",
+        "futur after quand",
+        "frames with de + infinitive"
+      ],
+      "grammar": [
+        "conditionnel",
+        "si-clauses",
+        "futur-simple"
+      ],
+      "opener": "Bonjour, merci d'être venu. Pour commencer, pouvez-vous vous présenter en quelques mots ?",
+      "emoji": "💼"
+    },
+    {
+      "id": "travail",
+      "emoji": "😤",
+      "title": "Un souci au travail",
+      "level": "B2",
+      "blurb": "A colleague who keeps dropping the ball.",
+      "setting": "A project has slipped because a colleague missed three deadlines. You ask to talk, calmly. Use vous.",
+      "ai": "a colleague, a bit defensive, who does have reasons",
+      "you": "the colleague who has been affected",
+      "goal": "Say what went wrong without attacking, hear their side, and agree on what changes.",
+      "targets": [
+        "reprocher à qqn de",
+        "ne ... pas encore / plus / jamais",
+        "sinon",
+        "pour que + subjonctif"
+      ],
+      "grammar": [
+        "verb-prepositions",
+        "negation",
+        "subjonctif-uses"
+      ],
+      "opener": "Tu voulais me voir ? Je n'ai que dix minutes, j'ai une réunion après."
+    },
+    {
+      "id": "police",
+      "emoji": "🚔",
+      "title": "Un vol au commissariat",
+      "level": "B2",
+      "blurb": "Report a stolen bag. Tell it in order, precisely.",
+      "setting": "Your bag was stolen on a train this afternoon. You are at the police station to report it. Use vous.",
+      "ai": "a police officer taking a statement, patient and methodical",
+      "you": "the person reporting the theft",
+      "goal": "Say what happened, in order, what was in the bag, and what you noticed before and after.",
+      "targets": [
+        "plus-que-parfait",
+        "passé composé against imparfait",
+        "pronouns: le, lui, y, en",
+        "il y a + time"
+      ],
+      "grammar": [
+        "plus-que-parfait",
+        "imparfait-vs-passe-compose"
+      ],
+      "opener": "Bonjour, asseyez-vous. Je vais prendre votre déposition. Qu'est-ce qui s'est passé, exactement ?"
+    },
+    {
+      "id": "client",
+      "emoji": "📞",
+      "title": "Appeler le service client",
+      "level": "B2",
+      "blurb": "A wrong bill, a long hold, a firm but polite complaint.",
+      "setting": "Your internet has been down for four days and you are still being billed. You phone customer service. Use vous.",
+      "ai": "a customer service agent who follows a script and can be moved by clear facts",
+      "you": "the customer",
+      "goal": "Explain the problem and how long it has lasted, say what you expect, and get a concrete commitment.",
+      "targets": [
+        "depuis / il y a / ça fait",
+        "reprocher / se plaindre de",
+        "sinon / à moins que",
+        "futur and conditionnel"
+      ],
+      "grammar": [
+        "time-expressions",
+        "conditionnel"
+      ],
+      "opener": "Service client, bonjour, vous êtes bien chez Optilink. Je m'appelle Karim, comment puis-je vous aider ?"
     },
     {
       "id": "libre",
@@ -110,7 +421,8 @@
       "goal": "Keep a real conversation going.",
       "targets": [],
       "grammar": [],
-      "opener": "Salut ! De quoi as-tu envie de parler aujourd'hui ?"
+      "opener": "Salut ! De quoi as-tu envie de parler aujourd'hui ?",
+      "emoji": "💬"
     }
   ]
 }
