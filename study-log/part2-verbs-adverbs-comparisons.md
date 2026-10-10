@@ -97,22 +97,27 @@ Earlier sittings, from the attempt history:
 | c'est le milleur film que j'avais vu | c'est le meilleur film que j'aie jamais vu | spelling; subjunctive after a superlative; `jamais` |
 | il fais de froid en froid, ... de moins en moins de sortir | `il fait de plus en plus froid`, `de moins en moins envie de sortir` family | `de ... en ...` frame; `avoir envie de` |
 
-## Retest
+## Bank and retest
 
-`vac-retest.bank.js` in this folder is a ready bank in the french-drill format:
-25 questions, the 16 mistaken or near-missed ones from the 2026-10-10 sitting
-plus the 9 left blank. Ids are `vacr-NN`, with the source `vac-NN` in `from`
-where there is one.
+`vac.bank.js` in this folder is the full 46-question bank in the french-drill
+format, with the page's own keys, vocab hints and explanations. Variants are
+widened for the keys that were too narrow. Ids are `vacf-NN` in page order,
+`from` is the original `vac-NN` id where it is known (nine are not).
 
-To sit it: copy it to the scratchpad as `questions-vacr.js`, build the shell
-with the french-drill skill (`key: 'drill-vac-retest'`), serve and open it.
-Ask for "retest vac" and it is built from this file.
+Each question carries `missed`:
 
-Retest it after a few days, not the same day. A pass means producing the form
-from English with no hint, the way the first sitting did.
+- `sitting`: wrong in the 2026-10-10 sitting (16).
+- `blank`: never answered (9, vacf-38 to vacf-46).
+- `earlier`: wrong in earlier sittings, right by the end (17).
+- `null`: right first time (4).
+
+To sit it: copy it to the scratchpad as `questions-vacf.js`, build the shell with
+the french-drill skill (`key: 'drill-vac'`), deal `missed != null` first. Ask
+for "retest vac" and it is built from this file. Retest after a few days, not
+the same day. A pass means producing the form from English with no hint.
 
 ## Next
 
 Themes 1 and 2 are the drill: frames with the wrong preposition and words that
-look right and are not. Build the next page with both, using the `vacr` bank
-as its core.
+look right and are not. Build the next page with both, using the `missed`
+questions of `vac.bank.js` as its core.

@@ -30,6 +30,10 @@ Then `drill-traduction`, English → French: 3 of 21 right first time, 21/21 aft
 45 graded passes. Part II is open: `imparfait` and
 `imparfait-vs-passe-compose` are both marked done. The Part II production drill
 (36 sentences, English to French) closed at 36/36 on 2026-09-25 after 76 attempts.
+Then the verbs, adverbs, comparisons drill (46 sentences, Part II chapters 11-13
+mixed with earlier grammar): 37/46 (80%) after 90 attempts, 2026-10-10, nine
+left blank. Full bank and ranked themes in
+`study-log/part2-verbs-adverbs-comparisons.md` and `study-log/vac.bank.js`.
 
 Every closed sitting is written up in `study-log/`: the score run, the ranked error
 themes, the full bank, and the wrong answers worth keeping. Read the latest one
@@ -107,6 +111,31 @@ that keep costing points, heaviest first:
    `avoir mal au`, `avant de`, `être en train de`, `à vélo`.
 7. Habitual time: `le dimanche`, `tous les soirs`, `tous les lundis`.
 8. Passé composé: present written for past, and `être` vs `avoir`.
+
+As of 2026-10-10 the heaviest are two: frames with the wrong preposition
+(`conseiller / interdire / arrêter / reprocher ... de`, `passer ... à lire`,
+`au lieu de`, `plutôt que de`) and English calques that look like French
+(`dépenser` for time, `gentilement`, `d'ailleurs` for `sinon`, `pas important`
+for `ce n'est pas grave`). Then negation slots (`n'a jamais eu d'`, `ne jamais`
++ infinitive, `toujours pas`) and silent endings (`tu arrêtes`, `chère`,
+`parents`). Tense choice is now mostly clean.
+
+## How to work with him
+
+- He pastes a report or one question at a time, wants a verdict first, then the
+  fix. Answer: right or wrong, the correct French, each error with its rule, the
+  theme, what to add to the next drill. No praise, no preamble.
+- Check his French on its merits, not against the key. If the key is too narrow,
+  say so and widen it. It has happened in every drill.
+- Teach the frame, not the sentence: give the family (`conseiller / interdire /
+  défendre ... à qqn de + inf`) so one correction covers the next five.
+- Build the next drill from `missed` questions first, new sentences on the same
+  themes second. New words go in `vocab`, never as a blocker.
+- Wants more than drills: reading, speaking, anything interactive. Reading and
+  the speech tools already exist in the app (`content/reading`,
+  `assets/speech.js`, `assets/audio.js`). Pronunciation theory stays out.
+- Study logs and banks are kept in the repo (`study-log/`), not the scratchpad.
+  Write each closed sitting there, with a bank he can be retested on.
 
 A grading note that matters more than any of them: three of the last sitting's
 "errors" were correct French rejected by a too-narrow key. A drill page must
