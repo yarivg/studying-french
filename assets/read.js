@@ -388,6 +388,182 @@ window.Read = (function () {
     }).join('');
   }
 
+  /* ---------------------------------------------------------- library */
+
+  // Real stories, read on the sites that host them. The page keeps only
+  // what the course can add: an order to read them in, where you are with
+  // each, and the frames you noted on the way.
+  var library = null;
+
+  function loadLibrary() {
+    if (library) return Promise.resolve(library);
+    return Data.json('content/reading/library.json').then(function (j) { library = j; return j; });
+  }
+
+  function libItems(lib) {
+    return lib.groups.reduce(function (all, g) { return all.concat(g.items); }, []);
+  }
+
+  // What to open next: the story you are in the middle of, else the
+  // first one in reading order you have not finished.
+  function upNext(lib) {
+    var items = libItems(lib);
+    return items.filter(function (it) { return Progress.lib(it.id).s === 'reading'; })[0] ||
+      items.filter(function (it) { return Progress.lib(it.id).s !== 'done'; })[0] || null;
+  }
+
+  function tabsHtml(current) {
+    return '<nav class="rd-tabs" aria-label="Reading">' +
+      '<a href="#/read"' + (current === 'passages' ? ' class="is-current" aria-current="page"' : '') + '>Passages</a>' +
+      '<a href="#/read/library"' + (current === 'library' ? ' class="is-current" aria-current="page"' : '') + '>Library</a>' +
+      '</nav>';
+  }
+
+  function metaLine(it) {
+    var bits = [escapeHtml(it.author)];
+    if (it.words) {
+      bits.push('~' + (it.words >= 1000 ? (Math.round(it.words / 100) / 10) + 'k' : it.words) + ' words');
+      bits.push('~' + Math.max(10, Math.round(it.words / 110 / 5) * 5) + ' min');
+    }
+    return bits.join(' · ');
+  }
+
+  function linksHtml(it) {
+    return it.links.map(function (l) {
+      return '<a class="btn btn-small" href="' + escapeAttr(l.url) + '" target="_blank" rel="noopener">' +
+        escapeHtml(l.label) + ' ↗</a>';
+    }).join('');
+  }
+
+  var STATUS = [['', 'To read'], ['reading', 'Reading'], ['done', 'Done']];
+
+  function storyHtml(it, n) {
+    var e = Progress.lib(it.id);
+    return '<li class="lb-item is-' + (e.s || 'todo') + '" data-id="' + escapeAttr(it.id) + '">' +
+      '<div class="lb-head">' +
+        '<span class="lb-num">' + n + '</span>' +
+        '<div class="lb-titles">' +
+          '<span class="lb-title">' + escapeHtml(it.title) + '</span>' +
+          '<span class="lb-meta">' + metaLine(it) + '</span>' +
+        '</div>' +
+      '</div>' +
+      '<p class="lb-blurb">' + escapeHtml(it.blurb) + '</p>' +
+      '<div class="lb-actions">' +
+        '<div class="lb-links">' + linksHtml(it) + '</div>' +
+        '<div class="lb-status" role="group" aria-label="Status">' + STATUS.map(function (st) {
+          return '<button type="button" data-s="' + st[0] + '" aria-pressed="' + (e.s === st[0]) + '">' + st[1] + '</button>';
+        }).join('') + '</div>' +
+      '</div>' +
+      '<details class="lb-notes">' +
+        '<summary>Frames I noted' + (e.n.trim() ? ' <span class="lb-count">' + countLines(e.n) + '</span>' : '') + '</summary>' +
+        '<textarea rows="4" spellcheck="false" placeholder="One per line: avoir soin de + inf - to take care to">' + escapeHtml(e.n) + '</textarea>' +
+        '<span class="lb-saved" aria-live="polite"></span>' +
+      '</details>' +
+      '</li>';
+  }
+
+  function countLines(t) { return t.split('\n').filter(function (l) { return l.trim(); }).length; }
+
+  function libraryHtml(lib) {
+    var items = libItems(lib);
+    var done = items.filter(function (it) { return Progress.lib(it.id).s === 'done'; }).length;
+    var reading = items.filter(function (it) { return Progress.lib(it.id).s === 'reading'; }).length;
+    var next = upNext(lib);
+    var n = 0;
+    return tabsHtml('library') +
+      '<h1>Library</h1>' +
+      '<p class="lead">' + escapeHtml(lib.intro) + '</p>' +
+      '<p class="lb-progress">' + done + ' of ' + items.length + ' finished' + (reading ? ' · ' + reading + ' in progress' : '') + '</p>' +
+      (next ? '<div class="lb-next"><span class="eyebrow">' + (Progress.lib(next.id).s === 'reading' ? 'Carry on with' : 'Up next') + '</span>' +
+        '<span class="lb-title">' + escapeHtml(next.title) + '</span>' +
+        '<span class="lb-meta">' + metaLine(next) + '</span>' +
+        '<div class="lb-links">' + linksHtml(next) + '</div></div>' : '') +
+      '<details class="lb-help"><summary>How to read these</summary><ul>' +
+        lib.tips.map(function (t) { return '<li>' + escapeHtml(t) + '</li>'; }).join('') + '</ul></details>' +
+      '<details class="lb-help"><summary>Passé simple at a glance</summary><table class="lb-ps"><tbody>' +
+        lib.passeSimple.map(function (r) {
+          return '<tr><td lang="fr"><b>' + escapeHtml(r[0]) + '</b></td><td lang="fr">' + escapeHtml(r[1]) + '</td><td>' + escapeHtml(r[2]) + '</td></tr>';
+        }).join('') + '</tbody></table></details>' +
+      '<div class="lb-tools">' +
+        '<button type="button" class="btn" data-act="copy">Copy my frames</button>' +
+        '<label><input type="checkbox" data-act="hide"' + (hideDone() ? ' checked' : '') + '> Hide finished</label>' +
+      '</div>' +
+      '<div class="lb-groups' + (hideDone() ? ' hide-done' : '') + '">' +
+      lib.groups.map(function (g) {
+        return '<section class="lb-group"><h2>' + escapeHtml(g.title) + '</h2>' +
+          '<p class="lb-group-note">' + escapeHtml(g.note) + '</p>' +
+          '<ol class="lb-list">' + g.items.map(function (it) { return storyHtml(it, ++n); }).join('') + '</ol></section>';
+      }).join('') + '</div>' +
+      '<h2>More</h2><ul class="lb-more">' + lib.more.map(function (l) {
+        return '<li><a href="' + escapeAttr(l.url) + '" target="_blank" rel="noopener">' + escapeHtml(l.label) + ' ↗</a></li>';
+      }).join('') + '</ul>';
+  }
+
+  // A view preference, so it stays on this device and out of the sync.
+  function hideDone() { try { return localStorage.getItem('lecarnet.lib.hide') === '1'; } catch (e) { return false; } }
+  function setHideDone(on) { try { localStorage.setItem('lecarnet.lib.hide', on ? '1' : '0'); } catch (e) {} }
+
+  function framesReport(lib) {
+    var out = [];
+    libItems(lib).forEach(function (it) {
+      var e = Progress.lib(it.id);
+      if (e.n.trim()) out.push('## ' + it.title + ' (' + it.author + ')\n\n' +
+        e.n.split('\n').filter(function (l) { return l.trim(); }).map(function (l) { return '- ' + l.trim(); }).join('\n'));
+    });
+    return out.length ? '# Frames from my reading\n\n' + out.join('\n\n') : '';
+  }
+
+  // The view element outlives this page, so the listeners go on a wrapper
+  // that is thrown away with each render rather than piling up on it.
+  function renderLibrary(host) {
+    return loadLibrary().then(function (lib) {
+      var page = document.createElement('div');
+      page.className = 'lb-page';
+      page.innerHTML = libraryHtml(lib);
+      host.innerHTML = '';
+      host.appendChild(page);
+      bindLibrary(page, lib, function () { renderLibrary(host); });
+    });
+  }
+
+  function bindLibrary(host, lib, rerender) {
+    host.addEventListener('click', function (e) {
+      var b = e.target.closest('button');
+      if (!b || !host.contains(b)) return;
+      if (b.dataset.act === 'copy') {
+        var txt = framesReport(lib);
+        if (!txt) { b.textContent = 'No frames noted yet'; return; }
+        var ok = function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy my frames'; }, 1600); };
+        if (navigator.clipboard) navigator.clipboard.writeText(txt).then(ok, function () { b.textContent = 'Copy failed'; });
+        return;
+      }
+      var li = b.closest('.lb-item');
+      if (li && b.hasAttribute('data-s')) {
+        Progress.setLib(li.dataset.id, { s: b.dataset.s });
+        rerender();
+      }
+    });
+    host.addEventListener('change', function (e) {
+      if (e.target.dataset && e.target.dataset.act === 'hide') {
+        setHideDone(e.target.checked);
+        host.querySelector('.lb-groups').classList.toggle('hide-done', e.target.checked);
+      }
+    });
+    var timers = {};
+    host.addEventListener('input', function (e) {
+      if (e.target.tagName !== 'TEXTAREA') return;
+      var li = e.target.closest('.lb-item');
+      if (!li) return;
+      var id = li.dataset.id, ta = e.target, flag = li.querySelector('.lb-saved');
+      clearTimeout(timers[id]);
+      timers[id] = setTimeout(function () {
+        Progress.setLib(id, { n: ta.value });
+        flag.textContent = 'Saved';
+        setTimeout(function () { flag.textContent = ''; }, 1200);
+      }, 400);
+    });
+  }
+
   /* ---------------------------------------------------------- helpers */
 
   function escapeHtml(s) {
@@ -399,6 +575,7 @@ window.Read = (function () {
   return {
     loadIndex: loadIndex, loadPassage: loadPassage, byId: byId,
     render: render, listHtml: listHtml, lookup: lookup, glossIndex: glossIndex,
-    unread: unread, useTitles: useTitles
+    unread: unread, useTitles: useTitles,
+    tabsHtml: tabsHtml, renderLibrary: renderLibrary
   };
 })();

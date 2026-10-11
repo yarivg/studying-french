@@ -1,0 +1,574 @@
+{
+  "intro": "Real stories, read on the source sites. Mark where you are, and note the frames you meet: they become the next drill.",
+  "tips": [
+    "Read the French first. Look at the English column only after a paragraph you did not follow.",
+    "Look up only what blocks the plot. Guess the rest from context.",
+    "Note five frames a session (se mettre à, faute de, avoir soin de…). Copy them here and paste them into the chat.",
+    "Recognise the passé simple, never produce it. It is the narrative past of written French."
+  ],
+  "passeSimple": [
+    [
+      "il fut",
+      "être",
+      "he was"
+    ],
+    [
+      "il eut",
+      "avoir",
+      "he had"
+    ],
+    [
+      "il fit",
+      "faire",
+      "he did, made"
+    ],
+    [
+      "il dit",
+      "dire",
+      "he said"
+    ],
+    [
+      "il prit",
+      "prendre",
+      "he took"
+    ],
+    [
+      "il vit",
+      "voir",
+      "he saw"
+    ],
+    [
+      "il vint",
+      "venir",
+      "he came"
+    ],
+    [
+      "il put",
+      "pouvoir",
+      "he could"
+    ],
+    [
+      "il sut",
+      "savoir",
+      "he knew, found out"
+    ],
+    [
+      "il mit",
+      "mettre",
+      "he put"
+    ],
+    [
+      "il arriva",
+      "arriver",
+      "he arrived (-er verbs: -a)"
+    ],
+    [
+      "ils arrivèrent",
+      "arriver",
+      "they arrived (-er verbs: -èrent)"
+    ],
+    [
+      "ils prirent",
+      "prendre",
+      "they took (-irent)"
+    ],
+    [
+      "ils furent",
+      "être",
+      "they were (-urent)"
+    ]
+  ],
+  "groups": [
+    {
+      "id": "short",
+      "title": "Start here: short stories",
+      "note": "2-4k words each, one or two sittings. Daudet and Maupassant, around 1870-1890.",
+      "items": [
+        {
+          "id": "daudet-chevre",
+          "title": "La chèvre de M. Seguin",
+          "author": "Alphonse Daudet",
+          "level": "B2",
+          "words": 2200,
+          "blurb": "A goat who wants the mountain, told as a warning to a poet who wants to stay free. The easiest way in.",
+          "links": [
+            {
+              "label": "French",
+              "url": "https://fr.wikisource.org/wiki/Lettres_de_mon_moulin/La_ch%C3%A8vre_de_monsieur_Seguin"
+            }
+          ]
+        },
+        {
+          "id": "maupassant-parure",
+          "title": "La Parure",
+          "author": "Guy de Maupassant",
+          "level": "B2",
+          "words": 4000,
+          "blurb": "A borrowed necklace, a lost necklace, ten years of paying for it. The most famous twist in French short fiction.",
+          "links": [
+            {
+              "label": "French",
+              "url": "https://fr.wikisource.org/wiki/Contes_du_jour_et_de_la_nuit_(%C3%A9d._Flammarion,_1885)/La_Parure"
+            }
+          ]
+        },
+        {
+          "id": "maupassant-schnaffs",
+          "title": "L'aventure de Walter Schnaffs",
+          "author": "Guy de Maupassant",
+          "level": "B2",
+          "words": 3000,
+          "blurb": "A frightened Prussian soldier who wants nothing more than to be taken prisoner. Comic.",
+          "links": [
+            {
+              "label": "French",
+              "url": "https://fr.wikisource.org/wiki/Contes_de_la_b%C3%A9casse_(Havard,_1894)/L%E2%80%99Aventure_de_Walter_Schnaffs"
+            },
+            {
+              "label": "Annotated",
+              "url": "https://www.gutenberg.org/cache/epub/12949/pg12949-images.html"
+            }
+          ]
+        },
+        {
+          "id": "maupassant-vendetta",
+          "title": "Une vendetta",
+          "author": "Guy de Maupassant",
+          "level": "B2",
+          "words": 1700,
+          "blurb": "A widow in Corsica and the patient revenge for her son. The shortest.",
+          "links": [
+            {
+              "label": "French",
+              "url": "https://fr.wikisource.org/wiki/Contes_du_jour_et_de_la_nuit_(%C3%A9d._Flammarion,_1885)/Une_vendetta"
+            },
+            {
+              "label": "Annotated",
+              "url": "https://www.gutenberg.org/cache/epub/12949/pg12949-images.html"
+            }
+          ]
+        },
+        {
+          "id": "daudet-cucugnan",
+          "title": "Le curé de Cucugnan",
+          "author": "Alphonse Daudet",
+          "level": "B2",
+          "words": 2500,
+          "blurb": "A village priest frightens his flock back to church with a tour of hell. A comic sermon, a few Provençal words.",
+          "links": [
+            {
+              "label": "French",
+              "url": "https://fr.wikisource.org/wiki/Lettres_de_mon_moulin/Le_cur%C3%A9_de_Cucugnan"
+            },
+            {
+              "label": "Annotated",
+              "url": "https://www.gutenberg.org/cache/epub/12949/pg12949-images.html"
+            }
+          ]
+        },
+        {
+          "id": "maupassant-milon",
+          "title": "Le Père Milon",
+          "author": "Guy de Maupassant",
+          "level": "B2",
+          "words": 2400,
+          "blurb": "An old Norman farmer and the Prussian cavalrymen who go missing at night. War, peasant dialogue.",
+          "links": [
+            {
+              "label": "French",
+              "url": "https://fr.wikisource.org/wiki/Le_P%C3%A8re_Milon_(recueil)/Le_P%C3%A8re_Milon"
+            },
+            {
+              "label": "Annotated",
+              "url": "https://www.gutenberg.org/cache/epub/12949/pg12949-images.html"
+            }
+          ]
+        },
+        {
+          "id": "maupassant-main",
+          "title": "La Main",
+          "author": "Guy de Maupassant",
+          "level": "B2",
+          "words": 2200,
+          "blurb": "A judge tells the story of a severed hand that would not stay chained. Uncanny.",
+          "links": [
+            {
+              "label": "French",
+              "url": "https://fr.wikisource.org/wiki/Contes_du_jour_et_de_la_nuit_(%C3%A9d._Flammarion,_1885)/La_Main"
+            },
+            {
+              "label": "Annotated",
+              "url": "https://www.gutenberg.org/cache/epub/12949/pg12949-images.html"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lupin",
+      "title": "Then: Arsène Lupin, gentleman-cambrioleur",
+      "note": "The main read. Nine stories of 5-14k words, Leblanc 1907. Side by side with the English, or French only.",
+      "items": [
+        {
+          "id": "lupin-01",
+          "title": "L'arrestation d'Arsène Lupin",
+          "author": "Maurice Leblanc",
+          "level": "B2",
+          "words": 6000,
+          "blurb": "A transatlantic liner, a radio message: Lupin is on board. The first story, start here.",
+          "links": [
+            {
+              "label": "Side by side",
+              "url": "https://fccm.github.io/bilingual-literature/Maurice_Leblanc/Arsene_Lupin_Gentleman_Burglar/Arsene_Lupin_Gentleman_Burglar-01.html"
+            },
+            {
+              "label": "French",
+              "url": "https://fr.wikisource.org/wiki/Ars%C3%A8ne_Lupin_gentleman-cambrioleur/L%E2%80%99arrestation_d%E2%80%99Ars%C3%A8ne_Lupin"
+            }
+          ]
+        },
+        {
+          "id": "lupin-02",
+          "title": "Arsène Lupin en prison",
+          "author": "Maurice Leblanc",
+          "level": "B2",
+          "words": 8000,
+          "blurb": "From his cell, Lupin announces he will rob a baron's château. And does.",
+          "links": [
+            {
+              "label": "Side by side",
+              "url": "https://fccm.github.io/bilingual-literature/Maurice_Leblanc/Arsene_Lupin_Gentleman_Burglar/Arsene_Lupin_Gentleman_Burglar-02.html"
+            },
+            {
+              "label": "French",
+              "url": "https://fr.wikisource.org/wiki/Ars%C3%A8ne_Lupin_gentleman-cambrioleur/Ars%C3%A8ne_Lupin_en_prison"
+            }
+          ]
+        },
+        {
+          "id": "lupin-03",
+          "title": "L'évasion d'Arsène Lupin",
+          "author": "Maurice Leblanc",
+          "level": "B2",
+          "words": 9000,
+          "blurb": "Lupin tells the court he will not attend his own trial.",
+          "links": [
+            {
+              "label": "Side by side",
+              "url": "https://fccm.github.io/bilingual-literature/Maurice_Leblanc/Arsene_Lupin_Gentleman_Burglar/Arsene_Lupin_Gentleman_Burglar-03.html"
+            },
+            {
+              "label": "French",
+              "url": "https://fr.wikisource.org/wiki/Ars%C3%A8ne_Lupin_gentleman-cambrioleur/L%E2%80%99%C3%A9vasion_d%E2%80%99Ars%C3%A8ne_Lupin"
+            }
+          ]
+        },
+        {
+          "id": "lupin-04",
+          "title": "Le mystérieux voyageur",
+          "author": "Maurice Leblanc",
+          "level": "B2",
+          "words": 7000,
+          "blurb": "A train compartment, a robbery, and Lupin chasing the thief who took his place.",
+          "links": [
+            {
+              "label": "Side by side",
+              "url": "https://fccm.github.io/bilingual-literature/Maurice_Leblanc/Arsene_Lupin_Gentleman_Burglar/Arsene_Lupin_Gentleman_Burglar-04.html"
+            },
+            {
+              "label": "French",
+              "url": "https://fr.wikisource.org/wiki/Ars%C3%A8ne_Lupin_gentleman-cambrioleur/Le_myst%C3%A9rieux_voyageur"
+            }
+          ]
+        },
+        {
+          "id": "lupin-05",
+          "title": "Le collier de la reine",
+          "author": "Maurice Leblanc",
+          "level": "B2",
+          "words": 7500,
+          "blurb": "A famous necklace vanishes from a locked room, and the answer goes back to Lupin's childhood.",
+          "links": [
+            {
+              "label": "Side by side",
+              "url": "https://fccm.github.io/bilingual-literature/Maurice_Leblanc/Arsene_Lupin_Gentleman_Burglar/Arsene_Lupin_Gentleman_Burglar-05.html"
+            },
+            {
+              "label": "French",
+              "url": "https://fr.wikisource.org/wiki/Ars%C3%A8ne_Lupin_gentleman-cambrioleur/Le_collier_de_la_Reine"
+            }
+          ]
+        },
+        {
+          "id": "lupin-06",
+          "title": "Le sept de cœur",
+          "author": "Maurice Leblanc",
+          "level": "B2",
+          "words": 14000,
+          "blurb": "A night break-in, a stabbed card, a submarine's plans. The longest, told by Lupin's friend.",
+          "links": [
+            {
+              "label": "Side by side",
+              "url": "https://fccm.github.io/bilingual-literature/Maurice_Leblanc/Arsene_Lupin_Gentleman_Burglar/Arsene_Lupin_Gentleman_Burglar-06.html"
+            },
+            {
+              "label": "French",
+              "url": "https://fr.wikisource.org/wiki/Ars%C3%A8ne_Lupin_gentleman-cambrioleur/Le_sept_de_c%C5%93ur"
+            }
+          ]
+        },
+        {
+          "id": "lupin-07",
+          "title": "Le coffre-fort de Madame Imbert",
+          "author": "Maurice Leblanc",
+          "level": "B2",
+          "words": 5000,
+          "blurb": "Lupin is conned for once. The shortest Lupin.",
+          "links": [
+            {
+              "label": "Side by side",
+              "url": "https://fccm.github.io/bilingual-literature/Maurice_Leblanc/Arsene_Lupin_Gentleman_Burglar/Arsene_Lupin_Gentleman_Burglar-07.html"
+            },
+            {
+              "label": "French",
+              "url": "https://fr.wikisource.org/wiki/Ars%C3%A8ne_Lupin_gentleman-cambrioleur/Le_coffre-fort_de_Madame_Imbert"
+            }
+          ]
+        },
+        {
+          "id": "lupin-08",
+          "title": "La perle noire",
+          "author": "Maurice Leblanc",
+          "level": "B2",
+          "words": 6000,
+          "blurb": "A murdered countess, a missing pearl, and Lupin arriving one step too late.",
+          "links": [
+            {
+              "label": "Side by side",
+              "url": "https://fccm.github.io/bilingual-literature/Maurice_Leblanc/Arsene_Lupin_Gentleman_Burglar/Arsene_Lupin_Gentleman_Burglar-08.html"
+            },
+            {
+              "label": "French",
+              "url": "https://fr.wikisource.org/wiki/Ars%C3%A8ne_Lupin_gentleman-cambrioleur/La_perle_noire"
+            }
+          ]
+        },
+        {
+          "id": "lupin-09",
+          "title": "Herlock Sholmès arrive trop tard",
+          "author": "Maurice Leblanc",
+          "level": "B2",
+          "words": 10500,
+          "blurb": "Lupin meets a very thinly disguised English detective.",
+          "links": [
+            {
+              "label": "Side by side",
+              "url": "https://fccm.github.io/bilingual-literature/Maurice_Leblanc/Arsene_Lupin_Gentleman_Burglar/Arsene_Lupin_Gentleman_Burglar-09.html"
+            },
+            {
+              "label": "French",
+              "url": "https://fr.wikisource.org/wiki/Ars%C3%A8ne_Lupin_gentleman-cambrioleur/Herlock_Sholm%C3%A8s_arrive_trop_tard"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "holmes",
+      "title": "Later: Sherlock Holmes in French",
+      "note": "The Adventures, in a period French translation, side by side with the English.",
+      "items": [
+        {
+          "id": "holmes-01",
+          "title": "L'Association des Hommes Roux",
+          "author": "Arthur Conan Doyle, trad.",
+          "level": "B2",
+          "words": null,
+          "blurb": "A pawnbroker paid to copy out an encyclopedia because of his red hair. Start here.",
+          "links": [
+            {
+              "label": "Side by side",
+              "url": "https://fccm.github.io/bilingual-literature/A_C_Doyle/The_Adventures_of_Sherlock_Holmes/The_Red_Headed_League.html"
+            }
+          ]
+        },
+        {
+          "id": "holmes-02",
+          "title": "La Bande Mouchetée",
+          "author": "Arthur Conan Doyle, trad.",
+          "level": "B2",
+          "words": null,
+          "blurb": "A woman afraid of dying the way her sister did, in a locked room. The best known.",
+          "links": [
+            {
+              "label": "Side by side",
+              "url": "https://fccm.github.io/bilingual-literature/A_C_Doyle/The_Adventures_of_Sherlock_Holmes/The_Adventure_of_the_Speckled_Band.html"
+            }
+          ]
+        },
+        {
+          "id": "holmes-03",
+          "title": "Un Scandale en Bohème",
+          "author": "Arthur Conan Doyle, trad.",
+          "level": "B2",
+          "words": null,
+          "blurb": "A king, a compromising photograph, and the woman who outwits Holmes.",
+          "links": [
+            {
+              "label": "Side by side",
+              "url": "https://fccm.github.io/bilingual-literature/A_C_Doyle/The_Adventures_of_Sherlock_Holmes/A_Scandal_in_Bohemia.html"
+            }
+          ]
+        },
+        {
+          "id": "holmes-04",
+          "title": "Une Affaire d'Identité",
+          "author": "Arthur Conan Doyle, trad.",
+          "level": "B2",
+          "words": null,
+          "blurb": "A fiancé who vanishes on the wedding morning.",
+          "links": [
+            {
+              "label": "Side by side",
+              "url": "https://fccm.github.io/bilingual-literature/A_C_Doyle/The_Adventures_of_Sherlock_Holmes/A_Case_of_Identity.html"
+            }
+          ]
+        },
+        {
+          "id": "holmes-05",
+          "title": "Le Mystère de la Vallée de Boscombe",
+          "author": "Arthur Conan Doyle, trad.",
+          "level": "B2",
+          "words": null,
+          "blurb": "A son accused of killing his father by a pool.",
+          "links": [
+            {
+              "label": "Side by side",
+              "url": "https://fccm.github.io/bilingual-literature/A_C_Doyle/The_Adventures_of_Sherlock_Holmes/The_Boscombe_Valley_Mystery.html"
+            }
+          ]
+        },
+        {
+          "id": "holmes-06",
+          "title": "Les Cinq Pépins d'Orange",
+          "author": "Arthur Conan Doyle, trad.",
+          "level": "B2",
+          "words": null,
+          "blurb": "Five orange pips in an envelope, and men who die after receiving them.",
+          "links": [
+            {
+              "label": "Side by side",
+              "url": "https://fccm.github.io/bilingual-literature/A_C_Doyle/The_Adventures_of_Sherlock_Holmes/The_Five_Orange_Pips.html"
+            }
+          ]
+        },
+        {
+          "id": "holmes-07",
+          "title": "L'Homme à la Lèvre Retroussée",
+          "author": "Arthur Conan Doyle, trad.",
+          "level": "B2",
+          "words": null,
+          "blurb": "A respectable man seen at the window of an opium den.",
+          "links": [
+            {
+              "label": "Side by side",
+              "url": "https://fccm.github.io/bilingual-literature/A_C_Doyle/The_Adventures_of_Sherlock_Holmes/The_Man_with_the_Twisted_Lip.html"
+            }
+          ]
+        },
+        {
+          "id": "holmes-08",
+          "title": "L'Escarboucle Bleue",
+          "author": "Arthur Conan Doyle, trad.",
+          "level": "B2",
+          "words": null,
+          "blurb": "A stolen jewel found inside a Christmas goose.",
+          "links": [
+            {
+              "label": "Side by side",
+              "url": "https://fccm.github.io/bilingual-literature/A_C_Doyle/The_Adventures_of_Sherlock_Holmes/The_Adventure_of_the_Blue_Carbuncle.html"
+            }
+          ]
+        },
+        {
+          "id": "holmes-09",
+          "title": "Le Pouce de l'Ingénieur",
+          "author": "Arthur Conan Doyle, trad.",
+          "level": "B2",
+          "words": null,
+          "blurb": "An engineer hired at night who comes back without his thumb.",
+          "links": [
+            {
+              "label": "Side by side",
+              "url": "https://fccm.github.io/bilingual-literature/A_C_Doyle/The_Adventures_of_Sherlock_Holmes/The_Adventure_of_the_Engineer_s_Thumb.html"
+            }
+          ]
+        },
+        {
+          "id": "holmes-10",
+          "title": "Le Gentilhomme Célibataire",
+          "author": "Arthur Conan Doyle, trad.",
+          "level": "B2",
+          "words": null,
+          "blurb": "A bride who disappears from her own wedding breakfast.",
+          "links": [
+            {
+              "label": "Side by side",
+              "url": "https://fccm.github.io/bilingual-literature/A_C_Doyle/The_Adventures_of_Sherlock_Holmes/The_Adventure_of_the_Noble_Bachelor.html"
+            }
+          ]
+        },
+        {
+          "id": "holmes-11",
+          "title": "Le Diadème de Béryls",
+          "author": "Arthur Conan Doyle, trad.",
+          "level": "B2",
+          "words": null,
+          "blurb": "A banker's son caught holding a damaged crown.",
+          "links": [
+            {
+              "label": "Side by side",
+              "url": "https://fccm.github.io/bilingual-literature/A_C_Doyle/The_Adventures_of_Sherlock_Holmes/The_Adventure_of_the_Beryl_Coronet.html"
+            }
+          ]
+        },
+        {
+          "id": "holmes-12",
+          "title": "Les Hêtres Pourpres",
+          "author": "Arthur Conan Doyle, trad.",
+          "level": "B2",
+          "words": null,
+          "blurb": "A governess paid too much to cut her hair and sit by a window.",
+          "links": [
+            {
+              "label": "Side by side",
+              "url": "https://fccm.github.io/bilingual-literature/A_C_Doyle/The_Adventures_of_Sherlock_Holmes/The_Adventure_of_the_Copper_Beeches.html"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "more": [
+    {
+      "label": "Contes Français (annotated school edition, English notes and glossary)",
+      "url": "https://www.gutenberg.org/cache/epub/12949/pg12949-images.html"
+    },
+    {
+      "label": "Arsène Lupin, the whole book on Wikisource",
+      "url": "https://fr.wikisource.org/wiki/Ars%C3%A8ne_Lupin_gentleman-cambrioleur/Texte_entier"
+    },
+    {
+      "label": "Lupin side by side, contents",
+      "url": "https://fccm.github.io/bilingual-literature/Maurice_Leblanc/Arsene_Lupin_Gentleman_Burglar/Arsene_Lupin_Gentleman_Burglar.index.html"
+    },
+    {
+      "label": "Lettres de mon moulin, the whole collection",
+      "url": "https://fr.wikisource.org/wiki/Lettres_de_mon_moulin/Texte_entier"
+    },
+    {
+      "label": "Bilingual literature: Le Chien des Baskerville, 813 and more",
+      "url": "https://github.com/fccm/bilingual-literature"
+    }
+  ]
+}

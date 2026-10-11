@@ -16,7 +16,7 @@
    Bump CACHE_VERSION to force a full refetch.
    ============================================================ */
 
-var CACHE_VERSION = 'le-carnet-v15';
+var CACHE_VERSION = 'le-carnet-v16';
 var SHELL = [
   './',
   'index.html',
@@ -44,7 +44,8 @@ var SHELL = [
   'data/vocab.json',
   'content/manifest.json',
   'content/tests/groups.json',
-  'content/roleplay/index.json'
+  'content/roleplay/index.json',
+  'content/reading/library.json'
 ];
 
 /* ---------------------------------------------------------- install */

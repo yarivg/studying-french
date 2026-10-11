@@ -266,6 +266,7 @@
     if (hash === 'tests') return renderTestList();
     if (hash.indexOf('test/') === 0) return renderTest(hash.slice(5));
     if (hash === 'read') return renderReadList();
+    if (hash === 'read/library') return renderLibrary();
     if (hash.indexOf('read/') === 0) return renderPassage(hash.slice(5));
     if (hash === 'talk') return renderTalkList();
     if (hash.indexOf('talk/s/') === 0) return renderTalk(hash.slice(7));
@@ -1661,13 +1662,23 @@
     view.innerHTML = '<div class="loading">Loading the passages…</div>';
 
     Promise.all([Read.loadIndex(), Vocab.load()]).then(function (r) {
-      view.innerHTML =
+      view.innerHTML = Read.tabsHtml('passages') +
         '<h1>Reading</h1>' +
         '<p class="lead">Passages that use only the grammar the course has covered by that level. ' +
         'Tap a line to hear it, tap a word for the meaning, then answer for what you understood ' +
         'and read a line back into the microphone.</p>' +
         Read.listHtml(r[0]);
     }).catch(function (err) {
+      view.innerHTML = '<div class="empty"><div class="empty-icon">⚠️</div><p>' +
+        escapeHtml(err.message) + '</p></div>';
+    });
+  }
+
+  function renderLibrary() {
+    setCurrentNav('read');
+    pager.innerHTML = '';
+    view.innerHTML = '<div class="loading">Loading the library…</div>';
+    Read.renderLibrary(view).catch(function (err) {
       view.innerHTML = '<div class="empty"><div class="empty-icon">⚠️</div><p>' +
         escapeHtml(err.message) + '</p></div>';
     });
