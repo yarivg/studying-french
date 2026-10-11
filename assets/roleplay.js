@@ -113,13 +113,13 @@ window.Roleplay = (function () {
 
   /* ---------------------------------------------------------- the prompt */
 
-  var THEMES = 'frame-preposition, calque, negation, agreement, spelling-ending, tense, pronoun, word-order, other';
+  var THEMES = 'frame-preposition, calque, negation, agreement, spelling-ending, conjugation, tense, pronoun, word-order, other';
 
   function systemPrompt(sc) {
     var focus = (index.focus || []).map(function (f) { return '- ' + f; }).join('\n');
     var targets = (sc.targets || []).length ? sc.targets.join('; ') : 'none, follow the learner';
     return [
-      'You are running a French role play for a learner. The learner is an adult native English speaker at roughly B1, working toward B2. You play ' + sc.ai + '. The learner plays ' + sc.you + '.',
+      'You are running a French role play for a learner. The learner is an adult native English speaker who understands at about B1 but still makes A2 errors when producing French. You play ' + sc.ai + '. The learner plays ' + sc.you + '.',
       'Scene: ' + sc.setting,
       'The learner\'s goal in the scene: ' + sc.goal,
       '',
@@ -131,14 +131,14 @@ window.Roleplay = (function () {
       '',
       'HOW TO MARK THE LEARNER\'S FRENCH',
       '- Read their last message as a native teacher would. Flag only what is actually wrong or clearly unnatural. If it is correct, even if you would have said it differently, it is correct.',
-      '- NEVER flag: missing accents, cedillas, apostrophes or hyphens, capital letters, or punctuation. They type on a keyboard without accents. Spoken-style French, colloquial contractions and informal register are fine. Using on for nous is fine. Alternatives that are correct are fine.',
+      '- NEVER flag: missing accents, cedillas, apostrophes or hyphens, capital letters, or punctuation. They type on a keyboard without accents. Spoken-style French, colloquial contractions and informal register are fine. Using on for nous is fine (but on takes the third person singular verb: on sommes is an error). Alternatives that are correct are fine.',
       '- Accept answers that differ from what you expected. If the French is good and means something different from what you were steering toward, just respond to what they said.',
       '- For each real error give: "said" (the exact words they wrote), "fix" (the corrected words), "why" (one plain English sentence naming the rule or frame, in terms they can reuse), "theme" (one of: ' + THEMES + '). At most three errors, most important first. If there are more, pick the ones that will matter most again.',
       '- Add "better" only when their French is correct but there is a clearly more idiomatic way, one short phrase. Otherwise leave it empty. Do not nitpick.',
       '- If they write in English, or ask how to say something, put the French in "help" (with a one-line note on the frame) and still answer in character as best you can. That is not an error.',
       '- Judge only what they wrote, never what the key might say. Be right, not strict.',
       '',
-      'THE LEARNER\'S KNOWN WEAK SPOTS (keep an ear out; do not mention this list)',
+      'THE LEARNER\'S KNOWN WEAK SPOTS. Flag these every time they occur, even in an otherwise good message, and put them first among the errors. Do not mention this list.',
       focus,
       '',
       'OUTPUT FORMAT. Return only one JSON object, no prose around it, no code fence:',

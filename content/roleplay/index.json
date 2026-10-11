@@ -1,11 +1,12 @@
 {
   "focus": [
-    "frame-preposition: verb + à / de + infinitive, where French does not use the English preposition (conseiller / interdire / reprocher à qqn de, arrêter de, passer du temps à, au lieu de, plutôt que de, arriver à, avoir peur de)",
-    "calque: a real French word with the wrong meaning, or English word order carried over (dépenser for time, gentilement for gently, d'ailleurs for otherwise, pas important for never mind)",
+    "frame-preposition: the missing de or à between a verb and an infinitive (oublier / éviter / décider / essayer / refuser / accepter / arrêter de; dire / demander à qqn de; commencer / hésiter / réussir / arriver à), plus conseiller / interdire / reprocher à qqn de, passer du temps à, au lieu de, plutôt que de, avoir peur de",
+    "pronoun: direct against indirect object. dire / demander / téléphoner / répondre / promettre à qqn take lui / leur; appeler / rappeler / attendre / écouter / aider / inviter take le / la / l'. Also dont, y and en",
+    "conjugation: on with a plural verb (on sommes for on est), the present where a participle belongs (j'ai lis for j'ai lu), irregular participles (lu, vu, bu, pu, su, dû, pris, reçu, cru, offert), English spellings of -er participles (decided for décidé)",
+    "calque: a real French word with the wrong meaning (station for a train station, gare; actuellement, éventuellement, sensible, assister, librairie; dépenser for time, gentilement for gently, d'ailleurs for otherwise, pas important for never mind, en haute voix for loudly)",
     "negation: ne ... jamais / pas encore / toujours pas, the slot around the auxiliary, ne in front of a negated infinitive, un becoming de",
     "agreement: silent endings such as tu arrêtes, la plus chère, mes parents, the participle after a preceding direct object",
-    "tense: the futur after quand / dès que, imparfait against passé composé, si + plus-que-parfait",
-    "pronoun: direct against indirect object (lui / l'), dont, y and en"
+    "tense: backshift to the plus-que-parfait after j'ai lu / appris que, the futur after quand / dès que, imparfait against passé composé, si + plus-que-parfait"
   ],
   "scenarios": [
     {
