@@ -423,15 +423,19 @@ window.Read = (function () {
     var bits = [escapeHtml(it.author)];
     if (it.words) {
       bits.push('~' + (it.words >= 1000 ? (Math.round(it.words / 100) / 10) + 'k' : it.words) + ' words');
-      bits.push('~' + Math.max(10, Math.round(it.words / 110 / 5) * 5) + ' min');
+      // Past a long story, minutes stop meaning anything; say what it is.
+      bits.push(it.words > 20000 ? 'a book' : '~' + Math.max(5, Math.round(it.words / 110 / 5) * 5) + ' min');
     }
     return bits.join(' · ');
   }
 
   function linksHtml(it) {
+    // A hash link is a passage in this app: same tab, no arrow.
     return it.links.map(function (l) {
-      return '<a class="btn btn-small" href="' + escapeAttr(l.url) + '" target="_blank" rel="noopener">' +
-        escapeHtml(l.label) + ' ↗</a>';
+      var inApp = l.url.charAt(0) === '#';
+      return '<a class="btn' + (inApp ? ' btn-primary' : '') + '" href="' + escapeAttr(l.url) + '"' +
+        (inApp ? '' : ' target="_blank" rel="noopener"') + '>' +
+        escapeHtml(l.label) + (inApp ? '' : ' ↗') + '</a>';
     }).join('');
   }
 
@@ -447,7 +451,8 @@ window.Read = (function () {
           '<span class="lb-meta">' + metaLine(it) + '</span>' +
         '</div>' +
       '</div>' +
-      '<p class="lb-blurb">' + escapeHtml(it.blurb) + '</p>' +
+      '<p class="lb-blurb">' + escapeHtml(it.blurb) +
+        (it.note ? ' <span class="lb-note">' + escapeHtml(it.note) + '</span>' : '') + '</p>' +
       '<div class="lb-actions">' +
         '<div class="lb-links">' + linksHtml(it) + '</div>' +
         '<div class="lb-status" role="group" aria-label="Status">' + STATUS.map(function (st) {

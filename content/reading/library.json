@@ -1,5 +1,5 @@
 {
-  "intro": "Real stories, read on the source sites. Mark where you are, and note the frames you meet: they become the next drill.",
+  "intro": "Ordered from easiest to hardest. Start at the top, mark where you are, and note the frames you meet: they become the next drill.",
   "tips": [
     "Read the French first. Look at the English column only after a paragraph you did not follow.",
     "Look up only what blocks the plot. Guess the rest from context.",
@@ -80,21 +80,206 @@
   ],
   "groups": [
     {
-      "id": "short",
-      "title": "Start here: short stories",
-      "note": "2-4k words each, one or two sittings. Daudet and Maupassant, around 1870-1890.",
+      "id": "app",
+      "title": "B1: in this app",
+      "note": "Written to the course: only grammar you have covered, every hard word glossed, questions at the end.",
       "items": [
         {
-          "id": "daudet-chevre",
-          "title": "La chèvre de M. Seguin",
-          "author": "Alphonse Daudet",
-          "level": "B2",
-          "words": 2200,
-          "blurb": "A goat who wants the mountain, told as a warning to a poet who wants to stay free. The easiest way in.",
+          "id": "app-b1-train",
+          "title": "Le dernier train",
+          "author": "Le Carnet",
+          "level": "B1",
+          "words": 230,
+          "blurb": "A delayed night train, a father's old story, and a stranger who knew him. One passage, glossed, with questions.",
+          "links": [
+            {
+              "label": "Open",
+              "url": "#/read/b1-01-le-train"
+            }
+          ]
+        },
+        {
+          "id": "app-b1-coloc",
+          "title": "La colocataire",
+          "author": "Le Carnet",
+          "level": "B1",
+          "words": 230,
+          "blurb": "Two candidates for a spare room and a week of hesitation. One passage, glossed, with questions.",
+          "links": [
+            {
+              "label": "Open",
+              "url": "#/read/b1-02-la-colocataire"
+            }
+          ]
+        },
+        {
+          "id": "app-heritage-1",
+          "title": "L'héritage, chapters I-V",
+          "author": "Le Carnet",
+          "level": "B1",
+          "words": 2500,
+          "blurb": "A notary's letter, an aunt's flat in Montmartre, a family secret from 1998. A serial, one chapter a day, about 500 words each, glossed, with questions.",
+          "links": [
+            {
+              "label": "Start chapter I",
+              "url": "#/read/story-01-l-heritage"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kids",
+      "title": "B1: for kids, modern French",
+      "note": "Written for French children today. The easiest real French there is.",
+      "items": [
+        {
+          "id": "kids-1jour1actu",
+          "title": "1jour1actu",
+          "author": "Milan Presse",
+          "level": "B1",
+          "words": 300,
+          "blurb": "The news written for 8-12 year olds: short, current, modern vocabulary. A new article every day.",
+          "links": [
+            {
+              "label": "Site",
+              "url": "https://www.1jour1actu.com/"
+            }
+          ]
+        },
+        {
+          "id": "kids-vikidia",
+          "title": "Vikidia",
+          "author": "Vikidia contributors",
+          "level": "B1",
+          "words": null,
+          "blurb": "The encyclopedia for 8-13 year olds. Pick any topic you like and read the introduction.",
+          "links": [
+            {
+              "label": "Site",
+              "url": "https://fr.vikidia.org/"
+            }
+          ]
+        },
+        {
+          "id": "kids-nicolas",
+          "title": "Le Petit Nicolas",
+          "author": "Goscinny et Sempé",
+          "level": "B1",
+          "words": 1500,
+          "blurb": "A schoolboy tells his own disasters, in spoken French and the passé composé. Very funny, 4-5 pages a story. The best fit for B1.",
+          "links": [
+            {
+              "label": "Official site",
+              "url": "https://www.petitnicolas.com/"
+            }
+          ],
+          "note": "Not free: buy it or borrow it from a library."
+        },
+        {
+          "id": "kids-chat-perche",
+          "title": "Les Contes du chat perché",
+          "author": "Marcel Aymé",
+          "level": "B1",
+          "words": 5000,
+          "blurb": "Two farm girls, Delphine and Marinette, and animals who talk. Plain, warm, funny tales.",
+          "links": [],
+          "note": "Not free: buy it or borrow it from a library."
+        },
+        {
+          "id": "kids-petit-prince",
+          "title": "Le Petit Prince",
+          "author": "Antoine de Saint-Exupéry",
+          "level": "B1",
+          "words": 15000,
+          "blurb": "A pilot in the desert meets a boy from a tiny planet. Short chapters, simple sentences, a lot underneath.",
+          "links": [],
+          "note": "Buy a copy: whether it is free to read online depends on the country."
+        }
+      ]
+    },
+    {
+      "id": "kids-classics",
+      "title": "B1+: kids' classics, free",
+      "note": "Nineteenth-century children's books. Simple stories, a little old-fashioned, free on Wikisource.",
+      "items": [
+        {
+          "id": "segur-ane",
+          "title": "Mémoires d'un âne",
+          "author": "Comtesse de Ségur",
+          "level": "B1",
+          "words": 45000,
+          "blurb": "A donkey, Cadichon, tells his own life: clever, proud and often in trouble. Short chapters, plenty of dialogue.",
           "links": [
             {
               "label": "French",
-              "url": "https://fr.wikisource.org/wiki/Lettres_de_mon_moulin/La_ch%C3%A8vre_de_monsieur_Seguin"
+              "url": "https://fr.wikisource.org/wiki/M%C3%A9moires_d%E2%80%99un_%C3%A2ne"
+            }
+          ],
+          "note": "Uses the passé simple, gently."
+        },
+        {
+          "id": "segur-sophie",
+          "title": "Les Malheurs de Sophie",
+          "author": "Comtesse de Ségur",
+          "level": "B1",
+          "words": 30000,
+          "blurb": "A naughty little girl and one disaster per chapter: the doll, the bees, the goldfish.",
+          "links": [
+            {
+              "label": "French",
+              "url": "https://fr.wikisource.org/wiki/Les_Malheurs_de_Sophie"
+            }
+          ],
+          "note": "Uses the passé simple, gently."
+        },
+        {
+          "id": "segur-petites-filles",
+          "title": "Les Petites Filles modèles",
+          "author": "Comtesse de Ségur",
+          "level": "B1",
+          "words": 50000,
+          "blurb": "Two well-behaved sisters, and the unhappy girl who comes to live with them. The sequel to Sophie.",
+          "links": [
+            {
+              "label": "French",
+              "url": "https://fr.wikisource.org/wiki/Les_Petites_Filles_mod%C3%A8les"
+            }
+          ]
+        },
+        {
+          "id": "malot-sans-famille",
+          "title": "Sans famille",
+          "author": "Hector Malot",
+          "level": "B1",
+          "words": 150000,
+          "blurb": "An orphan sold to a travelling musician walks across France with a dog and a monkey. Long, gripping, in plain prose.",
+          "links": [
+            {
+              "label": "French",
+              "url": "https://fr.wikisource.org/wiki/Sans_famille/Dentu,_1887"
+            }
+          ],
+          "note": "A novel. Read a chapter at a time."
+        }
+      ]
+    },
+    {
+      "id": "short",
+      "title": "B2: short stories",
+      "note": "2-4k words each, easiest first. Maupassant and Daudet, around 1870-1890.",
+      "items": [
+        {
+          "id": "app-heritage-2",
+          "title": "L'héritage, chapters VI-X",
+          "author": "Le Carnet",
+          "level": "B2",
+          "words": 2500,
+          "blurb": "The second half of the serial: a lawyer, a biscuit tin of letters, and what the grandmother had planned. The bridge into B2.",
+          "links": [
+            {
+              "label": "Start chapter VI",
+              "url": "#/read/story-06-il-faut-que"
             }
           ]
         },
@@ -149,16 +334,16 @@
           ]
         },
         {
-          "id": "daudet-cucugnan",
-          "title": "Le curé de Cucugnan",
-          "author": "Alphonse Daudet",
+          "id": "maupassant-main",
+          "title": "La Main",
+          "author": "Guy de Maupassant",
           "level": "B2",
-          "words": 2500,
-          "blurb": "A village priest frightens his flock back to church with a tour of hell. A comic sermon, a few Provençal words.",
+          "words": 2200,
+          "blurb": "A judge tells the story of a severed hand that would not stay chained. Uncanny.",
           "links": [
             {
               "label": "French",
-              "url": "https://fr.wikisource.org/wiki/Lettres_de_mon_moulin/Le_cur%C3%A9_de_Cucugnan"
+              "url": "https://fr.wikisource.org/wiki/Contes_du_jour_et_de_la_nuit_(%C3%A9d._Flammarion,_1885)/La_Main"
             },
             {
               "label": "Annotated",
@@ -185,20 +370,34 @@
           ]
         },
         {
-          "id": "maupassant-main",
-          "title": "La Main",
-          "author": "Guy de Maupassant",
+          "id": "daudet-cucugnan",
+          "title": "Le curé de Cucugnan",
+          "author": "Alphonse Daudet",
           "level": "B2",
-          "words": 2200,
-          "blurb": "A judge tells the story of a severed hand that would not stay chained. Uncanny.",
+          "words": 2500,
+          "blurb": "A village priest frightens his flock back to church with a tour of hell. A comic sermon, a few Provençal words.",
           "links": [
             {
               "label": "French",
-              "url": "https://fr.wikisource.org/wiki/Contes_du_jour_et_de_la_nuit_(%C3%A9d._Flammarion,_1885)/La_Main"
+              "url": "https://fr.wikisource.org/wiki/Lettres_de_mon_moulin/Le_cur%C3%A9_de_Cucugnan"
             },
             {
               "label": "Annotated",
               "url": "https://www.gutenberg.org/cache/epub/12949/pg12949-images.html"
+            }
+          ]
+        },
+        {
+          "id": "daudet-chevre",
+          "title": "La chèvre de M. Seguin",
+          "author": "Alphonse Daudet",
+          "level": "B2",
+          "words": 2200,
+          "blurb": "A goat who wants the mountain, told as a warning to a poet who wants to stay free. Lyrical, with Provençal words: the hardest of the short ones.",
+          "links": [
+            {
+              "label": "French",
+              "url": "https://fr.wikisource.org/wiki/Lettres_de_mon_moulin/La_ch%C3%A8vre_de_monsieur_Seguin"
             }
           ]
         }
@@ -206,8 +405,8 @@
     },
     {
       "id": "lupin",
-      "title": "Then: Arsène Lupin, gentleman-cambrioleur",
-      "note": "The main read. Nine stories of 5-14k words, Leblanc 1907. Side by side with the English, or French only.",
+      "title": "B2: Arsène Lupin, gentleman-cambrioleur",
+      "note": "Nine stories of 5-14k words, Leblanc 1907. Side by side with the English, or French only.",
       "items": [
         {
           "id": "lupin-01",
@@ -374,8 +573,30 @@
       ]
     },
     {
+      "id": "verne",
+      "title": "B2+: a novel",
+      "note": "One long book, read a chapter at a time.",
+      "items": [
+        {
+          "id": "verne-80-jours",
+          "title": "Le Tour du monde en quatre-vingts jours",
+          "author": "Jules Verne",
+          "level": "B2",
+          "words": 65000,
+          "blurb": "A bet at a London club, eighty days, and a servant who keeps getting into trouble. Clear narration, a chapter at a time.",
+          "links": [
+            {
+              "label": "French",
+              "url": "https://fr.wikisource.org/wiki/Le_Tour_du_monde_en_quatre-vingts_jours"
+            }
+          ],
+          "note": "A novel."
+        }
+      ]
+    },
+    {
       "id": "holmes",
-      "title": "Later: Sherlock Holmes in French",
+      "title": "B2+: Sherlock Holmes in French",
       "note": "The Adventures, in a period French translation, side by side with the English.",
       "items": [
         {
