@@ -1,7 +1,8 @@
 // Full "vac" bank, 46 questions, rebuilt from the report of 2026-10-10.
 // Keys and explanations are the page's own; accepted variants widened.
 // ids are vacf-NN in page order. `from` is the original vac-NN id where it is known.
-// `missed`: 'sitting' = wrong in the 2026-10-10 sitting, 'blank' = never answered,
+// `missed`: 'sitting' = wrong in the 2026-10-10 sitting, 'closing' = first answered on
+// 2026-10-11 and wrong first time (was 'blank'),
 // 'earlier' = wrong in earlier sittings, fixed by the end, null = clean first time.
 // Shell: key 'drill-vac'; deal missed != null first (priority).
 window.BANK = {
@@ -798,7 +799,7 @@ window.BANK = {
         "imparfait-vs-passe-compose"
       ],
       "from": "vac-26",
-      "missed": "blank"
+      "missed": "closing"
     },
     {
       "id": "vacf-39",
@@ -816,7 +817,7 @@ window.BANK = {
         "imperatif-gerondif"
       ],
       "from": "vac-16",
-      "missed": "blank"
+      "missed": "closing"
     },
     {
       "id": "vacf-40",
@@ -836,7 +837,7 @@ window.BANK = {
         "passe-compose"
       ],
       "from": "vac-20",
-      "missed": "blank"
+      "missed": "closing"
     },
     {
       "id": "vacf-41",
@@ -856,7 +857,7 @@ window.BANK = {
         "futur-simple"
       ],
       "from": "vac-19",
-      "missed": "blank"
+      "missed": "closing"
     },
     {
       "id": "vacf-42",
@@ -874,7 +875,7 @@ window.BANK = {
         "pronouns"
       ],
       "from": "vac-01",
-      "missed": "blank"
+      "missed": "closing"
     },
     {
       "id": "vacf-43",
@@ -886,7 +887,11 @@ window.BANK = {
         "On a décidé de partir tôt pour éviter les embouteillages.",
         "Nous avons décidé de partir tôt pour ne pas être coincés dans les embouteillages.",
         "On a décidé de partir tôt pour ne pas être coincés dans les embouteillages.",
-        "On a décidé de partir de bonne heure pour éviter d'être coincés dans les embouteillages."
+        "On a décidé de partir de bonne heure pour éviter d'être coincés dans les embouteillages.",
+        "On a décidé de partir tôt pour éviter d'être coincé dans les embouteillages.",
+        "On a décidé de partir tôt pour éviter d'être coincés dans un embouteillage.",
+        "On a décidé de partir tôt pour éviter d'être coincés dans la circulation.",
+        "On a décidé de partir tôt pour éviter d'être coincés dans les bouchons."
       ],
       "vocab": "un embouteillage - a traffic jam / éviter de + inf",
       "why": "décider de + inf. éviter de + inf, or éviter + noun. coincé agrees with the plural subject.",
@@ -895,7 +900,7 @@ window.BANK = {
         "passe-compose"
       ],
       "from": "vac-03",
-      "missed": "blank"
+      "missed": "closing"
     },
     {
       "id": "vacf-44",
@@ -915,7 +920,7 @@ window.BANK = {
         "passe-compose"
       ],
       "from": "vac-43",
-      "missed": "blank"
+      "missed": "closing"
     },
     {
       "id": "vacf-45",
@@ -926,7 +931,8 @@ window.BANK = {
         "J'ai lu récemment qu'il avait enfin trouvé un travail.",
         "J'ai lu récemment qu'il avait finalement trouvé un emploi.",
         "J'ai lu récemment qu'il avait enfin trouvé un emploi.",
-        "J'ai lu récemment qu'il avait fini par trouver un travail."
+        "J'ai lu récemment qu'il avait fini par trouver un travail.",
+        "J'ai lu récemment qu'il a finalement trouvé un travail."
       ],
       "vocab": "récemment - recently / finalement - finally / un travail, un emploi - a job",
       "why": "Reported fact at an earlier time: plus-que-parfait (avait trouvé). récemment and finalement are adverbs in -ment.",
@@ -935,7 +941,7 @@ window.BANK = {
         "adverbs-ment"
       ],
       "from": "vac-23",
-      "missed": "blank"
+      "missed": "closing"
     },
     {
       "id": "vacf-46",
@@ -954,7 +960,7 @@ window.BANK = {
         "pronouns"
       ],
       "from": "vac-14",
-      "missed": "blank"
+      "missed": "closing"
     }
   ]
 };

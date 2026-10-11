@@ -31,8 +31,7 @@ Then `drill-traduction`, English → French: 3 of 21 right first time, 21/21 aft
 `imparfait-vs-passe-compose` are both marked done. The Part II production drill
 (36 sentences, English to French) closed at 36/36 on 2026-09-25 after 76 attempts.
 Then the verbs, adverbs, comparisons drill (46 sentences, Part II chapters 11-13
-mixed with earlier grammar): 37/46 (80%) after 90 attempts, 2026-10-10, nine
-left blank. Full bank and ranked themes in
+mixed with earlier grammar): closed at 46/46 on 2026-10-11 after 121 attempts. Full bank and ranked themes in
 `study-log/part2-verbs-adverbs-comparisons.md` and `study-log/vac.bank.js`.
 
 Every closed sitting is written up in `study-log/`: the score run, the ranked error
