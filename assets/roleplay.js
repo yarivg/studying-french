@@ -353,11 +353,12 @@ window.Roleplay = (function () {
       var a = t.indexOf('{'), b = t.lastIndexOf('}');
       if (a >= 0 && b > a) { try { obj = JSON.parse(t.slice(a, b + 1)); } catch (e2) { obj = null; } }
     }
-    if (!obj || typeof obj !== 'object') return { reply: t, ok: true, feedback: [], better: '', help: '' };
+    if (!obj || typeof obj !== 'object') obj = salvage(t);
+    if (!obj) return { reply: t, ok: null, feedback: [], better: '', help: '' };
     var fb = Array.isArray(obj.feedback) ? obj.feedback : [];
     return {
       reply: String(obj.reply || ''),
-      ok: obj.ok !== false && !fb.length,
+      ok: obj.ok === null ? null : obj.ok !== false && !fb.length,
       feedback: fb.slice(0, 3).map(function (f) {
         return {
           said: String((f && f.said) || ''), fix: String((f && f.fix) || ''),
@@ -367,6 +368,26 @@ window.Roleplay = (function () {
       better: String(obj.better || ''),
       help: String(obj.help || '')
     };
+  }
+
+  // A small model sometimes writes JSON that does not parse (a stray quote
+  // inside a field). Pull each field out on its own rather than showing the
+  // raw text as the character's line, and never claim "Natural" for it.
+  function field(src, name) {
+    var m = src.match(new RegExp('"' + name + '"\\s*:\\s*"((?:[^"\\\\]|\\\\.)*)"'));
+    if (!m) return '';
+    try { return JSON.parse('"' + m[1] + '"'); } catch (e) { return m[1]; }
+  }
+  function salvage(t) {
+    var reply = field(t, 'reply');
+    if (!reply) return null;
+    var fb = [], part = t.slice(t.indexOf('"feedback"') + 1 || t.length);
+    (part.match(/\{[^{}]*\}/g) || []).forEach(function (chunk) {
+      var why = field(chunk, 'why');
+      if (why) fb.push({ said: field(chunk, 'said'), fix: field(chunk, 'fix'), why: why, theme: field(chunk, 'theme') });
+    });
+    var ok = /"ok"\s*:\s*false/.test(t) ? false : null;
+    return { reply: reply, ok: ok, feedback: fb, better: field(t, 'better'), help: field(t, 'help') };
   }
 
   function wire(session) {
@@ -669,7 +690,7 @@ window.Roleplay = (function () {
 
   function feedbackHtml(fb) {
     var h = '<div class="talk-fb">';
-    if (fb.ok && !(fb.feedback || []).length) {
+    if (fb.ok === true && !(fb.feedback || []).length) {
       h += '<span class="talk-ok">✓ Natural</span>';
     } else {
       (fb.feedback || []).forEach(function (f) {
