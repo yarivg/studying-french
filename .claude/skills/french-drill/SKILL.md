@@ -16,8 +16,8 @@ there only if it earns a permanent place, and only after asking.
 
 ```
 <scratchpad>/
-  engine.js            shared, write once per session if missing
-  drill.css            shared
+  engine.js            shared, copy from .claude/skills/french-drill/assets/ if missing
+  drill.css            shared, same
   questions-<name>.js  the bank: window.BANK = { title, key, intro, questions: [...] }
   drill-<name>.html    shell: loads drill.css, the bank, engine.js
 ```
@@ -53,6 +53,9 @@ window.BANK = {
   vocabulary enters the drill instead of blocking it.
 - `why` teaches. It is read on every question, right or wrong.
 - `tags` name every chapter the question touches, so the breakdown is diagnostic.
+- `listen: true` plus `say: '<French>'` makes a dictation item: Play / Slow buttons
+  speak the French, `en` stays hidden until graded. Accept every homophone spelling.
+- `day: N` plus a shell `filter` splits one bank into daily sets (`?day=N`).
 
 ## Rules these pages follow
 
@@ -83,4 +86,4 @@ Learned the hard way:
 4. Log the sitting, name the error themes, teach them, and build the next drill
    from whatever is still failing.
 
-Keep the running log outside the repo, in the scratchpad, as `french-progress-log.md`.
+Write each closed sitting to `study-log/` with its bank (see CLAUDE.md).
