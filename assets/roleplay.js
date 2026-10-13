@@ -178,8 +178,28 @@ window.Roleplay = (function () {
       'This section does not work from the offline single file.');
   }
 
+  // A request that never answers would leave the page waiting forever, so
+  // every call gives up after TIMEOUT_MS and says so.
+  var TIMEOUT_MS = 30000;
+  function timedFetch(url, opts) {
+    if (!window.AbortController) return fetch(url, opts);
+    var ctl = new AbortController();
+    var timer = setTimeout(function () { ctl.abort(); }, TIMEOUT_MS);
+    opts.signal = ctl.signal;
+    return fetch(url, opts).then(function (res) { clearTimeout(timer); return res; }, function (err) {
+      clearTimeout(timer);
+      if (ctl.signal.aborted) {
+        var e = new Error('No answer from ' + model() + ' after ' + TIMEOUT_MS / 1000 + ' s. ' +
+          'The service may be slow right now: pick another model in the list and test again.');
+        e.timedOut = true;
+        throw e;
+      }
+      throw err;
+    });
+  }
+
   function callAnthropic(key, system, messages, maxTokens) {
-    return fetch(ANTHROPIC_URL, {
+    return timedFetch(ANTHROPIC_URL, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -202,7 +222,7 @@ window.Roleplay = (function () {
         if (res.status === 529 || res.status >= 500) throw new Error('The service is busy. Send again in a moment.');
         throw new Error('The request failed (' + res.status + ').' + detail);
       });
-    }, function () { throw unreachable(); }).then(function (j) {
+    }, function (err) { throw err.timedOut ? err : unreachable(); }).then(function (j) {
       return (j.content || []).map(function (b) { return b.text || ''; }).join('');
     });
   }
@@ -236,7 +256,7 @@ window.Roleplay = (function () {
     };
     if (quiet) cfg.thinkingConfig = { thinkingBudget: 0 };
 
-    return fetch(GEMINI_BASE + 'models/' + encodeURIComponent(model()) + ':generateContent', {
+    return timedFetch(GEMINI_BASE + 'models/' + encodeURIComponent(model()) + ':generateContent', {
       method: 'POST',
       headers: { 'content-type': 'application/json', 'x-goog-api-key': key },
       body: JSON.stringify({
@@ -269,7 +289,7 @@ window.Roleplay = (function () {
         e.status = res.status;
         throw e;
       });
-    }, function () { throw unreachable(); }).then(function (j) {
+    }, function (err) { throw err.timedOut ? err : unreachable(); }).then(function (j) {
       var c = j.candidates && j.candidates[0];
       if (!c || !c.content || !c.content.parts) {
         var why = j.promptFeedback && j.promptFeedback.blockReason;
