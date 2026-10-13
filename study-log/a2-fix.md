@@ -13,6 +13,10 @@ Themes: `on` + singular verb, irregular participles, `-é` participles, `lui` vs
 |---|---|---|---|---|
 | 1 | 2026-10-11 | 0/10 | 10/10 | 24 |
 | 2 | 2026-10-13 | 4/10 | 10/10 | 3 |
+| 3 | 2026-10-13 | 1/10 | 10/10 | 3 |
+
+All 30: **5/30 first attempt (17%)**, against the 70% target. Every sentence fixed
+within two redo passes, so the gap is recall under no prompt, not knowledge.
 
 ## Day 1: what failed first time, ranked
 
@@ -57,15 +61,46 @@ First attempt by theme, day 2: `lui-le` 1/5 and `false-friends` 0/3 are the weak
 two; `verb-de-a` 2/4, participles 1/3. Pronouns after `à`-verbs (`offrir`, `rendre
 visite`, `dire` in the imperative) are now the main gap.
 
+## Day 3: what failed first time
+
+Page said 0/10; `a2f-25` (`sois prudent avec ce que tu lui dis`) was right and the
+key was widened, so 1/10. Right first time inside wrong sentences: every pronoun
+(`m'a aidé`, `l'ai invité`, `leur réponds`, `lui dis`, `me posent`). The `lui / leur`
+theme from day 2 did not repeat.
+
+1. **Plus-que-parfait both ways** (3). Missing where English has "had" (`il a dit` for
+   `il avait dit`); used for "have you ever" (`tu avais jamais bu`, `je l'avais goûté`)
+   and for a habit still going on (`depuis nous nous étions vus` for `nous nous voyons`).
+   Day 1 overuse, back.
+2. **Negation missing a half** (2). `je ne l'ai cru`, `rien d'important était décidé`.
+3. **Verb + preposition** (3). `oublier de` (wrote none), `hésiter à` (wrote `de`),
+   `inviter à dîner` (wrote `pour`).
+4. **Wrong verb from English** (3). `bouger` for move house (`déménager`), `rester` for
+   leave something (`laisser`), `y` with no place mentioned.
+5. **Noun for verb** (2). `je leur réponse` (`réponds`), `besoin d'aider` (`d'aide`).
+6. **Small.** `nous sacs` (`nos`), `invite` (`invitée`, preceding `l'`), `tu a`,
+   `qualque`, `parce que elle`, `toujours` dropped.
+
+Redo: all ten fixed on the first pass. The second pass on `a2f-26` was a stale key in
+the browser (`nous nous sommes connus` had just been added), not an error.
+
 ## Grading notes
 
 - `Les voisins ont parlé si fort` accepted beside `parlaient`.
-- `je l'attends dans le café` accepted beside `au café`. Two keys displayed badly (`quandils`, `d'abord ... d'abord`); fixed.
+- `je l'attends dans le café` accepted beside `au café`.
+- Day 3: `sois prudent(e) avec ce que tu lui dis`, `fais gaffe à`, and `se connaître`
+  for met (`nous nous sommes connus`) accepted. Two keys displayed badly (`quandils`, `d'abord ... d'abord`); fixed.
 
 ## Next
 
-Day 3 cold. The plus-que-parfait and `pouvoir` themes from day 1 did not repeat, so
-no tense-choice set yet. If `lui / leur` after `à`-verbs fails again on day 3, the
-next build is a pronoun set: `offrir / rendre visite / répondre / téléphoner / dire à`
-against `appeler / attendre / aider / inviter`, plus positive and negative
-imperatives (`dis-lui`, `ne lui dis pas`).
+Drill closed at 5/30 first attempt: production is still A2. Pronouns after `à`-verbs
+were clean on day 3, so no pronoun-only set. Next build, cold, first attempt counts:
+
+1. **Tense choice**: `have you ever` / `have already` → passé composé; `had` →
+   plus-que-parfait; `depuis` + still going on → present.
+2. **Negation pairs**: `ne ... pas / rien / jamais / personne` around the auxiliary.
+3. **Verb + preposition** families: `oublier / refuser / essayer de`, `hésiter /
+   commencer / aider qqn à`, `inviter qqn à`.
+4. **Verb choice**: `déménager / bouger`, `laisser / rester / quitter / partir`.
+
+Parallel: Part II ch. 10 `y-en` done before day 3. Next chapters: 14 `time-expressions` (depuis / pendant / il y a / pour), 15 `passive-on`.
