@@ -142,10 +142,11 @@
   var voice = null;
   function pickVoice() {
     var vs = window.speechSynthesis ? speechSynthesis.getVoices() : [];
-    voice = vs.filter(function (v) { return /^fr(-|_)FR/i.test(v.lang); })[0] ||
+    voice = vs.filter(function (v) { return /google/i.test(v.name) && /^fr(-|_)FR/i.test(v.lang); })[0] ||
+            vs.filter(function (v) { return /^fr(-|_)FR/i.test(v.lang); })[0] ||
             vs.filter(function (v) { return /^fr/i.test(v.lang); })[0] || null;
   }
-  if (window.speechSynthesis) { pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+  if (window.speechSynthesis) { pickVoice(); speechSynthesis.onvoiceschanged = function () { pickVoice(); render(); }; }
   function say(text, rate) {
     if (!window.speechSynthesis) return;
     speechSynthesis.cancel();
@@ -190,6 +191,7 @@
         play.appendChild(btn('▶ Play', function () { say(text, 0.95); }));
         play.appendChild(document.createTextNode(' '));
         play.appendChild(btn('Slow', function () { say(text, 0.7); }));
+        if (voice) play.appendChild(el('span', 'vocab', '  ' + voice.name));
         if (shown && q.en) play.appendChild(el('span', 'vocab', '  ' + q.en));
         li.appendChild(play);
       } else li.appendChild(el('p', 'en', q.en));

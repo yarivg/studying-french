@@ -56,7 +56,8 @@ Each block names: the exact URL or route, what to paste back, and the target
   sentences, built from the words of his current reading and the failing theme.
   Accept every homophone spelling the audio cannot distinguish (`embrassé /
   embrassée`, `rendu / rendus`). Ids `dic-NN`, continuing the highest used.
-  Name it `questions-dictee-<N>.js`, key `drill-dictee-<N>`.
+  Name it `questions-dictee-<N>.js`, key `drill-dictee-<N>`. Voice: Google français
+  fr-FR, already the engine default; never switch it.
 - **Writing prompt:** in the plan itself. Name the 3-4 structures he must use (from
   the top themes) and 5-6 words from his recent reading.
 - **Talk:** pick a scene id from `content/roleplay/index.json` whose situation
@@ -68,12 +69,18 @@ Each block names: the exact URL or route, what to paste back, and the target
 - Grade every paste by the `CLAUDE.md` rules: verdict first, rule, theme, widen the key
   when his French is right.
 - Speaking: he pastes his own lines from Talk. Grade them as production.
+- Dictée: split errors into **heard wrong** (a word missing or a different form,
+  e.g. `pense` for `pensait`) and **silent grammar** (sounds the same, spelled wrong:
+  `était / étaient`, `sa / ça`, `-é / -er`, agreement). The second kind is a writing
+  error and feeds the production drills. Dictée 1 (2026-10-13): 2/12 exact, the
+  majority silent grammar.
 
 ## 5. Close
 
 When reports are in, update the relevant `study-log/` file (score row, ranked failures,
 `## Next`), or start a new log for a new drill. Banks worth keeping go in
-`study-log/<name>.bank.js`. Then ask before `/ship`.
+`study-log/<name>.bank.js`. Commit and push the `study-log/` files to main straight
+away (standing approval, logs only). Anything else still waits for `/ship`.
 
 ## Rules
 

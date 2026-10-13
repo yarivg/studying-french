@@ -142,6 +142,7 @@ accept every real variant, or a sitting is wasted arguing with it.
 
 ## Housekeeping
 
-- Never commit without asking. The exam pages are throwaway and stay out of the
+- Never commit without asking, except study logs: a `study-log/` update (log + its
+  bank) is committed and pushed to main right after it is written, no `/ship` needed. The exam pages are throwaway and stay out of the
   repo; if one earns a permanent place, port it to `content/tests/` in the schema
   format rather than committing the HTML.

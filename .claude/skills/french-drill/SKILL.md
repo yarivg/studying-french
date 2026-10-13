@@ -55,6 +55,9 @@ window.BANK = {
 - `tags` name every chapter the question touches, so the breakdown is diagnostic.
 - `listen: true` plus `say: '<French>'` makes a dictation item: Play / Slow buttons
   speak the French, `en` stays hidden until graded. Accept every homophone spelling.
+  The engine picks **Google français (fr-FR)** first, then any fr-FR voice, and shows
+  the voice name by the buttons. Yariv cannot follow the other voices: keep this
+  preference, and tell him to use Chrome (Google voices need it and a connection).
 - `day: N` plus a shell `filter` splits one bank into daily sets (`?day=N`).
 
 ## Rules these pages follow
