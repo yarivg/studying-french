@@ -160,41 +160,6 @@
               "url": "https://fr.vikidia.org/"
             }
           ]
-        },
-        {
-          "id": "kids-nicolas",
-          "title": "Le Petit Nicolas",
-          "author": "Goscinny et Sempé",
-          "level": "B1",
-          "words": 1500,
-          "blurb": "A schoolboy tells his own disasters, in spoken French and the passé composé. Very funny, 4-5 pages a story. The best fit for B1.",
-          "links": [
-            {
-              "label": "Official site",
-              "url": "https://www.petitnicolas.com/"
-            }
-          ],
-          "note": "Not free: buy it or borrow it from a library."
-        },
-        {
-          "id": "kids-chat-perche",
-          "title": "Les Contes du chat perché",
-          "author": "Marcel Aymé",
-          "level": "B1",
-          "words": 5000,
-          "blurb": "Two farm girls, Delphine and Marinette, and animals who talk. Plain, warm, funny tales.",
-          "links": [],
-          "note": "Not free: buy it or borrow it from a library."
-        },
-        {
-          "id": "kids-petit-prince",
-          "title": "Le Petit Prince",
-          "author": "Antoine de Saint-Exupéry",
-          "level": "B1",
-          "words": 15000,
-          "blurb": "A pilot in the desert meets a boy from a tiny planet. Short chapters, simple sentences, a lot underneath.",
-          "links": [],
-          "note": "Buy a copy: whether it is free to read online depends on the country."
         }
       ]
     },
