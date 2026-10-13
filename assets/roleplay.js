@@ -797,14 +797,23 @@ window.Roleplay = (function () {
 
     var mic = view.querySelector('#talkMic');
     if (mic) {
+      // One button: it keeps listening through pauses (up to a minute) and a
+      // second click stops and keeps what was heard, instead of starting a
+      // second recogniser on top of the first.
+      var hearing = false, placeholder = input.placeholder;
       mic.addEventListener('click', function () {
+        if (hearing) { Speech.stop(); return; }
+        hearing = true;
         errBox.hidden = true;
-        mic.textContent = '🎤 Listening…';
-        Speech.listen({ timeout: 12000 }).then(function (alts) {
+        mic.textContent = '■ Stop';
+        Speech.listen({ timeout: 60000, continuous: true,
+                        onPartial: function (t) { input.placeholder = '… ' + t; } }).then(function (alts) {
           var said = alts[0] || '';
           input.value = (input.value ? input.value + ' ' : '') + said;
           input.focus();
-        }).catch(fail).then(function () { mic.textContent = '🎤 Speak'; });
+        }).catch(fail).then(function () {
+          hearing = false; mic.textContent = '🎤 Speak'; input.placeholder = placeholder;
+        });
       });
     }
 

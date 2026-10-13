@@ -36,10 +36,13 @@ window.Speech = (function () {
       rec.lang = opts.lang || 'fr-FR';
       rec.interimResults = true;
       rec.maxAlternatives = 5;
-      rec.continuous = false;
+      // continuous keeps listening through pauses until stop() or the
+      // timeout, for a learner who speaks slowly. Each final segment's best
+      // guess is joined into one transcript.
+      rec.continuous = !!opts.continuous;
 
       var settled = false;
-      var alternatives = [];
+      var alternatives = [], segments = [];
 
       // Some platforms end the session without ever firing `result`.
       var guard = setTimeout(function () { try { rec.stop(); } catch (e) {} }, opts.timeout || 8000);
@@ -51,6 +54,7 @@ window.Speech = (function () {
             if (opts.onPartial) opts.onPartial(r[0].transcript);
             continue;
           }
+          if (opts.continuous) { segments.push(r[0].transcript.trim()); continue; }
           for (var j = 0; j < r.length; j++) alternatives.push(r[j].transcript);
         }
       };
@@ -64,9 +68,10 @@ window.Speech = (function () {
 
       rec.onend = function () {
         clearTimeout(guard);
-        active = null;
+        if (active === rec) active = null;
         if (settled) return;
         settled = true;
+        if (segments.length) alternatives = [segments.join(' ')];
         if (!alternatives.length) {
           reject(new Error('I did not catch anything. Try again, a little louder.'));
         } else {
