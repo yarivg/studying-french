@@ -16,14 +16,18 @@ In this order, stop when the picture is clear:
    first commitment: an unfinished multi-day drill (e.g. `a2-fix.md` day N) comes first.
 2. The ranked themes in `CLAUDE.md` ("Current picture") and in the newest log.
 3. `content/roleplay/index.json` `focus`: what Talk already targets.
-4. `content/manifest.json` for the next chapter. Chapters marked done live in his
-   browser, not the repo. Known done: Part I, Part II `imparfait`,
-   `imparfait-vs-passe-compose`, 11-13 (via the vac drill). Prefer the next chapter
-   that **attacks the top error theme** over the next in order (pronoun errors →
-   `y-en`, `pronoun-idioms`; tense → `plus-que-parfait`, `conditionnel`, `si-clauses`).
-5. What he has been reading: `content/reading/library.json` items he mentioned in
-   chat, plus the words he asked about. His own added words are in browser storage;
-   use them only if he pastes them or an export (`Stats → Export progress`).
+4. His app progress, synced by `assets/sync.js` to a private gist. Read it, never guess:
+   `gh gist list | grep "Le Carnet"` for the id, then
+   `gh gist view <id> --raw -f le-carnet-progress.json` into the scratchpad. Shape is
+   documented at the top of `assets/progress.js`: `read` (slug → when read), `mastery`
+   (slug → level 0-2), `tests` (slug → best, runs), `lib` (story → reading / done),
+   `words` (his own added words), `qstat` (per-question misses). If the gist is missing
+   or stale, ask for `Stats → Export progress`.
+5. `content/manifest.json` for the next chapter: the first one with no `read` entry.
+   Prefer the unread chapter that **attacks the top error theme** over the next in order
+   (pronoun errors → `pronoun-idioms`; tense → `discours-indirect`). A done chapter with
+   a weak best test (< 75%) can be a retest block instead of a new chapter.
+6. What he has been reading: `lib` items marked `reading`, and the newest `words` he added.
 
 ## 2. Shape the session
 
@@ -37,9 +41,17 @@ Fixed skeleton, scaled to the time. For 120 minutes:
 | 15 | Reading: next chunk of the current book, aloud, words noted | reading |
 | 20 | Talk scene chosen for the theme (`#/talk`) | speaking |
 | 15 | Writing: 100-150 words, prompt tied to the reading, with required structures | writing |
+| 15 | Song: translate 1-2 verses, notes on the frames, 3 lines of his own with them | reading |
 | 10 | Paste reports, log, decide next | - |
 
-Scale: 60 min drops the reading and halves Talk; 90 min drops the reading.
+Scale: 90 min drops reading and writing; 60 min also cuts the rest to drill 12,
+chapter 13, dictée 10, song 12, Talk 8, close 5.
+
+**Song:** a page in the scratchpad (`song-<slug>.html`): ▶ per line in Google français,
+an English box per verse, notes behind a fold, a copy button. Lyrics on the page only
+when public domain (author dead 70+ years: `Le Temps des cerises`, traditional songs).
+For Piaf, Brel, Aznavour, Brassens, Trenet he pastes the lines from a free lyrics site
+and the notes are built from his paste. Pick songs whose frames hit the top theme.
 Order matters: production cold first, new grammar while fresh, speaking after the
 chapter so it can use it.
 
