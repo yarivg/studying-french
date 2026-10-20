@@ -65,7 +65,40 @@ Comprehension of the clip at 1x: 30% before the dictée, 95% after the redo and 
 rewatches (French subtitles, then none). That is the method that works: cold watch, dictée,
 subtitled rewatch, clean rewatch.
 
+## Dictée 4
 
-Dictée 2 from the next chapter read (Sophie ch. 2). Load it with `-ait / -aient`
-endings, `être` verbs with feminine subjects, and infinitive vs participle after
-`à / de` (`à la réparer`, `de laver`).
+Same podcast, 42:00 to 46:50 (`&t=2520s`). 1/12 first time, but three misses were spelling
+only (`tenis`, `no` for `non`, `forcemment`).
+
+**Heard wrong**:
+- `en` dropped again: `envie de profite` for `d'en profiter`. Three times in two dictées
+  (`y` twice in Dictée 3).
+- `à` dropped before `tous les concerts`.
+- Whole chunks lost: `j'ai eu ... qui ont vécu`, `j'irais voir` (`je revois`), `la mairie`
+  (`l'amerique`), `du contenu` (`de compte nous`), `milieu` (`mieux`).
+
+**Silent grammar**, ranked:
+1. Plural verb after `qui`: `createurs qui n'habite / propose`. `qui` takes its
+   antecedent's number. New theme.
+2. Silent plural `s`, again: `pot`, `match`, `opurtunite professionel`, `concerts`.
+3. Infinitive and conditional endings: `de profite`, `vive` for `vivais`, `permettre` for
+   `permettrait`.
+4. `toute le monde` (`tout le monde`): over-corrected from Dictée 3's `tout`.
+5. `s'est` for `c'est`, `plus de opportunités` (`d'` elision), `les travails`.
+
+Redo: all 11 fixed in one pass, so the gaps were hearing and checking, not knowledge.
+Comprehension at 1x after the loop: nearly 100% (cold first pass not recorded).
+
+New expressions he picked from the clip: `le fil rouge`, `tous les quatre matins`,
+`ça me tiraille`, `ça me travaille`, `le taf`, `du coup`, `mettre un pied dans le milieu`,
+`j'ai l'impression que`.
+
+## Next
+
+As of 2026-10-21:
+1. Podcast #103 from 46:50 to the end, same loop (Dictée 5, ids from `dic-47`).
+2. A production drill on `y` / `en`, the plural verb after `qui`, and silent plural `s`,
+   using the new expressions above.
+3. B1e (`drill-b1e`) is still unsat.
+4. Dictée 2 (Sophie ch. 2: `-ait / -aient`, `être` verbs with feminine subjects,
+   infinitive vs participle after `à / de`) is built but not yet sat.
