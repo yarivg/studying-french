@@ -10,7 +10,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 |---|---|---|---|---|---|
 | 1 | 2026-10-13 | Sophie ch. 1, La chèvre de M. Seguin | 2/12 | 12/12 | 4 |
 | 3 | 2026-10-20 | French With Panache #103, 37:00-42:00 (real speech) | 3/12 | 12/12 | 5 |
-| 4 | 2026-10-21 | French With Panache #103, 42:00-46:50 | 1/12 | - | 1 |
+| 4 | 2026-10-21 | French With Panache #103, 42:00-46:50 | 1/12 | 12/12 | 2 |
 
 ## Dictée 1
 
