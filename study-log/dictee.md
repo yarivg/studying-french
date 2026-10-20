@@ -99,6 +99,4 @@ As of 2026-10-21:
 1. Podcast #103 from 46:50 to the end, same loop (Dictée 5, ids from `dic-47`).
 2. A production drill on `y` / `en`, the plural verb after `qui`, and silent plural `s`,
    using the new expressions above.
-3. B1e (`drill-b1e`) is still unsat.
-4. Dictée 2 (Sophie ch. 2: `-ait / -aient`, `être` verbs with feminine subjects,
-   infinitive vs participle after `à / de`) is built but not yet sat.
+Open threads dropped 2026-10-21 (B1e, Dictée 2, b1c, pronoun chapter, song page): see `plan.md`.
