@@ -46,3 +46,21 @@ B1e, Dictée 2, b1c, the pronoun-idioms chapter, the song page. Not deleted, not
 | New clip of the same podcast, cold watch | 50-60% |
 
 Not expected by then: 70% cold (the B1 line) or easy free speaking. That is months, not weeks.
+
+## Measuring errors per sentence
+
+Drill pages now count **word errors** on every first attempt: the fewest word edits
+(wrong, missing or extra word) from the answer to the nearest accepted variant. The
+report prints the total and the average per sentence. It is an approximation: one
+wrong elision (`me attendre`) can count as 2. Writing is counted by hand in `writing.md`.
+
+## Session 1: 2026-10-22, 60 min
+
+Pages are served from the scratchpad on `localhost:8787`.
+
+| min | block | what to paste back |
+|---|---|---|
+| 0-15 | **Writing.** Your day yesterday (2026-10-21), 8 sentences, linked. Must use: passé composé + imparfait, one `y` or `en`, two verbs + `à / de` (`décider de`, `essayer de`, `commencer à`, `hésiter à`), one `lui / leur`, one podcast expression (`du coup`, `tomber sur`, `avoir envie de`, `s'en sortir`). No dictionary for grammar. | the text |
+| 15-45 | **Listening.** Cold watch of #103 at 1x from 46:46 (`https://www.youtube.com/watch?v=cOdKYE8WnCk&t=2806s`), pause at 51:30, note % understood. Then `drill-dictee-5.html`, then a French-subtitle rewatch at 0.75x, then a clean 1x rewatch. | cold %, the report, final % |
+| 45-55 | **Cold retest.** `drill-retest-1.html`: 10 old failed sentences (vac, a2fix, b1d) on the top 3 themes. First attempt only, no hints. | the report |
+| 55-60 | Log. | - |
