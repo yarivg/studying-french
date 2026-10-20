@@ -60,6 +60,10 @@ which took three more: `la musée` twice and the dropped `y` (`je suis allé` fo
 `j'y suis allé`) all three times. The `y` failure is now production as well as
 listening: he no longer has the audio as an excuse. Feed it to the next production drill.
 
+Comprehension of the clip at 1x: 30% before the dictée, 95% after the redo and two
+rewatches (French subtitles, then none). That is the method that works: cold watch, dictée,
+subtitled rewatch, clean rewatch.
+
 
 Dictée 2 from the next chapter read (Sophie ch. 2). Load it with `-ait / -aient`
 endings, `être` verbs with feminine subjects, and infinitive vs participle after
