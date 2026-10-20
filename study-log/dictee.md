@@ -9,7 +9,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | # | Date | Source | First attempt | Final | Attempts |
 |---|---|---|---|---|---|
 | 1 | 2026-10-13 | Sophie ch. 1, La chèvre de M. Seguin | 2/12 | 12/12 | 4 |
-| 3 | 2026-10-20 | French With Panache #103, 37:00-42:00 (real speech) | 3/12 | - | 1 |
+| 3 | 2026-10-20 | French With Panache #103, 37:00-42:00 (real speech) | 3/12 | 12/12 | 5 |
 
 ## Dictée 1
 
@@ -54,6 +54,11 @@ with `&t=2218s`), watched once at 1x before the drill. 3/12 right first time. Di
 4. `toute` for the invariable pronoun `tout` (`tu as tout`).
 5. Graded right but parsed wrong: `j'allais l'avoir` for `la voir`. It passed only
    because the grader drops apostrophes. Same sound, different words.
+
+Redo: 10 of 12 on the first pass. Survivors: `du Louvre` (one more pass) and dic-28,
+which took three more: `la musée` twice and the dropped `y` (`je suis allé` for
+`j'y suis allé`) all three times. The `y` failure is now production as well as
+listening: he no longer has the audio as an excuse. Feed it to the next production drill.
 
 
 Dictée 2 from the next chapter read (Sophie ch. 2). Load it with `-ait / -aient`
