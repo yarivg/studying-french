@@ -52,3 +52,4 @@ Redo: 22 -> 5. Survivors: `voudrais` for `elle` (`voudrait`, survived the correc
 `c'est me brosse` (`me brosser`: infinitive after `c'est`), `mon petite déjeuner`
 (`petit-déjeuner`, masculine). Spelling: `D'Habitue` (`D'habitude`), `prière` (prayer) for
 `première`. Style: `en ce moment` and `maintenant` in one sentence, keep one.
+Second redo: 5 -> 1 (`primière` for `première`). Closed.
