@@ -31,6 +31,9 @@ In this order, stop when the picture is clear:
 
 ## 2. Shape the session
 
+**Until 2026-11-11 the skeleton is the one in `study-log/plan.md`:** writing a scene,
+the listening loop, a cold retest. Chapter, song, reading and Talk blocks are paused.
+
 Fixed skeleton, scaled to the time. For 120 minutes:
 
 | min | block | skill |

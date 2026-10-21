@@ -79,6 +79,8 @@ Learned the hard way:
   **Reshuffle** deals a new order. The last two confirm first.
 - **Hide correct** collapses the page to what is left.
 - Every grade appends to an attempt history storing full wrong answers, not just ids.
+- Each first attempt stores its **word errors** (fewest word edits to the nearest
+  accepted variant); the stats line and the report show errors per sentence.
 - **Copy report** produces the markdown Yariv pastes back into the chat.
 
 ## The loop

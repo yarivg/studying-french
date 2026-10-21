@@ -3,7 +3,8 @@
    A question with listen: true is a dictation: the French in q.say (or the
    first key) is spoken, q.en stays hidden until it is graded.
    Answers may use {a|b|c} groups; every combination is accepted.
-   Grading ignores case, accents, apostrophes, hyphens, punctuation and spaces. */
+   Grading ignores case, accents, apostrophes, hyphens, punctuation and spaces.
+   Each first attempt also stores its word errors, reported per sentence. */
 (function () {
   var B = window.BANK, S = window.SHELL || {};
   var KEY = S.key || B.key;
@@ -32,6 +33,34 @@
     KEYS[q.id] = set;
   });
   function model(q) { return expand(q.a[0])[0]; }
+
+  // Word errors: fewest word edits from the answer to any accepted variant.
+  // Words are compared like the grader compares sentences; two words that join
+  // into one (dis lui / dis-lui) cost nothing.
+  var VARS = {};
+  QS.forEach(function (q) {
+    var v = [];
+    q.a.forEach(function (a) { expand(a).forEach(function (x) { if (v.length < 5000) v.push(words(x)); }); });
+    VARS[q.id] = v;
+  });
+  function words(t) { return t.split(/\s+/).map(norm).filter(Boolean); }
+  function dist(a, b) {
+    var n = a.length, m = b.length, d = [], i, j;
+    for (i = 0; i <= n; i++) { d.push([i]); }
+    for (j = 1; j <= m; j++) d[0][j] = j;
+    for (i = 1; i <= n; i++) for (j = 1; j <= m; j++) {
+      var x = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      if (i > 1 && a[i - 2] + a[i - 1] === b[j - 1]) x = Math.min(x, d[i - 2][j - 1]);
+      if (j > 1 && b[j - 2] + b[j - 1] === a[i - 1]) x = Math.min(x, d[i - 1][j - 2]);
+      d[i][j] = x;
+    }
+    return d[n][m];
+  }
+  function errCount(q, ans) {
+    var w = words(ans), best = Infinity;
+    VARS[q.id].forEach(function (v) { if (best) best = Math.min(best, dist(w, v)); });
+    return best;
+  }
 
   function load() {
     try { return JSON.parse(localStorage.getItem(KEY)) || null; } catch (e) { return null; }
@@ -66,8 +95,15 @@
   }
   function firstScore() {
     var tried = 0, right = 0;
-    QS.forEach(function (q) { var f = st.first[q.id]; if (f) { tried++; if (f.ok) right++; } });
-    return { tried: tried, right: right };
+    var err = 0;
+    QS.forEach(function (q) {
+      var f = st.first[q.id];
+      if (!f) return;
+      tried++; if (f.ok) right++;
+      if (f.err == null) f.err = f.ok ? 0 : errCount(q, f.ans);
+      err += f.err;
+    });
+    return { tried: tried, right: right, err: err, per: tried ? Math.round(10 * err / tried) / 10 : 0 };
   }
 
   function grade() {
@@ -77,7 +113,7 @@
       var ans = (st.answers[q.id] || '').trim();
       var ok = !!ans && !!KEYS[q.id][norm(ans)];
       st.results[q.id] = ok;
-      if (ans && !st.first[q.id]) st.first[q.id] = { ok: ok, ans: ans };
+      if (ans && !st.first[q.id]) st.first[q.id] = { ok: ok, ans: ans, err: ok ? 0 : errCount(q, ans) };
       if (ans && !ok && st.lastWrong[q.id] !== ans) wrong.push({ id: q.id, ans: ans });
       if (ans && !ok) st.lastWrong[q.id] = ans;
     });
@@ -107,7 +143,8 @@
     var f = firstScore(), s = score(), L = [];
     L.push('# ' + (S.title || B.title) + ' report', '');
     L.push('Score: ' + s + '/' + QS.length + ' (' + Math.round(100 * s / QS.length) + '%), ' + st.history.length + ' graded attempts');
-    L.push('First attempt: ' + f.right + '/' + f.tried + (f.tried ? ' (' + Math.round(100 * f.right / f.tried) + '%)' : '') + ', ' + (QS.length - f.tried) + ' not yet answered', '');
+    L.push('First attempt: ' + f.right + '/' + f.tried + (f.tried ? ' (' + Math.round(100 * f.right / f.tried) + '%)' : '') + ', ' + (QS.length - f.tried) + ' not yet answered');
+    L.push('Word errors, first attempt: ' + f.err + ' in ' + f.tried + ' sentences (' + f.per + ' per sentence)', '');
     var tags = {};
     QS.forEach(function (q) {
       (q.tags || []).forEach(function (t) {
@@ -120,7 +157,7 @@
     L.push('', '## Wrong first time', '');
     QS.forEach(function (q) {
       var x = st.first[q.id];
-      if (x && !x.ok) L.push('- `' + q.id + '` ' + q.en, '  - wrote: ' + x.ans, '  - key: ' + model(q));
+      if (x && !x.ok) L.push('- `' + q.id + '` ' + q.en + ' (' + x.err + ' word error' + (x.err === 1 ? '' : 's') + ')', '  - wrote: ' + x.ans, '  - key: ' + model(q));
     });
     L.push('', '## History', '');
     st.history.forEach(function (h, i) {
@@ -163,7 +200,7 @@
     var f = firstScore(), s = score();
     var stats = el('p', 'stats');
     stats.textContent = 'Score ' + s + '/' + QS.length + '  ·  First attempt ' + f.right + '/' + f.tried +
-      (f.tried ? ' (' + Math.round(100 * f.right / f.tried) + '%)' : '');
+      (f.tried ? ' (' + Math.round(100 * f.right / f.tried) + '%)  ·  ' + f.per + ' word errors per sentence' : '');
     head.appendChild(stats);
     var bar = el('div', 'bar');
     bar.appendChild(btn('Grade', grade, 'primary'));
@@ -206,7 +243,8 @@
       li.appendChild(inp);
       if (shown) {
         var fb = el('div', 'fb');
-        fb.appendChild(el('p', 'verdict', ok ? '✓ ' + model(q) : '✗ ' + model(q)));
+        var fe = st.first[id], tag = fe && !fe.ok && fe.err != null ? '  (first try: ' + fe.err + ' word error' + (fe.err === 1 ? '' : 's') + ')' : '';
+        fb.appendChild(el('p', 'verdict', (ok ? '✓ ' : '✗ ') + model(q) + tag));
         if (q.why) fb.appendChild(el('p', 'why', q.why));
         li.appendChild(fb);
       }
