@@ -64,3 +64,7 @@ Pages are served from the scratchpad on `localhost:8787`.
 | 15-45 | **Listening.** Cold watch of #103 at 1x from 46:46 (`https://www.youtube.com/watch?v=cOdKYE8WnCk&t=2806s`), pause at 51:30, note % understood. Then `drill-dictee-5.html`, then a French-subtitle rewatch at 0.75x, then a clean 1x rewatch. | cold %, the report, final % |
 | 45-55 | **Cold retest.** `drill-retest-1.html`: 10 old failed sentences (vac, a2fix, b1d) on the top 3 themes. First attempt only, no hints. | the report |
 | 55-60 | Log. | - |
+
+Done 2026-10-22: writing scene 1 (2.75 errors per sentence, closed after 2 redos), cold watch
+60%, Dictée 5 (0/12, 2.8 per sentence, 12/12 in 4). Not done: the two rewatches and
+`drill-retest-1`: they open session 2.
