@@ -11,6 +11,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 1 | 2026-10-13 | Sophie ch. 1, La chèvre de M. Seguin | 2/12 | 12/12 | 4 |
 | 3 | 2026-10-20 | French With Panache #103, 37:00-42:00 (real speech) | 3/12 | 12/12 | 5 |
 | 4 | 2026-10-21 | French With Panache #103, 42:00-46:50 | 1/12 | 12/12 | 2 |
+| 5 | 2026-10-22 | French With Panache #103, 46:46-51:30 | 0/12 (34 word errors, 2.8 per sentence) | | |
 
 ## Dictée 1
 
@@ -92,6 +93,34 @@ Comprehension at 1x after the loop: nearly 100% (cold first pass not recorded).
 New expressions he picked from the clip: `le fil rouge`, `tous les quatre matins`,
 `ça me tiraille`, `ça me travaille`, `le taf`, `du coup`, `mettre un pied dans le milieu`,
 `j'ai l'impression que`.
+
+## Dictée 5
+
+Same podcast, 46:46 to 51:30 (`&t=2806s`). Cold watch at 1x: **60%** understood (30% on the
+first clip of 2026-10-20). 0/12 first time, but three were one word off (`interrese`, `dit-nous`,
+`gents`). First dictée with word errors counted: 34, 2.8 per sentence.
+
+**Heard wrong**:
+- `en` lost again: `de son sortir` for `de s'en sortir`. Fourth time in three dictées.
+- Small words in the flow: `de tout` (`du tout`), `comme` for `qu'on`, `comment` for `comme`,
+  `majorité podcasteurs` (dropped `de`), `de les` for `d'aller`, `on etait l'assiste` for
+  `on est allés assister`.
+- `ce sera` for `ce serait` (futur for conditionnel: one sound apart).
+- Known word lost at speed: `de pays tres lentent` for `depuis très longtemps`.
+- Unknown word: `chouette` (`souhaite`).
+
+**Silent grammar**, ranked:
+1. `-é` vs `-er`: `avait changer`, `je suis tomber`. The participle after `avoir / être`.
+2. `leur rencontrer`, `leur fréquenter` (`les`): `leur` has an `r` the audio did not have. The
+   grammar reflex overrode the ear: `rencontrer / fréquenter qqn` are direct. Top theme.
+3. `les plans` for `de plan`: `changer de` + bare noun.
+4. `dit-nous` (`dites-nous`): the `vous` imperative.
+5. Spelling: `gents`, `interrese`, `medians`, `ministers` (English), `financecierment`,
+   `vennaient`, `de vantage`.
+
+Right first time: `qui venaient`, `qui font` (plural after `qui`, both), `tous les médias / tous
+les ministères`, `ce que vous en pensez`, `s'il n'y a que`, `décidé de`, `essayer de`,
+`prévoit de`, `envie de`.
 
 ## Next
 
