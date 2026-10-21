@@ -11,7 +11,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 1 | 2026-10-13 | Sophie ch. 1, La chèvre de M. Seguin | 2/12 | 12/12 | 4 |
 | 3 | 2026-10-20 | French With Panache #103, 37:00-42:00 (real speech) | 3/12 | 12/12 | 5 |
 | 4 | 2026-10-21 | French With Panache #103, 42:00-46:50 | 1/12 | 12/12 | 2 |
-| 5 | 2026-10-22 | French With Panache #103, 46:46-51:30 | 0/12 (34 word errors, 2.8 per sentence) | | |
+| 5 | 2026-10-22 | French With Panache #103, 46:46-51:30 | 0/12 (34 word errors, 2.8 per sentence) | 12/12 | 4 |
 
 ## Dictée 1
 
@@ -117,6 +117,11 @@ first clip of 2026-10-20). 0/12 first time, but three were one word off (`interr
 4. `dit-nous` (`dites-nous`): the `vous` imperative.
 5. Spelling: `gents`, `interrese`, `medians`, `ministers` (English), `financecierment`,
    `vennaient`, `de vantage`.
+
+Redo: 6 of 12 on the first pass. Survivors: `majorité podcasteurs` three passes running (the
+`de` after a quantity noun: `une majorité de`, `beaucoup de`, `la plupart des`), `je suis tomber`,
+`gents`, `ministers`, `de tout`, `financierment`. The `-é` / `-er` slip survived the correction
+once: it is a writing reflex, not hearing.
 
 Right first time: `qui venaient`, `qui font` (plural after `qui`, both), `tous les médias / tous
 les ministères`, `ce que vous en pensez`, `s'il n'y a que`, `décidé de`, `essayer de`,
