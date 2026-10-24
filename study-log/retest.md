@@ -7,7 +7,7 @@ top 3 themes of `plan.md`. First attempt only, no hints, about 10 minutes. Measu
 
 | # | Date | Items | First attempt | Word errors per sentence |
 |---|---|---|---|---|
-| 1 | 2026-10-24 | 10 | 2/10 (20%) | 3.0 |
+| 1 | 2026-10-24 | 10 | 2/10 (20%), 10/10 after 3 | 3.0 |
 
 ## 1. 2026-10-24
 
@@ -35,6 +35,10 @@ Themes, ranked:
 6. **Elision `de` -> `d'`** (2): `de une`, `de arrêter`.
 7. **Calques and frames** (3): `demander une question` (`poser`), `assez de ... de` + inf
    (`pour`), `boire l'alcool` (partitive `de l'`). Missing adverb: `patiemment`.
+
+Redo: 2 -> 5 -> 10/10, 3 attempts. Survived the first correction: `boire l'alcool`, `raproche`,
+`jamais gouter` (`-é`, a writing reflex again), `assez d'argent en acheter` (`pour` dropped once
+`en` went in), `patienmment` (`patiemment`).
 
 ## Next
 
