@@ -13,7 +13,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 4 | 2026-10-21 | French With Panache #103, 42:00-46:50 | 1/12 | 12/12 | 2 |
 | 5 | 2026-10-22 | French With Panache #103, 46:46-51:30 | 0/12 (34 word errors, 2.8 per sentence) | 12/12 | 4 |
 | 6 | 2026-10-27 | French With Panache, "Comment bien parler AVEC les Français" (`oZ10r8AX2xc`), 0:51-5:05 | 1/12 (41 word errors, 3.4 per sentence) | 12/12 | 2 |
-| 7 | 2026-10-27 | Same video, 5:05-9:37 | 1/12 (37 word errors, 3.1 per sentence) | | |
+| 7 | 2026-10-27 | Same video, 5:05-9:37 | 1/12 (37 word errors, 3.1 per sentence) | 12/12 | 3 |
 
 ## Dictée 1
 
@@ -165,7 +165,8 @@ pas` (the swallowed `n'` written), `plus personne ne veut` twice, `c'est l'autre
 ## Dictée 7
 
 Same video, 5:05 to 9:37 (`&t=305s`), more abstract (rhetoric, seduction). Cold watch at 1x:
-**50%**. 1/12 first time, three more one word off (`context`, `bein`, `oùelle` spacing).
+**50%**. 1/12 first time, three more one word off (`context`, `bein`, and dic-79 whose key displayed `oùelle`: a
+missing space in the key, fixed; his `où elle` was right).
 
 **Heard wrong**:
 - Phrases lost even with the vocab given before watching: `à moins de` (`à moi`), `taquin`
@@ -183,6 +184,9 @@ Same video, 5:05 to 9:37 (`&t=305s`), more abstract (rhetoric, seduction). Cold 
 4. `de l'autre manière` (`d'une autre manière`).
 5. Spelling: `ammener`, `seduizes` (`séduisez`), `buche` (`bouche`), `ouvret`, `quelqu'on`,
    `feblesse`, `bein`.
+
+Redo: 7 of 11 on the first pass. Survivors: `sa vrai faiblesse` (agreement), `seduizes`, `qui sait
+parle` (`-er` after `savoir` survived once), `buche`. Comprehension after the loop not yet given.
 
 Right first time: `on est les champions du monde`, `tous les Français ne parlent pas`, `vous ne
 parlez pas` (conjugated, not the infinitive), `il ne faut jamais baisser`, `pour que tout le
