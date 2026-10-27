@@ -61,7 +61,7 @@ window.BANK = {
       tags: ['listening', 'demonstratives', 'comparatives', 'negation'] },
     { id: 'dic-79', listen: true,
       say: 'Du moment où elle ouvre la bouche et qu\'elle parle, elle devient belle.',
-      a: ['{Du moment où|Dès le moment où|Dès qu\'}elle ouvre la bouche{,|} et qu\'elle parle{,|} elle devient belle.'],
+      a: ['{Du moment où |Dès le moment où |Dès qu\'}elle ouvre la bouche{,|} et qu\'elle parle{,|} elle devient belle.'],
       en: 'From the moment she opens her mouth and speaks, she becomes beautiful.',
       vocab: 'du moment où - from the moment',
       why: 'du moment où = from the moment: où, not que. The second clause repeats it as que: et qu\'elle parle. belle: feminine.',
