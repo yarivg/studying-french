@@ -12,7 +12,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 3 | 2026-10-20 | French With Panache #103, 37:00-42:00 (real speech) | 3/12 | 12/12 | 5 |
 | 4 | 2026-10-21 | French With Panache #103, 42:00-46:50 | 1/12 | 12/12 | 2 |
 | 5 | 2026-10-22 | French With Panache #103, 46:46-51:30 | 0/12 (34 word errors, 2.8 per sentence) | 12/12 | 4 |
-| 6 | 2026-10-27 | French With Panache, "Comment bien parler AVEC les Français" (`oZ10r8AX2xc`), 0:51-5:05 | 1/12 (41 word errors, 3.4 per sentence) | | |
+| 6 | 2026-10-27 | French With Panache, "Comment bien parler AVEC les Français" (`oZ10r8AX2xc`), 0:51-5:05 | 1/12 (41 word errors, 3.4 per sentence) | 12/12 | 2 |
 
 ## Dictée 1
 
@@ -151,6 +151,9 @@ off (`est` for `et`, `noter`, `jetter`).
 4. Silent plural: `bonne reponse` for `bonnes réponses` twice, `les étrangers` for `l'étranger`.
 5. Spelling: `etranges` (`étrangers`), `manifique` (`magnifique`), `jetter` (`jeter`; `je jette`
    doubles, the infinitive does not), `ce lui` (`celui`).
+
+Redo: all 11 fixed in one pass, the first dictée with no survivor. The gap was the unknown
+phrases and checking, not knowledge.
 
 Right first time: `avant de prendre la parole`, `plutôt que de ne pas parler du tout`, `ils n'ont
 pas` (the swallowed `n'` written), `plus personne ne veut` twice, `c'est l'autre qui nous renvoie`,
