@@ -152,6 +152,8 @@ off (`est` for `et`, `noter`, `jetter`).
 5. Spelling: `etranges` (`étrangers`), `manifique` (`magnifique`), `jetter` (`jeter`; `je jette`
    doubles, the infinitive does not), `ce lui` (`celui`).
 
+Comprehension at 1x after the loop: **80-85%** (60% cold).
+
 Redo: all 11 fixed in one pass, the first dictée with no survivor. The gap was the unknown
 phrases and checking, not knowledge.
 
