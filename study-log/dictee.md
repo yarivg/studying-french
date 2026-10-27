@@ -13,6 +13,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 4 | 2026-10-21 | French With Panache #103, 42:00-46:50 | 1/12 | 12/12 | 2 |
 | 5 | 2026-10-22 | French With Panache #103, 46:46-51:30 | 0/12 (34 word errors, 2.8 per sentence) | 12/12 | 4 |
 | 6 | 2026-10-27 | French With Panache, "Comment bien parler AVEC les Français" (`oZ10r8AX2xc`), 0:51-5:05 | 1/12 (41 word errors, 3.4 per sentence) | 12/12 | 2 |
+| 7 | 2026-10-27 | Same video, 5:05-9:37 | 1/12 (37 word errors, 3.1 per sentence) | | |
 
 ## Dictée 1
 
@@ -160,6 +161,33 @@ phrases and checking, not knowledge.
 Right first time: `avant de prendre la parole`, `plutôt que de ne pas parler du tout`, `ils n'ont
 pas` (the swallowed `n'` written), `plus personne ne veut` twice, `c'est l'autre qui nous renvoie`,
 `il faut ... se jeter ... et prendre`, `les Français ne supportent pas`.
+
+## Dictée 7
+
+Same video, 5:05 to 9:37 (`&t=305s`), more abstract (rhetoric, seduction). Cold watch at 1x:
+**50%**. 1/12 first time, three more one word off (`context`, `bein`, `oùelle` spacing).
+
+**Heard wrong**:
+- Phrases lost even with the vocab given before watching: `à moins de` (`à moi`), `taquin`
+  (`ta ca`), `s'engueule avec` (dropped), `à montrer son vrai regard` (dropped).
+- `intelligible` heard as `eligible`; `se met` as `semais`.
+- `sait` written `c'est`: same sound, wrong word.
+
+**Silent grammar**, ranked:
+1. Plural lost: `ce qui écoute` for `ceux qui écoutent` (both the pronoun and the verb),
+   `de débat` (`des débats`), `de grand généralité` (`grandes généralités`).
+2. `-é` / `-er`: `qui sait parle` (`parler`: bare infinitive after `savoir`), `ça met arriver`
+   (`m'est arrivé`). The infinitives in dic-71 (`savoir parler, c'est savoir s'adapter`) were
+   right: the slip is under load, not in isolation.
+3. Agreement: `sa vrai faiblesse` (`vraie`).
+4. `de l'autre manière` (`d'une autre manière`).
+5. Spelling: `ammener`, `seduizes` (`séduisez`), `buche` (`bouche`), `ouvret`, `quelqu'on`,
+   `feblesse`, `bein`.
+
+Right first time: `on est les champions du monde`, `tous les Français ne parlent pas`, `vous ne
+parlez pas` (conjugated, not the infinitive), `il ne faut jamais baisser`, `pour que tout le
+monde comprenne`, `du moment où ... et qu'elle parle`, `il n'y a pas plus beau que celui qui`,
+`ça nous attrape`.
 
 ## Next
 
