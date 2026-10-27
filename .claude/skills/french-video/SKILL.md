@@ -27,7 +27,9 @@ env/bin/yt-dlp -q --no-playlist --skip-download --write-auto-subs --write-subs \
 Flatten to one timestamped line per caption (`MM:SS text`):
 
 ```bash
-awk '/-->/{t=substr($1,4,5)} !/-->/ && NF && !/WEBVTT|Kind:|Language:/{gsub(/<[^>]*>/,""); if(!seen[$0]++) print t" "$0}' v.fr.vtt > v.txt
+awk '/-->/{t=substr($ 1,4,5)} !/-->/ && NF && !/WEBVTT|Kind:|Language:/{gsub(/<[^>]*>/,""); if(!seen[$ 0]++) print t" "$ 0}' v.fr.vtt > v.txt
+# The space after each dollar sign is on purpose: the skill loader replaces a dollar
+# sign followed directly by a digit with the skill's arguments.
 ```
 
 Auto-subtitles mishear rare words (`frôer` for `frôler`, `rabageois` for `rabat-joie`,
