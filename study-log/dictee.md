@@ -12,6 +12,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 3 | 2026-10-20 | French With Panache #103, 37:00-42:00 (real speech) | 3/12 | 12/12 | 5 |
 | 4 | 2026-10-21 | French With Panache #103, 42:00-46:50 | 1/12 | 12/12 | 2 |
 | 5 | 2026-10-22 | French With Panache #103, 46:46-51:30 | 0/12 (34 word errors, 2.8 per sentence) | 12/12 | 4 |
+| 6 | 2026-10-27 | French With Panache, "Comment bien parler AVEC les Français" (`oZ10r8AX2xc`), 0:51-5:05 | 1/12 (41 word errors, 3.4 per sentence) | | |
 
 ## Dictée 1
 
@@ -126,6 +127,34 @@ once: it is a writing reflex, not hearing.
 Right first time: `qui venaient`, `qui font` (plural after `qui`, both), `tous les médias / tous
 les ministères`, `ce que vous en pensez`, `s'il n'y a que`, `décidé de`, `essayer de`,
 `prévoit de`, `envie de`.
+
+## Dictée 6
+
+New video, new speaker (a debate coach, faster and denser than the #103 hosts), 0:51 to 5:05
+(`&t=51s`). Cold watch at 1x: **60%**, on a first contact. 1/12 first time, three more one word
+off (`est` for `et`, `noter`, `jetter`).
+
+**Heard wrong**:
+- Fixed phrases not known, so not heard: `il vaut mieux` (`ils vont mieux`), `en main`
+  (`cartomas`), `le simple fait` (`les samples`), `ça ne sert à rien` (`ça un`), `cohérent`.
+- `se bloquer` heard as `c'est bloqué`; `n'essaie même pas de dire` lost entirely.
+- `on n'a` written as `n'ont`: the subject `on` dropped, then the verb matched to nothing.
+
+**Silent grammar**, ranked:
+1. `-é` / `-er` both ways: `être noter` (`noté`), `argumenter` (`argumenté`), `parlez` for the
+   infinitive `parler`. Third dictée running.
+2. Negated infinitive: `de n'aient pas avoir` (`de ne pas avoir`), `c'est ne pas donner` (`ce
+   n'est pas donner`): `ne pas` goes together before an infinitive, around a conjugated verb.
+3. Partitive after negation, over-applied: `pas avoir de bonne réponse`, `pas donner de bonne
+   réponse` (key `les / des bonnes réponses`). `de` replaces `un / des` after a negation, not
+   `les`. In dic-62 `de` is acceptable (widen).
+4. Silent plural: `bonne reponse` for `bonnes réponses` twice, `les étrangers` for `l'étranger`.
+5. Spelling: `etranges` (`étrangers`), `manifique` (`magnifique`), `jetter` (`jeter`; `je jette`
+   doubles, the infinitive does not), `ce lui` (`celui`).
+
+Right first time: `avant de prendre la parole`, `plutôt que de ne pas parler du tout`, `ils n'ont
+pas` (the swallowed `n'` written), `plus personne ne veut` twice, `c'est l'autre qui nous renvoie`,
+`il faut ... se jeter ... et prendre`, `les Français ne supportent pas`.
 
 ## Next
 
