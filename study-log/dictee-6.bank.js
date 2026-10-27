@@ -35,7 +35,7 @@ window.BANK = {
       tags: ['listening', 'infinitive', 'plural'] },
     { id: 'dic-63', listen: true,
       say: 'Ils ont peur de ne pas avoir les bonnes réponses.',
-      a: ['Ils ont peur de {ne |}pas avoir les bonnes réponses.'],
+      a: ['Ils ont peur de {ne |}pas avoir {les|de} bonnes réponses.'],
       en: 'They are afraid of not having the right answers.',
       why: 'avoir peur de + infinitive. A negated infinitive: de ne pas avoir, the whole ne pas before it.',
       tags: ['listening', 'verb-prepositions', 'negation'] },
