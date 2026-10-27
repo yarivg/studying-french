@@ -14,6 +14,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 5 | 2026-10-22 | French With Panache #103, 46:46-51:30 | 0/12 (34 word errors, 2.8 per sentence) | 12/12 | 4 |
 | 6 | 2026-10-27 | French With Panache, "Comment bien parler AVEC les Français" (`oZ10r8AX2xc`), 0:51-5:05 | 1/12 (41 word errors, 3.4 per sentence) | 12/12 | 2 |
 | 7 | 2026-10-27 | Same video, 5:05-9:37 | 1/12 (37 word errors, 3.1 per sentence) | 12/12 | 3 |
+| 8 | 2026-10-28 | FWP #94 "Pour quelles raisons les Français déménagent ?" (`fzxdzrGJ7Ns`), 4:10-8:30, B2 | 1/7 so far (13 word errors, 1.9 per sentence) | | |
 
 ## Dictée 1
 
@@ -192,6 +193,27 @@ Right first time: `on est les champions du monde`, `tous les Français ne parlen
 parlez pas` (conjugated, not the infinitive), `il ne faut jamais baisser`, `pour que tout le
 monde comprenne`, `du moment où ... et qu'elle parle`, `il n'y a pas plus beau que celui qui`,
 `ça nous attrape`.
+
+## Dictée 8
+
+First B2 video after two C1 clips: FWP #94, 4:10 to 8:30 (`&t=250s`). Cold watch at 1x: "most
+of it" (no figure given). 7 of 12 sentences done before stopping, tired; dic-85, 87, 90, 92, 94 open.
+1/7 first time, but **1.9 word errors per sentence**, the lowest so far (2.8 to 3.4 in Dictées
+5-7). Four of the six misses are one spelling or one small word.
+
+**The themes, finally clean**:
+- `-é` after `avoir / être`: 6 of 7 right (`déménagé`, `quitté`, `arrêté`, `resté`), and `-er`
+  after `pour / de` right both times (`pour m'installer`, `de compter`). One slip: `n'ai pas du
+  tout déménager`.
+- `y` written: `j'y suis resté`. First time in four dictées.
+- Silent plural: `des raisons professionelles` with every plural mark.
+- `du tout` (Dictée 5 had `de tout`).
+
+**Errors**:
+1. `c'est` written `ce`: `ce quand`, `ça ce sûr`. The verb disappears.
+2. Elision: `plus de une dizaine` (`plus d'une`).
+3. Spelling: `apartement` (double p), `efance`, `adolescense` (`-ence`), `dis-sept` (`dix`),
+   `professionelles` (double n), `demanage`, `la bon lieu` (`banlieue`, new word).
 
 ## Next
 
