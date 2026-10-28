@@ -16,6 +16,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 7 | 2026-10-27 | Same video, 5:05-9:37 | 1/12 (37 word errors, 3.1 per sentence) | 12/12 | 3 |
 | 8 | 2026-10-28 | FWP #94 "Pour quelles raisons les Français déménagent ?" (`fzxdzrGJ7Ns`), 4:10-8:30, B2 | 2/12 (21 word errors, 1.8 per sentence) | 12/12 | 4 |
 | 9 | 2026-10-28 | FWP #94, 8:30-12:58, B2 | 1/12 (25 word errors, 2.1 per sentence) | 12/12 | 3 |
+| 10 | 2026-10-28 | FWP #94, 12:58-17:26, B2 | 0/12 (35 word errors, 2.9 per sentence) | 12/12 | 3 |
 
 ## Dictée 1
 
@@ -253,6 +254,39 @@ conjugated ending where the participle after `être` belongs.
 
 Redo: 10 of 11 on the first pass; `propriétaire` spelling took one more.
 Comprehension at 1x after the loop: **95%**.
+
+## Dictée 10
+
+Same video, 12:58 to 17:26 (`&t=778s`), denser: figures, `précaire`, `s'endetter`, `marché
+tendu`. Cold watch at 1x: **70%**. 0/12 first time, but five were one word off. 2.9 word errors
+per sentence, back up from 1.8-2.1.
+
+**`-é` / `-er` clean, all 8**: `a déménagé`, `ont divorcé`, `ont revendu`, `a dû déménager`
+(the trap: infinitive after the participle `dû`), `vont déménager`, `qui déménagent`, `tu
+divorces / quittes / déménages`. Third dictée running with the rule held: closed as a theme.
+
+**The new weak spot: `être` verbs** (2):
+- `elle a devenu` for `elle est devenue`: wrong auxiliary and no agreement.
+- `elle est reste` for `restée`: right auxiliary, no agreement.
+The family to drill: `devenir, rester, partir, arriver, venir, tomber, naître, mourir` + être,
+and the participle agrees with the subject.
+
+**Heard wrong**:
+- New phrases: `autant colacataire` (`en tant que locataire`), `on a claque mots` (`en un
+  claquement de doigts`, survived one redo), `desach a acheter` (`de s'acheter`).
+- `emménager` heard as `déménager` again (dic-115).
+- `en même endroit` / `du jour ou lendemain` for `au` (twice).
+
+**Silent grammar**:
+1. `de` / `des`: `les trois quart de Français` (`des`), `une grand partie de gens` (`des`, and
+   `grande`), `beaucoup des ses` (`de ses`). After a quantity, `de`; `de + les` contracts to `des`.
+2. Homophones: `ces parents` for `ses` (his), `le plus` for `les plus` (survived nothing, but
+   plural article on a plural noun).
+3. `à même de` (wrote `à`, survived one redo).
+4. Spelling: `lequels`, `trentre`, `marie` (`mari`: `marié` is married), `famme`, `prequeres`
+   (`précaires`), `quarts`, `un propre maison` (`sa propre`).
+
+Redo: 10 of 12 on the first pass; `à même de` and `claquement de doigts` took one more.
 
 ## Next
 
