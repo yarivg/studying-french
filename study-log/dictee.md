@@ -287,11 +287,16 @@ and the participle agrees with the subject.
    (`précaires`), `quarts`, `un propre maison` (`sa propre`).
 
 Redo: 10 of 12 on the first pass; `à même de` and `claquement de doigts` took one more.
+Comprehension at 1x after the loop: **90%**.
 
 ## Next
 
-As of 2026-10-21:
-1. Podcast #103 from 46:50 to the end, same loop (Dictée 5, ids from `dic-47`).
-2. A production drill on `y` / `en`, the plural verb after `qui`, and silent plural `s`,
+As of 2026-10-29:
+1. FWP #94 from 17:26 to the end (Dictée 11, ids from `dic-119`), then #8 "Les secrets du
+   français parlé" (`B3ZxwooPT7Y`), then #6 the AI episode (`btlFHLGF9ws`). B2 mainly, a C1
+   clip as a stretch every week or two.
+2. Production drill on `être` verbs + agreement (`elle est devenue / restée`), the weak spot
+   Dictée 10 exposed. `-é` / `-er` closed as a theme after Dictées 8-10.
+3. A production drill on `y` / `en`, the plural verb after `qui`, and silent plural `s`,
    using the new expressions above.
 Open threads dropped 2026-10-21 (B1e, Dictée 2, b1c, pronoun chapter, song page): see `plan.md`.
