@@ -252,6 +252,7 @@ conjugated ending where the participle after `être` belongs.
    (`propriétaire`, twice, survived one redo).
 
 Redo: 10 of 11 on the first pass; `propriétaire` spelling took one more.
+Comprehension at 1x after the loop: **95%**.
 
 ## Next
 
