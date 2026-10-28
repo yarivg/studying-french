@@ -15,6 +15,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 6 | 2026-10-27 | French With Panache, "Comment bien parler AVEC les Français" (`oZ10r8AX2xc`), 0:51-5:05 | 1/12 (41 word errors, 3.4 per sentence) | 12/12 | 2 |
 | 7 | 2026-10-27 | Same video, 5:05-9:37 | 1/12 (37 word errors, 3.1 per sentence) | 12/12 | 3 |
 | 8 | 2026-10-28 | FWP #94 "Pour quelles raisons les Français déménagent ?" (`fzxdzrGJ7Ns`), 4:10-8:30, B2 | 2/12 (21 word errors, 1.8 per sentence) | 12/12 | 4 |
+| 9 | 2026-10-28 | FWP #94, 8:30-12:58, B2 | 1/12 (25 word errors, 2.1 per sentence) | 12/12 | 3 |
 
 ## Dictée 1
 
@@ -225,6 +226,32 @@ Finished 2026-10-28 evening: the other five gave 1 right (dic-87) and 8 word err
 5. Agreement: `raisons financiere` (`financières`), `familliale` (`familial`: masculine, one l).
 6. Spelling: `apartement` (double p), `efance`, `adolescense` (`-ence`), `dis-sept` (`dix`),
    `professionelles` (double n), `demanage`, `la bon lieu` (`banlieue`, new word).
+
+## Dictée 9
+
+Same video, 8:30 to 12:58 (`&t=510s`). Cold watch at 1x: **80%**, the best cold figure so far.
+1/12 first time, six more one word off. 2.1 word errors per sentence.
+
+**The `-é` / `-er` rule held**: `ont acheté`, `a suivi`, `a voulu` (-é after avoir), `vont ...
+aménager` (-er after aller), `qui déménagent` (no auxiliary, plural -ent). The Dictée 8 survivor
+(`as déménager`) did not repeat. One new slip the other way: `sont attachent` for `attachés`, a
+conjugated ending where the participle after `être` belongs.
+
+**Heard wrong**:
+- The three look-alike verbs just taught: `aménager` for `emménager` twice, `besoin demenager`
+  for `besoin d'aménager`. Same sounds, the prefix decides; knowledge, not ear.
+- `de taille` for `détails`, `ça acute` for `ça coûte`, `il vent` for `ils vont`, `moute` for
+  `mutée`, `locateur` for `locataire`.
+- Small words: `à` dropped before `Montpellier`, `un` for `mon`, `les` for `des`, `leur` for `la`.
+
+**Silent grammar**:
+1. Tense: `les gens déménagent` for `déménageaient` (imparfait after `on a dit que`).
+2. Agreement: `attachent` (`attachés`), `mutée` (written `moute`), `quelque petit` (`quelques
+   petits détails`), `propriétaire` plural after `Français` (survived one redo).
+3. Spelling: `tapi` (`tapis`), `dis-ans` (`dix ans`), `extrememment`, `proprietere`
+   (`propriétaire`, twice, survived one redo).
+
+Redo: 10 of 11 on the first pass; `propriétaire` spelling took one more.
 
 ## Next
 
