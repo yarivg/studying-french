@@ -201,6 +201,8 @@ of it" (no figure given). 7 of 12 sentences done before stopping, tired; dic-85,
 1/7 first time, but **1.9 word errors per sentence**, the lowest so far (2.8 to 3.4 in Dictées
 5-7). Four of the six misses are one spelling or one small word.
 
+Comprehension at 1x after the loop, no subtitles: **95%**.
+
 Finished 2026-10-28 evening: the other five gave 1 right (dic-87) and 8 word errors, so 2/12 and
 **1.8 per sentence** overall.
 
