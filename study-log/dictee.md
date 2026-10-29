@@ -17,6 +17,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 8 | 2026-10-28 | FWP #94 "Pour quelles raisons les Français déménagent ?" (`fzxdzrGJ7Ns`), 4:10-8:30, B2 | 2/12 (21 word errors, 1.8 per sentence) | 12/12 | 4 |
 | 9 | 2026-10-28 | FWP #94, 8:30-12:58, B2 | 1/12 (25 word errors, 2.1 per sentence) | 12/12 | 3 |
 | 10 | 2026-10-28 | FWP #94, 12:58-17:26, B2 | 0/12 (35 word errors, 2.9 per sentence) | 12/12 | 3 |
+| 11 | 2026-10-30 | FWP #94, 17:26-21:44, B2 | 1/12 (31 word errors, 2.6 per sentence) | 12/12 | 3 |
 
 ## Dictée 1
 
@@ -289,14 +290,49 @@ and the participle agrees with the subject.
 Redo: 10 of 12 on the first pass; `à même de` and `claquement de doigts` took one more.
 Comprehension at 1x after the loop: **90%**.
 
+## Dictée 11
+
+Same video, 17:26 to 21:44 (`&t=1046s`): a do-it-yourself move from Nîmes to Marseille.
+Sat at 01:47. 1/12 first time (dic-119), 2.6 word errors per sentence. Seven of the eleven
+misses were one or two words off.
+
+**`être` verbs: auxiliary right, agreement wrong.**
+- Right: `qui sont venus`, `on est venu`. Picking the auxiliary is fixed since Dictée 10.
+- Wrong: agreement after `être` in the passive: `sera barrer` (`barrée`), `interdit`
+  (`interdite`, survived one redo). Also `appartements meuble` (`meublés`).
+- Wrong: `on se debruille` for `on s'est débrouillé`. A reflexive in the passé composé
+  came out in the present.
+
+**`-é` / `-er` relapse (3)**, after three clean dictées: `a oublier`, `a bien faire`
+(`fait`), `sera barrer`. All in late sentences, so likely fatigue. Theme reopened; watch it
+in Dictée 12.
+
+**`avoir` forms**: `Tu a oublié` survived one redo. Plan target: none.
+
+**Heard wrong**:
+- Unknown phrases: `on tocca` (`en tout cas`), `a une marre` (`en a eu marre`), `sur les
+  cartons` (`faire les cartons`, survived one redo as `faire sur les cartons`).
+- `ils ont` for `ils en`: they sound almost the same. Grammar decides: `ont` is followed by
+  a participle, `en` by a conjugated verb (`ils en gagnent`).
+- `saura` for `sera` (twice): `sera` is the future of `être`, `saura` of `savoir`.
+- `tous` for `plus`, `d'avant` for `devant`. `en France` dropped.
+
+**Silent grammar**:
+1. Person endings: `elle viens` (`vient`), `ils en gagne` (`gagnent`, on the redo).
+2. `beaucoup de meuble` (`meubles`): plural `s` after a quantity.
+3. Spelling: `camionette` (`camionnette`).
+
+Redo: 7 of 11 on the first pass. 12/12 on attempt 3.
+
 ## Next
 
-As of 2026-10-29:
-1. FWP #94 from 17:26 to the end (Dictée 11, ids from `dic-119`), then #8 "Les secrets du
+As of 2026-10-30:
+1. FWP #94 from 21:44 to the end (Dictée 12, ids from `dic-131`), then #8 "Les secrets du
    français parlé" (`B3ZxwooPT7Y`), then #6 the AI episode (`btlFHLGF9ws`). B2 mainly, a C1
    clip as a stretch every week or two.
-2. Production drill on `être` verbs + agreement (`elle est devenue / restée`), the weak spot
-   Dictée 10 exposed. `-é` / `-er` closed as a theme after Dictées 8-10.
+2. Production drill on `être` verbs + agreement (`elle est devenue / restée`, passive `la
+   rue sera barrée`), the weak spot from Dictées 10-11. `-é` / `-er` slipped 3 times in
+   Dictée 11 (sat at 01:47): reopened, watch it.
 3. A production drill on `y` / `en`, the plural verb after `qui`, and silent plural `s`,
    using the new expressions above.
 Open threads dropped 2026-10-21 (B1e, Dictée 2, b1c, pronoun chapter, song page): see `plan.md`.
