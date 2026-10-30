@@ -350,8 +350,8 @@ appartement`.
 3. Pronoun before the auxiliary: `j'avais les donné` cannot exist (`je les avais donnés`).
 4. English spelling (2): `appartment` (survived one redo), `functionnaient`.
 
-Redo: 10 of 12 on the first pass, 12/12 on attempt 3. Cold and final comprehension not
-reported.
+Redo: 10 of 12 on the first pass, 12/12 on attempt 3. Comprehension: **70%** (reported at
+the end of the sitting, no rewatches). Dictée 11 comprehension not reported.
 
 ## Next
 
