@@ -18,6 +18,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 9 | 2026-10-28 | FWP #94, 8:30-12:58, B2 | 1/12 (25 word errors, 2.1 per sentence) | 12/12 | 3 |
 | 10 | 2026-10-28 | FWP #94, 12:58-17:26, B2 | 0/12 (35 word errors, 2.9 per sentence) | 12/12 | 3 |
 | 11 | 2026-10-30 | FWP #94, 17:26-21:44, B2 | 1/12 (31 word errors, 2.6 per sentence) | 12/12 | 3 |
+| 12 | 2026-10-30 | FWP #94, 21:44-26:33, B2 | 3/12 (20 word errors, 1.7 per sentence) | 12/12 | 3 |
 
 ## Dictée 1
 
@@ -324,10 +325,38 @@ in Dictée 12.
 
 Redo: 7 of 11 on the first pass. 12/12 on attempt 3.
 
+## Dictée 12
+
+Same video, 21:44 to 26:33 (`&t=1304s`): the worst move, Bordeaux in July, four floors,
+a dead rat. Sat at 02:41, right after Dictée 11. **3/12 first time, 1.7 word errors per
+sentence: the best so far on a video** (previous best 1.8, Dictée 8). Three more were one
+word off. First sitting with the 20-second grammar check before Grade.
+
+**Held**: plus-que-parfait (`j'avais signé`, `était venu m'aider`, `avait tout vendu`),
+`ça permet de faire`, `plein de gens ... ne le font pas`, `j'en ai plus besoin`, `cet
+appartement`.
+
+**Heard wrong**, mostly small words that blend in:
+- `y` lost twice: `envie de rester` (`d'y rester`), `je n'ai mis s'en pas` (`je ne m'y sens
+  pas`). Top theme 3.
+- `je l'aurai dit` for `je leur ai dit`. Top theme 1: `dire à qqn` -> `leur`.
+- `notre rue` for `une autre rue`, `a samedi` for `un samedi`, `quand avais` for `qu'on
+  n'avait`, `daver` for `devaient`, `j'avais` for `je vais`.
+
+**Silent grammar**:
+1. `-é` / `-er` (2): `machine à lave` (`à laver`), `avait tout donner` (`donné`). Third
+   relapse in two dictées, both late at night.
+2. Person endings (2): `il y avais` (`avait`), `on n'avais` (`avait`, on the redo).
+3. Pronoun before the auxiliary: `j'avais les donné` cannot exist (`je les avais donnés`).
+4. English spelling (2): `appartment` (survived one redo), `functionnaient`.
+
+Redo: 10 of 12 on the first pass, 12/12 on attempt 3. Cold and final comprehension not
+reported.
+
 ## Next
 
 As of 2026-10-30:
-1. FWP #94 from 21:44 to the end (Dictée 12, ids from `dic-131`), then #8 "Les secrets du
+1. FWP #94 from 26:33 to the end, about 30:00 (Dictée 13, ids from `dic-143`), then #8 "Les secrets du
    français parlé" (`B3ZxwooPT7Y`), then #6 the AI episode (`btlFHLGF9ws`). B2 mainly, a C1
    clip as a stretch every week or two.
 2. Production drill on `être` verbs + agreement (`elle est devenue / restée`, passive `la
