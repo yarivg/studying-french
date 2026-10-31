@@ -5,17 +5,20 @@ description: Turn a French YouTube video Yariv is watching into a listening sess
 
 # Working on a French video
 
-The listening loop that took a podcast clip from 30% to 95% understood (2026-10-20):
-cold watch at 1x, dictée, French-subtitle rewatch at 0.75x, clean rewatch at 1x.
+The listening loop, three steps per clip (trimmed 2026-10-31: he never used 0.75x, and the
+clean rewatch added nothing once the subtitled one reached ~100%):
+cold watch at 1x (report %), dictée, one rewatch at 1x with French subtitles (report %).
 
 ## 1. Fetch the transcript
 
 The scratchpad is wiped on reboot, so check before assuming anything is there.
 Work in `$CLAUDE_JOB_DIR/tmp/yt` (or the session scratchpad). yt-dlp is not installed
-system-wide; build a venv once per machine boot:
+system-wide; build a venv once per machine boot. Use Homebrew Python: the system `python3`
+is 3.9, which current yt-dlp rejects ("The page needs to be reloaded"). If `env/bin/yt-dlp`
+fails with "bad interpreter", delete `env` and rebuild:
 
 ```bash
-python3 -m venv env && env/bin/pip -q install yt-dlp
+/opt/homebrew/bin/python3.13 -m venv env && env/bin/pip -q install -U yt-dlp
 env/bin/yt-dlp -q --no-playlist --skip-download --write-auto-subs --write-subs \
   --sub-langs "fr.*,fr" --sub-format vtt -o v "<url>"
 ```
@@ -66,7 +69,7 @@ Follow the `french-drill` skill (bank + shell, shared `engine.js` / `drill.css` 
 
 ## 4. While he watches
 
-- He reports a cold % after the first watch. Log it.
+- He reports a cold % after the first watch, and a % after the subtitled rewatch. Log both.
 - Rules for the dictée: max 3 normal plays + 1 slow per sentence, then a grammar check
   without audio.
 - Word questions: verdict first, the correct spelling, the line with its timestamp,
