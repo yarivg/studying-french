@@ -20,7 +20,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 11 | 2026-10-30 | FWP #94, 17:26-21:44, B2 | 1/12 (31 word errors, 2.6 per sentence) | 12/12 | 3 |
 | 12 | 2026-10-30 | FWP #94, 21:44-26:33, B2 | 3/12 (20 word errors, 1.7 per sentence) | 12/12 | 3 |
 | 13 | 2026-10-31 | FWP #101 "Tout ce que nous avons appris sur l'apprentissage des langues cet été" (`zK6bfy2bihw`), 0:00-4:55, B2 | 3/12 (14 word errors, 1.2 per sentence) | 12/12 | 3 |
-| 14 | 2026-10-31 | FWP #101, 4:55-9:05, B2 | 7/12 (8 word errors, 0.7 per sentence; 3 of the 7 helped by word questions) | open | 1 |
+| 14 | 2026-10-31 | FWP #101, 4:55-9:05, B2 | 7/12 (8 word errors, 0.7 per sentence; 3 of the 7 helped by word questions) | 12/12 | 2 |
 
 ## Dictée 1
 
@@ -389,7 +389,8 @@ Redo: 11 of 12 on the first pass, 12/12 on attempt 3.
 ## Dictée 14
 
 Same video, 4:55 to 9:05 (`&t=295s`): the mountains, the heat, the driving licence.
-**7/12 first time, 0.7 word errors per sentence.** First time under the plan target of 1.
+Sat at 16:28, daytime, not after midnight. **7/12 first time, 0.7 word errors per sentence.**
+First time under the plan target of 1. All 5 fixed on the first redo: 12/12 in 2 attempts.
 
 Caveat: he asked word questions mid-dictée and my answers quoted the clip lines, so dic-157
 (`prends en compte`), dic-159 (`gros coup de cœur`) and dic-162 (`d'y rester`) were helped.
