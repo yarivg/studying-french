@@ -358,7 +358,8 @@ the end of the sitting, no rewatches). Dictée 11 comprehension not reported.
 
 New video, FWP #101 (season 4 opener, 53:44), 0:00 to 4:55. Sat at 02:07. **3/12 first
 time, 1.2 word errors per sentence: new best** (1.7 in Dictée 12). Six of the nine misses were
-exactly one word off. Cold and final comprehension not reported.
+exactly one word off. Cold watch at 1x: **40%** (new video, new topic). After the dictée, one
+rewatch at 1x with French subtitles: **understood all of it**.
 
 **The silent plural `s`** (4), now the top error:
 - `beaucoup de personne` (`personnes`), `nos abonne` (`abonnés`), `nous somme` (`sommes`),
