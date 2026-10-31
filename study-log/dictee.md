@@ -19,6 +19,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 10 | 2026-10-28 | FWP #94, 12:58-17:26, B2 | 0/12 (35 word errors, 2.9 per sentence) | 12/12 | 3 |
 | 11 | 2026-10-30 | FWP #94, 17:26-21:44, B2 | 1/12 (31 word errors, 2.6 per sentence) | 12/12 | 3 |
 | 12 | 2026-10-30 | FWP #94, 21:44-26:33, B2 | 3/12 (20 word errors, 1.7 per sentence) | 12/12 | 3 |
+| 13 | 2026-10-31 | FWP #101 "Tout ce que nous avons appris sur l'apprentissage des langues cet été" (`zK6bfy2bihw`), 0:00-4:55, B2 | 3/12 (14 word errors, 1.2 per sentence) | 12/12 | 3 |
 
 ## Dictée 1
 
@@ -353,10 +354,40 @@ appartement`.
 Redo: 10 of 12 on the first pass, 12/12 on attempt 3. Comprehension: **70%** (reported at
 the end of the sitting, no rewatches). Dictée 11 comprehension not reported.
 
+## Dictée 13
+
+New video, FWP #101 (season 4 opener, 53:44), 0:00 to 4:55. Sat at 02:07. **3/12 first
+time, 1.2 word errors per sentence: new best** (1.7 in Dictée 12). Six of the nine misses were
+exactly one word off. Cold and final comprehension not reported.
+
+**The silent plural `s`** (4), now the top error:
+- `beaucoup de personne` (`personnes`), `nos abonne` (`abonnés`), `nous somme` (`sommes`),
+  `au command` (`aux commandes`).
+Rule added to the pre-Grade check: plural word before (`nos / les / des / beaucoup de /
+nous`) -> `s`.
+
+**Silent grammar**:
+1. `d'avoir cliquer` (`cliqué`): past infinitive, the participle after `avoir` stays `-é`.
+2. `ça nous a permit` (`permis`): the same error as `ce permit` in writing scene 2, taught
+   again the same evening. `permettre` follows `mettre`: `mis`, `permis`.
+3. `Comment c'est passé` (`s'est passé`): `se passer`, subject `ton été`.
+4. `que serais seul` (`que je serai`): subject dropped, survived one redo.
+
+**Heard wrong**: `de prendre` (`d'apprendre`), `bon voyage` (`beau voyage`).
+Spelling: `beacoup`, `apprestissage`.
+
+**Held**: subjunctive `que tu me détailles`, `tu as fait`, `on en a déjà parlé à`, `on s'est
+rendu compte`, `nous sommes partis` (agreement right, only the verb s missing), imparfait.
+
+Word questions: `je vous souhaite` vs `chouette`, `l'apprentissage` (and the `-age` / `-ment`
+action nouns, masculine), `à l'étranger`, `Patreon`, `abonné`.
+
+Redo: 11 of 12 on the first pass, 12/12 on attempt 3.
+
 ## Next
 
 As of 2026-10-30:
-1. FWP #94 from 26:33 to the end, about 30:00 (Dictée 13, ids from `dic-143`), then #8 "Les secrets du
+1. FWP #101 from 4:55 (Dictée 14, ids from `dic-155`). #94 26:33-30:00 left unfinished. Then #8 "Les secrets du
    français parlé" (`B3ZxwooPT7Y`), then #6 the AI episode (`btlFHLGF9ws`). B2 mainly, a C1
    clip as a stretch every week or two.
 2. Production drill on `être` verbs + agreement (`elle est devenue / restée`, passive `la
