@@ -7,7 +7,8 @@ description: Turn a French YouTube video Yariv is watching into a listening sess
 
 The listening loop, three steps per clip (trimmed 2026-10-31: he never used 0.75x, and the
 clean rewatch added nothing once the subtitled one reached ~100%):
-cold watch at 1x (report %), dictée, one rewatch at 1x with French subtitles (report %).
+cold watch at 1x, dictée, one rewatch at 1x with French subtitles. He keeps the
+comprehension % for himself: do not ask for it or log it (2026-11-01).
 
 ## 1. Fetch the transcript
 
@@ -69,7 +70,6 @@ Follow the `french-drill` skill (bank + shell, shared `engine.js` / `drill.css` 
 
 ## 4. While he watches
 
-- He reports a cold % after the first watch, and a % after the subtitled rewatch. Log both.
 - Rules for the dictée: max 3 normal plays + 1 slow per sentence, then a grammar check
   without audio.
 - Word questions: verdict first, the correct spelling, the line with its timestamp,
@@ -80,5 +80,5 @@ Follow the `french-drill` skill (bank + shell, shared `engine.js` / `drill.css` 
 
 - Split errors into **heard wrong** and **silent grammar** (see `french-session`).
 - Log in `study-log/dictee.md`: score row (first attempt with word errors per sentence,
-  final, attempts), a section per dictée, cold and final comprehension %.
+  final, attempts), a section per dictée.
 - Commit and push `study-log/` straight away (standing approval).
