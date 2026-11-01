@@ -459,13 +459,11 @@ l'anglais`), `c'est que` / `ce que` / `ce qui`, `avant de` + infinitive.
 
 ## Next
 
-As of 2026-10-30:
-1. Dictées move to #8 "Les secrets du français parlé" (`B3ZxwooPT7Y`), Dictée 17 from `dic-191`. The rest of #101 (18:23 on) is continuous listening. #94 26:33-30:00 left unfinished. Then #8 "Les secrets du
-   français parlé" (`B3ZxwooPT7Y`), then #6 the AI episode (`btlFHLGF9ws`). B2 mainly, a C1
-   clip as a stretch every week or two.
-2. Production drill on `être` verbs + agreement (`elle est devenue / restée`, passive `la
-   rue sera barrée`), the weak spot from Dictées 10-11. `-é` / `-er` slipped 3 times in
-   Dictée 11 (sat at 01:47): reopened, watch it.
-3. A production drill on `y` / `en`, the plural verb after `qui`, and silent plural `s`,
-   using the new expressions above.
+As of 2026-11-01 (plan: comprehension first, see `plan.md`):
+1. Dictées move to #8 "Les secrets du français parlé" (`B3ZxwooPT7Y`), Dictée 17 from
+   `dic-191`. Then #6 the AI episode (`btlFHLGF9ws`). The rest of #101 (18:23 on) is
+   continuous listening. #94 26:33-30:00 left unfinished.
+2. Friday production drill: silent plural `s`, `être` verbs + agreement (`est devenue`, `la
+   rue sera barrée`), infinitive after a verb against the participle after `rester / être`.
+   Add `en` with reflexives (`s'en rendre compte`) and elision (`parce qu'on`, `trop d'efforts`).
 Open threads dropped 2026-10-21 (B1e, Dictée 2, b1c, pronoun chapter, song page): see `plan.md`.
