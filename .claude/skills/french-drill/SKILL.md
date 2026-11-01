@@ -18,6 +18,8 @@ there only if it earns a permanent place, and only after asking.
 <scratchpad>/
   engine.js            shared, copy from .claude/skills/french-drill/assets/ if missing
   drill.css            shared, same
+  speech.js            copy from assets/speech.js (the app's recogniser): written
+                       questions get a Speak button; report counts spoken answers
   questions-<name>.js  the bank: window.BANK = { title, key, intro, questions: [...] }
   drill-<name>.html    shell: loads drill.css, the bank, engine.js
 ```

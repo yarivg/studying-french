@@ -4,9 +4,19 @@
    first key) is spoken, q.en stays hidden until it is graded.
    Answers may use {a|b|c} groups; every combination is accepted.
    Grading ignores case, accents, apostrophes, hyphens, punctuation and spaces.
-   Each first attempt also stores its word errors, reported per sentence. */
+   Each first attempt also stores its word errors, reported per sentence.
+   Written questions get a Speak button when speech.js (the app's recogniser,
+   copied next to the page) loads: the transcript fills the box, he may speak
+   again or edit, and a first attempt graded exactly as spoken counts as
+   spoken in the report. */
 (function () {
   var B = window.BANK, S = window.SHELL || {};
+  if (!window.Speech) {
+    var sp = document.createElement('script');
+    sp.src = 'speech.js';
+    sp.onload = function () { if (typeof render === 'function') render(); };
+    document.head.appendChild(sp);
+  }
   var KEY = S.key || B.key;
   var QS = B.questions.filter(S.filter || function () { return true; });
   var byId = {}; QS.forEach(function (q) { byId[q.id] = q; });
@@ -77,6 +87,7 @@
   if (!st.shuffled) { shuffle(st.order); st.shuffled = true; }
   st.answers = st.answers || {}; st.results = st.results || {};
   st.first = st.first || {}; st.hints = st.hints || {}; st.history = st.history || []; st.lastWrong = st.lastWrong || {};
+  st.spoken = st.spoken || {};
   save();
 
   var root = document.getElementById('app');
@@ -113,7 +124,11 @@
       var ans = (st.answers[q.id] || '').trim();
       var ok = !!ans && !!KEYS[q.id][norm(ans)];
       st.results[q.id] = ok;
-      if (ans && !st.first[q.id]) st.first[q.id] = { ok: ok, ans: ans, err: ok ? 0 : errCount(q, ans) };
+      if (ans && !st.first[q.id]) {
+        var sp = st.spoken[q.id];
+        st.first[q.id] = { ok: ok, ans: ans, err: ok ? 0 : errCount(q, ans) };
+        if (sp) { st.first[q.id].spoken = norm(sp.raw) === norm(ans); st.first[q.id].tries = sp.tries; }
+      }
       if (ans && !ok && st.lastWrong[q.id] !== ans) wrong.push({ id: q.id, ans: ans });
       if (ans && !ok) st.lastWrong[q.id] = ans;
     });
@@ -144,7 +159,15 @@
     L.push('# ' + (S.title || B.title) + ' report', '');
     L.push('Score: ' + s + '/' + QS.length + ' (' + Math.round(100 * s / QS.length) + '%), ' + st.history.length + ' graded attempts');
     L.push('First attempt: ' + f.right + '/' + f.tried + (f.tried ? ' (' + Math.round(100 * f.right / f.tried) + '%)' : '') + ', ' + (QS.length - f.tried) + ' not yet answered');
-    L.push('Word errors, first attempt: ' + f.err + ' in ' + f.tried + ' sentences (' + f.per + ' per sentence)', '');
+    L.push('Word errors, first attempt: ' + f.err + ' in ' + f.tried + ' sentences (' + f.per + ' per sentence)');
+    var sn = 0, sr = 0, se = 0, tries = 0;
+    QS.forEach(function (q) {
+      var x = st.first[q.id];
+      if (x && x.tries) tries += x.tries;
+      if (x && x.spoken) { sn++; if (x.ok) sr++; } else if (x && x.tries) se++;
+    });
+    if (sn || se) L.push('Spoken: ' + sr + '/' + sn + ' right as spoken, ' + se + ' spoken then edited, ' + tries + ' mic tries');
+    L.push('');
     var tags = {};
     QS.forEach(function (q) {
       (q.tags || []).forEach(function (t) {
@@ -157,7 +180,7 @@
     L.push('', '## Wrong first time', '');
     QS.forEach(function (q) {
       var x = st.first[q.id];
-      if (x && !x.ok) L.push('- `' + q.id + '` ' + q.en + ' (' + x.err + ' word error' + (x.err === 1 ? '' : 's') + ')', '  - wrote: ' + x.ans, '  - key: ' + model(q));
+      if (x && !x.ok) L.push('- `' + q.id + '` ' + q.en + ' (' + x.err + ' word error' + (x.err === 1 ? '' : 's') + (x.spoken ? ', spoken' : '') + ')', '  - wrote: ' + x.ans, '  - key: ' + model(q));
     });
     L.push('', '## History', '');
     st.history.forEach(function (h, i) {
@@ -190,6 +213,37 @@
     var u = new SpeechSynthesisUtterance(text);
     u.lang = 'fr-FR'; u.rate = rate; if (voice) u.voice = voice;
     speechSynthesis.speak(u);
+  }
+
+  // Speaking: one recogniser at a time. Click to start, click again to stop;
+  // it also stops by itself after a long pause or 20 seconds.
+  var hearing = null, micMsg = {};
+  function micButton(id) {
+    var wrap = el('p', 'vocab');
+    var on = hearing === id;
+    var tries = (st.spoken[id] || {}).tries || 0;
+    wrap.appendChild(btn(on ? '■ Stop' : '🎤 Speak', function () {
+      if (hearing === id) { Speech.stop(); return; }
+      hearing = id; micMsg[id] = ''; render();
+      Speech.listen({ lang: 'fr-FR', continuous: true, timeout: 20000,
+        onPartial: function (p) {
+          var cur = root.querySelector('textarea[data-id="' + id + '"]');
+          if (cur) cur.value = p;
+        } })
+        .then(function (alts) {
+          var t = (alts[0] || '').trim();
+          st.answers[id] = t;
+          st.spoken[id] = { raw: t, tries: tries + 1 };
+          hearing = null; save(); render();
+        }, function (e) {
+          hearing = null; micMsg[id] = e.message; render();
+        });
+    }));
+    var note = on ? '  Listening… speak the whole sentence, then Stop.' :
+      micMsg[id] ? '  ' + micMsg[id] :
+      tries ? '  ' + tries + ' mic tr' + (tries === 1 ? 'y' : 'ies') + '. Speak again, or edit by typing.' : '';
+    if (note) wrap.appendChild(document.createTextNode(note));
+    return wrap;
   }
 
   function render() {
@@ -236,11 +290,12 @@
         if (st.hints[id]) li.appendChild(el('p', 'vocab', q.vocab));
         else li.appendChild(btn('vocab hint', function () { st.hints[id] = true; save(); render(); }, 'link'));
       }
-      var inp = el('textarea'); inp.rows = 2; inp.value = st.answers[id] || '';
+      var inp = el('textarea'); inp.rows = 2; inp.value = st.answers[id] || ''; inp.setAttribute('data-id', id);
       inp.disabled = !!ok; inp.spellcheck = false; inp.setAttribute('autocapitalize', 'off');
       inp.oninput = function () { st.answers[id] = inp.value; save(); };
       inp.onkeydown = function (e) { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); grade(); } };
       li.appendChild(inp);
+      if (!q.listen && !ok && window.Speech && Speech.supported()) li.appendChild(micButton(id));
       if (shown) {
         var fb = el('div', 'fb');
         var fe = st.first[id], tag = fe && !fe.ok && fe.err != null ? '  (first try: ' + fe.err + ' word error' + (fe.err === 1 ? '' : 's') + ')' : '';
