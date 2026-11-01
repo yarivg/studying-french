@@ -68,3 +68,54 @@ Pages are served from the scratchpad on `localhost:8787`.
 Done 2026-10-22: writing scene 1 (2.75 errors per sentence, closed after 2 redos), cold watch
 60%, Dictée 5 (0/12, 2.8 per sentence, 12/12 in 4). Not done: the two rewatches and
 `drill-retest-1`: they open session 2.
+
+## From 2026-11-01: comprehension first
+
+Yariv's goal: understand French people when they speak. Writing stays important, grammar
+continues, but listening gets most of the hours. The hour-a-day sessions had about 5 minutes
+of real audio; comprehension needs hours of it.
+
+### The week (about 7 hours)
+
+Sun-Thu are work evenings (start before 23:00 when possible: 16:28 gave 0.7 word errors per
+sentence, 02:14 gave 1.5). Fri / Sat are free daytime, used for the work that needs a fresh head.
+
+| day | min | block |
+|---|---|---|
+| Sun-Thu | 0-5 | **Phrase deck** (`drill-phrases-1..4`, one deck a day, in rotation) |
+| | 5-30 | **Dictée loop** on one clip: cold watch at 1x, dictée, one rewatch at 1x with French subtitles |
+| | 30-60 | **Continuous listening**, one pass, no pausing. 70%+ cold: no subtitles. 50-70%: French subtitles. Under 50%: easier material. Note at most 3-5 timestamps of what blocked a whole idea. |
+| Fri | 0-5 | Phrase deck |
+| | 5-30 | **Writing scene**, graded, then one redo |
+| | 30-60 | **Production drill** built from the week's dictée and writing errors |
+| Sat | 0-5 | Phrase deck |
+| | 5-45 | **Le Carnet**: next chapter or its test |
+| | 45-60 | Continuous listening (or a longer film / series with French subtitles) |
+
+Total: about 3 hours of continuous listening, 2 of dictées, 1 of writing + drill, 40 min of
+grammar, 35 of phrases.
+
+### Material
+
+FWP #101 continues (Dictée 16 from 13:56), then #8 "Les secrets du français parlé"
+(`B3ZxwooPT7Y`), which is about the reductions he keeps missing. Continuous listening, easier
+to harder: RFI Journal en français facile, innerFrench, French With Panache, Easy French,
+HugoDécrypte. French subtitles only, never English.
+
+### Phrases
+
+`study-log/phrases.bank.js`, ids `phr-NN`, append only. After each session the timestamps he
+noted are looked up in the transcript and the phrase is added. Decks of 11 by position.
+
+### First production drill (Fri)
+
+The writing errors the dictées keep showing: silent plural `s` (`ils mettent`, `quelques
+jours`, `nos abonnés`), `être` verbs + agreement (`est devenue`, `la rue sera barrée`), the
+infinitive after a verb that is not `avoir / être` (`va changer`, `revenir chercher`) against
+the participle after `rester / être` and as an adjective (`rester enfermé`, `une journée
+passée`).
+
+### Measures, checked 2026-11-11 and monthly
+
+Cold % on each new clip, word errors per sentence on the dictée first attempt, errors per
+sentence in the Friday scene.
