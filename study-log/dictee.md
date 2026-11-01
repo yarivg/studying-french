@@ -22,6 +22,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 13 | 2026-10-31 | FWP #101 "Tout ce que nous avons appris sur l'apprentissage des langues cet été" (`zK6bfy2bihw`), 0:00-4:55, B2 | 3/12 (14 word errors, 1.2 per sentence) | 12/12 | 3 |
 | 14 | 2026-10-31 | FWP #101, 4:55-9:05, B2 | 7/12 (8 word errors, 0.7 per sentence; 3 of the 7 helped by word questions) | 12/12 | 2 |
 | 15 | 2026-11-01 | FWP #101, 9:05-13:56, B2 | 2/12 (18 word errors, 1.5 per sentence) | 12/12 | 3 |
+| 16 | 2026-11-01 | FWP #101, 13:56-18:23, B2 | 6/12 (9 word errors, 0.8 per sentence; 2 of the 6 helped by word questions) | 12/12 | 2 |
 
 ## Dictée 1
 
@@ -434,10 +435,32 @@ jamais` (`je ne les tiens jamais`; survived one redo as `je n'ai les tiens`).
 
 Redo: 9/12 on the first pass, 12/12 on attempt 3.
 
+## Dictée 16
+
+Same video, 13:56 to 18:23 (`&t=836s`): Spanish level, the plateau, the fresh start in
+Seville. First session of the comprehension-first week. Sat at 19:55. **6/12 first time, 0.8
+word errors per sentence**, 12/12 in 2. Word questions mid-dictée gave the single word
+(`atteint`) and the rule (`avant d'arriver`), so dic-184 and dic-188 were helped: about 4-5/12
+unhelped.
+
+**Infinitive / participle: all right**, first time in a whole dictée: `avait atteint`, `a vécu`,
+`n'avais pas parlé`, `suis arrivé`, `à nous écouter`, `de parler`, `avant de les imiter`, `vont
+pouvoir s'identifier`.
+
+**Small words, the whole remaining error set**:
+- `tu t'es rendu compte` (`t'en es`): `se rendre compte de` -> `en`. Top theme 3.
+- `trop de fort` (`trop d'efforts`): elision + plural after a quantity.
+- `parce que on` (`parce qu'on`): elision, a writing rule.
+- `les gens qui vont` (extra `qui`), `qu'on a assez bon niveau` (`un` dropped).
+- `debruiller` (`débrouiller`), third time.
+
+Word questions: `atteint`, language names with or without `le` (`parler anglais`, `apprendre
+l'anglais`), `c'est que` / `ce que` / `ce qui`, `avant de` + infinitive.
+
 ## Next
 
 As of 2026-10-30:
-1. FWP #101 from 13:56 (Dictée 16, ids from `dic-179`). #94 26:33-30:00 left unfinished. Then #8 "Les secrets du
+1. Dictées move to #8 "Les secrets du français parlé" (`B3ZxwooPT7Y`), Dictée 17 from `dic-191`. The rest of #101 (18:23 on) is continuous listening. #94 26:33-30:00 left unfinished. Then #8 "Les secrets du
    français parlé" (`B3ZxwooPT7Y`), then #6 the AI episode (`btlFHLGF9ws`). B2 mainly, a C1
    clip as a stretch every week or two.
 2. Production drill on `être` verbs + agreement (`elle est devenue / restée`, passive `la
