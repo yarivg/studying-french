@@ -86,8 +86,9 @@ sentence, 02:14 gave 1.5). Fri / Sat are free daytime, used for the work that ne
 | | 5-30 | **Dictée loop** on one clip: cold watch at 1x, dictée, one rewatch at 1x with French subtitles |
 | | 30-60 | **Continuous listening**, one pass, no pausing. 70%+ cold: no subtitles. 50-70%: French subtitles. Under 50%: easier material. Note at most 3-5 timestamps of what blocked a whole idea. |
 | Fri | 0-5 | Phrase deck |
-| | 5-30 | **Writing scene**, graded, then one redo |
-| | 30-60 | **Production drill** built from the week's dictée and writing errors |
+| | 5-35 | **Translation drill** (`ecrit-N`), 12 English -> French sentences built from the week's errors, typed; first attempt is the score |
+| | 35-45 | **3 own sentences** about his week using the drill's frames (not a paragraph) |
+| | 45-60 | **Cold retest**: the failed sentences of the previous `ecrit` drill, first attempt only. Optional: speak the closed drill on its `-oral` page |
 | Sat | 0-5 | Phrase deck |
 | | 5-45 | **Le Carnet**: next chapter or its test |
 | | 45-60 | Continuous listening (or a longer film / series with French subtitles) |
@@ -119,3 +120,12 @@ passée`).
 
 Word errors per sentence on the dictée first attempt, errors per sentence in the Friday
 scene. Comprehension % is his own, not logged (2026-11-01).
+
+### Change 2026-11-01: translations instead of scenes
+
+Free scenes (2.75-3.5 errors per sentence, 22-39 corrections a scene) were too much at this
+level. Writing is now sentence-level: translation drills (Écrit 1: 2.5 per sentence first
+attempt), plus 3 own sentences on the same frames, so calques and word choice still show up.
+Progress is judged on the cold retest a week later, not on closing a drill by redo: closed
+drills did not move cold production before (`vac` 46/46, then cold 0-17%). Keys are written
+wide from the start (word order, synonyms, ne-drop, on / nous).
