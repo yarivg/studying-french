@@ -117,5 +117,5 @@ passée`).
 
 ### Measures, checked 2026-11-11 and monthly
 
-Cold % on each new clip, word errors per sentence on the dictée first attempt, errors per
-sentence in the Friday scene.
+Word errors per sentence on the dictée first attempt, errors per sentence in the Friday
+scene. Comprehension % is his own, not logged (2026-11-01).
