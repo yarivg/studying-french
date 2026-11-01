@@ -21,6 +21,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 12 | 2026-10-30 | FWP #94, 21:44-26:33, B2 | 3/12 (20 word errors, 1.7 per sentence) | 12/12 | 3 |
 | 13 | 2026-10-31 | FWP #101 "Tout ce que nous avons appris sur l'apprentissage des langues cet été" (`zK6bfy2bihw`), 0:00-4:55, B2 | 3/12 (14 word errors, 1.2 per sentence) | 12/12 | 3 |
 | 14 | 2026-10-31 | FWP #101, 4:55-9:05, B2 | 7/12 (8 word errors, 0.7 per sentence; 3 of the 7 helped by word questions) | 12/12 | 2 |
+| 15 | 2026-11-01 | FWP #101, 9:05-13:56, B2 | 2/12 (18 word errors, 1.5 per sentence) | 12/12 | 3 |
 
 ## Dictée 1
 
@@ -411,10 +412,32 @@ after the first Grade; answers mid-dictée give meaning without quoting the dict
 **Held**: `d'y rester`, `j'en ai marre de`, `est arrivé` / `j'ai obtenu`, `je l'ai réussi`,
 `il faisait / il fallait`, `auquel`, `tu prends`, `faire gaffe au`.
 
+## Dictée 15
+
+Same video, 9:05 to 13:56 (`&t=545s`): parallel parking under pressure, September
+resolutions, surfing. Sat at 02:14. **2/12 first time, 1.5 word errors per sentence**, no
+mid-dictée help. Against Dictée 14 (16:28, 0.7, about 4/12 unhelped): the daytime sitting is
+clearly better. Cold and rewatch % not reported for clips 2 and 3.
+
+**Silent plural endings** (5): `il te met ... il klaxonne` (`ils mettent / klaxonnent`, 4
+errors: `mettent` is audible, the others follow it), `quelque jours` (`quelques`, in the
+pre-Grade checklist), `nous avons été sportif` (`sportifs`), `tu l'a fait` (`as`).
+
+**Infinitive after aller**: `ça va me change` (`changer`), an hour after the rule was taught.
+
+**Small words lost** (5): `un / au` for `en` (`en créneau`, `en marche arrière`, survived one
+redo), `que` dropped after `veulent`, `que tu ailles` (new subjunctive form, dropped), `je n'ai
+jamais` (`je ne les tiens jamais`; survived one redo as `je n'ai les tiens`).
+
+**Other**: `il y a` for `il y avait` (past background), `barrière mental` (`mentale`),
+`fronchire` (`franchir`), `vouz`.
+
+Redo: 9/12 on the first pass, 12/12 on attempt 3.
+
 ## Next
 
 As of 2026-10-30:
-1. FWP #101 from 4:55 (Dictée 14, ids from `dic-155`). #94 26:33-30:00 left unfinished. Then #8 "Les secrets du
+1. FWP #101 from 13:56 (Dictée 16, ids from `dic-179`). #94 26:33-30:00 left unfinished. Then #8 "Les secrets du
    français parlé" (`B3ZxwooPT7Y`), then #6 the AI episode (`btlFHLGF9ws`). B2 mainly, a C1
    clip as a stretch every week or two.
 2. Production drill on `être` verbs + agreement (`elle est devenue / restée`, passive `la
