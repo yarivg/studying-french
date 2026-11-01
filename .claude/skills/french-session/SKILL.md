@@ -31,8 +31,10 @@ In this order, stop when the picture is clear:
 
 ## 2. Shape the session
 
-**Until 2026-11-11 the skeleton is the one in `study-log/plan.md`:** writing a scene,
-the listening loop, a cold retest. Chapter, song, reading and Talk blocks are paused.
+**From 2026-11-01 the skeleton is the weekly table in `study-log/plan.md`** (comprehension
+first): phrase deck, up to 8 translation sentences (6 new + 2 earlier failures cold), the
+dictée loop, continuous listening; Le Carnet on Fridays. No free writing scenes or own
+sentences (his choice). Song, reading and Talk blocks are paused.
 
 Fixed skeleton, scaled to the time. For 120 minutes:
 
