@@ -23,6 +23,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 14 | 2026-10-31 | FWP #101, 4:55-9:05, B2 | 7/12 (8 word errors, 0.7 per sentence; 3 of the 7 helped by word questions) | 12/12 | 2 |
 | 15 | 2026-11-01 | FWP #101, 9:05-13:56, B2 | 2/12 (18 word errors, 1.5 per sentence) | 12/12 | 3 |
 | 16 | 2026-11-01 | FWP #101, 13:56-18:23, B2 | 6/12 (9 word errors, 0.8 per sentence; 2 of the 6 helped by word questions) | 12/12 | 2 |
+| 17 | 2026-11-02 | FWP #8 "Les secrets du français parlé" (`B3ZxwooPT7Y`), 0:00-4:46, manual subtitles | 2/12 (22 word errors, 1.8 per sentence) | open | 1 |
 
 ## Dictée 1
 
@@ -457,11 +458,38 @@ pouvoir s'identifier`.
 Word questions: `atteint`, language names with or without `le` (`parler anglais`, `apprendre
 l'anglais`), `c'est que` / `ce que` / `ce qui`, `avant de` + infinitive.
 
+## Dictée 17
+
+New video, FWP #8 (episode 43, 40:57, hosts' own subtitles), 0:00 to 4:46: the football
+draw, the nephew, the driving-code exam, what the episode is about. Sat at 20:55, after
+phrase deck 6 and Écrit 2. **2/12 first time, 1.8 word errors per sentence** (0.8 in Dictée 16:
+new video, new speakers). Analysis from the first attempt only.
+
+**`de` after a quantity** (3), back from Dictée 10: `le maximum des fautes`, `plein des gens`
+(`de`), `un match du foot` (`de foot`: noun + de + noun, no article).
+
+**Heard wrong, mostly new forms and phrases**:
+- `je veux tiendre` (`je vous tiendrai`): `vous` heard as `veux`, future of `tenir` unknown.
+  `de ce project` (`de l'avancée de ce projet`).
+- `qui aille eu hier` (`qui a eu lieu hier`): `avoir lieu`, given before the watch.
+- `ça un rapport` (`ça a`): the two `a` merge.
+- `mieux qu'on prend` (`mieux comprendre`).
+- `il a deux moins` (`il y a deux mois`).
+
+**Silent grammar**:
+- `les français était très nulle` (`étaient très nuls`): plural verb and masculine plural.
+- `cet un sujet` (`c'est`): same as phr-50 on 2026-11-01. `cet` only before a noun.
+- `puissez` (`puissiez`), `ressu` (`reçu(es)`), `coleur` (`colère`), `entreneur`
+  (`entraîneur`), `project` (`projet`).
+
+Right: `je viens juste de finir de lire le journal que j'ai acheté`, `je n'avais pas dit que je
+l'avais réussi`, `qui est né`, `qui nous écoutent l'ont déjà remarqué`.
+
 ## Next
 
 As of 2026-11-01 (plan: comprehension first, see `plan.md`):
-1. Dictées move to #8 "Les secrets du français parlé" (`B3ZxwooPT7Y`), Dictée 17 from
-   `dic-191`. Then #6 the AI episode (`btlFHLGF9ws`). The rest of #101 (18:23 on) is
+1. Dictées move to #8 "Les secrets du français parlé" (`B3ZxwooPT7Y`), Dictée 18 from
+   `dic-203` (#8 from 4:46). Then #6 the AI episode (`btlFHLGF9ws`). The rest of #101 (18:23 on) is
    continuous listening. #94 26:33-30:00 left unfinished.
 2. Friday production drill: silent plural `s`, `être` verbs + agreement (`est devenue`, `la
    rue sera barrée`), infinitive after a verb against the participle after `rester / être`.
