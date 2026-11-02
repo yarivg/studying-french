@@ -1,4 +1,14 @@
-# Écrit 1: English -> French, 2026-11-01
+# Écrit: English -> French translation drills
+
+Daily, up to 8 sentences: 6 new from the latest errors + 2 earlier failures retested cold.
+Banks `ecrit-N.bank.js`, ids `ecr-NN`. First attempt is the score.
+
+| # | Date | Sentences | First attempt | Word errors per sentence | Retests right | Attempts |
+|---|---|---|---|---|---|---|
+| 1 | 2026-11-01 | 12 | 1/12 (about 2/12 after widening) | 2.5 | - | 4 |
+| 2 | 2026-11-02 | 8 | 2/8 | 1.1 | 0/2 (1 word off each) | 3 |
+
+## Écrit 1: 2026-11-01
 
 12 sentences on the writing errors the dictées keep showing (`être` + agreement, `rester` +
 participle, infinitive after a verb, `y / en`, plural `s`, preceding direct object), plus two
@@ -37,3 +47,30 @@ Right first time: `Prendre du recul m'a fait un bien fou.` Also right inside wro
 
 Friday drill: `être` verbs + agreement (all four endings), `tellement ... que`, `bon / bien`,
 `le / les` before an infinitive, preceding direct object with `les` and `que`.
+
+## Écrit 2: 2026-11-02
+
+Sat at 20:37. **2/8 first time, 1.1 word errors per sentence** (2.5 in Écrit 1). 5 of the 6 new
+sentences were last night's chat practice prompts, so this is partly a next-day retest.
+
+Right first time: `Il cuisine tellement mal que personne ne mange` (tellement + mal, both fixed
+since last night), `Tu es déjà allé en Italie`.
+
+Retests (ecr-19 = ecr-9, ecr-20 = ecr-8): the frames held (`tellement longue que`, `j'en`,
+`les ... mises`), each lost one word: `j'en a marre` (`avais`: je takes ai / avais, a is il),
+`où il les mises` (`a` dropped).
+
+**Agreement 0/5**, the top theme:
+- `mes sœurs sont partis ... ils sont reviennent` (`parties ... elles sont rentrées`); `ils`
+  for sisters survived a redo.
+- `les photos qu'elle a pris` (`prises`, que before avoir; audible).
+- `je les ai appelé` on the redo (`appelés`).
+
+**Other**:
+- `son français est mieux que le mien` (`meilleur`): corrected in chat last night, still wrong.
+  Noun + être -> meilleur.
+- `je leur ai appelé` (`je les ai appelés`): `appeler qqn` is direct in French, so `les`, not
+  `leur` (English "call to" misleads).
+
+Next: keep `meilleur / mieux`, feminine plural with être (`elles sont parties`), `appeler /
+aider / écouter qqn` (direct: les) vs `téléphoner / répondre / parler à qqn` (leur).
