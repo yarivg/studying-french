@@ -488,9 +488,9 @@ l'avais réussi`, `qui est né`, `qui nous écoutent l'ont déjà remarqué`.
 ## Next
 
 As of 2026-11-01 (plan: comprehension first, see `plan.md`):
-1. Dictées move to #8 "Les secrets du français parlé" (`B3ZxwooPT7Y`), Dictée 18 from
-   `dic-203` (#8 from 4:46). Then #6 the AI episode (`btlFHLGF9ws`). The rest of #101 (18:23 on) is
-   continuous listening. #94 26:33-30:00 left unfinished.
+1. #8 was heard in full as continuous listening on 2026-11-03, so dictées move to #6, the AI
+   episode (`btlFHLGF9ws`), Dictée 18 from `dic-203`. The rest of #101 is continuous
+   listening. #94 26:33-30:00 left unfinished.
 2. Friday production drill: silent plural `s`, `être` verbs + agreement (`est devenue`, `la
    rue sera barrée`), infinitive after a verb against the participle after `rester / être`.
    Add `en` with reflexives (`s'en rendre compte`) and elision (`parce qu'on`, `trop d'efforts`).
