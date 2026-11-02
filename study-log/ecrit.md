@@ -1,6 +1,7 @@
 # Écrit: English -> French translation drills
 
 Daily, up to 8 sentences: 6 new from the latest errors + 2 earlier failures retested cold.
+Only the first attempt is analysed: redo answers are copied from the key (his rule, 2026-11-02).
 Banks `ecrit-N.bank.js`, ids `ecr-NN`. First attempt is the score.
 
 | # | Date | Sentences | First attempt | Word errors per sentence | Retests right | Attempts |
@@ -61,16 +62,16 @@ Retests (ecr-19 = ecr-9, ecr-20 = ecr-8): the frames held (`tellement longue que
 `où il les mises` (`a` dropped).
 
 **Agreement 0/5**, the top theme:
-- `mes sœurs sont partis ... ils sont reviennent` (`parties ... elles sont rentrées`); `ils`
-  for sisters survived a redo.
+- `mes sœurs sont partis ... ils sont reviennent` (`parties ... elles sont rentrées`): `ils`
+  for sisters.
 - `les photos qu'elle a pris` (`prises`, que before avoir; audible).
-- `je les ai appelé` on the redo (`appelés`).
+- `je leur ai appelé` (`je les ai appelés`): no agreement either.
 
 **Other**:
 - `son français est mieux que le mien` (`meilleur`): corrected in chat last night, still wrong.
   Noun + être -> meilleur.
-- `je leur ai appelé` (`je les ai appelés`): `appeler qqn` is direct in French, so `les`, not
-  `leur` (English "call to" misleads).
+- `je leur ai appelé`: `appeler qqn` is direct in French, so `les`, not `leur` (English "call
+  to" misleads).
 
 Next: keep `meilleur / mieux`, feminine plural with être (`elles sont parties`), `appeler /
 aider / écouter qqn` (direct: les) vs `téléphoner / répondre / parler à qqn` (leur).
