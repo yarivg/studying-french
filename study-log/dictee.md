@@ -23,7 +23,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 14 | 2026-10-31 | FWP #101, 4:55-9:05, B2 | 7/12 (8 word errors, 0.7 per sentence; 3 of the 7 helped by word questions) | 12/12 | 2 |
 | 15 | 2026-11-01 | FWP #101, 9:05-13:56, B2 | 2/12 (18 word errors, 1.5 per sentence) | 12/12 | 3 |
 | 16 | 2026-11-01 | FWP #101, 13:56-18:23, B2 | 6/12 (9 word errors, 0.8 per sentence; 2 of the 6 helped by word questions) | 12/12 | 2 |
-| 17 | 2026-11-02 | FWP #8 "Les secrets du français parlé" (`B3ZxwooPT7Y`), 0:00-4:46, manual subtitles | 2/12 (22 word errors, 1.8 per sentence) | open | 1 |
+| 17 | 2026-11-02 | FWP #8 "Les secrets du français parlé" (`B3ZxwooPT7Y`), 0:00-4:46, manual subtitles | 2/12 (22 word errors, 1.8 per sentence) | 12/12 | 3 |
 
 ## Dictée 1
 
