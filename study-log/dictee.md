@@ -24,6 +24,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 15 | 2026-11-01 | FWP #101, 9:05-13:56, B2 | 2/12 (18 word errors, 1.5 per sentence) | 12/12 | 3 |
 | 16 | 2026-11-01 | FWP #101, 13:56-18:23, B2 | 6/12 (9 word errors, 0.8 per sentence; 2 of the 6 helped by word questions) | 12/12 | 2 |
 | 17 | 2026-11-02 | FWP #8 "Les secrets du français parlé" (`B3ZxwooPT7Y`), 0:00-4:46, manual subtitles | 2/12 (22 word errors, 1.8 per sentence) | 12/12 | 3 |
+| 18 | 2026-11-03 | FWP #6 "Why are the French worried about AI?" (`btlFHLGF9ws`), 0:00-4:57, advanced, solo | 1/12 (38 word errors, 3.2 per sentence; `soi-disant` helped by a word question) | | |
 
 ## Dictée 1
 
@@ -485,11 +486,44 @@ new video, new speakers). Analysis from the first attempt only.
 Right: `je viens juste de finir de lire le journal que j'ai acheté`, `je n'avais pas dit que je
 l'avais réussi`, `qui est né`, `qui nous écoutent l'ont déjà remarqué`.
 
+## Dictée 18
+
+New video, FWP #6 (31:35, one speaker, labelled advanced), 0:00 to 4:57: the AI summit in
+Paris, the US and Chinese billions, AI at home. Sat in the evening as the second session of the
+day, after phrase deck 7. **1/12 first time, 3.2 word errors per sentence**, the worst since
+Dictée 6 (new, harder video). First attempt only.
+
+**Unknown words**, about a third of the errors: `hebdomadaire` (`emme de madeur`), `la Une`
+(`plein d'une`), `se méfier de` (`ce me fi`), `une crainte` (`crante`), `dans la foulée`
+(`fulle`), the paper's name `Le 1`. Vocabulary, not hearing.
+
+**Feminine agreement** (5): `l'intelligence artificiel` x3 (`artificielle`), `cet AI ... cher`
+(`cette IA ... chère`: `IA` is feminine because `intelligence` is).
+
+**`c'est` written `ce`** (2): `ce vraiment`, `ce fou`. Third sitting running (phr-50, Dictée 17
+`cet un sujet`). `ce` + verb never stands alone before an adjective or adverb: `c'est`.
+
+**Heard wrong**:
+- `est-ce qu'ils font sans méfier` (`est-ce qu'il faut s'en méfier`): `il faut` / `ils font`,
+  `s'en` / `sans`. `en` with a reflexive again, already on the Friday list.
+- `d'il y a` (`de l'IA`): the letters I-A heard as `il y a`.
+- `d'avoir` (`pour voir`), `amerique` (`américain`), `a medecin` (`un médecin`).
+
+**Silent grammar**: `voulais` (`il voulait`), `cinq cent milliard` (`cinq cents milliards`),
+`du debloquer` (`prévu de débloquer`), `de crante` (`des craintes`).
+
+Right: `elle va consommer moins d'énergie, donc elle est peut-être un peu plus écolo`.
+
+Engine fix the same day: the key shown after Grade was the first expansion of the answer
+pattern (`Et Macron a aussi annoncé`), not what the voice said (`Macron a annoncé`). It now
+shows `say` whenever `say` is an accepted answer.
+
 ## Next
 
 As of 2026-11-01 (plan: comprehension first, see `plan.md`):
 1. #8 was heard in full as continuous listening on 2026-11-03, so dictées move to #6, the AI
-   episode (`btlFHLGF9ws`), Dictée 18 from `dic-203`. The rest of #101 is continuous
+   episode (`btlFHLGF9ws`), Dictée 18 done 2026-11-03 (0:00-4:57); Dictée 19 from `dic-215`, 4:57 onward, after
+   the no-subtitle pass. The rest of #101 is continuous
    listening. #94 26:33-30:00 left unfinished.
 2. Friday production drill: silent plural `s`, `être` verbs + agreement (`est devenue`, `la
    rue sera barrée`), infinitive after a verb against the participle after `rester / être`.
