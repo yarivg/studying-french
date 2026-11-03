@@ -42,7 +42,12 @@
     q.a.forEach(function (a) { expand(a).forEach(function (x) { set[norm(x)] = 1; }); });
     KEYS[q.id] = set;
   });
-  function model(q) { return expand(q.a[0])[0]; }
+  // The shown key is what the audio says when that is an accepted answer, so the
+  // correction never contains words the voice did not speak.
+  function model(q) {
+    if (q.say && KEYS[q.id] && KEYS[q.id][norm(q.say)]) return q.say;
+    return expand(q.a[0])[0];
+  }
 
   // Word errors: fewest word edits from the answer to any accepted variant.
   // Words are compared like the grader compares sentences; two words that join
