@@ -1,0 +1,51 @@
+// Écrit 3: English -> French, 8 sentences, 2026-11-04. 6 new on the latest errors (appeler qqn
+// vs parler à qqn, ne ... pas around the auxiliary, feminine agreement + c'est, imparfait for
+// "didn't know", body part with le / la, hésiter à, depuis + present, cet) and 2 cold retests
+// of Écrit 2 failures (ecr-27 = ecr-16, ecr-28 = ecr-14). Ids ecr-NN.
+window.BANK = {
+  title: 'Écrit 3: from English',
+  key: 'drill-ecrit-3',
+  intro: 'Type each sentence in French. Before Grade: feminine noun? feminine adjective. Adjective after "it is"? c\'est. ne ... pas goes around ai / suis, the participle after. Body part: le / la, not mon / ma. Still going on: depuis + present. Accents and apostrophes are ignored.',
+  questions: [
+    { id: 'ecr-21',
+      en: 'I called my grandparents, but I didn\'t talk to them for long.',
+      a: ['J\'ai appelé mes grands-parents{,|} mais je {ne leur ai|leur ai} pas parlé longtemps.', 'J\'ai téléphoné à mes grands-parents{,|} mais je {ne leur ai|leur ai} pas parlé longtemps.'],
+      why: 'appeler qqn is direct (j\'ai appelé mes grands-parents), parler À qqn is indirect: leur. ne ... pas goes around the auxiliary: je ne leur ai pas parlé.',
+      tags: ['object-pronouns', 'negation', 'passe-compose'] },
+    { id: 'ecr-22',
+      en: 'This new AI is very expensive, it\'s crazy.',
+      a: ['Cette nouvelle {IA|intelligence artificielle} est {très|vraiment|super} {chère|coûteuse}{,|} c\'est {fou|dingue|complètement fou|complètement dingue}.'],
+      why: 'l\'IA is feminine (l\'intelligence): cette, nouvelle, chère. "it\'s" + adjective: c\'est, never ce alone.',
+      tags: ['agreement', 'demonstratives'] },
+    { id: 'ecr-23',
+      en: 'I didn\'t know that she had left.',
+      a: ['Je {ne savais|savais} pas qu\'elle {était partie|était déjà partie|s\'en était allée}.'],
+      why: 'didn\'t know (a past state): imparfait, savais. had left, before that: plus-que-parfait, était partie. partir takes être, so partie agrees with elle.',
+      tags: ['imparfait', 'plus-que-parfait', 'agreement'] },
+    { id: 'ecr-24',
+      en: 'She broke her arm skiing.',
+      a: ['Elle s\'est cassé le bras {au ski|en faisant du ski|en skiant}.', 'Elle s\'est fracturé le bras {au ski|en faisant du ski|en skiant}.'],
+      why: 'Body part: se casser LE bras, not son bras. cassé does not agree here: the direct object is le bras, after the verb (se = to herself).',
+      tags: ['reflexive', 'body-parts', 'agreement'] },
+    { id: 'ecr-25',
+      en: 'Don\'t hesitate to call me if you need help.',
+      a: ['N\'hésite pas à m\'appeler si tu as besoin {d\'aide|d\'un coup de main}.', 'N\'hésitez pas à m\'appeler si vous avez besoin {d\'aide|d\'un coup de main}.', 'Hésite pas à m\'appeler si tu as besoin {d\'aide|d\'un coup de main}.'],
+      why: 'hésiter À + infinitive. me before the infinitive: m\'appeler. avoir besoin DE: d\'aide.',
+      tags: ['verb-prepositions', 'object-pronouns'] },
+    { id: 'ecr-26',
+      en: 'We\'ve been living in this flat for three years.',
+      a: ['{On habite|Nous habitons|On vit|Nous vivons} {dans cet appartement|cet appartement} depuis trois ans.', '{Ça fait|Cela fait|Il y a} trois ans {qu\'on habite|que nous habitons|qu\'on vit|que nous vivons} {dans cet appartement|cet appartement|ici}.'],
+      why: 'Still true now: depuis + PRESENT (on habite), not passé composé. cet before a masculine noun starting with a vowel: cet appartement (c\'est is "it is").',
+      tags: ['tenses', 'demonstratives'] },
+    { id: 'ecr-27',
+      en: 'The photos that she took are beautiful.',
+      a: ['Les photos qu\'elle a prises sont {belles|magnifiques|superbes|très belles}.'],
+      why: 'Retest of ecr-16. que (= les photos) is a direct object placed before avoir: the participle agrees, prises (feminine plural). belles agrees too.',
+      tags: ['agreement', 'relative-pronouns', 'participles-e', 'retest'] },
+    { id: 'ecr-28',
+      en: 'Her French is better than mine.',
+      a: ['Son français est meilleur que le mien.'],
+      why: 'Retest of ecr-14. français is a noun after être: adjective, meilleur (not mieux). Comparing her French with my French: le mien, not moi.',
+      tags: ['comparisons', 'possessives', 'retest'] }
+  ]
+};

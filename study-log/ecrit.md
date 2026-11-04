@@ -8,6 +8,7 @@ Banks `ecrit-N.bank.js`, ids `ecr-NN`. First attempt is the score.
 |---|---|---|---|---|---|---|
 | 1 | 2026-11-01 | 12 | 1/12 (about 2/12 after widening) | 2.5 | - | 4 |
 | 2 | 2026-11-02 | 8 | 2/8 | 1.1 | 0/2 (1 word off each) | 3 |
+| 3 | 2026-11-05 | 8 | 2/8 | 1.4 | 1/2 (the other: concept right, `milleur` spelling) | 2 |
 
 ## Écrit 1: 2026-11-01
 
@@ -75,3 +76,30 @@ Retests (ecr-19 = ecr-9, ecr-20 = ecr-8): the frames held (`tellement longue que
 
 Next: keep `meilleur / mieux`, feminine plural with être (`elles sont parties`), `appeler /
 aider / écouter qqn` (direct: les) vs `téléphoner / répondre / parler à qqn` (leur).
+
+## Écrit 3: 2026-11-05
+
+Sat at 00:01, end of a long day (deck 8, a language exchange). **2/8 first time, 1.4 word errors
+per sentence.** 7 of 8 spoken first, then edited. Key widened: `intelligence artificielle` for
+`IA` (ecr-22).
+
+Right first time: `On habite dans cet appartement depuis trois ans` (depuis + present, cet),
+retest `Les photos qu'elle a prises sont belles` (failed in Écrit 2, now right).
+
+**Agreement, both directions** (4): the rule is known, where it applies is not.
+- Missing: `très cher` (`chère`, l'IA / l'intelligence artificielle is feminine: third sitting
+  running), `qu'elle avait parti` (`était partie`: partir takes être, also in the
+  plus-que-parfait).
+- Added where it does not belong: `je ne les ai pas parlés` (`leur ... parlé`: parler À qqn is
+  indirect, and indirect objects never agree; asked about `les` agreement minutes before),
+  `elle s'est cassée le bras` (`cassé`: the direct object is le bras, after the verb).
+
+**Frames**: `n'hésites pas de` (`n'hésite pas à`), second day running (deck 8). Imperative of
+an -er verb drops the s: `hésite`, `appelle`.
+
+Retest ecr-28: `meilleur` chosen (it was `mieux` twice), spelled `milleur`.
+
+Next (Écrit 4): agreement decision drill: être verb? direct object before avoir? indirect
+(lui / leur)? reflexive + body part? Plus `hésiter à`, `-er` imperative without s, `l'IA`
+feminine. Retests: ecr-21, ecr-23.
+
