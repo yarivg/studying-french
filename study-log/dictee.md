@@ -25,6 +25,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 16 | 2026-11-01 | FWP #101, 13:56-18:23, B2 | 6/12 (9 word errors, 0.8 per sentence; 2 of the 6 helped by word questions) | 12/12 | 2 |
 | 17 | 2026-11-02 | FWP #8 "Les secrets du français parlé" (`B3ZxwooPT7Y`), 0:00-4:46, manual subtitles | 2/12 (22 word errors, 1.8 per sentence) | 12/12 | 3 |
 | 18 | 2026-11-03 | FWP #6 "Why are the French worried about AI?" (`btlFHLGF9ws`), 0:00-4:57, advanced, solo | 1/12 (38 word errors, 3.2 per sentence; `soi-disant` helped by a word question) | 12/12 | 3 |
+| 19 | 2026-11-05 | FWP #6, 9:01-12:32 | 4/12 (19 word errors, 1.6 per sentence; `urgences`, `diagnostic` helped by word questions) | 12/12 | 4 |
 
 ## Dictée 1
 
@@ -518,12 +519,35 @@ Engine fix the same day: the key shown after Grade was the first expansion of th
 pattern (`Et Macron a aussi annoncé`), not what the voice said (`Macron a annoncé`). It now
 shows `say` whenever `say` is an accepted answer.
 
+## Dictée 19
+
+FWP #6, 9:01 to 12:32 (4:57-9:01 skipped: its lines were quoted while answering his no-subtitle
+timestamps): AI in medicine, ageing population, lack of doctors, A&E. Sat after midnight, after
+Écrit 3. **4/12 first time, 1.6 word errors per sentence** (3.2 in Dictée 18: same speaker, now
+familiar). Two of the four right were helped by word questions (`urgences`, `diagnostic`).
+
+**`l'IA` is feminine**, fourth sitting running: `il sera ... précise` (`elle`). Also
+`satures` (`saturées`: les urgences, feminine plural).
+
+**`de` / `du` with quantities and fixed phrases** (3): `celui de manque des médecins` (`celui
+du manque de médecins`: de + le = du, manque de + bare noun), `prendre de recule` (`du recul`,
+right in Écrit 1 when written), `des textes` (`du texte`, heard).
+
+**`qui` vs `que`**: `de truc que m'a faci` (`des trucs qui me fascinent`): qui is the subject
+of the next verb.
+
+**Heard wrong**: `un immense de filles` (`défi`), `la vieil` (`le vieillissement`): unknown
+words. `on a pas` (`on n'a pas`: the n' is swallowed, write it). `mieux de détecter` (`peut
+mieux détecter`: pouvoir + bare infinitive). `soignet` (`soigner`).
+
+Right: `s'en rendre compte` (wrong as `sans` in Dictée 18), `de beaux jours devant elle`,
+`aider à poser un diagnostic`, `éviter que ... soient`.
+
 ## Next
 
 As of 2026-11-01 (plan: comprehension first, see `plan.md`):
 1. #8 was heard in full as continuous listening on 2026-11-03, so dictées move to #6, the AI
-   episode (`btlFHLGF9ws`), Dictée 18 done 2026-11-03 (0:00-4:57); Dictée 19 from `dic-215`, 4:57 onward, after
-   the no-subtitle pass. The rest of #101 is continuous
+   episode (`btlFHLGF9ws`), Dictée 18 done 2026-11-03 (0:00-4:57); Dictée 19 done 2026-11-05 (9:01-12:32); Dictée 20 from `dic-227`, 12:32 onward. The rest of #101 is continuous
    listening. #94 26:33-30:00 left unfinished.
 2. Friday production drill: silent plural `s`, `être` verbs + agreement (`est devenue`, `la
    rue sera barrée`), infinitive after a verb against the participle after `rester / être`.
