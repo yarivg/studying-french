@@ -26,6 +26,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 17 | 2026-11-02 | FWP #8 "Les secrets du français parlé" (`B3ZxwooPT7Y`), 0:00-4:46, manual subtitles | 2/12 (22 word errors, 1.8 per sentence) | 12/12 | 3 |
 | 18 | 2026-11-03 | FWP #6 "Why are the French worried about AI?" (`btlFHLGF9ws`), 0:00-4:57, advanced, solo | 1/12 (38 word errors, 3.2 per sentence; `soi-disant` helped by a word question) | 12/12 | 3 |
 | 19 | 2026-11-05 | FWP #6, 9:01-12:32 | 4/12 (19 word errors, 1.6 per sentence; `urgences`, `diagnostic` helped by word questions) | 12/12 | 4 |
+| 20 | 2026-11-05 | innerFrench E191 "S'ennuyer au travail, le secret du bonheur ?" (`nMw-ajbpHhs`), 0:14-4:00, two speakers, new | 5/12 (10 word errors, 0.8 per sentence; word questions touched 5 sentences) | 12/12 | 4 |
 
 ## Dictée 1
 
@@ -543,11 +544,31 @@ mieux détecter`: pouvoir + bare infinitive). `soignet` (`soigner`).
 Right: `s'en rendre compte` (wrong as `sans` in Dictée 18), `de beaux jours devant elle`,
 `aider à poser un diagnostic`, `éviter que ... soient`.
 
+## Dictée 20
+
+New video, new speakers: innerFrench E191 (Hugo and Ingrid, 29:42, auto subtitles), 0:14 to
+4:00: wind in Marseille, the drilling neighbour, tiredness, the "boring jobs" trend, `pas ouf`,
+`avoir la cote`. Cold watch with no subtitles first. Sat at 23:52. **5/12 first time, 0.8 word
+errors per sentence**, the best on a first clip of a new video (Dictée 18: 3.2, Dictée 17: 1.8).
+His word questions touched five sentences (`plaindre`, `plu`, `perceuse` / `son`, `imagine`,
+`beaucoup de vent`), so part of the gain is help; three of those five were still wrong by one word.
+
+**Silent grammar, 4 of 10 errors**: `ces` for `ses` x3 (`recharger ses batteries`, `ses nuits`,
+`se plaindre de ses problèmes`: possessive, not "these"; he says he knows it and lost focus),
+`tu a` (`tu as`).
+
+**Heard wrong**: `il a beaucoup de vent` (`il y a`: the y swallowed), `après de toi` (`auprès
+de`, new), `les gens` (`les jeunes`), `oof` (`ouf`, new slang).
+
+Right: `je suis allé`, `a commencé à détruire son mur à la perceuse`, `j'ai hâte que le printemps
+arrive`, `j'ai pas le temps de m'ennuyer`, `avoir la cote ... être populaire`.
+
 ## Next
 
 As of 2026-11-01 (plan: comprehension first, see `plan.md`):
 1. #8 was heard in full as continuous listening on 2026-11-03, so dictées move to #6, the AI
-   episode (`btlFHLGF9ws`), Dictée 18 done 2026-11-03 (0:00-4:57); Dictée 19 done 2026-11-05 (9:01-12:32); Dictée 20 from `dic-227`, 12:32 onward. The rest of #101 is continuous
+   episode (`btlFHLGF9ws`), Dictée 18 done 2026-11-03 (0:00-4:57); Dictée 19 done 2026-11-05 (9:01-12:32); Dictée 20 went to innerFrench E191 instead (2026-11-05). Dictée 21 from `dic-239`: #6
+   12:32 onward, or E191 past his no-subtitle pass. The rest of #101 is continuous
    listening. #94 26:33-30:00 left unfinished.
 2. Friday production drill: silent plural `s`, `être` verbs + agreement (`est devenue`, `la
    rue sera barrée`), infinitive after a verb against the participle after `rester / être`.
