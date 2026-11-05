@@ -567,8 +567,8 @@ arrive`, `j'ai pas le temps de m'ennuyer`, `avoir la cote ... être populaire`.
 
 As of 2026-11-01 (plan: comprehension first, see `plan.md`):
 1. #8 was heard in full as continuous listening on 2026-11-03, so dictées move to #6, the AI
-   episode (`btlFHLGF9ws`), Dictée 18 done 2026-11-03 (0:00-4:57); Dictée 19 done 2026-11-05 (9:01-12:32); Dictée 20 went to innerFrench E191 instead (2026-11-05). Dictée 21 from `dic-239`: #6
-   12:32 onward, or E191 past his no-subtitle pass. The rest of #101 is continuous
+   episode (`btlFHLGF9ws`), Dictée 18 done 2026-11-03 (0:00-4:57); Dictée 19 done 2026-11-05 (9:01-12:32); Dictée 20 went to innerFrench E191 instead (2026-11-05). E191 4:00-26:30 heard with no subtitles on
+   2026-11-06 (word list resolved, most added to Le Carnet), so Dictée 21 from `dic-239` is #6 12:32 onward. The rest of #101 is continuous
    listening. #94 26:33-30:00 left unfinished.
 2. Friday production drill: silent plural `s`, `être` verbs + agreement (`est devenue`, `la
    rue sera barrée`), infinitive after a verb against the participle after `rester / être`.
