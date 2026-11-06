@@ -167,3 +167,15 @@ B2 reached when all three hold:
 - A new 20-minute podcast episode with no subtitles: 5 lost passages or fewer.
 - First attempt of a dictée on a new two-speaker video: 1.0 word errors per sentence or fewer.
 
+
+### DELF B2 baseline: sample paper 1 (2026-11-06, 02:15, late night)
+
+Listening only, the official integral recording. Marked against the transcripts in the
+surveillant PDF (it holds no answer key; Ex. 2 Q6 is a judgement call).
+- Exercise 1 (radio, sleep and morning sport): 8.5/9. Lost Q2 (`on ne peut pas les bouleverser
+  sans danger` = dangerous: negation with sans).
+- Exercise 2 (radio, offices with no fixed desk): 4/9. First three right; lost Q4 (`certains
+  rentrent chez eux`), Q6 (older staff complain and fear for their place), Q7 (work / private
+  life boundary shrinking). Inference on an abstract topic is the gap.
+- Exercise 3 (7 points): not done; to sit fresh in daytime with `exercice3.mp3`, page 4.
+So far 12.5/18 (69%). Paper 2 is kept for 2026-11-16.
