@@ -9,6 +9,7 @@ Banks `ecrit-N.bank.js`, ids `ecr-NN`. First attempt is the score.
 | 1 | 2026-11-01 | 12 | 1/12 (about 2/12 after widening) | 2.5 | - | 4 |
 | 2 | 2026-11-02 | 8 | 2/8 | 1.1 | 0/2 (1 word off each) | 3 |
 | 3 | 2026-11-05 | 8 | 2/8 | 1.4 | 1/2 (the other: concept right, `milleur` spelling) | 2 |
+| 4 | 2026-11-06 | 8 | 1/8 (2/8 on merit: ecr-33 was the mic) | 2.3 (1.6 on merit) | 1/2 (ecr-23 right; ecr-21 failed again) | 2 |
 
 ## Écrit 1: 2026-11-01
 
@@ -102,4 +103,33 @@ Retest ecr-28: `meilleur` chosen (it was `mieux` twice), spelled `milleur`.
 Next (Écrit 4): agreement decision drill: être verb? direct object before avoir? indirect
 (lui / leur)? reflexive + body part? Plus `hésiter à`, `-er` imperative without s, `l'IA`
 feminine. Retests: ecr-21, ecr-23.
+
+## Écrit 4: 2026-11-06
+
+Fri at 14:40, daytime, after the DELF listening work. **1/8 first time, 2.3 word errors per
+sentence as graded; 2/8 and 1.6 on merit**: `n'existe pas` in ecr-33 is the recogniser hearing
+`n'hésite pas`, and `la nuit dernière` (ecr-29) is correct French, key widened. Spoken: 4 of 8.
+
+Right first time: retest `Je ne savais pas qu'elle était partie` (imparfait, plus-que-parfait,
+être + agreement: all three failed in Écrit 3). Also right inside wrong sentences: `est sortie`,
+`est revenue` (être agreement), `puissante ... elle` (l'IA feminine, first time in five sittings),
+`appelle-moi` (imperative without s), `hésite pas à` (frame fixed), `avant de manger`.
+
+**Direct vs indirect object** (4, top theme, third sitting): `appelé à sa sœur`, `appelé à mes
+grands-parents` (appeler qqn is direct), `elle l'a parlé`, `je ne les ai pas parlé` (parler À qqn:
+lui / leur). ecr-21 failed the same way twice. Families: direct = appeler, aider, écouter,
+attendre, regarder, chercher, remercier; indirect à = parler, téléphoner, répondre, demander,
+dire, écrire, plaire, sourire, conseiller.
+
+**Preceding direct object** (1 + frame): `les livres que j'ai acheté` (`achetés`), `j'en ai lu
+tous` (`je les ai tous lus`: les for a known set, tous between ai and the participle).
+
+**Reflexive + body part** (1): `il a lavé les mains` (`il s'est lavé`: without se, he washed
+someone else's hands).
+
+**Meaning** (2): `trop tard` (too late) for `très tard`; `l'IA` (AI in general) for `cette IA`.
+
+Next (Écrit 5): direct / indirect decision drill (appeler, aider, attendre vs parler, téléphoner,
+répondre, demander, with me / le / lui / leur and the passé composé), preceding direct object
+with que and les, se + body part. Retests: ecr-35 (= ecr-21) cold again, ecr-30.
 
