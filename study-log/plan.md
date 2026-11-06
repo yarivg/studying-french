@@ -161,6 +161,10 @@ no-subtitle listening at 80%+ comprehension.
 
 Material ladder, move up when lost passages get rare: two-speaker podcasts (innerFrench, Elisa)
 -> RFI normal journal, France Inter podcasts, HugoDécrypte -> street interviews, films.
+2026-11-07: step 1 done. innerFrench E189 (Hugo and Ingrid, restaurants) 0:00-19:56 with no
+subtitles: understood nearly all, lost only vocabulary (16 words, no speed problem), found it boring.
+Moved to step 2 with visible speakers: HugoDécrypte Grands formats interviews (first: Pierre Niney,
+`fLWvbnxVOnI`), then Konbini Small Talk, LEGEND.
 
 B2 reached when all three hold:
 - DELF B2 sample listening paper: 70% or more.
