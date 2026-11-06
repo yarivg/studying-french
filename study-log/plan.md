@@ -177,5 +177,14 @@ surveillant PDF (it holds no answer key; Ex. 2 Q6 is a judgement call).
 - Exercise 2 (radio, offices with no fixed desk): 4/9. First three right; lost Q4 (`certains
   rentrent chez eux`), Q6 (older staff complain and fear for their place), Q7 (work / private
   life boundary shrinking). Inference on an abstract topic is the gap.
-- Exercise 3 (7 points): not done; to sit fresh in daytime with `exercice3.mp3`, page 4.
-So far 12.5/18 (69%). Paper 2 is kept for 2026-11-16.
+- Exercise 3 (3 short documents, heard once; sat 2026-11-06 at 11:00, fresh): 1.5/7. Only Q3
+  right (board games bring people closer). Lost Q1 (new youth magazines centred on `l'actualité`),
+  Q2 (`analyser l'actualité de façon critique`), Q4 (for children: `développer leur logique`,
+  picked social integration, said about adults), Q5 (`destinés à créer des émotions` = provoke;
+  picked show emotions, which the text denies: `pas capables de ressentir`), Q6 (`en matière
+  d'éducation` = learning).
+**Listening total 14/25 (56%).** Pattern: the distractor is a word or idea that was said, but about
+another person or with the opposite claim. Concrete story heard twice is near perfect; short
+abstract documents heard once collapse. Fix: read the question for WHO and WHAT exactly before
+the audio; after it, check the chosen option is the claim made, not just a topic mentioned.
+Ex. 1-3 transcripts then studied, words into Le Carnet, re-listened. Paper 2 is kept for 2026-11-16.
