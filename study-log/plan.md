@@ -130,3 +130,23 @@ Progress is judged on the cold retest a week later, not on closing a drill by re
 drills did not move cold production before (`vac` 46/46, then cold 0-17%). So 2 of each day's
 8 are earlier failures retested cold. Keys are written
 wide from the start (word order, synonyms, ne-drop, on / nous).
+
+## Checkpoint 2026-11-16: forecast written 2026-11-06
+
+Week of 2026-11-01 to 11-06, first attempts: dictée word errors per sentence 1.5, 0.8, 1.8 (new
+video), 3.2 (new, advanced), 1.6 (same video), 0.8 (new video, two clear speakers). Écrit 2.5,
+1.1, 1.4. Phrase decks 2.4, 1.3. About 30-40 new words a day into Le Carnet. Late-night sittings
+run about twice the errors of daytime ones.
+
+Forecast for 2026-11-16, if the pace holds (about an hour a day):
+- Dictée, first clip of a new video with clear speakers: 0.8-1.2 word errors per sentence;
+  hard speakers (fast, solo, advanced): 1.5-2. Familiar speaker: 0.5-0.8.
+- Écrit: about 1.0 per sentence. `ces / ses`, `c'est / ce`, `l'IA` feminine mostly fixed;
+  agreement decisions (être / direct object before / indirect) still the top error.
+- Listening band unchanged (B1+ alone, B2 with French subtitles): 10 days moves the numbers,
+  not the band. Expect fewer lost passages on two-speaker podcasts without subtitles.
+- Vocabulary: +200 to +300 own words in Le Carnet.
+
+Measure on 2026-11-16: a cold dictée on a new two-speaker video (compare Dictée 20), Écrit retest
+of ecr-21 to ecr-25 cold, and DELF B2 sample listening paper 2 (paper 1 taken as the baseline
+before then, if done).
