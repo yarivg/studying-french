@@ -84,8 +84,8 @@ sentence, 02:14 gave 1.5). Fri / Sat are free daytime, used for the work that ne
 |---|---|---|
 | Sun-Thu | 0-5 | **Phrase deck** (`drill-phrases-1..6`, one deck a day, in rotation) |
 | | 5-15 | **Translation**, up to 8 English -> French sentences (`ecrit-N`): 6 new from the latest errors + 2 failed ones from an earlier drill, cold. Typed, first attempt is the score |
-| | 15-40 | **Dictée loop** on one clip: cold watch at 1x, dictée, one rewatch at 1x with French subtitles |
-| | 40-60 | **Continuous listening**, one pass, no pausing. 70%+ cold: no subtitles. 50-70%: French subtitles. Under 50%: easier material. Note 3-5 timestamps |
+| | 15-35 | **Dictée loop** on one clip: cold watch at 1x, dictée, one rewatch at 1x with French subtitles |
+| | 35-60 | **Continuous listening without subtitles** (from 2026-11-06), one pass, no pausing, timestamps and sound guesses noted, then checked against the transcript. 80%+ cold: no subtitles first. 50-80%: French subtitles first, then the same part without. Under 50%: easier material. Lost more than once a minute = too hard |
 | Fri | 0-5 | Phrase deck |
 | | 5-15 | Translation, 8 sentences |
 | | 15-60 | **Le Carnet**: next chapter or its test |
@@ -93,8 +93,9 @@ sentence, 02:14 gave 1.5). Fri / Sat are free daytime, used for the work that ne
 | | 5-15 | Translation, 8 sentences |
 | | 15-60 | Continuous listening, longer (film / series with French subtitles) |
 
-Total: about 2.5 hours of continuous listening, 2 of dictées, 70 min of translation, 45 of
-grammar, 35 of phrases.
+Total: about 3 hours of continuous listening, 1.7 of dictées, 70 min of translation, 45 of
+grammar, 35 of phrases. Extra, any day: commute / walking audio of episodes already watched
+(familiar material, no notes).
 
 ### Material
 
@@ -150,3 +151,19 @@ Forecast for 2026-11-16, if the pace holds (about an hour a day):
 Measure on 2026-11-16: a cold dictée on a new two-speaker video (compare Dictée 20), Écrit retest
 of ecr-21 to ecr-25 cold, and DELF B2 sample listening paper 2 (paper 1 taken as the baseline
 before then, if done).
+
+## Goal from 2026-11-06: B2 listener
+
+His goal. B2 listening = normal-speed speech not made for learners, live or recorded, familiar
+and new topics (news, podcasts, natives talking to each other). Slang-heavy films are C1.
+Estimate: 2-4 months at about an hour a day, mostly listening; the lever is hours of checked
+no-subtitle listening at 80%+ comprehension.
+
+Material ladder, move up when lost passages get rare: two-speaker podcasts (innerFrench, Elisa)
+-> RFI normal journal, France Inter podcasts, HugoDécrypte -> street interviews, films.
+
+B2 reached when all three hold:
+- DELF B2 sample listening paper: 70% or more.
+- A new 20-minute podcast episode with no subtitles: 5 lost passages or fewer.
+- First attempt of a dictée on a new two-speaker video: 1.0 word errors per sentence or fewer.
+
