@@ -91,7 +91,7 @@ sentence, 02:14 gave 1.5). Fri / Sat are free daytime, used for the work that ne
 | | 15-60 | **Le Carnet**: next chapter or its test |
 | Sat | 0-5 | Phrase deck |
 | | 5-15 | Translation, 8 sentences |
-| | 15-60 | Continuous listening, longer (film / series with French subtitles) |
+| | 15-60 | **DELF-style exam listening** (from 2026-11-07, see B2 goal): one exam exercise cold, then transcript, words into Le Carnet, one re-listen. Leftover time: continuous listening, longer |
 
 Total: about 3 hours of continuous listening, 1.7 of dictées, 70 min of translation, 45 of
 grammar, 35 of phrases. Extra, any day: commute / walking audio of episodes already watched
@@ -166,6 +166,16 @@ B2 reached when all three hold:
 - DELF B2 sample listening paper: 70% or more.
 - A new 20-minute podcast episode with no subtitles: 5 lost passages or fewer.
 - First attempt of a dictée on a new two-speaker video: 1.0 word errors per sentence or fewer.
+
+Weekly exam block (Saturday, about 45 min; added 2026-11-06 after sample paper 1 worked well):
+1. One exam-style exercise cold, questions read first (underline WHO and WHAT exactly), audio as
+   the exam plays it (once or twice), answers pasted for marking. Only this first pass is scored.
+2. Transcript: every unknown word or phrase into Le Carnet (pulled from the gist, mapped to the
+   question it cost).
+3. One re-listen, no pausing.
+Free sources, in order: official DELF B2 samples on france-education-international.fr (tout
+public, junior, pro; audio + transcript), TV5Monde Apprendre le français B2 clips, RFI Le
+français facile B2 exercises. Sample paper 2 tout public stays untouched for 2026-11-16.
 
 
 ### DELF B2 baseline: sample paper 1 (2026-11-06, 02:15, late night)
