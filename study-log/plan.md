@@ -165,6 +165,10 @@ Material ladder, move up when lost passages get rare: two-speaker podcasts (inne
 subtitles: understood nearly all, lost only vocabulary (16 words, no speed problem), found it boring.
 Moved to step 2 with visible speakers: HugoDécrypte Grands formats interviews (first: Pierre Niney,
 `fLWvbnxVOnI`), then Konbini Small Talk, LEGEND.
+Pierre Niney interview 0:00-~36:00: about 40% without subtitles, 80% with; vocabulary fine, speed
+the limit. Speech rate from subtitles (words per minute, about +-10%): innerFrench 160-170, FWP #6
+180, Easy French 190, HugoDécrypte / Niney about 250. Method at this level: 5-10 min chunks, French
+subtitles first, then the same chunk without, until about 70% without (B2/C1 edge).
 
 B2 reached when all three hold:
 - DELF B2 sample listening paper: 70% or more.
