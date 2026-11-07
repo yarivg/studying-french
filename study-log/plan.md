@@ -209,3 +209,20 @@ another person or with the opposite claim. Concrete story heard twice is near pe
 abstract documents heard once collapse. Fix: read the question for WHO and WHAT exactly before
 the audio; after it, check the chosen option is the claim made, not just a topic mentioned.
 Ex. 1-3 transcripts then studied, words into Le Carnet, re-listened. Paper 2 is kept for 2026-11-16.
+
+### Exam block 1: DELF B2 junior sample (SUJET_DÉMO_B2SJ_02, 2026-11-07, 12:45, fresh)
+
+Listening only, the integral recording, no pausing; marked against the official corrigé.
+- Exercise 1 (women's football at Bordeaux, heard twice): 7.5/9. Lost Q2 (`comme c'est le cas pour
+  les garçons` = same follow-up as the boys).
+- Exercise 2 (Éduc+ tablet, heard twice): 4.5/9. Lost Q1 (`en phase de test dans plusieurs écoles
+  près de Lyon` heard as tested in all schools; `de la maternelle jusqu'au baccalauréat` = whole
+  schooling), Q4 (`préparer mon cours en assemblant tous les supports`: everything in one place, not
+  ready-made), Q5 (`nombreuses heures de préparation ... semaines déjà chargées` = lack of time; picked
+  training, never said), Q7 (`font plus volontiers leurs devoirs` = more motivated at home; picked the
+  class option, which was said about presentations).
+- Exercise 3 (3 documents, heard once): 3.5/7 (1.5/7 on Thursday). Lost Q2 (`plus écologique ...
+  gaspillage`), Q3 and Q4 blank (`le gaspillage diminue`, `repas bio végétariens, prix bien inférieur`).
+**Listening total 15.5/25 (62%)**, up from 56%. Same distractor pattern: Q1 (a word said, wrong
+scope: plusieurs vs toutes), Q5 (an option from world knowledge, not from the audio), Q7 (said, about
+another thing). Missing words cost 3 points: `gaspillage` (twice), `volontiers`, `faute de`, `supports`.
