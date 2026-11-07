@@ -10,6 +10,7 @@ Banks `ecrit-N.bank.js`, ids `ecr-NN`. First attempt is the score.
 | 2 | 2026-11-02 | 8 | 2/8 | 1.1 | 0/2 (1 word off each) | 3 |
 | 3 | 2026-11-05 | 8 | 2/8 | 1.4 | 1/2 (the other: concept right, `milleur` spelling) | 2 |
 | 4 | 2026-11-06 | 8 | 1/8 (2/8 on merit: ecr-33 was the mic) | 2.3 (1.6 on merit) | 1/2 (ecr-23 right; ecr-21 failed again) | 2 |
+| 5 | 2026-11-07 | 8 | 3/8 | 1.4 | 1/2 (ecr-43 = ecr-21 right, third try; ecr-44 = ecr-30 failed again) | 2 |
 
 ## Écrit 1: 2026-11-01
 
@@ -133,3 +134,30 @@ Next (Écrit 5): direct / indirect decision drill (appeler, aider, attendre vs p
 répondre, demander, with me / le / lui / leur and the passé composé), preceding direct object
 with que and les, se + body part. Retests: ecr-35 (= ecr-21) cold again, ecr-30.
 
+## Écrit 5: 2026-11-07
+
+Sat at 12:20, fresh, first block of the day. **3/8 first time, 1.4 word errors per sentence.** All 8
+spoken first, then edited.
+
+Right first time: `Tu lui as répondu ? Non, je ne lui ai pas encore répondu`, `Elle s'est brossé les
+dents et a téléphoné à sa mère` (body part with no agreement, first time), retest `J'ai appelé mes
+grands-parents, mais je ne leur ai pas parlé longtemps` (ecr-21, failed twice before).
+
+**Direct / indirect: 6 of 8 decisions right** (Écrit 4: 0 of 4). Missed: `attendu à mes potes`
+(attendre qqn is direct), `je les demande de` (demander À qqn: leur).
+
+**Preceding direct object: les 3/3, que 0/2.** `je les ai appelés`, `je les ai remerciés`, `je les ai
+lus` agree; `qu'elle lui a écrit` (`écrites`), `que j'ai acheté` (`achetés`, ecr-30 failed twice)
+do not. The rule is applied to `les`, not yet to `que`. Test: a subject after que (elle, j') means
+the noun before que is the object, so the participle agrees.
+
+**Adverb slot** (2, new): `m'ont aidé beaucoup`, `je les ai lus tous`. Short adverbs go between
+avoir and the participle (`bien, déjà, beaucoup, souvent, toujours, encore, tous`); `longtemps, hier,
+ici, tard` go after.
+
+**Present for past** (2): `je les demande` (`je leur ai demandé`), `il ne les lit jamais` (`he never
+read`: English read is the past here, present would be reads).
+
+Next (Écrit 6): que + avoir agreement with mixed genders (que j'ai prises / écrites / faites), adverb
+slot (beaucoup, déjà, bien, tous vs longtemps, hier), demander / dire / conseiller À qqn de, English
+verbs with the same past and present (read, put, cut, hit). Retests: ecr-44 cold (third), ecr-40.
