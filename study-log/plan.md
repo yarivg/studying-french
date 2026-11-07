@@ -169,6 +169,9 @@ Pierre Niney interview 0:00-~36:00: about 40% without subtitles, 80% with; vocab
 the limit. Speech rate from subtitles (words per minute, about +-10%): innerFrench 160-170, FWP #6
 180, Easy French 190, HugoDécrypte / Niney about 250. Method at this level: 5-10 min chunks, French
 subtitles first, then the same chunk without, until about 70% without (B2/C1 edge).
+Queued: HugoDécrypte x Macron (`xRIw-ZmDzj4`, 1:21:15, about 225 wpm, formal political register,
+DELF-style abstract argument), 15-min chunks from 0:00. Dictée 21 (#6 12:32-16:57, familiar clip)
+built and not yet sat.
 
 B2 reached when all three hold:
 - DELF B2 sample listening paper: 70% or more.
