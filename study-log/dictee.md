@@ -27,6 +27,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 18 | 2026-11-03 | FWP #6 "Why are the French worried about AI?" (`btlFHLGF9ws`), 0:00-4:57, advanced, solo | 1/12 (38 word errors, 3.2 per sentence; `soi-disant` helped by a word question) | 12/12 | 3 |
 | 19 | 2026-11-05 | FWP #6, 9:01-12:32 | 4/12 (19 word errors, 1.6 per sentence; `urgences`, `diagnostic` helped by word questions) | 12/12 | 4 |
 | 20 | 2026-11-05 | innerFrench E191 "S'ennuyer au travail, le secret du bonheur ?" (`nMw-ajbpHhs`), 0:14-4:00, two speakers, new | 5/12 (10 word errors, 0.8 per sentence; word questions touched 5 sentences) | 12/12 | 4 |
+| 22 | 2026-11-08 | innerFrench E119 "Le télétravail va-t-il changer la société ?" (`vfyMakR2bds`), 0:13-4:58, new video, Sat 19:10 | 2/12 (25 word errors, 2.1 per sentence) | 12/12 | 3 |
 
 ## Dictée 1
 
@@ -574,3 +575,30 @@ As of 2026-11-01 (plan: comprehension first, see `plan.md`):
    rue sera barrée`), infinitive after a verb against the participle after `rester / être`.
    Add `en` with reflexives (`s'en rendre compte`) and elision (`parce qu'on`, `trop d'efforts`).
 Open threads dropped 2026-10-21 (B1e, Dictée 2, b1c, pronoun chapter, song page): see `plan.md`.
+
+## Dictée 22: 2026-11-08
+
+innerFrench E119 (Hugo and Ingrid, remote work), 0:13-4:58, auto subtitles cleaned. Dictée 21
+(FWP #6) skipped: he wanted a video he had not seen. **2/12 first time, 25 word errors (2.1 per
+sentence).** Right first time: dic-253 bar spelling (`boulversement`), dic-255 bar `ce` for c'est.
+
+He asked to discount the silent plurals. Discounting every silent error leaves 4/12, not a good
+grade: most errors are audible.
+
+**Heard wrong, audible (about 15):**
+- `de` for `des` 4 times (`de contract`, `de redacion`, `de media`) and `des mes` for `de mes`:
+  dé and de are different sounds. The plural is audible in the article even when the noun ending is not.
+- `le bureau` for `les bureaux` (le / lé), `Certaines` for `Certains` (-èn / -in).
+- `on essayons` for `en essayant` (en / on, -ant / -ons; on never takes -ons).
+- `j'ai travaillé` for `je travaillais` (tense), `qu'on l'utilisent`: an l' that is not there.
+- `que a été` for `qui a été` (subject: qui; que would elide to qu'a).
+- `inconvinantes` for `inconvénients` (word not known).
+
+**Grammar rule, audible:** `pas du bureau` for `pas de bureau` (negation -> de), but `ce n'est pas
+de travail` for `du travail` (after être the partitive stays: c'est pas du travail).
+
+**Silent grammar (about 9):** `differentes` (points: masculine), `ce` for `c'est` x2 (also in his
+writing today: `ce tres important`), `utilisent` after on, `regulier` / `contract` / `redacion` /
+`media` plural s and spelling, `travailler` for `travaillé` after avoir.
+
+Next: Dictée 23 = E119 from 4:58. Before Grade, read every article aloud: de or des, le or les.
