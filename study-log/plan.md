@@ -239,3 +239,7 @@ Measured 2026-11-08 (auto subtitles, words / talk minutes, +-10%): Easy French P
 (`nZhS2uJzN9k`) 162, French Mornings Ep27 with Judith (`F-rUMI_sQQs`) 178, FWP "Why your brain
 loves wasting time" (`ueqPOzjjIao`) 187, FWP wedding [106] 197, FWP #86 202. Order for no-subs:
 innerFrench -> Easy French Podcast -> French Mornings -> FWP.
+More (same method): French Mornings Ep47 love (`a3wl2-Ul7rU`) 187, Ep69 summer (`yqy9-vgWyH0`) 158,
+Ep72 protest rights (`oHManclewi4`) 142, Ep49 savoir-vivre 209; Easy French brothers and sisters
+(`RYMrofsNQKk`) 176; FWP [98] France moche (`ubkBn9o3fbc`) 177, [104] too expensive (`KhaIVtRCgVw`)
+191, #93 bio 201. French Mornings Ep27 already seen (late Oct), not used for no-subs.
