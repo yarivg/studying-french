@@ -10,6 +10,7 @@ French, not against a key. Each error is tagged with its theme; the top 3 themes
 |---|---|---|---|---|---|---|
 | 1 | 2026-10-22 | My day (wrote today, not yesterday) | 8 | 22 | 2.75 | 7/14 (50%) |
 | 2 | 2026-10-24 | A trip or weekend away (wrote: 24th birthday at Alabama) | 11 | 39 | 3.5 | 6/10 (60%) |
+| 3 | 2026-11-09 | Real message: the Mahomet mountain story, after the breakup | 10 | 26 | 2.6 | - |
 
 ## 1. 2026-10-22: my day
 
@@ -95,3 +96,50 @@ Right: passé composé for the event (`j'ai fêté`) against imparfait for the s
 
 Brief missed: no `lui / leur`, no `y / en` (two places asked for them: `il n'y en a pas`, `on va y
 retourner`), no plural `qui` + verb, no podcast expression.
+
+## 3. 2026-11-09: the Mahomet mountain story (real message)
+
+His own text, a message about "notre situation". Bacon's anecdote, punchline = the French
+proverb itself: `Si la montagne ne vient pas à Mahomet, Mahomet ira à la montagne.`
+
+Corrected:
+
+> J'ai beaucoup réfléchi à notre situation, et ça m'a fait penser à une expression un peu drôle
+> en hébreu. Pour que tu comprennes, il vaut mieux que je t'explique quelque chose. Le prophète
+> Mahomet, tu le connais ? Un écrivain qui s'appelle Francis Bacon a écrit dans un de ses livres
+> que Mahomet était très connu et très puissant. Il pouvait faire des miracles avec ses paroles.
+> Un jour, il a dit qu'il était assez fort pour faire venir une montagne avec ses mots. Pas mal,
+> hein ? Beaucoup de gens sont venus pour voir ce miracle, puis il a commencé. Il a récité les
+> bénédictions l'une après l'autre. Mais rien ne s'est passé. Il y avait un silence si long qu'on
+> aurait entendu une mouche voler. Et puis Mahomet a conclu calmement : « Alors, si la montagne ne
+> veut pas venir à moi, j'irai moi-même à la montagne. » Je voulais te raconter cette histoire pour
+> te dire que parfois, pour trouver un équilibre dans une relation, il faut que l'un des deux fasse
+> le premier pas. Après tout, on commence à peine à se connaître.
+
+Errors per sentence (first attempt, 10 story sentences): 3, 2, 0, 6, 4, 1, 0, 2, 5, 3.
+
+Themes, ranked:
+1. **Past narration tense** (5): `il a dit qu'il est` (`était`: tense shift after a past verb),
+   `il pouvais`, `il y avais`, `qu'on a peut` (`pouvait`), `qui écrit` (`a écrit`).
+2. **Silent endings / homophones** (4): `ces mots` and `un de ces livres` (`ses`), `-ais` for `il`
+   (`-ait`), `on dois` (`doit`). `ces/ses` survived the first redo.
+3. **Frames** (5): `penser d'une` (`penser à`), `assez fort peut` (`assez ... pour`), `très long
+   qu'on` (`si ... que`), `pour comprendre` with a change of subject (`pour que tu comprennes`),
+   `avoir beaucoup se connaître` (`apprendre à se connaître`).
+4. **Negation** (2): `rien est passé` (`rien ne s'est passé`: `ne`, and `se passer` = happen).
+5. **Adverb slot** (2): `j'ai réfléchi beaucoup` (`j'ai beaucoup réfléchi`), `calmement a conclu`.
+6. **Calques / wrong idiom** (4): `faire magic`, `une grande chose à dire` (`Pas mal, hein ? /
+   C'est pas rien`), `voir le revers de la médaille` (= the downside, not the other view: `voir les
+   choses sous un autre angle`), `en relation` (= in contact: `dans une relation`).
+7. **Small**: `notre situations`, `s'appele`, missing article (`un silence`, `une montagne` on first
+   mention), colon before quoted speech, `un doit` (`chacun / l'un des deux`).
+
+Right: `pour que tu comprennes` and `il vaut mieux que je t'explique` after correction,
+`sont venus` (être), `l'une après l'autre`, `on aurait entendu une mouche voler`, `j'irai`.
+
+Expressions picked up: à vrai dire, Fallait oser / Rien que ça / Pas mal, hein ?, bénédiction après
+bénédiction / enchaîner, faire le premier pas, faire passer un message, repartir sur de meilleures
+bases, on commence à peine à se connaître, l'un sur l'autre / chez l'autre, faire penser à vs
+rappeler qqch à qqn, véhiculer (formal: convey).
+
+Redo: 26 -> 9 -> 4 -> 1 (period for colon before the quote). Closed.
