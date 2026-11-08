@@ -41,3 +41,20 @@ Goal: finish S1 (6 episodes) by 2026-11-16. French audio, French subs.
 - se tirer une balle dans le pied, la balle est dans ton camp, la chair de sa chair, en chair et en os
 - mêle-toi de tes affaires, être mêlé à, s'opposer à / être opposé à, on frappe, être frappé par, frappant
 - traîner, devait (= must have), lutter contre, sous la main, succéder à (≠ réussir), la force de frappe
+
+| 4 | 2026-11-08 | not given; full episode in one sitting (19:25-21:45), 40 words added |
+
+## Deck 9 candidates from E4
+
+- faire profil bas, aspirer à, ne ... que, ça m'étonnerait (que + subj), cache ta joie !, dis pas n'importe quoi
+- ouvrir un boulevard à qqn, faire semblant de, pour pas que + subj, s'incruster, j'hallucine, sauf que
+- avoir l'air, être au courant / tiens-moi au courant, compter + inf, faire passer un casting à qqn
+- changer de + noun, de toute urgence, espèce de + insult, un délai (false friend) / dans les délais, par deux fois
+- mettre le couvert, quelconque, le regard accroche, venir de + inf, sauter dessus à qqn, morfler
+
+## Écrit candidates from E4
+
+- Body part: lui / leur + verb + les + body part, no agreement (on leur bouffe les mollets, tu m'as dévoré
+  les entrailles: the subtitle wrote dévorée, wrong) vs person as direct object, agreement (ils vous ont dévorée)
+- vouloir que + subj (que tu le voies), pour que + subj in the negative (pour qu'on ne soit pas)
+- excuser qqn de ne pas + inf, faire semblant de, penser à + inf (à, not de)
