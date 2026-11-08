@@ -226,3 +226,12 @@ Listening only, the integral recording, no pausing; marked against the official 
 **Listening total 15.5/25 (62%)**, up from 56%. Same distractor pattern: Q1 (a word said, wrong
 scope: plusieurs vs toutes), Q5 (an option from world knowledge, not from the audio), Q7 (said, about
 another thing). Missing words cost 3 points: `gaspillage` (twice), `volontiers`, `faute de`, `supports`.
+
+### 2026-11-08: two listening tracks
+Dix pour cent E4, 5-6 min rewatched without subtitles after the subtitled viewing: about 40% (he
+guesses 10-20% cold). TV drama is too fast and slangy for no-subtitle listening now. Split:
+- **Series = vocabulary source**, French subtitles, words to Le Carnet, then a 5 min no-subs
+  rewatch as review.
+- **No-subtitle listening = podcasts at 80%+**: innerFrench episodes he has not heard (E24, E103,
+  then others), 20-30 min a day at 1x. Step up to FWP, then RFI / France Inter, when lost passages
+  get rare. E119 stays reserved for dictées.
