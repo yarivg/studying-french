@@ -235,3 +235,7 @@ guesses 10-20% cold). TV drama is too fast and slangy for no-subtitle listening 
 - **No-subtitle listening = podcasts at 80%+**: innerFrench episodes he has not heard (E24, E103,
   then others), 20-30 min a day at 1x. Step up to FWP, then RFI / France Inter, when lost passages
   get rare. E119 stays reserved for dictées.
+Measured 2026-11-08 (auto subtitles, words / talk minutes, +-10%): Easy French Podcast 179
+(`nZhS2uJzN9k`) 162, French Mornings Ep27 with Judith (`F-rUMI_sQQs`) 178, FWP "Why your brain
+loves wasting time" (`ueqPOzjjIao`) 187, FWP wedding [106] 197, FWP #86 202. Order for no-subs:
+innerFrench -> Easy French Podcast -> French Mornings -> FWP.
