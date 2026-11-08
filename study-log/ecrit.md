@@ -11,6 +11,7 @@ Banks `ecrit-N.bank.js`, ids `ecr-NN`. First attempt is the score.
 | 3 | 2026-11-05 | 8 | 2/8 | 1.4 | 1/2 (the other: concept right, `milleur` spelling) | 2 |
 | 4 | 2026-11-06 | 8 | 1/8 (2/8 on merit: ecr-33 was the mic) | 2.3 (1.6 on merit) | 1/2 (ecr-23 right; ecr-21 failed again) | 2 |
 | 5 | 2026-11-07 | 8 | 3/8 | 1.4 | 1/2 (ecr-43 = ecr-21 right, third try; ecr-44 = ecr-30 failed again) | 2 |
+| 6 | 2026-11-08 | 8 | 1/8 | 1.8 | 0/2 (ecr-51 = ecr-44 = ecr-30 failed a fourth time; ecr-52 = ecr-40 missing de) | 2 |
 
 ## Écrit 1: 2026-11-01
 
@@ -161,3 +162,29 @@ read`: English read is the past here, present would be reads).
 Next (Écrit 6): que + avoir agreement with mixed genders (que j'ai prises / écrites / faites), adverb
 slot (beaucoup, déjà, bien, tous vs longtemps, hier), demander / dire / conseiller À qqn de, English
 verbs with the same past and present (read, put, cut, hit). Retests: ecr-44 cold (third), ecr-40.
+
+## Écrit 6: 2026-11-08
+
+Sat evening (18:35), after words-2. **1/8 first time, 1.8 word errors per sentence.** All 8 spoken
+first, then edited. Right first time: ecr-45 (on doit, ce n'est pas toujours rose).
+
+**Direct / indirect: 8 of 9 decisions right** (me, moi, l', leur x3, les, m'). Only miss: `je l'ai
+montrés` for `je les ai montrées` (l' singular, les plural; the plural sounds like lé).
+
+**Verb + DE + infinitive** (2, new and heaviest): `conseillé dormir`, `demandé m'attendre`. Same
+sentence had `leur a dit de ne pas travailler` right. Family: conseiller / demander / dire /
+interdire / proposer À qqn DE + inf.
+
+**que agreement: 0/2 again (0/4 over Écrit 5-6).** `que tu as pris` (`prises`), `que j'ai acheté`
+(`achetés`, ecr-30 failed a fourth time). les agreement: number right, gender missed (`montrés` for
+`montrées`, photos is feminine).
+
+**Adverb slot** (2, second sitting): `l'a compris bien` (`bien compris`), `tout lus` (`tous`: pronoun
+= all of them, plural, s pronounced).
+
+**Endings** (3): `je veut` (`je veux`), `tu a` (`tu as`), `tu me dis` after vouloir que (`dises`).
+**Frame** (1): `de temps` (`le temps` / `du temps`).
+
+Next (Écrit 7): que + avoir agreement on feminine nouns (5 sentences, it is 0/4), verb + DE + inf
+family, short adverb between avoir and participle (bien, déjà, tous, beaucoup), vouloir que +
+subjunctive. Retests: ecr-51 cold (fifth), ecr-50.
