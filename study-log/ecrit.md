@@ -185,6 +185,7 @@ interdire / proposer À qqn DE + inf.
 **Endings** (3): `je veut` (`je veux`), `tu a` (`tu as`), `tu me dis` after vouloir que (`dises`).
 **Frame** (1): `de temps` (`le temps` / `du temps`).
 
-Next (Écrit 7): que + avoir agreement on feminine nouns (5 sentences, it is 0/4), verb + DE + inf
+Next (Écrit 7): que + avoir agreement on feminine nouns (5 sentences, it is 0/4), pronoun slot with two
+verbs (whose object? je leur ai demandé de m'attendre, j'essaie de te comprendre, je t'aide à), verb + DE + inf
 family, short adverb between avoir and participle (bien, déjà, tous, beaucoup), vouloir que +
 subjunctive. Retests: ecr-51 cold (fifth), ecr-50.
