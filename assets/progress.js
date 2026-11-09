@@ -9,7 +9,9 @@
      v: 1,
      read:  { "<slug>": <epoch-ms> },
      ex:    { "<slug>:<exId>:<i>": "ok" | "again" },
-     cards: { "<cardId>": { box: 0-5, due: <epoch-day>, seen: n, ok: n } },
+     cards: { "<cardId>": { box: 0-6, due: <epoch-day>, seen: n, ok: n,
+                            ivl: <days>, last: <epoch-day>, rl: 0|1 } },  // rl = missed, relearning
+     rev:   [ { at, c: "<cardId>", e: <days since last review, -1 = first>, r: 0|1, i: <new interval> } ],
      known: { "<wordId>": true },
      words: { "<u...>": { fr, en, pos, g, themes: [], at } },  // words you added
      edits: { "<wId>":  { fr, en, pos, g, themes: [], at } },  // curated words you corrected
@@ -45,7 +47,7 @@ window.Progress = (function () {
   function blank() {
     return {
       v: 1, read: {}, ex: {}, cards: {}, known: {}, words: {}, edits: {},
-      mastery: {}, tests: {}, qstat: {}, lib: {}, runs: [], days: {}, hist: {}, m: {}, clearedAt: 0
+      mastery: {}, tests: {}, qstat: {}, lib: {}, runs: [], rev: [], days: {}, hist: {}, m: {}, clearedAt: 0
     };
   }
 
@@ -170,12 +172,35 @@ window.Progress = (function () {
 
   function isDue(id) { return card(id).due <= today(); }
 
+  // Formula v1, fitted to Mémoire 1 (study-log/memory.md): one correct
+  // review keeps about 85% of words for weeks, so a first success waits a
+  // week. Wrong: due again today. Right after a miss: 2 days, then 7.
+  // Every later success: x2.5. Cards scheduled by the old Leitner ladder
+  // carry on from the interval their box implies.
+  var MAX_IVL = 365;
+  var MAX_REV = 15000;
+  function nextInterval(c, correct) {
+    if (!correct) return 0;
+    var ivl = c.ivl != null ? c.ivl : (c.seen ? INTERVALS[c.box] : 0);
+    if (c.rl) return 2;
+    if (!ivl) return 7;
+    if (ivl < 7) return 7;
+    return Math.min(MAX_IVL, Math.round(ivl * 2.5));
+  }
+
   function gradeCard(id, correct) {
-    var c = card(id);
+    var c = card(id), t = today();
+    var elapsed = c.seen && c.last != null ? t - c.last : (c.seen ? t - (c.due - (c.ivl != null ? c.ivl : INTERVALS[c.box])) : -1);
+    var ivl = nextInterval(c, correct);
     c.seen++;
-    if (correct) { c.ok++; c.box = Math.min(MAX_BOX, c.box + 1); }
-    else { c.box = 0; }
-    c.due = today() + INTERVALS[c.box];
+    if (correct) { c.ok++; c.box = Math.min(MAX_BOX, c.box + 1); c.rl = 0; }
+    else { c.box = 0; c.rl = 1; }
+    c.ivl = ivl;
+    c.last = t;
+    c.due = t + ivl;
+    if (!Array.isArray(state.rev)) state.rev = [];
+    state.rev.push({ at: Date.now(), c: id, e: elapsed, r: correct ? 1 : 0, i: ivl });
+    if (state.rev.length > MAX_REV) state.rev = state.rev.slice(-MAX_REV);
     state.cards[id] = c;
     touch('cards', id);
     bumpDay();
@@ -614,6 +639,9 @@ window.Progress = (function () {
         seen: clamp(num(value.seen), 0, 1e6),
         ok: clamp(num(value.ok), 0, 1e6)
       };
+      if (typeof value.ivl === 'number') out.cards[key].ivl = clamp(value.ivl, 0, 3650);
+      if (typeof value.last === 'number') out.cards[key].last = clamp(value.last, 0, 1e7);
+      if (value.rl) out.cards[key].rl = 1;
     });
     each(input.words, function (key, value) {
       if (key.charAt(0) !== 'u') return;   // ids the UI is willing to render
@@ -661,6 +689,13 @@ window.Progress = (function () {
             ? r.wrong.filter(function (x) { return typeof x === 'string'; }).slice(0, 60)
             : []
         };
+      });
+    }
+    if (Array.isArray(input.rev)) {
+      out.rev = input.rev.slice(-MAX_REV).filter(function (r) {
+        return r && typeof r === 'object' && typeof r.c === 'string' && r.c.length <= KEY_MAX;
+      }).map(function (r) {
+        return { at: num(r.at), c: r.c, e: Math.max(-1, Math.round(num(r.e))), r: r.r ? 1 : 0, i: clamp(num(r.i), 0, 3650) };
       });
     }
     each(input.days, function (key, value) {
@@ -783,6 +818,19 @@ window.Progress = (function () {
       .sort(function (a, b) { return a.at - b.at; })
       .slice(-MAX_RUNS);
 
+    // The review log is append-only too: union, one row per card per instant.
+    var seenRev = {};
+    out.rev = (state.rev || []).concat(remote.rev || [])
+      .filter(function (r) {
+        if (cleared && (r.at || 0) <= cleared) return false;
+        var k = r.at + '|' + r.c;
+        if (seenRev[k]) return false;
+        seenRev[k] = 1;
+        return true;
+      })
+      .sort(function (a, b) { return a.at - b.at; })
+      .slice(-MAX_REV);
+
     state = out;
     save();
     return state;
@@ -798,7 +846,8 @@ window.Progress = (function () {
       box: newer.box || 0,
       due: newer.due || 0,
       seen: Math.max(a.seen || 0, b.seen || 0),
-      ok: Math.max(a.ok || 0, b.ok || 0)
+      ok: Math.max(a.ok || 0, b.ok || 0),
+      ivl: newer.ivl, last: newer.last, rl: newer.rl ? 1 : 0
     };
   }
 

@@ -1734,8 +1734,9 @@
     Vocab.load().then(function () {
       var known = Progress.knownCount();
       var html = '<h1>Flashcards</h1>' +
-        '<p class="lead">Leitner spaced repetition: a card you get right moves up a box and comes ' +
-        'back later (1, 2, 5, 10, 21, then 45 days). Get it wrong and it is due again the same day, then climbs from 1 day.</p>' +
+        '<p class="lead">Spaced repetition fitted to your memory (Mémoire 1): right the first time, a card ' +
+        'comes back in 7 days, then 18, 45, 110. Wrong, it is due again the same day; right after a miss, ' +
+        '2 days, then 7.</p>' +
         (known
           ? '<p class="deck-note">' + known + ' word' + (known === 1 ? '' : 's') +
             ' you marked as known ' + (known === 1 ? 'is' : 'are') + ' held out of every deck. ' +
