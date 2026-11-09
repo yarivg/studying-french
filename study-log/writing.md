@@ -143,3 +143,7 @@ bases, on commence à peine à se connaître, l'un sur l'autre / chez l'autre, f
 rappeler qqch à qqn, véhiculer (formal: convey).
 
 Redo: 26 -> 9 -> 4 -> 1 (period for colon before the quote). Closed.
+
+Words he added to Le Carnet from this session (22:38-00:53, 14): le prophète, la prophétie, raconter, calmement,
+un/e des deux, (se) rapprocher, se parler, se reparler, la bénédiction, embarrassant, pour dire la vérité, réciter,
+la mouche.
