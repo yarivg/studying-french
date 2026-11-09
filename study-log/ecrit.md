@@ -12,6 +12,7 @@ Banks `ecrit-N.bank.js`, ids `ecr-NN`. First attempt is the score.
 | 4 | 2026-11-06 | 8 | 1/8 (2/8 on merit: ecr-33 was the mic) | 2.3 (1.6 on merit) | 1/2 (ecr-23 right; ecr-21 failed again) | 2 |
 | 5 | 2026-11-07 | 8 | 3/8 | 1.4 | 1/2 (ecr-43 = ecr-21 right, third try; ecr-44 = ecr-30 failed again) | 2 |
 | 6 | 2026-11-08 | 8 | 1/8 | 1.8 | 0/2 (ecr-51 = ecr-44 = ecr-30 failed a fourth time; ecr-52 = ecr-40 missing de) | 2 |
+| 7 | 2026-11-10 | 8 | 1/8 | 1.6 (1.25 on merit) | 0/2 (ecr-59 = ecr-51 `tout` for `tous`; ecr-60 = ecr-50 `il leur ai`) | 2 |
 
 ## Écrit 1: 2026-11-01
 
@@ -189,3 +190,36 @@ Next (Écrit 7): que + avoir agreement on feminine nouns (5 sentences, it is 0/4
 verbs (whose object? je leur ai demandé de m'attendre, j'essaie de te comprendre, je t'aide à), verb + DE + inf
 family, short adverb between avoir and participle (bien, déjà, tous, beaucoup), vouloir que +
 subjunctive. Retests: ecr-51 cold (fifth), ecr-50.
+
+## Écrit 7: 2026-11-10
+
+After midnight (00:31), end of the 11-09 session. **1/8 first time, 1.6 word errors per sentence
+(1.25 on merit, 10 real errors).** All 8 spoken first, then edited. Right first time: ecr-57 (de TE
+comprendre, je veux T'aider à). Key widened: `ne pas renoncer` (ecr-58).
+
+**que / les agreement: fixed.** 5/5 participles right (`qu'elle m'a écrite`, `je l'ai lue`, `l'...
+comprise`, `que nous avons faites`, `les avons expliquées`). Was 0/4 over Écrit 5-6. He asked the rule
+mid-drill (comprise, expliquées), so recheck it cold in Écrit 8.
+
+**Verb frames with à / de** (4, heaviest): `demandé arrêter` (`demandé d'arrêter`), `de l'écrire`
+(`de lui écrire`: écrire À qqn, so indirect), `a demandé a les élèves` (`aux`: à + les always
+contracts). `conseillé de dormir` now right (missed in Écrit 6).
+
+**vouloir que + subjunctive** (1): `il voulait nous se voir` (`qu'on se voie` / `que nous nous
+voyions`). Different subject after vouloir = que + subjunctive, never an infinitive.
+
+**tous / tout** (1, third sitting): `je les ai tout lus` (`tous`, plural pronoun, s pronounced).
+
+**Endings** (1): `il leur ai dit` (`a`). Same family as `tu a`.
+
+**Tense** (1): `je ne l'avais pas bien comprise` (`l'ai`): plus-que-parfait only for a past before
+another past.
+
+**Calque / spelling** (2): `les décisions que nous avons faites` (`prises`: prendre une décision),
+`colleagues` (`collègues`).
+
+Next (Écrit 8): à / de frames (écrire / parler / répondre / téléphoner À qqn = lui / leur; demander /
+dire / conseiller À qqn DE + inf; à + les = aux, de + les = des), vouloir / aimer que + subjunctive
+with a new subject, si + imparfait / conditionnel, ça s'est fait / il s'est passé, tense after "said",
+ces / ses, E5 candidates (me le / te la / le leur, risquer de, échapper à / obéir à, avoir les + body
+part). Retests: ecr-59 cold (tous, sixth), ecr-54 (demander de + lui écrire). Ids from ecr-61.

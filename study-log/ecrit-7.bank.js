@@ -35,7 +35,7 @@ window.BANK = {
       tags: ['object-pronouns', 'verb-prepositions', 'infinitive'] },
     { id: 'ecr-58',
       en: 'Nothing happened, so the teacher told the students to start again and not to give up.',
-      a: ['{Rien ne s\'est passé|Il ne s\'est rien passé} {alors|donc|du coup} le {prof|professeur} a {dit|demandé} aux {élèves|étudiants} de recommencer et de ne pas {abandonner|laisser tomber|lâcher}.'],
+      a: ['{Rien ne s\'est passé|Il ne s\'est rien passé} {alors|donc|du coup} le {prof|professeur} a {dit|demandé} aux {élèves|étudiants} de recommencer et de ne pas {abandonner|laisser tomber|lâcher|renoncer}.'],
       why: 'rien needs ne; happen = SE passer: rien ne s\'est passé. dire À qqn DE + inf: aux élèves de. ne pas together before an infinitive: de ne pas abandonner.',
       tags: ['negation', 'verb-prepositions', 'infinitive', 'calques'] },
     { id: 'ecr-59',
