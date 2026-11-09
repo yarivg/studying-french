@@ -28,6 +28,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 19 | 2026-11-05 | FWP #6, 9:01-12:32 | 4/12 (19 word errors, 1.6 per sentence; `urgences`, `diagnostic` helped by word questions) | 12/12 | 4 |
 | 20 | 2026-11-05 | innerFrench E191 "S'ennuyer au travail, le secret du bonheur ?" (`nMw-ajbpHhs`), 0:14-4:00, two speakers, new | 5/12 (10 word errors, 0.8 per sentence; word questions touched 5 sentences) | 12/12 | 4 |
 | 22 | 2026-11-08 | innerFrench E119 "Le télétravail va-t-il changer la société ?" (`vfyMakR2bds`), 0:13-4:58, new video, Sat 19:10 | 2/12 (25 word errors, 2.1 per sentence) | 12/12 | 3 |
+| 23 | 2026-11-09 | innerFrench E119 (`vfyMakR2bds`), 4:58-9:47, cold listen 1x no subs first (~85%) | 1/12 (19 word errors, 1.6 per sentence) | - | - |
 
 ## Dictée 1
 
@@ -602,3 +603,29 @@ writing today: `ce tres important`), `utilisent` after on, `regulier` / `contrac
 `media` plural s and spelling, `travailler` for `travaillé` after avoir.
 
 Next: Dictée 23 = E119 from 4:58. Before Grade, read every article aloud: de or des, le or les.
+
+## Dictée 23: 2026-11-09
+
+innerFrench E119, 4:58-9:47, after a cold 1x no-subs listen (he put it at about 85%). Word questions
+before the dictée touched 3 lines (par la force des choses, manque de pot, réticent: meaning only;
+pris goût: hint only). **1/12 first time, 19 word errors (1.6 per sentence, down from 2.1).** Right
+first time: dic-270 (manque de chance, Varsovie, Cracovie).
+
+**Heard wrong, audible (about 10):**
+- de / des again, third dictée running: `ce genre des scénarios`, `de plus en plus des salariés`.
+  After a quantity or `genre`, it is `de`, and dé is audible.
+- Tense: `c'est pas` for `c'était pas`, `je commençais` for `j'ai commencé`, `je ne me limite` for
+  `limitais` (si + imparfait after a conditional).
+- `ils` for `elles` (les entreprises), while `réticentes` was right in the same line.
+- `soient contraindre` for `contraintes`: after être, a participle, never an infinitive.
+- `pendant lentent` for `longtemps`, `plus beaucoup` for `beaucoup plus`, `et` dropped.
+
+**Silent grammar (about 5):** `ça c'est fait` twice for `ça s'est fait` (se faire, reflexive: s'est),
+`j'aurai` for `j'aurais` (conditional after je savais que), `tu a` for `tu as`, `scénarios` plural.
+Typos: `mangers`, `avior`.
+
+Right: `réticentes` (feminine plural), `étaient` twice, `n'avaient`, `voulait`, `pris goût`, `il a fallu`,
+`pour que la situation change`, `je me suis dit que`.
+
+Next: Dictée 24 = E119 from 9:47. Before Grade: de / des after every quantity word, and c'est / s'est
+(is it se + verb?). Écrit candidates: si + imparfait / conditionnel, ça s'est fait / il s'est passé.
