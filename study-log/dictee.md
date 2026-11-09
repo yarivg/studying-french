@@ -28,7 +28,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 19 | 2026-11-05 | FWP #6, 9:01-12:32 | 4/12 (19 word errors, 1.6 per sentence; `urgences`, `diagnostic` helped by word questions) | 12/12 | 4 |
 | 20 | 2026-11-05 | innerFrench E191 "S'ennuyer au travail, le secret du bonheur ?" (`nMw-ajbpHhs`), 0:14-4:00, two speakers, new | 5/12 (10 word errors, 0.8 per sentence; word questions touched 5 sentences) | 12/12 | 4 |
 | 22 | 2026-11-08 | innerFrench E119 "Le télétravail va-t-il changer la société ?" (`vfyMakR2bds`), 0:13-4:58, new video, Sat 19:10 | 2/12 (25 word errors, 2.1 per sentence) | 12/12 | 3 |
-| 23 | 2026-11-09 | innerFrench E119 (`vfyMakR2bds`), 4:58-9:47, cold listen 1x no subs first (~85%) | 1/12 (19 word errors, 1.6 per sentence) | - | - |
+| 23 | 2026-11-09 | innerFrench E119 (`vfyMakR2bds`), 4:58-9:47, cold listen 1x no subs first (~85%) | 1/12 (19 word errors, 1.6 per sentence) | 12/12 | 3 |
 
 ## Dictée 1
 
@@ -622,7 +622,9 @@ first time: dic-270 (manque de chance, Varsovie, Cracovie).
 
 **Silent grammar (about 5):** `ça c'est fait` twice for `ça s'est fait` (se faire, reflexive: s'est),
 `j'aurai` for `j'aurais` (conditional after je savais que), `tu a` for `tu as`, `scénarios` plural.
-Typos: `mangers`, `avior`.
+Typos: `mangers`, `avior`. Without the two typos and `tu a`: 3/12.
+
+Redo: 11/12, then 12/12 (3 attempts). Closed.
 
 Right: `réticentes` (feminine plural), `étaient` twice, `n'avaient`, `voulait`, `pris goût`, `il a fallu`,
 `pour que la situation change`, `je me suis dit que`.
