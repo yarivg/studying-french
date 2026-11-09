@@ -210,9 +210,26 @@ window.Quiz = (function () {
     var s = session;
     if (!s) return;
     Progress.gradeCard(s.queue[s.index], correct);
-    if (correct) s.right++; else s.wrong++;
+    if (correct) s.right++;
+    else { s.wrong++; (s.missed = s.missed || []).push(s.byId[s.queue[s.index]]); }
     s.index++;
     renderCard();
+  }
+
+  // The words missed this session, French and English side by side, each
+  // with its own play button, so the end screen is a last look before leaving.
+  function missedHtml(list) {
+    if (!list.length) return '';
+    var seen = {};
+    var rows = list.filter(function (c) { var k = c.wordId || c.id; if (seen[k]) return false; seen[k] = 1; return true; })
+      .map(function (c) {
+        var en = c.frOnFront ? c.back : c.front;
+        var fr = c.fr || (c.frOnFront ? c.front : c.back);
+        return '<li>' +
+          (window.Say && Say.supported() ? '<button class="btn btn-sm" type="button" data-say="' + escapeAttr(fr) + '" aria-label="Hear it">🔊</button> ' : '') +
+          '<strong>' + escapeHtml(fr) + '</strong> — ' + escapeHtml(en) + '</li>';
+      }).join('');
+    return '<div class="flash-missed"><p><strong>Missed this time</strong></p><ul>' + rows + '</ul></div>';
   }
 
   function renderSummary() {
@@ -222,11 +239,16 @@ window.Quiz = (function () {
       '<div class="empty">' +
         '<div class="empty-icon">' + (pct >= 80 ? '🎉' : pct >= 50 ? '👍' : '💪') + '</div>' +
         '<p style="font-size:1.3rem;color:var(--ink)"><strong>' + s.right + ' / ' + s.total + '</strong> — ' + pct + '%</p>' +
-        '<p>Cards you missed come back tomorrow; the rest move up a box.' +
+        '<p>Cards you missed stay due today, so the next session starts with them; the rest move up a box.' +
           (s.retired ? ' ' + s.retired + ' word' + (s.retired === 1 ? '' : 's') +
             ' retired as known and gone from the decks.' : '') + '</p>' +
-        '<p style="margin-top:1.2rem"><button class="btn btn-primary btn-lg" data-act="again">Review again</button></p>' +
+        missedHtml(s.missed || []) +
+        '<p style="margin-top:1.2rem">' +
+          (s.missed && s.missed.length ? '<button class="btn btn-primary btn-lg" data-act="missed">Review the missed ones</button> ' : '') +
+          '<button class="btn' + (s.missed && s.missed.length ? '' : ' btn-primary') + ' btn-lg" data-act="again">Review again</button></p>' +
       '</div>';
+    var missedBtn = s.container.querySelector('[data-act="missed"]');
+    if (missedBtn) missedBtn.addEventListener('click', function () { startSession(s.container, s.missed, { all: true }); });
     var again = s.container.querySelector('[data-act="again"]');
     var cards = Object.keys(s.byId).map(function (k) { return s.byId[k]; });
     again.addEventListener('click', function () { startSession(s.container, cards, {}); });

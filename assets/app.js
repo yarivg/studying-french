@@ -1735,7 +1735,7 @@
       var known = Progress.knownCount();
       var html = '<h1>Flashcards</h1>' +
         '<p class="lead">Leitner spaced repetition: a card you get right moves up a box and comes ' +
-        'back later (1, 2, 5, 10, 21, then 45 days). Get it wrong and it drops back to daily.</p>' +
+        'back later (1, 2, 5, 10, 21, then 45 days). Get it wrong and it is due again the same day, then climbs from 1 day.</p>' +
         (known
           ? '<p class="deck-note">' + known + ' word' + (known === 1 ? '' : 's') +
             ' you marked as known ' + (known === 1 ? 'is' : 'are') + ' held out of every deck. ' +
