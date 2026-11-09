@@ -243,3 +243,12 @@ More (same method): French Mornings Ep47 love (`a3wl2-Ul7rU`) 187, Ep69 summer (
 Ep72 protest rights (`oHManclewi4`) 142, Ep49 savoir-vivre 209; Easy French brothers and sisters
 (`RYMrofsNQKk`) 176; FWP [98] France moche (`ubkBn9o3fbc`) 177, [104] too expensive (`KhaIVtRCgVw`)
 191, #93 bio 201. French Mornings Ep27 already seen (late Oct), not used for no-subs.
+
+### 2026-11-09: daily flashcards added to the skeleton
+
+Le Carnet Flashcards, every day, about 15 min, outside the study session:
+- Morning (before work or on the way): **due cards, listen-only mode** (FR -> EN), until nothing is due.
+- Evening, after adding words: **last 2 days deck**, reading mode, one or two sessions of 25.
+- Retire words known from English on first sight ("I know this").
+Intervals are formula v1 from `memory.md` (7, 18, 45, 110 days; wrong = same day; after a miss 2 then 7).
+Load guide: at about 70 new words a day, expect 80-120 reviews a day once the 7-day returns start (from 2026-11-16).
