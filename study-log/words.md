@@ -52,6 +52,17 @@ Retests heard 10/14 (words-1 same words: 6/14 on the not-heard / blank list).
   échapper à, faire semblant, se rapprocher.
 - Key widened: `le delay` for délai (spelling), `to re-catch` for rattraper (rattraper un ballon).
 
+## Sens en contexte 1: 2026-11-10
+
+Multiple choice: 40 words he added on 11-06..08, each in a context sentence, 5 English options plus
+"? no idea". One question per screen, keys 1-5, graded on Submit. **30/40 (75%), target 28 met.**
+All 10 misses were "no idea", none a wrong guess.
+
+- Recognised only once he saw the options (marked no idea on purpose, right call): s'y mettre,
+  prendre le pli, au bout de, cramé (did not know cramer = to burn), gâter (guessed from context).
+- Unknown: rétablir, piéger, vaciller, fliquer, supplier.
+- Right but unsure without context: méditer.
+
 ## Next
 
 - words-4 retests cold: se plaindre and péter les plombs (fourth: give them a sentence where the
@@ -59,3 +70,5 @@ Retests heard 10/14 (words-1 same words: 6/14 on the not-heard / blank list).
   plus the 5 not answered (inconscient, atroce, ignoble, la fuite, obéir).
 - Type a meaning for every word, even a guess: a blank meaning cannot be told apart from not knowing.
 - Click the meaning self-marks before copying the report (third time not clicked).
+- Add the 10 Sens 1 misses to words-4: rétablir, cramé, gâter, piéger, vaciller, fliquer, s'y mettre,
+  supplier, prendre le pli, au bout de.

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sens en contexte 1</title>
+<link rel="stylesheet" href="drill.css">
+<style>
+.opts{display:grid;gap:6px;margin:8px 0}
+.opts button{text-align:left;padding:8px 10px;font-size:15px;border:1px solid #bbb;border-radius:6px;background:transparent;color:inherit;cursor:pointer}
+.opts button.right{border-color:#2a7a2a;background:rgba(42,122,42,.15);font-weight:600}
+.opts button.wrong{border-color:#b33;background:rgba(187,51,51,.15);text-decoration:line-through}
+.opts button:disabled{cursor:default}
+.s b{background:rgba(255,200,0,.3);padding:0 2px;border-radius:3px}
+.tally{position:sticky;top:0;padding:6px 0;font-weight:600;background:inherit}
+.grid{display:flex;flex-wrap:wrap;gap:4px;margin:10px 0}
+.grid button{width:26px;height:26px;padding:0;font-size:11px;border:1px solid #999;border-radius:4px;background:transparent;color:inherit;cursor:pointer}
+.grid button.ok{background:#2a7a2a;border-color:#2a7a2a;color:#fff}
+.grid button.bad{background:#b33;border-color:#b33;color:#fff}
+.grid button.ans{background:#3b6fb6;border-color:#3b6fb6;color:#fff}
+.opts button.sel{border-color:#3b6fb6;background:rgba(59,111,182,.18);font-weight:600}
+.grid button.cur{outline:2px solid #e0a800;outline-offset:1px}
+.card{border:1px solid #bbb;border-radius:8px;padding:12px 14px;margin:8px 0}
+.card .num{opacity:.6;font-size:13px}
+.opts button kbd{display:inline-block;min-width:18px;text-align:center;font-size:12px;border:1px solid #999;border-radius:3px;margin-right:8px;opacity:.8}
+.nav{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.keys{font-size:13px;opacity:.7}
+</style></head><body>
+<main id="app"></main>
+<script>
+var KEY='sens-1';
+var IT=[{"id": "s01", "fr": "renforcer", "s": "Ces exercices vont renforcer les muscles du dos.", "hl": "renforcer", "opts": ["to get, understand (slang)", "to give, pass (slang)", "to wobble, sway", "to strengthen", "to restore"], "ok": 3, "g": "to strengthen"}, {"id": "s02", "fr": "une exigence", "s": "Ce poste a beaucoup d'exigences : anglais courant et cinq ans d'expérience.", "hl": "exigences", "opts": ["a scam, rip-off", "gladly, I'd love to", "a requirement", "to get down to it, get started", "ages ago"], "ok": 2, "g": "a requirement"}, {"id": "s03", "fr": "déplacé", "s": "Sa blague sur les femmes était complètement déplacée.", "hl": "déplacée", "opts": ["inappropriate, out of line", "exhausted, burnt out", "pathetic, lame", "unhealthy", "extraordinary"], "ok": 0, "g": "inappropriate, out of line"}, {"id": "s04", "fr": "promouvoir", "s": "Le ministre veut promouvoir le français à l'étranger.", "hl": "promouvoir", "opts": ["to wobble, sway", "to give rise to, spark", "to promote", "to strengthen", "to occur, happen"], "ok": 2, "g": "to promote"}, {"id": "s05", "fr": "malsain", "s": "Cette relation est malsaine : ils se disputent tous les jours.", "hl": "malsaine", "opts": ["thorny, tricky", "unhealthy", "attractive", "pathetic, lame", "extraordinary"], "ok": 1, "g": "unhealthy"}, {"id": "s06", "fr": "bluffant", "s": "Le spectacle était bluffant : personne n'a compris le tour de magie.", "hl": "bluffant", "opts": ["stunning, amazing", "extraordinary", "ashamed", "exhausted, burnt out", "inappropriate, out of line"], "ok": 0, "g": "stunning, amazing"}, {"id": "s07", "fr": "valoriser", "s": "Cette entreprise valorise beaucoup l'expérience de ses salariés.", "hl": "valorise", "opts": ["to promote", "to testify", "to cause", "to value, recognise", "to give, pass (slang)"], "ok": 3, "g": "to value, recognise"}, {"id": "s08", "fr": "du fait de", "s": "Du fait de la grève, tous les trains sont annulés.", "hl": "Du fait de", "opts": ["because of", "that said, having said that", "to get down to it, get started", "first thing, straight out of bed", "behind the scenes, backstage"], "ok": 0, "g": "because of"}, {"id": "s09", "fr": "honteux", "s": "Il était honteux d'avoir menti à ses parents.", "hl": "honteux", "opts": ["attractive", "thorny, tricky", "extraordinary", "ashamed", "inappropriate, out of line"], "ok": 3, "g": "ashamed"}, {"id": "s10", "fr": "épineux", "s": "La question de l'héritage est épineuse dans cette famille.", "hl": "épineuse", "opts": ["pathetic, lame", "stunning, amazing", "thorny, tricky", "extraordinary", "exhausted, burnt out"], "ok": 2, "g": "thorny, tricky"}, {"id": "s11", "fr": "survenir", "s": "L'accident est survenu vers trois heures du matin.", "hl": "survenu", "opts": ["to occur, happen", "to strengthen", "to cause", "to value, recognise", "to get, understand (slang)"], "ok": 0, "g": "to occur, happen"}, {"id": "s12", "fr": "provoquer", "s": "La pluie a provoqué plusieurs accidents sur l'autoroute.", "hl": "provoqué", "opts": ["to give rise to, spark", "to cause", "to promote", "to sort things out yourself (slang)", "to trap, trick"], "ok": 1, "g": "to cause"}, {"id": "s13", "fr": "filer", "s": "Tu peux me filer ton chargeur ?", "hl": "filer", "opts": ["to reflect on, ponder", "to trap, trick", "to strengthen", "to give rise to, spark", "to give, pass (slang)"], "ok": 4, "g": "to give, pass (slang)"}, {"id": "s14", "fr": "il y a belle lurette", "s": "Il y a belle lurette que je ne suis pas allé au cinéma.", "hl": "Il y a belle lurette", "opts": ["ages ago", "to get into the habit", "the other way round, conversely", "a scam, rip-off", "that said, having said that"], "ok": 0, "g": "ages ago"}, {"id": "s15", "fr": "cela dit", "s": "Le film est trop long. Cela dit, les acteurs sont excellents.", "hl": "Cela dit", "opts": ["ages ago", "to get into the habit", "that said, having said that", "to get down to it, get started", "behind the scenes, backstage"], "ok": 2, "g": "that said, having said that"}, {"id": "s16", "fr": "méditer", "s": "Avant de répondre, il a longtemps médité sur sa proposition.", "hl": "médité", "opts": ["to get, understand (slang)", "to strengthen", "to reflect on, ponder", "to promote", "to give rise to, spark"], "ok": 2, "g": "to reflect on, ponder"}, {"id": "s17", "fr": "les coulisses", "s": "Le documentaire montre les coulisses du festival de Cannes.", "hl": "coulisses", "opts": ["it's about", "gladly, I'd love to", "behind the scenes, backstage", "a scam, rip-off", "the other way round, conversely"], "ok": 2, "g": "behind the scenes, backstage"}, {"id": "s18", "fr": "se démerder", "s": "Personne ne va t'aider, démerde-toi.", "hl": "démerde-toi", "opts": ["to restore", "to spoil (a person)", "to occur, happen", "to cause", "to sort things out yourself (slang)"], "ok": 4, "g": "to sort things out yourself (slang)"}, {"id": "s19", "fr": "rétablir", "s": "La police a rétabli l'ordre dans le quartier.", "hl": "rétabli", "opts": ["to restore", "to reflect on, ponder", "to testify", "to promote", "to strengthen"], "ok": 0, "g": "to restore"}, {"id": "s20", "fr": "cramé", "s": "Après trois nuits sans dormir, je suis complètement cramé.", "hl": "cramé", "opts": ["exhausted, burnt out", "stunning, amazing", "inappropriate, out of line", "pathetic, lame", "unhealthy"], "ok": 0, "g": "exhausted, burnt out"}, {"id": "s21", "fr": "volontiers", "s": "Tu veux un café ? Volontiers !", "hl": "Volontiers", "opts": ["to get down to it, get started", "ages ago", "according to", "it's about", "gladly, I'd love to"], "ok": 4, "g": "gladly, I'd love to"}, {"id": "s22", "fr": "d'après", "s": "D'après la météo, il va neiger demain.", "hl": "D'après", "opts": ["it's about", "behind the scenes, backstage", "gladly, I'd love to", "according to", "a requirement"], "ok": 3, "g": "according to"}, {"id": "s23", "fr": "gâter", "s": "Sa grand-mère le gâte trop : il a tout ce qu'il veut.", "hl": "gâte", "opts": ["to cause", "to spoil (a person)", "to get, understand (slang)", "to promote", "to testify"], "ok": 1, "g": "to spoil (a person)"}, {"id": "s24", "fr": "piéger", "s": "Il s'est fait piéger par une fausse annonce sur internet.", "hl": "piéger", "opts": ["to trap, trick", "to give, pass (slang)", "to testify", "to restore", "to beg"], "ok": 0, "g": "to trap, trick"}, {"id": "s25", "fr": "vaciller", "s": "Après deux verres de vin, il vacillait en marchant.", "hl": "vacillait", "opts": ["to sort things out yourself (slang)", "to wobble, sway", "to trap, trick", "to value, recognise", "to promote"], "ok": 1, "g": "to wobble, sway"}, {"id": "s26", "fr": "séduisant", "s": "Il est séduisant, mais il ne parle que de lui.", "hl": "séduisant", "opts": ["ashamed", "thorny, tricky", "inappropriate, out of line", "extraordinary", "attractive"], "ok": 4, "g": "attractive"}, {"id": "s27", "fr": "témoigner", "s": "Plusieurs voisins ont accepté de témoigner devant le juge.", "hl": "témoigner", "opts": ["to occur, happen", "to cause", "to testify", "to wobble, sway", "to reflect on, ponder"], "ok": 2, "g": "to testify"}, {"id": "s28", "fr": "fliquer", "s": "Mon chef me flique : il vérifie chaque minute de ma journée.", "hl": "flique", "opts": ["to give rise to, spark", "to restore", "to sort things out yourself (slang)", "to keep tabs on, watch (slang)", "to beg"], "ok": 3, "g": "to keep tabs on, watch (slang)"}, {"id": "s29", "fr": "une arnaque", "s": "Un iPhone à cinquante euros ? C'est une arnaque.", "hl": "arnaque", "opts": ["that said, having said that", "it's about", "a requirement", "a scam, rip-off", "because of"], "ok": 3, "g": "a scam, rip-off"}, {"id": "s30", "fr": "il s'agit de", "s": "Dans ce livre, il s'agit d'une famille qui perd tout.", "hl": "il s'agit d'", "opts": ["gladly, I'd love to", "ages ago", "the other way round, conversely", "it's about", "behind the scenes, backstage"], "ok": 3, "g": "it's about"}, {"id": "s31", "fr": "susciter", "s": "Sa décision a suscité beaucoup de critiques.", "hl": "suscité", "opts": ["to give rise to, spark", "to beg", "to get, understand (slang)", "to occur, happen", "to give, pass (slang)"], "ok": 0, "g": "to give rise to, spark"}, {"id": "s32", "fr": "s'y mettre", "s": "Les examens sont dans un mois, il faut que je m'y mette.", "hl": "m'y mette", "opts": ["to get down to it, get started", "according to", "after (a length of time)", "to get into the habit", "that said, having said that"], "ok": 0, "g": "to get down to it, get started"}, {"id": "s33", "fr": "supplier", "s": "Elle l'a supplié de rester.", "hl": "supplié", "opts": ["to sort things out yourself (slang)", "to strengthen", "to beg", "to give, pass (slang)", "to cause"], "ok": 2, "g": "to beg"}, {"id": "s34", "fr": "inversement", "s": "Je l'aide en maths et, inversement, elle m'aide en anglais.", "hl": "inversement", "opts": ["a scam, rip-off", "after (a length of time)", "behind the scenes, backstage", "the other way round, conversely", "that said, having said that"], "ok": 3, "g": "the other way round, conversely"}, {"id": "s35", "fr": "au saut du lit", "s": "Au saut du lit, il boit un grand café.", "hl": "Au saut du lit", "opts": ["first thing, straight out of bed", "gladly, I'd love to", "a scam, rip-off", "the other way round, conversely", "to get down to it, get started"], "ok": 0, "g": "first thing, straight out of bed"}, {"id": "s36", "fr": "hors du commun", "s": "C'est une femme hors du commun : elle parle sept langues.", "hl": "hors du commun", "opts": ["stunning, amazing", "inappropriate, out of line", "exhausted, burnt out", "attractive", "extraordinary"], "ok": 4, "g": "extraordinary"}, {"id": "s37", "fr": "minable", "s": "Il a été minable : il a quitté sa copine par SMS.", "hl": "minable", "opts": ["ashamed", "unhealthy", "pathetic, lame", "attractive", "stunning, amazing"], "ok": 2, "g": "pathetic, lame"}, {"id": "s38", "fr": "prendre le pli", "s": "Au début, se lever à six heures était dur, mais j'ai pris le pli.", "hl": "pris le pli", "opts": ["to get into the habit", "a requirement", "the other way round, conversely", "after (a length of time)", "because of"], "ok": 0, "g": "to get into the habit"}, {"id": "s39", "fr": "au bout de", "s": "Au bout de deux heures d'attente, on est partis.", "hl": "Au bout de", "opts": ["the other way round, conversely", "after (a length of time)", "because of", "that said, having said that", "first thing, straight out of bed"], "ok": 1, "g": "after (a length of time)"}, {"id": "s40", "fr": "capter", "s": "Je n'ai rien capté à son explication.", "hl": "capté", "opts": ["to beg", "to wobble, sway", "to strengthen", "to get, understand (slang)", "to restore"], "ok": 3, "g": "to get, understand (slang)"}]
+;
+var st;try{st=JSON.parse(localStorage.getItem(KEY))||{};}catch(e){st={};}
+st.a=st.a||{};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}}
+var voice=null;
+function pick(){var vs=speechSynthesis.getVoices();voice=vs.filter(function(v){return /google/i.test(v.name)&&/^fr(-|_)FR/i.test(v.lang);})[0]||vs.filter(function(v){return /^fr/i.test(v.lang);})[0]||null;}
+if(window.speechSynthesis){pick();speechSynthesis.onvoiceschanged=pick;}
+function say(t){speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='fr-FR';u.rate=0.95;if(voice)u.voice=voice;speechSynthesis.speak(u);}
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
+function btn(x,f){var b=el('button',null,x);b.type='button';b.onclick=f;return b;}
+function tally(){var n=0,ok=0;IT.forEach(function(it){if(st.a[it.id]!=null){n++;if(st.a[it.id]===it.ok)ok++;}});return {n:n,ok:ok};}
+function report(){var t=tally(),L=['Sens en contexte 1: '+t.ok+'/'+t.n+' right ('+IT.length+' items)','Missed:'];
+ IT.forEach(function(it){var a=st.a[it.id];if(a!=null&&a!==it.ok)L.push('- '+it.fr+' = '+it.g+' (chose: '+(a<0?'no idea':it.opts[a])+')');});
+ var un=IT.filter(function(it){return st.a[it.id]==null;}).map(function(it){return it.fr;});if(un.length)L.push('Not answered: '+un.join(', '));
+ return L.join('\n');}
+function next(from){for(var k=1;k<=IT.length;k++){var n=(from+k)%IT.length;if(st.a[IT[n].id]==null)return n;}return -1;}
+if(st.cur==null||st.cur>=IT.length)st.cur=Math.max(0,next(-1));
+var adv=null;
+function go(n){clearTimeout(adv);adv=null;if(n<0||n>=IT.length)return;st.cur=n;save();render();}
+function answer(idx){if(st.sub)return;var it=IT[st.cur];var first=st.a[it.id]==null;st.a[it.id]=idx;save();render();
+ clearTimeout(adv);var n=next(st.cur);if(first&&n>=0)adv=setTimeout(function(){go(n);},350);}
+function submit(){var left=IT.length-tally().n;if(left&&!confirm(left+' not answered. Submit anyway?'))return;st.sub=true;save();render();}
+function render(){var r=document.getElementById('app');r.innerHTML='';
+ r.appendChild(el('h1',null,'Sens en contexte 1'));
+ var t=tally();r.appendChild(el('p','tally',st.sub?(t.ok+' / '+IT.length+' right'):(t.n+' answered, '+(IT.length-t.n)+' left')));
+ var g=el('div','grid');
+ IT.forEach(function(it,n){var a=st.a[it.id];var b=btn(String(n+1),function(){go(n);});
+  var cl=a==null?'':(st.sub?(a===it.ok?'ok':'bad'):'ans');b.className=cl+(n===st.cur?' cur':'');b.title=a==null?'not answered':'answered';g.appendChild(b);});
+ r.appendChild(g);
+ var it=IT[st.cur],a=st.a[it.id];
+ var c=el('div','card');c.appendChild(el('p','num',(st.cur+1)+' / '+IT.length+(a==null?' · not answered':'')));
+ var p=el('p','s');p.appendChild(btn('▶',function(){say(it.s);}));p.appendChild(document.createTextNode(' '));
+ var i=it.s.indexOf(it.hl);p.appendChild(document.createTextNode(it.s.slice(0,i)));p.appendChild(el('b',null,it.hl));p.appendChild(document.createTextNode(it.s.slice(i+it.hl.length)));c.appendChild(p);
+ var o=el('div','opts');
+ it.opts.concat(['? no idea']).forEach(function(x,k){var idx=k<5?k:-1;var b=btn('',function(){answer(idx);});
+  b.appendChild(el('kbd',null,k<5?String(k+1):'0'));b.appendChild(document.createTextNode(x));
+  if(st.sub){b.disabled=true;if(k===it.ok)b.className='right';else if(idx===a)b.className='wrong';}
+  else if(idx===a)b.className='sel';o.appendChild(b);});
+ c.appendChild(o);
+ if(st.sub)c.appendChild(el('p','why',it.fr+' = '+it.g+(a===it.ok?'  ✓':'  ✗')));
+ r.appendChild(c);
+ var nv=el('div','nav');
+ nv.appendChild(btn('← Prev',function(){go(st.cur-1);}));
+ nv.appendChild(btn('Next →',function(){go(st.cur+1);}));
+ if(!st.sub){var nx=next(st.cur);nv.appendChild(btn(nx<0?'All answered':'Next unanswered (Enter)',function(){if(nx>=0)go(nx);}));
+  var sb=btn('Submit',submit);sb.style.fontWeight='600';nv.appendChild(sb);}
+ r.appendChild(nv);
+ r.appendChild(el('p','keys',st.sub?'Graded. ←/→ to review, Space to hear.':'Keys: 1-5 choose (you can change it until Submit), 0 or ? no idea, Enter next unanswered, ←/→ move, Space hear. Submit grades everything at once.'));
+ var bar=el('p');
+ if(st.sub){bar.appendChild(btn('Copy report',function(){navigator.clipboard.writeText(report());}));bar.appendChild(document.createTextNode(' '));}
+ bar.appendChild(btn('Clear all',function(){if(confirm('Clear everything?')){st={a:{},cur:0};save();render();}}));r.appendChild(bar);
+ if(st.sub)r.appendChild(el('pre',null,report()));}
+document.addEventListener('keydown',function(e){if(e.metaKey||e.ctrlKey||e.altKey)return;var k=e.key;
+ if(k>='1'&&k<='5'){answer(+k-1);e.preventDefault();}
+ else if(k==='0'||k==='?'){answer(-1);e.preventDefault();}
+ else if(k==='Enter'){var n=next(st.cur);if(n>=0)go(n);e.preventDefault();}
+ else if(k==='ArrowRight'){go(st.cur+1);e.preventDefault();}
+ else if(k==='ArrowLeft'){go(st.cur-1);e.preventDefault();}
+ else if(k===' '){say(IT[st.cur].s);e.preventDefault();}});
+render();
+</script></body></html>
