@@ -7,6 +7,7 @@ Graded by first attempt; spelling-only slips count as heard.
 |---|---|---|---|---|---|
 | 1 | 2026-11-07 | 30 | 21/30 | 19/30 | 5 blank (didn't know); w13 first typed `punir` |
 | 2 | 2026-11-08 | 30 | 23/30 | 20/30 | 3 blank (w40, w43, w50); meaning graded by me (self-marks not clicked); `acueillir` counted heard |
+| 3 | 2026-11-09 | 30 (11 retests + 19 from Dix pour cent) | 20/30 | 11/30 | 5 not answered (w72, w77, w78, w82, w84); 13 meanings left blank, counted unknown; self-marks not clicked again, graded by me; `le delay` counted heard |
 
 ## Mots à l'oreille 1
 
@@ -36,8 +37,25 @@ Retests heard 10/14 (words-1 same words: 6/14 on the not-heard / blank list).
   larguer, décaler, en matière de.
 - Key widened: `acueillir` (spelling only).
 
+## Mots à l'oreille 3
+
+2026-11-09, evening. **Heard 20/30, meaning 11/30.** Retests heard 8/11.
+
+- Not heard, third time: se plaindre (typed `le chef`, the next word), péter les plombs (`peter`,
+  plombs lost again). Second time: revendiquer (typed `salarié`, the subject before it).
+  Pattern: when the target is lost he types a neighbouring word he does know.
+- Not heard, new: s'enfuir (`flippant`), mériter (`riter`, the first syllable lost).
+- Meaning wrong: un délai (`delay`: false friend, it is the time allowed), s'enfuir.
+- Meaning blank on words he heard: constater (third time), n'empêche que, virer, débordé, gémir,
+  mériter, couler, morfler, aspirer à, péter les plombs. Blank counts as unknown.
+- Right meaning: bouleverser, vexer, au sein de, émeute, désaccord, percuter, rattraper, menacer,
+  échapper à, faire semblant, se rapprocher.
+- Key widened: `le delay` for délai (spelling), `to re-catch` for rattraper (rattraper un ballon).
+
 ## Next
 
-- words-3 retests cold: se plaindre, bouleverser, vexer, au sein de, constater, émeute, péter les
-  plombs, revendiquer, n'empêche que, virer. Plus a désaccord / accord pair.
-- Click the meaning self-marks before copying the report (2 showed 0/27 because none were clicked).
+- words-4 retests cold: se plaindre and péter les plombs (fourth: give them a sentence where the
+  word comes first), revendiquer, constater, n'empêche que, virer, s'enfuir, mériter, un délai,
+  plus the 5 not answered (inconscient, atroce, ignoble, la fuite, obéir).
+- Type a meaning for every word, even a guess: a blank meaning cannot be told apart from not knowing.
+- Click the meaning self-marks before copying the report (third time not clicked).
