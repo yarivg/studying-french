@@ -58,3 +58,24 @@ Goal: finish S1 (6 episodes) by 2026-11-16. French audio, French subs.
   les entrailles: the subtitle wrote dévorée, wrong) vs person as direct object, agreement (ils vous ont dévorée)
 - vouloir que + subj (que tu le voies), pour que + subj in the negative (pour qu'on ne soit pas)
 - excuser qqn de ne pas + inf, faire semblant de, penser à + inf (à, not de)
+
+| 5 | 2026-11-09 | not given; full episode in one sitting (02:05-03:45), 29 words added |
+
+## Deck 9 candidates from E5
+
+- si je te fais chier, tu me le dis (present as soft order), s'en foutre (royalement) / s'en ficher, inconscient (= reckless)
+- percuter / se percuter (slang: t'as pas percuté ?), se droguer vs droguer qqn, être débordé / déborder, là (= right now)
+- dix contre un que, se faire qqn, je risque pas de + inf, s'enfuir (il s'est enfui), elle te dit pas tout
+- demander des comptes à qqn / rendre des comptes, jusqu'à la fin de mes jours, mettre la misère à qqn, les notes de frais
+- c'est atroce, ce foin (dislocation), là-dedans, des bêtes, rattraper le retard, ignoble, avoir les pores dilatés
+- gémir / râler / chouiner, la misère (= poverty, false friend), vierge / puceau
+
+## Écrit candidates from E5
+
+- Pronoun pairs: me le / te la / le leur (vous le leur annoncez, tu me le dis, tu peux te la faire)
+- risquer de + inf, échapper à, obéir à (indirect object: lui / leur)
+- avoir + les + body part + adjective (j'ai les pores dilatés, j'ai les mains froides), not mes
+
+Gist glosses to fix: percuter = crash into (not crush); x contre y = odds in the same order as English
+(dix contre un = ten to one); être en rut = to be in heat; menacer = to threaten; rattraper = to catch up;
+la bénédiction = blessing; Le prophète = the prophet.
