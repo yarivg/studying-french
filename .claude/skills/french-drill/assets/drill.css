@@ -26,3 +26,5 @@ textarea { width: 100%; font: inherit; padding: 8px; border: 1px solid var(--lin
 .bad .verdict { color: var(--bad); }
 .why { margin: 4px 0 0; color: var(--muted); }
 .report-box { height: 200px; margin-top: 16px; }
+
+u.miss{text-decoration:underline wavy #c0392b;text-decoration-thickness:2px;text-underline-offset:3px;font-weight:600}

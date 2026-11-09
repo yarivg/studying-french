@@ -52,14 +52,16 @@
   // Word errors: fewest word edits from the answer to any accepted variant.
   // Words are compared like the grader compares sentences; two words that join
   // into one (dis lui / dis-lui) cost nothing.
-  var VARS = {};
+  var VARS = {}, VRAW = {};
   QS.forEach(function (q) {
     var v = [];
-    q.a.forEach(function (a) { expand(a).forEach(function (x) { if (v.length < 5000) v.push(words(x)); }); });
-    VARS[q.id] = v;
+    var raw = [];
+    q.a.forEach(function (a) { expand(a).forEach(function (x) { if (v.length < 5000) { v.push(words(x)); raw.push(x.split(/\s+/).filter(function (t) { return norm(t); })); } }); });
+    VARS[q.id] = v; VRAW[q.id] = raw;
   });
   function words(t) { return t.split(/\s+/).map(norm).filter(Boolean); }
-  function dist(a, b) {
+  function dist(a, b) { var d = table(a, b); return d[a.length][b.length]; }
+  function table(a, b) {
     var n = a.length, m = b.length, d = [], i, j;
     for (i = 0; i <= n; i++) { d.push([i]); }
     for (j = 1; j <= m; j++) d[0][j] = j;
@@ -69,7 +71,25 @@
       if (j > 1 && b[j - 2] + b[j - 1] === a[i - 1]) x = Math.min(x, d[i - 1][j - 2]);
       d[i][j] = x;
     }
-    return d[n][m];
+    return d;
+  }
+  // Closest accepted variant to the answer, with the key words the answer got wrong or left out.
+  function marks(q, ans) {
+    var w = words(ans || ''), vs = VARS[q.id], bi = 0, bd = Infinity;
+    vs.forEach(function (v, k) { if (bd) { var x = dist(w, v); if (x < bd) { bd = x; bi = k; } } });
+    var b = vs[bi], raw = VRAW[q.id][bi], d = table(w, b), i = w.length, j = b.length, bad = {};
+    while (i > 0 || j > 0) {
+      if (i > 0 && j > 0 && d[i][j] === d[i - 1][j - 1] + (w[i - 1] === b[j - 1] ? 0 : 1)) { if (w[i - 1] !== b[j - 1]) bad[j - 1] = 1; i--; j--; }
+      else if (i > 1 && j > 0 && w[i - 2] + w[i - 1] === b[j - 1] && d[i][j] === d[i - 2][j - 1]) { i -= 2; j--; }
+      else if (j > 1 && i > 0 && b[j - 2] + b[j - 1] === w[i - 1] && d[i][j] === d[i - 1][j - 2]) { i--; j -= 2; }
+      else if (j > 0 && d[i][j] === d[i][j - 1] + 1) { bad[j - 1] = 1; j--; }
+      else i--;
+    }
+    return { raw: raw, bad: bad };
+  }
+  function markedText(q, ans) {
+    var m = marks(q, ans);
+    return m.raw.map(function (t, k) { return m.bad[k] ? '[' + t + ']' : t; }).join(' ');
   }
   function errCount(q, ans) {
     var w = words(ans), best = Infinity;
@@ -185,7 +205,7 @@
     L.push('', '## Wrong first time', '');
     QS.forEach(function (q) {
       var x = st.first[q.id];
-      if (x && !x.ok) L.push('- `' + q.id + '` ' + q.en + ' (' + x.err + ' word error' + (x.err === 1 ? '' : 's') + (x.spoken ? ', spoken' : '') + ')', '  - wrote: ' + x.ans, '  - key: ' + model(q));
+      if (x && !x.ok) L.push('- `' + q.id + '` ' + q.en + ' (' + x.err + ' word error' + (x.err === 1 ? '' : 's') + (x.spoken ? ', spoken' : '') + ')', '  - wrote: ' + x.ans, '  - key: ' + markedText(q, x.ans));
     });
     L.push('', '## History', '');
     st.history.forEach(function (h, i) {
@@ -304,7 +324,18 @@
       if (shown) {
         var fb = el('div', 'fb');
         var fe = st.first[id], tag = fe && !fe.ok && fe.err != null ? '  (first try: ' + fe.err + ' word error' + (fe.err === 1 ? '' : 's') + ')' : '';
-        fb.appendChild(el('p', 'verdict', (ok ? '✓ ' : '✗ ') + model(q) + tag));
+        var vp = el('p', 'verdict');
+        if (ok) vp.textContent = '✓ ' + model(q) + tag;
+        else {
+          var mk = marks(q, st.answers[id] || (fe && fe.ans) || '');
+          vp.appendChild(document.createTextNode('✗ '));
+          mk.raw.forEach(function (t, k) {
+            if (k) vp.appendChild(document.createTextNode(' '));
+            vp.appendChild(mk.bad[k] ? el('u', 'miss', t) : document.createTextNode(t));
+          });
+          vp.appendChild(document.createTextNode(tag));
+        }
+        fb.appendChild(vp);
         if (q.why) fb.appendChild(el('p', 'why', q.why));
         li.appendChild(fb);
       }
