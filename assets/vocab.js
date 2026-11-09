@@ -704,7 +704,21 @@ window.Vocab = (function () {
     return out;
   }
 
+  // Your own words added in the last N days, ids like mine-2d-fr / mine-2d-en.
+  // Built on demand from the id, so any number of days works without a fixed list.
+  function recentWords(days) {
+    var since = Date.now() - days * 864e5;
+    return unknown(mine()).filter(function (w) { return (w.at || 0) >= since; });
+  }
+  function recentDeck(days, dir) {
+    return deck('mine-' + days + 'd-' + (dir === 'en-fr' ? 'en' : 'fr'),
+      'My words, last ' + days + ' day' + (days === 1 ? '' : 's') + (dir === 'en-fr' ? ' (EN → FR)' : ' (FR → EN)'),
+      recentWords(days), dir);
+  }
+
   function deckById(id) {
+    var m = /^mine-(\d{1,3})d-(fr|en)$/.exec(id);
+    if (m) return recentDeck(+m[1], m[2] === 'en' ? 'en-fr' : 'fr-en');
     var found = null;
     decks().forEach(function (d) { if (d.id === id) found = d; });
     return found;
@@ -724,7 +738,7 @@ window.Vocab = (function () {
     byTheme: byTheme, byId: byId, search: search,
     listHtml: listHtml, bindList: bindList,
     hydrateEmbeds: hydrateEmbeds, fillEmbed: fillEmbed,
-    decks: decks, deckById: deckById,
+    decks: decks, deckById: deckById, recentWords: recentWords,
     guess: guess, findExisting: findExisting, baseForm: baseForm, parseBulk: parseBulk, exportMine: exportMine,
     POS_LABEL: POS_LABEL, GENDER_LABEL: GENDER_LABEL
   };

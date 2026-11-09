@@ -1720,6 +1720,12 @@
 
   /* ---------------------------------------------------------- flashcards */
 
+  function recentDays() {
+    var n = 2;
+    try { n = parseInt(localStorage.getItem('carnet-recent-days'), 10) || 2; } catch (e) {}
+    return n;
+  }
+
   function renderDeckList() {
     setCurrentNav('cards');
     pager.innerHTML = '';
@@ -1739,6 +1745,12 @@
           : '<p class="deck-note">Marking a word known in the ' +
             '<a href="#/vocab">vocabulary list</a>, or retiring it mid-review, takes it out of ' +
             'every deck.</p>') +
+        '<form class="deck-recent" id="deck-recent">' +
+          '<label>My words from the last <input type="number" id="recent-days" min="1" max="365" value="' + recentDays() + '"> days</label> ' +
+          '<select id="recent-dir"><option value="fr">FR → EN</option><option value="en">EN → FR</option></select> ' +
+          '<button type="submit" class="btn">Start</button> ' +
+          '<span class="deck-meta" id="recent-count"></span>' +
+        '</form>' +
         '<div class="deck-grid">';
 
       Vocab.decks().forEach(function (d) {
@@ -1753,6 +1765,24 @@
           '</button>';
       });
       view.innerHTML = html + '</div>';
+
+      var daysIn = document.getElementById('recent-days');
+      var countRecent = function () {
+        var n = Math.max(1, Math.min(365, parseInt(daysIn.value, 10) || 1));
+        var words = Vocab.recentWords(n);
+        var ids = words.map(function (w) { return w.id + ':fr-en'; });
+        document.getElementById('recent-count').textContent =
+          words.length + ' word' + (words.length === 1 ? '' : 's') + ' · ' + Progress.dueCount(ids) + ' due';
+        return n;
+      };
+      daysIn.addEventListener('input', countRecent);
+      countRecent();
+      document.getElementById('deck-recent').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var n = countRecent();
+        try { localStorage.setItem('carnet-recent-days', String(n)); } catch (err) {}
+        location.hash = '#/cards/mine-' + n + 'd-' + document.getElementById('recent-dir').value;
+      });
 
       view.addEventListener('click', function (e) {
         var b = e.target.closest('[data-deck]');

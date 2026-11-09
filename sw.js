@@ -16,7 +16,7 @@
    Bump CACHE_VERSION to force a full refetch.
    ============================================================ */
 
-var CACHE_VERSION = 'le-carnet-v21';
+var CACHE_VERSION = 'le-carnet-v22';
 var SHELL = [
   './',
   'index.html',
@@ -233,7 +233,7 @@ self.addEventListener('message', function (event) {
       .then(function (r) {
         // Ready is measured against the required files only; the optional
         // test banks that do not exist must not hold the count back.
-        report({ type: 'status', cached: r[0].length, expected: r[1].required.length });
+        report({ type: 'status', cached: r[0].length, expected: r[1].required.length, version: CACHE_VERSION });
       });
   }
 });

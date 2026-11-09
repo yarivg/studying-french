@@ -27,7 +27,22 @@ window.Offline = (function () {
   function on(fn) { listeners.push(fn); return function () { emit(); }; }
   function emit() { listeners.forEach(function (fn) { fn(state); }); }
 
+  // The version shown in the top bar is the cache version of the worker in
+  // charge, so it names the build actually running, not the newest deployed.
+  // With no worker yet, read it out of sw.js.
+  function showVersion(v) {
+    var el = document.getElementById('appVersion');
+    if (el && v) el.textContent = String(v).replace(/^le-carnet-/, '');
+  }
+  function versionFromFile() {
+    if (!window.fetch) return;
+    fetch('sw.js', { cache: 'no-store' }).then(function (r) { return r.ok ? r.text() : ''; })
+      .then(function (t) { var m = /CACHE_VERSION\s*=\s*'([^']+)'/.exec(t || ''); if (m) showVersion(m[1]); })
+      .catch(function () {});
+  }
+
   function init() {
+    if (!(navigator.serviceWorker && navigator.serviceWorker.controller)) versionFromFile();
     if (state.embedded) {
       state.ready = true;
       paint();
@@ -54,6 +69,7 @@ window.Offline = (function () {
         state.done = d.cached;
         state.total = d.expected;
         state.ready = d.cached >= d.expected;
+        if (d.version) showVersion(d.version);
       }
       paint();
       emit();

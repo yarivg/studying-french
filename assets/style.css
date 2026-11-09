@@ -146,6 +146,7 @@ body {
   background: linear-gradient(to right, #2c4a9a 0 33.3%, #f6f4ef 33.3% 66.6%, #c1122f 66.6% 100%);
   box-shadow: inset 0 0 0 1px rgba(0,0,0,.12);
 }
+.brand-version { font-size: .7rem; color: var(--muted, #888); align-self: flex-end; margin-left: 4px; font-variant-numeric: tabular-nums; }
 .brand-text { font-size: 1.12rem; font-weight: 600; letter-spacing: -.01em; line-height: 1.1; }
 .brand-text small {
   display: block; font-family: var(--sans); font-size: .62rem; font-weight: 500;
@@ -1733,3 +1734,7 @@ textarea.test-input { font-size: .95rem; line-height: 1.6; resize: vertical; }
   .lb-actions { flex-direction: column; align-items: flex-start; }
 }
 .lb-note { display: block; margin-top: .2rem; color: var(--or); font-size: .8rem; }
+
+.deck-recent { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 12px 0 16px; }
+.deck-recent input[type=number] { width: 4.5em; font: inherit; padding: 4px 6px; }
+.deck-recent select { font: inherit; padding: 4px 6px; }
