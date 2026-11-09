@@ -95,6 +95,12 @@ window.Quiz = (function () {
     renderCard();
   }
 
+  // Listen only: on a FR -> EN card the French is hidden and spoken instead,
+  // so the card trains the ear, not the eye. The choice is remembered.
+  var LISTEN_KEY = 'lecarnet.flashListen';
+  function listenOn() { try { return localStorage.getItem(LISTEN_KEY) === '1'; } catch (e) { return false; } }
+  function setListen(on) { try { localStorage.setItem(LISTEN_KEY, on ? '1' : '0'); } catch (e) {} }
+
   function renderCard() {
     var s = session;
     if (!s) return;
@@ -102,6 +108,8 @@ window.Quiz = (function () {
     if (s.index >= s.queue.length) return renderSummary();
 
     var card = s.byId[s.queue[s.index]];
+    var canListen = !!(card.frOnFront && card.fr && window.Say && Say.supported());
+    var listen = canListen && listenOn();
     var box = Progress.card(card.id).box;
     var boxLabel = Progress.card(card.id).seen ? 'box ' + box + ' / ' + Progress.MAX_BOX : 'new';
 
@@ -111,16 +119,19 @@ window.Quiz = (function () {
           (card.tag ? '<span class="pill flash-tag">' + escapeHtml(card.tag) + '</span>' : '') +
           '<span class="flash-box">' + boxLabel + '</span>' +
           '<div>' +
-            '<div class="flash-front">' + escapeHtml(card.front) + '</div>' +
+            '<div class="flash-front">' + (listen ? '<span class="flash-ear" aria-label="Listen">🎧</span>' : escapeHtml(card.front)) + '</div>' +
             '<div class="flash-back" hidden>' + escapeHtml(card.back) + '</div>' +
           '</div>' +
-          '<span class="flash-hint">click, or press space, to flip' +
-            (card.fr && window.Say && Say.supported() ? ' · H to hear it' : '') + '</span>' +
+          '<span class="flash-hint">' + (listen ? 'listen, then click or press space to flip · H to hear it again, Shift+H slower' :
+            'click, or press space, to flip' + (card.fr && window.Say && Say.supported() ? ' · H to hear it' : '')) + '</span>' +
         '</div>' +
         '<div class="flash-side">' +
           (card.fr && window.Say && Say.supported()
             ? '<button class="btn flash-say" type="button" data-say="' + escapeAttr(card.fr) + '"' +
               (card.frOnFront ? '' : ' hidden') + '>🔊 Hear it</button>'
+            : '') +
+          (canListen
+            ? '<button class="btn flash-listen-toggle" type="button" aria-pressed="' + listen + '">🎧 Listen only: ' + (listen ? 'on' : 'off') + ' (L)</button>'
             : '') +
           // The moment you decide you know a word is here, not in the
           // browser, so the same toggle belongs on the card.
@@ -151,6 +162,7 @@ window.Quiz = (function () {
     function flip() {
       if (s.flipped) return;
       s.flipped = true;
+      if (listen) cardEl.querySelector('.flash-front').textContent = card.front;
       cardEl.querySelector('.flash-back').hidden = false;
       actions.hidden = false;
       if (sayBtn) sayBtn.hidden = false;
@@ -165,6 +177,11 @@ window.Quiz = (function () {
       var b = e.target.closest('[data-grade]');
       if (b) grade(b.dataset.grade === '1');
     });
+
+    var listenBtn = s.container.querySelector('.flash-listen-toggle');
+    if (listenBtn) listenBtn.addEventListener('click', function () { setListen(!listenOn()); renderCard(); });
+    s.toggleListen = canListen ? function () { setListen(!listenOn()); renderCard(); } : null;
+    if (listen) setTimeout(function () { if (session === s && !s.flipped) Say.speak(card.fr); }, 150);
 
     var knowBtn = s.container.querySelector('.flash-know');
     if (knowBtn) knowBtn.addEventListener('click', function () { retire(card); });
@@ -229,6 +246,9 @@ window.Quiz = (function () {
       var say = session.container.querySelector('.flash-say');
       if (say && !say.hidden) { e.preventDefault(); Say.speak(say.dataset.say, { slow: e.shiftKey }); }
       return;
+    }
+    if ((e.key === 'l' || e.key === 'L') && session.toggleListen && !session.flipped) {
+      e.preventDefault(); session.toggleListen(); return;
     }
     if (e.key === ' ' || e.key === 'Enter') {
       if (!session.flipped) { e.preventDefault(); session.flip(); }
