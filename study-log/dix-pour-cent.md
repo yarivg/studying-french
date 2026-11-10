@@ -82,8 +82,8 @@ la bénédiction = blessing; Le prophète = the prophet.
 
 | 6 (to 16:30) | 2026-11-10 | first scene (2 min): 25% cold, 90% cold again after one French-subs pass; 01:00-02:10, 26 words added |
 
-Loop from here: one scene per half-episode cold, then French subs, then cold again. The 25 to 90 jump says the
-gap is decoding speed, not vocabulary.
+The 25 to 90 jump says the gap is decoding speed, not vocabulary. Loop on the series dropped (2026-11-10, his
+call: it kills the joy). Series stay pleasure with French subs; listening work moves to DELF B2 oral papers.
 
 ## Deck 9 candidates from E6 (first half)
 
