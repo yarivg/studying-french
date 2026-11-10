@@ -79,3 +79,26 @@ Goal: finish S1 (6 episodes) by 2026-11-16. French audio, French subs.
 Gist glosses to fix: percuter = crash into (not crush); x contre y = odds in the same order as English
 (dix contre un = ten to one); être en rut = to be in heat; menacer = to threaten; rattraper = to catch up;
 la bénédiction = blessing; Le prophète = the prophet.
+
+| 6 (to 16:30) | 2026-11-10 | first scene (2 min): 25% cold, 90% cold again after one French-subs pass; 01:00-02:10, 26 words added |
+
+Loop from here: one scene per half-episode cold, then French subs, then cold again. The 25 to 90 jump says the
+gap is decoding speed, not vocabulary.
+
+## Deck 9 candidates from E6 (first half)
+
+- se braquer (ne te braque pas), mettre qqn d'accord, y mettre du sien (mien / tien), vendre qqch à qqn (pitch)
+- j'en ai ma claque, je suis claqué, prendre une claque, tête à claques, coincé (uptight), tu fais + adj
+- ne ... que with ne dropped (qui attendent que toi), c'est quoi qui = qu'est-ce qui, agresser (= grate on)
+- emmerder family (ça m'emmerde de, s'emmerder, les emmerdes) vs embêter, le fric, une bombe, meuf, filer qqch à qqn
+- changer de + noun, faire du + name (faire du Molière), une espèce de, un second rôle payant, la com' / reposer sur
+- se répéter, épouser qqn vs se marier avec, déprime / déprimé / déprimer / déprimant, maudire / malédiction
+
+## Écrit candidates from E6
+
+- empêcher qqn de (direct: l'empêcher) vs interdire à qqn de (indirect: lui interdire)
+- obliger qqn à + inf vs être obligé de + inf; quand + future (quand je me marierai)
+- personne ne / rien ne as subject; changer de + noun without article
+
+Gist glosses to fix: se braquer = to get defensive, dig in (not refuse); espèce de = sort of / you ___
+(espèce d'idiot = you idiot).
