@@ -245,6 +245,26 @@ Re-listen after reading the transcript and the words: about 90% understood (his 
 Dix pour cent E6 (25 to 90): once the words are known the speed is fine; the loss is on first
 hearing of unknown words and numbers.
 
+Exercise 1 of the same paper (France Info interview, Claudie Haigneré on young people and science,
+5:45, heard twice), same evening. **5.25/18 (29%)**, about 50% understood (his estimate). Right: Q1
+theme, Q7 culture générale for teachers, Q8 enthousiasme; Q11 half (extra science courses for
+teachers; key: ressources pédagogiques; formations en commun was said, judgement call).
+- Word said, wrong slot: Q3 `primaire` (the primary school teachers are Q6; girls are many
+  `en terminale scientifique`), Q4 `terminale ... ou social` (key: carrières sociales; the Q3 answer
+  went into Q4, hedged answer = 0).
+- Q2 B (France only): `un phénomène mondial et la France n'y échappe pas` = France and elsewhere.
+- Q5 A (difficile): `une vision imparfaite et pas suffisamment actuelle` = incomplete.
+- Q6 blank: `filières littéraires ... peu accoutumés ... quelques craintes, si ce n'est de la réticence`.
+- Q9 C (propositions): key le rôle (that she has to tell the ministry to talk to each other).
+- Q10 blank: classes Villette = `des enfants de l'école avec leurs professeurs`.
+- Q12 blank: technique forgotten in `l'enveloppe du scientifique`; key: makes the paths accessible,
+  gives the want (`redonner envie`).
+- Q13 A (utilité, world knowledge): `fabriquer, créer, véritable génie créateur` = créativité.
+Abstract institutional monologue (rapport, filières, rectorats, synergie) is the hardest register so
+far. His note: reading the questions while listening overloads him, so on play 2 he stopped
+looking at them. Fix: questions follow the audio order; before play 2 pick the blanks, keep one
+trigger word each (Villette, aide, technique, ingénieur), and glance down only when it is heard.
+
 ### 2026-11-08: two listening tracks
 Dix pour cent E4, 5-6 min rewatched without subtitles after the subtitled viewing: about 40% (he
 guesses 10-20% cold). TV drama is too fast and slangy for no-subtitle listening now. Split:
