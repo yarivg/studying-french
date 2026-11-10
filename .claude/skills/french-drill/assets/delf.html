@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DELF listening</title>
+<style>
+:root{--bg:#fafaf7;--fg:#1d1d1b;--mut:#6b6b66;--card:#fff;--line:#e2e1da;--acc:#2f5bd3}
+@media (prefers-color-scheme:dark){:root{--bg:#18181a;--fg:#ececea;--mut:#9a9a95;--card:#222226;--line:#34343a;--acc:#7c9cf5}}
+body{background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,sans-serif;margin:0;padding:16px}
+main{max-width:720px;margin:auto}
+h1{font-size:1.3rem;margin:.2rem 0}.mut{color:var(--mut);font-size:.92rem}
+.q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:12px 0}
+.q b{display:block;margin-bottom:6px}.q .pts{float:right;color:var(--mut);font-weight:400;font-size:.85rem}
+label{display:block;padding:3px 0;cursor:pointer}
+input[type=text]{width:100%;box-sizing:border-box;padding:8px;font:inherit;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg)}
+button{font:inherit;padding:8px 14px;border-radius:8px;border:1px solid var(--acc);background:var(--acc);color:#fff;cursor:pointer;margin:4px 6px 4px 0}
+button:disabled{opacity:.45;cursor:default}
+button.ghost{background:transparent;color:var(--acc)}
+#bar{display:flex;align-items:center;flex-wrap:wrap;gap:8px;position:sticky;top:0;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--line);z-index:1}
+#clock{font-variant-numeric:tabular-nums;font-weight:600}
+#tr{display:none;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-top:16px}
+#tr p{margin:.5rem 0}
+pre{white-space:pre-wrap;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px;font-size:.85rem}
+</style></head><body><main>
+<!--
+  Reusable DELF compréhension de l'oral page. Holds no exam content: the
+  official papers are copyrighted and this repo is public. Content lives in a
+  data file next to it, delf-<id>.js, setting window.DELF:
+    { title, intro, audio, plays: 1|2, read: sec, answer: [sec after play 1, sec after play 2],
+      questions: [{ t, o?: [A,B,C], pts? }], transcript: [html paragraphs] }
+  Open as delf.html?x=<id>. Answers persist in localStorage under 'delf-<id>'.
+-->
+<h1 id="h"></h1>
+<p class="mut" id="intro"></p>
+<div id="bar">
+  <button id="read">Start reading</button>
+  <button id="play" disabled>▶ Play</button>
+  <span id="clock"></span>
+</div>
+<audio id="au" preload="auto"></audio>
+<form id="f"></form>
+<button id="sub">Submit</button>
+<div id="after" style="display:none">
+  <button id="copy" class="ghost">Copy report</button>
+  <pre id="rep"></pre>
+</div>
+<div id="tr"><b>Transcription</b></div>
+</main>
+<script>
+(function(){
+var x=new URLSearchParams(location.search).get('x');
+if(!x){document.getElementById('h').textContent='Add ?x=<id> to the URL';return}
+var s=document.createElement('script');s.src='delf-'+x+'.js';s.onload=start;
+s.onerror=function(){document.getElementById('h').textContent='No data file delf-'+x+'.js'};
+document.head.appendChild(s);
+
+function start(){
+var D=window.DELF,Q=D.questions,plays=D.plays||1,ans=D.answer||[180,300];
+document.title=D.title;document.getElementById('h').textContent=D.title;
+document.getElementById('intro').innerHTML=D.intro||'';
+var au=document.getElementById('au');au.src=D.audio;
+var tr=document.getElementById('tr');
+(D.transcript||[]).forEach(function(p){var e=document.createElement('p');e.innerHTML=p;tr.appendChild(e)});
+var K='delf-'+x,st={a:{},sub:false,played:0};
+try{var o=JSON.parse(localStorage.getItem(K));if(o){st=o;if(st.played===true)st.played=plays}}catch(e){}
+function save(){try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}}
+var f=document.getElementById('f');
+Q.forEach(function(q,i){
+ var d=document.createElement('div');d.className='q';
+ var h='<b>'+(q.pts?'<span class="pts">'+q.pts+' pt</span>':'')+(i+1)+'. '+q.t+'</b>';
+ if(q.o)q.o.forEach(function(o,j){var L='ABCD'[j];h+='<label><input type="radio" name="q'+i+'" value="'+L+'"> '+L+'. '+o+'</label>'});
+ else h+='<input type="text" name="q'+i+'" autocomplete="off">';
+ d.innerHTML=h;f.appendChild(d);
+});
+Q.forEach(function(q,i){var v=st.a[i];if(v==null)return;
+ if(q.o){var r=f.querySelector('input[name=q'+i+'][value="'+v+'"]');if(r)r.checked=true}else f.querySelector('input[name=q'+i+']').value=v});
+f.addEventListener('input',function(e){var m=/^q(\d+)$/.exec(e.target.name);if(!m||st.sub)return;st.a[m[1]]=e.target.value;save()});
+
+var clock=document.getElementById('clock'),tm=null;
+function fmt(r){return Math.floor(r/60)+':'+String(r%60).padStart(2,'0')}
+function count(sec,label,done){clearInterval(tm);var end=Date.now()+sec*1000;
+ function tick(){var r=Math.max(0,Math.round((end-Date.now())/1000));clock.textContent=label+' '+fmt(r);if(!r){clearInterval(tm);done&&done()}}
+ tick();tm=setInterval(tick,250)}
+var rb=document.getElementById('read'),pb=document.getElementById('play');
+rb.textContent='Start reading ('+fmt(D.read||60)+')';
+function playLabel(){pb.textContent='▶ Play'+(plays>1?' ('+(st.played+1)+' of '+plays+')':' once')}
+playLabel();
+rb.onclick=function(){rb.disabled=true;pb.disabled=false;count(D.read||60,'Reading',function(){clock.textContent='Press Play'})};
+pb.onclick=function(){rb.disabled=true;pb.disabled=true;clearInterval(tm);clock.textContent='Listening…';au.currentTime=0;au.play()};
+au.onended=function(){if(st.sub)return;st.played++;save();
+ var more=st.played<plays;
+ count(ans[st.played-1]||180,'Answer',function(){clock.textContent=more?'Press Play':'Time. Submit.'});
+ if(more){playLabel();pb.disabled=false}};
+if(st.played){rb.disabled=true;if(st.played<plays){playLabel();pb.disabled=false}else clock.textContent='Audio used up'}
+
+function report(){var L=[D.title];Q.forEach(function(q,i){L.push((i+1)+'. '+(st.a[i]||'(blank)'))});return L.join('\n')}
+function lock(){f.querySelectorAll('input').forEach(function(e){e.disabled=true});
+ document.getElementById('sub').disabled=true;rb.disabled=true;pb.disabled=true;clearInterval(tm);clock.textContent='Submitted';
+ document.getElementById('after').style.display='block';document.getElementById('rep').textContent=report();
+ tr.style.display='block';au.controls=true;au.style.cssText='width:100%;margin:8px 0';tr.insertBefore(au,tr.children[1])}
+document.getElementById('sub').onclick=function(){
+ var blank=Q.filter(function(q,i){return !st.a[i]}).length;
+ if(blank&&!confirm(blank+' unanswered. Submit anyway?'))return;
+ st.sub=true;save();lock()};
+document.getElementById('copy').onclick=function(){navigator.clipboard.writeText(report()).then(function(){document.getElementById('copy').textContent='Copied'})};
+if(st.sub)lock();
+}
+})();
+</script>
+</body></html>

@@ -28,6 +28,13 @@ Serve with `python3 -m http.server 8787` from the scratchpad, then open
 `http://localhost:8787/drill-<name>.html` in Chrome. Each page owns its own
 `localStorage` key so drills never disturb each other.
 
+**DELF listening exercises** (he likes this format): `assets/delf.html` is a reusable shell
+(read timer, Play limited to the exam's 1 or 2 plays, answer timers, Submit, copy report, then
+transcript and a free audio player). Content goes in `delf-<id>.js` (`window.DELF`, format in the
+shell's comment) plus the official MP3, opened as `delf.html?x=<id>`. Official papers are
+copyrighted and this repo is public: data and audio live in the gitignored `local/delf/`, never
+committed. Mark against the official corrigé; never put the key in the data file.
+
 ## Bank format
 
 ```js

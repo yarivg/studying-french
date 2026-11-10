@@ -9,3 +9,6 @@ french-progress-log.md
 
 # OS noise
 .DS_Store
+
+# Official exam material (copyrighted): kept on disk, never pushed
+local/
