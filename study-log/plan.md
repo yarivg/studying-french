@@ -241,6 +241,9 @@ commerciales, Q6 concurrence d'internet.
   after the concession, not before it.
 Same as Ex. 3 of the earlier papers: the short document heard once is the weak format (1.5, 3.5,
 now 3 of 7).
+Re-listen after reading the transcript and the words: about 90% understood (his estimate). Same as
+Dix pour cent E6 (25 to 90): once the words are known the speed is fine; the loss is on first
+hearing of unknown words and numbers.
 
 ### 2026-11-08: two listening tracks
 Dix pour cent E4, 5-6 min rewatched without subtitles after the subtitled viewing: about 40% (he
