@@ -227,6 +227,21 @@ Listening only, the integral recording, no pausing; marked against the official 
 scope: plusieurs vs toutes), Q5 (an option from world knowledge, not from the audio), Q7 (said, about
 another thing). Missing words cost 3 points: `gaspillage` (twice), `volontiers`, `faute de`, `supports`.
 
+### Exam block 2: DELF B2 junior sample 3, CO exercise 2 only (2026-11-10, evening, 20 min slot)
+
+Older format: one short RFI report (libraires francophones abroad, 1:56), heard once, 7 points.
+Marked against the official corrigé. **3/7 (43%).** Right: Q1 francophones, Q3 expériences
+commerciales, Q6 concurrence d'internet.
+- Q2 blank: `320 millions de personnes`, in the first sentence. A number at the very start is lost
+  while still settling in.
+- Q4 blank: the hair salon is good because `on passe un certain temps ... du temps pour lire`.
+- Q5 wrong (B, lieux de formation): `un autre type de commerce` = autres magasins. Commerce = shop.
+- Q7 wrong (A, inquiet): he kept `c'est déjà difficile ... encore plus` and lost the turn
+  `quand même le vent en poupe ... on surfe sur cette vague` (positive). Tone questions are decided
+  after the concession, not before it.
+Same as Ex. 3 of the earlier papers: the short document heard once is the weak format (1.5, 3.5,
+now 3 of 7).
+
 ### 2026-11-08: two listening tracks
 Dix pour cent E4, 5-6 min rewatched without subtitles after the subtitled viewing: about 40% (he
 guesses 10-20% cold). TV drama is too fast and slangy for no-subtitle listening now. Split:
