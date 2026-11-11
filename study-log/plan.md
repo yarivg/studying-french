@@ -330,3 +330,15 @@ souhaite" question; learn question-stem words (secteur d'activité, rémunérati
 After the transcript and words: second listen about 90%, then a third listen without text "understood
 it all" (his words). Third paper in a row with the same shape (43 or 49% cold, 90-100% once the words
 are known): the gap is exam-register vocabulary, and one paper + transcript closes it for that topic.
+
+Ex 2 of the same paper ("Le Salon de l'étudiant", 2:11, heard once, 7 points): **3/7**, same as SJ3 ex 2.
+Right: Q2 mieux répondre aux besoins du marché, Q3 (préparer les élèves pour travailler en entreprise
+= insertion professionnelle), Q6 half (innovation; second item missing: recherche / secteurs de pointe).
+- Q1 `marché du travail`: a phrase said later, not the theme (`les relations entre l'université et les
+  entreprises`, second sentence).
+- Q4 blank: the risk, `que la recherche devienne dépendante des besoins des entreprises` / `qu'elles ne
+  soient plus un lieu de critiques`.
+- Q5 A (reconnaissance) for `aller dans le sens des besoins de leurs financeurs`: financeurs unknown.
+- Q6 "citez-en deux" answered with one.
+Heard-once format is flat at 3/7 over two papers (1.5 and 3.5 on the 2020-format ex 3). Fix: answer
+while listening (one keyword per question in order), and a list question gets its slots filled first.
