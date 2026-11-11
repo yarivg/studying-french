@@ -171,7 +171,7 @@ Corrected keepers:
 > T'es complètement frappée.
 
 Themes, ranked:
-1. **si clauses** (3): `si je te voir`, then `si je te verrais`, then `si je te verrai`. Rule: si +
+1. **si clauses** (1, survived 2 redos): `si je te voir`, then `si je te verrais`, then `si je te verrai`. Rule: si +
    présent -> futur, si + imparfait -> conditionnel, never -rai / -rais after si.
 2. **Verb frames** (6): `se souvenir de`, `penser à` + inf (not `d'`), `draguer qqn` (not `avec`),
    `en` + language, `à` + place, `manquer`: `autant qu'à moi`.
