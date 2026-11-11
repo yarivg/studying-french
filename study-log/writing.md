@@ -11,6 +11,7 @@ French, not against a key. Each error is tagged with its theme; the top 3 themes
 | 1 | 2026-10-22 | My day (wrote today, not yesterday) | 8 | 22 | 2.75 | 7/14 (50%) |
 | 2 | 2026-10-24 | A trip or weekend away (wrote: 24th birthday at Alabama) | 11 | 39 | 3.5 | 6/10 (60%) |
 | 3 | 2026-11-09 | Real message: the Mahomet mountain story, after the breakup | 10 | 26 | 2.6 | - |
+| 4 | 2026-11-11/12 | Meeting prep (Mon 11-16): lines for the ex, from Le Carnet words | 11 | 27 | 2.5 | - |
 
 ## 1. 2026-10-22: my day
 
@@ -147,3 +148,43 @@ Redo: 26 -> 9 -> 4 -> 1 (period for colon before the quote). Closed.
 Words he added to Le Carnet from this session (22:38-00:53, 14): le prophète, la prophétie, raconter, calmement,
 un/e des deux, (se) rapprocher, se parler, se reparler, la bénédiction, embarrassant, pour dire la vérité, réciter,
 la mouche.
+
+## 4. 2026-11-11/12: meeting prep, lines for the ex
+
+He may meet her Monday evening 2026-11-16 and wanted spoken lines. First attempts: the
+mountain-story opener (3 errors), its follow-up paragraph (7, 3 sentences), *honte* (4),
+*peur* (1), then 7 lines built from his own Le Carnet words (12). 27 errors over 11 sentences.
+
+Corrected keepers:
+
+> Alors, je voudrais te raconter une petite histoire, pour dire que parfois, il y a des situations
+> où il faut faire le premier pas pour obtenir ce qu'on veut.
+> Et voilà, maintenant je parle français, et j'espère que tu te souviens de tous ces moments fous
+> qu'on a vécus ensemble. J'espère que ça te manque autant qu'à moi.
+> Il ne faut pas avoir honte de penser à se remettre ensemble.
+> J'ai peur qu'on ait eu tort de rompre / de mettre fin à notre relation.
+> J'ai un faible pour toi. Ensemble, on peut dire des bêtises en trois langues.
+> J'ai l'impression que la dernière fois qu'on s'est embrassés, c'était il y a belle lurette.
+> Si je te vois à Jerusalang, je te draguerai à fond.
+> Si on m'effaçait la mémoire, je te draguerais à nouveau.
+> J'espérais que tu hallucinerais quand je te parlerais en français.
+> T'es complètement frappée.
+
+Themes, ranked:
+1. **si clauses** (3): `si je te voir`, then `si je te verrais`, then `si je te verrai`. Rule: si +
+   présent -> futur, si + imparfait -> conditionnel, never -rai / -rais after si.
+2. **Verb frames** (6): `se souvenir de`, `penser à` + inf (not `d'`), `draguer qqn` (not `avec`),
+   `en` + language, `à` + place, `manquer`: `autant qu'à moi`.
+3. **Mixed frames** (1, survived 2 redos): `j'ai me sens` -> `j'ai l'impression` / `je sens que`.
+4. **Tense sequence** (3): `avoir peur que` + subj passé (`ait eu`), `j'espérais` + conditionnel
+   (not `seras`), `être halluciner`.
+5. **où after situation nouns** and **one person** (quelqu'un / on): repeats from Écrit 8 Next.
+6. **Silent endings**: `je parles`, `on ne dois`.
+7. **Calques**: `notre temps` (moments), `on convient` (on va bien ensemble), `encore ensemble`
+   (se remettre ensemble), `terminer` a relationship.
+
+Right first time: `ça te manque`, `faire le premier pas`, `ce qu'on veut`, `j'ai un faible pour
+toi`, `je m'en fous / fiche`, `il y a belle lurette`, reciprocal `on s'est embrassés` after one note.
+
+Redo: 12 -> 3 -> 1 -> 0 on the 7 lines. Closed. Next: say them aloud without reading; topic 1
+(présente-toi) and 8 questions to ask her still open.
