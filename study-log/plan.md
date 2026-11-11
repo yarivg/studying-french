@@ -290,3 +290,20 @@ Le Carnet Flashcards, every day, about 15 min, outside the study session:
 - Retire words known from English on first sight ("I know this").
 Intervals are formula v1 from `memory.md` (7, 18, 45, 110 days; wrong = same day; after a miss 2 then 7).
 Load guide: at about 70 new words a day, expect 80-120 reviews a day once the 7-day returns start (from 2026-11-16).
+
+### 2026-11-11: DELF vocabulary track (his ask: "study the vocabulary of DELF")
+
+He likes the DELF exercise page (`.claude/skills/french-drill/assets/delf.html`, data in gitignored
+`local/delf/`) and asked to prepare the vocabulary DELF audio uses. Three parts:
+1. **Sens DELF 1** (next session, before the next paper): about 40 question-deciding items in the
+   Sens page format, exam-register context sentences: attitude adjectives (what the speaker feels or
+   thinks), reporting verbs (what the speaker does: states, regrets, recommends, warns), concession
+   connectors (where the tone turns: Q7 of SJ3 ex 2).
+2. **Topic words from each paper's transcript** into Le Carnet (done for SJ3 ex 1 and 2). DELF B2
+   recycles about 8 themes: education, work, environment, health, media / digital, consumption,
+   society, science / culture.
+3. **Morning listen-only slot**: RFI Journal en français facile (10 min, free transcript), same news
+   register, slightly slower. Re-listen of SJ3 ex 1 once on the commute on 2026-11-11.
+Next paper after Sens DELF 1: an unused official sample (tout public paper 2 stays for 2026-11-16).
+Speech rate measured: SJ3 ex 1 about 180 wpm, ex 2 about 190: same as podcasts he follows at 80%+,
+so the gap is register and vocabulary, not speed.

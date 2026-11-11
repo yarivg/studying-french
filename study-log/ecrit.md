@@ -223,3 +223,6 @@ dire / conseiller À qqn DE + inf; à + les = aux, de + les = des), vouloir / ai
 with a new subject, si + imparfait / conditionnel, ça s'est fait / il s'est passé, tense after "said",
 ces / ses, E5 candidates (me le / te la / le leur, risquer de, échapper à / obéir à, avoir les + body
 part). Retests: ecr-59 cold (tous, sixth), ecr-54 (demander de + lui écrire). Ids from ecr-61.
+Also from free sentences on 2026-11-11: relative `où` after time / situation nouns (`des situations
+où`, he wrote `que`), entendre / voir + noun + infinitive (`une mouche voler`), qu'il elision,
+le premier pas, no nous / on switch inside one sentence.
