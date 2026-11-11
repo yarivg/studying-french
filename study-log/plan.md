@@ -307,3 +307,23 @@ He likes the DELF exercise page (`.claude/skills/french-drill/assets/delf.html`,
 Next paper after Sens DELF 1: an unused official sample (tout public paper 2 stays for 2026-11-16).
 Speech rate measured: SJ3 ex 1 about 180 wpm, ex 2 about 190: same as podcasts he follows at 80%+,
 so the gap is register and vocabulary, not speed.
+
+### Exam block 3: DELF Pro B2 sujet 1 (CIEP, via francepodcasts.com), CO ex 1 "Les contrats" (2026-11-11)
+
+HR interview at a supermarket chain, 5:07, heard twice, 18 points. **8.75/18 on merit (49%)**, 7/18 by the
+corrigé; up from 5.25/18 on SJ3 ex 1. Target 11 missed. Right: Q3 en augmentation, Q8 temps de travail,
+Q10 salaires au-dessus du marché, Q11 all three pay tiers (fixe / performance = variable / bénéfices
+annuels du groupe = intéressement, written in English).
+- Key disputed, counted right: Q5 he chose 2 ans; she says `on va essayer de l'atteindre en deux ans`
+  (corrigé: un an). Half credit Q6 `grande flexibilité` (key: horaires extrêmement étendus; same
+  sentence, the consequence).
+- Wrong person again: Q9 `à temps complet` is what HE wants; she offers `un contrat à 80 %`.
+- Numbers lost: Q4 blank (`soixante-dix pour cent`); this document is number-dense (60 %, 5 points,
+  70 %, 3 ans, 2 ans, 9 h-22 h, 80 %, 3-10 %, 28 heures).
+- Question not understood: Q1 `secteur d'activité` = industry (supermarchés, first sentence); he
+  answered about contracts. Q2 `en favorisant le temps complet`: wrote flexibilité.
+- Q7 `les jeunes` for `énormément d'étudiants`: 0 (too general).
+- Q12 lost the last sentences (`la responsable du personnel`).
+- Answers in English (Q11, Q12): the real exam needs French; noted, not penalised.
+Fix list: write numbers down as heard on play 1 (digits, no words); WHO check on every "propose /
+souhaite" question; learn question-stem words (secteur d'activité, rémunération, conditions horaires).
