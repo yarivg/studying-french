@@ -327,3 +327,6 @@ annuels du groupe = intéressement, written in English).
 - Answers in English (Q11, Q12): the real exam needs French; noted, not penalised.
 Fix list: write numbers down as heard on play 1 (digits, no words); WHO check on every "propose /
 souhaite" question; learn question-stem words (secteur d'activité, rémunération, conditions horaires).
+After the transcript and words: second listen about 90%, then a third listen without text "understood
+it all" (his words). Third paper in a row with the same shape (43 or 49% cold, 90-100% once the words
+are known): the gap is exam-register vocabulary, and one paper + transcript closes it for that topic.
