@@ -102,3 +102,16 @@ call: it kills the joy). Series stay pleasure with French subs; listening work m
 
 Gist glosses to fix: se braquer = to get defensive, dig in (not refuse); espèce de = sort of / you ___
 (espèce d'idiot = you idiot).
+
+| 6 (16:30 to end) | 2026-11-11 | pleasure only, French subs; 02:35-03:35, 19 words added. **Season 1 finished, 5 days before the 2026-11-16 goal.** |
+
+## Deck 9 candidates from E6 (second half)
+
+- le metteur en scène / la mise en scène, pencher / se pencher sur / pencher pour, d'affilée, fourrer (où j'ai fourré mes clés)
+- le maillot de bain, aspirer (un aspirateur) vs aspirer à, rouler une pelle, affreux, fidèle (la fidélité, carte de fidélité)
+- un complot vs l'intrigue, le montant, un redressement fiscal, assainir, la gestion (gérer), en profondeur
+- ne ... que (vos vies ne sont qu'une liste), ne ... pas que (j'ai pas que ...), au bord de (la faillite / des larmes)
+- péter la gueule à qqn / se casser la figure, prendre soin de (heavy goodbye) vs fais attention à toi, si (contradicting), bourré, picoler
+- filer un billet à qqn, un gars, tenir le guichet
+
+Gist glosses to fix: émettre = to put forward (des propositions, un avis), also emit; chercheur = researcher (not scientist).
