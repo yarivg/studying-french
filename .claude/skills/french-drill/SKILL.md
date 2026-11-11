@@ -35,6 +35,29 @@ shell's comment) plus the official MP3, opened as `delf.html?x=<id>`. Official p
 copyrighted and this repo is public: data and audio live in the gitignored `local/delf/`, never
 committed. Mark against the official corrigé; never put the key in the data file.
 
+Sources (all free; questions, audio, surveillant transcript, corrigé):
+- france-education-international.fr: DELF B2 tout public exemples 1-2, junior/scolaire exemples 1-2.
+- francepodcasts.com (old official CIEP papers, audio as a zip per sujet): DELF B2 tout public
+  sujets 2-6, scolaire/junior sujets 1-3, DELF Pro sujet 1 (`/2021/05/05/delf-pro-b2-sujet-1/`).
+  Index of all sujets on any of those pages. Sujet 1 tout public there is the 2020 reform paper =
+  FEI exemple 1. Check every new paper's transcript against the used / reserved list first.
+- Not usable: TV5Monde blocks curl (403) and he dislikes the site; DELF Pro on FEI is 403/404.
+
+Used / reserved (update when a paper is sat):
+| paper | status |
+|---|---|
+| FEI tout public exemple 1 (sleep / offices / youth magazines) | sat 2026-11-06, 14/25 |
+| FEI tout public exemple 2 (Drancourt, phones in hospitals) | **reserved for the 2026-11-16 checkpoint**; it is also FEI's "entraînement" CO ex 1-2 |
+| FEI junior exemple 1 (SJ démo 02: girls' football, tablets) | sat 2026-11-07, 15.5/25 |
+| FEI junior exemple 2 (SJ démo 03: Haigneré sciences, libraires) | sat 2026-11-10/11: ex 1 5.25/18, ex 2 3/7 |
+| francepodcasts DELF Pro sujet 1 (contrats / Salon de l'étudiant) | ex 1 sat 2026-11-11 (`pro1-ex1`): 8.75/18; corrigé Q5 "un an" disputed (audio: deux ans). Ex 2 (`pro1-ex2`) 3/7 |
+
+Build recipe: `pdftotext -layout` for questions and corrigé (image-only PDFs: Read them visually).
+Integral recordings include the instructions and pauses: cut the document with
+`ffmpeg -af silencedetect=noise=-40dB:d=20` (pauses of 60 / 180 / 300 s), then
+`ffmpeg -ss <end of 1-min pause> -to <start of 3-min pause> -c copy`. Speaker lines from the
+surveillant PDF go in `transcript` as `<i>Name :</i> text` paragraphs.
+
 ## Bank format
 
 ```js
