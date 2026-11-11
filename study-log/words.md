@@ -72,3 +72,21 @@ All 10 misses were "no idea", none a wrong guess.
 - Click the meaning self-marks before copying the report (third time not clicked).
 - Add the 10 Sens 1 misses to words-4: rétablir, cramé, gâter, piéger, vaciller, fliquer, s'y mettre,
   supplier, prendre le pli, au bout de.
+
+## Sens DELF 1: 2026-11-11
+
+New exam-register words, not from Le Carnet (DELF vocabulary track, plan.md): 14 attitude adjectives,
+14 reporting verbs, 12 concession connectors, each in a context sentence, 5 English options + no idea.
+**23/40; 19/40 known without guessing** (he flagged 7 context guesses: 4 right, rassurant, alors que,
+tout de même, reconnaître; 3 wrong, déplorer, pourtant, estimer). The 30/40 target was wrong for a set
+of mostly new words: this was a first exposure, not a retest.
+
+- No idea (13): mettre en garde contre, indigné, mitigé, perplexe, redouter, remettre en question,
+  certes, or, nuancé, préconiser, néanmoins, plaider pour, méfiant.
+- Wrong pick: déplorer (took admit), pourtant (took nevertheless: close, both concede), il n'empêche que
+  (took or), estimer (took recommend).
+- His question: "why didn't you use things from le carnet?" Not said up front that the set was new
+  words. Fix: a new-word set is shown first (word, sentence, meaning), then tested cold two days later.
+
+Next: the 17 misses + 4 lucky guesses into Le Carnet (he adds them); Sens DELF 1 retest cold on
+2026-11-13 (page in `sens-delf-1.page.html`, key `sens-delf-1`: clear answers first).

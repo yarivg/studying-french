@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sens DELF 1</title>
+<link rel="stylesheet" href="drill.css">
+<style>
+.opts{display:grid;gap:6px;margin:8px 0}
+.opts button{text-align:left;padding:8px 10px;font-size:15px;border:1px solid #bbb;border-radius:6px;background:transparent;color:inherit;cursor:pointer}
+.opts button.right{border-color:#2a7a2a;background:rgba(42,122,42,.15);font-weight:600}
+.opts button.wrong{border-color:#b33;background:rgba(187,51,51,.15);text-decoration:line-through}
+.opts button:disabled{cursor:default}
+.s b{background:rgba(255,200,0,.3);padding:0 2px;border-radius:3px}
+.tally{position:sticky;top:0;padding:6px 0;font-weight:600;background:inherit}
+.grid{display:flex;flex-wrap:wrap;gap:4px;margin:10px 0}
+.grid button{width:26px;height:26px;padding:0;font-size:11px;border:1px solid #999;border-radius:4px;background:transparent;color:inherit;cursor:pointer}
+.grid button.ok{background:#2a7a2a;border-color:#2a7a2a;color:#fff}
+.grid button.bad{background:#b33;border-color:#b33;color:#fff}
+.grid button.ans{background:#3b6fb6;border-color:#3b6fb6;color:#fff}
+.opts button.sel{border-color:#3b6fb6;background:rgba(59,111,182,.18);font-weight:600}
+.grid button.cur{outline:2px solid #e0a800;outline-offset:1px}
+.card{border:1px solid #bbb;border-radius:8px;padding:12px 14px;margin:8px 0}
+.card .num{opacity:.6;font-size:13px}
+.opts button kbd{display:inline-block;min-width:18px;text-align:center;font-size:12px;border:1px solid #999;border-radius:3px;margin-right:8px;opacity:.8}
+.nav{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.keys{font-size:13px;opacity:.7}
+</style></head><body>
+<main id="app"></main>
+<script>
+var KEY='sens-delf-1';
+var IT=[{"id": "d01", "fr": "déplorer", "s": "L'association déplore le manque de moyens accordés aux hôpitaux.", "hl": "déplore", "opts": ["to argue for, advocate", "to deplore, lament", "to stress, emphasise", "to admit, acknowledge", "to warn against"], "ok": 1, "g": "to deplore, lament"}, {"id": "d02", "fr": "rassurant", "s": "Le médecin s'est voulu rassurant : l'épidémie est sous contrôle.", "hl": "rassurant", "opts": ["reluctant", "outraged", "reassuring", "in favour of", "resigned"], "ok": 2, "g": "reassuring"}, {"id": "d03", "fr": "pourtant", "s": "Il a beaucoup travaillé. Pourtant, il a raté son examen.", "hl": "Pourtant", "opts": ["but, yet (turning point)", "admittedly, granted", "except, apart from", "yet, and yet", "nevertheless"], "ok": 3, "g": "yet, and yet"}, {"id": "d04", "fr": "alors que", "s": "Les prix augmentent, alors que les salaires stagnent.", "hl": "alors que", "opts": ["all the same, still", "whereas, while", "despite", "admittedly, granted", "but, yet (turning point)"], "ok": 1, "g": "whereas, while"}, {"id": "d05", "fr": "favorable à", "s": "La majorité des parents est favorable à la semaine de quatre jours.", "hl": "favorable à", "opts": ["reassuring", "opposed to, against", "relieved", "in favour of", "reluctant"], "ok": 3, "g": "in favour of"}, {"id": "d06", "fr": "tout de même", "s": "Le voyage était fatigant, mais on s'est tout de même bien amusés.", "hl": "tout de même", "opts": ["all the same, still", "yet, and yet", "nevertheless", "except, apart from", "on the contrary"], "ok": 0, "g": "all the same, still"}, {"id": "d07", "fr": "mettre en garde contre", "s": "Les médecins mettent en garde contre l'abus de boissons énergisantes.", "hl": "mettent en garde contre", "opts": ["to deplore, lament", "to call into question, challenge", "to warn against", "to consider, reckon", "to recommend"], "ok": 2, "g": "to warn against"}, {"id": "d08", "fr": "indigné", "s": "Les habitants sont indignés par la fermeture de la seule pharmacie du village.", "hl": "indignés", "opts": ["outraged", "reassuring", "wary, distrustful", "skeptical, doubtful", "relieved"], "ok": 0, "g": "outraged"}, {"id": "d09", "fr": "affirmer", "s": "Le fabricant affirme que son produit est sans danger.", "hl": "affirme", "opts": ["to denounce, condemn", "to claim, state firmly", "to warn against", "to admit, acknowledge", "to stress, emphasise"], "ok": 1, "g": "to claim, state firmly"}, {"id": "d10", "fr": "reconnaître", "s": "Le patron reconnaît que l'entreprise a commis des erreurs.", "hl": "reconnaît", "opts": ["to deny", "to denounce, condemn", "to admit, acknowledge", "to welcome, be pleased about", "to dread, fear"], "ok": 2, "g": "to admit, acknowledge"}, {"id": "d11", "fr": "dénoncer", "s": "Le syndicat dénonce des conditions de travail inacceptables.", "hl": "dénonce", "opts": ["to denounce, condemn", "to call into question, challenge", "to dread, fear", "to admit, acknowledge", "to deplore, lament"], "ok": 0, "g": "to denounce, condemn"}, {"id": "d12", "fr": "nier", "s": "L'ancien ministre nie avoir reçu de l'argent.", "hl": "nie", "opts": ["to admit, acknowledge", "to consider, reckon", "to recommend", "to deplore, lament", "to deny"], "ok": 4, "g": "to deny"}, {"id": "d13", "fr": "il n'empêche que", "s": "Le film a eu de mauvaises critiques. Il n'empêche qu'il a eu un énorme succès.", "hl": "Il n'empêche qu'", "opts": ["even so, the fact remains", "but, yet (turning point)", "admittedly, granted", "whereas, while", "except, apart from"], "ok": 0, "g": "even so, the fact remains"}, {"id": "d14", "fr": "déçu", "s": "Les supporters sont déçus : l'équipe a encore perdu à domicile.", "hl": "déçus", "opts": ["disappointed", "reassuring", "reluctant", "skeptical, doubtful", "opposed to, against"], "ok": 0, "g": "disappointed"}, {"id": "d15", "fr": "bien que", "s": "Bien qu'il soit malade, il est venu au travail.", "hl": "Bien qu'", "opts": ["but, yet (turning point)", "despite", "on the contrary", "although", "even so, the fact remains"], "ok": 3, "g": "although"}, {"id": "d16", "fr": "sceptique", "s": "Le ministre se dit sceptique : il doute que cette réforme change quoi que ce soit.", "hl": "sceptique", "opts": ["in favour of", "puzzled, unsure", "wary, distrustful", "alarmist, scaremongering", "skeptical, doubtful"], "ok": 4, "g": "skeptical, doubtful"}, {"id": "d17", "fr": "résigné", "s": "« De toute façon, on n'y peut rien », dit-il d'un ton résigné.", "hl": "résigné", "opts": ["resigned", "outraged", "wary, distrustful", "skeptical, doubtful", "puzzled, unsure"], "ok": 0, "g": "resigned"}, {"id": "d18", "fr": "au contraire", "s": "Ce n'est pas une perte de temps ; au contraire, c'est très utile.", "hl": "au contraire", "opts": ["except, apart from", "yet, and yet", "all the same, still", "even so, the fact remains", "on the contrary"], "ok": 4, "g": "on the contrary"}, {"id": "d19", "fr": "malgré", "s": "Malgré la pluie, des milliers de personnes ont manifesté.", "hl": "Malgré", "opts": ["except, apart from", "despite", "nevertheless", "but, yet (turning point)", "although"], "ok": 1, "g": "despite"}, {"id": "d20", "fr": "estimer", "s": "Elle estime que l'école devrait enseigner la cuisine.", "hl": "estime", "opts": ["to consider, reckon", "to recommend", "to call into question, challenge", "to stress, emphasise", "to note, observe"], "ok": 0, "g": "to consider, reckon"}, {"id": "d21", "fr": "soulagé", "s": "Après des semaines d'attente, elle est soulagée : son fils a enfin trouvé un stage.", "hl": "soulagée", "opts": ["disappointed", "outraged", "relieved", "alarmist, scaremongering", "reluctant"], "ok": 2, "g": "relieved"}, {"id": "d22", "fr": "mitigé", "s": "L'accueil du public a été mitigé : certains ont adoré, d'autres sont partis avant la fin.", "hl": "mitigé", "opts": ["puzzled, unsure", "alarmist, scaremongering", "opposed to, against", "skeptical, doubtful", "mixed, lukewarm"], "ok": 4, "g": "mixed, lukewarm"}, {"id": "d23", "fr": "perplexe", "s": "Face à ces chiffres contradictoires, les journalistes restent perplexes.", "hl": "perplexes", "opts": ["reluctant", "puzzled, unsure", "opposed to, against", "skeptical, doubtful", "balanced, measured"], "ok": 1, "g": "puzzled, unsure"}, {"id": "d24", "fr": "redouter", "s": "Les commerçants redoutent une nouvelle hausse des loyers.", "hl": "redoutent", "opts": ["to dread, fear", "to denounce, condemn", "to note, observe", "to claim, state firmly", "to deplore, lament"], "ok": 0, "g": "to dread, fear"}, {"id": "d25", "fr": "remettre en question", "s": "Cette étude remet en question l'efficacité des régimes.", "hl": "remet en question", "opts": ["to admit, acknowledge", "to denounce, condemn", "to warn against", "to call into question, challenge", "to note, observe"], "ok": 3, "g": "to call into question, challenge"}, {"id": "d26", "fr": "certes", "s": "Certes, la voiture électrique pollue moins, mais elle coûte plus cher.", "hl": "Certes", "opts": ["admittedly, granted", "on the other hand", "even so, the fact remains", "on the contrary", "but, yet (turning point)"], "ok": 0, "g": "admittedly, granted"}, {"id": "d27", "fr": "en revanche", "s": "Le centre-ville est bruyant. En revanche, les transports sont excellents.", "hl": "En revanche", "opts": ["even so, the fact remains", "nevertheless", "yet, and yet", "on the other hand", "whereas, while"], "ok": 3, "g": "on the other hand"}, {"id": "d28", "fr": "si ce n'est", "s": "Ils n'ont rien en commun, si ce n'est leur amour du cinéma.", "hl": "si ce n'est", "opts": ["except, apart from", "all the same, still", "nevertheless", "on the other hand", "yet, and yet"], "ok": 0, "g": "except, apart from"}, {"id": "d29", "fr": "constater", "s": "On constate que les jeunes lisent moins de journaux qu'avant.", "hl": "constate", "opts": ["to claim, state firmly", "to warn against", "to stress, emphasise", "to note, observe", "to dread, fear"], "ok": 3, "g": "to note, observe"}, {"id": "d30", "fr": "or", "s": "Tout le monde pensait qu'il viendrait. Or, il n'est jamais arrivé.", "hl": "Or", "opts": ["despite", "admittedly, granted", "whereas, while", "even so, the fact remains", "but, yet (turning point)"], "ok": 4, "g": "but, yet (turning point)"}, {"id": "d31", "fr": "se féliciter de", "s": "Le maire se félicite du succès du festival.", "hl": "se félicite", "opts": ["to argue for, advocate", "to note, observe", "to welcome, be pleased about", "to stress, emphasise", "to admit, acknowledge"], "ok": 2, "g": "to welcome, be pleased about"}, {"id": "d32", "fr": "nuancé", "s": "Le chercheur a un avis nuancé : le télétravail a des avantages, mais aussi des limites.", "hl": "nuancé", "opts": ["skeptical, doubtful", "alarmist, scaremongering", "reluctant", "balanced, measured", "reassuring"], "ok": 3, "g": "balanced, measured"}, {"id": "d33", "fr": "alarmiste", "s": "Pour certains experts, ce rapport est trop alarmiste : la situation n'est pas si grave.", "hl": "alarmiste", "opts": ["alarmist, scaremongering", "puzzled, unsure", "in favour of", "opposed to, against", "relieved"], "ok": 0, "g": "alarmist, scaremongering"}, {"id": "d34", "fr": "souligner", "s": "La directrice souligne l'importance du sport à l'école.", "hl": "souligne", "opts": ["to deny", "to recommend", "to stress, emphasise", "to note, observe", "to denounce, condemn"], "ok": 2, "g": "to stress, emphasise"}, {"id": "d35", "fr": "préconiser", "s": "Les experts préconisent de limiter les écrans avant trois ans.", "hl": "préconisent", "opts": ["to welcome, be pleased about", "to dread, fear", "to note, observe", "to argue for, advocate", "to recommend"], "ok": 4, "g": "to recommend"}, {"id": "d36", "fr": "réticent", "s": "Beaucoup d'enseignants restent réticents à utiliser les tablettes en classe.", "hl": "réticents", "opts": ["reassuring", "reluctant", "puzzled, unsure", "balanced, measured", "mixed, lukewarm"], "ok": 1, "g": "reluctant"}, {"id": "d37", "fr": "hostile à", "s": "Les agriculteurs sont hostiles à ce nouvel accord commercial.", "hl": "hostiles à", "opts": ["disappointed", "reassuring", "balanced, measured", "wary, distrustful", "opposed to, against"], "ok": 4, "g": "opposed to, against"}, {"id": "d38", "fr": "néanmoins", "s": "Le projet coûte cher ; il reste néanmoins indispensable.", "hl": "néanmoins", "opts": ["although", "whereas, while", "yet, and yet", "on the other hand", "nevertheless"], "ok": 4, "g": "nevertheless"}, {"id": "d39", "fr": "plaider pour", "s": "Plusieurs chercheurs plaident pour une meilleure formation des enseignants.", "hl": "plaident pour", "opts": ["to deny", "to deplore, lament", "to warn against", "to admit, acknowledge", "to argue for, advocate"], "ok": 4, "g": "to argue for, advocate"}, {"id": "d40", "fr": "méfiant", "s": "Les consommateurs sont de plus en plus méfiants face aux promesses écologiques des marques.", "hl": "méfiants", "opts": ["puzzled, unsure", "opposed to, against", "reluctant", "wary, distrustful", "skeptical, doubtful"], "ok": 3, "g": "wary, distrustful"}]
+;
+var st;try{st=JSON.parse(localStorage.getItem(KEY))||{};}catch(e){st={};}
+st.a=st.a||{};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}}
+var voice=null;
+function pick(){var vs=speechSynthesis.getVoices();voice=vs.filter(function(v){return /google/i.test(v.name)&&/^fr(-|_)FR/i.test(v.lang);})[0]||vs.filter(function(v){return /^fr/i.test(v.lang);})[0]||null;}
+if(window.speechSynthesis){pick();speechSynthesis.onvoiceschanged=pick;}
+function say(t){speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='fr-FR';u.rate=0.95;if(voice)u.voice=voice;speechSynthesis.speak(u);}
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
+function btn(x,f){var b=el('button',null,x);b.type='button';b.onclick=f;return b;}
+function tally(){var n=0,ok=0;IT.forEach(function(it){if(st.a[it.id]!=null){n++;if(st.a[it.id]===it.ok)ok++;}});return {n:n,ok:ok};}
+function report(){var t=tally(),L=['Sens DELF 1: '+t.ok+'/'+t.n+' right ('+IT.length+' items)','Missed:'];
+ IT.forEach(function(it){var a=st.a[it.id];if(a!=null&&a!==it.ok)L.push('- '+it.fr+' = '+it.g+' (chose: '+(a<0?'no idea':it.opts[a])+')');});
+ var un=IT.filter(function(it){return st.a[it.id]==null;}).map(function(it){return it.fr;});if(un.length)L.push('Not answered: '+un.join(', '));
+ return L.join('\n');}
+function next(from){for(var k=1;k<=IT.length;k++){var n=(from+k)%IT.length;if(st.a[IT[n].id]==null)return n;}return -1;}
+if(st.cur==null||st.cur>=IT.length)st.cur=Math.max(0,next(-1));
+var adv=null;
+function go(n){clearTimeout(adv);adv=null;if(n<0||n>=IT.length)return;st.cur=n;save();render();}
+function answer(idx){if(st.sub)return;var it=IT[st.cur];var first=st.a[it.id]==null;st.a[it.id]=idx;save();render();
+ clearTimeout(adv);var n=next(st.cur);if(first&&n>=0)adv=setTimeout(function(){go(n);},350);}
+function submit(){var left=IT.length-tally().n;if(left&&!confirm(left+' not answered. Submit anyway?'))return;st.sub=true;save();render();}
+function render(){var r=document.getElementById('app');r.innerHTML='';
+ r.appendChild(el('h1',null,'Sens DELF 1'));
+ var t=tally();r.appendChild(el('p','tally',st.sub?(t.ok+' / '+IT.length+' right'):(t.n+' answered, '+(IT.length-t.n)+' left')));
+ var g=el('div','grid');
+ IT.forEach(function(it,n){var a=st.a[it.id];var b=btn(String(n+1),function(){go(n);});
+  var cl=a==null?'':(st.sub?(a===it.ok?'ok':'bad'):'ans');b.className=cl+(n===st.cur?' cur':'');b.title=a==null?'not answered':'answered';g.appendChild(b);});
+ r.appendChild(g);
+ var it=IT[st.cur],a=st.a[it.id];
+ var c=el('div','card');c.appendChild(el('p','num',(st.cur+1)+' / '+IT.length+(a==null?' · not answered':'')));
+ var p=el('p','s');p.appendChild(btn('▶',function(){say(it.s);}));p.appendChild(document.createTextNode(' '));
+ var i=it.s.indexOf(it.hl);p.appendChild(document.createTextNode(it.s.slice(0,i)));p.appendChild(el('b',null,it.hl));p.appendChild(document.createTextNode(it.s.slice(i+it.hl.length)));c.appendChild(p);
+ var o=el('div','opts');
+ it.opts.concat(['? no idea']).forEach(function(x,k){var idx=k<5?k:-1;var b=btn('',function(){answer(idx);});
+  b.appendChild(el('kbd',null,k<5?String(k+1):'0'));b.appendChild(document.createTextNode(x));
+  if(st.sub){b.disabled=true;if(k===it.ok)b.className='right';else if(idx===a)b.className='wrong';}
+  else if(idx===a)b.className='sel';o.appendChild(b);});
+ c.appendChild(o);
+ if(st.sub)c.appendChild(el('p','why',it.fr+' = '+it.g+(a===it.ok?'  ✓':'  ✗')));
+ r.appendChild(c);
+ var nv=el('div','nav');
+ nv.appendChild(btn('← Prev',function(){go(st.cur-1);}));
+ nv.appendChild(btn('Next →',function(){go(st.cur+1);}));
+ if(!st.sub){var nx=next(st.cur);nv.appendChild(btn(nx<0?'All answered':'Next unanswered (Enter)',function(){if(nx>=0)go(nx);}));
+  var sb=btn('Submit',submit);sb.style.fontWeight='600';nv.appendChild(sb);}
+ r.appendChild(nv);
+ r.appendChild(el('p','keys',st.sub?'Graded. ←/→ to review, Space to hear.':'Keys: 1-5 choose (you can change it until Submit), 0 or ? no idea, Enter next unanswered, ←/→ move, Space hear. Submit grades everything at once.'));
+ var bar=el('p');
+ if(st.sub){bar.appendChild(btn('Copy report',function(){navigator.clipboard.writeText(report());}));bar.appendChild(document.createTextNode(' '));}
+ bar.appendChild(btn('Clear all',function(){if(confirm('Clear everything?')){st={a:{},cur:0};save();render();}}));r.appendChild(bar);
+ if(st.sub)r.appendChild(el('pre',null,report()));}
+document.addEventListener('keydown',function(e){if(e.metaKey||e.ctrlKey||e.altKey)return;var k=e.key;
+ if(k>='1'&&k<='5'){answer(+k-1);e.preventDefault();}
+ else if(k==='0'||k==='?'){answer(-1);e.preventDefault();}
+ else if(k==='Enter'){var n=next(st.cur);if(n>=0)go(n);e.preventDefault();}
+ else if(k==='ArrowRight'){go(st.cur+1);e.preventDefault();}
+ else if(k==='ArrowLeft'){go(st.cur-1);e.preventDefault();}
+ else if(k===' '){say(IT[st.cur].s);e.preventDefault();}});
+render();
+</script></body></html>
