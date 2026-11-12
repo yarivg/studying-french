@@ -8,7 +8,8 @@
    Written questions get a Speak button when speech.js (the app's recogniser,
    copied next to the page) loads: the transcript fills the box, he may speak
    again or edit, and a first attempt graded exactly as spoken counts as
-   spoken in the report. */
+   spoken in the report. SHELL.onePlay: each listen item plays once until graded
+   (then replays are free); Redo re-arms the wrong ones. */
 (function () {
   var B = window.BANK, S = window.SHELL || {};
   if (!window.Speech) {
@@ -112,7 +113,7 @@
   if (!st.shuffled) { shuffle(st.order); st.shuffled = true; }
   st.answers = st.answers || {}; st.results = st.results || {};
   st.first = st.first || {}; st.hints = st.hints || {}; st.history = st.history || []; st.lastWrong = st.lastWrong || {};
-  st.spoken = st.spoken || {};
+  st.spoken = st.spoken || {}; st.played = st.played || {};
   save();
 
   var root = document.getElementById('app');
@@ -162,12 +163,12 @@
     save(); render();
   }
   function redo() {
-    QS.forEach(function (q) { if (!st.results[q.id]) st.answers[q.id] = ''; });
+    QS.forEach(function (q) { if (!st.results[q.id]) { st.answers[q.id] = ''; delete st.played[q.id]; } });
     st.graded = false; save(); render();
   }
   function clearAll() {
     if (!confirm('Clear every answer? History and first-attempt scores are kept.')) return;
-    st.answers = {}; st.results = {}; st.graded = false; save(); render();
+    st.answers = {}; st.results = {}; st.played = {}; st.graded = false; save(); render();
   }
   function reshuffle() {
     if (!confirm('Deal a new order?')) return;
@@ -304,9 +305,15 @@
       var shown = (st.graded && st.first[id]) || ok;
       if (q.listen) {
         var text = q.say || model(q), play = el('p', 'en');
-        play.appendChild(btn('▶ Play', function () { say(text, 0.95); }));
-        play.appendChild(document.createTextNode(' '));
-        play.appendChild(btn('Slow', function () { say(text, 0.7); }));
+        if (S.onePlay && !shown) {
+          var pb = btn(st.played[id] ? 'Played' : '▶ Play once', function () { st.played[id] = true; save(); say(text, 0.95); render(); });
+          pb.disabled = !!st.played[id];
+          play.appendChild(pb);
+        } else {
+          play.appendChild(btn('▶ Play', function () { say(text, 0.95); }));
+          play.appendChild(document.createTextNode(' '));
+          play.appendChild(btn('Slow', function () { say(text, 0.7); }));
+        }
         if (voice) play.appendChild(el('span', 'vocab', '  ' + voice.name));
         if (shown && q.en) play.appendChild(el('span', 'vocab', '  ' + q.en));
         li.appendChild(play);

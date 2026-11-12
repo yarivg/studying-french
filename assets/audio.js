@@ -191,7 +191,7 @@ window.Say = (function () {
     var u = new SpeechSynthesisUtterance(say);
     u.lang = current ? current.lang : 'fr-FR';
     if (current) u.voice = current;
-    u.rate = (opts.slow || prefs.slow) ? 0.6 : 0.95;
+    u.rate = opts.rate || ((opts.slow || prefs.slow) ? 0.6 : 0.95);
     u.pitch = 1;
 
     var el = opts.el || null;
