@@ -12,6 +12,7 @@ French, not against a key. Each error is tagged with its theme; the top 3 themes
 | 2 | 2026-10-24 | A trip or weekend away (wrote: 24th birthday at Alabama) | 11 | 39 | 3.5 | 6/10 (60%) |
 | 3 | 2026-11-09 | Real message: the Mahomet mountain story, after the breakup | 10 | 26 | 2.6 | - |
 | 4 | 2026-11-11/12 | Meeting prep (Mon 11-16): lines for the ex, from Le Carnet words | 11 | 27 | 2.5 | - |
+| 5 | 2026-11-12 | Meeting prep: 9 questions to ask her | 9 | 12 | 1.3 | - |
 
 ## 1. 2026-10-22: my day
 
@@ -188,3 +189,38 @@ toi`, `je m'en fous / fiche`, `il y a belle lurette`, reciprocal `on s'est embra
 
 Redo: 12 -> 3 -> 1 -> 0 on the 7 lines. Closed. Next: say them aloud without reading; topic 1
 (présente-toi) and 8 questions to ask her still open.
+
+## 5. 2026-11-12: meeting prep, questions to ask her
+
+45-min session (18:00). Block 1 lines aloud done privately, block 2 (présente-toi) skipped by him.
+9 questions, first attempt: **3/9 right, 12 errors (1.3 per question)**, target 1.0 missed.
+
+Corrected:
+
+> Tu as fait quoi avec ton père ?
+> Est-ce que vous avez trouvé un nouveau resto ou un nouvel endroit en ville ?
+> Comment ça se passe, ton nouveau travail ? Tu as déjà fini ton premier mois ?
+> Tu veux rester ici ou on va se promener un peu ?
+> Tu as déjà mangé quelque chose pour dîner ?
+> Il fait froid en ce moment, tu aimes l'hiver ?
+> Est-ce que tu as le temps d'apprendre un peu d'hébreu ?
+> Ils ont logé où, ton père et sa femme, quand ils étaient ici ?
+> Ça fait combien de temps que tu fais de l'impro ? (his: `... que tu as commencé à faire des cours
+> d'improv`, grammar right)
+
+Themes:
+1. **Calques** (6): `un nouveau place` (endroit), `dans la ville` (en ville), `comment vas-tu avec`
+   (comment ça se passe), `compléter le mois` (finir), `rester` for lodging (loger), `ces jours`
+   (en ce moment / ces jours-ci); `improv` (impro).
+2. **Frames** (2): `avoir le temps pour` -> `de` + inf; `un peu hébreu` -> `un peu d'hébreu`.
+3. **Imparfait for a period** (1): `quand ils ont été ici` -> `étaient`.
+4. **Silent endings** (1): `il fais`.
+5. `autour` without an object (1).
+
+Rescue kit + spoken French (new set, meanings first) given in chat; **cold test 2026-11-14**.
+
+## Next
+
+- 2026-11-13: Sens DELF 1 cold retest (clear page answers first).
+- 2026-11-14: rescue kit cold test (meaning -> French).
+- Before 11-16: présente-toi (skipped), say all lines and questions aloud.
