@@ -342,3 +342,54 @@ Right: Q2 mieux répondre aux besoins du marché, Q3 (préparer les élèves pou
 - Q6 "citez-en deux" answered with one.
 Heard-once format is flat at 3/7 over two papers (1.5 and 3.5 on the 2020-format ex 3). Fix: answer
 while listening (one keyword per question in order), and a list question gets its slots filled first.
+
+### Exam block 4: DELF B2 TP sujet 3 (CIEP, francepodcasts), CO ex 1 "Initiative Océane" (2026-11-12, 23:50)
+
+Sujet 2 skipped: its ex 1 is the Drancourt paper reserved for 2026-11-16 (same demo paper as FEI TP
+exemple 2). Sujet 3 built as `tp3-ex1` (beach waste, 1:46, once, 5 pts) and `tp3-ex2` (UN languages,
+3:18, twice, 20 pts) in `local/delf/`.
+
+Ex 1: **4/5 by the key, 2/5 known**. Q1, Q2 heard; stuck on Q3 and lost Q4-Q5, guessed Q3 and Q5 right.
+Q4 `tri sélectif des ordures ménagères` = recyclage (paraphrase not recognised). Fix: questions follow
+the audio; drop a missed one at once and listen for the next keyword. Environment words given, ranked
+(lutter contre, sensibiliser, bénévole, veiller à ce que, se borner à, emballage, tri sélectif ...).
+**Ex 2 not sat yet.**
+
+### 2026-11-13: numbers by ear (his ask)
+
+He said numbers in DELF audio take all his attention and he loses what follows. Built a fixed
+60-item drill (`study-log/nombres.bank.js`, one play per item via the engine's new `SHELL.onePlay`)
+and then an endless random trainer, shipped into Le Carnet as `#/nombres` (c27f18c). He liked the
+sentence version and the fast speed.
+
+| set | first attempt (on merit) |
+|---|---|
+| Day 1, bare numbers + noun (num-01..30) | 26/30 |
+| Day 2, DELF-style sentences (num-31..60) | 24/30 |
+| Endless, 100-999 only, slow | 29.5/59 (from 1/8 at fast) |
+| Endless, mixed 60-99 / traps / 100-999 / years | 10.5/15 |
+
+Error themes, ranked:
+1. **Bare `cent` = 1xx** (6): 132, 164, 181, 135, 414, 194 all lost; no digit before cent means 1.
+2. **+10 endings** (6): soixante-deux / soixante-douze, quatre-vingt-trois / quatre-vingt-treize,
+   quatre-vingt-quatorze; six / seize (6 h -> 16 h).
+3. **Last word dropped** (8): 99 -> 97, 679 -> 670, 997 -> 990, 81 000 -> 80 000, 269 -> 276.
+4. **Extra blocks when writing** (4): 1 000 200 for 1200, 2 300 000 for 2300, 80 milliards for 8.
+5. First block or first number lost: vingt et une heures -> 1 h, `entre 120 et 200` -> 200.
+6. Expectation after a long single-category run: 63 -> 303.
+
+### 2026-11-13: HugoDécrypte interview with the Education minister (his own viewing)
+
+Partial watch, subtitles. Asked about about 25 words and caption errors (`la mise de` = la ministre de,
+`supement` = Parcoursup / enseignement supérieur, `temps` = tant, `coupfil` = coupe-file). Gave a
+time-ordered list of 37 recommended words with links; top 10 for DELF: témoignage, aborder, donner
+lieu à, porter sur, remédier à, enjeu, prendre en charge, délai, légitime, faire en sorte que.
+He added them to Le Carnet (card fixes given: la tentative, être pris en charge, délai = deadline).
+
+## Next (from 2026-11-13)
+
+- Sens DELF 1 cold retest (due 11-13).
+- DELF TP 3 ex 2 (`delf.html?x=tp3-ex2`), fresh, before 23:00; 10 min of `#/nombres` first.
+- Chapter `subjonctif-passe` (targets `j'espérais que tu seras`, `j'ai peur qu'on a eu`).
+- 11-14: rescue kit cold test. Before 11-16: présente-toi, lines and questions aloud.
+- `#/nombres`: 100-999 + traps at normal speed until 80%, then fast.
