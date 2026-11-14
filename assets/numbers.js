@@ -18,6 +18,12 @@
    lecarnet.numbers; they are not synced. Every answer is logged
    with its time, speed and response time, and the report groups
    the log into sittings (a gap of 20 minutes starts a new one).
+
+   Game mode: three hearts. The number plays once, and a countdown
+   starts when the voice stops (8 s, down to 4 s as the streak grows).
+   Enter answers early; when time runs out whatever is typed is
+   checked. A miss or an empty box costs a heart, and the next number
+   plays by itself. Games are scored apart from the categories.
    ============================================================ */
 
 window.Numbers = (function () {
@@ -202,11 +208,11 @@ window.Numbers = (function () {
 
   var cur = null, phase = 'ready', lastS = '', root = null;
 
-  function next() {
+  function next(fresh) {
     var ks = Object.keys(st.on).filter(function (k) { return byId[k]; });
     if (!ks.length) { cur = null; return; }
     var mi = -1;
-    if (st.rep) st.miss.some(function (m, i) { if (st.on[m.cat]) { mi = i; return true; } return false; });
+    if (st.rep && !fresh) st.miss.some(function (m, i) { if (st.on[m.cat]) { mi = i; return true; } return false; });
     if (mi >= 0 && Math.random() < 0.3) { cur = st.miss.splice(mi, 1)[0]; }
     else {
       var k = pick(ks), g = byId[k].gen();
@@ -247,7 +253,8 @@ window.Numbers = (function () {
       '<p class="nb-keys"><kbd>Enter</kbd> play · type · <kbd>Enter</kbd> check · <kbd>Enter</kbd> next, played at once · ' +
       '<kbd>R</kbd> replay once for ½ point</p>' +
       '<div class="nb-box">' + cats + '</div>' +
-      '<div class="nb-box nb-main">' +
+      '<div class="nb-box nb-game" id="nbGame"></div>' +
+      '<div class="nb-box nb-main" id="nbMain">' +
         '<div class="nb-opts">' +
           '<label>Speed <select id="nbSpeed"><option value="slow">slow</option><option value="normal">normal</option><option value="fast">fast</option></select></label>' +
           '<label><input type="checkbox" id="nbSent"> inside a sentence</label>' +
@@ -296,13 +303,14 @@ window.Numbers = (function () {
     };
     $('#nbReset').onclick = function () {
       if (!confirm('Reset all number scores?')) return;
-      st.sc = {}; st.miss = []; st.wrong = []; st.log = []; st.n = 0; save(); table(); count();
+      st.sc = {}; st.miss = []; st.wrong = []; st.log = []; st.games = []; st.n = 0; save(); table(); count();
     };
     $('#nbAns').addEventListener('keydown', onKey);
 
     next();
     paint();
     table();
+    gameIdle();
     $('#nbAns').focus({ preventScroll: true });
   }
 
@@ -399,6 +407,129 @@ window.Numbers = (function () {
     t.innerHTML = h;
   }
 
+
+  /* ---------------------------------------------------------- game */
+
+  var G = null;          // the running game, or null
+  var GT = [];           // timers to clear on stop
+
+  function later(fn, ms) { var t = setTimeout(fn, ms); GT.push(t); return t; }
+  function clearTimers() { GT.forEach(clearTimeout); GT = []; if (G && G.raf) cancelAnimationFrame(G.raf); }
+
+  function hearts(n) { var h = ''; for (var i = 0; i < 3; i++) h += i < n ? '♥' : '♡'; return h; }
+
+  function gameIdle() {
+    var box = root && $('#nbGame');
+    if (!box) return;
+    var gs = st.games || [];
+    var best = gs.reduce(function (m, g) { return Math.max(m, g.score); }, 0);
+    box.innerHTML = '<div class="nb-score-head"><b>Game: 3 hearts, beat the clock</b>' +
+      (gs.length ? '<span class="nb-count">best ' + best + ' · last ' + gs[gs.length - 1].score + '</span>' : '') + '</div>' +
+      '<p class="nb-keys">One play, no replay. The clock starts when the voice stops: 8 s, shorter as your streak grows. ' +
+      '<kbd>Enter</kbd> answers early. Uses the categories and speed above.</p>' +
+      '<button class="btn btn-primary" id="nbGStart">▶ Start game</button>';
+    $('#nbGStart').onclick = gameStart;
+    var main = $('#nbMain'); if (main) main.style.display = '';
+  }
+
+  function gameStart() {
+    if (!window.Say || !Say.on()) { flash('Turn the voice on in the speaker menu (top bar).'); return; }
+    if (!Object.keys(st.on).some(function (k) { return byId[k]; })) { flash('Pick at least one category.'); return; }
+    clearTimers();
+    G = { hearts: 3, score: 0, n: 0, streak: 0, top: 0, win: 8000, miss: [], start: Date.now() };
+    $('#nbMain').style.display = 'none';
+    var box = $('#nbGame');
+    box.innerHTML =
+      '<div class="nb-g-head"><span class="nb-hearts" id="nbGH"></span><span id="nbGS"></span>' +
+      '<button class="btn" id="nbGQuit">Stop</button></div>' +
+      '<div class="nb-g-bar"><div id="nbGBar"></div></div>' +
+      '<input type="text" id="nbGAns" class="nb-ans" autocomplete="off" inputmode="numeric" spellcheck="false" placeholder="digits, Enter" aria-label="The number you heard">' +
+      '<div class="nb-fb" id="nbGFb" aria-live="polite"></div>';
+    $('#nbGQuit').onclick = function () { gameOver(true); };
+    $('#nbGAns').addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter') return;
+      e.preventDefault();
+      if (G && G.phase !== 'shown') gameCheck(false);
+    });
+    gameHead();
+    later(gameNext, 400);
+  }
+
+  function gameHead() {
+    if (!root || !G) return;
+    $('#nbGH').textContent = hearts(G.hearts);
+    $('#nbGS').textContent = 'score ' + G.score + ' · streak ' + G.streak + ' · ' + fmt(G.win / 1000) + ' s';
+  }
+
+  function gameNext() {
+    if (!root || !G) return;
+    next(true);
+    G.phase = 'speaking'; G.t0 = null;
+    var ans = $('#nbGAns'); ans.value = ''; ans.readOnly = false; ans.focus();
+    $('#nbGFb').innerHTML = '';
+    $('#nbGBar').style.width = '100%';
+    var id = ++G.n;
+    var go = function () { if (G && G.n === id && G.phase === 'speaking') gameClock(); };
+    Say.speak(cur.text, { rate: RATES[st.speed], onEnd: go });
+    // Some voices never fire onEnd: start the clock anyway after a while.
+    later(go, 1500 + cur.text.length * 90 / RATES[st.speed]);
+  }
+
+  function gameClock() {
+    G.phase = 'clock'; G.t0 = Date.now();
+    var bar = $('#nbGBar'), win = G.win, id = G.n;
+    (function tick() {
+      if (!root || !G || G.n !== id || G.phase !== 'clock') return;
+      var left = Math.max(0, 1 - (Date.now() - G.t0) / win);
+      bar.style.width = (left * 100) + '%';
+      if (left <= 0) { gameCheck(true); return; }
+      G.raf = requestAnimationFrame(tick);
+    })();
+  }
+
+  function gameCheck(timeout) {
+    if (!G || G.phase === 'shown') return;
+    if (G.raf) cancelAnimationFrame(G.raf);
+    var ansEl = $('#nbGAns'), raw = ansEl.value, a = raw.replace(/[^0-9]/g, '');
+    var ok = a !== '' && cur.d.indexOf(a) >= 0;
+    var now = Date.now(), ms = G.t0 ? now - G.t0 : 0;
+    G.phase = 'shown'; ansEl.readOnly = true;
+    if (window.Say) Say.stop();
+    if (ok) { G.score++; G.streak++; G.top = Math.max(G.top, G.streak); G.win = Math.max(4000, G.win - 250); }
+    else {
+      G.hearts--; G.streak = 0;
+      G.miss.push({ k: cur.k, a: raw, t: cur.text, late: timeout && !a });
+      st.wrong = (st.wrong || []).concat([{ k: cur.k, a: raw, t: cur.text, again: false, ts: now, sp: st.speed, ms: ms, game: 1 }]).slice(-40);
+    }
+    st.log = (st.log || []).concat([{ ts: now, c: cur.cat, ok: ok ? 1 : 0, h: 0, sp: st.speed, ms: ms, g: 1 }]).slice(-1000);
+    save();
+    gameHead();
+    $('#nbGFb').innerHTML = '<span class="' + (ok ? 'nb-ok">✓ ' : 'nb-bad">' + (timeout && !a ? '⏱ ' : '✗ ')) + esc(cur.k) + '</span>' +
+      (ok ? '' : '<div class="nb-said">' + esc(cur.text) + '</div>');
+    later(function () { if (!G) return; if (G.hearts <= 0) gameOver(false); else gameNext(); }, ok ? 900 : 2600);
+  }
+
+  function gameOver(quit) {
+    if (!G) return;
+    clearTimers();
+    if (window.Say) Say.stop();
+    var g = { ts: Date.now(), score: G.score, top: G.top, n: G.n, sp: st.speed, cats: Object.keys(st.on).filter(function (k) { return byId[k]; }), quit: quit ? 1 : 0 };
+    var missed = G.miss;
+    G = null;
+    if (g.n) { st.games = (st.games || []).concat([g]).slice(-50); save(); }
+    var best = (st.games || []).reduce(function (m, x) { return Math.max(m, x.score); }, 0);
+    var box = root && $('#nbGame');
+    if (!box) return;
+    box.innerHTML = '<div class="nb-score-head"><b>' + (quit ? 'Stopped' : 'Game over') + ': ' + g.score + '</b>' +
+      '<span class="nb-count">' + (g.score && g.score >= best ? 'new best · ' : 'best ' + best + ' · ') + 'longest streak ' + g.top + '</span></div>' +
+      (missed.length ? '<ul class="nb-g-miss">' + missed.map(function (m) {
+        return '<li><b>' + esc(m.k) + '</b> · wrote ' + (m.late ? 'nothing in time' : esc(m.a)) + ' · ' + esc(m.t) + '</li>';
+      }).join('') + '</ul>' : '') +
+      '<button class="btn btn-primary" id="nbGAgain">▶ Play again</button> <button class="btn" id="nbGBack">Back to practice</button>';
+    $('#nbGAgain').onclick = gameStart;
+    $('#nbGBack').onclick = function () { gameIdle(); next(); paint(); $('#nbAns').focus(); };
+  }
+
   function p2(n) { return (n < 10 ? '0' : '') + n; }
   function hm(ts) { var d = new Date(ts); return p2(d.getHours()) + ':' + p2(d.getMinutes()); }
   function day(ts) { var d = new Date(ts); return d.getFullYear() + '-' + p2(d.getMonth() + 1) + '-' + p2(d.getDate()); }
@@ -408,6 +539,7 @@ window.Numbers = (function () {
   function sittings() {
     var out = [], cur2 = null;
     (st.log || []).forEach(function (e) {
+      if (e.g) return;
       if (!cur2 || e.ts - cur2.end > 20 * 60000) { cur2 = { start: e.ts, end: e.ts, n: 0, r: 0, sp: {}, ms: [] }; out.push(cur2); }
       cur2.end = e.ts; cur2.n++; cur2.r += e.ok ? (e.h ? 0.5 : 1) : 0; cur2.sp[e.sp] = 1;
       if (e.ms != null) cur2.ms.push(e.ms);
@@ -428,19 +560,27 @@ window.Numbers = (function () {
       });
       L.push('');
     }
-    L.push('All time, by category:');
+    var gs = st.games || [];
+    if (gs.length) {
+      L.push('Games (3 hearts, clock from 8 s down to 4 s):');
+      gs.slice(-10).forEach(function (g) {
+        L.push('- ' + day(g.ts) + ' ' + hm(g.ts) + ' | score ' + g.score + ' | streak ' + g.top + ' | ' + g.n + ' heard | speed ' + g.sp + ' | ' + g.cats.map(function (k) { return byId[k] ? byId[k].name.split(':')[0] : k; }).join(', ') + (g.quit ? ' | stopped' : ''));
+      });
+      L.push('');
+    }
+    L.push('Practice, all time, by category:');
     CATS.forEach(function (c) { var s = st.sc[c.id]; if (s) L.push('- ' + c.name + ': ' + fmt(s.r) + '/' + s.n); });
     L.push('', 'Last wrong:');
     (st.wrong || []).slice(-20).forEach(function (w) {
       var when = w.ts ? ' | ' + day(w.ts) + ' ' + hm(w.ts) + ', ' + w.sp + (w.ms != null ? ', ' + secs(w.ms) : '') : '';
-      L.push('- key ' + w.k + ' | wrote ' + (w.a || '(blank)') + (w.again ? ' (after replay)' : '') + ' | ' + w.t + when);
+      L.push('- key ' + w.k + ' | wrote ' + (w.a || '(blank)') + (w.again ? ' (after replay)' : '') + (w.game ? ' (game)' : '') + ' | ' + w.t + when);
     });
     return L.join('\n');
   }
 
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
 
-  function stop() { root = null; if (window.Say) Say.stop(); }
+  function stop() { clearTimers(); G = null; root = null; if (window.Say) Say.stop(); }
 
   return { render: render, stop: stop, words: fr };
 })();

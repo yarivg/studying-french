@@ -1765,3 +1765,10 @@ textarea.test-input { font-size: .95rem; line-height: 1.6; resize: vertical; }
 .nb-table { width: 100%; border-collapse: collapse; font-size: .88rem; }
 .nb-table th, .nb-table td { text-align: left; padding: .3rem .4rem; border-bottom: 1px solid var(--line-soft); }
 .nb-empty { color: var(--muted); }
+.nb-g-head { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: .6rem; font-size: .95rem; }
+.nb-g-head .btn { margin-left: auto; }
+.nb-hearts { color: var(--rouge); font-size: 1.4rem; letter-spacing: .15rem; }
+.nb-g-bar { height: 8px; border-radius: 4px; background: var(--line-soft); overflow: hidden; margin-bottom: .7rem; }
+.nb-g-bar > div { height: 100%; width: 100%; background: var(--bleu); }
+.nb-g-miss { font-size: .88rem; padding-left: 1.1rem; margin: .4rem 0 .8rem; }
+.nb-g-miss li { margin: .2rem 0; }
