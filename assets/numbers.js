@@ -205,7 +205,9 @@ window.Numbers = (function () {
   function next() {
     var ks = Object.keys(st.on).filter(function (k) { return byId[k]; });
     if (!ks.length) { cur = null; return; }
-    if (st.rep && st.miss.length && Math.random() < 0.3) { cur = st.miss.shift(); }
+    var mi = -1;
+    if (st.rep) st.miss.some(function (m, i) { if (st.on[m.cat]) { mi = i; return true; } return false; });
+    if (mi >= 0 && Math.random() < 0.3) { cur = st.miss.splice(mi, 1)[0]; }
     else {
       var k = pick(ks), g = byId[k].gen();
       var pool = g.s.filter(function (x) { return x !== lastS; });
@@ -264,19 +266,28 @@ window.Numbers = (function () {
         '<span><button class="btn" id="nbCopy">Copy report</button> <button class="btn" id="nbReset">Reset</button></span></div>' +
         '<table class="nb-table" id="nbTable"></table></div>';
 
+    // A settings change takes effect at once: the number in hand (even one
+    // already played but not answered) is dropped unscored and a fresh one
+    // is dealt, and focus goes back to the answer box so Enter keeps working.
+    function changed() {
+      save();
+      if (window.Say) Say.stop();
+      next();
+      paint();
+      $('#nbAns').focus();
+    }
     root.querySelectorAll('[data-cat]').forEach(function (cb) {
       cb.onchange = function () {
         if (cb.checked) st.on[cb.dataset.cat] = 1; else delete st.on[cb.dataset.cat];
-        save();
-        if (phase !== 'played') { next(); paint(); }
+        changed();
       };
     });
     var spd = $('#nbSpeed'); spd.value = st.speed;
     spd.onchange = function () { st.speed = spd.value; save(); $('#nbAns').focus(); };
     $('#nbSent').checked = st.sent;
-    $('#nbSent').onchange = function (e) { st.sent = e.target.checked; save(); if (phase === 'ready') { next(); paint(); } };
+    $('#nbSent').onchange = function (e) { st.sent = e.target.checked; changed(); };
     $('#nbRep').checked = st.rep;
-    $('#nbRep').onchange = function (e) { st.rep = e.target.checked; save(); };
+    $('#nbRep').onchange = function (e) { st.rep = e.target.checked; changed(); };
     $('#nbPlay').onclick = play;
     $('#nbAgain').onclick = again;
     $('#nbNext').onclick = function () { if (phase === 'played') check(); else advance(); };
