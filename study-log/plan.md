@@ -386,10 +386,47 @@ time-ordered list of 37 recommended words with links; top 10 for DELF: témoigna
 lieu à, porter sur, remédier à, enjeu, prendre en charge, délai, légitime, faire en sorte que.
 He added them to Le Carnet (card fixes given: la tentative, être pris en charge, délai = deadline).
 
-## Next (from 2026-11-13)
+### 2026-11-14 (Saturday, evening): numbers, DELF TP3 ex 2, rescue kit
 
-- Sens DELF 1 cold retest (due 11-13).
-- DELF TP 3 ex 2 (`delf.html?x=tp3-ex2`), fresh, before 23:00; 10 min of `#/nombres` first.
+**Numbers by ear** (`#/nombres`). Practice, normal speed: Two numbers 12/29 (41%), traps 13.5/16, 100-999
+11/18. After a reset (traps, 100-999, years): 12/20 (60%) in 5 min, median answer 11.1 s (target < 5 s).
+Error themes, ranked:
+1. Two numbers: the second one is lost or swapped (`quarante / cinquante` x5: 40 -> 50 three times, 58 -> 48).
+2. 70s / 90s mixed: 79 -> 99 twice, 72 -> 92, 93 -> 83, 77 -> 68. `soixante` = 60s-70s, `quatre-vingt` = 80s-90s.
+3. Last word dropped or `dix / quinze` lost: 1899 -> 1889, 495 -> 484, 82 -> 80, 59 -> 50.
+4. `deux / dix`: 82 -> 90, 702 -> 710 (new).
+Shipped to the app: report now logs time, speed and answer time per item and groups sittings (77c2189);
+settings apply at once (6d08b7a); game mode, three hearts and a clock from 8 s down to 4 s (bd1abb4).
+
+**DELF B2 TP sujet 3, CO ex 2** (UN languages, 3:18, twice, 20 pts): **about 6.5/20 (33%)**, first attempt.
+Right: Q2, Q5, Q6 (2 pts), Q8 about, Q19 about, Q1 half. Q3 1400 for 189 (the Internet number, wrong
+noun), Q4 49 for 6, Q7 `anglais` for Assemblée générale + Conseil de sécurité, Q9 `auteur de rapport`
+for inspecteur, Q10 `sécurité` for multilinguisme, Q11 `cohérente` for peu cohérente (`ça varie d'une
+organisation à l'autre`). **Q12-Q18 blank (7 pts)**: stuck on Q12 in the second play, lost the rest.
+Third paper in a row lost this way (TP3 ex 1 Q3, Pro1). Fix: write "?" and jump the moment a keyword
+passes; write each number with its noun. Words given (missing from Le Carnet, ranked): se rendre compte,
+au lieu de, un coût, une problématique, les ressources, plus... plus..., recenser, moitié moins,
+retenir, diffuser, privilégié, le quotidien, jouer (fig.), en être encore à, membres fondateurs, varier;
+plus his own: le sida, l'adhésion, par ailleurs, un organe, d'emblée, la charte. Card fix: `un coup du
+main` -> un coup de main.
+
+**Rescue kit cold test** (`study-log/rescue.bank.js`, 20 items, given 11-12): page 10/20, **14/20 on
+merit** (key widened: `Pardon ? Hein ?`, `tu peux le répéter`, `Vraiment ?`, `tu veux aller boire quelque
+chose`; key bug `Tu veux d'aller` fixed). Wrong: reactions 1/6 (`vachement ?` for Ah bon, `bien sûr` for
+Grave, `tellement bien` for Trop bien), `la définition ?` for C'est-à-dire, `j'en n'ai pas tout compris`,
+`comment je le peux mettre` (calque + pronoun slot). Hear set 4/4.
+
+Production in chat: `je n'écrivais pas à toi une lettre encore` -> je ne t'ai pas encore écrit de lettre
+(4 errors: tense, à toi for te, pas encore slot, une -> de); `quel belle fille` (quelle);
+`au fur et à mesure je pourrais parler avec toi français dans une manière` (3: word order, calque,
+pourrai); `on peut parle ... tant que on` (2). Themes unchanged: à + stressed pronoun, calques, word
+order, silent -er / agreement.
+
+## Next (from 2026-11-15)
+
+- Sens DELF 1 cold retest (overdue since 11-13). Clear the page answers first.
+- Présente-toi (5-8 sentences) and the aloud run of Writing 4 + 5 lines, reactions, the opener.
 - Chapter `subjonctif-passe` (targets `j'espérais que tu seras`, `j'ai peur qu'on a eu`).
-- 11-14: rescue kit cold test. Before 11-16: présente-toi, lines and questions aloud.
-- `#/nombres`: 100-999 + traps at normal speed until 80%, then fast.
+- `#/nombres`: game mode, two numbers + traps, normal speed; answer time under 5 s.
+- Checkpoint (FEI TP exemple 2 + cold dictée + Écrit ecr-21..25): Monday is a workday and the meetup
+  is in the evening, so sit it on 11-17 if Monday has no fresh slot.
