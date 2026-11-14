@@ -15,7 +15,9 @@
 
    Speaks through Say (audio.js), so it uses the voice chosen in
    the audio menu. Scores live in localStorage under
-   lecarnet.numbers; they are not synced.
+   lecarnet.numbers; they are not synced. Every answer is logged
+   with its time, speed and response time, and the report groups
+   the log into sittings (a gap of 20 minutes starts a new one).
    ============================================================ */
 
 window.Numbers = (function () {
@@ -283,7 +285,7 @@ window.Numbers = (function () {
     };
     $('#nbReset').onclick = function () {
       if (!confirm('Reset all number scores?')) return;
-      st.sc = {}; st.miss = []; st.wrong = []; st.n = 0; save(); table(); count();
+      st.sc = {}; st.miss = []; st.wrong = []; st.log = []; st.n = 0; save(); table(); count();
     };
     $('#nbAns').addEventListener('keydown', onKey);
 
@@ -321,6 +323,7 @@ window.Numbers = (function () {
     if (phase !== 'ready' || !cur) return;
     if (!speak()) return;
     phase = 'played';
+    cur.t0 = Date.now();
     paint();
     $('#nbAns').focus();
   }
@@ -347,10 +350,12 @@ window.Numbers = (function () {
     var ok = a !== '' && cur.d.indexOf(a) >= 0;
     var s = st.sc[cur.cat] || (st.sc[cur.cat] = { r: 0, n: 0 });
     s.n++; if (ok) s.r += cur.again ? 0.5 : 1; st.n++;
+    var now = Date.now(), ms = cur.t0 ? now - cur.t0 : null;
+    st.log = (st.log || []).concat([{ ts: now, c: cur.cat, ok: ok ? 1 : 0, h: cur.again ? 1 : 0, sp: st.speed, ms: ms }]).slice(-1000);
     if (!ok) {
       st.miss.push({ cat: cur.cat, text: cur.text, k: cur.k, d: cur.d });
       st.miss = st.miss.slice(-50);
-      st.wrong = (st.wrong || []).concat([{ k: cur.k, a: ans.value, t: cur.text, again: cur.again }]).slice(-40);
+      st.wrong = (st.wrong || []).concat([{ k: cur.k, a: ans.value, t: cur.text, again: cur.again, ts: now, sp: st.speed, ms: ms }]).slice(-40);
     }
     phase = 'checked';
     save();
@@ -383,12 +388,41 @@ window.Numbers = (function () {
     t.innerHTML = h;
   }
 
+  function p2(n) { return (n < 10 ? '0' : '') + n; }
+  function hm(ts) { var d = new Date(ts); return p2(d.getHours()) + ':' + p2(d.getMinutes()); }
+  function day(ts) { var d = new Date(ts); return d.getFullYear() + '-' + p2(d.getMonth() + 1) + '-' + p2(d.getDate()); }
+  function secs(ms) { return ms == null ? '' : fmt(ms / 1000) + ' s'; }
+
+  // Consecutive answers less than 20 minutes apart make one sitting.
+  function sittings() {
+    var out = [], cur2 = null;
+    (st.log || []).forEach(function (e) {
+      if (!cur2 || e.ts - cur2.end > 20 * 60000) { cur2 = { start: e.ts, end: e.ts, n: 0, r: 0, sp: {}, ms: [] }; out.push(cur2); }
+      cur2.end = e.ts; cur2.n++; cur2.r += e.ok ? (e.h ? 0.5 : 1) : 0; cur2.sp[e.sp] = 1;
+      if (e.ms != null) cur2.ms.push(e.ms);
+    });
+    return out;
+  }
+
   function report() {
     var L = ['# Nombres à l\'oreille report', ''];
+    var ss = sittings();
+    if (ss.length) {
+      L.push('Sittings:');
+      ss.slice(-10).forEach(function (s) {
+        var med = s.ms.slice().sort(function (a, b) { return a - b; })[Math.floor(s.ms.length / 2)];
+        L.push('- ' + day(s.start) + ' ' + hm(s.start) + '-' + hm(s.end) + ' (' + Math.max(1, Math.round((s.end - s.start) / 60000)) + ' min)' +
+          ' | ' + fmt(s.r) + '/' + s.n + ' (' + Math.round(100 * s.r / s.n) + '%)' +
+          ' | speed ' + Object.keys(s.sp).join('+') + (med != null ? ' | median answer ' + secs(med) : ''));
+      });
+      L.push('');
+    }
+    L.push('All time, by category:');
     CATS.forEach(function (c) { var s = st.sc[c.id]; if (s) L.push('- ' + c.name + ': ' + fmt(s.r) + '/' + s.n); });
     L.push('', 'Last wrong:');
     (st.wrong || []).slice(-20).forEach(function (w) {
-      L.push('- key ' + w.k + ' | wrote ' + (w.a || '(blank)') + (w.again ? ' (after replay)' : '') + ' | ' + w.t);
+      var when = w.ts ? ' | ' + day(w.ts) + ' ' + hm(w.ts) + ', ' + w.sp + (w.ms != null ? ', ' + secs(w.ms) : '') : '';
+      L.push('- key ' + w.k + ' | wrote ' + (w.a || '(blank)') + (w.again ? ' (after replay)' : '') + ' | ' + w.t + when);
     });
     return L.join('\n');
   }
