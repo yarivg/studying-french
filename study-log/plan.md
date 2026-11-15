@@ -422,11 +422,39 @@ Production in chat: `je n'écrivais pas à toi une lettre encore` -> je ne t'ai 
 pourrai); `on peut parle ... tant que on` (2). Themes unchanged: à + stressed pronoun, calques, word
 order, silent -er / agreement.
 
-## Next (from 2026-11-15)
+### 2026-11-15 (Sunday, evening): meetup eve, rescue retest, Dictée 24, numbers game
 
+**Words.** 62 added to Le Carnet in 24 h (1,169 total). Per day since 11-06: 95, 114, 115, 67, 38, 87, 13,
+37, 37, 25+. Backlog advice: FR -> EN, newest 5 days first, max 50 a day. Video word list (new standing
+rule, memory `video-word-list`) given for HugoDécrypte x Aurélie Bessançon (YJX44RNKFM0). Search fix
+shipped: `au dela` finds `au-delà` (36c1506).
+
+**Rescue kit, cold retest** (`study-log/rescue.bank.js`): page 17/20, **18/20 on merit**, reactions
+**6/6** (11-14: 14/20, 1/6). Key widened: `tu veux aller prendre un verre`. Wrong: `tu veux ce que je veux
+dire` (vois), `comment je peux dire` (Comment dire). Every 11-14 error gone.
+
+**Dictée 24: ses questions** (dic-275..286, 12 casual tu-questions she is likely to ask, max 2 plays):
+**6/12 exact**, meaning caught on 11/12. Heard wrong: `elle est boulo` for Et le boulot, `j'étais raconter`
+for je t'ai raconté, `m'attendais pas que` for s'attendre à ce que, `de cours` for des cours. Silent
+grammar: -er for -é after avoir (raconter, déménager: the Dictée 1 theme again), `on avais`, `ça c'est /
+s'est passe` for ça se passe (en ce moment = present).
+
+**Spoken lines for the meetup** (chat): `honeuse` (not a word; honteuse = shameful, heureuse = happy),
+`si tu n'ai pas` (tu as), `peut-être notre relation n'est pas finie` (peut-être que + normal order).
+Final versions correct: `Notre relation était honnête et heureuse`, `Si tu n'as pas fermé ton cœur,
+peut-être que notre histoire n'est pas finie.`
+
+**Numbers, game mode** (first real run, works): best **12** (target 12), streak 9, 15 heard (traps, 60-99,
+two numbers). All 3 misses on the second number, two of them 97: `65 90` for 65 and 97, `9` for 58 and 97,
+`45 86` for 49 and 57. Theme unchanged: the tail of a 90s number (`dix-sept`) is lost.
+Phone: Galaxy Buds on the Pixel 7 clip the first 1-2 s of TTS (Bluetooth link waking). Offered fix: a
+silent keep-alive stream in `assets/audio.js` (needs /ship).
+
+## Next (from 2026-11-16)
+
+- 11-16 evening: the meetup. Afterwards, paste what you did not catch and the lines you wanted to say.
+- 11-17: checkpoint (FEI TP exemple 2 + cold dictée + Écrit ecr-21..25).
 - Sens DELF 1 cold retest (overdue since 11-13). Clear the page answers first.
-- Présente-toi (5-8 sentences) and the aloud run of Writing 4 + 5 lines, reactions, the opener.
 - Chapter `subjonctif-passe` (targets `j'espérais que tu seras`, `j'ai peur qu'on a eu`).
-- `#/nombres`: game mode, two numbers + traps, normal speed; answer time under 5 s.
-- Checkpoint (FEI TP exemple 2 + cold dictée + Écrit ecr-21..25): Monday is a workday and the meetup
-  is in the evening, so sit it on 11-17 if Monday has no fresh slot.
+- `#/nombres` game: 60-99, traps, two numbers. Target best ≥ 15, the 90s tail heard.
+- Dictée 24 redo cold in 3 days (11-18): target ≥ 9/12.
