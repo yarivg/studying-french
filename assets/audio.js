@@ -175,6 +175,49 @@ window.Say = (function () {
       .trim();
   }
 
+  /* ---------------------------------------------------------- keep-alive */
+
+  // Bluetooth headphones (Galaxy Buds on a Pixel, among others) put the
+  // audio link to sleep when nothing plays, and waking it costs 1-2 s: a
+  // short sentence loses its first words. While the learner is active we
+  // play a near-silent loop through Web Audio so the link never sleeps.
+  // It starts on the first tap or key (browsers need a gesture), pauses
+  // when the tab is hidden and after 3 idle minutes.
+  var IDLE_MS = 3 * 60 * 1000;
+  var ac = null, kaTimer = null;
+
+  function keepAlive() {
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC || !prefs.on || document.hidden) return;
+    try {
+      if (!ac) {
+        ac = new AC();
+        var buf = ac.createBuffer(1, ac.sampleRate, ac.sampleRate);
+        var d = buf.getChannelData(0);
+        // Inaudible but not digital zero, so no layer treats it as silence.
+        for (var i = 0; i < d.length; i++) d[i] = (i % 2 ? 1 : -1) * 1e-4;
+        var src = ac.createBufferSource();
+        src.buffer = buf; src.loop = true;
+        src.connect(ac.destination); src.start();
+      }
+      if (ac.state === 'suspended') ac.resume();
+    } catch (e) { return; }
+    clearTimeout(kaTimer);
+    kaTimer = setTimeout(sleep, IDLE_MS);
+  }
+
+  function sleep() {
+    clearTimeout(kaTimer);
+    if (ac && ac.state === 'running') ac.suspend();
+  }
+
+  ['pointerdown', 'keydown'].forEach(function (t) {
+    window.addEventListener(t, keepAlive, { capture: true, passive: true });
+  });
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) sleep(); else if (ac) keepAlive();
+  });
+
   // Bumped by every speak() and every stop(), so an utterance that is
   // cancelled can tell it was cancelled: browsers are inconsistent about
   // whether cancel() arrives as `end` or as an `interrupted` error.
@@ -187,6 +230,7 @@ window.Say = (function () {
     if (!say) return false;
 
     synth.cancel();
+    keepAlive();
     var mine = ++epoch;
     var u = new SpeechSynthesisUtterance(say);
     u.lang = current ? current.lang : 'fr-FR';
@@ -419,6 +463,7 @@ window.Say = (function () {
       if (t.id === 'audioOn') {
         prefs.on = t.checked;
         document.body.classList.toggle('audio-off', !prefs.on);
+        if (!prefs.on) sleep();
         if (!prefs.on) stop();
       } else if (t.id === 'audioSlow') {
         prefs.slow = t.checked;
