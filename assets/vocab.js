@@ -32,9 +32,15 @@ window.Vocab = (function () {
     return loading;
   }
 
+  // Search folding: accents off, and hyphens and apostrophes count as a
+  // space, so "au dela" finds "au-delà" and "d emblee" finds "d'emblée".
   function strip(s) {
-    return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[-\u2010-\u2015'\u2018\u2019\u02bc]/g, ' ')
+      .replace(/\s+/g, ' ');
   }
+  // Same with every space gone, so "aujourdhui" still finds "aujourd'hui".
+  function tight(s) { return s.replace(/ /g, ''); }
 
   /* ---------------------------------------------------------- my words */
 
@@ -141,10 +147,17 @@ window.Vocab = (function () {
     if (opts.status === 'unknown') words = words.filter(function (w) { return !Progress.isKnown(w.id); });
     if (opts.status === 'mine') words = words.filter(function (w) { return w.mine; });
 
-    var q = strip(String(query || '').trim().toLowerCase());
+    var q = strip(String(query || '').toLowerCase()).trim();
     if (!q) return words;
-    return words.filter(function (w) { return w.searchPlain.indexOf(q) !== -1; })
-      .sort(function (a, b) { return a.searchPlain.indexOf(q) - b.searchPlain.indexOf(q); });
+    var qt = tight(q);
+    function at(w) {
+      var i = w.searchPlain.indexOf(q);
+      if (i !== -1) return i;
+      i = tight(w.searchPlain).indexOf(qt);
+      return i === -1 ? -1 : i + 1000;   // exact-spacing matches rank first
+    }
+    return words.filter(function (w) { return at(w) !== -1; })
+      .sort(function (a, b) { return at(a) - at(b); });
   }
 
   /* ---------------------------------------------------------- rendering */
