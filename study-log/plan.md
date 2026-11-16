@@ -450,6 +450,20 @@ two numbers). All 3 misses on the second number, two of them 97: `65 90` for 65 
 Phone: Galaxy Buds on the Pixel 7 clip the first 1-2 s of TTS (Bluetooth link waking). Offered fix: a
 silent keep-alive stream in `assets/audio.js` (needs /ship).
 
+### 2026-11-16 (Monday, morning before work): meetup warm-up, Dix pour cent S1E1
+
+Read-aloud card (scratchpad `carte.html`): Writing 4 + 5 lines, rescue lines, new lines. Production in chat,
+first attempts: `c'est pas facile à trouver un autre qui est si similaire à toi` (3: de + inf, quelqu'un,
+calque `similaire` -> quelqu'un comme toi); `venir ici était une decisione rationale` (2: décision,
+rationnelle) + `ce que c'est le pouvoir` (ce qu'est); `j'avais la niaque pour améliore` (-er after pour),
+`en revench`, `je sais quel manque profond que je me sens` (mixed frame; ressentir un manque); `il y
+avait un écrivain qui s'appellait` (avait, appelait), `il y a belle lurette cette histoire` (ça remonte à
+belle lurette). Themes unchanged: silent -er, mixed frames, calques.
+
+Dix pour cent S1E1 rewatch, 20 min. 44 words added since last night (1,213 total). Card fixes given:
+`toujours pas` = still not (not yet = pas encore), `déchire` -> ça déchire / il déchire, `broder` = to
+embellish. Numbers game on the phone (Bluetooth fix test) not done yet.
+
 ## Next (from 2026-11-16)
 
 - 11-16 evening: the meetup. Afterwards, paste what you did not catch and the lines you wanted to say.
