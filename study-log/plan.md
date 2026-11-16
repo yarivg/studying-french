@@ -464,10 +464,23 @@ Dix pour cent S1E1 rewatch, 20 min. 44 words added since last night (1,213 total
 `toujours pas` = still not (not yet = pas encore), `déchire` -> ça déchire / il déchire, `broder` = to
 embellish. Numbers game on the phone (Bluetooth fix test) not done yet.
 
-## Next (from 2026-11-16)
+### 2026-11-17 (Tuesday, late night): DELF B2 TP sujet 4, CO ex 1
 
-- 11-16 evening: the meetup. Afterwards, paste what you did not catch and the lines you wanted to say.
-- 11-17: checkpoint (FEI TP exemple 2 + cold dictée + Écrit ecr-21..25).
+The 11-16 evening meetup happened and went well; the only word missed was `binôme` (pair, duo).
+DELF B2 TP sujet 4 (CIEP, francepodcasts) built as `tp4-ex1` / `tp4-ex2` (local only). FEI exemple 2
+(checkpoint paper) is behind a bot challenge: download by hand when needed.
+
+**CO ex 1** (tri sélectif, RFI, 1:15, 5 pts): **4/5, but after 2 plays** (exam: 1). Wrong: Q1 `commencent à
+changer` for `ont radicalement changé`: the degree is the trap; the cue was `pas un seul Français ne
+triait`, `un emballage sur deux`, `absolument prodigieuse`. Words carded: tri sélectif, emballage, un X sur
+Y, bac, démarche (citoyenne), se soumettre / insoumis, prodigieux. Ex 2 (Belle-Île citadel, 5:08, 20 pts,
+date-heavy) not sat: tired.
+
+## Next (from 2026-11-17)
+
+- DELF TP4 CO ex 2 (`delf.html?x=tp4-ex2`), fresh, not late at night: 2 plays only, "?" and jump, every
+  number with its noun. Target ≥ 10/20.
+- Checkpoint: cold dictée + Écrit ecr-21..25 (+ FEI TP exemple 2 if downloaded by hand).
 - Sens DELF 1 cold retest (overdue since 11-13). Clear the page answers first.
 - Chapter `subjonctif-passe` (targets `j'espérais que tu seras`, `j'ai peur qu'on a eu`).
 - `#/nombres` game: 60-99, traps, two numbers. Target best ≥ 15, the 90s tail heard.
