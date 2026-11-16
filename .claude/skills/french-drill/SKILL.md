@@ -42,6 +42,7 @@ Sources (all free; questions, audio, surveillant transcript, corrigé):
   Index of all sujets on any of those pages. Sujet 1 tout public there is the 2020 reform paper =
   FEI exemple 1. Check every new paper's transcript against the used / reserved list first.
 - Not usable: TV5Monde blocks curl (403) and he dislikes the site; DELF Pro on FEI is 403/404.
+- FEI serves a proof-of-work bot challenge to curl since 2026-11: its files must be downloaded by hand.
 
 Used / reserved (update when a paper is sat):
 | paper | status |
@@ -51,6 +52,9 @@ Used / reserved (update when a paper is sat):
 | FEI junior exemple 1 (SJ démo 02: girls' football, tablets) | sat 2026-11-07, 15.5/25 |
 | FEI junior exemple 2 (SJ démo 03: Haigneré sciences, libraires) | sat 2026-11-10/11: ex 1 5.25/18, ex 2 3/7 |
 | francepodcasts DELF Pro sujet 1 (contrats / Salon de l'étudiant) | ex 1 sat 2026-11-11 (`pro1-ex1`): 8.75/18; corrigé Q5 "un an" disputed (audio: deux ans). Ex 2 (`pro1-ex2`) 3/7 |
+| francepodcasts tout public sujet 3 (Initiative Océane / langues à l'ONU) | ex 1 (`tp3-ex1`) sat 2026-11-12: 4/5; ex 2 (`tp3-ex2`) sat 2026-11-14: about 6.5/20 |
+| francepodcasts tout public sujet 4 (tri sélectif / citadelle de Belle-Île) | ex 1 (`tp4-ex1`) sat 2026-11-17: 4/5 after 2 plays; ex 2 (`tp4-ex2`) built, not sat |
+| francepodcasts tout public sujets 5-6 | unused |
 
 Build recipe: `pdftotext -layout` for questions and corrigé (image-only PDFs: Read them visually).
 Integral recordings include the instructions and pauses: cut the document with
