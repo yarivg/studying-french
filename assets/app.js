@@ -1769,13 +1769,13 @@
             '<a href="#/vocab">vocabulary list</a>, or retiring it mid-review, takes it out of ' +
             'every deck.</p>') +
         dueListBlock() +
-        '<details class="deck-more"><summary>All decks</summary>' +
         '<form class="deck-recent" id="deck-recent">' +
           '<label>My words from the last <input type="number" id="recent-days" min="1" max="365" value="' + recentDays() + '"> days</label> ' +
           '<select id="recent-dir"><option value="fr">FR → EN</option><option value="en">EN → FR</option></select> ' +
           '<button type="submit" class="btn">Start</button> ' +
           '<span class="deck-meta" id="recent-count"></span>' +
         '</form>' +
+        '<details class="deck-more"><summary>All decks</summary>' +
         '<div class="deck-grid">';
 
       Vocab.decks().forEach(function (d) {
