@@ -476,12 +476,41 @@ triait`, `un emballage sur deux`, `absolument prodigieuse`. Words carded: tri s�
 Y, bac, démarche (citoyenne), se soumettre / insoumis, prodigieux. Ex 2 (Belle-Île citadel, 5:08, 20 pts,
 date-heavy) not sat: tired.
 
-## Next (from 2026-11-17)
+### 2026-11-17 (Tuesday, evening): DELF TP4 CO ex 2, Arfi video, Dictée 25
 
-- DELF TP4 CO ex 2 (`delf.html?x=tp4-ex2`), fresh, not late at night: 2 plays only, "?" and jump, every
-  number with its noun. Target ≥ 10/20.
+Session asked for: the Arfi video (HugoDécrypte, `Wva8N7wdX-g`, watched to 35:14 with little understood),
+numbers, one oral test, FR -> EN flashcards. Done: the oral test and the video. Not done (tired): numbers,
+flashcards (643 FR -> EN due on My words: 141 reviews, 502 never seen).
+
+**DELF TP4 CO ex 2** (Belle-Île citadel, 20 pts): **8/20**, under the 10 target. Lost:
+- Q6 (2): `2005` for `fin du XIXe siècle`: the number trap again; the question said "à quelle époque".
+- Q7 (1): `c` (passion) for `b` (documentation): word-match trap, `passion` attached to the monument.
+- Q9 + Q12 (4): both said in the intro (chaîne hôtelière, aides allouées): the first 20 s were lost.
+- Q8 (2): `financement`, too vague; the reason had to be written out (décentralisation coûte cher).
+- Q11 (2): blank; frame `à cette condition que` unknown. Q3 (1): Vauban missing.
+He asked whether all 12 questions can be read in the 1-minute window: no, skim stems for one keyword each.
+
+Words carded (his adds, checked): gênant, en effet, la pierre, la ruine, acquérir, le joyau; `siècle des
+Lumières` added then removed by him (card said "18th century": fix was "the Enlightenment"). Word answers
+given: célèbre par, surplomber, contemporains, recouvert de, tomber raide amoureux, confondre, piéger,
+dater de, racheter, classé / inscrit, consentir à, ruiner / gâcher, déposer (une plainte), authentique,
+en somme, vis-à-vis de, tendu, sur + number = out of. Arfi word list (0:00-35:14) given in two tiers:
+cold test on 11-19.
+
+**Dictée 25** (Arfi 35:12-40:04): 2/12 first time, 41 word errors, see `dictee.md`.
+
+## Next (from 2026-11-18)
+
+- Numbers game `#/nombres`: 60-99, traps, two numbers. Target best ≥ 15. (Skipped 11-17.)
+- FR -> EN flashcards, My words: about 120 a day, retire what is known cold. 643 due on 11-17.
+- Cold test 11-19: the Arfi word list (tier 1) + the TP4 ex 2 words (chaîne hôtelière, décentralisation,
+  se désintéresser de, consentir à, à condition que, allouer, au large de).
+- Dictée 26 = Arfi from 40:04: cold 1x first.
+- DELF CO method, next paper (TP sujet 5): the first 20 s carry answers; "à quelle époque" = a period,
+  not a year; a matching word in an option is a trap until checked.
 - Checkpoint: cold dictée + Écrit ecr-21..25 (+ FEI TP exemple 2 if downloaded by hand).
 - Sens DELF 1 cold retest (overdue since 11-13). Clear the page answers first.
 - Chapter `subjonctif-passe` (targets `j'espérais que tu seras`, `j'ai peur qu'on a eu`).
-- `#/nombres` game: 60-99, traps, two numbers. Target best ≥ 15, the 90s tail heard.
-- Dictée 24 redo cold in 3 days (11-18): target ≥ 9/12.
+- Dictée 24 redo cold (was due 11-18): target ≥ 9/12.
+- DELF B2 registration: email sent to IF Israël Tel Aviv (h.barsheshet@ambfr-il.org) asking for 2027
+  dates, deadline, fee. Pau (France) fallback: B2 on 17-19 Mar, 16-17 Jun, 17-18 Nov 2027, 150 EUR.

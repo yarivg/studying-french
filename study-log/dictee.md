@@ -29,6 +29,7 @@ Banks: `dictee-<N>.bank.js`, ids `dic-NN`, never reused.
 | 20 | 2026-11-05 | innerFrench E191 "S'ennuyer au travail, le secret du bonheur ?" (`nMw-ajbpHhs`), 0:14-4:00, two speakers, new | 5/12 (10 word errors, 0.8 per sentence; word questions touched 5 sentences) | 12/12 | 4 |
 | 22 | 2026-11-08 | innerFrench E119 "Le télétravail va-t-il changer la société ?" (`vfyMakR2bds`), 0:13-4:58, new video, Sat 19:10 | 2/12 (25 word errors, 2.1 per sentence) | 12/12 | 3 |
 | 23 | 2026-11-09 | innerFrench E119 (`vfyMakR2bds`), 4:58-9:47, cold listen 1x no subs first (~85%) | 1/12 (19 word errors, 1.6 per sentence) | 12/12 | 3 |
+| 25 | 2026-11-17 | HugoDécrypte x Fabrice Arfi (`Wva8N7wdX-g`), 35:12-40:04, cold 1x, late night, tired | 2/12 (41 word errors, 3.4 per sentence; word questions on Mediapart, déposer, authentique, vis-à-vis, tendu, sur + number) | 12/12 | 4 |
 
 ## Dictée 1
 
@@ -631,3 +632,35 @@ Right: `réticentes` (feminine plural), `étaient` twice, `n'avaient`, `voulait`
 
 Next: Dictée 24 = E119 from 9:47. Before Grade: de / des after every quantity word, and c'est / s'est
 (is it se + verb?). Écrit candidates: si + imparfait / conditionnel, ça s'est fait / il s'est passé.
+
+## Dictée 25: 2026-11-17
+
+HugoDécrypte "Bardella dit que c'est faux ?" with Fabrice Arfi (Mediapart), 35:12-40:04. Fast, dense,
+legal register, two speakers. Cold 1x first, then the dictée after a DELF paper, near midnight.
+**2/12 first time, 41 word errors (3.4 per sentence), the worst rate since Dictée 18.** Right first
+time: dic-287 (poursuivra, procédure abusive), dic-295 (ça fait 27 ans que, jamais été condamné).
+
+**Heard wrong, audible (about 22):**
+- Unknown frames heard as nonsense: `combien même` for `quand bien même`; `nous ont summe` for
+  `nous en sommes à` (en être à + number); `le taux de relaxe` dropped entirely.
+- Nasal vowels: `plante` for `plainte`, `fou` for `faux`, `impression` for `impatients`.
+- Numbers: `360` for `350`, again the tail of a number.
+- Tense: `n'était` for `n'est`, `on était` for `on est`.
+- Function words: `que`/`qui` swapped, `et que ça` dropped (si ... et que), `est` for `elle`.
+
+**Silent grammar (about 19):**
+- Plural not written: `qu'il soit` for `qu'ils soient` (on comprend que + subj.), `d'autre témoignage`,
+  `nous documents` for `nos`.
+- Agreement: `déposé` for `déposée` (passive, elle), `tandu` / `tendus`.
+- Spelling of frequent words: `inquête` for `enquête` (x3), `cet` for `cette`, `témoigniage`,
+  `probeblement`, `viesavis`.
+- `je croie` for `je crois` (subjunctive form for the indicative).
+- `de journal` for `du journal` (vis-à-vis de + le).
+
+Key fix: `trois cents cinquante` was accepted by mistake. No s on cent when a number follows:
+`trois cent cinquante`. Variant removed from the bank.
+
+Redo: 11/12, then 12/12 (4 attempts). Closed. Words carded from the clip and the video's first 35 min.
+
+Next: Dictée 26 = Arfi from 40:04. Before Grade: every noun, singular or plural? (ils soient,
+d'autres, nos); enquête starts with en-.
