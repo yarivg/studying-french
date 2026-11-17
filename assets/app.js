@@ -265,6 +265,7 @@
     if (hash === 'vocab') return renderVocabPage();
     if (hash === 'cards') return renderDeckList();
     if (hash === 'cards/list') return renderDueList();
+    if (hash === 'cards/one') return renderDueOne();
     if (hash.indexOf('cards/') === 0) return renderDeck(hash.slice(6));
     if (hash === 'tests') return renderTestList();
     if (hash.indexOf('test/') === 0) return renderTest(hash.slice(5));
@@ -1740,12 +1741,16 @@
   function dueListBlock() {
     var l = dueListCards();
     var n = l.seen.length + l.fresh.length;
-    return '<a class="deck deck-main" href="#/cards/list" style="display:block;text-decoration:none">' +
-      '<div class="deck-name">Due list: my words, FR → EN</div>' +
+    return '<div class="deck deck-main">' +
+      '<div class="deck-name">Due now: my words, FR → EN</div>' +
       '<div class="deck-meta ' + (n ? 'deck-due' : '') + '">' +
         (n ? l.seen.length + ' reviews · ' + l.fresh.length + ' new' : 'nothing due') + '</div>' +
-      '<div class="deck-meta">The whole pile as a list: ✓ / ✗ / Retire, 25 at a time</div>' +
-      '</a>';
+      '<div class="deck-meta">Reviews first, then new words, 25 at a time</div>' +
+      '<div class="deck-modes">' +
+        '<a class="btn btn-primary" href="#/cards/one">1 by 1</a>' +
+        '<a class="btn" href="#/cards/list">List</a>' +
+      '</div>' +
+      '</div>';
   }
 
   function renderDeckList() {
@@ -1854,6 +1859,46 @@
     var seen = [], fresh = [];
     due.forEach(function (id) { (Progress.card(id).seen ? seen : fresh).push(byId[id]); });
     return { seen: seen, fresh: fresh };
+  }
+
+  // The same due pile, one card at a time: reviews first, then new words,
+  // each group shuffled so the order is not the same every day.
+  function shuffled(a) {
+    a = a.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1)), x = a[i]; a[i] = a[j]; a[j] = x;
+    }
+    return a;
+  }
+
+  function renderDueOne() {
+    setCurrentNav('cards');
+    pager.innerHTML = '';
+    view.innerHTML = '<div class="loading">Loading…</div>';
+
+    Vocab.load().then(function () {
+      var l = dueListCards();
+      var cards = shuffled(l.seen).concat(shuffled(l.fresh));
+      view.innerHTML =
+        '<div class="eyebrow"><a href="#/cards" style="color:inherit;text-decoration:none">← Flashcards</a></div>' +
+        '<h1>Due now: my words, FR → EN</h1>' +
+        '<div id="stage"></div>';
+      // Already filtered to what is due and ordered: hand it over as is.
+      var stage = document.getElementById('stage');
+      Quiz.startSession(stage, cards, {
+        limit: 25, all: true, shuffle: false,
+        // "Review again" deals the next 25 in this same order, not the
+        // deck's default new-first shuffle.
+        onDone: function () {
+          var again = stage.querySelector('[data-act="again"]');
+          if (!again) return;
+          var fresh = again.cloneNode(true);
+          fresh.textContent = 'Next 25';
+          again.replaceWith(fresh);
+          fresh.addEventListener('click', renderDueOne);
+        }
+      });
+    });
   }
 
   function renderDueList() {
