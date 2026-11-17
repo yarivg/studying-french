@@ -1738,6 +1738,23 @@
     return n;
   }
 
+  function todayBlock() {
+    var s = Progress.todayStats();
+    var pct = s.reviews ? Math.round((s.right / s.reviews) * 100) : 0;
+    var stat = function (n, label, cls) {
+      return '<div class="today-stat"><div class="today-n' + (cls ? ' ' + cls : '') + '">' + n + '</div>' +
+        '<div class="today-l">' + label + '</div></div>';
+    };
+    return '<div class="today-grid" aria-label="Today">' +
+      stat(s.reviews, 'reviewed today') +
+      stat(s.right + (s.reviews ? ' <small>' + pct + '%</small>' : ''), 'right', 'is-ok') +
+      stat(s.wrong, 'didn\'t know', 'is-bad') +
+      stat(s.firstTime, 'seen for the first time') +
+      stat(s.retired, 'retired') +
+      stat(s.added, 'words added') +
+      '</div>';
+  }
+
   function dueListBlock() {
     var l = dueListCards();
     var n = l.seen.length + l.fresh.length;
@@ -1773,6 +1790,7 @@
           : '<p class="deck-note">Marking a word known in the ' +
             '<a href="#/vocab">vocabulary list</a>, or retiring it mid-review, takes it out of ' +
             'every deck.</p>') +
+        todayBlock() +
         dueListBlock() +
         '<form class="deck-recent" id="deck-recent">' +
           '<label>My words from the last <input type="number" id="recent-days" min="1" max="365" value="' + recentDays() + '"> days</label> ' +

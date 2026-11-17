@@ -254,9 +254,45 @@ window.Progress = (function () {
 
   function isKnown(id) { return !!state.known[id]; }
 
+  // Words retired today, counted on this device only: the known flag carries
+  // no date, and changing its shape would break the sync merge.
+  var RETIRED_KEY = 'lecarnet.retiredToday';
+  function bumpRetired(delta) {
+    try {
+      var r = JSON.parse(localStorage.getItem(RETIRED_KEY) || '{}');
+      if (r.day !== todayKey()) r = { day: todayKey(), n: 0 };
+      r.n = Math.max(0, r.n + delta);
+      localStorage.setItem(RETIRED_KEY, JSON.stringify(r));
+    } catch (e) {}
+  }
+  function retiredToday() {
+    try {
+      var r = JSON.parse(localStorage.getItem(RETIRED_KEY) || '{}');
+      return r.day === todayKey() ? r.n : 0;
+    } catch (e) { return 0; }
+  }
+
+  // Today at a glance, for the flashcards page: reviews from the review log
+  // (both directions), words added from their own timestamps.
+  function todayStats() {
+    var d = new Date();
+    var start = new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
+    var out = { reviews: 0, right: 0, wrong: 0, firstTime: 0, added: 0, retired: retiredToday() };
+    var rev = Array.isArray(state.rev) ? state.rev : [];
+    for (var i = rev.length - 1; i >= 0 && rev[i].at >= start; i--) {
+      out.reviews++;
+      if (rev[i].r) out.right++; else out.wrong++;
+      if (rev[i].e === -1) out.firstTime++;
+    }
+    for (var k in state.words) {
+      if (has(state.words, k) && (state.words[k].at || 0) >= start) out.added++;
+    }
+    return out;
+  }
+
   function toggleKnown(id) {
-    if (state.known[id]) delete state.known[id];
-    else state.known[id] = true;
+    if (state.known[id]) { delete state.known[id]; bumpRetired(-1); }
+    else { state.known[id] = true; bumpRetired(1); }
     touch('known', id);
     save();
     return isKnown(id);
@@ -886,6 +922,7 @@ window.Progress = (function () {
     getEx: getEx, setEx: setEx, exStats: exStats,
     card: card, isDue: isDue, gradeCard: gradeCard, resetCard: resetCard,
     dueCount: dueCount, dueQueue: dueQueue, cardStats: cardStats,
+    todayStats: todayStats,
     isKnown: isKnown, toggleKnown: toggleKnown, knownCount: knownCount,
     words: words, wordCount: wordCount, getWord: getWord, findWord: findWord,
     getEdit: getEdit, setEdit: setEdit, clearEdit: clearEdit, editCount: editCount,

@@ -1813,3 +1813,12 @@ textarea.test-input { font-size: .95rem; line-height: 1.6; resize: vertical; }
 .due-keys { font-size: .8rem; color: var(--muted); margin: .4rem 0 0; }
 .due-keys label { color: var(--ink-soft); cursor: pointer; }
 .due-fr-ear { cursor: pointer; }
+
+/* Today at a glance, top of the flashcards page */
+.today-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; margin: 0 0 1rem; }
+.today-stat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); padding: .55rem .7rem; }
+.today-n { font-family: var(--serif); font-size: 1.35rem; font-variant-numeric: tabular-nums; color: var(--ink); }
+.today-n small { font-size: .75rem; color: var(--muted); }
+.today-n.is-ok { color: var(--vert); }
+.today-n.is-bad { color: var(--rouge); }
+.today-l { font-size: .74rem; color: var(--muted); }
