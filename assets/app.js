@@ -1901,16 +1901,39 @@
     });
   }
 
+  // Listen only hides the French so the word is met by ear first. The
+  // choice is remembered on this device.
+  var DUE_LISTEN_KEY = 'lecarnet.dueListen';
+  function dueListenOn() { try { return localStorage.getItem(DUE_LISTEN_KEY) !== '0'; } catch (e) { return true; } }
+  function setDueListen(on) { try { localStorage.setItem(DUE_LISTEN_KEY, on ? '1' : '0'); } catch (e) {} }
+
+  // One keydown handler for the page's lifetime; it acts only while a due
+  // list is on screen, through whatever the latest render left in dueKeys.
+  var dueKeys = null;
+  var dueKeysBound = false;
+  function bindDueKeys() {
+    if (dueKeysBound) return;
+    dueKeysBound = true;
+    document.addEventListener('keydown', function (e) {
+      if (!dueKeys || !document.getElementById('due-list')) return;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.target && e.target.matches && e.target.matches('input, textarea, select')) return;
+      if (dueKeys(e)) e.preventDefault();
+    });
+  }
+
   function renderDueList() {
     setCurrentNav('cards');
     pager.innerHTML = '';
     view.innerHTML = '<div class="loading">Loading…</div>';
+    dueKeys = null;
 
     Vocab.load().then(function () {
       var lists = dueListCards();
       var all = lists.seen.concat(lists.fresh);
       var batch = all.slice(0, DUE_BATCH);
       var canSay = !!(window.Say && Say.supported());
+      var listen = canSay && dueListenOn();
       var head =
         '<div class="eyebrow"><a href="#/cards" style="color:inherit;text-decoration:none">← Flashcards</a></div>' +
         '<h1>Due list: my words, FR → EN</h1>' +
@@ -1927,7 +1950,10 @@
         var isNew = !Progress.card(c.id).seen;
         return '<div class="due-row" data-id="' + escapeHtml(c.id) + '">' +
           (canSay ? '<button class="btn btn-sm due-say" type="button" aria-label="Hear it">🔊</button>' : '<span></span>') +
-          '<div class="due-fr">' + escapeHtml(c.fr) + (isNew ? ' <span class="due-new">new</span>' : '') + '</div>' +
+          '<div class="due-fr">' +
+            '<span class="due-fr-ear"' + (listen ? '' : ' hidden') + '>🎧 listen</span>' +
+            '<span class="due-fr-text"' + (listen ? ' hidden' : '') + '>' + escapeHtml(c.fr) + '</span>' +
+            (isNew ? ' <span class="due-new">new</span>' : '') + '</div>' +
           '<button class="due-en" type="button"><span class="due-en-hint">show</span>' +
             '<span class="due-en-text" hidden>' + escapeHtml(c.back) + '</span></button>' +
           '<div class="due-pick">' +
@@ -1939,6 +1965,9 @@
       }).join('');
 
       view.innerHTML = head +
+        (canSay ? '<p class="due-keys"><label><input type="checkbox" id="due-listen"' + (listen ? ' checked' : '') +
+          '> Listen only (L)</label> · ↓ ↑ next / previous, plays it · Space replay (⇧ slow) · S show · ' +
+          '1 ✓ · 2 ✗ · 3 Retire · Enter submit</p>' : '') +
         '<div class="due-list" id="due-list">' + rows + '</div>' +
         '<div class="due-bar">' +
           '<button class="btn" type="button" id="due-rest">Unmarked → ✓</button>' +
@@ -1948,11 +1977,29 @@
 
       var listEl = document.getElementById('due-list');
       var submitBtn = document.getElementById('due-submit');
+      var rowEls = Array.prototype.slice.call(listEl.querySelectorAll('.due-row'));
       var picks = {};
+      var cur = -1;
 
+      var cardOf = function (row) {
+        return batch.filter(function (x) { return x.id === row.dataset.id; })[0];
+      };
+      var say = function (row, slow) {
+        if (canSay) Say.speak(cardOf(row).fr, slow ? { slow: true } : undefined);
+      };
       var reveal = function (row) {
         row.querySelector('.due-en-hint').hidden = true;
         row.querySelector('.due-en-text').hidden = false;
+        row.querySelector('.due-fr-ear').hidden = true;
+        row.querySelector('.due-fr-text').hidden = false;
+      };
+      var focusRow = function (i, play) {
+        if (i < 0 || i >= rowEls.length) return;
+        if (cur >= 0) rowEls[cur].classList.remove('is-focus');
+        cur = i;
+        rowEls[i].classList.add('is-focus');
+        rowEls[i].scrollIntoView({ block: 'nearest' });
+        if (play) say(rowEls[i]);
       };
       var refresh = function () {
         var n = Object.keys(picks).length;
@@ -1960,9 +2007,10 @@
         submitBtn.textContent = n ? 'Submit ' + n : 'Submit';
         document.getElementById('due-count').textContent = n + ' of ' + batch.length + ' marked';
       };
-      var pick = function (row, v) {
+      // A click toggles; a key always sets, so pressing 1 twice keeps ✓.
+      var pick = function (row, v, set) {
         var id = row.dataset.id;
-        if (picks[id] === v) delete picks[id]; else picks[id] = v;
+        if (picks[id] === v && !set) delete picks[id]; else picks[id] = v;
         row.querySelectorAll('[data-v]').forEach(function (b) {
           b.classList.toggle('is-on', picks[id] === b.dataset.v);
         });
@@ -1970,24 +2018,8 @@
         reveal(row);
         refresh();
       };
-
-      listEl.addEventListener('click', function (e) {
-        var row = e.target.closest('.due-row');
-        if (!row) return;
-        var c = batch.filter(function (x) { return x.id === row.dataset.id; })[0];
-        if (e.target.closest('.due-say')) return Say.speak(c.fr);
-        if (e.target.closest('.due-en')) return reveal(row);
-        var b = e.target.closest('[data-v]');
-        if (b) pick(row, b.dataset.v);
-      });
-
-      document.getElementById('due-rest').addEventListener('click', function () {
-        listEl.querySelectorAll('.due-row').forEach(function (row) {
-          if (!picks[row.dataset.id]) pick(row, 'ok');
-        });
-      });
-
-      submitBtn.addEventListener('click', function () {
+      var submit = function () {
+        if (!Object.keys(picks).length) return;
         batch.forEach(function (c) {
           var v = picks[c.id];
           if (!v) return;
@@ -1998,11 +2030,61 @@
         recordSnapshot();
         window.scrollTo(0, 0);
         renderDueList();
+      };
+
+      listEl.addEventListener('click', function (e) {
+        var row = e.target.closest('.due-row');
+        if (!row) return;
+        var i = rowEls.indexOf(row);
+        if (e.target.closest('.due-say')) { focusRow(i, false); return say(row); }
+        if (e.target.closest('.due-en')) { focusRow(i, false); return reveal(row); }
+        var b = e.target.closest('[data-v]');
+        if (b) { focusRow(i, false); return pick(row, b.dataset.v); }
+        focusRow(i, true);
       });
 
+      var listenBox = document.getElementById('due-listen');
+      var toggleListen = function (on) {
+        setDueListen(on);
+        if (listenBox) listenBox.checked = on;
+        rowEls.forEach(function (row) {
+          var shown = !row.querySelector('.due-en-text').hidden;
+          row.querySelector('.due-fr-ear').hidden = !on || shown;
+          row.querySelector('.due-fr-text').hidden = on && !shown;
+        });
+      };
+      if (listenBox) listenBox.addEventListener('change', function () { toggleListen(listenBox.checked); });
+
+      document.getElementById('due-rest').addEventListener('click', function () {
+        rowEls.forEach(function (row) { if (!picks[row.dataset.id]) pick(row, 'ok', true); });
+      });
+      submitBtn.addEventListener('click', submit);
+
+      var mark = function (v) {
+        if (cur < 0) focusRow(0, false);
+        pick(rowEls[cur], v, true);
+        if (cur < rowEls.length - 1) focusRow(cur + 1, true);
+      };
+      dueKeys = function (e) {
+        var k = e.key;
+        if (k === 'ArrowDown' || k === 'j') { focusRow(cur < 0 ? 0 : cur + 1, true); return true; }
+        if (k === 'ArrowUp' || k === 'k') { focusRow(cur <= 0 ? 0 : cur - 1, true); return true; }
+        if (k === ' ') { if (cur < 0) focusRow(0, false); say(rowEls[cur], e.shiftKey); return true; }
+        if (k === 's' || k === 'S') { if (cur >= 0) reveal(rowEls[cur]); return true; }
+        if (k === '1' || k === 'y') { mark('ok'); return true; }
+        if (k === '2' || k === 'n') { mark('no'); return true; }
+        if (k === '3' || k === 'r') { mark('known'); return true; }
+        if (k === 'l' || k === 'L') { toggleListen(!dueListenOn()); return true; }
+        if (k === 'Enter') { submit(); return true; }
+        return false;
+      };
+      bindDueKeys();
+
       refresh();
+      focusRow(0, listen);
     });
   }
+
 
   // The same form over whatever page you are on, for a word met away from
   // the vocabulary page: the quick add names a duplicate, and one tap on it

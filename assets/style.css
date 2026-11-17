@@ -1808,3 +1808,7 @@ textarea.test-input { font-size: .95rem; line-height: 1.6; resize: vertical; }
 }
 .deck-main .deck-modes { display: flex; gap: 8px; margin-top: .7rem; }
 .deck-main .deck-modes .btn { text-decoration: none; }
+.due-row.is-focus { border-color: var(--bleu); box-shadow: 0 0 0 2px var(--bleu-soft); }
+.due-fr-ear { color: var(--muted); font-family: var(--sans); font-size: .88rem; }
+.due-keys { font-size: .8rem; color: var(--muted); margin: .4rem 0 0; }
+.due-keys label { color: var(--ink-soft); cursor: pointer; }
