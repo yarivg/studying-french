@@ -264,6 +264,7 @@
     if (hash === 'stats') return renderStats();
     if (hash === 'vocab') return renderVocabPage();
     if (hash === 'cards') return renderDeckList();
+    if (hash === 'cards/list') return renderDueList();
     if (hash.indexOf('cards/') === 0) return renderDeck(hash.slice(6));
     if (hash === 'tests') return renderTestList();
     if (hash.indexOf('test/') === 0) return renderTest(hash.slice(5));
@@ -1736,6 +1737,17 @@
     return n;
   }
 
+  function dueListBlock() {
+    var l = dueListCards();
+    var n = l.seen.length + l.fresh.length;
+    return '<a class="deck deck-main" href="#/cards/list" style="display:block;text-decoration:none">' +
+      '<div class="deck-name">Due list: my words, FR → EN</div>' +
+      '<div class="deck-meta ' + (n ? 'deck-due' : '') + '">' +
+        (n ? l.seen.length + ' reviews · ' + l.fresh.length + ' new' : 'nothing due') + '</div>' +
+      '<div class="deck-meta">The whole pile as a list: ✓ / ✗ / Retire, 25 at a time</div>' +
+      '</a>';
+  }
+
   function renderDeckList() {
     setCurrentNav('cards');
     pager.innerHTML = '';
@@ -1756,6 +1768,8 @@
           : '<p class="deck-note">Marking a word known in the ' +
             '<a href="#/vocab">vocabulary list</a>, or retiring it mid-review, takes it out of ' +
             'every deck.</p>') +
+        dueListBlock() +
+        '<details class="deck-more"><summary>All decks</summary>' +
         '<form class="deck-recent" id="deck-recent">' +
           '<label>My words from the last <input type="number" id="recent-days" min="1" max="365" value="' + recentDays() + '"> days</label> ' +
           '<select id="recent-dir"><option value="fr">FR → EN</option><option value="en">EN → FR</option></select> ' +
@@ -1775,7 +1789,7 @@
             (due ? due + ' due now' : 'nothing due') + '</div>' +
           '</button>';
       });
-      view.innerHTML = html + '</div>';
+      view.innerHTML = html + '</div></details>';
 
       var daysIn = document.getElementById('recent-days');
       var countRecent = function () {
@@ -1819,6 +1833,129 @@
         '<h1>' + escapeHtml(d.name) + '</h1>' +
         '<div id="stage"></div>';
       Quiz.startSession(document.getElementById('stage'), d.cards, { limit: 25 });
+    });
+  }
+
+  // Your own words, FR → EN, every due card as a list graded in batches of
+  // 25: much faster than flipping one card at a time when the pile is big.
+  // Reviews come before cards never seen, so half-learned words are not
+  // pushed back by new ones. Cards graded on this visit leave the list even
+  // when they are due again today (a miss), so the next batch is fresh.
+  var DUE_BATCH = 25;
+  var dueGradedThisVisit = Object.create(null);
+
+  function dueListCards() {
+    var d = Vocab.deckById('mine-fr');
+    if (!d) return { seen: [], fresh: [] };
+    var byId = {};
+    d.cards.forEach(function (c) { byId[c.id] = c; });
+    var due = Progress.dueQueue(d.cards.map(function (c) { return c.id; }))
+      .filter(function (id) { return !dueGradedThisVisit[id]; });
+    var seen = [], fresh = [];
+    due.forEach(function (id) { (Progress.card(id).seen ? seen : fresh).push(byId[id]); });
+    return { seen: seen, fresh: fresh };
+  }
+
+  function renderDueList() {
+    setCurrentNav('cards');
+    pager.innerHTML = '';
+    view.innerHTML = '<div class="loading">Loading…</div>';
+
+    Vocab.load().then(function () {
+      var lists = dueListCards();
+      var all = lists.seen.concat(lists.fresh);
+      var batch = all.slice(0, DUE_BATCH);
+      var canSay = !!(window.Say && Say.supported());
+      var head =
+        '<div class="eyebrow"><a href="#/cards" style="color:inherit;text-decoration:none">← Flashcards</a></div>' +
+        '<h1>Due list: my words, FR → EN</h1>' +
+        '<p class="lead">' + lists.seen.length + ' review' + (lists.seen.length === 1 ? '' : 's') + ' due, then ' +
+        lists.fresh.length + ' never seen. Mark each word ✓ got it, ✗ didn\'t know, or Retire (known for good, ' +
+        'out of every deck). Unmarked rows stay for later. Today: ' + Progress.reviewsToday() + ' reviews.</p>';
+
+      if (!batch.length) {
+        view.innerHTML = head + '<div class="empty"><div class="empty-icon">🎉</div><p>Nothing due. Come back tomorrow.</p></div>';
+        return;
+      }
+
+      var rows = batch.map(function (c) {
+        var isNew = !Progress.card(c.id).seen;
+        return '<div class="due-row" data-id="' + escapeHtml(c.id) + '">' +
+          (canSay ? '<button class="btn btn-sm due-say" type="button" aria-label="Hear it">🔊</button>' : '<span></span>') +
+          '<div class="due-fr">' + escapeHtml(c.fr) + (isNew ? ' <span class="due-new">new</span>' : '') + '</div>' +
+          '<button class="due-en" type="button"><span class="due-en-hint">show</span>' +
+            '<span class="due-en-text" hidden>' + escapeHtml(c.back) + '</span></button>' +
+          '<div class="due-pick">' +
+            '<button class="btn btn-sm btn-ok" type="button" data-v="ok" aria-label="Got it">✓</button>' +
+            '<button class="btn btn-sm btn-again" type="button" data-v="no" aria-label="Didn\'t know">✗</button>' +
+            '<button class="btn btn-sm" type="button" data-v="known">Retire</button>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+
+      view.innerHTML = head +
+        '<div class="due-list" id="due-list">' + rows + '</div>' +
+        '<div class="due-bar">' +
+          '<button class="btn" type="button" id="due-rest">Unmarked → ✓</button>' +
+          '<button class="btn btn-primary" type="button" id="due-submit" disabled>Submit</button>' +
+          '<span class="deck-meta" id="due-count"></span>' +
+        '</div>';
+
+      var listEl = document.getElementById('due-list');
+      var submitBtn = document.getElementById('due-submit');
+      var picks = {};
+
+      var reveal = function (row) {
+        row.querySelector('.due-en-hint').hidden = true;
+        row.querySelector('.due-en-text').hidden = false;
+      };
+      var refresh = function () {
+        var n = Object.keys(picks).length;
+        submitBtn.disabled = !n;
+        submitBtn.textContent = n ? 'Submit ' + n : 'Submit';
+        document.getElementById('due-count').textContent = n + ' of ' + batch.length + ' marked';
+      };
+      var pick = function (row, v) {
+        var id = row.dataset.id;
+        if (picks[id] === v) delete picks[id]; else picks[id] = v;
+        row.querySelectorAll('[data-v]').forEach(function (b) {
+          b.classList.toggle('is-on', picks[id] === b.dataset.v);
+        });
+        row.classList.toggle('is-marked', !!picks[id]);
+        reveal(row);
+        refresh();
+      };
+
+      listEl.addEventListener('click', function (e) {
+        var row = e.target.closest('.due-row');
+        if (!row) return;
+        var c = batch.filter(function (x) { return x.id === row.dataset.id; })[0];
+        if (e.target.closest('.due-say')) return Say.speak(c.fr);
+        if (e.target.closest('.due-en')) return reveal(row);
+        var b = e.target.closest('[data-v]');
+        if (b) pick(row, b.dataset.v);
+      });
+
+      document.getElementById('due-rest').addEventListener('click', function () {
+        listEl.querySelectorAll('.due-row').forEach(function (row) {
+          if (!picks[row.dataset.id]) pick(row, 'ok');
+        });
+      });
+
+      submitBtn.addEventListener('click', function () {
+        batch.forEach(function (c) {
+          var v = picks[c.id];
+          if (!v) return;
+          dueGradedThisVisit[c.id] = 1;
+          if (v === 'known') { if (!Progress.isKnown(c.wordId)) Progress.toggleKnown(c.wordId); }
+          else Progress.gradeCard(c.id, v === 'ok');
+        });
+        recordSnapshot();
+        window.scrollTo(0, 0);
+        renderDueList();
+      });
+
+      refresh();
     });
   }
 
