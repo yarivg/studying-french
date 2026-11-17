@@ -1951,7 +1951,7 @@
         return '<div class="due-row" data-id="' + escapeHtml(c.id) + '">' +
           (canSay ? '<button class="btn btn-sm due-say" type="button" aria-label="Hear it">🔊</button>' : '<span></span>') +
           '<div class="due-fr">' +
-            '<span class="due-fr-ear"' + (listen ? '' : ' hidden') + '>🎧 listen</span>' +
+            '<span class="due-fr-ear" role="button" title="Show the French (F)"' + (listen ? '' : ' hidden') + '>🎧 listen · show</span>' +
             '<span class="due-fr-text"' + (listen ? ' hidden' : '') + '>' + escapeHtml(c.fr) + '</span>' +
             (isNew ? ' <span class="due-new">new</span>' : '') + '</div>' +
           '<button class="due-en" type="button"><span class="due-en-hint">show</span>' +
@@ -1966,7 +1966,7 @@
 
       view.innerHTML = head +
         (canSay ? '<p class="due-keys"><label><input type="checkbox" id="due-listen"' + (listen ? ' checked' : '') +
-          '> Listen only (L)</label> · ↓ ↑ next / previous, plays it · Space replay (⇧ slow) · S show · ' +
+          '> Listen only (L)</label> · ↓ ↑ next / previous, plays it · Space replay (⇧ slow) · F French · S French, then meaning · ' +
           '1 ✓ · 2 ✗ · 3 Retire · Enter submit</p>' : '') +
         '<div class="due-list" id="due-list">' + rows + '</div>' +
         '<div class="due-bar">' +
@@ -1993,12 +1993,21 @@
         row.querySelector('.due-fr-ear').hidden = true;
         row.querySelector('.due-fr-text').hidden = false;
       };
+      // Two steps in listen mode: the French first, then the meaning.
+      var showFrench = function (row) {
+        row.querySelector('.due-fr-ear').hidden = true;
+        row.querySelector('.due-fr-text').hidden = false;
+      };
+      var showStep = function (row) {
+        if (!row.querySelector('.due-fr-text').hidden) reveal(row); else showFrench(row);
+      };
       var focusRow = function (i, play) {
         if (i < 0 || i >= rowEls.length) return;
         if (cur >= 0) rowEls[cur].classList.remove('is-focus');
         cur = i;
         rowEls[i].classList.add('is-focus');
-        rowEls[i].scrollIntoView({ block: 'nearest' });
+        // Centre, not nearest: the sticky submit bar would hide a row at the bottom.
+        rowEls[i].scrollIntoView({ block: 'center', behavior: 'smooth' });
         if (play) say(rowEls[i]);
       };
       var refresh = function () {
@@ -2038,6 +2047,7 @@
         var i = rowEls.indexOf(row);
         if (e.target.closest('.due-say')) { focusRow(i, false); return say(row); }
         if (e.target.closest('.due-en')) { focusRow(i, false); return reveal(row); }
+        if (e.target.closest('.due-fr-ear')) { focusRow(i, false); return showFrench(row); }
         var b = e.target.closest('[data-v]');
         if (b) { focusRow(i, false); return pick(row, b.dataset.v); }
         focusRow(i, true);
@@ -2070,7 +2080,8 @@
         if (k === 'ArrowDown' || k === 'j') { focusRow(cur < 0 ? 0 : cur + 1, true); return true; }
         if (k === 'ArrowUp' || k === 'k') { focusRow(cur <= 0 ? 0 : cur - 1, true); return true; }
         if (k === ' ') { if (cur < 0) focusRow(0, false); say(rowEls[cur], e.shiftKey); return true; }
-        if (k === 's' || k === 'S') { if (cur >= 0) reveal(rowEls[cur]); return true; }
+        if (k === 'f' || k === 'F') { if (cur >= 0) showFrench(rowEls[cur]); return true; }
+        if (k === 's' || k === 'S') { if (cur >= 0) showStep(rowEls[cur]); return true; }
         if (k === '1' || k === 'y') { mark('ok'); return true; }
         if (k === '2' || k === 'n') { mark('no'); return true; }
         if (k === '3' || k === 'r') { mark('known'); return true; }

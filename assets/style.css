@@ -1812,3 +1812,4 @@ textarea.test-input { font-size: .95rem; line-height: 1.6; resize: vertical; }
 .due-fr-ear { color: var(--muted); font-family: var(--sans); font-size: .88rem; }
 .due-keys { font-size: .8rem; color: var(--muted); margin: .4rem 0 0; }
 .due-keys label { color: var(--ink-soft); cursor: pointer; }
+.due-fr-ear { cursor: pointer; }
