@@ -512,5 +512,5 @@ cold test on 11-19.
 - Sens DELF 1 cold retest (overdue since 11-13). Clear the page answers first.
 - Chapter `subjonctif-passe` (targets `j'espérais que tu seras`, `j'ai peur qu'on a eu`).
 - Dictée 24 redo cold (was due 11-18): target ≥ 9/12.
-- DELF B2 registration: email sent to IF Israël Tel Aviv (h.barsheshet@ambfr-il.org) asking for 2027
+- DELF B2 registration: email drafted (to send) to IF Israël Tel Aviv (h.barsheshet@ambfr-il.org) asking for 2027
   dates, deadline, fee. Pau (France) fallback: B2 on 17-19 Mar, 16-17 Jun, 17-18 Nov 2027, 150 EUR.
