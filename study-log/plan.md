@@ -1,5 +1,8 @@
 # Plan: 2026-10-21 to 2026-11-11
 
+> **Current plan: see "## From 2026-11-19: DELF B2 plan" below.** It replaces the 2026-11-01
+> weekly table. Older sections stay as history.
+
 Two months of logs show knowledge and listening growing, and cold production flat
 (A2 fix 5/30, B1d 0/10 first attempt). The same errors repeat. This plan narrows the
 work to what moves that number.
@@ -69,7 +72,7 @@ Done 2026-10-22: writing scene 1 (2.75 errors per sentence, closed after 2 redos
 60%, Dictée 5 (0/12, 2.8 per sentence, 12/12 in 4). Not done: the two rewatches and
 `drill-retest-1`: they open session 2.
 
-## From 2026-11-01: comprehension first
+## From 2026-11-01: comprehension first (superseded 2026-11-19)
 
 Yariv's goal: understand French people when they speak. Writing stays important, grammar
 continues, but listening gets most of the hours. The hour-a-day sessions had about 5 minutes
@@ -499,18 +502,81 @@ cold test on 11-19.
 
 **Dictée 25** (Arfi 35:12-40:04): 2/12 first time, 41 word errors, see `dictee.md`.
 
-## Next (from 2026-11-18)
+### 2026-11-18 (Wednesday, evening): new video format, Verb lab
 
-- Numbers game `#/nombres`: 60-99, traps, two numbers. Target best ≥ 15. (Skipped 11-17.)
-- FR -> EN flashcards, My words: about 120 a day, retire what is known cold. 643 due on 11-17.
-- Cold test 11-19: the Arfi word list (tier 1) + the TP4 ex 2 words (chaîne hôtelière, décentralisation,
+- **Format change (his call):** for a video he watches with French subtitles and writes the phrases himself;
+  I fix spelling, give meaning + family, Speaking / DELF rating, drop what is in Le Carnet, add what he missed.
+  From the same evening: keep-or-drop verdicts only, detail for the keepers.
+- **Video:** HugoDécrypte, "Les espions du président" (`0l3GRkYEcJ0`), 0:00-10:00. 22 items written, 4 misheard
+  (*une espion* for un espion / une espionne, *à légal* for illégal, *voir pire* for voire pire, *la div* for la lubie).
+  15 cards added: se renseigner, héberger, dédié à, voire, décideurs, légitime, insolite, méconnu, faire pression sur,
+  le moindre, mettre en avant, un frein à, pour le compte de, se faire prendre, en toute connaissance de cause.
+  Also: l'enjeu / les enjeux / être en jeu, être à deux doigts de, se dévouer, panache (drop).
+- French With Panache #107 (`VB3vbT0I5Lc`): one keeper, *se la péter / frimer*.
+- Earlier words: ténacité, une allée, foutre (*tu fous quoi là*, *je m'en fous*), s'éloigner.
+- **Flashcards:** 65 verbs found failing (missed 2+), 147 own verbs never reviewed. 57 word entries fixed in the gist
+  (typos: renvoyer, remplacer, verser, aménager, être accro; wrong glosses: contraindre, bénéficier de, reprocher;
+  tags). **Verb lab** shipped (`#/cards/lab`, `data/verb-lab.json`, 134 verbs: root hook + heard scene + cloze),
+  plus a context sentence helper (C) in the due list and 1 by 1: a right answer after it comes back in 2 days.
+- **Asked how I would teach him from here.** Verdict: input too hard (C1 interviews), too many new words (about 40 a day),
+  almost no speaking, no writing, and too much time on tools. Rebuilt the plan below.
+
+## From 2026-11-19: DELF B2 plan
+
+Goal: pass DELF B2 tout public. Target session: **June 2027** (Pau 16-17 Jun, or the Tel Aviv equivalent once
+IF Israël answers). March 2027 only if speaking is ready by mid-January.
+
+Where he is (2026-11-18): grammar recognition B1+, standard listening B1 (TP4 CO ex 2: 8/20), dictée first attempt
+2/12, about 1,250 own words with 690 due, speaking and writing almost untrained. **Speaking decides the date.**
+
+### The day (Sun-Thu evenings; planned 60 min, real about 90)
+
+| min | block | what | rule |
+|---|---|---|---|
+| 20 | **Easy listening, volume** | RFI *Journal en français facile* -> innerFrench -> HugoDécrypte daily news (short) | No pausing, no word lists. Move up a rung when about 90% is understood. |
+| 10 | **Intensive listening** | 2 min of a B2 clip: transcribe, check against the transcript, then shadow it aloud | Replaces the 12-sentence dictée. Errors split heard wrong / silent grammar as before. |
+| 10 | **Flashcards** | Due reviews + Verb lab | **Max 10 new words a day, ●●● only.** Retire freely. Context helper (C) allowed. |
+| 10 | **Speaking** | Read a short news text, record a 3-min opinion: intro, 2 arguments, an example, a conclusion | Use 3 frames from the week's cards. Paste the transcript (phone dictation is fine) for correction. |
+| 10 | **DELF practice** | Alternate: one CO exercise / one CE exercise / numbers game | Method notes in `## Next`. |
+
+### The week
+
+- **Saturday:** one full timed paper section (CO or CE), francepodcasts CIEP papers first (TP sujet 5 next).
+- **Once a week:** one real conversation, 30-45 min (free: Tandem / HelloTalk partner, or the IF Israël
+  conversation evenings), with a list of the 10 newest phrases to use.
+- **Writing:** one 250-word DELF essay a week, starting about 6 weeks before the exam date
+  (May 2027 for June). His dislike of writing is noted; it is a quarter of the score.
+- **Fun, unscored:** *Dix pour cent* and anything C1 (Arfi, espionage interview), at most once a week, no drills.
+
+### Stopped or reduced
+
+- C1 interviews as daily material (Dictée 26 Arfi dropped).
+- New Le Carnet grammar chapters: grammar only from speaking and writing errors (`subjonctif-passe` parked).
+- Adding about 40 words a day: cap 10.
+- New app features: frozen unless something is broken.
+- Dictée 24 redo and the checkpoint cold dictée: dropped; the monthly measures below replace them.
+
+### Monthly measures (first: 2026-12-19)
+
+| measure | how | target month 1 | month 3 |
+|---|---|---|---|
+| Listening | a new DELF CO paper, first pass, out of 25 | 12 | 15 |
+| Speaking | recorded 5-min monologue on a DELF PO-style text: pauses over 3 s, frames used | baseline | half the pauses |
+| Vocabulary | due pile size; Verb lab verbs missed 3+ times | under 400 | under 200, lab empty |
+| Spelling by ear | 2-min intensive transcription, word errors per sentence | baseline | 1.0 or fewer |
+
+## Next (from 2026-11-19)
+
+- Start the daily table above. First speaking topic: pick one RFI *français facile* article of the day,
+  3-min opinion, paste the transcript.
+- Cold test 11-19 (promised): Arfi tier-1 list + TP4 ex 2 words (chaîne hôtelière, décentralisation,
   se désintéresser de, consentir à, à condition que, allouer, au large de).
-- Dictée 26 = Arfi from 40:04: cold 1x first.
+- Cold test 11-20: the 15 espionage-video cards above.
+- Verb lab: one round a day inside the flashcards slot until the 30 failing verbs are cleared.
 - DELF CO method, next paper (TP sujet 5): the first 20 s carry answers; "à quelle époque" = a period,
   not a year; a matching word in an option is a trap until checked.
-- Checkpoint: cold dictée + Écrit ecr-21..25 (+ FEI TP exemple 2 if downloaded by hand).
-- Sens DELF 1 cold retest (overdue since 11-13). Clear the page answers first.
-- Chapter `subjonctif-passe` (targets `j'espérais que tu seras`, `j'ai peur qu'on a eu`).
-- Dictée 24 redo cold (was due 11-18): target ≥ 9/12.
+- Numbers game `#/nombres` inside the DELF slot: target best ≥ 15.
+- Sens DELF 1 cold retest (overdue since 11-13), inside the DELF slot. Clear the page answers first.
+- Find one free conversation partner this week (Tandem / HelloTalk, or ask IF Israël about conversation evenings).
 - DELF B2 registration: email drafted (to send) to IF Israël Tel Aviv (h.barsheshet@ambfr-il.org) asking for 2027
   dates, deadline, fee. Pau (France) fallback: B2 on 17-19 Mar, 16-17 Jun, 17-18 Nov 2027, 150 EUR.
