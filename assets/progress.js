@@ -603,11 +603,16 @@ window.Progress = (function () {
 
   function reviewsToday() { return state.days[todayKey()] || 0; }
 
-  // How many times each card was missed, from the review log: the Verb lab
-  // uses it to find the words flashcards alone are not fixing.
-  function missCounts() {
+  // Per card, from the review log: how many times it was missed and when it
+  // was last reviewed. The Verb lab uses it to find the words flashcards
+  // alone are not fixing, and to deal the least recently seen first.
+  function cardLog() {
     var out = {};
-    (state.rev || []).forEach(function (r) { if (!r.r) out[r.c] = (out[r.c] || 0) + 1; });
+    (state.rev || []).forEach(function (r) {
+      var o = out[r.c] || (out[r.c] = { miss: 0, at: 0 });
+      if (!r.r) o.miss++;
+      if (r.at > o.at) o.at = r.at;
+    });
     return out;
   }
 
@@ -942,7 +947,7 @@ window.Progress = (function () {
     mastery: mastery, setMastery: setMastery, masteryCount: masteryCount,
     testScore: testScore, recordTest: recordTest, LEVELS: LEVELS,
     runs: runs, weakSpots: weakSpots,
-    streak: streak, reviewsToday: reviewsToday, missCounts: missCounts, dayCounts: dayCounts,
+    streak: streak, reviewsToday: reviewsToday, cardLog: cardLog, dayCounts: dayCounts,
     history: history, snapDay: snapDay,
     studied: studied,
     lib: lib, setLib: setLib, libAll: libAll,

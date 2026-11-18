@@ -2139,8 +2139,8 @@
 
   /* ---------------------------------------------------------- verb lab */
 
-  // Verbs flashcards alone are not fixing (missed twice or more, or back in
-  // relearning) and important verbs of yours never reviewed. Each is taught
+  // Verbs flashcards alone are not fixing (missed twice or more and failing
+  // right now) and important verbs of yours never reviewed. Each is taught
   // with a root hook and one scene you hear, then recalled inside that
   // scene. The first try grades the card: right sends it back to the
   // normal pile, a miss makes it due today and keeps it in the lab.
@@ -2185,7 +2185,7 @@
   function labSentenceHtml(e) { return escapeHtml(e.fr).replace(/\[(.+?)\]/, '<strong>$1</strong>'); }
 
   function labPool() {
-    var miss = Progress.missCounts();
+    var log = Progress.cardLog();
     var taken = Object.create(null);
     var leech = [], fresh = [], noHook = [];
     Vocab.all().forEach(function (w) {
@@ -2194,8 +2194,12 @@
       if (w.pos !== 'verb' && !e) return;
       var id = w.id + ':fr-en';
       var c = Progress.card(id);
-      var item = { w: w, e: e, id: id, miss: miss[id] || 0 };
-      var isLeech = item.miss >= 2 || (c.rl && c.seen >= 2);
+      var l = log[id] || { miss: 0, at: 0 };
+      var item = { w: w, e: e, id: id, miss: l.miss, at: l.at };
+      // Failing now, with a history of it. A right answer (here or in the
+      // normal cards) clears rl, so a passed verb leaves the lab; a later
+      // miss brings it back.
+      var isLeech = !!c.rl && (l.miss >= 2 || c.seen >= 2);
       if (isLeech && !e) { noHook.push(item); return; }
       if (!isLeech && !(e && !c.seen && w.mine)) return;
       // Your own copy and the curated copy of one verb: teach it once.
@@ -2203,9 +2207,11 @@
       taken[e.v] = 1;
       (isLeech ? leech : fresh).push(item);
     });
-    // Words flagged to retire wait at the back until you decide on them.
+    // Least recently reviewed first, so a verb just missed in a round waits
+    // behind the others instead of opening the next one. Words flagged to
+    // retire wait at the back until you decide on them.
     var flag = function (x) { return labData.retire[x.e.v] ? 1 : 0; };
-    leech.sort(function (a, b) { return (flag(a) - flag(b)) || (b.miss - a.miss); });
+    leech.sort(function (a, b) { return (flag(a) - flag(b)) || (a.at - b.at) || (b.miss - a.miss); });
     var order = {};
     labData.verbs.forEach(function (e, i) { order[e.v] = i; });
     fresh.sort(function (a, b) { return order[a.e.v] - order[b.e.v]; });
