@@ -188,10 +188,14 @@ window.Progress = (function () {
     return Math.min(MAX_IVL, Math.round(ivl * 2.5));
   }
 
-  function gradeCard(id, correct) {
+  // opts.hint: the card was only got with its context sentence shown, so a
+  // right answer earns a short wait (2 days) rather than the full step.
+  var HINT_IVL = 2;
+  function gradeCard(id, correct, opts) {
     var c = card(id), t = today();
     var elapsed = c.seen && c.last != null ? t - c.last : (c.seen ? t - (c.due - (c.ivl != null ? c.ivl : INTERVALS[c.box])) : -1);
     var ivl = nextInterval(c, correct);
+    if (correct && opts && opts.hint) ivl = Math.min(ivl, HINT_IVL);
     c.seen++;
     if (correct) { c.ok++; c.box = Math.min(MAX_BOX, c.box + 1); c.rl = 0; }
     else { c.box = 0; c.rl = 1; }

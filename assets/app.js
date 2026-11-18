@@ -1978,7 +1978,9 @@
           '<div class="due-fr">' +
             '<span class="due-fr-ear" role="button" title="Show the French (F)"' + (listen ? '' : ' hidden') + '>🎧 listen · show</span>' +
             '<span class="due-fr-text"' + (listen ? ' hidden' : '') + '>' + escapeHtml(c.fr) + '</span>' +
-            (isNew ? ' <span class="due-new">new</span>' : '') + '</div>' +
+            (isNew ? ' <span class="due-new">new</span>' : '') +
+            (c.ex ? ' <button class="due-ctx-btn" type="button" title="Context sentence (C)" aria-label="Context sentence">💡</button>' +
+              '<span class="due-ctx" hidden>' + escapeHtml(c.ex) + '</span>' : '') + '</div>' +
           '<button class="due-en" type="button"><span class="due-en-hint">show</span>' +
             '<span class="due-en-text" hidden>' + escapeHtml(c.back) +
             (c.ex ? '<span class="due-ex">' + escapeHtml(c.ex) + '</span>' : '') + '</span></button>' +
@@ -1993,7 +1995,7 @@
       view.innerHTML = head +
         (canSay ? '<p class="due-keys"><label><input type="checkbox" id="due-listen"' + (listen ? ' checked' : '') +
           '> Listen only (L)</label> · ↓ ↑ next / previous, plays it · Space replay (⇧ slow) · F French · S French, then meaning · ' +
-          '1 ✓ · 2 ✗ · 3 Retire · Enter submit</p>' : '') +
+          'C 💡 context sentence (a ✓ after it comes back in 2 days) · 1 ✓ · 2 ✗ · 3 Retire · Enter submit</p>' : '') +
         '<div class="due-list" id="due-list">' + rows + '</div>' +
         '<div class="due-bar">' +
           '<button class="btn" type="button" id="due-rest">Unmarked → ✓</button>' +
@@ -2005,6 +2007,7 @@
       var submitBtn = document.getElementById('due-submit');
       var rowEls = Array.prototype.slice.call(listEl.querySelectorAll('.due-row'));
       var picks = {};
+      var hinted = {};
       var cur = -1;
 
       var cardOf = function (row) {
@@ -2026,6 +2029,15 @@
       };
       var showStep = function (row) {
         if (!row.querySelector('.due-fr-text').hidden) reveal(row); else showFrench(row);
+      };
+      // The context sentence: a helper on the side, it changes nothing else
+      // on the row, but a ✓ after it is graded as hinted (back in 2 days).
+      var showContext = function (row) {
+        var ctx = row.querySelector('.due-ctx');
+        if (!ctx) return;
+        ctx.hidden = false;
+        if (row.querySelector('.due-en-text').hidden) hinted[row.dataset.id] = 1;
+        if (canSay) Say.speak(cardOf(row).ex);
       };
       var focusRow = function (i, play) {
         if (i < 0 || i >= rowEls.length) return;
@@ -2060,7 +2072,7 @@
           if (!v) return;
           dueGradedThisVisit[c.id] = 1;
           if (v === 'known') { if (!Progress.isKnown(c.wordId)) Progress.toggleKnown(c.wordId); }
-          else Progress.gradeCard(c.id, v === 'ok');
+          else Progress.gradeCard(c.id, v === 'ok', { hint: !!hinted[c.id] });
         });
         recordSnapshot();
         window.scrollTo(0, 0);
@@ -2073,6 +2085,7 @@
         var i = rowEls.indexOf(row);
         if (e.target.closest('.due-say')) { focusRow(i, false); return say(row); }
         if (e.target.closest('.due-en')) { focusRow(i, false); return reveal(row); }
+        if (e.target.closest('.due-ctx-btn')) { focusRow(i, false); return showContext(row); }
         if (e.target.closest('.due-fr-ear')) { focusRow(i, false); return showFrench(row); }
         var b = e.target.closest('[data-v]');
         if (b) { focusRow(i, false); return pick(row, b.dataset.v); }
@@ -2107,6 +2120,7 @@
         if (k === 'ArrowUp' || k === 'k') { focusRow(cur <= 0 ? 0 : cur - 1, true); return true; }
         if (k === ' ') { if (cur < 0) focusRow(0, false); say(rowEls[cur], e.shiftKey); return true; }
         if (k === 'f' || k === 'F') { if (cur >= 0) showFrench(rowEls[cur]); return true; }
+        if (k === 'c' || k === 'C') { if (cur >= 0) showContext(rowEls[cur]); return true; }
         if (k === 's' || k === 'S') { if (cur >= 0) showStep(rowEls[cur]); return true; }
         if (k === '1' || k === 'y') { mark('ok'); return true; }
         if (k === '2' || k === 'n') { mark('no'); return true; }

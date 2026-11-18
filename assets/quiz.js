@@ -131,6 +131,9 @@ window.Quiz = (function () {
             ? '<button class="btn flash-say" type="button" data-say="' + escapeAttr(card.fr) + '"' +
               (card.frOnFront ? '' : ' hidden') + '>🔊 Hear it</button>'
             : '') +
+          (card.ex && card.frOnFront
+            ? '<button class="btn flash-ctx-btn" type="button">💡 Context (C)</button>'
+            : '') +
           (canListen
             ? '<button class="btn flash-listen-toggle" type="button" aria-pressed="' + listen + '">🎧 Listen only: ' + (listen ? 'on' : 'off') + ' (L)</button>'
             : '') +
@@ -140,6 +143,7 @@ window.Quiz = (function () {
             ? '<button class="btn flash-know" type="button">I know this — retire it</button>'
             : '') +
         '</div>' +
+        (card.ex && card.frOnFront ? '<div class="flash-ctx" hidden>' + escapeHtml(card.ex) + '</div>' : '') +
         '<div class="flash-actions" hidden>' +
           // The digits already worked; the chips say so, the way they do in a
           // test. Hidden on a touch screen by the stylesheet.
@@ -184,6 +188,18 @@ window.Quiz = (function () {
     s.toggleListen = canListen ? function () { setListen(!listenOn()); renderCard(); } : null;
     if (listen) setTimeout(function () { if (session === s && !s.flipped) Say.speak(card.fr); }, 150);
 
+    // The context sentence is a helper beside the normal flow: it never
+    // flips the card, and a right answer after it is graded as hinted.
+    var ctxBtn = s.container.querySelector('.flash-ctx-btn');
+    var ctxEl = s.container.querySelector('.flash-ctx');
+    s.hinted = false;
+    s.showContext = ctxEl ? function () {
+      ctxEl.hidden = false;
+      if (!s.flipped) s.hinted = true;
+      if (window.Say && Say.supported()) Say.speak(card.ex);
+    } : null;
+    if (ctxBtn) ctxBtn.addEventListener('click', function () { s.showContext(); });
+
     var knowBtn = s.container.querySelector('.flash-know');
     if (knowBtn) knowBtn.addEventListener('click', function () { retire(card); });
 
@@ -210,7 +226,7 @@ window.Quiz = (function () {
   function grade(correct) {
     var s = session;
     if (!s) return;
-    Progress.gradeCard(s.queue[s.index], correct);
+    Progress.gradeCard(s.queue[s.index], correct, { hint: s.hinted });
     if (correct) s.right++;
     else { s.wrong++; (s.missed = s.missed || []).push(s.byId[s.queue[s.index]]); }
     s.index++;
@@ -269,6 +285,9 @@ window.Quiz = (function () {
       var say = session.container.querySelector('.flash-say');
       if (say && !say.hidden) { e.preventDefault(); Say.speak(say.dataset.say, { slow: e.shiftKey }); }
       return;
+    }
+    if ((e.key === 'c' || e.key === 'C') && session.showContext) {
+      e.preventDefault(); session.showContext(); return;
     }
     if ((e.key === 'l' || e.key === 'L') && session.toggleListen && !session.flipped) {
       e.preventDefault(); session.toggleListen(); return;
