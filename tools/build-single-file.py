@@ -54,6 +54,7 @@ def main():
     embedded = {
         "content/manifest.json": manifest,
         "data/vocab.json": json.loads(read("data/vocab.json")),
+        "data/verb-lab.json": json.loads(read("data/verb-lab.json")),
     }
 
     chapters = banks = passages = 0

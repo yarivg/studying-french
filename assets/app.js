@@ -266,6 +266,7 @@
     if (hash === 'cards') return renderDeckList();
     if (hash === 'cards/list') return renderDueList();
     if (hash === 'cards/one') return renderDueOne();
+    if (hash === 'cards/lab') return renderLab();
     if (hash.indexOf('cards/') === 0) return renderDeck(hash.slice(6));
     if (hash === 'tests') return renderTestList();
     if (hash.indexOf('test/') === 0) return renderTest(hash.slice(5));
@@ -1775,7 +1776,7 @@
     pager.innerHTML = '';
     view.innerHTML = '<div class="loading">Loading decks…</div>';
 
-    Vocab.load().then(function () {
+    Promise.all([Vocab.load(), loadLab()]).then(function () {
       var known = Progress.knownCount();
       var html = '<h1>Flashcards</h1>' +
         '<p class="lead">Spaced repetition fitted to your memory (Mémoire 1): right the first time, a card ' +
@@ -1792,6 +1793,7 @@
             'every deck.</p>') +
         todayBlock() +
         dueListBlock() +
+        labBlock() +
         '<form class="deck-recent" id="deck-recent">' +
           '<label>My words from the last <input type="number" id="recent-days" min="1" max="365" value="' + recentDays() + '"> days</label> ' +
           '<select id="recent-dir"><option value="fr">FR → EN</option><option value="en">EN → FR</option></select> ' +
@@ -1871,7 +1873,12 @@
     var d = Vocab.deckById('mine-fr');
     if (!d) return { seen: [], fresh: [] };
     var byId = {};
-    d.cards.forEach(function (c) { byId[c.id] = c; });
+    d.cards.forEach(function (c) {
+      byId[c.id] = c;
+      // A verb with a lab scene shows it under the meaning.
+      var e = labEntryFor(c.fr);
+      if (e) c.ex = labSentence(e);
+    });
     var due = Progress.dueQueue(d.cards.map(function (c) { return c.id; }))
       .filter(function (id) { return !dueGradedThisVisit[id]; });
     var seen = [], fresh = [];
@@ -1894,7 +1901,7 @@
     pager.innerHTML = '';
     view.innerHTML = '<div class="loading">Loading…</div>';
 
-    Vocab.load().then(function () {
+    Promise.all([Vocab.load(), loadLab()]).then(function () {
       var l = dueListCards();
       var cards = shuffled(l.seen).concat(shuffled(l.fresh));
       view.innerHTML =
@@ -1946,7 +1953,7 @@
     view.innerHTML = '<div class="loading">Loading…</div>';
     dueKeys = null;
 
-    Vocab.load().then(function () {
+    Promise.all([Vocab.load(), loadLab()]).then(function () {
       var lists = dueListCards();
       var all = lists.seen.concat(lists.fresh);
       var batch = all.slice(0, DUE_BATCH);
@@ -1973,7 +1980,8 @@
             '<span class="due-fr-text"' + (listen ? ' hidden' : '') + '>' + escapeHtml(c.fr) + '</span>' +
             (isNew ? ' <span class="due-new">new</span>' : '') + '</div>' +
           '<button class="due-en" type="button"><span class="due-en-hint">show</span>' +
-            '<span class="due-en-text" hidden>' + escapeHtml(c.back) + '</span></button>' +
+            '<span class="due-en-text" hidden>' + escapeHtml(c.back) +
+            (c.ex ? '<span class="due-ex">' + escapeHtml(c.ex) + '</span>' : '') + '</span></button>' +
           '<div class="due-pick">' +
             '<button class="btn btn-sm btn-ok" type="button" data-v="ok" aria-label="Got it">✓</button>' +
             '<button class="btn btn-sm btn-again" type="button" data-v="no" aria-label="Didn\'t know">✗</button>' +
@@ -2112,6 +2120,339 @@
       refresh();
       focusRow(0, listen);
     });
+  }
+
+
+  /* ---------------------------------------------------------- verb lab */
+
+  // Verbs flashcards alone are not fixing (missed twice or more, or back in
+  // relearning) and important verbs of yours never reviewed. Each is taught
+  // with a root hook and one scene you hear, then recalled inside that
+  // scene. The first try grades the card: right sends it back to the
+  // normal pile, a miss makes it due today and keeps it in the lab.
+  var LAB_ROUND = 8;
+  var labData = null, labLoading = null;
+  var labDoneThisVisit = Object.create(null);
+
+  function loadLab() {
+    if (labData) return Promise.resolve(labData);
+    if (!labLoading) {
+      labLoading = Data.json('data/verb-lab.json')
+        .then(function (d) { labData = d; return d; })
+        .catch(function () { labLoading = null; return null; });
+    }
+    return labLoading;
+  }
+
+  function labKey(s) {
+    return String(s || '').toLowerCase().replace(/[’`]/g, "'")
+      .normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .replace(/[^a-z' ]/g, ' ').replace(/\s+/g, ' ').trim();
+  }
+  function labPlain(s) { return labKey(s).replace(/[^a-z]/g, ''); }
+
+  // A word's entry: its French starts with the entry's verb, so
+  // "bénéficier de" and "reprocher qqch à qqn" find theirs.
+  function labEntryFor(fr) {
+    if (!labData) return null;
+    if (!labData.index) {
+      labData.index = labData.verbs.slice()
+        .sort(function (a, b) { return b.v.length - a.v.length; })
+        .map(function (e) { return { k: labKey(e.v), e: e }; });
+    }
+    var k = labKey(fr);
+    for (var i = 0; i < labData.index.length; i++) {
+      var x = labData.index[i];
+      if (k === x.k || k.indexOf(x.k + ' ') === 0) return x.e;
+    }
+    return null;
+  }
+  function labSentence(e) { return e.fr.replace(/[\[\]]/g, ''); }
+  function labSentenceHtml(e) { return escapeHtml(e.fr).replace(/\[(.+?)\]/, '<strong>$1</strong>'); }
+
+  function labPool() {
+    var miss = Progress.missCounts();
+    var taken = Object.create(null);
+    var leech = [], fresh = [], noHook = [];
+    Vocab.all().forEach(function (w) {
+      if (Progress.isKnown(w.id)) return;
+      var e = labEntryFor(w.fr);
+      if (w.pos !== 'verb' && !e) return;
+      var id = w.id + ':fr-en';
+      var c = Progress.card(id);
+      var item = { w: w, e: e, id: id, miss: miss[id] || 0 };
+      var isLeech = item.miss >= 2 || (c.rl && c.seen >= 2);
+      if (isLeech && !e) { noHook.push(item); return; }
+      if (!isLeech && !(e && !c.seen && w.mine)) return;
+      // Your own copy and the curated copy of one verb: teach it once.
+      if (taken[e.v]) return;
+      taken[e.v] = 1;
+      (isLeech ? leech : fresh).push(item);
+    });
+    // Words flagged to retire wait at the back until you decide on them.
+    var flag = function (x) { return labData.retire[x.e.v] ? 1 : 0; };
+    leech.sort(function (a, b) { return (flag(a) - flag(b)) || (b.miss - a.miss); });
+    var order = {};
+    labData.verbs.forEach(function (e, i) { order[e.v] = i; });
+    fresh.sort(function (a, b) { return order[a.e.v] - order[b.e.v]; });
+    return { leech: leech, fresh: fresh, noHook: noHook };
+  }
+
+  function labBlock() {
+    if (!labData) return '';
+    var p = labPool();
+    var n = p.leech.length + p.fresh.length;
+    return '<div class="deck deck-main">' +
+      '<div class="deck-name">Verb lab</div>' +
+      '<div class="deck-meta ' + (n ? 'deck-due' : '') + '">' +
+        p.leech.length + ' keep failing · ' + p.fresh.length + ' important, never reviewed</div>' +
+      '<div class="deck-meta">Root hook and a scene you hear, then recall it in the sentence. 8 at a time.</div>' +
+      '<div class="deck-modes"><a class="btn btn-primary" href="#/cards/lab">Open the lab</a></div>' +
+      '</div>';
+  }
+
+  // One keydown and one click handler for the page's lifetime, acting
+  // through whatever the latest lab render left in labKeys / labClick.
+  var labKeys = null, labClick = null;
+  var labBound = false;
+  function bindLab() {
+    if (labBound) return;
+    labBound = true;
+    document.addEventListener('keydown', function (e) {
+      if (!labKeys || !document.getElementById('lab-stage')) return;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.target && e.target.matches && e.target.matches('input, textarea, select')) return;
+      if (labKeys(e)) e.preventDefault();
+    });
+    document.addEventListener('click', function (e) {
+      if (labClick && document.getElementById('lab-page')) labClick(e);
+    });
+  }
+
+  function labSay(text) {
+    if (window.Say && Say.supported()) Say.speak(text);
+  }
+
+  function renderLab() {
+    setCurrentNav('cards');
+    pager.innerHTML = '';
+    view.innerHTML = '<div class="loading">Loading…</div>';
+    labKeys = null;
+    labClick = null;
+    bindLab();
+
+    Promise.all([Vocab.load(), loadLab()]).then(function () {
+      var head = '<div class="eyebrow"><a href="#/cards" style="color:inherit;text-decoration:none">← Flashcards</a></div>' +
+        '<h1 id="lab-page">Verb lab</h1>';
+      if (!labData) {
+        view.innerHTML = head + '<div class="empty"><p>The verb list did not load. Try again when online.</p></div>';
+        return;
+      }
+      var p = labPool();
+      var all = p.leech.concat(p.fresh);
+      var queue = all.filter(function (x) { return !labDoneThisVisit[x.id]; });
+      var clean = all.filter(function (x) { return labData.retire[x.e.v]; })
+        .map(function (x) { return { x: x, why: labData.retire[x.e.v] }; })
+        .concat(p.noHook.map(function (x) { return { x: x, why: 'keeps failing, no scene written yet' }; }));
+
+      var cleanRows = clean.map(function (c, i) {
+        return '<div class="lab-crow" data-i="' + i + '">' +
+          '<span class="lab-cfr">' + escapeHtml(c.x.w.fr) + '</span>' +
+          '<span class="lab-cen">' + escapeHtml(c.x.w.en) + '</span>' +
+          '<span class="deck-meta">' + (c.x.miss ? 'missed ' + c.x.miss + '× · ' : '') + escapeHtml(c.why) + '</span>' +
+          '<span class="lab-cbtn">' +
+            '<button class="btn btn-sm" type="button" data-act="retire">Retire</button>' +
+            (c.x.w.mine ? '<button class="btn btn-sm btn-again" type="button" data-act="delete">Delete</button>' : '') +
+          '</span>' +
+        '</div>';
+      }).join('');
+
+      view.innerHTML = head +
+        '<p class="lead">' + p.leech.length + ' verb' + (p.leech.length === 1 ? '' : 's') + ' you keep missing, then ' +
+        p.fresh.length + ' important verb' + (p.fresh.length === 1 ? '' : 's') + ' of yours never reviewed. ' +
+        'A round is ' + LAB_ROUND + ': learn each one with its root and a scene you hear, then type it back into the scene. ' +
+        'Right first time sends the card back to the normal pile; a miss keeps it here.</p>' +
+        (queue.length
+          ? '<div class="deck-modes"><button class="btn btn-primary" type="button" id="lab-go">Start a round (' +
+              Math.min(LAB_ROUND, queue.length) + ')</button>' +
+              '<span class="deck-meta">' + queue.length + ' waiting</span></div>'
+          : '<div class="empty"><div class="empty-icon">🎉</div><p>Nothing waiting in the lab.</p></div>') +
+        (clean.length
+          ? '<details class="lab-clean" open><summary>Clean up: ' + clean.length + ' I would retire or delete</summary>' +
+              '<p class="deck-meta">Retire keeps the word but takes it out of every deck. Delete removes your own word.</p>' +
+              cleanRows + '</details>'
+          : '');
+
+      var go = document.getElementById('lab-go');
+      if (go) go.addEventListener('click', function () { runLabRound(queue.slice(0, LAB_ROUND)); });
+
+      labClick = function (e) {
+        var b = e.target.closest('.lab-crow [data-act]');
+        if (!b) return;
+        var c = clean[+b.closest('.lab-crow').dataset.i];
+        if (b.dataset.act === 'retire') {
+          if (!Progress.isKnown(c.x.w.id)) Progress.toggleKnown(c.x.w.id);
+        } else if (b.dataset.act === 'delete') {
+          if (!confirm('Delete "' + c.x.w.fr + '" from your words?')) return;
+          Progress.deleteWord(c.x.w.id);
+        }
+        recordSnapshot();
+        renderLab();
+      };
+    });
+  }
+
+  function runLabRound(items) {
+    var phase = 'learn', i = 0;
+    var recall = [], first = {}, checked = false;
+
+    function shell(inner) {
+      view.innerHTML =
+        '<div class="eyebrow"><a href="#/cards/lab" data-act="leave" style="color:inherit;text-decoration:none">← Verb lab</a></div>' +
+        '<h1 id="lab-page">Verb lab</h1><div id="lab-stage">' + inner + '</div>';
+      window.scrollTo(0, 0);
+    }
+
+    function learn() {
+      var x = items[i], e = x.e;
+      shell(
+        '<div class="lab-card">' +
+          '<div class="deck-meta">Learn · ' + (i + 1) + ' of ' + items.length +
+            (x.miss ? ' · missed ' + x.miss + '×' : ' · new') + '</div>' +
+          '<div class="lab-verb">' + escapeHtml(x.w.fr) +
+            ' <button class="btn btn-sm" type="button" data-say="verb" aria-label="Hear the verb">🔊</button></div>' +
+          '<div class="lab-mean">' + escapeHtml(x.w.en) + '</div>' +
+          '<div class="lab-hook"><span class="lab-label">Hook</span> ' + escapeHtml(e.hook) + '</div>' +
+          '<div class="lab-sent"><button class="btn btn-sm" type="button" data-say="sent" aria-label="Hear the sentence">🔊</button> ' +
+            labSentenceHtml(e) + '</div>' +
+          '<div class="lab-en">' + escapeHtml(e.en) + '</div>' +
+          (e.also ? '<div class="lab-also">' + escapeHtml(e.also) + '</div>' : '') +
+          '<div class="lab-nav">' +
+            (i ? '<button class="btn" type="button" data-act="prev">← Back</button>' : '') +
+            '<button class="btn btn-primary" type="button" data-act="next">' +
+              (i < items.length - 1 ? 'Next →' : 'Now recall them →') + '</button>' +
+          '</div>' +
+          '<p class="due-keys">→ or Enter next · ← back · Space hear the sentence again</p>' +
+        '</div>');
+      labSay(labSentence(e));
+    }
+
+    function startRecall() {
+      phase = 'recall';
+      recall = shuffledLab(items);
+      ask();
+    }
+
+    function shuffledLab(a) {
+      a = a.slice();
+      for (var k = a.length - 1; k > 0; k--) {
+        var j = Math.floor(Math.random() * (k + 1)), t = a[k]; a[k] = a[j]; a[j] = t;
+      }
+      return a;
+    }
+
+    function ask() {
+      if (!recall.length) return finish();
+      checked = false;
+      var x = recall[0], parts = x.e.fr.split(/[\[\]]/);
+      shell(
+        '<div class="lab-card">' +
+          '<div class="deck-meta">Recall · ' + recall.length + ' left</div>' +
+          '<div class="lab-en lab-en-big">' + escapeHtml(x.e.en) + '</div>' +
+          '<div class="lab-sent lab-cloze">' + escapeHtml(parts[0]) +
+            '<input class="lab-in" id="lab-in" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="The missing verb">' +
+            escapeHtml(parts[2]) + '</div>' +
+          '<div class="lab-fb" id="lab-fb" aria-live="polite"></div>' +
+          '<div class="lab-nav"><button class="btn btn-primary" type="button" data-act="check" id="lab-check">Check</button></div>' +
+          '<p class="due-keys">Enter to check, Enter again for the next · accents optional · the infinitive counts too</p>' +
+        '</div>');
+      var input = document.getElementById('lab-in');
+      input.focus();
+      input.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Enter') { ev.preventDefault(); checked ? nextAsk() : check(); }
+      });
+    }
+
+    function check() {
+      var x = recall[0], e = x.e;
+      var input = document.getElementById('lab-in');
+      var got = labPlain(input.value);
+      if (!got) return;
+      var form = e.fr.split(/[\[\]]/)[1];
+      var base = e.v.replace(/ (à|de)$/, '');
+      var ok = got === labPlain(form) || got === labPlain(base) ||
+        got === labPlain(base.replace(/^(se |s')/, ''));
+      if (!(x.id in first)) first[x.id] = ok;
+      checked = true;
+      input.readOnly = true;
+      input.classList.add(ok ? 'is-ok' : 'is-bad');
+      var fb = document.getElementById('lab-fb');
+      fb.className = 'lab-fb ' + (ok ? 'is-ok' : 'is-bad');
+      fb.innerHTML = (ok ? '✓ ' : '✗ It is <strong>' + escapeHtml(form) + '</strong>. ') + labSentenceHtml(e) +
+        (ok && got !== labPlain(form) ? ' <span class="deck-meta">(in the sentence: ' + escapeHtml(form) + ')</span>' : '') +
+        '<div class="deck-meta">' + escapeHtml(x.w.fr) + ' = ' + escapeHtml(x.w.en) + '</div>';
+      document.getElementById('lab-check').textContent = 'Next';
+      labSay(labSentence(e));
+      // A miss comes round again at the end of this round.
+      var done = recall.shift();
+      if (!ok) recall.push(done);
+    }
+
+    function nextAsk() { ask(); }
+
+    function finish() {
+      phase = 'done';
+      var right = 0;
+      items.forEach(function (x) {
+        var ok = !!first[x.id];
+        if (ok) right++;
+        Progress.gradeCard(x.id, ok);
+        labDoneThisVisit[x.id] = 1;
+      });
+      recordSnapshot();
+      var missed = items.filter(function (x) { return !first[x.id]; });
+      shell(
+        '<div class="lab-card">' +
+          '<div class="lab-verb">' + right + ' of ' + items.length + ' right first time</div>' +
+          '<p>Right ones are back in your normal flashcards. ' +
+            (missed.length ? 'Missed, due again today and still in the lab: <strong>' +
+              missed.map(function (x) { return escapeHtml(x.w.fr); }).join(', ') + '</strong>.' : 'Nothing missed.') + '</p>' +
+          '<div class="lab-nav">' +
+            '<a class="btn btn-primary" href="#/cards/lab" data-act="leave">Next round</a>' +
+            '<a class="btn" href="#/cards">Flashcards</a>' +
+          '</div>' +
+        '</div>');
+    }
+
+    labKeys = function (ev) {
+      if (phase === 'learn') {
+        if (ev.key === 'ArrowRight' || ev.key === 'Enter') { step(1); return true; }
+        if (ev.key === 'ArrowLeft') { step(-1); return true; }
+        if (ev.key === ' ') { labSay(labSentence(items[i].e)); return true; }
+      }
+      if (phase === 'recall' && ev.key === 'Enter') { checked ? nextAsk() : check(); return true; }
+      return false;
+    };
+
+    function step(d) {
+      if (d > 0 && i === items.length - 1) return startRecall();
+      i = Math.max(0, Math.min(items.length - 1, i + d));
+      learn();
+    }
+
+    labClick = function (ev) {
+      var b = ev.target.closest('[data-act], [data-say]');
+      if (!b || !view.contains(b)) return;
+      // The lab's own hash: the router will not fire, so render by hand.
+      if (b.dataset.act === 'leave') { ev.preventDefault(); return renderLab(); }
+      if (b.dataset.say === 'verb') return labSay(items[i].w.fr);
+      if (b.dataset.say === 'sent') return labSay(labSentence(items[i].e));
+      if (b.dataset.act === 'next') return step(1);
+      if (b.dataset.act === 'prev') return step(-1);
+      if (b.dataset.act === 'check') return checked ? nextAsk() : check();
+    };
+
+    learn();
   }
 
 

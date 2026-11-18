@@ -1,0 +1,858 @@
+{
+ "about": "Verb lab: a root hook and one scene per verb. [form] marks the word to recall.",
+ "verbs": [
+  {
+   "v": "fouiller",
+   "hook": "la fouille = the bag search at the airport",
+   "fr": "La police a [fouillé] tout l'appartement.",
+   "en": "The police searched the whole flat.",
+   "also": "fouiller dans son sac = to rummage in one's bag"
+  },
+  {
+   "v": "picoler",
+   "hook": "slang for boire, at a party",
+   "fr": "Il a trop [picolé] hier soir.",
+   "en": "He drank too much last night."
+  },
+  {
+   "v": "contraindre",
+   "hook": "une contrainte = a constraint",
+   "fr": "La crise l'a [contraint] à vendre sa maison.",
+   "en": "The crisis forced him to sell his house.",
+   "also": "être contraint de + inf = to be forced to"
+  },
+  {
+   "v": "déborder",
+   "hook": "dé + bord (edge): go over the edge",
+   "fr": "Le lait [déborde] !",
+   "en": "The milk is boiling over!",
+   "also": "être débordé = to be swamped with work"
+  },
+  {
+   "v": "dégager",
+   "hook": "clear something out of the way",
+   "fr": "[Dégage] ! Tu bloques la porte.",
+   "en": "Get out of the way! You're blocking the door.",
+   "also": "ça se dégage = it's clearing up"
+  },
+  {
+   "v": "morfler",
+   "hook": "slang for souffrir, payer cher",
+   "fr": "Il a [morflé] après la rupture.",
+   "en": "He really suffered after the break-up."
+  },
+  {
+   "v": "rédiger",
+   "hook": "la rédaction = writing up (school essays)",
+   "fr": "Vous devez [rédiger] un texte de 250 mots.",
+   "en": "You must write a 250-word text.",
+   "also": "It is in the DELF writing instructions"
+  },
+  {
+   "v": "assommer",
+   "hook": "knock out; also bore to death",
+   "fr": "Ce cours m'[assomme].",
+   "en": "This class bores me to death.",
+   "also": "assommant = deadly boring"
+  },
+  {
+   "v": "croître",
+   "hook": "la croissance, un croissant (growing moon), accroître",
+   "fr": "Le chômage ne cesse de [croître].",
+   "en": "Unemployment keeps growing.",
+   "also": "accroître = to increase"
+  },
+  {
+   "v": "pencher",
+   "hook": "la tour penchée de Pise",
+   "fr": "Je [penche] pour la deuxième option.",
+   "en": "I lean towards the second option.",
+   "also": "se pencher sur un problème = to look into it"
+  },
+  {
+   "v": "repasser",
+   "hook": "re + passer: pass the iron over again",
+   "fr": "Je dois [repasser] ma chemise.",
+   "en": "I have to iron my shirt.",
+   "also": "repasser un examen = to retake an exam"
+  },
+  {
+   "v": "resserrer",
+   "hook": "re + serrer (to squeeze)",
+   "fr": "Il faut [resserrer] les liens avec nos voisins.",
+   "en": "We need to tighten ties with our neighbours."
+  },
+  {
+   "v": "se braquer",
+   "hook": "braquer = to aim a gun, to turn the wheel hard",
+   "fr": "Dès qu'on la critique, elle [se braque].",
+   "en": "As soon as she's criticised, she digs in her heels."
+  },
+  {
+   "v": "supplier",
+   "hook": "English \"supplicate\"",
+   "fr": "Je t'en [supplie], reste !",
+   "en": "I'm begging you, stay!"
+  },
+  {
+   "v": "veiller",
+   "hook": "la veille = the eve, the night watch",
+   "fr": "[Veillez] à bien fermer la porte.",
+   "en": "Make sure you close the door properly.",
+   "also": "veiller tard = to stay up late; veiller sur qqn = to watch over"
+  },
+  {
+   "v": "afficher",
+   "hook": "une affiche = a poster",
+   "fr": "Les résultats sont [affichés] à l'entrée.",
+   "en": "The results are posted at the entrance."
+  },
+  {
+   "v": "agresser",
+   "hook": "une agression = an attack on a person",
+   "fr": "Il s'est fait [agresser] dans le métro.",
+   "en": "He got attacked in the metro."
+  },
+  {
+   "v": "animer",
+   "hook": "un animateur = a TV host; âme = soul",
+   "fr": "Elle [anime] une émission sur France Inter.",
+   "en": "She hosts a show on France Inter."
+  },
+  {
+   "v": "assembler",
+   "hook": "ensemble; l'Assemblée nationale",
+   "fr": "Il faut [assembler] le meuble soi-même.",
+   "en": "You have to put the furniture together yourself."
+  },
+  {
+   "v": "claquer",
+   "hook": "clac! the sound",
+   "fr": "Il est parti en [claquant] la porte.",
+   "en": "He left, slamming the door.",
+   "also": "je suis claqué = I'm exhausted (slang)"
+  },
+  {
+   "v": "concevoir",
+   "hook": "la conception = the design",
+   "fr": "Ce logiciel a été [conçu] pour les écoles.",
+   "en": "This software was designed for schools.",
+   "also": "conçu pour = designed for"
+  },
+  {
+   "v": "défoncer",
+   "hook": "dé + fond (bottom): knock the bottom out",
+   "fr": "La police a [défoncé] la porte.",
+   "en": "The police smashed the door in."
+  },
+  {
+   "v": "démentir",
+   "hook": "dé + mentir: say it's a lie",
+   "fr": "Le ministre a [démenti] la rumeur.",
+   "en": "The minister denied the rumour.",
+   "also": "un démenti = an official denial"
+  },
+  {
+   "v": "dépasser",
+   "hook": "dé + passer: pass beyond",
+   "fr": "Ça [dépasse] mes compétences.",
+   "en": "That's beyond my skills.",
+   "also": "être dépassé = to be overwhelmed, outdated"
+  },
+  {
+   "v": "dévorer",
+   "hook": "devour",
+   "fr": "J'ai [dévoré] ce livre en deux jours.",
+   "en": "I devoured this book in two days."
+  },
+  {
+   "v": "fourrer",
+   "hook": "chocolat fourré = filled chocolate",
+   "fr": "Ne [fourre] pas ton nez partout !",
+   "en": "Don't stick your nose into everything!"
+  },
+  {
+   "v": "nourrir",
+   "hook": "la nourriture = food",
+   "fr": "Il faut [nourrir] le chat.",
+   "en": "The cat needs feeding."
+  },
+  {
+   "v": "préconiser",
+   "hook": "pré + conseil: advise in advance",
+   "fr": "Les experts [préconisent] de réduire le sucre.",
+   "en": "Experts recommend cutting down on sugar."
+  },
+  {
+   "v": "retirer",
+   "hook": "re + tirer (to pull): pull back out",
+   "fr": "J'ai [retiré] de l'argent au distributeur.",
+   "en": "I withdrew money from the cash machine.",
+   "also": "retirer sa plainte = to withdraw one's complaint"
+  },
+  {
+   "v": "se borner à",
+   "hook": "une borne = a boundary stone",
+   "fr": "Il [s'est borné] à répéter la question.",
+   "en": "He merely repeated the question."
+  },
+  {
+   "v": "survenir",
+   "hook": "sur + venir: come up suddenly",
+   "fr": "L'accident [est survenu] vers minuit.",
+   "en": "The accident happened around midnight."
+  },
+  {
+   "v": "aggraver",
+   "hook": "grave: make more serious",
+   "fr": "Le stress [aggrave] la situation.",
+   "en": "Stress makes the situation worse."
+  },
+  {
+   "v": "boucler",
+   "hook": "une boucle = a buckle, a loop",
+   "fr": "[Bouclez] votre ceinture.",
+   "en": "Fasten your seatbelt.",
+   "also": "boucler un projet = to wrap up a project"
+  },
+  {
+   "v": "bénéficier",
+   "hook": "un bénéfice = a benefit, a profit",
+   "fr": "Les étudiants [bénéficient] d'une réduction.",
+   "en": "Students get a discount.",
+   "also": "bénéficier de = to benefit from"
+  },
+  {
+   "v": "cligner",
+   "hook": "un clin d'œil = a wink",
+   "fr": "La lumière me fait [cligner] des yeux.",
+   "en": "The light makes me blink."
+  },
+  {
+   "v": "consigner",
+   "hook": "official record; la consigne = the instruction",
+   "fr": "Tout est [consigné] dans le rapport.",
+   "en": "Everything is recorded in the report."
+  },
+  {
+   "v": "déclencher",
+   "hook": "un déclencheur = a trigger",
+   "fr": "Cette phrase a [déclenché] une dispute.",
+   "en": "That sentence triggered an argument."
+  },
+  {
+   "v": "dépendre",
+   "hook": "depend",
+   "fr": "Ça [dépend] de toi.",
+   "en": "It depends on you."
+  },
+  {
+   "v": "frapper",
+   "hook": "frappant = striking",
+   "fr": "Quelqu'un [frappe] à la porte.",
+   "en": "Someone is knocking at the door."
+  },
+  {
+   "v": "gâter",
+   "hook": "un enfant gâté = a spoiled child",
+   "fr": "Ses grands-parents le [gâtent] trop.",
+   "en": "His grandparents spoil him too much."
+  },
+  {
+   "v": "halluciner",
+   "hook": "hallucination: \"I can't believe my eyes\"",
+   "fr": "J'[hallucine] ! Il a encore menti.",
+   "en": "I can't believe it! He lied again."
+  },
+  {
+   "v": "interrompre",
+   "hook": "inter + rompre (to break): break in between",
+   "fr": "Excusez-moi de vous [interrompre].",
+   "en": "Sorry to interrupt you."
+  },
+  {
+   "v": "nuire",
+   "hook": "nuisible = harmful; une nuisance",
+   "fr": "Le tabac [nuit] à la santé.",
+   "en": "Smoking harms your health.",
+   "also": "nuire à qqn / qqch"
+  },
+  {
+   "v": "percuter",
+   "hook": "percussion: strike hard",
+   "fr": "La voiture a [percuté] un arbre.",
+   "en": "The car crashed into a tree."
+  },
+  {
+   "v": "postuler",
+   "hook": "un poste = a job",
+   "fr": "J'ai [postulé] chez Airbus.",
+   "en": "I applied for a job at Airbus.",
+   "also": "postuler à un poste"
+  },
+  {
+   "v": "ranger",
+   "hook": "un rang = a row: put back in rows",
+   "fr": "[Range] ta chambre !",
+   "en": "Tidy your room!"
+  },
+  {
+   "v": "remuer",
+   "hook": "stir, move",
+   "fr": "Il faut [remuer] la sauce sans arrêt.",
+   "en": "You have to keep stirring the sauce."
+  },
+  {
+   "v": "renverser",
+   "hook": "re + verser (to pour): tip over",
+   "fr": "J'ai [renversé] mon café sur l'ordinateur.",
+   "en": "I spilled my coffee on the computer.",
+   "also": "se faire renverser = to get run over"
+  },
+  {
+   "v": "reprocher",
+   "hook": "un reproche = a criticism",
+   "fr": "On lui [reproche] son manque de rigueur.",
+   "en": "He is criticised for his lack of rigour.",
+   "also": "reprocher qqch à qqn"
+  },
+  {
+   "v": "sauver",
+   "hook": "le sauvetage = the rescue",
+   "fr": "Il lui a [sauvé] la vie.",
+   "en": "He saved her life."
+  },
+  {
+   "v": "se figer",
+   "hook": "figé = frozen still",
+   "fr": "Quand il l'a vue, il [s'est figé].",
+   "en": "When he saw her, he froze."
+  },
+  {
+   "v": "taper",
+   "hook": "tap! hit, type",
+   "fr": "Je [tape] mon mot de passe.",
+   "en": "I'm typing my password.",
+   "also": "taper sur les nerfs = to get on one's nerves"
+  },
+  {
+   "v": "embrouiller",
+   "hook": "le brouillard = fog: muddle",
+   "fr": "Tu m'[embrouilles] avec tes explications.",
+   "en": "You're confusing me with your explanations."
+  },
+  {
+   "v": "maudire",
+   "hook": "mal + dire",
+   "fr": "Il [maudit] le jour où il l'a rencontrée.",
+   "en": "He curses the day he met her."
+  },
+  {
+   "v": "prêter",
+   "hook": "un prêt = a loan",
+   "fr": "Tu peux me [prêter] ton stylo ?",
+   "en": "Can you lend me your pen?",
+   "also": "prêter attention à = to pay attention to"
+  },
+  {
+   "v": "râler",
+   "hook": "un râleur = a moaner",
+   "fr": "Il [râle] tout le temps contre le métro.",
+   "en": "He moans about the metro all the time."
+  },
+  {
+   "v": "se mettre à",
+   "hook": "start doing",
+   "fr": "Il [s'est mis] à pleuvoir.",
+   "en": "It started to rain."
+  },
+  {
+   "v": "aborder",
+   "hook": "à + bord: come alongside a ship",
+   "fr": "Ce texte [aborde] la question du télétravail.",
+   "en": "This text deals with remote work."
+  },
+  {
+   "v": "attraper",
+   "hook": "trap: catch",
+   "fr": "J'ai [attrapé] un rhume.",
+   "en": "I caught a cold."
+  },
+  {
+   "v": "pimenter",
+   "hook": "le piment = chilli",
+   "fr": "Ça va [pimenter] la soirée.",
+   "en": "That'll spice up the evening."
+  },
+  {
+   "v": "se déplacer",
+   "hook": "change place",
+   "fr": "Je [me déplace] à vélo.",
+   "en": "I get around by bike.",
+   "also": "un déplacement = a trip"
+  },
+  {
+   "v": "se détendre",
+   "hook": "dé + tendre (tense); la détente",
+   "fr": "J'ai besoin de [me détendre].",
+   "en": "I need to relax."
+  },
+  {
+   "v": "tutoyer",
+   "hook": "tu: tutoyer; vous: vouvoyer",
+   "fr": "On peut se [tutoyer] ?",
+   "en": "Can we say tu to each other?"
+  },
+  {
+   "v": "avertir",
+   "hook": "un avertissement = a warning",
+   "fr": "On m'avait [averti] du danger.",
+   "en": "I had been warned of the danger."
+  },
+  {
+   "v": "prévenir",
+   "hook": "pré + venir: come before; la prévention",
+   "fr": "[Préviens]-moi si tu es en retard.",
+   "en": "Let me know if you're late.",
+   "also": "Mieux vaut prévenir que guérir."
+  },
+  {
+   "v": "apprécier",
+   "hook": "appreciate",
+   "fr": "J'[apprécie] beaucoup ton aide.",
+   "en": "I really appreciate your help."
+  },
+  {
+   "v": "se comporter",
+   "hook": "le comportement = behaviour",
+   "fr": "Il [se comporte] comme un enfant.",
+   "en": "He behaves like a child."
+  },
+  {
+   "v": "réagir",
+   "hook": "une réaction",
+   "fr": "Comment as-tu [réagi] ?",
+   "en": "How did you react?"
+  },
+  {
+   "v": "supprimer",
+   "hook": "une suppression",
+   "fr": "J'ai [supprimé] le message.",
+   "en": "I deleted the message."
+  },
+  {
+   "v": "exiger",
+   "hook": "exigeant = demanding; une exigence",
+   "fr": "Le poste [exige] trois ans d'expérience.",
+   "en": "The job requires three years' experience."
+  },
+  {
+   "v": "interdire",
+   "hook": "interdit = forbidden",
+   "fr": "Il est [interdit] de fumer ici.",
+   "en": "Smoking is forbidden here.",
+   "also": "interdire à qqn de + inf"
+  },
+  {
+   "v": "révéler",
+   "hook": "une révélation",
+   "fr": "L'enquête a [révélé] un scandale.",
+   "en": "The investigation revealed a scandal."
+  },
+  {
+   "v": "posséder",
+   "hook": "possession",
+   "fr": "Il [possède] trois appartements.",
+   "en": "He owns three flats."
+  },
+  {
+   "v": "prétendre",
+   "hook": "false friend: claim, not pretend",
+   "fr": "Il [prétend] qu'il n'était pas là.",
+   "en": "He claims he wasn't there.",
+   "also": "faire semblant = to pretend"
+  },
+  {
+   "v": "reculer",
+   "hook": "re + cul (back): move back; un recul",
+   "fr": "La voiture a [reculé] dans le mur.",
+   "en": "The car backed into the wall."
+  },
+  {
+   "v": "assister",
+   "hook": "false friend: attend",
+   "fr": "J'ai [assisté] à la réunion.",
+   "en": "I attended the meeting.",
+   "also": "assister à qqch"
+  },
+  {
+   "v": "relever",
+   "hook": "re + lever: raise; point out",
+   "fr": "Le prof a [relevé] trois erreurs.",
+   "en": "The teacher pointed out three mistakes.",
+   "also": "relever un défi = to take up a challenge"
+  },
+  {
+   "v": "déceler",
+   "hook": "dé + celer (to hide): un-hide",
+   "fr": "Les médecins ont [décelé] une anomalie.",
+   "en": "The doctors detected an anomaly."
+  },
+  {
+   "v": "préciser",
+   "hook": "précis: make precise",
+   "fr": "Pouvez-vous [préciser] votre question ?",
+   "en": "Can you clarify your question?"
+  },
+  {
+   "v": "étonner",
+   "hook": "étonnant = surprising",
+   "fr": "Ça m'[étonne] de lui.",
+   "en": "I'm surprised at him."
+  },
+  {
+   "v": "interpeller",
+   "hook": "appeler: call out; police: stop and question",
+   "fr": "La police a [interpellé] deux suspects.",
+   "en": "The police stopped two suspects."
+  },
+  {
+   "v": "convaincre",
+   "hook": "vaincre = to defeat; convaincu",
+   "fr": "Tu m'as [convaincu].",
+   "en": "You've convinced me."
+  },
+  {
+   "v": "soigner",
+   "hook": "les soins = care; soigneux = careful",
+   "fr": "Le médecin l'a bien [soigné].",
+   "en": "The doctor treated him well."
+  },
+  {
+   "v": "fréquenter",
+   "hook": "fréquent: go often to",
+   "fr": "Il [fréquente] les mêmes bars.",
+   "en": "He goes to the same bars."
+  },
+  {
+   "v": "conclure",
+   "hook": "une conclusion",
+   "fr": "Pour [conclure], je dirais que c'est positif.",
+   "en": "To conclude, I'd say it's positive."
+  },
+  {
+   "v": "débattre",
+   "hook": "un débat",
+   "fr": "On a [débattu] du sujet pendant deux heures.",
+   "en": "We debated the topic for two hours.",
+   "also": "débattre de qqch"
+  },
+  {
+   "v": "admettre",
+   "hook": "admis = admitted",
+   "fr": "J'[admets] que j'ai eu tort.",
+   "en": "I admit I was wrong."
+  },
+  {
+   "v": "tolérer",
+   "hook": "la tolérance",
+   "fr": "Je ne [tolère] pas le mensonge.",
+   "en": "I don't tolerate lying."
+  },
+  {
+   "v": "aménager",
+   "hook": "le ménage (household): fit out",
+   "fr": "Ils ont [aménagé] le grenier en bureau.",
+   "en": "They converted the attic into an office.",
+   "also": "un aménagement"
+  },
+  {
+   "v": "mentionner",
+   "hook": "mention",
+   "fr": "Il n'a pas [mentionné] le prix.",
+   "en": "He didn't mention the price."
+  },
+  {
+   "v": "atteindre",
+   "hook": "atteint = reached, affected",
+   "fr": "Nous avons [atteint] notre objectif.",
+   "en": "We have reached our goal."
+  },
+  {
+   "v": "obtenir",
+   "hook": "obtain",
+   "fr": "Elle a [obtenu] son diplôme.",
+   "en": "She got her degree."
+  },
+  {
+   "v": "obliger",
+   "hook": "obligatoire; être obligé de",
+   "fr": "Rien ne t'[oblige] à venir.",
+   "en": "Nothing forces you to come."
+  },
+  {
+   "v": "franchir",
+   "hook": "franc: cross freely",
+   "fr": "Il a [franchi] la ligne d'arrivée.",
+   "en": "He crossed the finish line."
+  },
+  {
+   "v": "saisir",
+   "hook": "seize; also grasp an idea",
+   "fr": "Je n'ai pas [saisi] ce que tu as dit.",
+   "en": "I didn't catch what you said."
+  },
+  {
+   "v": "décevoir",
+   "hook": "déçu = disappointed; une déception",
+   "fr": "Ce film m'a [déçu].",
+   "en": "This film disappointed me."
+  },
+  {
+   "v": "évoluer",
+   "hook": "une évolution",
+   "fr": "La situation [évolue] vite.",
+   "en": "The situation is changing fast."
+  },
+  {
+   "v": "ressentir",
+   "hook": "re + sentir: feel inside; le ressenti",
+   "fr": "J'ai [ressenti] une grande tristesse.",
+   "en": "I felt great sadness."
+  },
+  {
+   "v": "viser",
+   "hook": "le viseur = the sight of a gun",
+   "fr": "Cette loi [vise] à protéger les enfants.",
+   "en": "This law aims to protect children.",
+   "also": "viser à + inf"
+  },
+  {
+   "v": "dévoiler",
+   "hook": "dé + voile (veil): unveil",
+   "fr": "Le journal a [dévoilé] les coulisses de l'affaire.",
+   "en": "The paper revealed the behind-the-scenes of the affair."
+  },
+  {
+   "v": "épuiser",
+   "hook": "un puits = a well: draw it dry; épuisé",
+   "fr": "Ce voyage m'a [épuisé].",
+   "en": "This trip exhausted me."
+  },
+  {
+   "v": "se méfier",
+   "hook": "la méfiance ≠ la confiance",
+   "fr": "[Méfie]-toi de lui.",
+   "en": "Be wary of him.",
+   "also": "se méfier de"
+  },
+  {
+   "v": "se dérouler",
+   "hook": "dé + rouler: unroll, take place",
+   "fr": "La réunion [se déroule] au premier étage.",
+   "en": "The meeting takes place on the first floor."
+  },
+  {
+   "v": "consacrer",
+   "hook": "consacré à = devoted to",
+   "fr": "Il [consacre] ses week-ends à sa famille.",
+   "en": "He devotes his weekends to his family."
+  },
+  {
+   "v": "diminuer",
+   "hook": "une diminution ≠ augmenter",
+   "fr": "Le nombre de lecteurs [diminue].",
+   "en": "The number of readers is falling."
+  },
+  {
+   "v": "témoigner",
+   "hook": "un témoin = a witness",
+   "fr": "Elle a [témoigné] au procès.",
+   "en": "She testified at the trial."
+  },
+  {
+   "v": "se plaindre",
+   "hook": "une plainte = a complaint",
+   "fr": "Il [se plaint] toujours du bruit.",
+   "en": "He always complains about the noise.",
+   "also": "se plaindre de"
+  },
+  {
+   "v": "renforcer",
+   "hook": "re + force",
+   "fr": "Il faut [renforcer] la sécurité.",
+   "en": "Security must be strengthened."
+  },
+  {
+   "v": "susciter",
+   "hook": "stir up an emotion or interest",
+   "fr": "Ce projet [suscite] beaucoup d'intérêt.",
+   "en": "This project is attracting a lot of interest."
+  },
+  {
+   "v": "bouleverser",
+   "hook": "bouleversé = deeply moved",
+   "fr": "Ce film m'a [bouleversé].",
+   "en": "This film moved me deeply."
+  },
+  {
+   "v": "promouvoir",
+   "hook": "une promotion",
+   "fr": "La ville veut [promouvoir] le vélo.",
+   "en": "The city wants to promote cycling."
+  },
+  {
+   "v": "garantir",
+   "hook": "une garantie",
+   "fr": "Je te [garantis] que ça marche.",
+   "en": "I guarantee you it works."
+  },
+  {
+   "v": "tenter",
+   "hook": "une tentative = an attempt; tentant = tempting",
+   "fr": "J'ai [tenté] de l'appeler.",
+   "en": "I tried to call him."
+  },
+  {
+   "v": "rétablir",
+   "hook": "ré + établir; se rétablir = to recover",
+   "fr": "Le courant a été [rétabli].",
+   "en": "The power has been restored."
+  },
+  {
+   "v": "décaler",
+   "hook": "le décalage horaire = jet lag",
+   "fr": "On peut [décaler] la réunion à jeudi ?",
+   "en": "Can we move the meeting to Thursday?"
+  },
+  {
+   "v": "renvoyer",
+   "hook": "re + envoyer: send back; fire",
+   "fr": "Il s'est fait [renvoyer] de son travail.",
+   "en": "He got fired from his job."
+  },
+  {
+   "v": "remplacer",
+   "hook": "re + place",
+   "fr": "Qui va [remplacer] le directeur ?",
+   "en": "Who will replace the director?"
+  },
+  {
+   "v": "durer",
+   "hook": "la durée = the length of time",
+   "fr": "Le film [dure] deux heures.",
+   "en": "The film lasts two hours."
+  },
+  {
+   "v": "hésiter",
+   "hook": "hesitate",
+   "fr": "N'[hésite] pas à m'appeler.",
+   "en": "Don't hesitate to call me."
+  },
+  {
+   "v": "galérer",
+   "hook": "une galère = a galley (slave ship): a struggle",
+   "fr": "J'ai [galéré] pour trouver un appart.",
+   "en": "I struggled to find a flat."
+  },
+  {
+   "v": "croiser",
+   "hook": "une croix = a cross: cross paths",
+   "fr": "J'ai [croisé] Marie au marché.",
+   "en": "I ran into Marie at the market."
+  },
+  {
+   "v": "s'installer",
+   "hook": "install yourself",
+   "fr": "Ils [se sont installés] à Lyon.",
+   "en": "They settled in Lyon."
+  },
+  {
+   "v": "harceler",
+   "hook": "le harcèlement",
+   "fr": "Il se fait [harceler] à l'école.",
+   "en": "He's being bullied at school."
+  },
+  {
+   "v": "ramasser",
+   "hook": "pick up from the ground",
+   "fr": "[Ramasse] tes affaires.",
+   "en": "Pick up your things."
+  },
+  {
+   "v": "distraire",
+   "hook": "une distraction",
+   "fr": "La musique me [distrait].",
+   "en": "Music distracts me."
+  },
+  {
+   "v": "raccrocher",
+   "hook": "re + accrocher (to hang): hang up",
+   "fr": "Elle m'a [raccroché] au nez.",
+   "en": "She hung up on me."
+  },
+  {
+   "v": "s'en faire",
+   "hook": "worry",
+   "fr": "Ne [t'en fais] pas !",
+   "en": "Don't worry!"
+  },
+  {
+   "v": "s'inquiéter",
+   "hook": "inquiet = worried; l'inquiétude",
+   "fr": "Ne [t'inquiète] pas, j'arrive.",
+   "en": "Don't worry, I'm on my way.",
+   "also": "s'inquiéter pour qqn"
+  },
+  {
+   "v": "se servir de",
+   "hook": "servir = to serve: make something serve you",
+   "fr": "Je [me sers] de mon téléphone comme réveil.",
+   "en": "I use my phone as an alarm clock.",
+   "also": "Sers-toi ! = Help yourself!"
+  },
+  {
+   "v": "s'entendre",
+   "hook": "entendre = to hear: hear each other well",
+   "fr": "Je [m'entends] bien avec ma sœur.",
+   "en": "I get on well with my sister.",
+   "also": "s'entendre sur = to agree on"
+  },
+  {
+   "v": "lasser",
+   "hook": "las = weary; lassant = tiresome",
+   "fr": "Cette série commence à me [lasser].",
+   "en": "This series is starting to bore me.",
+   "also": "se lasser de = to get tired of"
+  },
+  {
+   "v": "pâtir",
+   "hook": "close to pâtir = suffer, as in compatir (to sympathise)",
+   "fr": "Ce sont les élèves qui [pâtissent] de la grève.",
+   "en": "It's the pupils who suffer from the strike.",
+   "also": "pâtir de qqch"
+  },
+  {
+   "v": "prier",
+   "hook": "une prière = a prayer; je vous en prie",
+   "fr": "Je vous [prie] de bien vouloir m'excuser.",
+   "en": "I kindly ask you to excuse me.",
+   "also": "je vous en prie = you're welcome / please do"
+  },
+  {
+   "v": "emmener",
+   "hook": "en + mener (to lead): take someone along",
+   "fr": "Je t'[emmène] à la gare.",
+   "en": "I'll take you to the station."
+  }
+ ],
+ "retire": {
+  "picoler": "slang, rare in DELF",
+  "morfler": "slang, rare in DELF",
+  "fourrer": "slang, rare in DELF",
+  "défoncer": "low frequency",
+  "cligner": "low frequency",
+  "pimenter": "low frequency",
+  "maudire": "low frequency"
+ }
+}

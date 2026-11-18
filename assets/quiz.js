@@ -120,7 +120,8 @@ window.Quiz = (function () {
           '<span class="flash-box">' + boxLabel + '</span>' +
           '<div>' +
             '<div class="flash-front">' + (listen ? '<span class="flash-ear" aria-label="Listen">🎧</span>' : escapeHtml(card.front)) + '</div>' +
-            '<div class="flash-back" hidden>' + escapeHtml(card.back) + '</div>' +
+            '<div class="flash-back" hidden>' + escapeHtml(card.back) +
+              (card.ex ? '<div class="flash-ex">' + escapeHtml(card.ex) + '</div>' : '') + '</div>' +
           '</div>' +
           '<span class="flash-hint">' + (listen ? 'listen, then click or press space to flip · H to hear it again, Shift+H slower' :
             'click, or press space, to flip' + (card.fr && window.Say && Say.supported() ? ' · H to hear it' : '')) + '</span>' +
