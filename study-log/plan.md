@@ -1,6 +1,6 @@
 # Plan: 2026-10-21 to 2026-11-11
 
-> **Current plan: see "## From 2026-11-19: DELF B2 plan" below.** It replaces the 2026-11-01
+> **Current plan: see "## From 2026-11-19: fluency plan" below.** It replaces the 2026-11-01
 > weekly table. Older sections stay as history.
 
 Two months of logs show knowledge and listening growing, and cold production flat
@@ -521,10 +521,11 @@ cold test on 11-19.
 - **Asked how I would teach him from here.** Verdict: input too hard (C1 interviews), too many new words (about 40 a day),
   almost no speaking, no writing, and too much time on tools. Rebuilt the plan below.
 
-## From 2026-11-19: DELF B2 plan
+## From 2026-11-19: fluency plan
 
-Goal: pass DELF B2 tout public. Target session: **June 2027** (Pau 16-17 Jun, or the Tel Aviv equivalent once
-IF Israël answers). March 2027 only if speaking is ready by mid-January.
+Goal (his words, 2026-11-20): speak fluently and understand French people when they talk. **The DELF is not the
+goal**; its listening papers stay as the monthly yardstick. Register for the exam only if he later wants the
+certificate (June 2027 would still be reachable on this plan).
 
 Where he is (2026-11-18): grammar recognition B1+, standard listening B1 (TP4 CO ex 2: 8/20), dictée first attempt
 2/12, about 1,250 own words with 690 due, speaking and writing almost untrained. **Speaking decides the date.**
@@ -536,16 +537,17 @@ Where he is (2026-11-18): grammar recognition B1+, standard listening B1 (TP4 CO
 | 20 | **Easy listening, volume** | RFI *Journal en français facile* -> innerFrench -> HugoDécrypte daily news (short) | No pausing, no word lists. Move up a rung when about 90% is understood. |
 | 10 | **Intensive listening** | 2 min of a B2 clip: transcribe, check against the transcript, then shadow it aloud | Replaces the 12-sentence dictée. Errors split heard wrong / silent grammar as before. |
 | 10 | **Flashcards** | Due reviews + Verb lab | **Max 10 new words a day, ●●● only.** Retire freely. Context helper (C) allowed. |
-| 10 | **Speaking** | Read a short news text, record a 3-min opinion: intro, 2 arguments, an example, a conclusion | Use 3 frames from the week's cards. Paste the transcript (phone dictation is fine) for correction. |
-| 10 | **DELF practice** | Alternate: one CO exercise / one CE exercise / numbers game | Method notes in `## Next`. |
+| 10 | **Speaking** | Talk for 3 min about the day's listening or your day, recorded: what happened, what you think, why | Use 3 frames from the week's cards. Paste the transcript (phone dictation is fine) for correction. |
+| 10 | **Listening drill** | Alternate: one DELF CO exercise / numbers game | Method notes in `## Next`. |
 
 ### The week
 
-- **Saturday:** one full timed paper section (CO or CE), francepodcasts CIEP papers first (TP sujet 5 next).
-- **Once a week:** one real conversation, 30-45 min (free: Tandem / HelloTalk partner, or the IF Israël
-  conversation evenings), with a list of the 10 newest phrases to use.
-- **Writing:** one 250-word DELF essay a week, starting about 6 weeks before the exam date
-  (May 2027 for June). His dislike of writing is noted; it is a quarter of the score.
+- **Conversation, the core of speaking:** at least once a week, aim for twice, 30-45 min with a real person
+  (free: Tandem / HelloTalk partner, or the IF Israël conversation evenings), with a list of the 10 newest
+  phrases to use. Afterwards, paste the 3 things you could not say: they become next week's frames.
+- **Saturday:** one timed DELF CO paper (francepodcasts CIEP papers, TP sujet 5 next), as the listening test.
+- **No essay writing.** Formal letters, 250-word essays and exam tactics for the written paper are out
+  unless he registers.
 - **Fun, unscored:** *Dix pour cent* and anything C1 (Arfi, espionage interview), at most once a week, no drills.
 
 ### Stopped or reduced
@@ -555,13 +557,15 @@ Where he is (2026-11-18): grammar recognition B1+, standard listening B1 (TP4 CO
 - Adding about 40 words a day: cap 10.
 - New app features: frozen unless something is broken.
 - Dictée 24 redo and the checkpoint cold dictée: dropped; the monthly measures below replace them.
+- DELF written paper and reading (CE) practice: dropped 2026-11-20 with the exam as a goal.
 
 ### Monthly measures (first: 2026-12-19)
 
 | measure | how | target month 1 | month 3 |
 |---|---|---|---|
 | Listening | a new DELF CO paper, first pass, out of 25 | 12 | 15 |
-| Speaking | recorded 5-min monologue on a DELF PO-style text: pauses over 3 s, frames used | baseline | half the pauses |
+| Speaking | recorded 5-min talk on a news story heard that week: pauses over 3 s, frames used | baseline | half the pauses |
+| Conversation | conversations held that month; things he could not say, per conversation | 4 | 8, fewer gaps |
 | Vocabulary | due pile size; Verb lab verbs missed 3+ times | under 400 | under 200, lab empty |
 | Spelling by ear | 2-min intensive transcription, word errors per sentence | baseline | 1.0 or fewer |
 
@@ -576,7 +580,8 @@ Where he is (2026-11-18): grammar recognition B1+, standard listening B1 (TP4 CO
 - DELF CO method, next paper (TP sujet 5): the first 20 s carry answers; "à quelle époque" = a period,
   not a year; a matching word in an option is a trap until checked.
 - Numbers game `#/nombres` inside the DELF slot: target best ≥ 15.
-- Sens DELF 1 cold retest (overdue since 11-13), inside the DELF slot. Clear the page answers first.
-- Find one free conversation partner this week (Tandem / HelloTalk, or ask IF Israël about conversation evenings).
-- DELF B2 registration: email drafted (to send) to IF Israël Tel Aviv (h.barsheshet@ambfr-il.org) asking for 2027
-  dates, deadline, fee. Pau (France) fallback: B2 on 17-19 Mar, 16-17 Jun, 17-18 Nov 2027, 150 EUR.
+- Sens DELF 1 cold retest (overdue since 11-13), inside the listening-drill slot. Clear the page answers first.
+- **Find one free conversation partner this week** (Tandem / HelloTalk, or ask IF Israël about conversation
+  evenings). This is now the most important item.
+- DELF B2 registration: on hold (optional). Email drafted to IF Israël Tel Aviv (h.barsheshet@ambfr-il.org);
+  Pau fallback: B2 on 17-19 Mar, 16-17 Jun, 17-18 Nov 2027, 150 EUR.
