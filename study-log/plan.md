@@ -536,8 +536,8 @@ Where he is (2026-11-18): grammar recognition B1+, standard listening B1 (TP4 CO
 |---|---|---|---|
 | 20 | **Easy listening, volume** | RFI *Journal en français facile* -> innerFrench -> HugoDécrypte daily news (short) | No pausing, no word lists. Move up a rung when about 90% is understood. |
 | 10 | **Intensive listening** | 2 min of a B2 clip: transcribe, check against the transcript, then shadow it aloud | Replaces the 12-sentence dictée. Errors split heard wrong / silent grammar as before. |
-| 10 | **Flashcards** | Due reviews + Verb lab | **Max 10 new words a day, ●●● only.** Retire freely. Context helper (C) allowed. |
-| 10 | **Speaking** | Talk for 3 min about the day's listening or your day, recorded: what happened, what you think, why | Use 3 frames from the week's cards. Paste the transcript (phone dictation is fine) for correction. |
+| 10 | **Flashcards** | Due reviews + Verb lab | **Max 10 new words a day, ●●● only, up to 5 of them spoken expressions / slang** (see "Spoken French" below). Retire freely. Context helper (C) allowed. |
+| 10 | **Speaking** | Talk for 3 min about the day's listening or your day, recorded: what happened, what you think, why | Use 3 frames + 2 spoken expressions from the week's cards. Paste the transcript (phone dictation is fine) for correction. |
 | 10 | **Listening drill** | Alternate: one DELF CO exercise / numbers game | Method notes in `## Next`. |
 
 ### The week
@@ -549,6 +549,23 @@ Where he is (2026-11-18): grammar recognition B1+, standard listening B1 (TP4 CO
 - **No essay writing.** Formal letters, 250-word essays and exam tactics for the written paper are out
   unless he registers.
 - **Fun, unscored:** *Dix pour cent* and anything C1 (Arfi, espionage interview), at most once a week, no drills.
+
+### Spoken French: expressions and slang (added 2026-11-20, his ask)
+
+What friends say to each other, the gap between textbook and conversation.
+- **Batches of 10 a week from me**, checked against Le Carnet, most frequent first, each as a frame with one
+  example (card style: *être partant(e) pour = to be up for it*). Keep-or-drop rule as for videos.
+- **Heard in the wild:** expressions from *Dix pour cent*, tandem partners and casual videos (Easy French street
+  interviews) go through the same keep-or-drop check before becoming cards.
+- **Use them:** 2 of the week's expressions in every 3-min talk, and in each conversation. A card is learned
+  once it has come out of his mouth in a real conversation.
+- Register matters: mark slang as casual (friends, under 40) so it stays out of formal settings.
+
+Batch 1 (2026-11-20): t'inquiète (pas), ça marche / ça roule, j'avoue (from avouer), en vrai, ça te dit ?,
+être partant(e) pour, c'est chaud, j'en ai marre (de), je suis crevé(e), au fait. Also given: (pas) de ouf,
+au pire, tu veux dire quoi par… ?, et toi, tu fais quoi dans la vie ?
+Batch 2 (queued): ça fait un bail, à toute, n'importe quoi, t'es sérieux ?, c'est clair, tu m'étonnes, nickel,
+en mode, être à la bourre, j'ai la dalle, c'est mort.
 
 ### Stopped or reduced
 
@@ -581,6 +598,7 @@ Where he is (2026-11-18): grammar recognition B1+, standard listening B1 (TP4 CO
   not a year; a matching word in an option is a trap until checked.
 - Numbers game `#/nombres` inside the DELF slot: target best ≥ 15.
 - Sens DELF 1 cold retest (overdue since 11-13), inside the listening-drill slot. Clear the page answers first.
+- Spoken French batch 2 (queued above) on 11-27; cold check of batch 1 on 11-22.
 - **Find one free conversation partner this week** (Tandem / HelloTalk, or ask IF Israël about conversation
   evenings). This is now the most important item.
 - DELF B2 registration: on hold (optional). Email drafted to IF Israël Tel Aviv (h.barsheshet@ambfr-il.org);
