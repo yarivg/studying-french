@@ -586,6 +586,33 @@ en mode, être à la bourre, j'ai la dalle, c'est mort.
 | Vocabulary | due pile size; Verb lab verbs missed 3+ times | under 400 | under 200, lab empty |
 | Spelling by ear | 2-min intensive transcription, word errors per sentence | baseline | 1.0 or fewer |
 
+### 2026-11-19 to 11-24: Lupin, Dix pour cent, tandem (word answers in chat)
+
+**Cards.** He went over the 10/day cap: 188 first-time cards on 11-23 (65% right), about 110 reviews a day
+forecast. **0 new cards until 11-30.** Card fixes in the gist: 6 single fixes (renvoyer, d'emblée, le bail,
+trinquer, apercevoir, exigeant), then 21, then 91 meaning or spelling fixes. Every word missed since 11-10 now
+has a context sentence: verbs in `data/verb-lab.json` (221), the rest in `data/contexts.json` (280), commit 487af62.
+
+**Frames he got wrong in his own French (teach again):**
+- *avoir confiance en qqn* / *faire confiance à qqn* (he wrote *me faire confiance à lui*).
+- *obliger qqn à + inf* / *être obligé de + inf* (he dropped the preposition).
+- *qui* + verb agrees with the antecedent: *mon ami qui vient*.
+- *plaire à*: the thing is the subject: *le film t'a plu ?*; *plu* never agrees.
+- *la façon / la manière* for "the way", not *la voie*; *la façon la plus courante*.
+- *laisser un pourboire* (he wrote *lasser*, which is in his deck as "to tire").
+
+**This week's spoken picks (say aloud, use with the tandem partner):** *T'es pas obligé de + inf*,
+*M'oblige pas à + inf*, *faut que j'aille*, *ça tient pas*, *avoir confiance en / s'en servir*.
+
+**Waiting list (add after 11-30, ●●● first):** laisser un pourboire, encore moins / encore plus, (se faire)
+passer pour, d'affilée, de bonne humeur, (il) va falloir + inf, accrocher (un tableau), un bouquin, déraper,
+border qqn, se démonter, venger / se venger de, un attentat, avoir tendance à, je m'en occupe, le décalage
+horaire, raccrocher au nez de qqn, jouer de la batterie, se défouler, du coup, tout ce qui est, à mon compte,
+le visage, faire la gueule, avoir la gueule de bois. Recognise only: la came, se branler, défoncer, pendre.
+
+**Gist follow-ups:** passionné/e → "passionate about / keen on" (not done). Retire candidates: la litote,
+un aparté, recenser, la nappe, tronquer.
+
 ## Next (from 2026-11-19)
 
 - Start the daily table above. First speaking topic: pick one RFI *français facile* article of the day,
