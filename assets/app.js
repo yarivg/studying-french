@@ -1875,8 +1875,9 @@
     var byId = {};
     d.cards.forEach(function (c) {
       byId[c.id] = c;
-      // A verb with a lab scene shows it under the meaning.
-      var e = labEntryFor(c.fr);
+      // A verb with a lab scene shows it; any other word, its entry in
+      // data/contexts.json.
+      var e = labEntryFor(c.fr) || ctxEntryFor(c.fr);
       if (e) c.ex = labSentence(e);
     });
     var due = Progress.dueQueue(d.cards.map(function (c) { return c.id; }))
@@ -1901,7 +1902,7 @@
     pager.innerHTML = '';
     view.innerHTML = '<div class="loading">Loading…</div>';
 
-    Promise.all([Vocab.load(), loadLab()]).then(function () {
+    Promise.all([Vocab.load(), loadLab(), loadCtx()]).then(function () {
       var l = dueListCards();
       var cards = shuffled(l.seen).concat(shuffled(l.fresh));
       view.innerHTML =
@@ -1953,10 +1954,16 @@
     view.innerHTML = '<div class="loading">Loading…</div>';
     dueKeys = null;
 
-    Promise.all([Vocab.load(), loadLab()]).then(function () {
+    Promise.all([Vocab.load(), loadLab(), loadCtx()]).then(function () {
       var lists = dueListCards();
       var all = lists.seen.concat(lists.fresh);
       var batch = all.slice(0, DUE_BATCH);
+      // Reviews last answered wrong that have no context sentence yet, so
+      // the list can be handed over and filled in data/contexts.json.
+      var noCtx = lists.seen.filter(function (c) {
+        var st = Progress.card(c.id);
+        return !c.ex && (st.rl || st.box === 0);
+      });
       var canSay = !!(window.Say && Say.supported());
       var listen = canSay && dueListenOn();
       var head =
@@ -2001,7 +2008,19 @@
           '<button class="btn" type="button" id="due-rest">Unmarked → ✓</button>' +
           '<button class="btn btn-primary" type="button" id="due-submit" disabled>Submit</button>' +
           '<span class="deck-meta" id="due-count"></span>' +
-        '</div>';
+        '</div>' +
+        (noCtx.length ? '<p class="due-keys"><button class="btn btn-sm" type="button" id="due-noctx">📋 Copy ' +
+          noCtx.length + ' missed word' + (noCtx.length === 1 ? '' : 's') + ' with no 💡 yet</button> ' +
+          '<span id="due-noctx-msg"></span></p>' : '');
+
+      var noCtxBtn = document.getElementById('due-noctx');
+      if (noCtxBtn) noCtxBtn.addEventListener('click', function () {
+        var text = noCtx.map(function (c) { return c.fr + ' - ' + c.back; }).join('\n');
+        var done = function (m) { document.getElementById('due-noctx-msg').textContent = m; };
+        (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject())
+          .then(function () { done('Copied. Paste it to Claude for context sentences.'); },
+                function () { window.prompt('Copy these:', text); });
+      });
 
       var listEl = document.getElementById('due-list');
       var submitBtn = document.getElementById('due-submit');
@@ -2183,6 +2202,40 @@
   }
   function labSentence(e) { return e.fr.replace(/[\[\]]/g, ''); }
   function labSentenceHtml(e) { return escapeHtml(e.fr).replace(/\[(.+?)\]/, '<strong>$1</strong>'); }
+
+  // Context sentences for words that are not lab verbs, matched without
+  // the article. A saved word can also be longer than the entry: "mettre en
+  // garde contre" finds "mettre en garde", "il y a belle lurette" finds
+  // "belle lurette". Only multi-word entries match inside, so "estimer"
+  // never lends its sentence to "sous-estimer".
+  var ctxData = null, ctxLoading = null;
+  function loadCtx() {
+    if (ctxData) return Promise.resolve(ctxData);
+    if (!ctxLoading) {
+      ctxLoading = Data.json('data/contexts.json')
+        .then(function (d) {
+          var list = [];
+          (d.words || []).forEach(function (e) {
+            [e.v].concat(e.alt || []).forEach(function (v) { list.push({ k: ctxKey(v), e: e }); });
+          });
+          ctxData = list.sort(function (a, b) { return b.k.length - a.k.length; });
+          return ctxData;
+        })
+        .catch(function () { ctxLoading = null; return null; });
+    }
+    return ctxLoading;
+  }
+  function ctxKey(fr) { return labKey(fr).replace(/^(le|la|les|l'|un|une|des|du) ?/, ''); }
+  function ctxEntryFor(fr) {
+    if (!ctxData) return null;
+    var k = ctxKey(fr), padded = ' ' + k + ' ', i, x;
+    for (i = 0; i < ctxData.length; i++) if (ctxData[i].k === k) return ctxData[i].e;
+    for (i = 0; i < ctxData.length; i++) {
+      x = ctxData[i];
+      if (k.indexOf(x.k + ' ') === 0 || (x.k.indexOf(' ') > 0 && padded.indexOf(' ' + x.k + ' ') !== -1)) return x.e;
+    }
+    return null;
+  }
 
   function labPool() {
     var log = Progress.cardLog();

@@ -16,7 +16,7 @@
    Bump CACHE_VERSION to force a full refetch.
    ============================================================ */
 
-var CACHE_VERSION = 'le-carnet-v40';
+var CACHE_VERSION = 'le-carnet-v41';
 var SHELL = [
   './',
   'index.html',
@@ -44,6 +44,7 @@ var SHELL = [
   'assets/icons/apple-touch-icon.png',
   'data/vocab.json',
   'data/verb-lab.json',
+  'data/contexts.json',
   'content/manifest.json',
   'content/tests/groups.json',
   'content/roleplay/index.json',

@@ -1,0 +1,417 @@
+{
+ "about": "Context sentences for your own words that are not Verb lab verbs, in the lab's shape: v is the word, alt other ways you may have saved it, [form] marks it in fr. Case, accents and a leading article are ignored when matching.",
+ "words": [
+  {
+   "v": "délai",
+   "hook": "false friend: not a delay, the time allowed",
+   "fr": "Le [délai] pour s'inscrire est de deux semaines.",
+   "en": "The deadline to sign up is two weeks.",
+   "also": "dans les délais = on time; a delay = un retard"
+  },
+  {
+   "v": "marge de manœuvre",
+   "hook": "la marge = the margin, room on the page",
+   "fr": "Avec ce budget, on n'a aucune [marge de manœuvre].",
+   "en": "With this budget we have no room to manoeuvre."
+  },
+  {
+   "v": "lâcher prise",
+   "hook": "lâcher = let go of, la prise = the grip",
+   "fr": "Il faut apprendre à [lâcher prise] et arrêter de tout contrôler.",
+   "en": "You have to learn to let go and stop controlling everything."
+  },
+  {
+   "v": "censé",
+   "hook": "être censé + inf = to be supposed to",
+   "fr": "Tu étais [censé] m'appeler hier !",
+   "en": "You were supposed to call me yesterday!",
+   "alt": [
+    "être censé"
+   ]
+  },
+  {
+   "v": "au sein de",
+   "hook": "le sein = the bosom: in the heart of a group",
+   "fr": "Il y a des désaccords [au sein de] l'équipe.",
+   "en": "There are disagreements within the team.",
+   "also": "au sein du gouvernement = within the government"
+  },
+  {
+   "v": "belle lurette",
+   "hook": "il y a belle lurette = ages ago, always with il y a",
+   "fr": "Il y a [belle lurette] que je ne l'ai pas vu.",
+   "en": "I haven't seen him in ages."
+  },
+  {
+   "v": "pas ouf",
+   "hook": "ouf = fou backwards (verlan): pas fou = not great",
+   "fr": "Franchement, le film était [pas ouf].",
+   "en": "Honestly, the film wasn't great.",
+   "also": "c'est ouf ! = it's crazy!"
+  },
+  {
+   "v": "paperasse",
+   "hook": "papier + -asse (the ending that makes it pejorative)",
+   "fr": "La [paperasse] pour le visa m'a pris des semaines.",
+   "en": "The paperwork for the visa took me weeks."
+  },
+  {
+   "v": "arnaque",
+   "hook": "what an arnaqueur (con man) does to you",
+   "fr": "Vingt euros pour un café ? C'est une [arnaque] !",
+   "en": "Twenty euros for a coffee? It's a rip-off!",
+   "also": "arnaquer qqn = to rip someone off"
+  },
+  {
+   "v": "en matière de",
+   "hook": "la matière = the subject (at school)",
+   "fr": "[En matière de] sécurité, l'entreprise est très stricte.",
+   "en": "When it comes to safety, the company is very strict."
+  },
+  {
+   "v": "du fait de",
+   "hook": "formal because of, + a noun",
+   "fr": "[Du fait de] la grève, tous les trains sont annulés.",
+   "en": "Because of the strike, all trains are cancelled.",
+   "also": "du fait que + verb = because"
+  },
+  {
+   "v": "coulisses",
+   "hook": "in a theatre, the wings where the sets slide (coulisser)",
+   "fr": "Le documentaire montre les [coulisses] du festival.",
+   "en": "The documentary shows the festival behind the scenes.",
+   "also": "en coulisses = behind the scenes"
+  },
+  {
+   "v": "péter les plombs",
+   "hook": "le plomb = the fuse: blow a fuse",
+   "fr": "Après trois heures d'attente, il a [pété les plombs].",
+   "en": "After three hours of waiting, he lost it.",
+   "also": "péter un câble = the same"
+  },
+  {
+   "v": "n'empêche que",
+   "hook": "ça n'empêche pas que: still, all the same",
+   "fr": "Tu as peut-être raison. [N'empêche que] c'est injuste.",
+   "en": "You may be right. All the same, it's unfair.",
+   "alt": [
+    "il n'empêche que"
+   ]
+  },
+  {
+   "v": "débordé",
+   "hook": "déborder = to overflow: too much work spilling over",
+   "fr": "Je suis [débordé] cette semaine, on se voit lundi ?",
+   "en": "I'm swamped this week, shall we meet on Monday?"
+  },
+  {
+   "v": "émeute",
+   "hook": "une émeute = a riot; un émeutier = a rioter",
+   "fr": "Des [émeutes] ont éclaté après le match.",
+   "en": "Riots broke out after the match."
+  },
+  {
+   "v": "désaccord",
+   "hook": "dés + accord: no agreement",
+   "fr": "Il y a un [désaccord] entre les deux ministres.",
+   "en": "There is a disagreement between the two ministers.",
+   "also": "être en désaccord avec qqn = to disagree with someone"
+  },
+  {
+   "v": "en revanche",
+   "hook": "not revenge here: on the other hand",
+   "fr": "Le loyer est cher ; [en revanche], le quartier est très calme.",
+   "en": "The rent is expensive; on the other hand, the area is very quiet."
+  },
+  {
+   "v": "épineux",
+   "hook": "une épine = a thorn",
+   "fr": "C'est un sujet [épineux], évitons-le au dîner.",
+   "en": "It's a thorny subject, let's avoid it at dinner."
+  },
+  {
+   "v": "largué",
+   "hook": "larguer les amarres = cast off: left behind on the quay",
+   "fr": "Je n'ai rien compris au cours, je suis complètement [largué].",
+   "en": "I understood nothing in class, I'm completely lost.",
+   "also": "larguer qqn = to dump someone",
+   "alt": [
+    "larguer"
+   ]
+  },
+  {
+   "v": "sidéré",
+   "hook": "as if struck by a star (sidéral)",
+   "fr": "J'étais [sidéré] par sa réponse.",
+   "en": "I was stunned by his answer.",
+   "alt": [
+    "sidérer"
+   ]
+  },
+  {
+   "v": "inconscient",
+   "hook": "not conscious of the danger",
+   "fr": "Conduire après avoir bu, c'est complètement [inconscient].",
+   "en": "Driving after drinking is completely reckless.",
+   "also": "also unconscious: il est resté inconscient = he stayed unconscious"
+  },
+  {
+   "v": "atroce",
+   "hook": "atrocious, and in daily speech just awful",
+   "fr": "J'ai eu un mal de tête [atroce] toute la nuit.",
+   "en": "I had an awful headache all night."
+  },
+  {
+   "v": "ignoble",
+   "hook": "not lowly: vile, disgusting",
+   "fr": "Ce qu'il a dit sur elle est [ignoble].",
+   "en": "What he said about her is vile."
+  },
+  {
+   "v": "fuite",
+   "hook": "fuir = to flee, and also to leak",
+   "fr": "Il y a une [fuite] d'eau sous l'évier.",
+   "en": "There's a water leak under the sink.",
+   "also": "prendre la fuite = to run away"
+  },
+  {
+   "v": "cramé",
+   "hook": "cramer = brûler, familiar",
+   "fr": "J'ai oublié le gâteau au four, il est [cramé].",
+   "en": "I forgot the cake in the oven, it's burnt.",
+   "alt": [
+    "cramer"
+   ]
+  },
+  {
+   "v": "s'y mettre",
+   "hook": "se mettre à qqch, and y stands for the task: get down to it",
+   "fr": "Demain, je [m'y mets] sérieusement.",
+   "en": "Tomorrow I'm getting down to it seriously."
+  },
+  {
+   "v": "prendre le pli",
+   "hook": "le pli = the fold, a crease that stays",
+   "fr": "Au début, me lever tôt était dur, mais j'ai [pris le pli].",
+   "en": "At first getting up early was hard, but I've got into the habit."
+  },
+  {
+   "v": "au bout de",
+   "hook": "le bout = the end",
+   "fr": "[Au bout de] dix minutes, il est parti.",
+   "en": "After ten minutes, he left.",
+   "also": "au bout de la rue = at the end of the street"
+  },
+  {
+   "v": "indigné",
+   "hook": "une indignation = outrage",
+   "fr": "Les habitants sont [indignés] par la hausse des loyers.",
+   "en": "Residents are outraged by the rise in rents."
+  },
+  {
+   "v": "mitigé",
+   "hook": "mitigated: neither good nor bad",
+   "fr": "Les critiques sont [mitigées] : certains adorent, d'autres non.",
+   "en": "The reviews are mixed: some love it, others don't."
+  },
+  {
+   "v": "perplexe",
+   "hook": "perplexed",
+   "fr": "Sa réponse m'a laissé [perplexe].",
+   "en": "His answer left me puzzled."
+  },
+  {
+   "v": "mettre en garde",
+   "hook": "en garde = on guard: put someone on guard",
+   "fr": "Le médecin l'a [mis en garde] contre le sucre.",
+   "en": "The doctor warned him about sugar.",
+   "also": "mettre qqn en garde contre qqch"
+  },
+  {
+   "v": "remettre en question",
+   "hook": "put back into question",
+   "fr": "Cette étude [remet en question] tout ce qu'on croyait savoir.",
+   "en": "This study calls into question everything we thought we knew.",
+   "also": "se remettre en question = to question oneself"
+  },
+  {
+   "v": "certes",
+   "hook": "admittedly: concede, then a mais follows",
+   "fr": "[Certes], c'est cher, mais la qualité est là.",
+   "en": "Admittedly, it's expensive, but the quality is there."
+  },
+  {
+   "v": "or",
+   "hook": "not gold here: now, yet, the fact that turns the argument",
+   "fr": "Il dit qu'il était chez lui. [Or], ses voisins l'ont vu sortir.",
+   "en": "He says he was at home. Yet his neighbours saw him go out."
+  },
+  {
+   "v": "nuancé",
+   "hook": "une nuance = a shade",
+   "fr": "Son avis est plus [nuancé] que ça.",
+   "en": "His opinion is more nuanced than that."
+  },
+  {
+   "v": "néanmoins",
+   "hook": "formal nevertheless",
+   "fr": "Le projet est risqué ; [néanmoins], il mérite d'être tenté.",
+   "en": "The project is risky; nevertheless, it's worth trying."
+  },
+  {
+   "v": "plaider pour",
+   "hook": "plaider = what a lawyer does in court",
+   "fr": "L'association [plaide pour] plus de pistes cyclables.",
+   "en": "The association argues for more cycle lanes.",
+   "also": "plaider coupable = to plead guilty"
+  },
+  {
+   "v": "méfiant",
+   "hook": "se méfier de = to distrust",
+   "fr": "Après l'arnaque, il est devenu très [méfiant].",
+   "en": "After the scam, he became very wary."
+  },
+  {
+   "v": "pourtant",
+   "hook": "and yet: the surprise after the fact",
+   "fr": "Il a raté l'examen ; [pourtant], il avait beaucoup travaillé.",
+   "en": "He failed the exam, and yet he had worked a lot."
+  },
+  {
+   "v": "tout de même",
+   "hook": "all the same",
+   "fr": "Il pleuvait, mais on est sortis [tout de même].",
+   "en": "It was raining, but we went out all the same."
+  },
+  {
+   "v": "alors que",
+   "hook": "while, whereas: two facts that clash",
+   "fr": "Il joue aux jeux vidéo [alors qu']il a un examen demain.",
+   "en": "He's playing video games when he has an exam tomorrow."
+  },
+  {
+   "v": "rassurant",
+   "hook": "rassurer = to reassure",
+   "fr": "Le médecin a été très [rassurant].",
+   "en": "The doctor was very reassuring."
+  },
+  {
+   "v": "constater",
+   "hook": "un constat = a statement of fact (un constat d'accident)",
+   "fr": "On [constate] une hausse des prix depuis janvier.",
+   "en": "Prices have clearly risen since January."
+  },
+  {
+   "v": "revendiquer",
+   "hook": "une revendication = a demand (a union's)",
+   "fr": "Les salariés [revendiquent] une hausse de salaire.",
+   "en": "The employees are demanding a pay rise.",
+   "also": "revendiquer un attentat = to claim an attack"
+  },
+  {
+   "v": "virer",
+   "hook": "virer = to turn, so turn someone out",
+   "fr": "Il s'est fait [virer] après deux semaines.",
+   "en": "He got fired after two weeks.",
+   "also": "un virement = a bank transfer"
+  },
+  {
+   "v": "s'enfuir",
+   "hook": "fuir = to flee, en = away",
+   "fr": "Le voleur [s'est enfui] par la fenêtre.",
+   "en": "The thief ran away through the window."
+  },
+  {
+   "v": "mériter",
+   "hook": "merit",
+   "fr": "Tu as bien travaillé, tu [mérites] des vacances.",
+   "en": "You worked hard, you deserve a holiday.",
+   "also": "ça vaut la peine = it's worth it"
+  },
+  {
+   "v": "gémir",
+   "hook": "the sound of someone hurt",
+   "fr": "Le blessé [gémissait] de douleur.",
+   "en": "The injured man was groaning in pain."
+  },
+  {
+   "v": "couler",
+   "hook": "the water flows, the boat goes under",
+   "fr": "Le bateau a [coulé] en quelques minutes.",
+   "en": "The boat sank in a few minutes.",
+   "also": "l'eau coule = the water runs"
+  },
+  {
+   "v": "aspirer à",
+   "hook": "aspire to; un aspirateur sucks things in",
+   "fr": "Elle [aspire à] une vie plus calme.",
+   "en": "She longs for a calmer life."
+  },
+  {
+   "v": "vexer",
+   "hook": "hurt someone's pride",
+   "fr": "Ne lui dis pas ça, tu vas le [vexer].",
+   "en": "Don't say that to him, you'll offend him.",
+   "also": "se vexer = to take offence"
+  },
+  {
+   "v": "saouler",
+   "hook": "saoul = drunk: makes your head spin",
+   "fr": "Arrête de parler de ton boulot, tu me [saoules] !",
+   "en": "Stop going on about your job, you're wearing me out!",
+   "alt": [
+    "soûler"
+   ]
+  },
+  {
+   "v": "piéger",
+   "hook": "un piège = a trap",
+   "fr": "Les escrocs l'ont [piégé] avec un faux site.",
+   "en": "The scammers trapped him with a fake website."
+  },
+  {
+   "v": "vaciller",
+   "hook": "a flame or someone on their feet, about to go",
+   "fr": "La flamme de la bougie [vacillait].",
+   "en": "The candle flame was flickering.",
+   "also": "vaciller = to sway, to wobble"
+  },
+  {
+   "v": "fliquer",
+   "hook": "un flic = a cop",
+   "fr": "Mon patron me [flique] toute la journée.",
+   "en": "My boss watches my every move all day."
+  },
+  {
+   "v": "obéir",
+   "hook": "obéir à qqn: indirect, so je lui obéis",
+   "fr": "Ce chien n'[obéit] à personne.",
+   "en": "That dog obeys no one."
+  },
+  {
+   "v": "déplorer",
+   "hook": "to deplore: regret it in public",
+   "fr": "Le maire [déplore] le manque de logements.",
+   "en": "The mayor deplores the lack of housing."
+  },
+  {
+   "v": "estimer",
+   "hook": "not only estimate: judge, consider",
+   "fr": "J'[estime] que c'est injuste.",
+   "en": "I consider it unfair.",
+   "also": "estimer qqn = to hold someone in esteem"
+  },
+  {
+   "v": "redouter",
+   "hook": "douter, made stronger: fear what is coming",
+   "fr": "Elle [redoute] l'entretien de demain.",
+   "en": "She dreads tomorrow's interview."
+  },
+  {
+   "v": "reconnaître",
+   "hook": "recognise, and admit",
+   "fr": "Il [reconnaît] qu'il s'est trompé.",
+   "en": "He admits he was wrong."
+  }
+ ]
+}
