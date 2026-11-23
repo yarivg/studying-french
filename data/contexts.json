@@ -412,6 +412,1409 @@
    "hook": "recognise, and admit",
    "fr": "Il [reconnaît] qu'il s'est trompé.",
    "en": "He admits he was wrong."
+  },
+  {
+   "v": "sans déconner",
+   "hook": "déconner = to mess around (slang)",
+   "fr": "[Sans déconner], tu as vraiment quitté ton boulot ?",
+   "en": "No kidding, you really quit your job?",
+   "also": "sans blague = the polite version"
+  },
+  {
+   "v": "tout à fait",
+   "hook": "the polite, strong yes",
+   "fr": "Vous êtes d'accord ? [Tout à fait].",
+   "en": "Do you agree? Absolutely.",
+   "also": "pas tout à fait = not quite"
+  },
+  {
+   "v": "la filière",
+   "hook": "un fil = a thread: the path you follow",
+   "fr": "Elle a choisi la [filière] scientifique au lycée.",
+   "en": "She chose the science track in high school.",
+   "also": "la filière automobile = the car industry"
+  },
+  {
+   "v": "une attente",
+   "hook": "attendre = to wait",
+   "fr": "Il y a deux heures d'[attente] aux urgences.",
+   "en": "There's a two-hour wait at the ER.",
+   "also": "répondre aux attentes = to meet expectations"
+  },
+  {
+   "v": "le siège",
+   "hook": "where you sit; where the company sits",
+   "fr": "Le [siège] de l'entreprise est à Paris.",
+   "en": "The company's head office is in Paris.",
+   "also": "prenez un siège = take a seat"
+  },
+  {
+   "v": "le numérique",
+   "hook": "un numéro = a number: digital",
+   "fr": "Le [numérique] a changé notre façon de travailler.",
+   "en": "Digital tech changed the way we work.",
+   "also": "un appareil photo numérique = a digital camera"
+  },
+  {
+   "v": "un aparté",
+   "hook": "à part = aside",
+   "fr": "Petit [aparté] : la réunion est décalée à 15 h.",
+   "en": "Quick aside: the meeting is moved to 3 pm.",
+   "also": "en aparté = privately"
+  },
+  {
+   "v": "davantage",
+   "hook": "= plus, more formal, after the verb",
+   "fr": "Tu devrais dormir [davantage].",
+   "en": "You should sleep more.",
+   "also": "davantage de temps = more time"
+  },
+  {
+   "v": "être saoulé",
+   "hook": "saoul = drunk: so much of it you feel drunk",
+   "fr": "Il me parle de son boulot depuis une heure, je suis [saoulé].",
+   "en": "He's been talking about his job for an hour, I'm sick of it.",
+   "also": "tu me saoules = you're getting on my nerves"
+  },
+  {
+   "v": "mensuel",
+   "hook": "un mois = a month",
+   "fr": "Le loyer [mensuel] est de 900 euros.",
+   "en": "The monthly rent is 900 euros.",
+   "also": "hebdomadaire = weekly, annuel = yearly"
+  },
+  {
+   "v": "pénible",
+   "hook": "la peine = pain, effort",
+   "fr": "Il est [pénible], il se plaint tout le temps.",
+   "en": "He's annoying, he complains all the time.",
+   "also": "un travail pénible = a tough job"
+  },
+  {
+   "v": "cru",
+   "hook": "les crudités = raw vegetables",
+   "fr": "Au Japon, on mange beaucoup de poisson [cru].",
+   "en": "In Japan, people eat a lot of raw fish.",
+   "also": "cru is also the participle of croire: je l'ai cru"
+  },
+  {
+   "v": "déplorable",
+   "hook": "déplorer = to deplore",
+   "fr": "Le service était [déplorable], on ne reviendra pas.",
+   "en": "The service was awful, we won't come back."
+  },
+  {
+   "v": "le bol",
+   "hook": "a full bowl of luck",
+   "fr": "Tu as gagné ? T'as du [bol] !",
+   "en": "You won? You're lucky!",
+   "also": "un bol de café; ras-le-bol = fed up"
+  },
+  {
+   "v": "dans la foulée",
+   "hook": "une foulée = a stride: in the same stride",
+   "fr": "Il a eu son bac et, [dans la foulée], il est parti en Australie.",
+   "en": "He passed his exams and, right after, left for Australia."
+  },
+  {
+   "v": "la une",
+   "hook": "page une = page one",
+   "fr": "L'affaire fait la [une] de tous les journaux.",
+   "en": "The affair is on the front page of every paper.",
+   "also": "à la une = in the headlines"
+  },
+  {
+   "v": "la crainte",
+   "hook": "craindre = to fear",
+   "fr": "Sa plus grande [crainte], c'est de perdre son travail.",
+   "en": "His biggest fear is losing his job.",
+   "also": "de crainte de + inf = for fear of"
+  },
+  {
+   "v": "flippant",
+   "hook": "flipper = to freak out",
+   "fr": "Ce film est vraiment [flippant].",
+   "en": "This film is really creepy.",
+   "also": "ça me fait flipper = it freaks me out"
+  },
+  {
+   "v": "soi-disant",
+   "hook": "soi + disant = saying it about itself",
+   "fr": "Son [soi-disant] ami ne l'a jamais aidé.",
+   "en": "His so-called friend never helped him.",
+   "also": "il est soi-disant malade = he's supposedly sick"
+  },
+  {
+   "v": "la bulle",
+   "hook": "une bulle de savon = a soap bubble",
+   "fr": "La [bulle] immobilière va finir par éclater.",
+   "en": "The housing bubble will burst eventually.",
+   "also": "les bulles d'une BD = speech bubbles"
+  },
+  {
+   "v": "la course",
+   "hook": "courir = to run",
+   "fr": "Il a gagné la [course] de vélo.",
+   "en": "He won the bike race.",
+   "also": "faire les courses = to do the shopping"
+  },
+  {
+   "v": "avoir la flemme",
+   "hook": "la flemme = laziness (slang)",
+   "fr": "J'ai la [flemme] de cuisiner ce soir.",
+   "en": "I can't be bothered to cook tonight."
+  },
+  {
+   "v": "à l'aise",
+   "hook": "aisé = easy, comfortable",
+   "fr": "Je ne me sens pas à l'[aise] avec lui.",
+   "en": "I don't feel comfortable with him.",
+   "also": "mal à l'aise = uncomfortable"
+  },
+  {
+   "v": "faire un créneau",
+   "hook": "un créneau = a slot (time or parking)",
+   "fr": "Je déteste [faire un créneau] dans une rue étroite.",
+   "en": "I hate parallel parking in a narrow street.",
+   "also": "un créneau horaire = a time slot"
+  },
+  {
+   "v": "le coup de cœur",
+   "hook": "a blow straight to the heart",
+   "fr": "Ce livre, c'est mon [coup de cœur] de l'année.",
+   "en": "This book is my favourite of the year.",
+   "also": "avoir un coup de cœur pour = to fall for (a place, a flat)"
+  },
+  {
+   "v": "avoir la bougeotte",
+   "hook": "bouger = to move",
+   "fr": "Il ne reste jamais en place, il a la [bougeotte].",
+   "en": "He never stays put, he has itchy feet."
+  },
+  {
+   "v": "en avoir marre",
+   "hook": "marre = enough (slang)",
+   "fr": "J'en ai [marre] de ce temps pourri.",
+   "en": "I'm fed up with this rotten weather."
+  },
+  {
+   "v": "la fac",
+   "hook": "short for la faculté",
+   "fr": "Il est en deuxième année de [fac].",
+   "en": "He's in his second year of uni."
+  },
+  {
+   "v": "la compétence",
+   "hook": "compétent = skilled",
+   "fr": "La [compétence] la plus importante, c'est la communication.",
+   "en": "The most important skill is communication."
+  },
+  {
+   "v": "la nappe",
+   "hook": "a napkin's big sister",
+   "fr": "Mets la [nappe], on mange dans cinq minutes.",
+   "en": "Put the tablecloth on, we eat in five minutes.",
+   "also": "une nappe phréatique = groundwater"
+  },
+  {
+   "v": "être doué",
+   "hook": "un don = a gift",
+   "fr": "Elle est très [douée] en langues.",
+   "en": "She's very gifted at languages.",
+   "also": "doué pour + inf = good at"
+  },
+  {
+   "v": "la litote",
+   "hook": "saying less to mean more",
+   "fr": "« Il n'est pas très malin » : c'est une [litote].",
+   "en": "'He's not very smart': that's an understatement."
+  },
+  {
+   "v": "le polar",
+   "hook": "policier → polar",
+   "fr": "Je lis un [polar] de Fred Vargas.",
+   "en": "I'm reading a Fred Vargas crime novel."
+  },
+  {
+   "v": "la pente",
+   "hook": "pencher = to lean",
+   "fr": "La rue est en [pente], fais attention à vélo.",
+   "en": "The street slopes, be careful on the bike.",
+   "also": "remonter la pente = to get back on one's feet"
+  },
+  {
+   "v": "Et si",
+   "hook": "a suggestion, + imparfait",
+   "fr": "[Et si] on allait au cinéma ce soir ?",
+   "en": "What if we went to the cinema tonight?",
+   "also": "et si tu essayais ? = why don't you try?"
+  },
+  {
+   "v": "fin",
+   "hook": "la finesse = subtlety",
+   "fr": "Il a un humour très [fin].",
+   "en": "He has a very subtle sense of humour.",
+   "also": "une tranche fine = a thin slice"
+  },
+  {
+   "v": "un appareil",
+   "hook": "un appareil photo = a camera",
+   "fr": "Cet [appareil] ne marche plus.",
+   "en": "This device doesn't work anymore."
+  },
+  {
+   "v": "têtu",
+   "hook": "une tête = a head: hard-headed",
+   "fr": "Il est [têtu] comme une mule.",
+   "en": "He's as stubborn as a mule."
+  },
+  {
+   "v": "la piste",
+   "hook": "la piste de ski, la piste de danse",
+   "fr": "La police suit une nouvelle [piste].",
+   "en": "The police are following a new lead.",
+   "also": "la piste de danse = the dance floor"
+  },
+  {
+   "v": "débutant",
+   "hook": "débuter = to start",
+   "fr": "Je suis encore [débutant] en guitare.",
+   "en": "I'm still a beginner at guitar."
+  },
+  {
+   "v": "faire en sorte que",
+   "hook": "en sorte = in such a way",
+   "fr": "Je vais [faire en sorte que] tout soit prêt.",
+   "en": "I'll make sure everything is ready.",
+   "also": "+ subjonctif"
+  },
+  {
+   "v": "être déchiré",
+   "hook": "déchirer = to tear",
+   "fr": "Je suis [déchiré] entre deux offres.",
+   "en": "I'm torn between two offers."
+  },
+  {
+   "v": "à fond",
+   "hook": "le fond = the bottom: all the way down",
+   "fr": "Il a mis la musique [à fond].",
+   "en": "He turned the music up full blast.",
+   "also": "étudier à fond = to study thoroughly"
+  },
+  {
+   "v": "traître",
+   "hook": "trahir = to betray",
+   "fr": "Tu es parti avec eux ? [Traître] !",
+   "en": "You left with them? Traitor!"
+  },
+  {
+   "v": "une atteinte à",
+   "hook": "atteindre = to reach, to hit",
+   "fr": "C'est une [atteinte] à la vie privée.",
+   "en": "It's an invasion of privacy.",
+   "also": "une atteinte à la liberté = an attack on freedom"
+  },
+  {
+   "v": "le primaire",
+   "hook": "primaire = first level",
+   "fr": "Mon fils est en dernière année de [primaire].",
+   "en": "My son is in his last year of primary school.",
+   "also": "le collège = middle school"
+  },
+  {
+   "v": "net",
+   "hook": "nettoyer = to clean",
+   "fr": "La photo n'est pas [nette].",
+   "en": "The photo isn't sharp.",
+   "also": "une baisse nette = a clear drop"
+  },
+  {
+   "v": "une usine",
+   "hook": "user = to wear out",
+   "fr": "Mon grand-père travaillait à l'[usine].",
+   "en": "My grandfather worked at the factory."
+  },
+  {
+   "v": "illicite",
+   "hook": "licite = lawful, il- = not",
+   "fr": "Le commerce [illicite] de cigarettes explose.",
+   "en": "The illegal cigarette trade is booming."
+  },
+  {
+   "v": "constamment",
+   "hook": "constant",
+   "fr": "Il regarde [constamment] son téléphone.",
+   "en": "He's constantly looking at his phone."
+  },
+  {
+   "v": "l'étincelle",
+   "hook": "a spark that lights a fire",
+   "fr": "Il manque l'[étincelle] entre eux.",
+   "en": "The spark is missing between them."
+  },
+  {
+   "v": "la maternelle",
+   "hook": "maternel = motherly: the first school",
+   "fr": "Ma fille entre en [maternelle] l'an prochain.",
+   "en": "My daughter starts nursery school next year."
+  },
+  {
+   "v": "hors du commun",
+   "hook": "hors de = outside of; le commun = the ordinary",
+   "fr": "C'est une femme [hors du commun].",
+   "en": "She's an extraordinary woman."
+  },
+  {
+   "v": "un aveu",
+   "hook": "avouer = to confess",
+   "fr": "Son [aveu] a surpris tout le monde.",
+   "en": "His confession surprised everyone.",
+   "also": "passer aux aveux = to confess (to the police)"
+  },
+  {
+   "v": "une allure",
+   "hook": "aller = to go: the way you go",
+   "fr": "Il roulait à toute [allure].",
+   "en": "He was driving at full speed.",
+   "also": "avoir de l'allure = to look stylish"
+  },
+  {
+   "v": "en arrière-plan",
+   "hook": "arrière = back, le plan = the shot",
+   "fr": "On entend un chien [en arrière-plan].",
+   "en": "You can hear a dog in the background."
+  },
+  {
+   "v": "les cotisations",
+   "hook": "cotiser = to chip in",
+   "fr": "Les [cotisations] sociales sont élevées en France.",
+   "en": "Social security contributions are high in France."
+  },
+  {
+   "v": "le défaut",
+   "hook": "faire défaut = to be lacking",
+   "fr": "Son seul [défaut], c'est qu'il est toujours en retard.",
+   "en": "His only flaw is that he's always late.",
+   "also": "par défaut = by default"
+  },
+  {
+   "v": "être puceau",
+   "hook": "from la pucelle = the maiden",
+   "fr": "À 25 ans, il est encore [puceau].",
+   "en": "At 25 he's still a virgin."
+  },
+  {
+   "v": "un incendie",
+   "hook": "incendiaire = fire-starting",
+   "fr": "Un [incendie] a détruit la forêt.",
+   "en": "A fire destroyed the forest.",
+   "also": "un feu = a fire, un incendie = a blaze"
+  },
+  {
+   "v": "la précarité",
+   "hook": "précaire = precarious",
+   "fr": "Beaucoup de jeunes vivent dans la [précarité].",
+   "en": "Many young people live in insecurity.",
+   "also": "un emploi précaire = an insecure job"
+  },
+  {
+   "v": "coupable",
+   "hook": "une coulpe = a fault",
+   "fr": "Le jury l'a déclaré [coupable].",
+   "en": "The jury found him guilty.",
+   "also": "se sentir coupable = to feel guilty"
+  },
+  {
+   "v": "la rime",
+   "hook": "rimer = to rhyme",
+   "fr": "« Amour » et « toujours », c'est une [rime] facile.",
+   "en": "'Amour' and 'toujours' is an easy rhyme.",
+   "also": "ça ne rime à rien = it makes no sense"
+  },
+  {
+   "v": "le jeu de société",
+   "hook": "a game for company",
+   "fr": "On joue à un [jeu de société] ce soir ?",
+   "en": "Shall we play a board game tonight?"
+  },
+  {
+   "v": "la ferme",
+   "hook": "le fermier = the farmer",
+   "fr": "Ils ont acheté une [ferme] en Normandie.",
+   "en": "They bought a farm in Normandy.",
+   "also": "la ferme ! = shut up (slang)"
+  },
+  {
+   "v": "prendre goût à",
+   "hook": "le goût = the taste",
+   "fr": "J'ai [pris goût] à la course à pied.",
+   "en": "I've developed a taste for running."
+  },
+  {
+   "v": "la haine",
+   "hook": "haïr = to hate",
+   "fr": "Il n'y a pas de [haine] dans ses paroles.",
+   "en": "There's no hatred in his words.",
+   "also": "La Haine = the 1995 film"
+  },
+  {
+   "v": "faire le tri",
+   "hook": "trier = to sort",
+   "fr": "Je dois [faire le tri] dans mes vêtements.",
+   "en": "I need to sort through my clothes.",
+   "also": "le tri sélectif = recycling"
+  },
+  {
+   "v": "la lingette",
+   "hook": "le linge = cloth",
+   "fr": "Passe-moi une [lingette], j'ai les mains sales.",
+   "en": "Pass me a wipe, my hands are dirty."
+  },
+  {
+   "v": "le passif",
+   "hook": "the past that weighs on you",
+   "fr": "Ces deux-là ont un lourd [passif].",
+   "en": "Those two have a heavy history.",
+   "also": "la voix passive = the passive voice"
+  },
+  {
+   "v": "la claque",
+   "hook": "claquer = to slap, to slam",
+   "fr": "Il a reçu une [claque].",
+   "en": "He got slapped.",
+   "also": "j'en ai ma claque = I've had enough"
+  },
+  {
+   "v": "d'affilée",
+   "hook": "un fil = a thread: in one line",
+   "fr": "Il a travaillé douze heures [d'affilée].",
+   "en": "He worked twelve hours in a row."
+  },
+  {
+   "v": "Au fait",
+   "hook": "getting to the fact",
+   "fr": "[Au fait], tu viens samedi ?",
+   "en": "By the way, are you coming Saturday?"
+  },
+  {
+   "v": "le bouillon",
+   "hook": "bouillir = to boil",
+   "fr": "Ajoute un peu de [bouillon] de légumes.",
+   "en": "Add a bit of vegetable broth."
+  },
+  {
+   "v": "pile",
+   "hook": "on the dot",
+   "fr": "On est arrivés à 8 heures [pile].",
+   "en": "We arrived at 8 on the dot.",
+   "also": "tomber pile = to come at the perfect time"
+  },
+  {
+   "v": "la ride",
+   "hook": "rider = to wrinkle",
+   "fr": "Ce film n'a pas pris une [ride].",
+   "en": "This film hasn't aged a bit."
+  },
+  {
+   "v": "aveugle",
+   "hook": "aveugler = to blind",
+   "fr": "Il est [aveugle] de naissance.",
+   "en": "He's been blind since birth.",
+   "also": "l'amour est aveugle"
+  },
+  {
+   "v": "avéré",
+   "hook": "vrai: shown to be true",
+   "fr": "C'est un fait [avéré].",
+   "en": "It's a proven fact.",
+   "also": "s'avérer = to turn out"
+  },
+  {
+   "v": "convenir de",
+   "hook": "convenir = to suit",
+   "fr": "On a [convenu] d'un rendez-vous jeudi.",
+   "en": "We agreed on a meeting Thursday.",
+   "also": "ça me convient = it suits me"
+  },
+  {
+   "v": "le lot",
+   "hook": "un lot = a batch, a set",
+   "fr": "Il a gagné le gros [lot].",
+   "en": "He won the jackpot.",
+   "also": "un lot de trois = a pack of three"
+  },
+  {
+   "v": "à temps partiel",
+   "hook": "partiel = partial",
+   "fr": "Elle travaille [à temps partiel].",
+   "en": "She works part-time.",
+   "also": "à plein temps = full-time"
+  },
+  {
+   "v": "en somme",
+   "hook": "la somme = the sum",
+   "fr": "[En somme], tout s'est bien passé.",
+   "en": "All in all, everything went well."
+  },
+  {
+   "v": "les vendanges",
+   "hook": "le vin → vendanger",
+   "fr": "Les [vendanges] commencent en septembre.",
+   "en": "The grape harvest starts in September."
+  },
+  {
+   "v": "habile",
+   "hook": "l'habileté = skill",
+   "fr": "Il est très [habile] de ses mains.",
+   "en": "He's very good with his hands."
+  },
+  {
+   "v": "au fond de",
+   "hook": "le fond = the bottom",
+   "fr": "[Au fond de] moi, je savais qu'il avait raison.",
+   "en": "Deep down, I knew he was right.",
+   "also": "au fond = basically"
+  },
+  {
+   "v": "par ailleurs",
+   "hook": "ailleurs = elsewhere",
+   "fr": "Le film est long. [Par ailleurs], la fin est décevante.",
+   "en": "The film is long. Moreover, the ending is disappointing.",
+   "also": "d'ailleurs = besides"
+  },
+  {
+   "v": "tout comme",
+   "hook": "comme = like",
+   "fr": "[Tout comme] son père, il est médecin.",
+   "en": "Just like his father, he's a doctor."
+  },
+  {
+   "v": "être dégoûté",
+   "hook": "dé-goût = no taste left for it",
+   "fr": "Il a raté le train de deux minutes, il est [dégoûté].",
+   "en": "He missed the train by two minutes, he's gutted.",
+   "also": "ça me dégoûte = it disgusts me"
+  },
+  {
+   "v": "tant que",
+   "hook": "as long as",
+   "fr": "[Tant que] tu es là, je n'ai pas peur.",
+   "en": "As long as you're here, I'm not scared."
+  },
+  {
+   "v": "la fissure",
+   "hook": "fissurer = to crack",
+   "fr": "Il y a une [fissure] dans le mur.",
+   "en": "There's a crack in the wall."
+  },
+  {
+   "v": "au-delà de",
+   "hook": "là = there: beyond there",
+   "fr": "Le succès est allé [au-delà de] nos espérances.",
+   "en": "The success went beyond our hopes."
+  },
+  {
+   "v": "la garce",
+   "hook": "insult",
+   "fr": "Quelle [garce], elle m'a menti !",
+   "en": "What a bitch, she lied to me!"
+  },
+  {
+   "v": "la quête",
+   "hook": "quêter = to seek",
+   "fr": "Il est en [quête] de sens.",
+   "en": "He's in search of meaning."
+  },
+  {
+   "v": "bourré",
+   "hook": "bourrer = to stuff: stuffed with drink",
+   "fr": "Il était complètement [bourré] hier soir.",
+   "en": "He was completely drunk last night.",
+   "also": "bourré de = packed with"
+  },
+  {
+   "v": "un emploi du temps",
+   "hook": "how you use your time",
+   "fr": "J'ai un [emploi du temps] chargé cette semaine.",
+   "en": "I have a busy schedule this week."
+  },
+  {
+   "v": "un exposé",
+   "hook": "exposer = to present",
+   "fr": "Je dois faire un [exposé] sur la Révolution.",
+   "en": "I have to give a presentation on the Revolution."
+  },
+  {
+   "v": "le cachet",
+   "hook": "a sealed dose",
+   "fr": "Prends un [cachet] pour ta migraine.",
+   "en": "Take a pill for your migraine.",
+   "also": "le cachet d'un artiste = an artist's fee"
+  },
+  {
+   "v": "subit",
+   "hook": "subitement = suddenly",
+   "fr": "Sa mort [subite] a choqué tout le monde.",
+   "en": "His sudden death shocked everyone."
+  },
+  {
+   "v": "Tu te fous de moi",
+   "hook": "se foutre de = to make fun of",
+   "fr": "Dix euros le café ? [Tu te fous de moi] ?",
+   "en": "Ten euros for a coffee? Are you kidding me?"
+  },
+  {
+   "v": "un emballage",
+   "hook": "emballer = to wrap",
+   "fr": "Jette l'[emballage] dans la poubelle jaune.",
+   "en": "Throw the packaging in the yellow bin."
+  },
+  {
+   "v": "les pouvoirs publics",
+   "hook": "public power: the state",
+   "fr": "Les [pouvoirs publics] doivent agir.",
+   "en": "The authorities must act."
+  },
+  {
+   "v": "insensé",
+   "hook": "le sens, in- = without",
+   "fr": "C'est une idée complètement [insensée].",
+   "en": "It's a totally crazy idea."
+  },
+  {
+   "v": "le cortège",
+   "hook": "a line of people following",
+   "fr": "Le [cortège] a traversé tout Paris.",
+   "en": "The march crossed all of Paris.",
+   "also": "un cortège funèbre = a funeral procession"
+  },
+  {
+   "v": "dès que",
+   "hook": "dès = from (the moment)",
+   "fr": "Appelle-moi [dès que] tu arrives.",
+   "en": "Call me as soon as you arrive."
+  },
+  {
+   "v": "plus jamais",
+   "hook": "ne... plus jamais",
+   "fr": "[Plus jamais] je ne prendrai cette compagnie.",
+   "en": "Never again will I fly this airline."
+  },
+  {
+   "v": "les données",
+   "hook": "donner = to give: what's given",
+   "fr": "L'appli vend nos [données].",
+   "en": "The app sells our data.",
+   "also": "une base de données = a database"
+  },
+  {
+   "v": "sinon",
+   "hook": "si + non",
+   "fr": "Dépêche-toi, [sinon] on va rater le train.",
+   "en": "Hurry up, otherwise we'll miss the train.",
+   "also": "sinon, ça va ? = apart from that, how are you?"
+  },
+  {
+   "v": "la gestion",
+   "hook": "gérer = to manage",
+   "fr": "La [gestion] du temps, c'est mon point faible.",
+   "en": "Time management is my weak point."
+  },
+  {
+   "v": "le bolide",
+   "hook": "a meteor: very fast",
+   "fr": "Il roule dans un [bolide] rouge.",
+   "en": "He drives a red sports car."
+  },
+  {
+   "v": "la mâchoire",
+   "hook": "mâcher = to chew",
+   "fr": "Il a pris un coup à la [mâchoire].",
+   "en": "He took a hit to the jaw."
+  },
+  {
+   "v": "le tir",
+   "hook": "tirer = to shoot",
+   "fr": "Le [tir] est parti tout seul.",
+   "en": "The shot went off by itself.",
+   "also": "un tir au but = a shot on goal"
+  },
+  {
+   "v": "Mi... mi...",
+   "hook": "mi = half (midi, minuit)",
+   "fr": "Le film était [mi]-drôle, mi-triste.",
+   "en": "The film was half funny, half sad.",
+   "also": "mi-figue, mi-raisin = mixed feelings"
+  },
+  {
+   "v": "le fric",
+   "hook": "slang for money, like 'dough'",
+   "fr": "Il a plein de [fric] mais il est radin.",
+   "en": "He's loaded but he's stingy."
+  },
+  {
+   "v": "la luciole",
+   "hook": "lux = light",
+   "fr": "Une [luciole] brillait dans le noir.",
+   "en": "A firefly glowed in the dark."
+  },
+  {
+   "v": "réticent",
+   "hook": "la réticence = reluctance",
+   "fr": "Il était [réticent] à l'idée de déménager.",
+   "en": "He was reluctant to move."
+  },
+  {
+   "v": "là-dessus",
+   "hook": "dessus = on top",
+   "fr": "Je suis d'accord avec toi [là-dessus].",
+   "en": "I agree with you on that.",
+   "also": "là-dessus, il est parti = with that, he left"
+  },
+  {
+   "v": "être à côté de la plaque",
+   "hook": "missing the plate (the target)",
+   "fr": "Sa réponse [est à côté de la plaque].",
+   "en": "His answer is totally off the mark."
+  },
+  {
+   "v": "exigeant",
+   "hook": "exiger = to demand",
+   "fr": "Mon prof est très [exigeant].",
+   "en": "My teacher is very demanding."
+  },
+  {
+   "v": "par ici",
+   "hook": "ici = here",
+   "fr": "Il y a une boulangerie [par ici] ?",
+   "en": "Is there a bakery around here?",
+   "also": "par ici ! = this way!"
+  },
+  {
+   "v": "inculte",
+   "hook": "la culture, in- = without",
+   "fr": "Il n'a jamais lu un livre, il est complètement [inculte].",
+   "en": "He's never read a book, he's totally uncultured."
+  },
+  {
+   "v": "le verrou",
+   "hook": "verrouiller = to lock",
+   "fr": "N'oublie pas de mettre le [verrou].",
+   "en": "Don't forget to bolt the door.",
+   "also": "un verrou = a blocking point, bottleneck"
+  },
+  {
+   "v": "méchant",
+   "hook": "chien méchant = beware of the dog",
+   "fr": "Ne sois pas [méchant] avec ta sœur.",
+   "en": "Don't be mean to your sister.",
+   "also": "pas méchant = harmless"
+  },
+  {
+   "v": "la matière",
+   "hook": "matériel = material",
+   "fr": "Ma [matière] préférée, c'était l'histoire.",
+   "en": "My favourite subject was history.",
+   "also": "la matière première = raw material"
+  },
+  {
+   "v": "J'avoue",
+   "hook": "avouer = to confess",
+   "fr": "Ce film était nul. [J'avoue].",
+   "en": "That film was rubbish. True, I admit."
+  },
+  {
+   "v": "la vente",
+   "hook": "vendre = to sell",
+   "fr": "La maison est en [vente].",
+   "en": "The house is for sale."
+  },
+  {
+   "v": "en suspens",
+   "hook": "suspendre = to hang",
+   "fr": "Le projet est [en suspens] pour l'instant.",
+   "en": "The project is on hold for now."
+  },
+  {
+   "v": "la caisse",
+   "hook": "the cash box",
+   "fr": "Payez à la [caisse], s'il vous plaît.",
+   "en": "Pay at the till, please.",
+   "also": "ma caisse = my car (slang); une caisse à outils = a toolbox"
+  },
+  {
+   "v": "C'est ainsi",
+   "hook": "ainsi = so, thus",
+   "fr": "[C'est ainsi], on ne peut rien y faire.",
+   "en": "That's how it is, nothing we can do."
+  },
+  {
+   "v": "sauvage",
+   "hook": "the wild",
+   "fr": "Ce coin de la côte est encore [sauvage].",
+   "en": "This stretch of coast is still wild.",
+   "also": "il est un peu sauvage = he's a bit unsociable"
+  },
+  {
+   "v": "minable",
+   "hook": "miner = to undermine",
+   "fr": "C'est un mensonge [minable].",
+   "en": "It's a pathetic lie."
+  },
+  {
+   "v": "chauve",
+   "hook": "calvus = bald",
+   "fr": "Il est devenu [chauve] à trente ans.",
+   "en": "He went bald at thirty."
+  },
+  {
+   "v": "d'emblée",
+   "hook": "in one leap",
+   "fr": "Elle m'a plu [d'emblée].",
+   "en": "I liked her right away."
+  },
+  {
+   "v": "haut la main",
+   "hook": "hand held high: winning",
+   "fr": "Il a gagné [haut la main].",
+   "en": "He won hands down."
+  },
+  {
+   "v": "une exigence",
+   "hook": "exiger = to demand",
+   "fr": "Le client a une [exigence] : livrer avant lundi.",
+   "en": "The client has one requirement: deliver before Monday."
+  },
+  {
+   "v": "à jour",
+   "hook": "le jour = today's date",
+   "fr": "Mon CV n'est pas [à jour].",
+   "en": "My CV isn't up to date.",
+   "also": "mettre à jour = to update"
+  },
+  {
+   "v": "le/la comptable",
+   "hook": "compter = to count",
+   "fr": "Mon [comptable] s'occupe de mes impôts.",
+   "en": "My accountant takes care of my taxes."
+  },
+  {
+   "v": "par moments",
+   "hook": "un moment",
+   "fr": "[Par moments], j'ai envie de tout quitter.",
+   "en": "At times, I feel like quitting everything."
+  },
+  {
+   "v": "la revendication",
+   "hook": "revendiquer = to claim",
+   "fr": "Leur principale [revendication], c'est la hausse des salaires.",
+   "en": "Their main demand is a pay rise."
+  },
+  {
+   "v": "Prendre de la hauteur",
+   "hook": "la hauteur = height: look from above",
+   "fr": "Il faut [prendre de la hauteur] avant de décider.",
+   "en": "You need to step back before deciding."
+  },
+  {
+   "v": "locataire",
+   "hook": "louer = to rent",
+   "fr": "Le [locataire] paie 800 euros par mois.",
+   "en": "The tenant pays 800 euros a month.",
+   "also": "le propriétaire = the owner"
+  },
+  {
+   "v": "surévalué",
+   "hook": "sur + évaluer",
+   "fr": "Cet acteur est complètement [surévalué].",
+   "en": "This actor is completely overrated."
+  },
+  {
+   "v": "avoir ras le bol",
+   "hook": "a bowl full to the brim",
+   "fr": "J'en ai [ras le bol] de ce boulot.",
+   "en": "I'm sick of this job.",
+   "also": "le ras-le-bol = the frustration"
+  },
+  {
+   "v": "au bord de",
+   "hook": "le bord = the edge",
+   "fr": "On a déjeuné [au bord de] la mer.",
+   "en": "We had lunch by the sea.",
+   "also": "au bord des larmes = on the verge of tears"
+  },
+  {
+   "v": "le menton",
+   "hook": "mentum",
+   "fr": "Il a une cicatrice sur le [menton].",
+   "en": "He has a scar on his chin."
+  },
+  {
+   "v": "les couilles",
+   "hook": "vulgar",
+   "fr": "Il a des [couilles], il a osé dire non au patron.",
+   "en": "He's got balls, he dared say no to the boss."
+  },
+  {
+   "v": "la poupée",
+   "hook": "a puppet's cousin",
+   "fr": "Ma fille joue avec sa [poupée].",
+   "en": "My daughter is playing with her doll."
+  },
+  {
+   "v": "les dégâts",
+   "hook": "un dégât",
+   "fr": "La tempête a fait beaucoup de [dégâts].",
+   "en": "The storm caused a lot of damage."
+  },
+  {
+   "v": "l'essence",
+   "hook": "the essence of oil",
+   "fr": "Il n'y a plus d'[essence] dans la voiture.",
+   "en": "There's no petrol left in the car.",
+   "also": "l'essence = the essence, the core"
+  },
+  {
+   "v": "Je m'en fous",
+   "hook": "se foutre de = not to care",
+   "fr": "[Je m'en fous] de ce qu'il pense.",
+   "en": "I don't give a damn what he thinks.",
+   "also": "je m'en fiche = softer"
+  },
+  {
+   "v": "le puits",
+   "hook": "a deep hole for water",
+   "fr": "Ils tirent l'eau du [puits].",
+   "en": "They draw water from the well.",
+   "also": "un puits de pétrole = an oil well"
+  },
+  {
+   "v": "un écart",
+   "hook": "écarter = to spread apart",
+   "fr": "Il y a un gros [écart] entre les salaires.",
+   "en": "There's a big gap between salaries.",
+   "also": "à l'écart = apart"
+  },
+  {
+   "v": "les rideaux",
+   "hook": "un rideau",
+   "fr": "Ferme les [rideaux], il y a trop de soleil.",
+   "en": "Close the curtains, it's too sunny."
+  },
+  {
+   "v": "la balle",
+   "hook": "a ball, also a bullet",
+   "fr": "Il a reçu une [balle] dans la jambe.",
+   "en": "He took a bullet in the leg.",
+   "also": "une balle de tennis"
+  },
+  {
+   "v": "Tiède",
+   "hook": "tepid",
+   "fr": "Mon café est [tiède].",
+   "en": "My coffee is lukewarm."
+  },
+  {
+   "v": "prudent",
+   "hook": "la prudence",
+   "fr": "Sois [prudent] sur la route.",
+   "en": "Be careful on the road."
+  },
+  {
+   "v": "tirer sur",
+   "hook": "tirer = to pull, to shoot",
+   "fr": "Le policier a [tiré sur] le suspect.",
+   "en": "The policeman shot at the suspect."
+  },
+  {
+   "v": "la hausse",
+   "hook": "hausser = to raise",
+   "fr": "Les prix sont en [hausse].",
+   "en": "Prices are rising.",
+   "also": "la baisse = the fall"
+  },
+  {
+   "v": "la malédiction",
+   "hook": "mal + dire = to speak evil",
+   "fr": "Ce trophée, c'est une [malédiction].",
+   "en": "This trophy is a curse."
+  },
+  {
+   "v": "d'occasion",
+   "hook": "a second chance",
+   "fr": "J'ai acheté une voiture [d'occasion].",
+   "en": "I bought a second-hand car."
+  },
+  {
+   "v": "mère au foyer",
+   "hook": "le foyer = the home",
+   "fr": "Ma mère était [mère au foyer].",
+   "en": "My mother was a stay-at-home mum."
+  },
+  {
+   "v": "en phase avec",
+   "hook": "in phase",
+   "fr": "Je ne suis pas [en phase avec] la direction.",
+   "en": "I'm not in line with management."
+  },
+  {
+   "v": "vite fait",
+   "hook": "quickly made",
+   "fr": "On mange [vite fait] et on part ?",
+   "en": "Shall we grab a quick bite and go?"
+  },
+  {
+   "v": "le délinquant",
+   "hook": "un délit = an offence",
+   "fr": "Le jeune [délinquant] a été relâché.",
+   "en": "The young offender was released."
+  },
+  {
+   "v": "l'aplomb",
+   "hook": "à plomb = straight, steady",
+   "fr": "Il a menti avec un [aplomb] incroyable.",
+   "en": "He lied with incredible nerve."
+  },
+  {
+   "v": "haut niveau",
+   "hook": "le niveau = the level",
+   "fr": "C'est un sportif de [haut niveau].",
+   "en": "He's a top-level athlete."
+  },
+  {
+   "v": "à la fois",
+   "hook": "une fois = one time",
+   "fr": "Je suis [à la fois] content et triste.",
+   "en": "I'm both happy and sad."
+  },
+  {
+   "v": "la lubie",
+   "hook": "a passing craze",
+   "fr": "Sa dernière [lubie] : le yoga à 5 h du matin.",
+   "en": "His latest whim: yoga at 5 am."
+  },
+  {
+   "v": "la moitié",
+   "hook": "mi = half",
+   "fr": "J'ai mangé la [moitié] du gâteau.",
+   "en": "I ate half the cake.",
+   "also": "ma moitié = my other half"
+  },
+  {
+   "v": "le/la colocataire",
+   "hook": "co + locataire",
+   "fr": "Mon [colocataire] ne fait jamais la vaisselle.",
+   "en": "My flatmate never does the dishes.",
+   "also": "la coloc = the flatshare"
+  },
+  {
+   "v": "Le loyer",
+   "hook": "louer = to rent",
+   "fr": "Le [loyer] augmente chaque année.",
+   "en": "The rent goes up every year."
+  },
+  {
+   "v": "bêtement",
+   "hook": "bête = stupid",
+   "fr": "J'ai [bêtement] oublié mes clés.",
+   "en": "I stupidly forgot my keys."
+  },
+  {
+   "v": "fiable",
+   "hook": "se fier à = to trust",
+   "fr": "Cette voiture est très [fiable].",
+   "en": "This car is very reliable."
+  },
+  {
+   "v": "passer à côté de",
+   "hook": "passing right by it",
+   "fr": "Tu es [passé à côté de] l'essentiel.",
+   "en": "You missed the point."
+  },
+  {
+   "v": "affreux",
+   "hook": "l'effroi = terror",
+   "fr": "Il fait un temps [affreux].",
+   "en": "The weather is awful."
+  },
+  {
+   "v": "dingue",
+   "hook": "informal for fou",
+   "fr": "C'est [dingue], on s'est rencontrés au même endroit !",
+   "en": "That's crazy, we met at the same place!"
+  },
+  {
+   "v": "la démarche",
+   "hook": "marcher = to walk",
+   "fr": "La première [démarche], c'est de remplir le formulaire.",
+   "en": "The first step is to fill in the form.",
+   "also": "sa démarche = the way he walks"
+  },
+  {
+   "v": "frisé",
+   "hook": "friser = to curl",
+   "fr": "Son fils est blond et [frisé].",
+   "en": "Her son is blond and curly-haired."
+  },
+  {
+   "v": "le sort",
+   "hook": "un sorcier = a wizard",
+   "fr": "La sorcière lui a jeté un [sort].",
+   "en": "The witch cast a spell on him.",
+   "also": "le sort = fate"
+  },
+  {
+   "v": "une épreuve",
+   "hook": "éprouver = to test",
+   "fr": "L'[épreuve] écrite dure trois heures.",
+   "en": "The written exam lasts three hours.",
+   "also": "une épreuve = an ordeal"
+  },
+  {
+   "v": "le recul",
+   "hook": "reculer = to step back",
+   "fr": "Avec le [recul], je regrette.",
+   "en": "In hindsight, I regret it.",
+   "also": "un recul = a drop, a decline"
+  },
+  {
+   "v": "TOC",
+   "hook": "trouble obsessionnel compulsif",
+   "fr": "Il a un [TOC] : il vérifie dix fois la porte.",
+   "en": "He has OCD: he checks the door ten times."
+  },
+  {
+   "v": "la lueur",
+   "hook": "luire = to glow",
+   "fr": "Il y a une [lueur] d'espoir.",
+   "en": "There's a glimmer of hope."
+  },
+  {
+   "v": "le taff",
+   "hook": "slang for travail",
+   "fr": "J'ai trop de [taff] cette semaine.",
+   "en": "I have too much work this week.",
+   "also": "aller au taff = to go to work"
+  },
+  {
+   "v": "la pub",
+   "hook": "short for publicité",
+   "fr": "Il y a trop de [pub] à la télé.",
+   "en": "There are too many ads on TV."
+  },
+  {
+   "v": "avoir la cote",
+   "hook": "la cote = the rating",
+   "fr": "Ce restaurant [a la cote] en ce moment.",
+   "en": "This restaurant is very popular right now."
+  },
+  {
+   "v": "intervenant",
+   "hook": "intervenir = to speak, to step in",
+   "fr": "Le premier [intervenant] parle de l'IA.",
+   "en": "The first speaker talks about AI."
+  },
+  {
+   "v": "Avoir la niaque",
+   "hook": "slang for fighting spirit",
+   "fr": "Pour réussir, il faut [avoir la niaque].",
+   "en": "To succeed, you need drive."
+  },
+  {
+   "v": "la patte",
+   "hook": "a dog's four legs",
+   "fr": "Le chien s'est blessé à la [patte].",
+   "en": "The dog hurt its paw.",
+   "also": "à quatre pattes = on all fours"
+  },
+  {
+   "v": "en plein",
+   "hook": "plein = full",
+   "fr": "Il m'a appelé [en plein] milieu de la nuit.",
+   "en": "He called me in the middle of the night.",
+   "also": "en pleine forme = in great shape"
+  },
+  {
+   "v": "la tentation",
+   "hook": "tenter = to tempt",
+   "fr": "J'ai résisté à la [tentation].",
+   "en": "I resisted the temptation."
+  },
+  {
+   "v": "contraint",
+   "hook": "contraindre = to force",
+   "fr": "Il a été [contraint] de démissionner.",
+   "en": "He was forced to resign."
+  },
+  {
+   "v": "la sueur",
+   "hook": "suer = to sweat",
+   "fr": "Il était en [sueur] après la course.",
+   "en": "He was sweaty after the run."
+  },
+  {
+   "v": "le poing",
+   "hook": "une poignée = a handful",
+   "fr": "Il a tapé du [poing] sur la table.",
+   "en": "He banged his fist on the table.",
+   "also": "un coup de poing = a punch"
+  },
+  {
+   "v": "l'ampleur",
+   "hook": "ample = wide",
+   "fr": "On ne connaît pas encore l'[ampleur] des dégâts.",
+   "en": "We don't yet know the scale of the damage."
+  },
+  {
+   "v": "quoi que",
+   "hook": "quoi + que + subjonctif",
+   "fr": "[Quoi que] tu fasses, je serai là.",
+   "en": "Whatever you do, I'll be there.",
+   "also": "quoique (one word) = although"
+  },
+  {
+   "v": "les frais",
+   "hook": "the fees",
+   "fr": "Les [frais] de livraison sont offerts.",
+   "en": "Delivery costs are free.",
+   "also": "à mes frais = at my expense"
+  },
+  {
+   "v": "le gendarme",
+   "hook": "gens d'armes = armed men",
+   "fr": "Un [gendarme] nous a arrêtés sur l'autoroute.",
+   "en": "A police officer stopped us on the motorway."
+  },
+  {
+   "v": "le chaton",
+   "hook": "chat + -on = small",
+   "fr": "Le [chaton] dort sur le canapé.",
+   "en": "The kitten is sleeping on the sofa."
+  },
+  {
+   "v": "dément",
+   "hook": "la démence = madness",
+   "fr": "Le concert était [dément] !",
+   "en": "The concert was insane!"
+  },
+  {
+   "v": "la barrette",
+   "hook": "a small bar",
+   "fr": "Elle a mis une [barrette] dans ses cheveux.",
+   "en": "She put a clip in her hair."
+  },
+  {
+   "v": "la plume",
+   "hook": "a feather, the writer's pen",
+   "fr": "Il est léger comme une [plume].",
+   "en": "He's as light as a feather."
+  },
+  {
+   "v": "la formation",
+   "hook": "former = to train",
+   "fr": "Il suit une [formation] en informatique.",
+   "en": "He's doing an IT training course."
+  },
+  {
+   "v": "le creux",
+   "hook": "creuser = to dig",
+   "fr": "J'ai un petit [creux].",
+   "en": "I'm a bit peckish.",
+   "also": "le creux de la vague = rock bottom"
+  },
+  {
+   "v": "gourmand",
+   "hook": "un gourmet",
+   "fr": "Je suis très [gourmand], j'adore les desserts.",
+   "en": "I have a sweet tooth, I love desserts."
+  },
+  {
+   "v": "sous-évalué",
+   "hook": "sous + évaluer",
+   "fr": "Ce joueur est [sous-évalué].",
+   "en": "This player is underrated."
+  },
+  {
+   "v": "prendre en charge",
+   "hook": "la charge = the load",
+   "fr": "La Sécu [prend en charge] 70 % des frais.",
+   "en": "Social security covers 70% of the costs."
+  },
+  {
+   "v": "un atout",
+   "hook": "a trump card",
+   "fr": "Parler anglais est un vrai [atout].",
+   "en": "Speaking English is a real asset."
+  },
+  {
+   "v": "enfoiré",
+   "hook": "slang insult",
+   "fr": "Cet [enfoiré] m'a volé ma place !",
+   "en": "That jerk stole my spot!"
+  },
+  {
+   "v": "la bousculade",
+   "hook": "bousculer = to jostle",
+   "fr": "Il y a eu une [bousculade] à l'entrée du concert.",
+   "en": "There was a crush at the concert entrance."
+  },
+  {
+   "v": "d’autant plus que",
+   "hook": "autant = as much",
+   "fr": "Reste à la maison, [d'autant plus que] tu es malade.",
+   "en": "Stay home, especially since you're ill."
+  },
+  {
+   "v": "la tenue",
+   "hook": "tenir = to hold",
+   "fr": "Une [tenue] correcte est exigée.",
+   "en": "Proper dress is required."
+  },
+  {
+   "v": "une allocation",
+   "hook": "allouer = to allocate",
+   "fr": "Il touche une [allocation] chômage.",
+   "en": "He gets unemployment benefit.",
+   "also": "les allocs = benefits (slang)"
+  },
+  {
+   "v": "Au-dessous",
+   "hook": "dessous = under",
+   "fr": "Le prix est [au-dessous] de 10 euros.",
+   "en": "The price is below 10 euros.",
+   "also": "en dessous = more common in speech"
+  },
+  {
+   "v": "faute de",
+   "hook": "une faute = a lack",
+   "fr": "[Faute de] temps, je n'ai pas pu venir.",
+   "en": "For lack of time, I couldn't come."
+  },
+  {
+   "v": "les louanges",
+   "hook": "louer = to praise",
+   "fr": "Tout le monde chante ses [louanges].",
+   "en": "Everyone sings his praises."
+  },
+  {
+   "v": "la consigne",
+   "hook": "consigner = to record, to deposit",
+   "fr": "Lis bien la [consigne] avant de commencer.",
+   "en": "Read the instructions carefully before you start.",
+   "also": "la consigne = the left-luggage office, the bottle deposit"
+  },
+  {
+   "v": "la piste cyclable",
+   "hook": "un cycle = a bike",
+   "fr": "Prends la [piste cyclable], c'est plus sûr.",
+   "en": "Take the bike lane, it's safer."
+  },
+  {
+   "v": "fin de semaine",
+   "hook": "the end of the week",
+   "fr": "On se voit en [fin de semaine] ?",
+   "en": "Shall we meet at the end of the week?",
+   "also": "le week-end = the usual word in France"
   }
  ]
 }

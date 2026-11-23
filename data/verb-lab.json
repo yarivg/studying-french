@@ -844,6 +844,573 @@
    "hook": "en + mener (to lead): take someone along",
    "fr": "Je t'[emmène] à la gare.",
    "en": "I'll take you to the station."
+  },
+  {
+   "v": "apercevoir",
+   "hook": "un aperçu = a glimpse, an overview",
+   "fr": "J'ai [aperçu] ton frère au supermarché ce matin.",
+   "en": "I caught sight of your brother at the supermarket this morning.",
+   "also": "s'apercevoir que = to realise: je me suis aperçu que j'avais oublié mes clés"
+  },
+  {
+   "v": "déplorer",
+   "hook": "déplorable = awful, the same root",
+   "fr": "Le syndicat [déplore] le manque de dialogue avec la direction.",
+   "en": "The union deplores the lack of dialogue with management.",
+   "also": "on déplore trois morts = there are three dead (news phrase)"
+  },
+  {
+   "v": "embêter",
+   "hook": "ça t'embête ? = do you mind?",
+   "fr": "Ça ne t'[embête] pas si j'ouvre la fenêtre ?",
+   "en": "You don't mind if I open the window?",
+   "also": "s'embêter = to be bored"
+  },
+  {
+   "v": "se renseigner",
+   "hook": "un renseignement = a piece of information",
+   "fr": "Je vais [me renseigner] sur les horaires du train.",
+   "en": "I'll find out about the train times.",
+   "also": "les renseignements = intelligence services"
+  },
+  {
+   "v": "enfoncer",
+   "hook": "le fond = the bottom: push it to the bottom",
+   "fr": "Il a [enfoncé] la porte d'un coup d'épaule.",
+   "en": "He broke the door down with his shoulder.",
+   "also": "s'enfoncer = to sink in"
+  },
+  {
+   "v": "écraser",
+   "hook": "a can crushed flat",
+   "fr": "Il a [écrasé] sa cigarette et il est parti.",
+   "en": "He stubbed out his cigarette and left.",
+   "also": "se faire écraser = to get run over"
+  },
+  {
+   "v": "recenser",
+   "hook": "le recensement = the census",
+   "fr": "La mairie a [recensé] 300 logements vides.",
+   "en": "The town hall counted 300 empty homes."
+  },
+  {
+   "v": "déposer",
+   "hook": "un dépôt = a deposit, a depot",
+   "fr": "Tu peux me [déposer] à la gare ?",
+   "en": "Can you drop me at the station?",
+   "also": "déposer plainte = to file a complaint"
+  },
+  {
+   "v": "piller",
+   "hook": "le pillage = looting",
+   "fr": "Des magasins ont été [pillés] pendant les émeutes.",
+   "en": "Shops were looted during the riots."
+  },
+  {
+   "v": "démarrer",
+   "hook": "the engine or the PC starts",
+   "fr": "Ma voiture ne [démarre] plus le matin.",
+   "en": "My car won't start in the mornings anymore.",
+   "also": "démarrer un projet = to start a project"
+  },
+  {
+   "v": "vaciller",
+   "hook": "a candle flame wobbling",
+   "fr": "Après trois verres, il [vacillait] un peu.",
+   "en": "After three drinks, he was swaying a bit."
+  },
+  {
+   "v": "piéger",
+   "hook": "un piège = a trap",
+   "fr": "On s'est fait [piéger] par les embouteillages.",
+   "en": "We got caught in the traffic jams.",
+   "also": "une voiture piégée = a car bomb"
+  },
+  {
+   "v": "sidérer",
+   "hook": "struck as if by a star (sidéral)",
+   "fr": "Sa réponse m'a [sidéré].",
+   "en": "His answer left me speechless.",
+   "also": "je suis sidéré = I'm stunned"
+  },
+  {
+   "v": "tousser",
+   "hook": "la toux = the cough",
+   "fr": "Il a [toussé] toute la nuit.",
+   "en": "He coughed all night."
+  },
+  {
+   "v": "déchirer",
+   "hook": "une déchirure = a tear",
+   "fr": "Elle a [déchiré] la lettre sans la lire.",
+   "en": "She tore up the letter without reading it.",
+   "also": "ça déchire ! = it's awesome (slang)"
+  },
+  {
+   "v": "parasiter",
+   "hook": "un parasite, also static on the radio",
+   "fr": "Les notifications [parasitent] ma concentration.",
+   "en": "Notifications disrupt my focus."
+  },
+  {
+   "v": "surcharger",
+   "hook": "sur + charge = over + load",
+   "fr": "Le serveur est [surchargé] le lundi matin.",
+   "en": "The server is overloaded on Monday mornings.",
+   "also": "je suis surchargé de travail = I'm swamped"
+  },
+  {
+   "v": "affaiblir",
+   "hook": "faible = weak",
+   "fr": "La maladie l'a beaucoup [affaibli].",
+   "en": "The illness weakened him a lot.",
+   "also": "s'affaiblir = to grow weak"
+  },
+  {
+   "v": "focaliser",
+   "hook": "a camera's focus",
+   "fr": "Arrête de te [focaliser] sur les détails.",
+   "en": "Stop focusing on the details.",
+   "also": "se focaliser sur = to focus on"
+  },
+  {
+   "v": "se mettre le doigt dans l’œil",
+   "hook": "a finger in your own eye: you can't see straight",
+   "fr": "Si tu crois que je vais payer, tu [te mets le doigt dans l'œil].",
+   "en": "If you think I'm going to pay, you're kidding yourself."
+  },
+  {
+   "v": "papoter",
+   "hook": "sounds like chatter: pa-po-pa-po",
+   "fr": "Elles ont [papoté] toute la soirée.",
+   "en": "They chatted all evening."
+  },
+  {
+   "v": "gober",
+   "hook": "gober un œuf = swallow an egg whole",
+   "fr": "Il a tout [gobé] : il croit vraiment que je suis pilote.",
+   "en": "He swallowed it all: he really thinks I'm a pilot."
+  },
+  {
+   "v": "élire",
+   "hook": "une élection",
+   "fr": "Il a été [élu] président en 2017.",
+   "en": "He was elected president in 2017.",
+   "also": "les élus = elected officials"
+  },
+  {
+   "v": "secourir",
+   "hook": "au secours ! = help!",
+   "fr": "Les pompiers ont [secouru] trois personnes.",
+   "en": "Firefighters rescued three people.",
+   "also": "les secours = emergency services"
+  },
+  {
+   "v": "se farcir",
+   "hook": "farcir = to stuff (a turkey)",
+   "fr": "Je me suis [farci] tout le ménage.",
+   "en": "I got stuck with all the cleaning."
+  },
+  {
+   "v": "se bloquer",
+   "hook": "blocked, like a door",
+   "fr": "Quand je parle français au téléphone, je [me bloque].",
+   "en": "When I speak French on the phone, I freeze up."
+  },
+  {
+   "v": "poignarder",
+   "hook": "un poignard = a dagger",
+   "fr": "La victime a été [poignardée] dans le dos.",
+   "en": "The victim was stabbed in the back."
+  },
+  {
+   "v": "loger",
+   "hook": "un logement = a home",
+   "fr": "On [loge] chez des amis pendant une semaine.",
+   "en": "We're staying with friends for a week.",
+   "also": "logé et nourri = room and board"
+  },
+  {
+   "v": "gratter",
+   "hook": "scratch",
+   "fr": "Mon pull me [gratte].",
+   "en": "My sweater is itchy.",
+   "also": "gratter quelques euros = to scrounge a few euros"
+  },
+  {
+   "v": "guérir",
+   "hook": "la guérison = recovery",
+   "fr": "Il a mis trois mois à [guérir].",
+   "en": "It took him three months to recover.",
+   "also": "guérir qqn = to cure someone"
+  },
+  {
+   "v": "glisser",
+   "hook": "a slide: on glisse",
+   "fr": "J'ai [glissé] sur le verglas.",
+   "en": "I slipped on the ice.",
+   "also": "glisser un mot à qqn = to slip someone a word"
+  },
+  {
+   "v": "imprimer",
+   "hook": "une imprimante = a printer",
+   "fr": "Tu peux m'[imprimer] le billet ?",
+   "en": "Can you print the ticket for me?"
+  },
+  {
+   "v": "enfermer",
+   "hook": "fermer = to close, en = inside",
+   "fr": "Il s'est [enfermé] dans sa chambre toute la journée.",
+   "en": "He shut himself in his room all day."
+  },
+  {
+   "v": "lutter",
+   "hook": "une lutte = a struggle",
+   "fr": "Il [lutte] contre le sommeil pendant la réunion.",
+   "en": "He's fighting off sleep during the meeting.",
+   "also": "lutter contre = to fight against"
+  },
+  {
+   "v": "méditer",
+   "hook": "la méditation",
+   "fr": "Il [médite] vingt minutes chaque matin.",
+   "en": "He meditates twenty minutes every morning.",
+   "also": "méditer sur = to ponder"
+  },
+  {
+   "v": "gueuler",
+   "hook": "la gueule = the mouth (slang)",
+   "fr": "Arrête de [gueuler], je ne suis pas sourd !",
+   "en": "Stop yelling, I'm not deaf!",
+   "also": "engueuler qqn = to tell someone off"
+  },
+  {
+   "v": "zieuter",
+   "hook": "les yeux, les z'yeux",
+   "fr": "Arrête de [zieuter] la fille d'à côté.",
+   "en": "Stop eyeing the girl next door."
+  },
+  {
+   "v": "Décrier",
+   "hook": "dé- + crier = to cry down",
+   "fr": "Cette réforme est très [décriée].",
+   "en": "This reform is heavily criticised."
+  },
+  {
+   "v": "réconforter",
+   "hook": "le réconfort = comfort",
+   "fr": "Elle l'a [réconforté] après la mauvaise nouvelle.",
+   "en": "She comforted him after the bad news."
+  },
+  {
+   "v": "miser sur",
+   "hook": "une mise = a stake",
+   "fr": "L'entreprise [mise] sur le numérique.",
+   "en": "The company is betting on digital."
+  },
+  {
+   "v": "former",
+   "hook": "la formation = training",
+   "fr": "L'entreprise [forme] ses nouveaux employés.",
+   "en": "The company trains its new employees.",
+   "also": "se former = to train"
+  },
+  {
+   "v": "muter",
+   "hook": "une mutation = a job transfer",
+   "fr": "Il a été [muté] à Lyon.",
+   "en": "He was transferred to Lyon."
+  },
+  {
+   "v": "éclater",
+   "hook": "un éclat = a fragment",
+   "fr": "Le ballon a [éclaté].",
+   "en": "The balloon burst.",
+   "also": "éclater de rire = to burst out laughing"
+  },
+  {
+   "v": "faner",
+   "hook": "a flower drying in a vase",
+   "fr": "Les fleurs ont [fané] en deux jours.",
+   "en": "The flowers wilted in two days."
+  },
+  {
+   "v": "inclure",
+   "hook": "inclus = included",
+   "fr": "Le petit-déjeuner est [inclus].",
+   "en": "Breakfast is included.",
+   "also": "ci-inclus = enclosed"
+  },
+  {
+   "v": "supporter",
+   "hook": "false friend: to support = soutenir",
+   "fr": "Je ne [supporte] plus ce bruit.",
+   "en": "I can't stand this noise anymore.",
+   "also": "soutenir = to support"
+  },
+  {
+   "v": "aboyer",
+   "hook": "the dog's sound",
+   "fr": "Le chien du voisin [aboie] toute la nuit.",
+   "en": "The neighbour's dog barks all night."
+  },
+  {
+   "v": "étendre",
+   "hook": "tendre = to stretch",
+   "fr": "J'ai [étendu] le linge sur le balcon.",
+   "en": "I hung the laundry on the balcony.",
+   "also": "s'étendre = to spread, to lie down"
+  },
+  {
+   "v": "draguer",
+   "hook": "a dredger scooping things up",
+   "fr": "Il [drague] toutes les filles du bureau.",
+   "en": "He hits on all the girls in the office."
+  },
+  {
+   "v": "gémir",
+   "hook": "un gémissement = a moan",
+   "fr": "Le blessé [gémissait] de douleur.",
+   "en": "The injured man was moaning in pain."
+  },
+  {
+   "v": "déambuler",
+   "hook": "ambulant = walking around",
+   "fr": "On a [déambulé] dans les ruelles de Montmartre.",
+   "en": "We wandered through the alleys of Montmartre."
+  },
+  {
+   "v": "soupirer",
+   "hook": "un soupir = a sigh",
+   "fr": "Elle a [soupiré] en voyant la facture.",
+   "en": "She sighed when she saw the bill."
+  },
+  {
+   "v": "détruire",
+   "hook": "la destruction",
+   "fr": "La tempête a [détruit] le toit.",
+   "en": "The storm destroyed the roof."
+  },
+  {
+   "v": "larguer",
+   "hook": "let go of a rope",
+   "fr": "Elle l'a [largué] par texto.",
+   "en": "She dumped him by text.",
+   "also": "être largué = to be lost, not following"
+  },
+  {
+   "v": "boucher",
+   "hook": "un bouchon = a cork, a traffic jam",
+   "fr": "Les cheveux ont [bouché] le lavabo.",
+   "en": "Hair has clogged the sink.",
+   "also": "le boucher = the butcher"
+  },
+  {
+   "v": "s'opposer à",
+   "hook": "opposé = opposite",
+   "fr": "Les syndicats [s'opposent à] la réforme.",
+   "en": "The unions oppose the reform."
+  },
+  {
+   "v": "salir",
+   "hook": "sale = dirty",
+   "fr": "Tu vas [salir] ta chemise.",
+   "en": "You're going to get your shirt dirty."
+  },
+  {
+   "v": "se démerder",
+   "hook": "out of la merde on your own",
+   "fr": "Personne ne m'aide, je dois [me démerder] seul.",
+   "en": "Nobody helps me, I have to manage on my own.",
+   "also": "se débrouiller = polite version"
+  },
+  {
+   "v": "tuer",
+   "hook": "le tueur = the killer",
+   "fr": "Ce trajet me [tue].",
+   "en": "This commute is killing me."
+  },
+  {
+   "v": "se saisir de",
+   "hook": "saisir = to grab",
+   "fr": "Le gouvernement s'est [saisi] du dossier.",
+   "en": "The government took up the issue."
+  },
+  {
+   "v": "orienter",
+   "hook": "l'orient = the east: point the way",
+   "fr": "Le conseiller m'a [orienté] vers une école de commerce.",
+   "en": "The adviser steered me towards a business school.",
+   "also": "s'orienter = to find one's way"
+  },
+  {
+   "v": "soumettre",
+   "hook": "sous + mettre = put under",
+   "fr": "J'ai [soumis] mon dossier hier.",
+   "en": "I submitted my application yesterday.",
+   "also": "se soumettre = to give in"
+  },
+  {
+   "v": "parier",
+   "hook": "un pari = a bet",
+   "fr": "Je te [parie] qu'il sera en retard.",
+   "en": "I bet you he'll be late."
+  },
+  {
+   "v": "pourrir",
+   "hook": "pourri = rotten",
+   "fr": "Les fruits ont [pourri] dans le frigo.",
+   "en": "The fruit rotted in the fridge.",
+   "also": "un temps pourri = rotten weather"
+  },
+  {
+   "v": "se droguer",
+   "hook": "la drogue = drugs",
+   "fr": "Il a commencé à [se droguer] à quinze ans.",
+   "en": "He started taking drugs at fifteen."
+  },
+  {
+   "v": "scinder",
+   "hook": "une scission = a split",
+   "fr": "Le parti s'est [scindé] en deux.",
+   "en": "The party split in two."
+  },
+  {
+   "v": "s’allonger",
+   "hook": "long: make yourself long",
+   "fr": "Je vais [m'allonger] un peu, j'ai mal à la tête.",
+   "en": "I'm going to lie down a bit, I have a headache."
+  },
+  {
+   "v": "accoucher",
+   "hook": "la couche = the (birth) bed",
+   "fr": "Elle a [accouché] d'une petite fille.",
+   "en": "She gave birth to a little girl."
+  },
+  {
+   "v": "inscrire",
+   "hook": "une inscription = a registration",
+   "fr": "Je me suis [inscrit] à un cours de danse.",
+   "en": "I signed up for a dance class.",
+   "also": "inscrire son nom = to write down one's name"
+  },
+  {
+   "v": "arroser",
+   "hook": "l'arrosoir = the watering can",
+   "fr": "N'oublie pas d'[arroser] les plantes.",
+   "en": "Don't forget to water the plants.",
+   "also": "on va arroser ça ! = let's drink to that!"
+  },
+  {
+   "v": "déprimer",
+   "hook": "la déprime = the blues",
+   "fr": "Il [déprime] depuis son licenciement.",
+   "en": "He's been depressed since he was laid off."
+  },
+  {
+   "v": "mener",
+   "hook": "amener, emmener",
+   "fr": "C'est elle qui [mène] le projet.",
+   "en": "She's the one leading the project.",
+   "also": "mener à = to lead to"
+  },
+  {
+   "v": "se révéler",
+   "hook": "révéler = to reveal",
+   "fr": "Le film [s'est révélé] décevant.",
+   "en": "The film turned out to be disappointing."
+  },
+  {
+   "v": "échapper à",
+   "hook": "s'échapper = to escape",
+   "fr": "Il a [échappé] à un accident.",
+   "en": "He escaped an accident.",
+   "also": "ça m'a échappé = it slipped my mind"
+  },
+  {
+   "v": "déboucher",
+   "hook": "un bouchon = a cork",
+   "fr": "Tu peux [déboucher] la bouteille ?",
+   "en": "Can you uncork the bottle?",
+   "also": "déboucher l'évier = to unclog the sink"
+  },
+  {
+   "v": "virer",
+   "hook": "virer = to turn, to swerve",
+   "fr": "Il s'est fait [virer] la semaine dernière.",
+   "en": "He got fired last week.",
+   "also": "un virement = a bank transfer"
+  },
+  {
+   "v": "diffuser",
+   "hook": "la diffusion = the broadcast",
+   "fr": "Le match sera [diffusé] sur TF1.",
+   "en": "The match will be broadcast on TF1."
+  },
+  {
+   "v": "tromper",
+   "hook": "se tromper = to be wrong",
+   "fr": "Il a [trompé] sa femme.",
+   "en": "He cheated on his wife.",
+   "also": "je me suis trompé = I was wrong"
+  },
+  {
+   "v": "tâcher de",
+   "hook": "une tâche = a task",
+   "fr": "[Tâche de] ne pas être en retard.",
+   "en": "Try not to be late."
+  },
+  {
+   "v": "décupler",
+   "hook": "dix = ten",
+   "fr": "La colère a [décuplé] ses forces.",
+   "en": "Anger multiplied his strength tenfold."
+  },
+  {
+   "v": "démontrer",
+   "hook": "montrer = to show",
+   "fr": "L'étude [démontre] que le sport réduit le stress.",
+   "en": "The study shows that sport reduces stress."
+  },
+  {
+   "v": "perturber",
+   "hook": "troubler",
+   "fr": "La grève va [perturber] les transports.",
+   "en": "The strike will disrupt transport."
+  },
+  {
+   "v": "inspirer",
+   "hook": "in + spirare = to breathe in",
+   "fr": "[Inspirez]... expirez.",
+   "en": "Breathe in... breathe out.",
+   "also": "inspirer = also to inspire"
+  },
+  {
+   "v": "manifester",
+   "hook": "une manif = a protest",
+   "fr": "Des milliers de personnes ont [manifesté] contre la réforme.",
+   "en": "Thousands protested against the reform.",
+   "also": "manifester son intérêt = to show interest"
+  },
+  {
+   "v": "chuter",
+   "hook": "une chute = a fall",
+   "fr": "Les ventes ont [chuté] de 20 %.",
+   "en": "Sales fell by 20%."
+  },
+  {
+   "v": "appuyer",
+   "hook": "un appui = a support",
+   "fr": "[Appuyez] sur le bouton rouge.",
+   "en": "Press the red button.",
+   "also": "appuyer une idée = to back an idea"
+  },
+  {
+   "v": "estimer",
+   "hook": "l'estime = respect",
+   "fr": "Je l'[estime] beaucoup.",
+   "en": "I think highly of him.",
+   "also": "j'estime que = I reckon that"
   }
  ],
  "retire": {
