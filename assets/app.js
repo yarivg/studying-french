@@ -2071,7 +2071,14 @@
         var n = Object.keys(picks).length;
         submitBtn.disabled = !n;
         submitBtn.textContent = n ? 'Submit ' + n : 'Submit';
-        document.getElementById('due-count').textContent = n + ' of ' + batch.length + ' marked';
+        var tally = { ok: 0, no: 0, known: 0 };
+        Object.keys(picks).forEach(function (id) { tally[picks[id]]++; });
+        var graded = tally.ok + tally.no;
+        document.getElementById('due-count').textContent =
+          '✓ ' + tally.ok + ' · ✗ ' + tally.no +
+          (graded ? ' (' + Math.round(tally.ok / graded * 100) + '%)' : '') +
+          (tally.known ? ' · Retire ' + tally.known : '') +
+          ' · ' + n + ' of ' + batch.length + ' marked';
       };
       // A click toggles; a key always sets, so pressing 1 twice keeps ✓.
       var pick = function (row, v, set) {
